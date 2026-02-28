@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Apuntes UNAM 2026</title>
+    <!-- Favicon SVG Base64 (A graduation cap and book style icon) -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231d4ed8' d='M256 32l-224 96 224 96 224-96z'/%3E%3Cpath fill='%233b82f6' d='M256 224l-224-96v192l224 96v-192z'/%3E%3Cpath fill='%2360a5fa' d='M480 128v192l-224 96v-192z'/%3E%3Cpath fill='%23f59e0b' d='M160 384c0 35.3-28.7 64-64 64s-64-28.7-64-64v-160l64-32v192h64z'/%3E%3C/svg%3E">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #f4f6f8;
+            --text-color: #334155;
+            --main-node: #ffe4b5;
+            --branch-1: #bae1ff;
+            --branch-2: #baffc9;
+            --branch-3: #ffb38a;
+            --branch-4: #e2cbff;
+            --sub-node-bg: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --border-radius: 25px;
+
+            /* Colores del Menú */
+            --menu-bg: #ffffff;
+            --menu-text: #1e293b;
+            --menu-hover: #e2e8f0;
+            --menu-accent: #2563eb;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+            background-size: 30px 30px;
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            transition: margin-left 0.4s ease;
+        }
+
+        /* --- Estilos del Menú Hamburguesa --- */
+
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--menu-bg);
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 5px;
+            transition: all 0.4s ease;
+        }
+
+        .menu-btn.open .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-btn.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.open .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100vh;
+            background-color: var(--menu-bg);
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            flex-direction: column;
+            padding-top: 80px;
+            overflow-y: auto;
+        }
+
+        .side-menu.open {
+            left: 0;
+        }
+
+        .side-menu h3 {
+            margin: 0 20px 20px 20px;
+            font-size: 1.5rem;
+            color: var(--menu-accent);
+            border-bottom: 2px solid var(--menu-hover);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subject-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .subject-item {
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            color: var(--menu-text);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            border-left: 5px solid transparent;
+        }
+
+        .subject-item:hover {
+            background-color: var(--menu-hover);
+            padding-left: 30px;
+        }
+
+        .subject-item.active {
+            background-color: #f0fdf4;
+            color: #166534;
+            border-left-color: #22c55e;
+        }
+
+        .subject-item.active-espanol {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            border-left-color: #3b82f6;
+        }
+
+        .subject-icon {
+            margin-right: 12px;
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .sub-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            background-color: #f8fafc;
+            transition: max-height 0.35s ease-out, opacity 0.35s ease-out;
+        }
+
+        .sub-menu-list.expanded {
+            /* Max-height is dynamically set in javascript */
+            opacity: 1;
+        }
+
+        .class-item {
+            padding: 12px 25px 12px 48px;
+            font-size: 0.95rem;
+            color: #475569;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            border-left: 5px solid transparent;
+            transition: all 0.2s ease;
+            gap: 10px;
+        }
+
+        .class-item.active-class {
+            font-weight: 900;
+            color: var(--menu-accent);
+            background-color: #e2e8f0;
+            border-left-color: var(--menu-accent);
+        }
+
+        .class-item:hover {
+            background-color: #f1f5f9;
+            color: var(--menu-accent);
+            border-left-color: var(--menu-accent);
+            padding-left: 55px;
+        }
+
+        .arrow-icon {
+            margin-left: auto;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        .subject-item.open .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- Resto del contenido principal --- */
+        .main-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .subject-content {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInPage 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        .subject-content.visible {
+            display: flex;
+        }
+
+        @keyframes fadeInPage {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1.title-main {
+            text-align: center;
+            font-size: 3rem;
+            color: #2563eb;
+            text-shadow: 2px 2px 0px #fff;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1.title-main i {
+            margin: 0 10px;
+        }
+
+        .mindmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .main-topic {
+            background-color: var(--main-node);
+            color: #b45309;
+            padding: 25px 40px;
+            border-radius: 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(255, 228, 181, 0.8), var(--shadow);
+            border: 4px solid #fff;
+            animation: pulseMain 2.5s infinite alternate;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .espanol-topic {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            box-shadow: 0 0 20px rgba(224, 242, 254, 0.8), var(--shadow);
+            animation: pulseMainEsp 2.5s infinite alternate;
+        }
+
+        .main-topic:hover {
+            transform: scale(1.05);
+            animation-play-state: paused;
+        }
+
+        .main-topic h2 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            font-weight: 900;
+        }
+
+        .main-topic h2 i {
+            margin: 0 10px;
+        }
+
+        .main-topic p {
+            font-size: 1.2rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .branches {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .branch-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .topic-node {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .topic-node::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: rotate(30deg) translate(-100%, -100%);
+            transition: all 0.5s;
+            pointer-events: none;
+        }
+
+        .topic-node:hover::after {
+            transform: rotate(30deg) translate(100%, 100%);
+        }
+
+        .topic-node:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .topic-node h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .topic-1 {
+            background-color: var(--branch-1);
+            color: #005f73;
+        }
+
+        .topic-2 {
+            background-color: var(--branch-2);
+            color: #2d6a4f;
+        }
+
+        .topic-3 {
+            background-color: var(--branch-3);
+            color: #944000;
+        }
+
+        .topic-4 {
+            background-color: var(--branch-4);
+            color: #4c1d95;
+        }
+
+        .sub-nodes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            width: 95%;
+            transform-origin: top;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .sub-nodes-container.hidden {
+            opacity: 0;
+            transform: scaleY(0);
+            height: 0;
+            overflow: hidden;
+            margin: 0;
+            gap: 0;
+        }
+
+        .sub-node {
+            background: var(--sub-node-bg);
+            padding: 18px 22px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border-left: 8px solid;
+            font-size: 1rem;
+            line-height: 1.5;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+        }
+
+        .sub-node:hover {
+            transform: translateX(10px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            z-index: 5;
+        }
+
+        .sub-node h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+            color: #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sub-node h3 i {
+            color: #64748b;
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            background-color: #f1f5f9;
+            color: #64748b;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .sub-node p {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            color: #475569;
+        }
+
+        .example-box {
+            background-color: #f8fafc;
+            border-left: 3px solid #cbd5e1;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            color: #334155;
+            margin-top: 10px;
+        }
+
+        .example-box ul {
+            margin: 0;
+            padding-left: 18px;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .example-box li {
+            margin-bottom: 5px;
+        }
+
+        .example-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .sub-node b,
+        .sub-node strong {
+            color: #0f172a;
+            font-weight: 900;
+            background-color: rgba(255, 228, 181, 0.4);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        .topic-1-sub {
+            border-left-color: var(--branch-1);
+        }
+
+        .topic-2-sub {
+            border-left-color: var(--branch-2);
+        }
+
+        .topic-3-sub {
+            border-left-color: var(--branch-3);
+        }
+
+        .topic-4-sub {
+            border-left-color: var(--branch-4);
+        }
+
+        .click-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulseMain {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(255, 228, 181, 0.6), var(--shadow);
+            }
+
+            100% {
+                transform: scale(1.02);
+                box-shadow: 0 0 30px rgba(255, 228, 181, 1), var(--shadow);
+            }
+        }
+
+        @keyframes pulseMainEsp {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(224, 242, 254, 0.6), var(--shadow);
+            }
+
+            100% {
+                transform: scale(1.02);
+                box-shadow: 0 0 30px rgba(224, 242, 254, 1), var(--shadow);
+            }
+        }
+
+        .visible .branch-col:nth-child(1) {
+            animation: slideUp 0.6s ease-out backwards 0.1s;
+        }
+
+        .visible .branch-col:nth-child(2) {
+            animation: slideUp 0.6s ease-out backwards 0.3s;
+        }
+
+        .visible .branch-col:nth-child(3) {
+            animation: slideUp 0.6s ease-out backwards 0.5s;
+        }
+
+        .visible .sub-node {
+            animation: fadeInRight 0.5s forwards;
+        }
+
+        @media (max-width: 900px) {
+            .branches {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .branch-col {
+                width: 100%;
+                max-width: 500px;
+                margin-bottom: 20px;
+            }
+
+            h1.title-main {
+                font-size: 2.2rem;
+                margin-top: 60px;
+            }
+        }
+
+        /* --- Sección Videos --- */
+        .video-section {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto 10px auto;
+            background: #ffffff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #ef4444;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+            position: relative;
+        }
+
+        .video-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .video-header:hover {
+            opacity: 0.8;
+        }
+
+        .video-header h2 {
+            margin: 0;
+            color: #b91c1c;
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .video-header h2 i {
+            color: #ef4444;
+        }
+
+        .video-container-responsive {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- Sección Preguntas UNAM --- */
+        .unam-questions-section {
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto 40px auto;
+            background: #ffffff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #f59e0b;
+            padding: 30px 40px;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+            position: relative;
+        }
+
+        .unam-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+
+        .unam-header h2 {
+            margin: 0;
+            color: #b45309;
+            font-size: 1.8rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .unam-header h2 i {
+            color: #f59e0b;
+        }
+
+        .unam-toggle-btn {
+            background: #fef3c7;
+            color: #d97706;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .unam-toggle-btn:hover {
+            background: #fde68a;
+        }
+
+        .unam-questions-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .unam-question-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .unam-question-text {
+            font-size: 1.15rem;
+            color: #1e293b;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .unam-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .unam-option {
+            background: #ffffff;
+            border: 2px solid #cbd5e1;
+            border-radius: 10px;
+            padding: 12px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: #334155;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .unam-option:hover {
+            border-color: #94a3b8;
+            background: #f1f5f9;
+        }
+
+        .unam-option.selected {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            font-weight: 700;
+        }
+
+        .unam-option.correct {
+            border-color: #10b981;
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .unam-option.incorrect {
+            border-color: #ef4444;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .unam-feedback {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            display: none;
+            animation: fadeInPage 0.3s ease forwards;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .unam-feedback.correct-feedback {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+
+        .unam-feedback.incorrect-feedback {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+
+        .unam-eval-btn {
+            margin-top: 15px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .unam-eval-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .unam-eval-btn:disabled {
+            background: #94a3b8;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENÚ HAMBURGUESA Y OVERLAY -->
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir Menú de Asignaturas">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+
+    <div class="overlay" id="overlay"></div>
+
+    <nav class="side-menu" id="sideMenu">
+        <h3><i class="fa-solid fa-book-bookmark"></i> Mis Asignaturas</h3>
+        <ul class="subject-list">
+
+            <!-- INICIO -->
+            <li class="subject-wrapper" style="margin-bottom: 20px;">
+                <a href="#" class="class-item active-class" id="link-inicio"
+                    onclick="switchClass('content-home', this, 'btn-inicio')"
+                    style="background: #e0f2fe; border-left: 4px solid #0284c7; font-weight: 800; color: #0284c7; padding: 12px 15px; border-radius: 8px;">
+                    <i class="fa-solid fa-house"></i> Página de Inicio
+                </a>
+            </li>
+
+            <!-- ESPAÑOL -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-espanol" onclick="toggleSubMenu(event, 'submenu-espanol')">
+                    <span class="subject-icon"><i class="fa-solid fa-language"></i></span>
+                    Español
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-espanol">
+                    <li>
+                        <a href="#" class="class-item" id="link-espanol-1"
+                            onclick="switchClass('content-espanol-1', this, 'btn-espanol')">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Funciones del Lenguaje
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- MATEMÁTICAS -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-matematicas"
+                    onclick="toggleSubMenu(event, 'submenu-matematicas')">
+                    <span class="subject-icon"><i class="fa-solid fa-calculator"></i></span>
+                    Matemáticas
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-matematicas">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- FÍSICA -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-fisica" onclick="toggleSubMenu(event, 'submenu-fisica')">
+                    <span class="subject-icon"><i class="fa-solid fa-atom"></i></span>
+                    Física
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-fisica">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- QUÍMICA -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-quimica" onclick="toggleSubMenu(event, 'submenu-quimica')">
+                    <span class="subject-icon"><i class="fa-solid fa-flask"></i></span>
+                    Química
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-quimica">
+                    <li>
+                        <a href="#" class="class-item" id="link-quimica-1"
+                            onclick="switchClass('content-quimica-1', this, 'btn-quimica')">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Fundamentos y Materia
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- BIOLOGÍA -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-biologia" onclick="toggleSubMenu(event, 'submenu-biologia')">
+                    <span class="subject-icon"><i class="fa-solid fa-dna"></i></span>
+                    Biología
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-biologia">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- HISTORIA UNIVERSAL -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-hist-univ" onclick="toggleSubMenu(event, 'submenu-hist-univ')">
+                    <span class="subject-icon"><i class="fa-solid fa-globe"></i></span>
+                    Historia Universal
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-hist-univ">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- HISTORIA DE MÉXICO -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-historia" onclick="toggleSubMenu(event, 'submenu-historia')">
+                    <span class="subject-icon"><i class="fa-solid fa-earth-americas"></i></span>
+                    Historia de México
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-historia">
+                    <li>
+                        <a href="#" class="class-item" id="link-historia-1"
+                            onclick="switchClass('content-historia-1', this, 'btn-historia')">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Prehispánico
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;">
+                            <i class="fa-solid fa-lock"></i> Clase 2: La Colonia
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- LITERATURA -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-literatura"
+                    onclick="toggleSubMenu(event, 'submenu-literatura')">
+                    <span class="subject-icon"><i class="fa-solid fa-book"></i></span>
+                    Literatura
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-literatura">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- GEOGRAFÍA -->
+            <li class="subject-wrapper">
+                <a href="#" class="subject-item" id="btn-geografia" onclick="toggleSubMenu(event, 'submenu-geografia')">
+                    <span class="subject-icon"><i class="fa-solid fa-map"></i></span>
+                    Geografía
+                    <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </a>
+                <ul class="sub-menu-list" id="submenu-geografia">
+                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
+                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                </ul>
+            </li>
+
+            <!-- PREGUNTAS UNAM -->
+            <li class="subject-wrapper" style="margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                <a href="#" class="subject-item" id="btn-todas-unam"
+                    onclick="switchClass('content-todas-unam', this, 'btn-todas-unam')" style="color: #ea580c;">
+                    <span class="subject-icon"><i class="fa-solid fa-list-check"></i></span>
+                    Preguntas Guía UNAM
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content" id="mainContent">
+
+        <!-- ============================================== -->
+        <!-- PÁGINA DE INICIO (DEDICATORIA)                 -->
+        <!-- ============================================== -->
+        <div id="content-home" class="subject-content visible">
+            <!-- Estilos de la Página de Inicio -->
+            <style>
+                .home-container {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    min-height: 85vh;
+                    padding: 40px 20px;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                .home-bg-blobs {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 0;
+                    overflow: hidden;
+                    pointer-events: none;
+                }
+
+                .blob-1 {
+                    position: absolute;
+                    top: -15%;
+                    left: -10%;
+                    width: 500px;
+                    height: 500px;
+                    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+                    border-radius: 50%;
+                    animation: floatBlob 10s infinite alternate ease-in-out;
+                }
+
+                .blob-2 {
+                    position: absolute;
+                    bottom: -15%;
+                    right: -10%;
+                    width: 600px;
+                    height: 600px;
+                    background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0) 70%);
+                    border-radius: 50%;
+                    animation: floatBlob 12s infinite alternate-reverse ease-in-out;
+                }
+
+                @keyframes floatBlob {
+                    0% {
+                        transform: translateY(0) scale(1);
+                    }
+
+                    100% {
+                        transform: translateY(-50px) scale(1.1);
+                    }
+                }
+
+                .home-quote {
+                    position: relative;
+                    z-index: 1;
+                    font-size: 2.8rem;
+                    font-weight: 900;
+                    color: #1e293b;
+                    max-width: 850px;
+                    margin-bottom: 70px;
+                    font-style: italic;
+                    line-height: 1.4;
+                    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+                    animation: fadeInDown 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+                }
+
+                .home-quote .highlight {
+                    color: #0369a1;
+                    position: relative;
+                    display: inline-block;
+                }
+
+                .home-quote .highlight::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 6px;
+                    left: 0;
+                    width: 100%;
+                    height: 10px;
+                    background-color: rgba(245, 158, 11, 0.5);
+                    z-index: -1;
+                    transform: rotate(-2deg);
+                    border-radius: 5px;
+                }
+
+                .home-card {
+                    position: relative;
+                    z-index: 1;
+                    background: rgba(255, 255, 255, 0.85);
+                    backdrop-filter: blur(15px);
+                    -webkit-backdrop-filter: blur(15px);
+                    padding: 40px 50px;
+                    border-radius: 24px;
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+                    border-top: 6px solid #10b981;
+                    max-width: 580px;
+                    animation: slideUp 1s 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                }
+
+                .home-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 1) inset;
+                }
+
+                .home-card i.heart-icon {
+                    color: #ef4444;
+                    font-size: 3rem;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.4));
+                    animation: pulseHeart 1.5s infinite ease-in-out;
+                }
+
+                @keyframes pulseHeart {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    15% {
+                        transform: scale(1.2);
+                    }
+
+                    30% {
+                        transform: scale(1);
+                    }
+
+                    45% {
+                        transform: scale(1.25);
+                    }
+
+                    60% {
+                        transform: scale(1);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .home-deco-icon {
+                    position: absolute;
+                    z-index: 0;
+                    opacity: 0.5;
+                    animation: floatDeco 8s infinite alternate ease-in-out;
+                }
+
+                .deco-1 {
+                    top: 15%;
+                    left: 10%;
+                    color: #93c5fd;
+                    font-size: 4rem;
+                    animation-delay: 0s;
+                }
+
+                .deco-2 {
+                    bottom: 25%;
+                    right: 12%;
+                    color: #fcd34d;
+                    font-size: 5rem;
+                    animation-delay: -2s;
+                }
+
+                .deco-3 {
+                    top: 30%;
+                    right: 15%;
+                    color: #a7f3d0;
+                    font-size: 3.5rem;
+                    animation-delay: -4s;
+                }
+
+                .deco-4 {
+                    bottom: 20%;
+                    left: 15%;
+                    color: #c4b5fd;
+                    font-size: 4rem;
+                    animation-delay: -1s;
+                }
+
+                @keyframes floatDeco {
+                    0% {
+                        transform: translateY(0) rotate(-15deg);
+                    }
+
+                    100% {
+                        transform: translateY(-30px) rotate(15deg);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .home-quote {
+                        font-size: 2rem;
+                    }
+
+                    .home-card {
+                        padding: 30px;
+                    }
+
+                    .home-deco-icon {
+                        font-size: 2.5rem !important;
+                    }
+                }
+            </style>
+
+            <div class="home-container">
+                <!-- Efectos de Fondo Flotantes -->
+                <div class="home-bg-blobs">
+                    <div class="blob-1"></div>
+                    <div class="blob-2"></div>
+                </div>
+
+                <!-- Iconos Decorativos Flotantes -->
+                <i class="fa-solid fa-graduation-cap home-deco-icon deco-1"></i>
+                <i class="fa-solid fa-book-open home-deco-icon deco-2"></i>
+                <i class="fa-solid fa-pencil home-deco-icon deco-3"></i>
+                <i class="fa-solid fa-laptop-code home-deco-icon deco-4"></i>
+
+                <!-- Cita Principal -->
+                <div class="home-quote">
+                    "El éxito es la suma de pequeños esfuerzos repetidos <span class="highlight">día tras día</span>."
+                </div>
+
+                <!-- Tarjeta de Dedicatoria tipo Cristal -->
+                <div class="home-card">
+                    <i class="fa-solid fa-heart heart-icon"></i>
+                    <p style="color: #334155; font-size: 1.3rem; line-height: 1.7; margin: 0; font-weight: 600;">
+                        Hice estos apuntes con mucho cariño para tu estudio, confío en ti.<br><br>
+                        <span
+                            style="color: #10b981; font-weight: 900; font-size: 1.5rem; display: inline-block; margin-top: 10px;">¡Mucho
+                            éxito para ambos, sé que podemos lograrlo!</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- CONTENEDOR DE CLASES DINÁMICAS                 -->
+        <!-- ============================================== -->
+        <div id="dynamic-content-area" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        </div>
+
+    </main>
+
+    <!-- Script para Interacción Dinámica -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const overlay = document.getElementById('overlay');
+        const mainContent = document.getElementById('mainContent');
+
+        const appDatabase = {
+            "content-historia-1": {
+                title: "Apuntes de Historia",
+                titleIconLeft: "fa-lightbulb",
+                titleIconRight: "fa-graduation-cap",
+                titleStyle: "",
+                mainTopicId: "mainTopicHistoria",
+                mainTopicClass: "",
+                mainTopicTitle: "Historia de México",
+                mainTopicIcon1: "fa-flag",
+                mainTopicIcon2: "fa-map-location-dot",
+                mainTopicSubtitle: "Clase 1: Periodo Prehispánico y Conquista",
+                branches: [
+                    {
+                        id: "nodes-hist-1",
+                        topicIdx: 1,
+                        title: "1. Geografía (Triggers)",
+                        icon: "fa-mountain-sun",
+                        subnodes: [
+                            { icon: "fa-sun", delay: "0.1s", title: "Aridoamérica", content: "<p><b>Norte de México</b>. Clima seco/desértico.<br>Habitantes: <b>nómadas</b> (ej. Chichimecas).</p>" },
+                            { icon: "fa-leaf", delay: "0.2s", title: "Mesoamérica", content: "<p>Centro/Sur de México. Cuna de la <b>agricultura (maíz, frijol, chile)</b>.<br><i>Tip: El concepto lo dio <b>Paul Kirchov</b>.</i></p>" },
+                            { icon: "fa-water", delay: "0.3s", title: "Oasisamérica", content: "<p>Zonas con agua en el desierto.<br><i>No suele venir en el examen.</i></p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist-2",
+                        topicIdx: 2,
+                        title: "2. Culturas",
+                        icon: "fa-monument",
+                        subnodes: [
+                            { icon: "fa-star", delay: "0.1s", title: "Regla de Oro (Toda Mesoamérica)", content: "<p><b>Religión:</b> Politeísta (muchos dioses).<br><b>Gobierno:</b> Teocrático (gobernados por sacerdotes/religión).</p>" },
+                            { icon: "fa-seedling", delay: "0.2s", title: "Preclásico (Olmecas)", content: "<p>La <b>'Cultura Madre'</b> (Tabasco/Veracruz).<br>Ciudades clave: San Lorenzo, La Venta y Tres Zapotes.</p>" },
+                            { icon: "fa-chess-knight", delay: "0.3s", title: "Clásico (Teotihuacán/Mayas)", content: "<p><b>Teotihuacán:</b> ¡La <b>primera gran ciudad</b>! (Antes que Tenochtitlan).<br><b>Mayas:</b> Península de Yucatán. <b>Cero (matemáticas)</b> y <b>eclipses (astronomía)</b>.</p>" },
+                            { icon: "fa-chess-rook", delay: "0.4s", title: "Posclásico (Toltecas/Mexicas)", content: "<p><b>Toltecas:</b> Tula y los <b>'Atlantes'</b>.<br><b>Mexicas:</b> Fundaron <b>Tenochtitlan (1325)</b>. Último Tlatoani: <b>Cuauhtémoc</b>.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist-3",
+                        topicIdx: 3,
+                        title: "3. La Conquista",
+                        icon: "fa-shield-halved",
+                        subnodes: [
+                            { icon: "fa-ship", delay: "0.1s", title: "Descubrimiento (1492)", content: "<p>Causa real: Búsqueda de <b>nuevas rutas de comercio</b>.</p>" },
+                            { icon: "fa-crosshairs", delay: "0.2s", title: "Llegada de Cortés (1519)", content: "<p>Funda la <b>Villa Rica de la Vera Cruz</b> (1er puerto comercial).<br><b>La Malinche</b>: Intérprete y traductora clave.</p>" },
+                            { icon: "fa-virus", delay: "0.3s", title: "¿Por qué ganaron los españoles?", content: "<p><b>Alianzas:</b> Los <b>Tlaxcaltecas</b> apoyaron por odio/abuso de los Mexicas.<br><b>Biológico:</b> Pandemia de <b>viruela</b>.</p>" },
+                            { icon: "fa-fire-flame-curved", delay: "0.4s", title: "Caída de Tenochtitlan", content: "<p>Cae definitivamente el <b>13 de agosto de 1521</b>.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist-4",
+                        topicIdx: 4,
+                        title: "4. Resumen Memorización",
+                        icon: "fa-brain",
+                        subnodes: [
+                            { icon: "fa-calendar-days", delay: "0.1s", title: "Fechas Clave", content: "<p><b>1325:</b> Fundación Tenochtitlan.<br><b>1492:</b> Descubrimiento.<br><b>1521:</b> Caída de Tenochtitlan.</p>" },
+                            { icon: "fa-users", delay: "0.2s", title: "Personajes", content: "<p>Solo memorizar: Cortés, Moctezuma, Cuitláhuac, Cuauhtémoc.</p>" },
+                            { icon: "fa-map", delay: "0.3s", title: "Ubicación Geográfica", content: "<p><b>Mayas:</b> Península de Yucatán.<br><b>Olmecas:</b> Tabasco/Veracruz.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/hkuW2zfO9Gw"
+            },
+            "content-espanol-1": {
+                title: "Apuntes de Español",
+                titleIconLeft: "fa-comment-dots",
+                titleIconRight: "fa-pencil",
+                titleStyle: "color: #0369a1;",
+                mainTopicId: "mainTopicEspanol",
+                mainTopicClass: "espanol-topic",
+                mainTopicTitle: "Español",
+                mainTopicIcon1: "fa-quote-left",
+                mainTopicIcon2: "fa-quote-right",
+                mainTopicSubtitle: "Clase 1: Funciones del Lenguaje y Modos del Discurso",
+                branches: [
+                    {
+                        id: "nodes-esp-1",
+                        topicIdx: 1,
+                        title: "1. Funciones del Lenguaje",
+                        icon: "fa-comments",
+                        subnodes: [
+                            { delay: "0.1s", title: "1. Referencial", content: "<p>Transmite <b>información objetiva</b> sobre la realidad. Usa datos y hechos.</p>", examples: ["La pizza está en el horno a temperatura media.", "El agua hierve a 100°C al nivel del mar.", "La capital de Francia es París."] },
+                            { delay: "0.2s", title: "2. Emotiva", content: "<p>Expresa <b>sentimientos y emociones</b> del que habla.</p>", examples: ["¡Ay, me dolió mucho el golpe!", "Siento mucha frustración por el resultado del examen.", "¡Qué emoción verte después de tanto tiempo!"] },
+                            { delay: "0.3s", title: "3. Apelativa", content: "<p>Busca <b>influir, dar órdenes o peticiones</b> al que escucha.</p>", examples: ["Pásame el control del televisor, por favor.", "Lea las instrucciones detenidamente antes de comenzar.", "¡No te pierdas esta oferta increíble por tiempo limitado!"] },
+                            { delay: "0.4s", title: "4. Fática", content: "<p>Se usa para <b>iniciar, mantener o terminar</b> una conversación y verificar el canal.</p>", examples: ["¿Bueno? ¿Me escuchas bien o se corta?", "Como decía antes de la interrupción en la llamada...", "¡Hola! ¿Qué onda? ¿Sigues ahí?"] },
+                            { delay: "0.5s", title: "5. Metalingüística", content: "<p>Usa el lenguaje para <b>hablar del mismo idioma</b> (sobre palabras/reglas).</p>", examples: ["La palabra 'casa' es un sustantivo común.", "En español, las palabras agudas se acentúan si terminan en n, s o vocal.", "¿Podrías decirme qué significa la palabra 'retórico'?"] },
+                            { delay: "0.6s", title: "6. Poética", content: "<p>Busca que el mensaje sea <b>bello o elegante</b> en literatura o canciones.</p>", examples: ["Eres el sol que ilumina mis días más oscuros.", "En el silencio del aula, solo el eco de la pluma escribía su destino.", "Nubes de algodón flotando en un cielo de puro cristal."] }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp-3",
+                        topicIdx: 4,
+                        title: "2. Formas del Discurso",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { delay: "0.1s", title: "1. Narración", content: "<p>Relata una <b>secuencia de eventos</b> (inicio, nudo, desenlace) que ocurren en un tiempo/lugar. Usa verbos de acción y conectores.</p><p><b>Ej:</b> Un cuento, novela o noticia periodística.</p>" },
+                            { delay: "0.2s", title: "2. Descripción", content: "<p>Sirve para decir <b>cómo son</b> los objetos, personas o lugares. Es <b>'dibujar con palabras'</b>. Usa muchos adjetivos.</p><p><b>Ej:</b> Un retrato, ficha técnica o guía de viaje.</p>" },
+                            { delay: "0.3s", title: "3. Exposición", content: "<p>Explica o informa un tema de manera <b>clara, objetiva y ordenada</b> sin opiniones.</p><p><b>Ej:</b> Una definición de diccionario o un libro escolar.</p>" },
+                            { delay: "0.4s", title: "4. Argumentación", content: "<p>Defiende una idea (tesis) para <b>convencer y persuadir</b> al receptor mediante razones/argumentos.</p><p><b>Ej:</b> Un debate político o reseña de película.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/HfF7E7m-lEs"
+            },
+            "content-quimica-1": {
+                title: "Apuntes de Química",
+                titleIconLeft: "fa-flask",
+                titleIconRight: "fa-atom",
+                titleStyle: "color: #059669;",
+                mainTopicId: "mainTopicQuimica",
+                mainTopicClass: "topic-2",
+                mainTopicTitle: "Química",
+                mainTopicIcon1: "fa-vial",
+                mainTopicIcon2: "fa-vials",
+                mainTopicSubtitle: "Clase 1: Fundamentos y Materia",
+                branches: [
+                    {
+                        id: "nodes-qui-1",
+                        topicIdx: 1,
+                        title: "1. Conceptos Base",
+                        icon: "fa-microscope",
+                        subnodes: [
+                            { icon: "fa-info", delay: "0.1s", title: "¿Qué es la Química?", content: "<p>Es la <b>ciencia</b> que describe la <b>materia/propiedades</b> y los cambios energéticos asociados.</p>" },
+                            { icon: "fa-cube", delay: "0.2s", title: "¿Qué es la Materia?", content: "<p>Todo aquello que tiene <b>masa y volumen</b> (ocupa un lugar en el espacio). Está formada por átomos.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui-2",
+                        topicIdx: 2,
+                        title: "2. Sustancias Puras",
+                        icon: "fa-gem",
+                        subnodes: [
+                            { icon: "fa-a", delay: "0.1s", title: "Elementos", content: "<p>Un solo tipo de átomo (ej. <b>K, N, Li, Na</b>). <i>Tip: Símbolo con 1 mayúscula (y a veces 1 minúscula).</i></p>" },
+                            { icon: "fa-puzzle-piece", delay: "0.2s", title: "Compuestos", content: "<p>Combinación de 2 o más elementos (ej. <b>H<sub>2</sub>O, NaOH, HCl</b>). <i>Tip: Símbolo con 2 o más mayúsculas.</i></p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui-3",
+                        topicIdx: 3,
+                        title: "3. Mezclas y Coloides",
+                        icon: "fa-mortar-pestle",
+                        subnodes: [
+                            { icon: "fa-blender", delay: "0.1s", title: "Homogéneas", content: "<p>No se distinguen a simple vista (1 fase). Ej: Aire, bronce, agua con sal. <i>(Leche con chocolate es homogénea)</i>.</p>" },
+                            { icon: "fa-pizza-slice", delay: "0.2s", title: "Heterogéneas", content: "<p>Se distinguen sus componentes a simple vista (varias fases). Ej: Ensalada, pizza, agua con aceite.</p>" },
+                            { icon: "fa-droplet", delay: "0.3s", title: "El 'Limbo': Coloides", content: "<p>Pequeñas partículas distribuidas uniformemente. Solo se ven al microscopio.<br>Ej: <b>Leche sola, sangre, niebla, mayonesa</b>.</p>" },
+                            { icon: "fa-lightbulb", delay: "0.4s", title: "Efecto Tyndall", content: "<p>Dispersión de la luz. Es lo que nos permite identificar y hacer visible a un <b>coloide</b>.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui-4",
+                        topicIdx: 4,
+                        title: "4. Estados y Cambios",
+                        icon: "fa-temperature-half",
+                        subnodes: [
+                            { icon: "fa-icicles", delay: "0.1s", title: "Estados físicos de la Materia", content: "<p>Dependen de la <b>Fuerza de Cohesión</b> (atracción):<br><b>Sólido:</b> Alta. Forma y volumen definido.<br><b>Líquido:</b> Baja. Volumen definido.<br><b>Gaseoso:</b> Nula. Volumen indefinido (Alta entropía/desorden).</p>" },
+                            { icon: "fa-fire", delay: "0.2s", title: "Cambios de Estado", content: "<p>Dependen de <b>Temperatura y Presión</b>.</p>", examples: ["Fusión: Hielo derritiéndose.", "Evaporación: Agua hirviendo.", "Condensación: Lentes empañados en el frío.", "Sublimación (Directa): Hielo seco."] }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/HiDDPOqpLGk"
+            }
+        };
+
+        // ==========================================
+        // Integración de Preguntas de la Guía UNAM
+        // ==========================================
+        const unamQuestions = {
+            "content-historia-1": [
+                {
+                    "numero": 111,
+                    "pregunta": "Las creencias politeístas, la existencia de técnicas agrícolas, de pueblos tributarios así como los rituales de sacrificios fueron características de:",
+                    "opciones": ["Centroamérica.", "Aridoamérica.", "Oasisamérica.", "Mesoamérica."],
+                    "respuesta": 3,
+                    "retroalimentacion": "Mesoamérica se caracterizó por su agricultura, principalmente del maíz, las sociedades jerarquizadas, el politeísmo y la construcción estructurada con fines religiosos (pirámides)."
+                }
+            ],
+            "content-espanol-1": [
+                {
+                    "numero": 70,
+                    "pregunta": "Selecciona el párrafo en el que predomina la función referencial de la lengua.",
+                    "opciones": [
+                        "Si las aves desaparecieran, nuestro planeta se vería privado del espectáculo de su vuelo. Sin embargo, ése sería un mal menor, ya que de ellas depende la polinización de las plantas, la dispersión de las semillas, el control de los insectos y la eliminación de cadáveres en descomposición.",
+                        "Si las prodigiosas aves lamentablemente desaparecieran, nos veríamos privados del maravilloso espectáculo de su armónico y encantador vuelo. Más considero que ello sería sólo el mal menor, ya que nadie podría fecundar las muy valiosas plantas o dispersar las tiernas semillas.",
+                        "Es claro que si las aves desaparecieran, nuestro planeta se vería privado del espectáculo de su vuelo. Pero además debemos salvarlas, urgentemente, ya que de ellas depende tanto la polinización de las plantas como la dispersión de las semillas, el control de los insectos o la eliminación de cadáveres de animales.",
+                        "Si las aves desaparecieran ello implicaría que estuviéramos destinados a perecer y perdernos del espectáculo de la naturaleza. ¡Ay de nosotros!, perdidos en nuestro egoísmo y en la desesperanza, se diluye el olor de la flor, las semillas y los frutos. El alimento de la tierra que nos hace sentir vivos."
+                    ],
+                    "respuesta": 0,
+                    "retroalimentacion": "La función referencial transmite información objetiva y verificable, sin expresar emociones o tratar de convencer. El primer párrafo se limita a enlistar las funciones ecológicas de las aves de forma neutra."
+                },
+                {
+                    "numero": 71,
+                    "pregunta": "¿En cuál de los siguientes textos predomina la función apelativa de la lengua?",
+                    "opciones": [
+                        "Regularmente eres un buen conversador, pues no agobias a tus amigos con información para demostrar que eres un sabihondo. Me doy cuenta que sabes transmitir con serenidad y emoción tus experiencias, aunque has leído poco.",
+                        "Resulta una grata experiencia dialogar con personas sencillas que no alardean de sus conocimientos. La gente sencilla, aunque no haya leído mucho, tiene más que decir, pues ha sabido encontrar sentido a sus experiencias.",
+                        "Los buenos conversadores no agobian al otro con datos para demostrar que dominan muchos conocimientos; al contrario, saben transmitir con serenidad y emoción lo que han visto, escuchado o leído. Toma en cuenta esto siempre que dialogues.",
+                        "Los clásicos preceptos de la buena educación disponen que durante una conversación se hable poco de uno mismo (salvo que el interlocutor sea un amigo íntimo), y mucho menos ponerse a sí mismo como ejemplo."
+                    ],
+                    "respuesta": 2,
+                    "retroalimentacion": "La función apelativa busca influir en el receptor o indicarle una acción. Mandar una instrucción como 'Toma en cuenta esto siempre que dialogues' es un uso apelativo claro."
+                },
+                {
+                    "numero": 72,
+                    "pregunta": "Señala la forma del discurso que predomina en el siguiente fragmento.<br><br><i>\"Después de la Conquista de Tenochtitlan, hacia 1529, Hernán Cortés ordenó traer frailes dominicos para que evangelizaran a los indios en las tierras con que el rey Carlos V le recompensaba por los servicios prestados a la Corona, y que incluían áreas de Coyoacán, Tacubaya y Cuajimalpa, entre otras dentro de la cuenca. Estos primeros dominicos fundaron conventos como el de San Juan Bautista (Coyoacán) y compartieron con los franciscanos el trabajo de adoctrinar a los naturales en la fe cristiana.\"</i>",
+                    "opciones": ["Narrativa.", "Descriptiva.", "Expositiva.", "Argumentativa."],
+                    "respuesta": 0,
+                    "retroalimentacion": "La narrativa relata una secuencia de eventos o acciones a través del tiempo. En este caso relata una secuencia de hechos históricos acontecidos tras la Conquista."
+                },
+                {
+                    "numero": 73,
+                    "pregunta": "Identifica el texto en el que predomina la forma del discurso argumentativa.",
+                    "opciones": [
+                        "Un hombre extraño me grita desde la puerta: \"despiértese, que es tarde\". Le contesto yo: \"despiértese usted, que buena falta le hace\". Pero el muy obstinado me sigue soñando.",
+                        "En Español, lo contrario de IN (como prefijo privativo, claro) suele ser la misma palabra, pero sin esa sílaba. Sí, ya sé: insensato y sensato, indócil y dócil, ¿no? Parcialmente correcto. No olvide, muchacho, que lo contrario del invierno no es el vierno sino el verano.",
+                        "Aprende, viaja, estudia, habla, escribe, trabaja, sube y baja, Miguel. Miguel, levántate y anda.",
+                        "Quien no quiere pensar es un fanático porque deja que otros piensen por él; quien no puede pensar es un idiota porque deja sus decisiones en manos de otros; quien no osa pensar es un cobarde porque deja su vida en manos de alguien más."
+                    ],
+                    "respuesta": 3,
+                    "retroalimentacion": "El texto argumentativo defiende una postura sustentándola con razones. El último fragmento usa continuamente conectores causales ('porque...') para justificar una tesis o dar una crítica."
+                }
+            ],
+            "content-quimica-1": [
+                {
+                    "numero": 105,
+                    "pregunta": "¿Qué afirmación describe correctamente a un compuesto químico?",
+                    "opciones": [
+                        "Es la unión física de dos o más elementos.",
+                        "No puede descomponerse en sustancias más simples por métodos químicos.",
+                        "Es una sustancia pura formada por la combinación química de dos o más tipos de átomos.",
+                        "Mantiene las propiedades de sus constituyentes individuales."
+                    ],
+                    "respuesta": 2,
+                    "retroalimentacion": "Un compuesto es una sustancia pura producto de la combinación química de dos o más elementos (ej. H2O), los compuestos sí se pueden descomponer químicamente a diferencia de los elementos (que son de un solo tipo de átomo)."
+                },
+                {
+                    "numero": 108,
+                    "pregunta": "Identifica cuál de las siguientes opciones es un coloide:",
+                    "opciones": ["Agua con sal.", "Leche.", "Latón.", "Agua con aceite."],
+                    "respuesta": 1,
+                    "retroalimentacion": "La leche es la trampa clásica de la UNAM; se trata de un coloide, no de una mezcla homogénea ni heterogénea visible. Presentan características coloidales e interaccionan con el Efecto Tyndall."
+                }
+            ]
+        };
+
+        const practiceQuestions = {
+            "content-historia-1": [
+                {
+                    "numero": 1,
+                    "pregunta": "¿Qué clima predomina en la región de Aridoamérica?",
+                    "opciones": ["Templado y húmedo.", "Tropical lluvioso.", "Seco y desértico.", "Frío polar."],
+                    "respuesta": 2,
+                    "retroalimentacion": "Aridoamérica, ubicada al norte de México, se caracteriza por su clima seco y desértico, habitada históricamente por grupos nómadas."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "¿Cuál de las siguientes es considerada la 'Cultura Madre' de Mesoamérica?",
+                    "opciones": ["Mayas.", "Olmecas.", "Toltecas.", "Mexicas."],
+                    "respuesta": 1,
+                    "retroalimentacion": "La cultura Olmeca (Preclásico) es considerada la Cultura Madre por sus aportaciones fundacionales como el juego de pelota y las cabezas colosales."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "¿En qué periodo destacaron Teotihuacán y la cultura Maya?",
+                    "opciones": ["Preclásico.", "Clásico.", "Posclásico.", "Colonial."],
+                    "respuesta": 1,
+                    "retroalimentacion": "Ambas culturas alcanzaron su mayor esplendor durante el periodo Clásico de Mesoamérica."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "¿A qué civilización se aliaron los españoles para derrotar a los mexicas?",
+                    "opciones": ["A los mayas.", "A los olmecas.", "A los chichimecas.", "A los tlaxcaltecas."],
+                    "respuesta": 3,
+                    "retroalimentacion": "Los tlaxcaltecas, buscando liberarse del yugo de la Triple Alianza, se aliaron con Hernán Cortés durante la Conquista."
+                },
+                {
+                    "numero": 5,
+                    "pregunta": "¿En qué año cayó definitivamente la ciudad de Tenochtitlan?",
+                    "opciones": ["1492", "1519", "1521", "1535"],
+                    "respuesta": 2,
+                    "retroalimentacion": "Tras una epidemia de viruela y un asedio constante, Tenochtitlan cayó el 13 de agosto de 1521."
+                }
+            ],
+            "content-espanol-1": [
+                {
+                    "numero": 1,
+                    "pregunta": "Si un profesor indica 'Abran su libro en la página 20', ¿qué función del lenguaje está predominando?",
+                    "opciones": ["Referencial.", "Fática.", "Emotiva.", "Apelativa."],
+                    "respuesta": 3,
+                    "retroalimentacion": "Se trata de la función apelativa porque se busca dar una orden o influir directamente sobre el receptor."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "¿Qué modo del discurso se usa primordialmente al contar un cuento o relatar una noticia?",
+                    "opciones": ["Descripción.", "Exposición.", "Narración.", "Argumentación."],
+                    "respuesta": 2,
+                    "retroalimentacion": "La narración relata secuencias de eventos que ocurren en el tiempo empleando verbos de acción."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "Cuando alguien te pregunta '¿Me escuchas bien?' en una llamada telefónica, ¿qué función de la lengua utiliza?",
+                    "opciones": ["Fática.", "Poética.", "Metalingüística.", "Emotiva."],
+                    "respuesta": 0,
+                    "retroalimentacion": "La función fática sirve para verificar el canal, iniciar, mantener o finalizar la comunicación."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "¿Cuál es la característica principal de un texto expositivo?",
+                    "opciones": ["Convencer al lector de una opinión personal.", "Describir el aspecto físico minuciosamente.", "Relatar un hecho de ficción cronológicamente.", "Explicar un tema de forma plana, objetiva y ordenada."],
+                    "respuesta": 3,
+                    "retroalimentacion": "La exposición busca informar y explicar un tema sin incluir opiniones o intenciones estéticas personales."
+                },
+                {
+                    "numero": 5,
+                    "pregunta": "'El verbo es la palabra que indica acción o movimiento'. Este enunciado es ejemplo de la función:",
+                    "opciones": ["Apelativa.", "Metalingüística.", "Referencial.", "Fática."],
+                    "respuesta": 1,
+                    "retroalimentacion": "La función metalingüística se utiliza para explicar conceptos, reglas y definiciones sobre el propio idioma."
+                }
+            ],
+            "content-quimica-1": [
+                {
+                    "numero": 1,
+                    "pregunta": "Si un reactivo tiene la fórmula 'NaOH', estamos hablando de:",
+                    "opciones": ["Una mezcla homogénea.", "Un elemento.", "Un coloide.", "Un compuesto."],
+                    "respuesta": 3,
+                    "retroalimentacion": "Si tiene dos o más letras mayúsculas se trata de un compuesto que está uniendo químicamente distintos elementos."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "¿Cuál es el nombre del fenómeno físico que hace visible un sistema coloidal mediante la dispersión de la luz?",
+                    "opciones": ["Efecto Invernadero.", "Efecto Doppler.", "Efecto Tyndall.", "Entropía."],
+                    "respuesta": 2,
+                    "retroalimentacion": "El Efecto Tyndall es exactamente la dispersión de la luz que permite identificar o hacer visible las partículas de un coloide (como la niebla iluminada por faros)."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "El estado de la materia que típicamente presenta volumen indefinido y alta fuerza de repulsión (entropía/desorden) es:",
+                    "opciones": ["Plasma.", "Líquido.", "Sólido.", "Gaseoso."],
+                    "respuesta": 3,
+                    "retroalimentacion": "En el estado gaseoso, la fuerza de cohesión es prácticamente nula y las partículas están muy dispersas, causando que el gas ocupe todo el volumen que pueda."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "El proceso en el que el hielo seco pasa de estado sólido directamente a estado gaseoso se llama:",
+                    "opciones": ["Evaporación.", "Sublimación.", "Condensación.", "Fusión."],
+                    "respuesta": 1,
+                    "retroalimentacion": "La sublimación directa es el cambio de sólido a gaseoso omitiendo pasar por la fase líquida (como ocurre con el hielo seco o pastillas de baño)."
+                }
+            ]
+        };
+
+        let userAnswers = {};
+
+        function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor) {
+            const container = document.getElementById(contentId);
+            if (!container) return;
+
+            const questions = questionsObj[contentId];
+            if (!questions || questions.length === 0) return;
+
+            const section = document.createElement('div');
+            section.className = 'unam-questions-section';
+            if (borderColor) section.style.borderTopColor = borderColor;
+
+            let questionsHtml = questions.map((q, idx) => {
+                let optionsHtml = q.opciones.map((opt, optIdx) => `
+                    <div class="unam-option" id="${prefix}-opt-${contentId}-${idx}-${optIdx}" onclick="selectOption('${prefix}', '${contentId}', ${idx}, ${optIdx})">
+                        <span style="font-weight: 800; color: #64748b; margin-right: 8px;">${String.fromCharCode(65 + optIdx)})</span> 
+                        <span>${opt}</span>
+                    </div>
+                `).join('');
+
+                return `
+                    <div class="unam-question-card" id="${prefix}-qcard-${contentId}-${idx}">
+                        <p class="unam-question-text">${q.numero}. ${q.pregunta}</p>
+                        <div class="unam-options">
+                            ${optionsHtml}
+                        </div>
+                        <button id="${prefix}-eval-btn-${contentId}-${idx}" class="unam-eval-btn" onclick="evalQuestion('${prefix}', '${contentId}', ${idx})" disabled>Evaluar</button>
+                        <div id="${prefix}-feedback-${contentId}-${idx}" class="unam-feedback"></div>
+                    </div>
+                `;
+            }).join('');
+
+            section.innerHTML = `
+                <div class="unam-header" onclick="toggleUnamQuestions(this)">
+                    <h2>${titleHtml}</h2>
+                    <button class="unam-toggle-btn">Mostrar / Ocultar</button>
+                </div>
+                <div class="unam-questions-container" style="display: none;">
+                    ${questionsHtml}
+                </div>
+            `;
+
+            container.appendChild(section);
+        }
+
+        function toggleUnamQuestions(header) {
+            const container = header.nextElementSibling;
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none';
+            }
+        }
+
+        function toggleVideo(header) {
+            const container = header.nextElementSibling;
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'block';
+                header.style.marginBottom = '25px';
+                header.style.borderBottom = '2px solid #f1f5f9';
+            } else {
+                container.style.display = 'none';
+                header.style.marginBottom = '0';
+                header.style.borderBottom = 'none';
+            }
+        }
+
+        function selectOption(prefix, contentId, qIdx, optIdx) {
+            const options = document.querySelectorAll(`[id^="${prefix}-opt-${contentId}-${qIdx}-"]`);
+            options.forEach(opt => opt.classList.remove('selected'));
+
+            const evalBtn = document.getElementById(`${prefix}-eval-btn-${contentId}-${qIdx}`);
+            if (evalBtn.style.display === 'none') return; // Ya se evaluó
+
+            const selectedOpt = document.getElementById(`${prefix}-opt-${contentId}-${qIdx}-${optIdx}`);
+            if (selectedOpt) {
+                selectedOpt.classList.add('selected');
+                userAnswers[`${prefix}-${contentId}-${qIdx}`] = optIdx;
+                evalBtn.disabled = false;
+            }
+        }
+
+        function evalQuestion(prefix, contentId, qIdx) {
+            const selectedOptIdx = userAnswers[`${prefix}-${contentId}-${qIdx}`];
+            if (selectedOptIdx === undefined) return;
+
+            const targetObj = (prefix === 'unam') ? unamQuestions : practiceQuestions;
+            const q = targetObj[contentId][qIdx];
+            const isCorrect = (selectedOptIdx === q.respuesta);
+
+            const options = document.querySelectorAll(`[id^="${prefix}-opt-${contentId}-${qIdx}-"]`);
+            options.forEach((opt, idx) => {
+                opt.style.pointerEvents = 'none'; // Desactivar clics
+                if (idx === q.respuesta) {
+                    opt.classList.add('correct'); // Resalta la correcta
+                } else if (idx === selectedOptIdx && !isCorrect) {
+                    opt.classList.add('incorrect'); // Resalta la incorrecta elegida
+                }
+            });
+
+            const evalBtn = document.getElementById(`${prefix}-eval-btn-${contentId}-${qIdx}`);
+            evalBtn.style.display = 'none';
+
+            const feedbackEl = document.getElementById(`${prefix}-feedback-${contentId}-${qIdx}`);
+            feedbackEl.style.display = 'flex';
+
+            if (isCorrect) {
+                feedbackEl.classList.add('correct-feedback');
+                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-check"></i> ¡Correcto!</div><div>${q.retroalimentacion}</div>`;
+            } else {
+                feedbackEl.classList.add('incorrect-feedback');
+                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrecto</div><div>${q.retroalimentacion}</div>`;
+            }
+        }
+
+
+
+
+
+        function renderClassContainer(classId) {
+            const data = appDatabase[classId];
+            if (!data) return '';
+
+            let html = `
+            <div id="${classId}" class="subject-content visible" style="animation: fadeInPage 0.4s ease forwards;">
+                <h1 class="title-main" ${data.titleStyle ? `style="${data.titleStyle}"` : ''}>
+                    <i class="fa-solid ${data.titleIconLeft}"></i> ${data.title} <i class="fa-solid ${data.titleIconRight}"></i>
+                </h1>
+
+                <div class="mindmap-container">
+                    <div class="main-topic ${data.mainTopicClass}" id="${data.mainTopicId}">
+                        <h2><i class="fa-solid ${data.mainTopicIcon1}"></i> ${data.mainTopicTitle} <i class="fa-solid ${data.mainTopicIcon2}"></i></h2>
+                        <p>${data.mainTopicSubtitle}</p>
+                    </div>
+
+                    <div class="branches">
+            `;
+
+            data.branches.forEach(branch => {
+                html += `
+                        <div class="branch-col">
+                            <div class="topic-node topic-${branch.topicIdx}" onclick="toggleNodes('${branch.id}', this)">
+                                <h2><i class="fa-solid ${branch.icon}"></i> ${branch.title}</h2>
+                                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Clic para contraer</span>
+                            </div>
+
+                            <div class="sub-nodes-container" id="${branch.id}">
+                `;
+
+                branch.subnodes.forEach(sub => {
+                    let exampleHtml = '';
+                    if (sub.examples && sub.examples.length > 0) {
+                        exampleHtml = `
+                                    <div class="example-box">
+                                        <ul>
+                                            ${sub.examples.map(ex => `<li>${ex}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                        `;
+                    }
+
+                    html += `
+                                <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay: ${sub.delay};">
+                                    <h3>
+                                        ${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title}</div>` : `${sub.title}`}
+                                    </h3>
+                                    ${sub.content}
+                                    ${exampleHtml}
+                                </div>
+                    `;
+                });
+
+                html += `
+                            </div>
+                        </div>
+                `;
+            });
+
+            html += `
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                ${data.videoUrl ? `
+                <div class="video-section">
+                    <div class="video-header" onclick="toggleVideo(this)" style="margin-bottom: 0px; border-bottom: none;">
+                        <h2><i class="fa-brands fa-youtube"></i> Clase en Video</h2>
+                        <button class="unam-toggle-btn">Mostrar / Ocultar</button>
+                    </div>
+                    <div class="video-container-responsive" style="display: none;">
+                        <iframe src="${data.videoUrl}" title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                ` : ''}
+            </div>
+            `;
+
+            return html;
+        }
+
+        function renderQuestionsForClass(contentId) {
+            if (typeof practiceQuestions !== 'undefined' && practiceQuestions[contentId] && practiceQuestions[contentId].length > 0) {
+                buildQuizSection(contentId, practiceQuestions, 'prac', '🧠 Preguntas de Práctica', '#3b82f6');
+            }
+            if (typeof unamQuestions !== 'undefined' && unamQuestions[contentId] && unamQuestions[contentId].length > 0) {
+                buildQuizSection(contentId, unamQuestions, 'unam', '📝 Preguntas de la Guía UNAM', '#f59e0b');
+            }
+        }
+
+
+        function toggleMenu() {
+            menuBtn.classList.toggle('open');
+            sideMenu.classList.toggle('open');
+            overlay.classList.toggle('active');
+
+            if (window.innerWidth > 900) {
+                if (sideMenu.classList.contains('open')) {
+                    mainContent.style.paddingLeft = '320px';
+                } else {
+                    mainContent.style.paddingLeft = '0';
+                }
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        function toggleSubMenu(e, submenuId) {
+            e.preventDefault();
+            const submenu = document.getElementById(submenuId);
+            const parentLink = e.currentTarget;
+
+            const isCurrentlyOpen = submenu.classList.contains('expanded');
+
+            // Cierra todos los submenús
+            document.querySelectorAll('.sub-menu-list').forEach(list => {
+                list.style.maxHeight = null;
+                list.classList.remove('expanded');
+            });
+            document.querySelectorAll('.subject-item').forEach(item => item.classList.remove('open'));
+
+            // Si el actual no estaba abierto, lo abrimos
+            if (!isCurrentlyOpen) {
+                submenu.classList.add('expanded');
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+                parentLink.classList.add('open');
+            }
+        }
+
+        function renderAllUnamQuestionsPage() {
+            let html = `
+            <div id="content-todas-unam" class="subject-content visible" style="animation: fadeInPage 0.4s ease forwards;">
+                <h1 class="title-main" style="color: #ea580c; border-bottom: 3px solid #fdba74; padding-bottom: 15px;">
+                    <i class="fa-solid fa-file-contract"></i> Todas las Preguntas UNAM <i class="fa-solid fa-pen-clip"></i>
+                </h1>
+                <div style="max-width: 900px; margin: 0 auto; padding-bottom: 50px;">
+            `;
+
+            let allQuestions = [];
+            if (typeof unamQuestions !== 'undefined') {
+                Object.keys(unamQuestions).forEach(function (key) {
+                    const materia = appDatabase[key] ? appDatabase[key].mainTopicTitle : 'General';
+                    unamQuestions[key].forEach(function (q) {
+                        allQuestions.push(Object.assign({}, q, {
+                            materia: materia,
+                            originalKey: key
+                        }));
+                    });
+                });
+            }
+
+            allQuestions.sort(function (a, b) { return a.numero - b.numero; });
+
+            allQuestions.forEach(function (q, globalIdx) {
+                let optionsHtml = q.opciones.map(function (opt, optIdx) {
+                    return `
+                    <div class="unam-option" id="globalunam-opt-${globalIdx}-${optIdx}" onclick="selectGlobalOption(${globalIdx}, ${optIdx}, ${q.respuesta}, '${q.retroalimentacion.replace(/'/g, "\\'")}')">
+                        <span style="font-weight: 800; color: #64748b; margin-right: 8px;">${String.fromCharCode(65 + optIdx)})</span> 
+                        <span>${opt}</span>
+                    </div>
+                `}).join('');
+
+                html += `
+                    <div class="unam-question-card" style="margin-top: 25px; border-left-color: #f59e0b;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                          <span style="background:#fff7ed; color:#c2410c; padding:4px 10px; border-radius:6px; font-size:0.85rem; font-weight:bold; border: 1px solid #ffedd5;"><i class="fa-solid fa-tag"></i> Materia: ${q.materia}</span>
+                          <span style="color:#94a3b8; font-weight:700; font-size:0.9rem;">#${q.numero}</span>
+                        </div>
+                        <p class="unam-question-text" style="font-size: 1.15rem;">${q.pregunta}</p>
+                        <div class="unam-options" style="margin-top: 20px;">
+                            ${optionsHtml}
+                        </div>
+                        <div id="globalunam-feedback-${globalIdx}" class="unam-feedback" style="margin-top: 15px;"></div>
+                    </div>
+                `;
+            });
+
+            if (allQuestions.length === 0) {
+                html += `<div style="text-align: center; color: #64748b; padding: 60px; background: #fff; border-radius: 12px; margin-top:20px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+                    <i class="fa-solid fa-inbox fa-3x" style="opacity:0.3; margin-bottom: 15px;"></i><br>
+                    <span style="font-size: 1.2rem; font-weight:600;">No hay preguntas UNAM disponibles por ahora.</span>
+                </div>`;
+            }
+
+            html += `
+                </div>
+            </div>
+            `;
+            return html;
+        }
+
+        function selectGlobalOption(globalIdx, optIdx, correctIdx, retro) {
+            const options = document.querySelectorAll(`[id^="globalunam-opt-${globalIdx}-"]`);
+            const feedbackEl = document.getElementById(`globalunam-feedback-${globalIdx}`);
+            if (feedbackEl.style.display === 'flex') return;
+
+            const isCorrect = (optIdx === correctIdx);
+
+            options.forEach(function (opt, idx) {
+                opt.style.pointerEvents = 'none';
+                if (idx === correctIdx) {
+                    opt.classList.add('correct');
+                } else if (idx === optIdx && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            feedbackEl.style.display = 'flex';
+            if (isCorrect) {
+                feedbackEl.classList.add('correct-feedback');
+                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-check"></i> ¡Correcto!</div><div>${retro}</div>`;
+            } else {
+                feedbackEl.classList.add('incorrect-feedback');
+                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrecto</div><div>${retro}</div>`;
+            }
+        }
+
+        function switchClass(contentId, classLinkElement, parentBtnId) {
+            document.querySelectorAll('.subject-content').forEach(el => {
+                el.classList.remove('visible');
+            });
+
+            if (contentId === 'content-home') {
+                document.getElementById('content-home').classList.add('visible');
+                document.getElementById('dynamic-content-area').innerHTML = ''; // Limpiar la mem
+            } else if (contentId === 'content-todas-unam') {
+                document.getElementById('content-home').classList.remove('visible');
+                const dynamicArea = document.getElementById('dynamic-content-area');
+                dynamicArea.innerHTML = renderAllUnamQuestionsPage();
+            } else {
+                document.getElementById('content-home').classList.remove('visible');
+                const dynamicArea = document.getElementById('dynamic-content-area');
+                dynamicArea.innerHTML = renderClassContainer(contentId);
+
+                // Renderizar las preguntas de la clase inyectada
+                setTimeout(() => {
+                    renderQuestionsForClass(contentId);
+                }, 50);
+
+                // Readjuntar event listener de animación original al tema principal recién inyectado
+                const mainTopics = document.querySelectorAll('.main-topic');
+                mainTopics.forEach(topic => {
+                    topic.addEventListener('click', function () {
+                        this.style.transform = 'scale(0.9)';
+                        setTimeout(() => this.style.transform = 'scale(1.05)', 150);
+                    });
+                });
+            }
+
+            document.querySelectorAll('.class-item').forEach(el => el.classList.remove('active-class'));
+            document.querySelectorAll('.subject-item').forEach(el => {
+                el.classList.remove('active');
+                el.classList.remove('active-espanol');
+            });
+
+            classLinkElement.classList.add('active-class');
+
+            const parentBtn = document.getElementById(parentBtnId);
+            if (parentBtnId === 'btn-historia') {
+                parentBtn.classList.add('active');
+            } else if (parentBtnId === 'btn-espanol') {
+                parentBtn.classList.add('active-espanol');
+            }
+
+            setTimeout(toggleMenu, 300);
+            window.scrollTo(0, 0);
+        }
+
+        function toggleNodes(containerId, elementClicked) {
+            const container = document.getElementById(containerId);
+            let hintSpan = null;
+
+            if (elementClicked) {
+                hintSpan = elementClicked.querySelector('.click-hint');
+            }
+
+            if (container.classList.contains('hidden')) {
+                container.classList.remove('hidden');
+
+                if (hintSpan) {
+                    hintSpan.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Clic para contraer';
+                }
+
+                const subNodes = container.querySelectorAll('.sub-node');
+                subNodes.forEach((node, index) => {
+                    node.style.animation = 'none';
+                    node.offsetHeight;
+                    const delay = (index + 1) * 0.1;
+                    node.style.animation = `fadeInRight 0.5s ease forwards ${delay}s`;
+                });
+            } else {
+                container.classList.add('hidden');
+
+                if (hintSpan) {
+                    hintSpan.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Clic para explorar';
+                }
+            }
+        }
+
+        // Llamar a la renderización al cargar para la sección visible (si no es home)
+        setTimeout(() => {
+            const visibleSect = document.querySelector('.subject-content.visible:not(#content-home)');
+            if (visibleSect) {
+                renderQuestionsForClass(visibleSect.id);
+            }
+        }, 300);
+
+    </script>
+</body>
+
+</html>
