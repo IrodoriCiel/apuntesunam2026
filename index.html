@@ -14,6 +14,17 @@
     <!-- Font Awesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- MathJax for rendering math equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+
     <style>
         :root {
             --bg-color: #f4f6f8;
@@ -23,6 +34,7 @@
             --branch-2: #baffc9;
             --branch-3: #ffb38a;
             --branch-4: #e2cbff;
+            --branch-5: #fce7f3;
             --sub-node-bg: #ffffff;
             --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             --border-radius: 25px;
@@ -110,7 +122,10 @@
             display: flex;
             flex-direction: column;
             padding-top: 80px;
+            padding-bottom: 40px;
+            box-sizing: border-box;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         .side-menu.open {
@@ -212,6 +227,7 @@
             color: var(--menu-accent);
             border-left-color: var(--menu-accent);
             padding-left: 55px;
+            padding-right: 18px;
         }
 
         .arrow-icon {
@@ -426,6 +442,11 @@
             color: #4c1d95;
         }
 
+        .topic-5 {
+            background-color: var(--branch-5);
+            color: #831843;
+        }
+
         .sub-nodes-container {
             display: flex;
             flex-direction: column;
@@ -544,6 +565,10 @@
             border-left-color: var(--branch-4);
         }
 
+        .topic-5-sub {
+            border-left-color: var(--branch-5);
+        }
+
         .click-hint {
             display: flex;
             align-items: center;
@@ -655,7 +680,7 @@
         .video-section {
             width: 100%;
             max-width: 1000px;
-            margin: 60px auto 10px auto;
+            margin: 30px auto;
             background: #ffffff;
             border-radius: var(--border-radius);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -717,7 +742,7 @@
         .unam-questions-section {
             width: 100%;
             max-width: 1000px;
-            margin: 60px auto 40px auto;
+            margin: 30px auto;
             background: #ffffff;
             border-radius: var(--border-radius);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -877,6 +902,227 @@
             background: #94a3b8;
             cursor: not-allowed;
         }
+
+        .exam-tip {
+            background: #fef08a;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            color: #854d0e;
+            font-size: 0.9rem;
+        }
+
+        /* ----- ESTILOS PARA LA SECCIÓN GLOBAL DE PREGUNTAS UNAM ----- */
+        .unam-dashboard-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f1f5f9;
+        }
+
+        .unam-dashboard-header {
+            margin-top: 0;
+            color: #334155;
+            font-size: 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .unam-dashboard-badge {
+            font-size: 1.1rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 900;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .unam-dashboard-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .unam-dashboard-item {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 12px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .unam-dashboard-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .unam-subject-header {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            scroll-margin-top: 20px;
+        }
+
+        .btn-subir {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .btn-subir:hover {
+            background: #e2e8f0;
+            color: #1e293b;
+        }
+
+        .badge-dark {
+            background: #1e293b;
+            color: #fbbf24;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 900;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            border: 1px solid #334155;
+        }
+
+        .badge-orange {
+            background: #fff7ed;
+            color: #c2410c;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid #ffedd5;
+        }
+
+        .badge-blue {
+            background: #f0f9ff;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border: 1px solid #e0f2fe;
+        }
+
+        .btn-repasar-clase {
+            font-size: 0.85rem;
+            color: #3b82f6;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #bfdbfe;
+            background: #eff6ff;
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .btn-repasar-clase:hover {
+            background: #dbeafe;
+            border-color: #93c5fd;
+        }
+
+        .unam-dashboard-progress-bar-bg {
+            background: #e2e8f0;
+            height: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .unam-dashboard-progress-bar-fill {
+            height: 100%;
+            transition: width 1s;
+        }
+
+        .unam-dashboard-item-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .unam-dashboard-item-title {
+            font-weight: 800;
+            color: #475569;
+        }
+
+        .unam-dashboard-item-count {
+            font-weight: 900;
+        }
+
+        .unam-dashboard-item-progress-bg {
+            background: #e2e8f0;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .unam-dashboard-item-progress-fill {
+            height: 100%;
+        }
+
+        .unam-subject-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .unam-subject-header-indicator {
+            background: #3b82f6;
+            width: 8px;
+            height: 30px;
+            border-radius: 4px;
+        }
+
+        .unam-subject-header-title {
+            margin: 0;
+            color: #1e293b;
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+
+        .unam-question-card-inner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .unam-question-card-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -930,8 +1176,30 @@
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-matematicas">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="#" class="class-item" id="link-matematicas-1"
+                            onclick="switchClass('content-matematicas-1', this, 'btn-matematicas')">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: El Término y Operaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="class-item" id="link-matematicas-2"
+                            onclick="switchClass('content-matematicas-2', this, 'btn-matematicas')">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Multiplicación y Binomios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="class-item" id="link-matematicas-3"
+                            onclick="switchClass('content-matematicas-3', this, 'btn-matematicas')">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Triángulo de Pascal
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="class-item" id="link-matematicas-4"
+                            onclick="switchClass('content-matematicas-4', this, 'btn-matematicas')">
+                            <i class="fa-solid fa-book-open"></i> Clase 4: Álgebra y Radicales
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -1022,8 +1290,12 @@
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-literatura">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="#" class="class-item" id="link-literatura-1"
+                            onclick="switchClass('content-literatura-1', this, 'btn-literatura')">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: El Texto y la Comunicación
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -1377,6 +1649,223 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/hkuW2zfO9Gw"
             },
+            "content-matematicas-1": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-superscript",
+                mainTopicIcon2: "fa-infinity",
+                mainTopicSubtitle: "Clase 1: El Término y Reglas Algebraicas",
+                branches: [
+                    {
+                        id: "nodes-mat-1",
+                        topicIdx: 1,
+                        title: "1. El Término: Anatomía",
+                        icon: "fa-puzzle-piece",
+                        subnodes: [
+                            { icon: "fa-cubes", delay: "0.1s", title: "Estructura Base", content: "<p>Un término tiene <b>coeficiente</b> (número grande), <b>literal</b> (letra) y <b>exponente</b> (número chiquito).</p>" },
+                            { icon: "fa-hashtag", delay: "0.2s", title: "Coeficiente (Número Grande)", content: "<p>Se comportan como en la primaria: Si es suma, sumas normal; si es división, divides normal ($100 / 50 = 2$).</p><div class='exam-tip'><i class='fa-solid fa-circle-exclamation'></i> <b>TIP DE EXAMEN:</b><br>Si una letra está sola (ej. $x$), su coeficiente invisible es <b>1</b>. Siempre dale valor, si lo ignoras, el resultado estará mal.</div>" },
+                            { icon: "fa-superscript", delay: "0.3s", title: "Exponente (Número Chiquito)", content: "<p>No funcionan como los de la primaria; tienen reglas especiales según la operación. Si una letra no tiene exponente visible, su valor es <b>1</b>.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat-2",
+                        topicIdx: 2,
+                        title: "2. Formación",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { icon: "fa-list-ol", delay: "0.1s", title: "¿Cómo contar términos?", content: "<p>Lo que separa a los términos son <b>los signos</b> ($+$ y $-$).</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>PREGUNTA DE EXAMEN (La Trampa):</b><br>$2x^3y^5m^4$ es <b>UN</b> solo término (no hay signos en medio).<br><br><b>Ejemplo normal:</b> $a + b - 2$ son <b>tres</b> términos.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat-3",
+                        topicIdx: 3,
+                        title: "3. Suma y Resta",
+                        icon: "fa-plus-minus",
+                        subnodes: [
+                            { icon: "fa-scale-balanced", delay: "0.1s", title: "Términos Semejantes", content: "<p><b>Regla de oro:</b> Solo puedes sumar o restar si son términos semejantes.</p><p><b>¿Qué es semejante?:</b> Misma letra <b>Y</b> mismo exponente. Si algo falla (ej. $x$ vs $x^2$), no se pueden tocar, se pasan igual al resultado.</p><div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>TIP:</b><br>El orden de las letras no importa ($xy$ es lo mismo que $yx$). El examen de la UNAM suele respetar el orden alfabético al poner opciones.</div>" },
+                            { icon: "fa-skull-crossbones", delay: "0.2s", title: "Suma y Resta de Signos", content: "<p><b>Nota importante:</b> En suma y resta <b>NO</b> se usa la \"Ley de los Signos\" (eso de menos por menos es más). Eso es solo para multiplicar.</p><div class='exam-tip'><i class='fa-solid fa-check-double'></i> <b>REGLA PARA NO FALLAR:</b><br><b>Signos iguales:</b> Se suman los números y se deja el mismo signo (ej. $-5 - 3 = -8$).<br><b>Signos diferentes:</b> Al número más grande le quitas el chico y dejas el signo del más fuerte (ej. $-10 + 2 = -8$).</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat-4",
+                        topicIdx: 4,
+                        title: "4. Multiplicación",
+                        icon: "fa-xmark",
+                        subnodes: [
+                            { icon: "fa-handshake", delay: "0.1s", title: "Regla General", content: "<p>Aquí es \"todos contra todos\", no importa si son semejantes. Se siguen tres casos principales:</p>" },
+                            { icon: "fa-equals", delay: "0.2s", title: "1. Letras Iguales", content: "<p>Los exponentes <b>SE SUMAN</b>. ($x^3 \\cdot x^5 = x^8$).</p>" },
+                            { icon: "fa-not-equal", delay: "0.3s", title: "2. Letras Diferentes", content: "<p>Solo se <b>\"pegan\"</b>. ($x \\cdot y = xy$).</p>" },
+                            { icon: "fa-object-group", delay: "0.4s", title: "3. Combinadas", content: "<p>Sumas los exponentes de las que son iguales y pegas las que son diferentes. ($x^2 \\cdot x^3y = x^5y$).</p><div class='exam-tip'><i class='fa-solid fa-shield-halved'></i> <b>NOTA DE SUPERVIVENCIA:</b><br>Nunca olvides que $a \\cdot a = a^2$ (porque sumas los exponentes invisibles $1 + 1$).</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/pcp5EiQtwag"
+            },
+            "content-matematicas-2": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas2",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-superscript",
+                mainTopicIcon2: "fa-infinity",
+                mainTopicSubtitle: "Clase 2: Multiplicación y Binomios",
+                branches: [
+                    {
+                        id: "nodes-mat2-1",
+                        topicIdx: 1,
+                        title: "1. Multiplicación Algebraica",
+                        icon: "fa-xmark",
+                        subnodes: [
+                            { icon: "fa-handshake", delay: "0.1s", title: "Las Reglas", content: "<p>En la multiplicación no importa si los términos son semejantes; aquí es <b>\"todos contra todos\"</b>.</p>" },
+                            { icon: "fa-hashtag", delay: "0.2s", title: "Coeficientes (Números grandes)", content: "<p>Se multiplican normal, como en la primaria ($3 \\cdot 5 = 15$). Se aplica la ley de signos (+ por - = -, etc.).</p>" },
+                            { icon: "fa-superscript", delay: "0.3s", title: "Exponentes (Números chiquitos)", content: "<p><b>Letras iguales:</b> Los exponentes <b>SE SUMAN</b> ($x^2 \\cdot x^3 = x^5$).<br><b>Letras diferentes:</b> Solo se <b>\"pegan\"</b> ($x \\cdot y = xy$).</p><div class='exam-tip'><i class='fa-solid fa-file-pen'></i> <b>NOTA DE EXAMEN:</b><br>El número 1 es invisible tanto en coeficientes como en exponentes. Si ves una $x$ sola, recuerda que es $1x^1$.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat2-2",
+                        topicIdx: 2,
+                        title: "2. Polinomios",
+                        icon: "fa-tags",
+                        subnodes: [
+                            { icon: "fa-font", delay: "0.1s", title: "Nombres de los Polinomios", content: "<p>Aunque el examen no te pida los nombres, te sirven para entender las instrucciones:</p><ul><li><b>Monomio:</b> 1 término.</li><li><b>Binomio:</b> 2 términos.</li><li><b>Trinomio:</b> 3 términos.</li><li><b>Cuatrinomio:</b> 4 términos.</li><li><b>Polinomio:</b> Nombre general para todos.</li></ul>" },
+                            { icon: "fa-crow", delay: "0.2s", title: "Monomio por Polinomio", content: "<p><b>(Propiedad Distributiva)</b></p><p>Cuando multiplicas un término chiquito por uno grande (ej. $2x(3x - 5y)$), el término de afuera se multiplica contra todos los de adentro, uno por uno.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>EJEMPLO:</b><br>$2x \\cdot 3x = 6x^2$<br>$2x \\cdot -5y = -10xy$<br><b>Resultado:</b> $6x^2 - 10xy$.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat2-3",
+                        topicIdx: 3,
+                        title: "3. Binomios Conjugados",
+                        icon: "fa-gem",
+                        subnodes: [
+                            { icon: "fa-key", delay: "0.1s", title: "Diferencia de Cuadrados", content: "<p>¡TEMA CLAVE DE EXAMEN! Identificarlos es el 50% del éxito.</p><p><b>¿Cómo se ven?:</b> Es lo mismo por lo mismo, pero uno suma y el otro resta. Ej: $(2m + 3y)(2m - 3y)$.</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Atajo (Ley Universal)", content: "<p>No hagas toda la multiplicación. Solo haz: <b>Primero por Primero</b> y <b>Segundo por Segundo</b>.</p><p>$(2m \\cdot 2m) = 4m^2$<br>$(3y \\cdot -3y) = -9y^2$<br><b>Resultado:</b> $4m^2 - 9y^2$.</p><div class='exam-tip'><i class='fa-solid fa-circle-exclamation'></i> <b>NOTA IMPORTANTE:</b><br>El signo que separa el resultado <b>SIEMPRE</b> será negativo.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat2-4",
+                        topicIdx: 4,
+                        title: "4. Casos Especiales y Tips",
+                        icon: "fa-star",
+                        subnodes: [
+                            { icon: "fa-icicles", delay: "0.1s", title: "Tip de Raíces", content: "<p><b>(Regla de la Raíz)</b></p><p>A la UNAM le encanta poner los binomios conjugados con raíces.</p><p><b>Ley Universal:</b> Raíz igual por raíz igual = el número de adentro sin raíz.</p><div class='exam-tip'><i class='fa-solid fa-scale-balanced'></i> <b>EJEMPLO DE EXAMEN:</b><br>$(\\sqrt{x} + 3)(\\sqrt{x} - 3)$<br><br>$\\sqrt{x} \\cdot \\sqrt{x} = x$<br>$3 \\cdot -3 = -9$<br><b>Resultado:</b> $x - 9$.<br><br>Otro ejemplo (2025): $(5 - \\sqrt{2y})(5 + \\sqrt{2y}) = 25 - 2y$.</div>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.2s", title: "Diferencia Crítica", content: "<p><b>Suma vs. Multiplicación</b>:</p><div class='exam-tip'><i class='fa-solid fa-eye'></i> <b>REGLA:</b><br><b>En la Suma ($x + x$):</b> Los exponentes NO cambian (son \"tu ex\"). Resultado: $2x$.<br><b>En la Multiplicación ($x \\cdot x$):</b> Los exponentes SE SUMAN. Resultado: $x^2$.</div>" },
+                            { icon: "fa-thumbtack", delay: "0.3s", title: "Otros Tips de Examen", content: "<div class='exam-tip'><i class='fa-solid fa-list-ol'></i> <b>ORDEN:</b> No te pelees con el orden alfabético. La UNAM suele poner los resultados en los incisos respetando el mismo orden en que te dieron los términos en el problema.<br><br><i class='fa-solid fa-book-open'></i> <b>INSTRUCCIONES:</b> Si dice \"Desarrolla el producto\" o \"Simplifica el siguiente polinomio\", fíjate si tiene el formato de binomio conjugado para usar el atajo de \"primero por primero\".</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/ycK839SkxIo"
+            },
+            "content-matematicas-3": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas3",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-superscript",
+                mainTopicIcon2: "fa-infinity",
+                mainTopicSubtitle: "Clase 3: Triángulo de Pascal y Reglas de Expansión",
+                branches: [
+                    {
+                        id: "nodes-mat3-1",
+                        topicIdx: 1,
+                        title: "1. El Triángulo de Pascal",
+                        icon: "fa-caret-up",
+                        subnodes: [
+                            { icon: "fa-bolt", delay: "0.1s", title: "Función Principal", content: "<p>Para elevar un binomio $(a \\pm b)^n$ de forma rápida, se utilizan los coeficientes del Triángulo de Pascal.</p>" },
+                            { icon: "fa-hammer", delay: "0.2s", title: "Construcción", content: "<p>Se inicia con un $1$ en la punta. En el siguiente nivel se colocan dos $1$. Los niveles posteriores se obtienen sumando los dos números superiores inmediatos y cerrando siempre los extremos con un $1$.</p><div style='text-align: center; overflow-x: auto; margin-top: 15px;'>$$ \\begin{matrix} & & & & 1 \\\\ & & & 1 & & 1 \\\\ & & 1 & & 2 & & 1 \\\\ & 1 & & 3 & & 3 & & 1 \\\\ 1 & & 4 & & 6 & & 4 & & 1 \\end{matrix} $$</div>" },
+                            { icon: "fa-layer-group", delay: "0.3s", title: "Identificación del Nivel", content: "<p>El exponente del binomio te indica qué fila del triángulo usar.</p><ul><li>Si es $(a + b)^3$, usas el nivel 3 ($1, 3, 3, 1$).</li><li>Si es $(a + b)^4$, usas el nivel 4 ($1, 4, 6, 4, 1$).</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat3-2",
+                        topicIdx: 2,
+                        title: "2. Reglas de Expansión",
+                        icon: "fa-wrench",
+                        subnodes: [
+                            { icon: "fa-arrow-right", delay: "0.1s", title: "1. Distribución de Literales (Letras)", content: "<p><b>Primer término ($a$):</b> Se coloca al principio elevado a la potencia máxima del binomio y su exponente disminuye en cada término hacia la derecha hasta desaparecer.</p><p><b>Segundo término ($b$):</b> Se coloca al final elevado a la potencia máxima y disminuye su exponente hacia la izquierda hasta desaparecer.</p><div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>NOTA DE EXAMEN:</b><br>Si la letra ya tiene un exponente original (ej. $x^2$), debes multiplicar ese exponente por la potencia externa para obtener el primer término del resultado.<br><b>Ejemplo:</b> $(x^2 \\dots)^3 \\rightarrow x^{2 \\cdot 3} = x^6$.</div>" },
+                            { icon: "fa-hashtag", delay: "0.2s", title: "2. Manejo de Coeficientes (Números)", content: "<p>Si el binomio tiene números (ej. $2a + 3$), estos se tratan como términos completos y se elevan a la potencia correspondiente <b>antes</b> de multiplicarlos por el coeficiente del Triángulo de Pascal.</p><p><b>Proceso:</b> (Coeficiente del Triángulo) $\\cdot$ (Número del término elevado a su potencia actual).</p><div class='exam-tip'><i class='fa-solid fa-calculator'></i> <b>EJEMPLO:</b><br>En $(2a + 1)^3$: El primer término es $1 \\cdot (2a)^3 = 1 \\cdot 8a^3 = 8a^3$.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat3-3",
+                        topicIdx: 3,
+                        title: "3. Ley de Signos Universal",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-plus", delay: "0.1s", title: "Caso Positivo $(a + b)^n$", content: "<p>Todos los signos del resultado son positivos ($+$).</p>" },
+                            { icon: "fa-plus-minus", delay: "0.2s", title: "Caso Negativo $(a - b)^n$", content: "<p>Los signos se alternan, empezando siempre por positivo (el cual es invisible al principio): $(+, -, +, -, \\dots)$.</p>" },
+                            { icon: "fa-bolt", delay: "0.3s", title: "Importancia", content: "<p>Esta es la forma más rápida de descartar opciones incorrectas en el examen de la UNAM.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat3-4",
+                        topicIdx: 4,
+                        title: "4. Resolución Veloz",
+                        icon: "fa-bullseye",
+                        subnodes: [
+                            { icon: "fa-stopwatch", delay: "0.1s", title: "Eliminación Rápida", content: "<p>En el examen de opción múltiple, muchas veces no necesitas desarrollar toda la operación:</p><div class='exam-tip'><i class='fa-solid fa-check-double'></i> <b>ESTRATEGIA PARA EL EXAMEN:</b><br><b>Regla de los Signos:</b> Si el binomio es negativo, busca en los incisos cuál cumple con la alternancia $(+, -, +, -)$. Esto elimina el 80% de las opciones falsas.<br><b>Primer y Último Término:</b> Calcula rápidamente el primer término y el último. Generalmente, solo una opción de respuesta coincide con ambos.<br><b>Variables Invisibles:</b> Recuerda que los coeficientes 1 y exponentes 1 no se escriben. $1x^1$ se ve como $x$.</div>" },
+                            { icon: "fa-pen-to-square", delay: "0.2s", title: "Ejemplo Tipo Examen (2025)", content: "<p><b>Desarrolla $(y - 2)^3$</b></p><ul><li><b>Nivel de Pascal (3):</b> Coeficientes $1, 3, 3, 1$.</li><li><b>Signos:</b> Alternados $(+, -, +, -)$.</li></ul> <div class='exam-tip'><i class='fa-solid fa-list-ol'></i> <b>DESARROLLO MENTAL:</b><br><b>Primer término:</b> $1 \\cdot y^3 = y^3$.<br><b>Segundo término:</b> $3 \\cdot (y^2) \\cdot (2^1) = 6y^2$.<br><b>Tercer término:</b> $3 \\cdot (y^1) \\cdot (2^2) = 12y$.<br><b>Cuarto término:</b> $1 \\cdot 2^3 = 8$.<br><b>Resultado final:</b> $y^3 - 6y^2 + 12y - 8$.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/fff86JMN_aI"
+            },
+            "content-matematicas-4": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas4",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-superscript",
+                mainTopicIcon2: "fa-infinity",
+                mainTopicSubtitle: "Clase 4: Álgebra, Radicación y Productos Notables",
+                branches: [
+                    {
+                        id: "nodes-mat4-1",
+                        topicIdx: 1,
+                        title: "1. Agrupación de Términos Semejantes",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { icon: "fa-book-open", delay: "0.1s", title: "Definición Técnica", content: "<p><b>Suma y resta algebraica:</b> Es el nombre que recibe la agrupación de términos semejantes.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TÉRMINOS SEMEJANTES:</b><br>Para que dos o más términos puedan agruparse, deben compartir exactamente las mismas letras y los mismos exponentes.</div>" },
+                            { icon: "fa-pencil", delay: "0.2s", title: "Ejemplos de Reactivos", content: "<ul><li>$8m + m - 5m = \\mathbf{4m}$ (Recordar: $m = 1m$).</li><li>$-4a + 9a - 2a = \\mathbf{3a}$.</li><li>$10y - 3y + y = \\mathbf{8y}$.</li><li>$6x^2 + 4x^2 - x^2 = \\mathbf{9x^2}$.</li><li>$7k - k = \\mathbf{6k}$.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat4-2",
+                        topicIdx: 2,
+                        title: "2. Multiplicación y Productos Notables",
+                        icon: "fa-xmark",
+                        subnodes: [
+                            { icon: "fa-cube", delay: "0.1s", title: "Binomio al Cubo", content: "<p>Se evaluó intensivamente la estructura $(a \\pm b)^3$.</p><div class='exam-tip'><i class='fa-solid fa-check-double'></i> <b>PRIORIDAD DE OPERACIONES:</b><br>En el desarrollo de binomios, primero se resuelven las potencias de los coeficientes y luego se multiplican por el número obtenido del Triángulo de Pascal.</div>" },
+                            { icon: "fa-list", delay: "0.2s", title: "Ejercicios Resueltos", content: "<ul><li><b>Ejercicio 1:</b> $(x + 2)^3 = \\mathbf{x^3 + 6x^2 + 12x + 8}$.</li><li><b>Ejercicio 2:</b> $(2y + 1)^3 = \\mathbf{8y^3 + 12y^2 + 6y + 1}$.</li><li><b>Ejercicio 3 (signos alternados):</b> $(a - 3)^3 = \\mathbf{a^3 - 9a^2 + 27a - 27}$.</li></ul>" },
+                            { icon: "fa-handshake", delay: "0.3s", title: "Binomios con Término Común", content: "<p><b>Ejercicio:</b> $(x + 3)(x + 5) = \\mathbf{x^2 + 8x + 15}$.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat4-3",
+                        topicIdx: 3,
+                        title: "3. Radicales y Conteo de Términos",
+                        icon: "fa-hashtag",
+                        subnodes: [
+                            { icon: "fa-bolt", delay: "0.1s", title: "Raíces", content: "<p><b>Raíces exactas:</b> Se deben dominar raíces básicas para agilizar cálculos (ej. $\\sqrt{169} = 13$).</p><div class='exam-tip'><i class='fa-solid fa-star'></i> <b>REGLA DE RAÍCES EN PRODUCTOS:</b><br>Multiplicar raíces cuadradas idénticas elimina el radical ($\\sqrt{x} \\cdot \\sqrt{x} = x$).</div>" },
+                            { icon: "fa-magnifying-glass", delay: "0.2s", title: "Identificación de Términos", content: "<p>Una expresión <b>sin</b> signos de suma o resta intermedios cuenta como un solo término.<br><b>Ejemplo:</b> $-3px^4$ es un solo monomio.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/FlZGfHj98o4"
+            },
             "content-espanol-1": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
@@ -1433,47 +1922,140 @@
                     {
                         id: "nodes-qui-1",
                         topicIdx: 1,
-                        title: "1. Conceptos Base",
-                        icon: "fa-microscope",
+                        title: "1. Info del Examen",
+                        icon: "fa-clipboard-list",
                         subnodes: [
-                            { icon: "fa-info", delay: "0.1s", title: "¿Qué es la Química?", content: "<p>Es la <b>ciencia</b> que describe la <b>materia/propiedades</b> y los cambios energéticos asociados.</p>" },
-                            { icon: "fa-cube", delay: "0.2s", title: "¿Qué es la Materia?", content: "<p>Todo aquello que tiene <b>masa y volumen</b> (ocupa un lugar en el espacio). Está formada por átomos.</p>" }
+                            { icon: "fa-bullseye", delay: "0.1s", title: "Cant. de Preguntas", content: "<p>El examen contiene aproximadamente <b>15 preguntas</b> de química.</p>" },
+                            { icon: "fa-table", delay: "0.2s", title: "Tabla Periódica", content: "<p>Al ser un examen en línea, <b>no vendrá una imagen</b> de la tabla periódica.</p>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.3s", title: "Nota de Examen", content: "<p><b>No necesitas memorizarla toda.</b> El examen te proporcionará todos los datos necesarios (número atómico, masa, protones, etc.) dentro del mismo reactivo para realizar los ejercicios.</p>" }
                         ]
                     },
                     {
                         id: "nodes-qui-2",
                         topicIdx: 2,
-                        title: "2. Sustancias Puras",
-                        icon: "fa-gem",
+                        title: "2. Conceptos Fundamentales",
+                        icon: "fa-microscope",
                         subnodes: [
-                            { icon: "fa-a", delay: "0.1s", title: "Elementos", content: "<p>Un solo tipo de átomo (ej. <b>K, N, Li, Na</b>). <i>Tip: Símbolo con 1 mayúscula (y a veces 1 minúscula).</i></p>" },
-                            { icon: "fa-puzzle-piece", delay: "0.2s", title: "Compuestos", content: "<p>Combinación de 2 o más elementos (ej. <b>H<sub>2</sub>O, NaOH, HCl</b>). <i>Tip: Símbolo con 2 o más mayúsculas.</i></p>" }
+                            { icon: "fa-flask", delay: "0.1s", title: "¿Qué es la Química?", content: "<p><b>Definición:</b> Es la ciencia que describe la materia y sus propiedades, los cambios que experimenta y los cambios energéticos asociados.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Las palabras clave para identificar el concepto son <b>'ciencia'</b> y <b>'describe la materia/propiedades'</b>.</div>" },
+                            { icon: "fa-cube", delay: "0.2s", title: "¿Qué es la Materia?", content: "<p><b>Definición:</b> Todo aquello que tiene masa y volumen (ocupa un lugar en el espacio). Está compuesta por átomos y partículas subatómicas.</p><p><b>Propiedades:</b> Color, sabor, dureza, elasticidad, temperatura y densidad.</p>" }
                         ]
                     },
                     {
                         id: "nodes-qui-3",
                         topicIdx: 3,
-                        title: "3. Mezclas y Coloides",
-                        icon: "fa-mortar-pestle",
+                        title: "3. Sistemas Materiales",
+                        icon: "fa-gem",
                         subnodes: [
-                            { icon: "fa-blender", delay: "0.1s", title: "Homogéneas", content: "<p>No se distinguen a simple vista (1 fase). Ej: Aire, bronce, agua con sal. <i>(Leche con chocolate es homogénea)</i>.</p>" },
-                            { icon: "fa-pizza-slice", delay: "0.2s", title: "Heterogéneas", content: "<p>Se distinguen sus componentes a simple vista (varias fases). Ej: Ensalada, pizza, agua con aceite.</p>" },
-                            { icon: "fa-droplet", delay: "0.3s", title: "El 'Limbo': Coloides", content: "<p>Pequeñas partículas distribuidas uniformemente. Solo se ven al microscopio.<br>Ej: <b>Leche sola, sangre, niebla, mayonesa</b>.</p>" },
-                            { icon: "fa-lightbulb", delay: "0.4s", title: "Efecto Tyndall", content: "<p>Dispersión de la luz. Es lo que nos permite identificar y hacer visible a un <b>coloide</b>.</p>" }
+                            { icon: "fa-a", delay: "0.1s", title: "Sustancias Puras", content: "<p><b>Elementos:</b> Un solo tipo de átomo (sustancia pura). Hay 118 y están en la tabla periódica.</p><p><b>Compuestos:</b> Combinación de dos o más tipos de átomos (elementos) que crean sustancias nuevas (ej. H<sub>2</sub>O).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br><b>Elemento:</b> Símbolo con 1 mayúscula (ej. K, N) o 1 mayúscula + 1 minúscula (ej. Li, Na, Mg).<br><b>Compuesto:</b> Símbolo con 2 o más letras mayúsculas juntas (ej. NaOH, HCl). ¡Esta es la trampa!</div>" },
+                            { icon: "fa-blender", delay: "0.2s", title: "Mezclas (Uniones Físicas)", content: "<p><b>Homogéneas:</b> Sus componentes no se distinguen a simple vista (forman una sola fase).<br><b>Ejemplos:</b> Aire, bronce (aleación), perfumes, agua con sal, vino.</p><p><b>Heterogéneas:</b> Composición no uniforme; sus componentes se distinguen a simple vista (forman fases físicas distintas).<br><b>Ejemplos:</b> Agua con aceite, ensalada, pizza, pozole.</p>" }
                         ]
                     },
                     {
                         id: "nodes-qui-4",
                         topicIdx: 4,
-                        title: "4. Estados y Cambios",
+                        title: "4. Coloides (El Limbo)",
+                        icon: "fa-droplet",
+                        subnodes: [
+                            { icon: "fa-eye-slash", delay: "0.1s", title: "Definición", content: "<p>Son mezclas <b>heterogéneas</b> donde las partículas son tan finas que se distribuyen uniformemente, pareciendo homogéneas a simple vista.</p><p><b>Dato de examen:</b> Sus componentes solo se ven bajo un <b>microscopio óptico</b>.</p><p><b>Ejemplos de cajón:</b> Sangre, leche, mayonesa, niebla, humo, gelatina, vidrios de colores.</p>" },
+                            { icon: "fa-skull-crossbones", delay: "0.2s", title: "<i class='fa-solid fa-triangle-exclamation'></i> La Trampa de la UNAM", content: "<p>Suelen mezclar coloides con mezclas homogéneas en los incisos para confundirte.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si en el examen dice <b>'leche sola'</b>, es un coloide. Si dice <b>'leche con chocolate'</b>, ya se considera una mezcla homogénea (porque ya estás uniendo dos sustancias de forma uniforme).</div>" },
+                            { icon: "fa-lightbulb", delay: "0.3s", title: "Efecto Tyndall", content: "<p>Es la <b>dispersión de la luz</b> a través de las partículas.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si te preguntan cómo <b>identificar o hacer visible</b> un sistema coloidal, la respuesta es gracias al Efecto Tyndall.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui-5",
+                        topicIdx: 1,
+                        title: "5. Estados Físicos",
                         icon: "fa-temperature-half",
                         subnodes: [
-                            { icon: "fa-icicles", delay: "0.1s", title: "Estados físicos de la Materia", content: "<p>Dependen de la <b>Fuerza de Cohesión</b> (atracción):<br><b>Sólido:</b> Alta. Forma y volumen definido.<br><b>Líquido:</b> Baja. Volumen definido.<br><b>Gaseoso:</b> Nula. Volumen indefinido (Alta entropía/desorden).</p>" },
-                            { icon: "fa-fire", delay: "0.2s", title: "Cambios de Estado", content: "<p>Dependen de <b>Temperatura y Presión</b>.</p>", examples: ["Fusión: Hielo derritiéndose.", "Evaporación: Agua hirviendo.", "Condensación: Lentes empañados en el frío.", "Sublimación (Directa): Hielo seco."] }
+                            { icon: "fa-circle-exclamation", delay: "0.1s", title: "Nota Importante", content: "<p>Los estados de la materia son formas <b>FÍSICAS</b>, no químicas. ¡Ojo con esa palabra en los incisos!</p>" },
+                            { icon: "fa-icicles", delay: "0.2s", title: "Sólido", content: "<p><b>Fuerza de Cohesión (Atracción):</b> Alta (Partículas muy juntas).<br><b>Características:</b> Forma y volumen definido. No se comprimen.<br><b>Analogía:</b> Metro en la mañana (unidos todos).</p>" },
+                            { icon: "fa-water", delay: "0.3s", title: "Líquido", content: "<p><b>Fuerza de Cohesión:</b> Baja (Partículas algo separadas).<br><b>Características:</b> Volumen definido; forma del recipiente. Fluidos.<br><b>Analogía:</b> Metro a las 3 PM (hay espacio pero te topas).</p>" },
+                            { icon: "fa-cloud", delay: "0.4s", title: "Gaseoso", content: "<p><b>Fuerza de Cohesión:</b> Nula (Partículas dispersas).<br><b>Características:</b> Volumen indefinido. Alta entropía (desorden).<br><b>Analogía:</b> Niños de secundaria / Metro de noche.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui-6",
+                        topicIdx: 2,
+                        title: "6. Cambios de Estado",
+                        icon: "fa-fire",
+                        subnodes: [
+                            { icon: "fa-thermometer-half", delay: "0.1s", title: "Tip General", content: "<p>Todos dependen de cambios en la <b>temperatura</b> y la <b>presión</b>.</p>" },
+                            { icon: "fa-sun", delay: "0.2s", title: "Cambios por Calor", content: "<p><b>Fusión:</b> Sólido → Líquido (Hielo derritiéndose).</p><p><b>Evaporación:</b> Líquido → Gaseoso (Agua hirviendo).</p><p><b>Sublimación Directa:</b> Sólido → Gaseoso (Sin pasar por líquido). <i>Ejemplos: Hielo seco, pastillas aromatizantes de baño.</i></p>" },
+                            { icon: "fa-snowflake", delay: "0.3s", title: "Cambios por Frío", content: "<p><b>Solidificación:</b> Líquido → Sólido (Hacer hielos / Cera de vela enfriándose).</p><p><b>Condensación:</b> Gaseoso → Líquido (Lentes empañados / Vaho al hablar en el frío). <i>Ojo: Requiere temperaturas bajas.</i></p><p><b>Sublimación Inversa:</b> Gaseoso → Sólido. <i>Ejemplos: Granizo, nieve.</i></p>" }
                         ]
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/HiDDPOqpLGk"
+            },
+            "content-literatura-1": {
+                title: "Apuntes de Literatura",
+                titleIconLeft: "fa-book-open",
+                titleIconRight: "fa-feather",
+                titleStyle: "color: #4f46e5;",
+                mainTopicId: "mainTopicLiteratura1",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Literatura",
+                mainTopicIcon1: "fa-scroll",
+                mainTopicIcon2: "fa-pen-nib",
+                mainTopicSubtitle: "Clase 1: El Texto y la Comunicación",
+                branches: [
+                    {
+                        id: "nodes-lit1-1",
+                        topicIdx: 1,
+                        title: "1. El Texto y la Comunicación",
+                        icon: "fa-comments",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Definición de Texto", content: "<p><b>(Pregunta de Examen)</b></p><p>Es un conjunto de enunciados u oraciones (lengua) que forman un mensaje coherente, concreto y ordenado.</p><p><b>Objetivo principal:</b> Comunicar.</p>" },
+                            { icon: "fa-users", delay: "0.2s", title: "Elementos Básicos", content: "<ul><li><b>Emisor:</b> Quien emite la información.</li><li><b>Receptor:</b> Quien recibe la información.</li><li><b>Canal:</b> El medio físico o digital por el que viaja el mensaje (carta, chat, voz).</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit1-2",
+                        topicIdx: 2,
+                        title: "2. Propiedades Textuales",
+                        icon: "fa-list-check",
+                        subnodes: [
+                            { icon: "fa-bullseye", delay: "0.1s", title: "Propósito", content: "<p>Es la intención comunicativa del autor (querer informar, perdonar, quejar, etc.).</p>" },
+                            { icon: "fa-people-arrows", delay: "0.2s", title: "Adecuación", content: "<p>Consiste en modificar, sustituir o reemplazar el lenguaje para que se adapte a la realidad o nivel del receptor (registro lingüístico).</p>" },
+                            { icon: "fa-circle-check", delay: "0.3s", title: "Cabalidad", content: "<p>Significa que el texto sea completo y tenga una <b>unidad de sentido</b>. No debe divagar; debe ser directo al grano.</p>" },
+                            { icon: "fa-link", delay: "0.4s", title: "Coherencia y Organización", content: "<p><b>Coherencia:</b> Es la secuencia lógica y concreta de los hechos. Se fija en el orden de los tiempos verbales y el sentido de las ideas.</p><p><b>Organización Textual:</b> Se refiere a la estructura del texto (Inicio, Desarrollo, Final). Incluye el uso de puntos y comas para separar ideas.</p>" },
+                            { icon: "fa-border-all", delay: "0.5s", title: "Disposición Espacial", content: "<p>Es todo lo visual. Incluye: sangrías, márgenes, tipografía (negritas/cursivas), justificación y distribución de espacios.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>DIFERENCIA CRÍTICA:</b><br>No confundas Organización Textual (estructura interna/lógica) con Disposición Espacial (apariencia visual/márgenes).</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit1-3",
+                        topicIdx: 3,
+                        title: "3. Modos Discursivos",
+                        icon: "fa-microphone-lines",
+                        subnodes: [
+                            { icon: "fa-clock-rotate-left", delay: "0.1s", title: "Narrativo", content: "<p>Prevalecen los <b>verbos</b>. Relata una historia en un tiempo y espacio determinados (cuento, novela, crónica).</p>" },
+                            { icon: "fa-image-portrait", delay: "0.2s", title: "Descriptivo", content: "<p>Prevalecen los <b>adjetivos calificativos</b>. Detalla cualidades de personas, objetos o lugares (retratos).</p>" },
+                            { icon: "fa-scale-unbalanced", delay: "0.3s", title: "Argumentativo", content: "<p>Busca persuadir o disuadir. Defiende una postura con razones.</p><div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>TIP DE EXAMEN:</b><br>Se identifica porque el autor suele hablar en plural ('creemos', 'hemos observado') y utiliza nexos como: pero, porque, sin embargo, ya que.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit1-4",
+                        topicIdx: 4,
+                        title: "4. Subjetividad vs. Objetividad",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-masks-theater", delay: "0.1s", title: "Subjetividad", content: "<p><b>Sinónimos:</b> Connotación, Parcialidad.<br><b>Función:</b> Poética / Apelativa.<br><b>Características:</b> Opiniones, sentimientos, metáforas. Intenta persuadir.</p>" },
+                            { icon: "fa-microscope", delay: "0.2s", title: "Objetividad", content: "<p><b>Sinónimos:</b> Denotación, Imparcialidad.<br><b>Función:</b> Referencial.<br><b>Características:</b> Hechos comprobables, datos técnicos, noticias. No hay opinión.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit1-5",
+                        topicIdx: 5,
+                        title: "5. El Texto Periodístico",
+                        icon: "fa-newspaper",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Características", content: "<p><b>Sinónimos:</b> Nota informativa, texto periodístico.<br><b>Propósito:</b> Únicamente informar.<br><b>Función:</b> Referencial.</p>" },
+                            { icon: "fa-sitemap", delay: "0.2s", title: "Estructura de la Noticia", content: "<ul><li><b>Balazo (Epígrafe):</b> Frase breve antes del título.</li><li><b>Título (Encabezado):</b> Mensaje llamativo que presenta el tema específico.</li><li><b>Entrada (Lead):</b> Primer párrafo tipo sinopsis que responde: ¿Qué?, ¿quién?, ¿cómo?, ¿cuándo?, ¿dónde? y ¿por qué?</li><li><b>Cuerpo:</b> Desarrollo detallado de la información.</li></ul>" },
+                            { icon: "fa-star", delay: "0.3s", title: "Tips para el Examen UNAM", content: "<div class='exam-tip'><i class='fa-solid fa-graduation-cap'></i> <b>AHORRO DE TIEMPO:</b><br>Si te preguntan el propósito de un texto periodístico, busca la opción que diga <b>informar</b>. No pierdas tiempo leyendo todo el fragmento.<br><b>Identificación Rápida:</b> Si el título es una entrevista o un reportaje, la respuesta es texto periodístico.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/hMeVln9ftYE"
             }
         };
 
@@ -1481,6 +2063,20 @@
         // Integración de Preguntas de la Guía UNAM
         // ==========================================
         const unamQuestions = {
+            "content-matematicas-3": [
+                {
+                    "numero": 47,
+                    "pregunta": "Al desarrollar $(x^2 - 3y)^3$ se obtiene:",
+                    "opciones": [
+                        "$x^6 - 9x^4y + 27x^2y^2 + 27y^3$",
+                        "$x^6 + 9x^4y - 27x^2y^2 + 27y^3$",
+                        "$x^6 - 9x^4y + 27x^2y^2 - 27y^3$",
+                        "$x^6 + 9x^4y - 27x^2y^2 - 27y^3$"
+                    ],
+                    "respuesta": 2,
+                    "retroalimentacion": "Siguiendo la ley de signos alternados y el nivel 3 del Triángulo de Pascal. Potencias: $(x^2)^3 = x^6$. El tercer término del nivel 3 se multiplica por 3: $3(x^2)(-3y)^2 = 27x^2y^2$, seguido por $(-3y)^3 = -27y^3$."
+                }
+            ],
             "content-historia-1": [
                 {
                     "numero": 111,
@@ -1555,10 +2151,139 @@
                     "respuesta": 1,
                     "retroalimentacion": "La leche es la trampa clásica de la UNAM; se trata de un coloide, no de una mezcla homogénea ni heterogénea visible. Presentan características coloidales e interaccionan con el Efecto Tyndall."
                 }
+            ],
+            "content-literatura-1": [
+                {
+                    "numero": 13,
+                    "pregunta": "La cabalidad es una propiedad del texto, consiste en que este sea completo y tenga:",
+                    "opciones": ["unidad de sentido.", "datos comprobables.", "elementos de análisis.", "opinión del autor."],
+                    "respuesta": 0,
+                    "retroalimentacion": "La cabalidad, como propiedad intrínseca, significa que el texto es un todo completo o autosuficiente que cuenta con una evidente unidad de sentido para no dejar que las ideas divaguen."
+                }
             ]
         };
 
         const practiceQuestions = {
+            "content-matematicas-1": [
+                {
+                    "numero": 1,
+                    "pregunta": "¿Cuántos términos algebraicos tiene la expresión $5x^2y^3 + 2xy - 8$?",
+                    "opciones": ["1", "2", "3", "4"],
+                    "respuesta": 2,
+                    "retroalimentacion": "Los términos se separan únicamente por los signos de suma (+) y resta (-). En este caso, $5x^2y^3$, $2xy$ y $-8$ componen exactamente 3 términos distintos."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "Al simplificar la expresión $-7 + 4 - 2$, el resultado final es:",
+                    "opciones": ["$-5$", "$5$", "$-9$", "$-1$"],
+                    "respuesta": 0,
+                    "retroalimentacion": "Primero agrupamos signos iguales (se suman): $-7 - 2 = -9$. Luego operamos los diferentes (se restan y queda el signo del mayor): $-9 + 4 = -5$."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "¿Cuál es el resultado simplificado de multiplicar algebraicamente $(2x^3)(3x^4)$?",
+                    "opciones": ["$5x^7$", "$6x^{12}$", "$6x^7$", "$5x^{12}$"],
+                    "respuesta": 2,
+                    "retroalimentacion": "En la multiplicación, los coeficientes se multiplican normalmente (2 \\cdot 3 = 6) y, como son letras iguales, los exponentes se suman (3 + 4 = 7)."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "Simplifica los términos semejantes de la siguiente expresión: $3a^2 + 5a - 2a^2 + a$",
+                    "opciones": ["$a^2 + 6a$", "$5a^2 + 4a$", "$a^2 + 4a$", "$5a^2 + 6a$"],
+                    "respuesta": 0,
+                    "retroalimentacion": "Solo se operan términos semejantes. Las $a^2$: $3 - 2 = 1a^2$. Las $a$: recuerden que la $a$ sola vale $1a$, por lo tanto $5 + 1 = 6a$. Resultado ordenado: $a^2 + 6a$."
+                }
+            ],
+            "content-matematicas-2": [
+                {
+                    "numero": 1,
+                    "pregunta": "Identifica el resultado de desarrollar el siguiente binomio conjugado: $(4x + 5y)(4x - 5y)$",
+                    "opciones": ["$16x^2 + 25y^2$", "$16x^2 - 10y^2$", "$8x^2 - 10y^2$", "$16x^2 - 25y^2$"],
+                    "respuesta": 3,
+                    "retroalimentacion": "Siguiendo la ley universal de los binomios conjugados, multiplicamos primero por primero ($4x \\cdot 4x = 16x^2$) y segundo por segundo ($5y \\cdot -5y = -25y^2$). El signo entre ellos siempre es negativo."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "Simplifica la siguiente expresión: $(\\sqrt{x} + 7)(\\sqrt{x} - 7)$",
+                    "opciones": ["$x - 14$", "$x^2 - 49$", "$x - 49$", "$x + 49$"],
+                    "respuesta": 2,
+                    "retroalimentacion": "Por la regla de raíces, $\\sqrt{x} \\cdot \\sqrt{x} = x$ (sale de la raíz). Y $7 \\cdot -7 = -49$. Por ende, el resultado es $x - 49$."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "Desarrolla el siguiente producto: $3a(2a^2 - 4b)$",
+                    "opciones": ["$6a^3 - 12ab$", "$5a^3 - 7ab$", "$6a^2 - 12ab$", "$6a^3 - 12a$"],
+                    "respuesta": 0,
+                    "retroalimentacion": "Aplicando la propiedad distributiva (un monomio por un polinomio), multiplicamos el término exterior por cada uno del interior: $3a \\cdot 2a^2 = 6a^3$ y $3a \\cdot -4b = -12ab$."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "¿En qué operación los exponentes SÍ se suman?",
+                    "opciones": ["En la suma ($x^2 + x^2$)", "En la división ($\\frac{x^3}{x}$)", "En la multiplicación ($x^2 \\cdot x^3$)", "En la resta ($x^3 - x^2$)"],
+                    "respuesta": 2,
+                    "retroalimentacion": "En la multiplicación los exponentes se suman (ej. $x \\cdot x = x^2$). En la suma y resta, los exponentes nunca cambian ('son tu ex')."
+                }
+            ],
+            "content-matematicas-3": [
+                {
+                    "numero": 1,
+                    "pregunta": "¿Qué coeficientes del Triángulo de Pascal corresponden a un binomio elevado a la cuarta potencia $(a+b)^4$?",
+                    "opciones": ["$1, 3, 3, 1$", "$1, 4, 4, 1$", "$1, 4, 6, 4, 1$", "$1, 5, 10, 10, 5, 1$"],
+                    "respuesta": 2,
+                    "retroalimentacion": "El nivel 4 del triángulo se obtiene al sumar los términos del nivel 3 ($1, 3, 3, 1$), dando como resultado $1, 4, 6, 4, 1$."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "Identifica rápidamente los signos correctos para desarrollar el binomio $(2x - 3y)^5$:",
+                    "opciones": ["Todos positivos $(+, +, +, +, +, +)$", "Todos negativos $(-, -, -, -, -, -)$", "Alternados empezando por menos $(-, +, -, +, -, +)$", "Alternados empezando por más $(+, -, +, -, +, -)$"],
+                    "respuesta": 3,
+                    "retroalimentacion": "Por la regla universal, si el binomio interior es una diferencia, los signos del resultado se alternan comenzando siempre por un signo positivo (aunque sea invisible en el primer término)."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "Al desarrollar el binomio $(3a + 2b)^3$, ¿cuál es el primer y último término respectivamente?",
+                    "opciones": ["$9a^3$ y $4b^3$", "$27a^3$ y $8b^3$", "$3a^3$ y $2b^3$", "$27a^3$ y $6b^3$"],
+                    "respuesta": 1,
+                    "retroalimentacion": "El primer término se eleva a la máxima potencia del binomio: $(3a)^3 = 27a^3$. Ocurre lo mismo para el último término, que se ubicará al final de la expresión: $(2b)^3 = 8b^3$."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "¿Cuál es el resultado simplificado de desarrollar el binomio $(x^2 - 1)^3$?",
+                    "opciones": ["$x^6 - 3x^4 + 3x^2 - 1$", "$x^5 - 3x^3 + 3x - 1$", "$x^6 + 3x^4 + 3x^2 + 1$", "$x^6 - 1$"],
+                    "respuesta": 0,
+                    "retroalimentacion": "Utilizando los coeficientes de Pascal $1, 3, 3, 1$ y sabiendo que el signo se alterna $(+, -, +, -)$. El exponente primario del primer término es $2$, por lo que se multiplicará por $3$: $(x^2)^3 = x^6$. Evaluando las opciones, su desarrollo formal coincide únicamente con la primera."
+                }
+            ],
+            "content-matematicas-4": [
+                {
+                    "numero": 1,
+                    "pregunta": "¿Cuál es el resultado de agrupar los siguientes términos semejantes: $6x^2 + 4x^2 - x^2$?",
+                    "opciones": ["$10x^2$", "$9x^2$", "$11x^2$", "$9x^4$"],
+                    "respuesta": 1,
+                    "retroalimentacion": "Los términos semejantes se operan directamente sobre los coeficientes respetando la suma/resta: $6+4-1 = 9$. La literal y el exponente $x^2$ se mantienen idénticos (recordando que $-x^2$ es equivalente a $-1x^2$)."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "¿Cuántos términos conforman la expresión matemática $-3px^4$?",
+                    "opciones": ["1 término", "2 términos", "3 términos", "4 términos"],
+                    "respuesta": 0,
+                    "retroalimentacion": "No hay ningún signo de suma algebraíca ($+$ o $-$) que separe las variables subsecuentes al primer coeficiente negativo, por lo que toda la expresión completa cuenta como un solo término (un monomio)."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "Identifica la opción que corresponda a una raíz cuadrada exacta para agilizar cálculos:",
+                    "opciones": ["$\\sqrt{125} = 5$", "$\\sqrt{169} = 13$", "$\\sqrt{144} = 14$", "$\\sqrt{200} = 20$"],
+                    "respuesta": 1,
+                    "retroalimentacion": "El único cálculo exacto es $\\sqrt{169} = 13$ ya que $13 \\cdot 13 = 169$. Saber raíces comunes de memoria ahorra tiempo valioso el día del examen."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "Identifica el resultado correcto del siguiente desarrollo de trinomio: $(x + 3)(x + 5)$",
+                    "opciones": ["$x^2 + 15x + 8$", "$x^2 + 8x + 15$", "$x^2 + 8x + 8$", "$x^2 + 2x + 15$"],
+                    "respuesta": 1,
+                    "retroalimentacion": "Se trata de binomios con un término común. Primero se eleva el común al cuadrado ($x^2$), luego se suman los no comunes y se multiplican por el común ($3+5=8 \\rightarrow 8x$), y al final se multiplican los no comunes ($3 \\cdot 5 = 15$). Resultado: $x^2 + 8x + 15$."
+                }
+            ],
             "content-historia-1": [
                 {
                     "numero": 1,
@@ -1662,6 +2387,36 @@
                     "respuesta": 1,
                     "retroalimentacion": "La sublimación directa es el cambio de sólido a gaseoso omitiendo pasar por la fase líquida (como ocurre con el hielo seco o pastillas de baño)."
                 }
+            ],
+            "content-literatura-1": [
+                {
+                    "numero": 1,
+                    "pregunta": "¿Qué propiedad textual se encarga de adaptar el lenguaje del texto al nivel sociolingüístico del receptor?",
+                    "opciones": ["Propósito.", "Coherencia.", "Cabalidad.", "Adecuación."],
+                    "respuesta": 3,
+                    "retroalimentacion": "La adecuación permite modificar o reemplazar el lenguaje para que calce mejor con la realidad sociocultural, académica o emocional de quien está leyendo u oyendo el mensaje."
+                },
+                {
+                    "numero": 2,
+                    "pregunta": "Identifica el modo discursivo que busca persuadir o disuadir al lector usando nexos lógicos, generalmente con uso de verbos en primera del plural (creemos, pensamos).",
+                    "opciones": ["Narrativo.", "Argumentativo.", "Descriptivo.", "Subjetivo."],
+                    "respuesta": 1,
+                    "retroalimentacion": "El texto argumentativo siempre busca defender o rebatir una idea persuadiendo al receptor. Para lograrlo recurre a razones, argumentos y conectores como 'por qué', 'debido a', 'sin embargo'."
+                },
+                {
+                    "numero": 3,
+                    "pregunta": "¿A qué elemento de la estructura de una noticia corresponde el primer párrafo que responde al qué, quién, cómo, cuándo, dónde y por qué?",
+                    "opciones": ["Balazo.", "Epígrafe.", "Entrada o Lead.", "Cuerpo."],
+                    "respuesta": 2,
+                    "retroalimentacion": "La Entrada (Lead) funciona como una introducción o sinopsis rápida que le da al lector el contexto completo de forma general antes de expandirse a profundidad en el cuerpo de la noticia."
+                },
+                {
+                    "numero": 4,
+                    "pregunta": "Si un texto habla predominantemente con adjetivos calificativos, resaltando cualidades vitales, estéticas o métricas, su modo discursivo es:",
+                    "opciones": ["Descriptivo.", "Narrativo.", "Expositivo.", "Estético."],
+                    "respuesta": 0,
+                    "retroalimentacion": "El modo descriptivo se caracteriza casi predominantemente por su uso riguroso de adjetivos. Su propósito principal es crear una imagen mental detallada e inteligible del sujeto."
+                }
             ]
         };
 
@@ -1699,7 +2454,7 @@
             }).join('');
 
             section.innerHTML = `
-                <div class="unam-header" onclick="toggleUnamQuestions(this)">
+                <div class="unam-header" onclick="toggleUnamQuestions(this)" style="margin-bottom: 0px; border-bottom: none;">
                     <h2>${titleHtml}</h2>
                     <button class="unam-toggle-btn">Mostrar / Ocultar</button>
                 </div>
@@ -1715,8 +2470,12 @@
             const container = header.nextElementSibling;
             if (container.style.display === 'none' || container.style.display === '') {
                 container.style.display = 'flex';
+                header.style.marginBottom = '25px';
+                header.style.borderBottom = '2px solid #f1f5f9';
             } else {
                 container.style.display = 'none';
+                header.style.marginBottom = '0';
+                header.style.borderBottom = 'none';
             }
         }
 
@@ -1889,6 +2648,13 @@
                 } else {
                     mainContent.style.paddingLeft = '0';
                 }
+            } else {
+                // En móviles, evitar que el body haga scroll cuando el menú esté abierto
+                if (sideMenu.classList.contains('open')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             }
         }
 
@@ -1912,7 +2678,7 @@
             // Si el actual no estaba abierto, lo abrimos
             if (!isCurrentlyOpen) {
                 submenu.classList.add('expanded');
-                submenu.style.maxHeight = submenu.scrollHeight + "px";
+                submenu.style.maxHeight = (submenu.scrollHeight + 30) + "px";
                 parentLink.classList.add('open');
             }
         }
@@ -1926,25 +2692,126 @@
                 <div style="max-width: 900px; margin: 0 auto; padding-bottom: 50px;">
             `;
 
+            const unamExpected = {
+                'Física': 12,
+                'Literatura': 10,
+                'Química': 13,
+                'Geografía': 10,
+                'Matemáticas': 24,
+                'Español': 18,
+                'Biología': 13,
+                'Historia Universal': 10,
+                'Historia de México': 10
+            };
+
+            let currentCounts = {
+                'Física': 0,
+                'Literatura': 0,
+                'Química': 0,
+                'Geografía': 0,
+                'Matemáticas': 0,
+                'Español': 0,
+                'Biología': 0,
+                'Historia Universal': 0,
+                'Historia de México': 0
+            };
+
             let allQuestions = [];
+            let totalAvailable = 0;
             if (typeof unamQuestions !== 'undefined') {
                 Object.keys(unamQuestions).forEach(function (key) {
                     const materia = appDatabase[key] ? appDatabase[key].mainTopicTitle : 'General';
+                    let temaObj = appDatabase[key] ? appDatabase[key].mainTopicSubtitle : 'Tema General';
+                    const tema = temaObj.includes(': ') ? temaObj.substring(temaObj.indexOf(': ') + 2) : temaObj;
                     unamQuestions[key].forEach(function (q) {
                         allQuestions.push(Object.assign({}, q, {
                             materia: materia,
+                            tema: tema,
                             originalKey: key
                         }));
+                        if (currentCounts[materia] !== undefined) {
+                            currentCounts[materia]++;
+                        }
+                        totalAvailable++;
                     });
                 });
             }
 
             allQuestions.sort(function (a, b) { return a.numero - b.numero; });
 
+            let totalExpected = 120;
+            let totalPct = Math.round((totalAvailable / totalExpected) * 100);
+
+            let statsHtml = `
+            <div class="unam-dashboard-container">
+                <div onclick="const g = document.getElementById('global-stats-grid'); g.style.display = g.style.display === 'none' ? 'grid' : 'none';" style="cursor:pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                    <h3 class="unam-dashboard-header">
+                        <div><i class="fa-solid fa-chart-pie" style="color:#f59e0b;"></i> Progreso de la Guía UNAM <span style="font-size:0.9rem; color:#64748b; font-weight:normal; margin-left: 5px;"><i class="fa-solid fa-chevron-down"></i> Detalle</span></div>
+                        <span class="unam-dashboard-badge" style="background:${totalPct === 100 ? '#f0fdf4' : '#eff6ff'}; color:${totalPct === 100 ? '#166534' : '#1e40af'}; border:1px solid ${totalPct === 100 ? '#bbf7d0' : '#bfdbfe'};">${totalAvailable} / ${totalExpected} (${totalPct}%)</span>
+                    </h3>
+                    <div class="unam-dashboard-progress-bar-bg">
+                        <div class="unam-dashboard-progress-bar-fill" style="background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); width:${totalPct}%;"></div>
+                    </div>
+                </div>
+                <div id="global-stats-grid" class="unam-dashboard-grid">
+            `;
+
+            const iconMap = {
+                'Español': 'fa-language',
+                'Matemáticas': 'fa-calculator',
+                'Física': 'fa-atom',
+                'Química': 'fa-flask',
+                'Biología': 'fa-dna',
+                'Historia Universal': 'fa-globe',
+                'Historia de México': 'fa-earth-americas',
+                'Literatura': 'fa-book',
+                'Geografía': 'fa-map'
+            };
+
+            Object.keys(unamExpected).forEach(materia => {
+                let exp = unamExpected[materia];
+                let cur = currentCounts[materia];
+                let pct = Math.round((cur / exp) * 100);
+                let currentIcon = iconMap[materia] || 'fa-bookmark';
+                let anchorId = `materia-anchor-${materia.replace(/\s+/g, '-')}`;
+
+                statsHtml += `
+                    <div class="unam-dashboard-item" onclick="const e = document.getElementById('${anchorId}'); if(e) e.scrollIntoView({behavior: 'smooth', block: 'start'});">
+                        <div class="unam-dashboard-item-header">
+                            <span class="unam-dashboard-item-title"><i class="fa-solid ${currentIcon}" style="color:#94a3b8; margin-right:4px;"></i> ${materia}</span>
+                            <span class="unam-dashboard-item-count" style="color:${pct === 100 ? '#059669' : (pct > 0 ? '#0284c7' : '#94a3b8')};">${cur}/${exp} <span style="font-size:0.75rem; opacity:0.8;">(${pct}%)</span></span>
+                        </div>
+                        <div class="unam-dashboard-item-progress-bg">
+                            <div class="unam-dashboard-item-progress-fill" style="background:${pct === 100 ? '#10b981' : (pct > 0 ? '#3b82f6' : 'transparent')}; width:${pct}%;"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            statsHtml += `</div></div>`;
+            html += statsHtml;
+
+            let currentMateria = '';
+
             allQuestions.forEach(function (q, globalIdx) {
+                if (q.materia !== currentMateria) {
+                    currentMateria = q.materia;
+                    let iconClass = iconMap[currentMateria] || 'fa-bookmark';
+                    let linkAnchorId = `materia-anchor-${currentMateria.replace(/\s+/g, '-')}`;
+                    html += `
+                        <div id="${linkAnchorId}" class="unam-subject-header">
+                            <div class="unam-subject-header-left">
+                                <div class="unam-subject-header-indicator"></div>
+                                <h2 class="unam-subject-header-title"><i class="fa-solid ${iconClass}" style="color: #3b82f6; margin-right: 5px;"></i> ${currentMateria}</h2>
+                            </div>
+                            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-subir"><i class="fa-solid fa-arrow-up"></i> Subir</button>
+                        </div>
+                    `;
+                }
+
                 let optionsHtml = q.opciones.map(function (opt, optIdx) {
                     return `
-                    <div class="unam-option" id="globalunam-opt-${globalIdx}-${optIdx}" onclick="selectGlobalOption(${globalIdx}, ${optIdx}, ${q.respuesta}, '${q.retroalimentacion.replace(/'/g, "\\'")}')">
+                    <div class="unam-option" id="globalunam-opt-${globalIdx}-${optIdx}" onclick="selectGlobalOption(${globalIdx}, ${optIdx})">
                         <span style="font-weight: 800; color: #64748b; margin-right: 8px;">${String.fromCharCode(65 + optIdx)})</span> 
                         <span>${opt}</span>
                     </div>
@@ -1952,14 +2819,21 @@
 
                 html += `
                     <div class="unam-question-card" style="margin-top: 25px; border-left-color: #f59e0b;">
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                          <span style="background:#fff7ed; color:#c2410c; padding:4px 10px; border-radius:6px; font-size:0.85rem; font-weight:bold; border: 1px solid #ffedd5;"><i class="fa-solid fa-tag"></i> Materia: ${q.materia}</span>
-                          <span style="color:#94a3b8; font-weight:700; font-size:0.9rem;">#${q.numero}</span>
+                        <div class="unam-question-card-inner-header">
+                          <div class="unam-question-card-badges">
+                            <span class="badge-dark"><i class="fa-solid fa-hashtag"></i> ${q.numero}</span>
+                            <span class="badge-orange"><i class="fa-solid fa-tag"></i> Materia: ${q.materia}</span>
+                            <span class="badge-blue"><i class="fa-solid fa-book-open"></i> ${q.tema}</span>
+                          </div>
+                          <div style="display:flex; gap: 15px; align-items: center;">
+                            <a href="javascript:void(0)" onclick="const btn = document.getElementById('link-${q.originalKey.replace('content-', '')}'); if(btn) btn.click();" class="btn-repasar-clase"><i class="fa-solid fa-arrow-up-right-from-square"></i> Repasar Clase</a>
+                          </div>
                         </div>
                         <p class="unam-question-text" style="font-size: 1.15rem;">${q.pregunta}</p>
                         <div class="unam-options" style="margin-top: 20px;">
                             ${optionsHtml}
                         </div>
+                        <button id="globalunam-eval-btn-${globalIdx}" class="unam-eval-btn" onclick="evalGlobalQuestion(${globalIdx}, ${q.respuesta}, '${q.retroalimentacion.replace(/'/g, "\\'")}')" disabled>Evaluar</button>
                         <div id="globalunam-feedback-${globalIdx}" class="unam-feedback" style="margin-top: 15px;"></div>
                     </div>
                 `;
@@ -1979,22 +2853,41 @@
             return html;
         }
 
-        function selectGlobalOption(globalIdx, optIdx, correctIdx, retro) {
+        function selectGlobalOption(globalIdx, optIdx) {
             const options = document.querySelectorAll(`[id^="globalunam-opt-${globalIdx}-"]`);
-            const feedbackEl = document.getElementById(`globalunam-feedback-${globalIdx}`);
-            if (feedbackEl.style.display === 'flex') return;
+            options.forEach(opt => opt.classList.remove('selected'));
 
-            const isCorrect = (optIdx === correctIdx);
+            const evalBtn = document.getElementById(`globalunam-eval-btn-${globalIdx}`);
+            if (evalBtn.style.display === 'none') return; // Ya se evaluó
+
+            const selectedOpt = document.getElementById(`globalunam-opt-${globalIdx}-${optIdx}`);
+            if (selectedOpt) {
+                selectedOpt.classList.add('selected');
+                userAnswers[`globalunam-${globalIdx}`] = optIdx;
+                evalBtn.disabled = false;
+            }
+        }
+
+        function evalGlobalQuestion(globalIdx, correctIdx, retro) {
+            const selectedOptIdx = userAnswers[`globalunam-${globalIdx}`];
+            if (selectedOptIdx === undefined) return;
+
+            const options = document.querySelectorAll(`[id^="globalunam-opt-${globalIdx}-"]`);
+            const isCorrect = (selectedOptIdx === correctIdx);
 
             options.forEach(function (opt, idx) {
                 opt.style.pointerEvents = 'none';
                 if (idx === correctIdx) {
                     opt.classList.add('correct');
-                } else if (idx === optIdx && !isCorrect) {
+                } else if (idx === selectedOptIdx && !isCorrect) {
                     opt.classList.add('incorrect');
                 }
             });
 
+            const evalBtn = document.getElementById(`globalunam-eval-btn-${globalIdx}`);
+            evalBtn.style.display = 'none';
+
+            const feedbackEl = document.getElementById(`globalunam-feedback-${globalIdx}`);
             feedbackEl.style.display = 'flex';
             if (isCorrect) {
                 feedbackEl.classList.add('correct-feedback');
@@ -2017,14 +2910,28 @@
                 document.getElementById('content-home').classList.remove('visible');
                 const dynamicArea = document.getElementById('dynamic-content-area');
                 dynamicArea.innerHTML = renderAllUnamQuestionsPage();
+
+                // Disparar compilación matemática de MathJax en la vista general
+                setTimeout(() => {
+                    if (window.MathJax) {
+                        window.MathJax.typesetPromise([document.getElementById('dynamic-content-area')])
+                            .catch((err) => console.log('MathJax Error:', err));
+                    }
+                }, 50);
             } else {
                 document.getElementById('content-home').classList.remove('visible');
                 const dynamicArea = document.getElementById('dynamic-content-area');
                 dynamicArea.innerHTML = renderClassContainer(contentId);
 
-                // Renderizar las preguntas de la clase inyectada
+                // Renderizar las preguntas de la clase inyectada y renderizar Math
                 setTimeout(() => {
                     renderQuestionsForClass(contentId);
+
+                    // Disparar compilación matemática de MathJax en los nuevos elementos
+                    if (window.MathJax) {
+                        window.MathJax.typesetPromise([document.getElementById('dynamic-content-area')])
+                            .catch((err) => console.log('MathJax Error:', err));
+                    }
                 }, 50);
 
                 // Readjuntar event listener de animación original al tema principal recién inyectado
@@ -2052,7 +2959,12 @@
                 parentBtn.classList.add('active-espanol');
             }
 
-            setTimeout(toggleMenu, 300);
+            setTimeout(() => {
+                const sideMenu = document.getElementById('sideMenu');
+                if (sideMenu && sideMenu.classList.contains('open')) {
+                    toggleMenu();
+                }
+            }, 300);
             window.scrollTo(0, 0);
         }
 
