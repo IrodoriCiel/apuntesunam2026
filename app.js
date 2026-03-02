@@ -67,10 +67,21 @@ if (localStorage.getItem('theme') === 'dark') {
 // SCROLL TO TOP
 // =============================================
 const scrollBtn = document.getElementById('scrollToTopBtn');
+// Visibilidad PWA unificada
+function updatePwaVisibility() {
+    const pwaBtn = document.getElementById('pwa-install-btn');
+    if (!pwaBtn) return;
+    const isScrollDown = window.scrollY > 10;
+    const isMenuOpen = sideMenu?.classList.contains('open');
+    pwaBtn.classList.toggle('hidden-scroll', isScrollDown || isMenuOpen);
+}
+
 window.addEventListener('scroll', () => {
+    // Scroll To Top
     if (scrollBtn) {
         scrollBtn.classList.toggle('visible', window.scrollY > 350);
     }
+    updatePwaVisibility();
 });
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
@@ -168,6 +179,9 @@ function toggleMenu() {
     menuBtn.classList.toggle('open');
     sideMenu.classList.toggle('open');
     overlay.classList.toggle('active');
+
+    updatePwaVisibility();
+
     if (window.innerWidth > 900) {
         mainContent.style.paddingLeft = sideMenu.classList.contains('open') ? '320px' : '0';
     } else {
