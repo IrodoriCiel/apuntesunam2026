@@ -56,7 +56,6 @@
             --card-text: #cbd5e1; --header-text: #f8fafc;
         }
     </style>
-    </style>
 </head>
 
 <body>
@@ -75,6 +74,12 @@
     <!-- Botón Volver Arriba -->
     <button id="scrollToTopBtn" onclick="scrollToTop()" aria-label="Volver arriba">
         <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Botón Instalar PWA -->
+    <button id="pwa-install-btn" onclick="installApp()" aria-label="Instalar app" style="display:none;">
+        <i class="fa-solid fa-download"></i>
+        <span>Instalar app</span>
     </button>
 
     <div class="overlay" id="overlay"></div>
@@ -279,7 +284,7 @@
 
             <!-- PREGUNTAS UNAM -->
             <li class="subject-wrapper" style="margin-top: 20px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
-                <a href="#" class="subject-item" id="btn-todas-unam"
+                <a href="javascript:void(0)" class="subject-item" id="btn-todas-unam"
                     onclick="switchClass('content-todas-unam', this, 'btn-todas-unam')" style="color: #ea580c;">
                     <span class="subject-icon"><i class="fa-solid fa-list-check"></i></span>
                     Preguntas Guía UNAM
@@ -288,7 +293,7 @@
 
             <!-- SIMULACRO DE EXAMEN -->
             <li class="subject-wrapper" style="margin-top: 5px;">
-                <a href="#" class="subject-item" id="btn-simulacro"
+                <a href="javascript:void(0)" class="subject-item" id="btn-simulacro"
                     onclick="switchClass('content-simulacro', this, 'btn-simulacro')" style="color: #2563eb;">
                     <span class="subject-icon"><i class="fa-solid fa-graduation-cap"></i></span>
                     Simulacro de Examen
