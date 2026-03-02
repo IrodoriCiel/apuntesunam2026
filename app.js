@@ -774,7 +774,7 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
     if (classLinkElement) classLinkElement.classList.add('active-class');
     if (parentBtnId) {
         const pb = document.getElementById(parentBtnId);
-        if (pb) pb.classList.add(parentBtnId === 'btn-espanol' ? 'active-espanol' : 'active');
+        if (pb) pb.classList.add('active');
     }
 
     setTimeout(() => {
