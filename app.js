@@ -10,6 +10,35 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+// --- PWA: Install Prompt ---
+let _deferredInstallPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    _deferredInstallPrompt = e;
+    // Mostrar el botón de instalar
+    const btn = document.getElementById('pwa-install-btn');
+    if (btn) btn.style.display = 'flex';
+});
+
+window.addEventListener('appinstalled', () => {
+    _deferredInstallPrompt = null;
+    const btn = document.getElementById('pwa-install-btn');
+    if (btn) btn.style.display = 'none';
+    console.log('PWA instalada exitosamente.');
+});
+
+async function installApp() {
+    if (!_deferredInstallPrompt) return;
+    _deferredInstallPrompt.prompt();
+    const { outcome } = await _deferredInstallPrompt.userChoice;
+    if (outcome === 'accepted') {
+        const btn = document.getElementById('pwa-install-btn');
+        if (btn) btn.style.display = 'none';
+    }
+    _deferredInstallPrompt = null;
+}
+
 // --- Referencias DOM ---
 const menuBtn = document.getElementById('menuBtn');
 const sideMenu = document.getElementById('sideMenu');
@@ -374,19 +403,74 @@ function renderSimulacroPage() {
         </div>`;
 }
 
+// Mapa de icono y color por materia (reutilizado en toda la app)
+const MATERIA_ICON = {
+    'Español': { icon: 'fa-language', color: '#2563eb' },
+    'Matemáticas': { icon: 'fa-calculator', color: '#7c3aed' },
+    'Física': { icon: 'fa-atom', color: '#0891b2' },
+    'Química': { icon: 'fa-flask', color: '#16a34a' },
+    'Biología': { icon: 'fa-dna', color: '#d97706' },
+    'Historia Universal': { icon: 'fa-globe', color: '#dc2626' },
+    'Historia de México': { icon: 'fa-earth-americas', color: '#b45309' },
+    'Literatura': { icon: 'fa-book', color: '#9333ea' },
+    'Geografía': { icon: 'fa-map', color: '#0d9488' },
+};
+
 function showSubjectFilter() {
     const div = document.getElementById('subject-filter');
     div.style.display = div.style.display === 'none' ? 'block' : 'none';
     const cb = document.getElementById('subject-checkboxes');
     if (cb.innerHTML) return;
-    const materias = [...new Set([
+
+    // Materias disponibles (con preguntas)
+    const disponibles = new Set([
         ...Object.keys(unamQuestions).map(k => appDatabase[k]?.mainTopicTitle || k),
         ...Object.keys(practiceQuestions).map(k => appDatabase[k]?.mainTopicTitle || k)
-    ])];
-    cb.innerHTML = materias.map(m => `
-        <label style="display:flex;align-items:center;gap:6px;font-weight:600;cursor:pointer;background:#f8fafc;padding:8px 12px;border-radius:8px;border:2px solid #e2e8f0;">
-            <input type="checkbox" value="${m}" checked style="width:16px;height:16px;"> ${m}
-        </label>`).join('');
+    ]);
+
+    // Ordenar igual que el menú (orden de MATERIA_ICON)
+    const materias = Object.keys(MATERIA_ICON).filter(m => disponibles.has(m));
+    // Agregar al final cualquier materia que no esté en el mapa
+    disponibles.forEach(m => { if (!MATERIA_ICON[m]) materias.push(m); });
+
+    let html = `
+        <div class="sim-filter-actions">
+            <button onclick="toggleAllMaterias(true)" type="button"><i class="fa-solid fa-check-double"></i> Todas</button>
+            <button onclick="toggleAllMaterias(false)" type="button"><i class="fa-solid fa-xmark"></i> Ninguna</button>
+        </div>
+    `;
+
+    html += materias.map(m => {
+        const meta = MATERIA_ICON[m] || { icon: 'fa-bookmark', color: '#64748b' };
+        return `
+        <label class="sim-materia-card" data-materia="${m}">
+            <input type="checkbox" value="${m}" checked hidden>
+            <div class="sim-materia-icon" style="color:${meta.color};background:${meta.color}18;">
+                <i class="fa-solid ${meta.icon}"></i>
+            </div>
+            <span class="sim-materia-name">${m}</span>
+            <span class="sim-materia-check"><i class="fa-solid fa-circle-check"></i></span>
+        </label>`;
+    }).join('');
+
+    cb.innerHTML = html;
+
+    // Toggle visual al hacer click en la tarjeta
+    cb.querySelectorAll('.sim-materia-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const input = card.querySelector('input');
+            input.checked = !input.checked;
+            card.classList.toggle('unchecked', !input.checked);
+        });
+    });
+}
+
+function toggleAllMaterias(select) {
+    document.querySelectorAll('.sim-materia-card').forEach(card => {
+        const input = card.querySelector('input');
+        input.checked = select;
+        card.classList.toggle('unchecked', !select);
+    });
 }
 
 function startSimulacroFiltered() {
