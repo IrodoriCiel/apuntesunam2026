@@ -329,11 +329,6 @@ body.dark-mode {
     border-left-color: #22c55e;
 }
 
-.subject-item.active-espanol {
-    background-color: #eff6ff;
-    color: #1d4ed8;
-    border-left-color: #3b82f6;
-}
 
 .subject-icon {
     margin-right: 12px;
