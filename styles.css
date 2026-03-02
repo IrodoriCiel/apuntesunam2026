@@ -68,6 +68,25 @@ body.dark-mode {
     background-image: radial-gradient(#334155 2px, transparent 2px);
 }
 
+/* --- Estructura de Páginas --- */
+.subject-content {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px 60px 20px;
+    box-sizing: border-box;
+}
+
+.subject-content.visible {
+    display: flex;
+}
+
+/* La página de inicio maneja su propio padding en .home-container */
+#content-home {
+    padding: 0;
+}
+
 /* --- Botones Flotantes --- */
 .dark-mode-toggle,
 .menu-btn {
@@ -164,8 +183,8 @@ body.dark-mode {
 /* --- Botón Instalar PWA --- */
 #pwa-install-btn {
     position: fixed;
-    bottom: 85px;
-    right: 20px;
+    bottom: 30px;
+    right: 25px;
     z-index: 1040;
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     color: #fff;
@@ -188,6 +207,12 @@ body.dark-mode {
 #pwa-install-btn:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(16, 185, 129, 0.55);
+}
+
+#pwa-install-btn.hidden-scroll {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
 }
 
 #pwa-install-btn i {
@@ -2195,6 +2220,7 @@ h1.title-main i {
     line-height: 1.2;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     width: 100%;
@@ -2231,4 +2257,54 @@ h1.title-main i {
 
 .dark-mode .sim-materia-name {
     color: #e2e8f0;
+}
+
+/* =====================================================
+   BOTÓN: Marcar como Estudiada
+   ===================================================== */
+.btn-mark-studied {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+    margin: 20px auto;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+}
+
+.btn-mark-studied i {
+    font-size: 1.4rem;
+}
+
+.btn-mark-studied:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.35);
+}
+
+.btn-mark-studied:active {
+    transform: translateY(-2px);
+}
+
+/* Estado: Completado (Done) */
+.btn-mark-studied.done {
+    background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.btn-mark-studied.done:hover {
+    box-shadow: 0 15px 30px rgba(16, 185, 129, 0.35);
+}
+
+/* Dark mode adaptive contrast */
+.dark-mode .btn-mark-studied {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
