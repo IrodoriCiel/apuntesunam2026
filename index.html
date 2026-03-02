@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Apuntes UNAM 2026</title>
+
+    <!-- PWA Meta Tags -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Apuntes UNAM">
+
     <!-- Favicon SVG Base64 (A graduation cap and book style icon) -->
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231d4ed8' d='M256 32l-224 96 224 96 224-96z'/%3E%3Cpath fill='%233b82f6' d='M256 224l-224-96v192l224 96v-192z'/%3E%3Cpath fill='%2360a5fa' d='M480 128v192l-224 96v-192z'/%3E%3Cpath fill='%23f59e0b' d='M160 384c0 35.3-28.7 64-64 64s-64-28.7-64-64v-160l64-32v192h64z'/%3E%3C/svg%3E">
@@ -17,1114 +26,36 @@
     <!-- MathJax for rendering math equations -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']]
-            }
-        };
+        window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
     </script>
 
+    <!-- SEO -->
+    <meta name="description"
+        content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
+
+    <!-- Estilos externos -->
+    <link rel="stylesheet" href="./styles.css">
+
     <style>
+        /* Variables CSS heredadas por styles.css en runtime */
         :root {
-            --bg-color: #f4f6f8;
-            --text-color: #334155;
-            --main-node: #ffe4b5;
-            --branch-1: #bae1ff;
-            --branch-2: #baffc9;
-            --branch-3: #ffb38a;
-            --branch-4: #e2cbff;
-            --branch-5: #fce7f3;
-            --sub-node-bg: #ffffff;
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --border-radius: 25px;
-
-            /* Colores del Menú */
-            --menu-bg: #ffffff;
-            --menu-text: #1e293b;
-            --menu-hover: #e2e8f0;
-            --menu-accent: #2563eb;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            background-color: var(--bg-color);
-            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
-            background-size: 30px 30px;
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px 20px 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            transition: margin-left 0.4s ease;
-        }
-
-        /* --- Estilos del Menú Hamburguesa --- */
-
-        .menu-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: var(--menu-bg);
-            border: none;
-            cursor: pointer;
-            padding: 12px;
-            border-radius: 50%;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-        }
-
-        .menu-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-color);
-            border-radius: 5px;
-            transition: all 0.4s ease;
-        }
-
-        .menu-btn.open .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-btn.open .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-btn.open .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -320px;
-            width: 320px;
-            height: 100vh;
-            /* Fallback */
-            height: 100dvh;
-            /* Modern mobile dynamic height */
-            background-color: var(--menu-bg);
-            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            display: flex;
-            flex-direction: column;
-            padding-top: 80px;
-            padding-bottom: 90px;
-            box-sizing: border-box;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .side-menu.open {
-            left: 0;
-        }
-
-        .side-menu h3 {
-            margin: 0 20px 20px 20px;
-            font-size: 1.5rem;
-            color: var(--menu-accent);
-            border-bottom: 2px solid var(--menu-hover);
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .subject-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .subject-item {
-            padding: 15px 25px;
-            font-size: 1.1rem;
-            color: var(--menu-text);
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            border-left: 5px solid transparent;
-        }
-
-        .subject-item:hover {
-            background-color: var(--menu-hover);
-            padding-left: 30px;
-        }
-
-        .subject-item.active {
-            background-color: #f0fdf4;
-            color: #166534;
-            border-left-color: #22c55e;
-        }
-
-        .subject-item.active-espanol {
-            background-color: #eff6ff;
-            color: #1d4ed8;
-            border-left-color: #3b82f6;
-        }
-
-        .subject-icon {
-            margin-right: 12px;
-            font-size: 1.3rem;
-            width: 24px;
-            text-align: center;
-        }
-
-        .sub-menu-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            background-color: #f8fafc;
-            transition: max-height 0.35s ease-out, opacity 0.35s ease-out;
-        }
-
-        .sub-menu-list.expanded {
-            /* Max-height is dynamically set in javascript */
-            opacity: 1;
-        }
-
-        .class-item {
-            padding: 12px 25px 12px 48px;
-            font-size: 0.95rem;
-            color: #475569;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            border-left: 5px solid transparent;
-            transition: all 0.2s ease;
-            gap: 10px;
-        }
-
-        .class-item.active-class {
-            font-weight: 900;
-            color: var(--menu-accent);
-            background-color: #e2e8f0;
-            border-left-color: var(--menu-accent);
-        }
-
-        .class-item:hover {
-            background-color: #f1f5f9;
-            color: var(--menu-accent);
-            border-left-color: var(--menu-accent);
-            padding-left: 55px;
-            padding-right: 18px;
-        }
-
-        .arrow-icon {
-            margin-left: auto;
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        .subject-item.open .arrow-icon {
-            transform: rotate(180deg);
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(2px);
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* --- Resto del contenido principal --- */
-        .main-content {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: opacity 0.3s ease;
-        }
-
-        .subject-content {
-            display: none;
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeInPage 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-        }
-
-        .subject-content.visible {
-            display: flex;
-        }
-
-        @keyframes fadeInPage {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        h1.title-main {
-            text-align: center;
-            font-size: 3rem;
-            color: #2563eb;
-            text-shadow: 2px 2px 0px #fff;
-            margin-top: 20px;
-            margin-bottom: 40px;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        h1.title-main i {
-            margin: 0 10px;
-        }
-
-        .mindmap-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .main-topic {
-            background-color: var(--main-node);
-            color: #b45309;
-            padding: 25px 40px;
-            border-radius: 40px;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(255, 228, 181, 0.8), var(--shadow);
-            border: 4px solid #fff;
-            animation: pulseMain 2.5s infinite alternate;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .espanol-topic {
-            background-color: #e0f2fe;
-            color: #0369a1;
-            box-shadow: 0 0 20px rgba(224, 242, 254, 0.8), var(--shadow);
-            animation: pulseMainEsp 2.5s infinite alternate;
-        }
-
-        .main-topic:hover {
-            transform: scale(1.05);
-            animation-play-state: paused;
-        }
-
-        .main-topic h2 {
-            font-size: 2.2rem;
-            margin: 0 0 10px 0;
-            font-weight: 900;
-        }
-
-        .main-topic h2 i {
-            margin: 0 10px;
-        }
-
-        .main-topic p {
-            font-size: 1.2rem;
-            margin: 0;
-            font-weight: 700;
-        }
-
-        .branches {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 30px;
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
-        .branch-col {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            flex: 1;
-            min-width: 320px;
-        }
-
-        .topic-node {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 20px 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            border: 3px solid rgba(255, 255, 255, 0.7);
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .topic-node::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
-            transform: rotate(30deg) translate(-100%, -100%);
-            transition: all 0.5s;
-            pointer-events: none;
-        }
-
-        .topic-node:hover::after {
-            transform: rotate(30deg) translate(100%, 100%);
-        }
-
-        .topic-node:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .topic-node h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 900;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .topic-1 {
-            background-color: var(--branch-1);
-            color: #005f73;
-        }
-
-        .topic-2 {
-            background-color: var(--branch-2);
-            color: #2d6a4f;
-        }
-
-        .topic-3 {
-            background-color: var(--branch-3);
-            color: #944000;
-        }
-
-        .topic-4 {
-            background-color: var(--branch-4);
-            color: #4c1d95;
-        }
-
-        .topic-5 {
-            background-color: var(--branch-5);
-            color: #831843;
-        }
-
-        .sub-nodes-container {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            width: 95%;
-            transform-origin: top;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .sub-nodes-container.hidden {
-            opacity: 0;
-            transform: scaleY(0);
-            height: 0;
-            overflow: hidden;
-            margin: 0;
-            gap: 0;
-        }
-
-        .sub-node {
-            background: var(--sub-node-bg);
-            padding: 18px 22px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border-left: 8px solid;
-            font-size: 1rem;
-            line-height: 1.5;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
-        }
-
-        .sub-node:hover {
-            transform: translateX(10px) scale(1.02);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            z-index: 5;
-        }
-
-        .sub-node h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-            color: #1e293b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .sub-node h3 i {
-            color: #64748b;
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            background-color: #f1f5f9;
-            color: #64748b;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .sub-node p {
-            margin: 0 0 10px 0;
-            font-weight: 400;
-            color: #475569;
-        }
-
-        .example-box {
-            background-color: #f8fafc;
-            border-left: 3px solid #cbd5e1;
-            padding: 12px 16px;
-            border-radius: 0 8px 8px 0;
-            color: #334155;
-            margin-top: 10px;
-        }
-
-        .example-box ul {
-            margin: 0;
-            padding-left: 18px;
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-
-        .example-box li {
-            margin-bottom: 5px;
-        }
-
-        .example-box li:last-child {
-            margin-bottom: 0;
-        }
-
-        .sub-node b,
-        .sub-node strong {
-            color: #0f172a;
-            font-weight: 900;
-            background-color: rgba(255, 228, 181, 0.4);
-            padding: 0 4px;
-            border-radius: 4px;
-        }
-
-        .topic-1-sub {
-            border-left-color: var(--branch-1);
-        }
-
-        .topic-2-sub {
-            border-left-color: var(--branch-2);
-        }
-
-        .topic-3-sub {
-            border-left-color: var(--branch-3);
-        }
-
-        .topic-4-sub {
-            border-left-color: var(--branch-4);
-        }
-
-        .topic-5-sub {
-            border-left-color: var(--branch-5);
-        }
-
-        .click-hint {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulseMain {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(255, 228, 181, 0.6), var(--shadow);
-            }
-
-            100% {
-                transform: scale(1.02);
-                box-shadow: 0 0 30px rgba(255, 228, 181, 1), var(--shadow);
-            }
-        }
-
-        @keyframes pulseMainEsp {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 15px rgba(224, 242, 254, 0.6), var(--shadow);
-            }
-
-            100% {
-                transform: scale(1.02);
-                box-shadow: 0 0 30px rgba(224, 242, 254, 1), var(--shadow);
-            }
-        }
-
-        .visible .branch-col:nth-child(1) {
-            animation: slideUp 0.6s ease-out backwards 0.1s;
-        }
-
-        .visible .branch-col:nth-child(2) {
-            animation: slideUp 0.6s ease-out backwards 0.3s;
-        }
-
-        .visible .branch-col:nth-child(3) {
-            animation: slideUp 0.6s ease-out backwards 0.5s;
-        }
-
-        .visible .sub-node {
-            animation: fadeInRight 0.5s forwards;
-        }
-
-        @media (max-width: 900px) {
-            .branches {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .branch-col {
-                width: 100%;
-                max-width: 500px;
-                margin-bottom: 20px;
-            }
-
-            h1.title-main {
-                font-size: 2.2rem;
-                margin-top: 60px;
-            }
-        }
-
-        /* --- Sección Videos --- */
-        .video-section {
-            width: 100%;
-            max-width: 1000px;
-            margin: 30px auto;
-            background: #ffffff;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #ef4444;
-            padding: 30px 40px;
-            box-sizing: border-box;
-            font-family: 'Nunito', sans-serif;
-            position: relative;
-        }
-
-        .video-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .video-header:hover {
-            opacity: 0.8;
-        }
-
-        .video-header h2 {
-            margin: 0;
-            color: #b91c1c;
-            font-size: 1.8rem;
-            font-weight: 900;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .video-header h2 i {
-            color: #ef4444;
-        }
-
-        .video-container-responsive {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-container-responsive iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- Sección Preguntas UNAM --- */
-        .unam-questions-section {
-            width: 100%;
-            max-width: 1000px;
-            margin: 30px auto;
-            background: #ffffff;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #f59e0b;
-            padding: 30px 40px;
-            box-sizing: border-box;
-            font-family: 'Nunito', sans-serif;
-            position: relative;
-        }
-
-        .unam-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            cursor: pointer;
-        }
-
-        .unam-header h2 {
-            margin: 0;
-            color: #b45309;
-            font-size: 1.8rem;
-            font-weight: 900;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .unam-header h2 i {
-            color: #f59e0b;
-        }
-
-        .unam-toggle-btn {
-            background: #fef3c7;
-            color: #d97706;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .unam-toggle-btn:hover {
-            background: #fde68a;
-        }
-
-        .unam-questions-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-
-        .unam-question-card {
-            background: #f8fafc;
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .unam-question-text {
-            font-size: 1.15rem;
-            color: #1e293b;
-            margin: 0 0 15px 0;
-            font-weight: 700;
-        }
-
-        .unam-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .unam-option {
-            background: #ffffff;
-            border: 2px solid #cbd5e1;
-            border-radius: 10px;
-            padding: 12px 15px;
-            cursor: pointer;
-            font-size: 1rem;
-            color: #334155;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .unam-option:hover {
-            border-color: #94a3b8;
-            background: #f1f5f9;
-        }
-
-        .unam-option.selected {
-            border-color: #3b82f6;
-            background: #eff6ff;
-            font-weight: 700;
-        }
-
-        .unam-option.correct {
-            border-color: #10b981;
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .unam-option.incorrect {
-            border-color: #ef4444;
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        .unam-feedback {
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            display: none;
-            animation: fadeInPage 0.3s ease forwards;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .unam-feedback.correct-feedback {
-            background: #d1fae5;
-            color: #065f46;
-            border-left: 4px solid #10b981;
-        }
-
-        .unam-feedback.incorrect-feedback {
-            background: #fee2e2;
-            color: #991b1b;
-            border-left: 4px solid #ef4444;
-        }
-
-        .unam-eval-btn {
-            margin-top: 15px;
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s ease;
-            align-self: flex-start;
-        }
-
-        .unam-eval-btn:hover {
-            background: #1d4ed8;
-        }
-
-        .unam-eval-btn:disabled {
-            background: #94a3b8;
-            cursor: not-allowed;
-        }
-
-        .exam-tip {
-            background: #fef08a;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 10px;
-            color: #854d0e;
-            font-size: 0.9rem;
-        }
-
-        /* ----- ESTILOS PARA LA SECCIÓN GLOBAL DE PREGUNTAS UNAM ----- */
-        .unam-dashboard-container {
-            background: #fff;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 2px solid #f1f5f9;
-        }
-
-        .unam-dashboard-header {
-            margin-top: 0;
-            color: #334155;
-            font-size: 1.4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .unam-dashboard-badge {
-            font-size: 1.1rem;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 900;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .unam-dashboard-grid {
-            display: none;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px dashed #cbd5e1;
-        }
-
-        .unam-dashboard-item {
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 12px;
-            transition: transform 0.2s;
-            cursor: pointer;
-        }
-
-        .unam-dashboard-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .unam-subject-header {
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            scroll-margin-top: 20px;
-        }
-
-        .btn-subir {
-            background: #f1f5f9;
-            color: #475569;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            transition: all 0.2s;
-        }
-
-        .btn-subir:hover {
-            background: #e2e8f0;
-            color: #1e293b;
-        }
-
-        .badge-dark {
-            background: #1e293b;
-            color: #fbbf24;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 900;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-            border: 1px solid #334155;
-        }
-
-        .badge-orange {
-            background: #fff7ed;
-            color: #c2410c;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid #ffedd5;
-        }
-
-        .badge-blue {
-            background: #f0f9ff;
-            color: #0369a1;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            border: 1px solid #e0f2fe;
-        }
-
-        .btn-repasar-clase {
-            font-size: 0.85rem;
-            color: #3b82f6;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 4px 8px;
-            border-radius: 6px;
-            border: 1px solid #bfdbfe;
-            background: #eff6ff;
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            transition: all 0.2s;
-        }
-
-        .btn-repasar-clase:hover {
-            background: #dbeafe;
-            border-color: #93c5fd;
-        }
-
-        .unam-dashboard-progress-bar-bg {
-            background: #e2e8f0;
-            height: 12px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            overflow: hidden;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .unam-dashboard-progress-bar-fill {
-            height: 100%;
-            transition: width 1s;
-        }
-
-        .unam-dashboard-item-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-        }
-
-        .unam-dashboard-item-title {
-            font-weight: 800;
-            color: #475569;
-        }
-
-        .unam-dashboard-item-count {
-            font-weight: 900;
-        }
-
-        .unam-dashboard-item-progress-bg {
-            background: #e2e8f0;
-            height: 6px;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .unam-dashboard-item-progress-fill {
-            height: 100%;
-        }
-
-        .unam-subject-header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .unam-subject-header-indicator {
-            background: #3b82f6;
-            width: 8px;
-            height: 30px;
-            border-radius: 4px;
-        }
-
-        .unam-subject-header-title {
-            margin: 0;
-            color: #1e293b;
-            font-size: 1.6rem;
-            font-weight: 900;
-        }
-
-        .unam-question-card-inner-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .unam-question-card-badges {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
+            --bg-color: #f4f6f8; --text-color: #334155; --main-node: #ffe4b5;
+            --branch-1: #bae1ff; --branch-2: #baffc9; --branch-3: #ffb38a;
+            --branch-4: #e2cbff; --branch-5: #fce7f3; --sub-node-bg: #ffffff;
+            --shadow: 0 10px 25px rgba(0,0,0,.1); --border-radius: 25px;
+            --menu-bg: #ffffff; --menu-text: #1e293b; --menu-hover: #e2e8f0;
+            --menu-accent: #2563eb; --card-text: #475569; --header-text: #1e293b;
+            --transition-smooth: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        body.dark-mode {
+            --bg-color: #0f172a; --text-color: #e2e8f0; --main-node: #78350f;
+            --branch-1: #1e3a8a; --branch-2: #064e3b; --branch-3: #7c2d12;
+            --branch-4: #4c1d95; --branch-5: #831843; --sub-node-bg: #1e293b;
+            --shadow: 0 10px 25px rgba(0,0,0,.3);
+            --menu-bg: #1e293b; --menu-text: #f1f5f9; --menu-hover: #334155;
+            --card-text: #cbd5e1; --header-text: #f8fafc;
+        }
+    </style>
     </style>
 </head>
 
@@ -1137,18 +68,34 @@
         <div class="bar"></div>
     </button>
 
+    <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()" aria-label="Cambiar modo oscuro">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <!-- Botón Volver Arriba -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
     <div class="overlay" id="overlay"></div>
 
     <nav class="side-menu" id="sideMenu">
-        <h3><i class="fa-solid fa-book-bookmark"></i> Mis Asignaturas</h3>
+        <h3><i class="fa-solid fa-book-bookmark"></i> Mis Apuntes</h3>
+        <!-- Buscador -->
+        <div class="menu-search-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="search" class="menu-search-input" id="menuSearchInput" placeholder="Buscar clase..."
+                oninput="filterMenu(this.value)">
+        </div>
         <ul class="subject-list">
 
             <!-- INICIO -->
             <li class="subject-wrapper" style="margin-bottom: 20px;">
-                <a href="#" class="class-item active-class" id="link-inicio"
-                    onclick="switchClass('content-home', this, 'btn-inicio')"
-                    style="background: #e0f2fe; border-left: 4px solid #0284c7; font-weight: 800; color: #0284c7; padding: 12px 15px; border-radius: 8px;">
+                <a href="javascript:void(0)" class="class-item active-class" id="link-inicio"
+                    onclick="switchClass('content-home', this, 'btn-inicio')" data-class-id="content-home"
+                    style="background:#e0f2fe;border-left:4px solid #0284c7;font-weight:800;color:#0284c7;padding:12px 15px;border-radius:8px;">
                     <i class="fa-solid fa-house"></i> Página de Inicio
+                    <span class="done-badge">✓</span>
                 </a>
             </li>
 
@@ -1161,9 +108,11 @@
                 </a>
                 <ul class="sub-menu-list" id="submenu-espanol">
                     <li>
-                        <a href="#" class="class-item" id="link-espanol-1"
-                            onclick="switchClass('content-espanol-1', this, 'btn-espanol')">
+                        <a href="javascript:void(0)" class="class-item" id="link-espanol-1"
+                            onclick="switchClass('content-espanol-1', this, 'btn-espanol')"
+                            data-class-id="content-espanol-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: Funciones del Lenguaje
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                 </ul>
@@ -1179,35 +128,43 @@
                 </a>
                 <ul class="sub-menu-list" id="submenu-matematicas">
                     <li>
-                        <a href="#" class="class-item" id="link-matematicas-1"
-                            onclick="switchClass('content-matematicas-1', this, 'btn-matematicas')">
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-1"
+                            onclick="switchClass('content-matematicas-1', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: El Término y Operaciones
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="class-item" id="link-matematicas-2"
-                            onclick="switchClass('content-matematicas-2', this, 'btn-matematicas')">
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-2"
+                            onclick="switchClass('content-matematicas-2', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-2">
                             <i class="fa-solid fa-book-open"></i> Clase 2: Multiplicación y Binomios
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="class-item" id="link-matematicas-3"
-                            onclick="switchClass('content-matematicas-3', this, 'btn-matematicas')">
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-3"
+                            onclick="switchClass('content-matematicas-3', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-3">
                             <i class="fa-solid fa-book-open"></i> Clase 3: Triángulo de Pascal
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="class-item" id="link-matematicas-4"
-                            onclick="switchClass('content-matematicas-4', this, 'btn-matematicas')">
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-4"
+                            onclick="switchClass('content-matematicas-4', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-4">
                             <i class="fa-solid fa-book-open"></i> Clase 4: Álgebra y Radicales
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- FÍSICA -->
+            <!-- FÍSICA (DESHABILITADO) -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-fisica" onclick="toggleSubMenu(event, 'submenu-fisica')">
+                <a href="#" class="subject-item" id="btn-fisica" style="opacity: 0.5; pointer-events: none;">
                     <span class="subject-icon"><i class="fa-solid fa-atom"></i></span>
                     Física
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
@@ -1227,17 +184,19 @@
                 </a>
                 <ul class="sub-menu-list" id="submenu-quimica">
                     <li>
-                        <a href="#" class="class-item" id="link-quimica-1"
-                            onclick="switchClass('content-quimica-1', this, 'btn-quimica')">
+                        <a href="javascript:void(0)" class="class-item" id="link-quimica-1"
+                            onclick="switchClass('content-quimica-1', this, 'btn-quimica')"
+                            data-class-id="content-quimica-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: Fundamentos y Materia
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- BIOLOGÍA -->
+            <!-- BIOLOGÍA (DESHABILITADO) -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-biologia" onclick="toggleSubMenu(event, 'submenu-biologia')">
+                <a href="#" class="subject-item" id="btn-biologia" style="opacity: 0.5; pointer-events: none;">
                     <span class="subject-icon"><i class="fa-solid fa-dna"></i></span>
                     Biología
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
@@ -1248,9 +207,9 @@
                 </ul>
             </li>
 
-            <!-- HISTORIA UNIVERSAL -->
+            <!-- HISTORIA UNIVERSAL (DESHABILITADO) -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-hist-univ" onclick="toggleSubMenu(event, 'submenu-hist-univ')">
+                <a href="#" class="subject-item" id="btn-hist-univ" style="opacity: 0.5; pointer-events: none;">
                     <span class="subject-icon"><i class="fa-solid fa-globe"></i></span>
                     Historia Universal
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
@@ -1270,9 +229,11 @@
                 </a>
                 <ul class="sub-menu-list" id="submenu-historia">
                     <li>
-                        <a href="#" class="class-item" id="link-historia-1"
-                            onclick="switchClass('content-historia-1', this, 'btn-historia')">
+                        <a href="javascript:void(0)" class="class-item" id="link-historia-1"
+                            onclick="switchClass('content-historia-1', this, 'btn-historia')"
+                            data-class-id="content-historia-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: Prehispánico
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                     <li>
@@ -1293,17 +254,19 @@
                 </a>
                 <ul class="sub-menu-list" id="submenu-literatura">
                     <li>
-                        <a href="#" class="class-item" id="link-literatura-1"
-                            onclick="switchClass('content-literatura-1', this, 'btn-literatura')">
+                        <a href="javascript:void(0)" class="class-item" id="link-literatura-1"
+                            onclick="switchClass('content-literatura-1', this, 'btn-literatura')"
+                            data-class-id="content-literatura-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: El Texto y la Comunicación
+                            <span class="done-badge">✓</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- GEOGRAFÍA -->
+            <!-- GEOGRAFÍA (DESHABILITADO) -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-geografia" onclick="toggleSubMenu(event, 'submenu-geografia')">
+                <a href="#" class="subject-item" id="btn-geografia" style="opacity: 0.5; pointer-events: none;">
                     <span class="subject-icon"><i class="fa-solid fa-map"></i></span>
                     Geografía
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
@@ -1320,6 +283,15 @@
                     onclick="switchClass('content-todas-unam', this, 'btn-todas-unam')" style="color: #ea580c;">
                     <span class="subject-icon"><i class="fa-solid fa-list-check"></i></span>
                     Preguntas Guía UNAM
+                </a>
+            </li>
+
+            <!-- SIMULACRO DE EXAMEN -->
+            <li class="subject-wrapper" style="margin-top: 5px;">
+                <a href="#" class="subject-item" id="btn-simulacro"
+                    onclick="switchClass('content-simulacro', this, 'btn-simulacro')" style="color: #2563eb;">
+                    <span class="subject-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    Simulacro de Examen
                 </a>
             </li>
 
@@ -1582,12 +554,8 @@
 
     </main>
 
-    <!-- Script para Interacción Dinámica -->
+    <!-- Datos de la aplicación (app.js carga la lógica) -->
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const sideMenu = document.getElementById('sideMenu');
-        const overlay = document.getElementById('overlay');
-        const mainContent = document.getElementById('mainContent');
 
         const appDatabase = {
             "content-historia-1": {
@@ -2422,594 +1390,10 @@
             ]
         };
 
-        let userAnswers = {};
-
-        function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor) {
-            const container = document.getElementById(contentId);
-            if (!container) return;
-
-            const questions = questionsObj[contentId];
-            if (!questions || questions.length === 0) return;
-
-            const section = document.createElement('div');
-            section.className = 'unam-questions-section';
-            if (borderColor) section.style.borderTopColor = borderColor;
-
-            let questionsHtml = questions.map((q, idx) => {
-                let optionsHtml = q.opciones.map((opt, optIdx) => `
-                    <div class="unam-option" id="${prefix}-opt-${contentId}-${idx}-${optIdx}" onclick="selectOption('${prefix}', '${contentId}', ${idx}, ${optIdx})">
-                        <span style="font-weight: 800; color: #64748b; margin-right: 8px;">${String.fromCharCode(65 + optIdx)})</span> 
-                        <span>${opt}</span>
-                    </div>
-                `).join('');
-
-                return `
-                    <div class="unam-question-card" id="${prefix}-qcard-${contentId}-${idx}">
-                        <p class="unam-question-text">${q.numero}. ${q.pregunta}</p>
-                        <div class="unam-options">
-                            ${optionsHtml}
-                        </div>
-                        <button id="${prefix}-eval-btn-${contentId}-${idx}" class="unam-eval-btn" onclick="evalQuestion('${prefix}', '${contentId}', ${idx})" disabled>Evaluar</button>
-                        <div id="${prefix}-feedback-${contentId}-${idx}" class="unam-feedback"></div>
-                    </div>
-                `;
-            }).join('');
-
-            section.innerHTML = `
-                <div class="unam-header" onclick="toggleUnamQuestions(this)" style="margin-bottom: 0px; border-bottom: none;">
-                    <h2>${titleHtml}</h2>
-                    <button class="unam-toggle-btn">Mostrar / Ocultar</button>
-                </div>
-                <div class="unam-questions-container" style="display: none;">
-                    ${questionsHtml}
-                </div>
-            `;
-
-            container.appendChild(section);
-        }
-
-        function toggleUnamQuestions(header) {
-            const container = header.nextElementSibling;
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'flex';
-                header.style.marginBottom = '25px';
-                header.style.borderBottom = '2px solid #f1f5f9';
-            } else {
-                container.style.display = 'none';
-                header.style.marginBottom = '0';
-                header.style.borderBottom = 'none';
-            }
-        }
-
-        function toggleVideo(header) {
-            const container = header.nextElementSibling;
-            if (container.style.display === 'none' || container.style.display === '') {
-                container.style.display = 'block';
-                header.style.marginBottom = '25px';
-                header.style.borderBottom = '2px solid #f1f5f9';
-            } else {
-                container.style.display = 'none';
-                header.style.marginBottom = '0';
-                header.style.borderBottom = 'none';
-            }
-        }
-
-        function selectOption(prefix, contentId, qIdx, optIdx) {
-            const options = document.querySelectorAll(`[id^="${prefix}-opt-${contentId}-${qIdx}-"]`);
-            options.forEach(opt => opt.classList.remove('selected'));
-
-            const evalBtn = document.getElementById(`${prefix}-eval-btn-${contentId}-${qIdx}`);
-            if (evalBtn.style.display === 'none') return; // Ya se evaluó
-
-            const selectedOpt = document.getElementById(`${prefix}-opt-${contentId}-${qIdx}-${optIdx}`);
-            if (selectedOpt) {
-                selectedOpt.classList.add('selected');
-                userAnswers[`${prefix}-${contentId}-${qIdx}`] = optIdx;
-                evalBtn.disabled = false;
-            }
-        }
-
-        function evalQuestion(prefix, contentId, qIdx) {
-            const selectedOptIdx = userAnswers[`${prefix}-${contentId}-${qIdx}`];
-            if (selectedOptIdx === undefined) return;
-
-            const targetObj = (prefix === 'unam') ? unamQuestions : practiceQuestions;
-            const q = targetObj[contentId][qIdx];
-            const isCorrect = (selectedOptIdx === q.respuesta);
-
-            const options = document.querySelectorAll(`[id^="${prefix}-opt-${contentId}-${qIdx}-"]`);
-            options.forEach((opt, idx) => {
-                opt.style.pointerEvents = 'none'; // Desactivar clics
-                if (idx === q.respuesta) {
-                    opt.classList.add('correct'); // Resalta la correcta
-                } else if (idx === selectedOptIdx && !isCorrect) {
-                    opt.classList.add('incorrect'); // Resalta la incorrecta elegida
-                }
-            });
-
-            const evalBtn = document.getElementById(`${prefix}-eval-btn-${contentId}-${qIdx}`);
-            evalBtn.style.display = 'none';
-
-            const feedbackEl = document.getElementById(`${prefix}-feedback-${contentId}-${qIdx}`);
-            feedbackEl.style.display = 'flex';
-
-            if (isCorrect) {
-                feedbackEl.classList.add('correct-feedback');
-                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-check"></i> ¡Correcto!</div><div>${q.retroalimentacion}</div>`;
-            } else {
-                feedbackEl.classList.add('incorrect-feedback');
-                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrecto</div><div>${q.retroalimentacion}</div>`;
-            }
-        }
-
-
-
-
-
-        function renderClassContainer(classId) {
-            const data = appDatabase[classId];
-            if (!data) return '';
-
-            let html = `
-            <div id="${classId}" class="subject-content visible" style="animation: fadeInPage 0.4s ease forwards;">
-                <h1 class="title-main" ${data.titleStyle ? `style="${data.titleStyle}"` : ''}>
-                    <i class="fa-solid ${data.titleIconLeft}"></i> ${data.title} <i class="fa-solid ${data.titleIconRight}"></i>
-                </h1>
-
-                <div class="mindmap-container">
-                    <div class="main-topic ${data.mainTopicClass}" id="${data.mainTopicId}">
-                        <h2><i class="fa-solid ${data.mainTopicIcon1}"></i> ${data.mainTopicTitle} <i class="fa-solid ${data.mainTopicIcon2}"></i></h2>
-                        <p>${data.mainTopicSubtitle}</p>
-                    </div>
-
-                    <div class="branches">
-            `;
-
-            data.branches.forEach(branch => {
-                html += `
-                        <div class="branch-col">
-                            <div class="topic-node topic-${branch.topicIdx}" onclick="toggleNodes('${branch.id}', this)">
-                                <h2><i class="fa-solid ${branch.icon}"></i> ${branch.title}</h2>
-                                <span class="click-hint"><i class="fa-solid fa-hand-pointer"></i> Clic para contraer</span>
-                            </div>
-
-                            <div class="sub-nodes-container" id="${branch.id}">
-                `;
-
-                branch.subnodes.forEach(sub => {
-                    let exampleHtml = '';
-                    if (sub.examples && sub.examples.length > 0) {
-                        exampleHtml = `
-                                    <div class="example-box">
-                                        <ul>
-                                            ${sub.examples.map(ex => `<li>${ex}</li>`).join('')}
-                                        </ul>
-                                    </div>
-                        `;
-                    }
-
-                    html += `
-                                <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay: ${sub.delay};">
-                                    <h3>
-                                        ${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title}</div>` : `${sub.title}`}
-                                    </h3>
-                                    ${sub.content}
-                                    ${exampleHtml}
-                                </div>
-                    `;
-                });
-
-                html += `
-                            </div>
-                        </div>
-                `;
-            });
-
-            html += `
-                    </div>
-                </div>
-
-                <!-- Video Section -->
-                ${data.videoUrl ? `
-                <div class="video-section">
-                    <div class="video-header" onclick="toggleVideo(this)" style="margin-bottom: 0px; border-bottom: none;">
-                        <h2><i class="fa-brands fa-youtube"></i> Clase en Video</h2>
-                        <button class="unam-toggle-btn">Mostrar / Ocultar</button>
-                    </div>
-                    <div class="video-container-responsive" style="display: none;">
-                        <iframe src="${data.videoUrl}" title="YouTube video player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                </div>
-                ` : ''}
-            </div>
-            `;
-
-            return html;
-        }
-
-        function renderQuestionsForClass(contentId) {
-            if (typeof practiceQuestions !== 'undefined' && practiceQuestions[contentId] && practiceQuestions[contentId].length > 0) {
-                buildQuizSection(contentId, practiceQuestions, 'prac', '🧠 Preguntas de Práctica', '#3b82f6');
-            }
-            if (typeof unamQuestions !== 'undefined' && unamQuestions[contentId] && unamQuestions[contentId].length > 0) {
-                buildQuizSection(contentId, unamQuestions, 'unam', '📝 Preguntas de la Guía UNAM', '#f59e0b');
-            }
-        }
-
-
-        function toggleMenu() {
-            menuBtn.classList.toggle('open');
-            sideMenu.classList.toggle('open');
-            overlay.classList.toggle('active');
-
-            if (window.innerWidth > 900) {
-                if (sideMenu.classList.contains('open')) {
-                    mainContent.style.paddingLeft = '320px';
-                } else {
-                    mainContent.style.paddingLeft = '0';
-                }
-            } else {
-                // En móviles, evitar que el body haga scroll cuando el menú esté abierto
-                if (sideMenu.classList.contains('open')) {
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    document.body.style.overflow = '';
-                }
-            }
-        }
-
-        menuBtn.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-
-        function toggleSubMenu(e, submenuId) {
-            e.preventDefault();
-            const submenu = document.getElementById(submenuId);
-            const parentLink = e.currentTarget;
-
-            const isCurrentlyOpen = submenu.classList.contains('expanded');
-
-            // Cierra todos los submenús
-            document.querySelectorAll('.sub-menu-list').forEach(list => {
-                list.style.maxHeight = null;
-                list.classList.remove('expanded');
-            });
-            document.querySelectorAll('.subject-item').forEach(item => item.classList.remove('open'));
-
-            // Si el actual no estaba abierto, lo abrimos
-            if (!isCurrentlyOpen) {
-                submenu.classList.add('expanded');
-                submenu.style.maxHeight = (submenu.scrollHeight + 30) + "px";
-                parentLink.classList.add('open');
-            }
-        }
-
-        function renderAllUnamQuestionsPage() {
-            let html = `
-            <div id="content-todas-unam" class="subject-content visible" style="animation: fadeInPage 0.4s ease forwards;">
-                <h1 class="title-main" style="color: #ea580c; border-bottom: 3px solid #fdba74; padding-bottom: 15px;">
-                    <i class="fa-solid fa-file-contract"></i> Todas las Preguntas UNAM <i class="fa-solid fa-pen-clip"></i>
-                </h1>
-                <div style="max-width: 900px; margin: 0 auto; padding-bottom: 50px;">
-            `;
-
-            const unamExpected = {
-                'Física': 12,
-                'Literatura': 10,
-                'Química': 13,
-                'Geografía': 10,
-                'Matemáticas': 24,
-                'Español': 18,
-                'Biología': 13,
-                'Historia Universal': 10,
-                'Historia de México': 10
-            };
-
-            let currentCounts = {
-                'Física': 0,
-                'Literatura': 0,
-                'Química': 0,
-                'Geografía': 0,
-                'Matemáticas': 0,
-                'Español': 0,
-                'Biología': 0,
-                'Historia Universal': 0,
-                'Historia de México': 0
-            };
-
-            let allQuestions = [];
-            let totalAvailable = 0;
-            if (typeof unamQuestions !== 'undefined') {
-                Object.keys(unamQuestions).forEach(function (key) {
-                    const materia = appDatabase[key] ? appDatabase[key].mainTopicTitle : 'General';
-                    let temaObj = appDatabase[key] ? appDatabase[key].mainTopicSubtitle : 'Tema General';
-                    const tema = temaObj.includes(': ') ? temaObj.substring(temaObj.indexOf(': ') + 2) : temaObj;
-                    unamQuestions[key].forEach(function (q) {
-                        allQuestions.push(Object.assign({}, q, {
-                            materia: materia,
-                            tema: tema,
-                            originalKey: key
-                        }));
-                        if (currentCounts[materia] !== undefined) {
-                            currentCounts[materia]++;
-                        }
-                        totalAvailable++;
-                    });
-                });
-            }
-
-            allQuestions.sort(function (a, b) { return a.numero - b.numero; });
-
-            let totalExpected = 120;
-            let totalPct = Math.round((totalAvailable / totalExpected) * 100);
-
-            let statsHtml = `
-            <div class="unam-dashboard-container">
-                <div onclick="const g = document.getElementById('global-stats-grid'); g.style.display = g.style.display === 'none' ? 'grid' : 'none';" style="cursor:pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                    <h3 class="unam-dashboard-header">
-                        <div><i class="fa-solid fa-chart-pie" style="color:#f59e0b;"></i> Progreso de la Guía UNAM <span style="font-size:0.9rem; color:#64748b; font-weight:normal; margin-left: 5px;"><i class="fa-solid fa-chevron-down"></i> Detalle</span></div>
-                        <span class="unam-dashboard-badge" style="background:${totalPct === 100 ? '#f0fdf4' : '#eff6ff'}; color:${totalPct === 100 ? '#166534' : '#1e40af'}; border:1px solid ${totalPct === 100 ? '#bbf7d0' : '#bfdbfe'};">${totalAvailable} / ${totalExpected} (${totalPct}%)</span>
-                    </h3>
-                    <div class="unam-dashboard-progress-bar-bg">
-                        <div class="unam-dashboard-progress-bar-fill" style="background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%); width:${totalPct}%;"></div>
-                    </div>
-                </div>
-                <div id="global-stats-grid" class="unam-dashboard-grid">
-            `;
-
-            const iconMap = {
-                'Español': 'fa-language',
-                'Matemáticas': 'fa-calculator',
-                'Física': 'fa-atom',
-                'Química': 'fa-flask',
-                'Biología': 'fa-dna',
-                'Historia Universal': 'fa-globe',
-                'Historia de México': 'fa-earth-americas',
-                'Literatura': 'fa-book',
-                'Geografía': 'fa-map'
-            };
-
-            Object.keys(unamExpected).forEach(materia => {
-                let exp = unamExpected[materia];
-                let cur = currentCounts[materia];
-                let pct = Math.round((cur / exp) * 100);
-                let currentIcon = iconMap[materia] || 'fa-bookmark';
-                let anchorId = `materia-anchor-${materia.replace(/\s+/g, '-')}`;
-
-                statsHtml += `
-                    <div class="unam-dashboard-item" onclick="const e = document.getElementById('${anchorId}'); if(e) e.scrollIntoView({behavior: 'smooth', block: 'start'});">
-                        <div class="unam-dashboard-item-header">
-                            <span class="unam-dashboard-item-title"><i class="fa-solid ${currentIcon}" style="color:#94a3b8; margin-right:4px;"></i> ${materia}</span>
-                            <span class="unam-dashboard-item-count" style="color:${pct === 100 ? '#059669' : (pct > 0 ? '#0284c7' : '#94a3b8')};">${cur}/${exp} <span style="font-size:0.75rem; opacity:0.8;">(${pct}%)</span></span>
-                        </div>
-                        <div class="unam-dashboard-item-progress-bg">
-                            <div class="unam-dashboard-item-progress-fill" style="background:${pct === 100 ? '#10b981' : (pct > 0 ? '#3b82f6' : 'transparent')}; width:${pct}%;"></div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            statsHtml += `</div></div>`;
-            html += statsHtml;
-
-            let currentMateria = '';
-
-            allQuestions.forEach(function (q, globalIdx) {
-                if (q.materia !== currentMateria) {
-                    currentMateria = q.materia;
-                    let iconClass = iconMap[currentMateria] || 'fa-bookmark';
-                    let linkAnchorId = `materia-anchor-${currentMateria.replace(/\s+/g, '-')}`;
-                    html += `
-                        <div id="${linkAnchorId}" class="unam-subject-header">
-                            <div class="unam-subject-header-left">
-                                <div class="unam-subject-header-indicator"></div>
-                                <h2 class="unam-subject-header-title"><i class="fa-solid ${iconClass}" style="color: #3b82f6; margin-right: 5px;"></i> ${currentMateria}</h2>
-                            </div>
-                            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-subir"><i class="fa-solid fa-arrow-up"></i> Subir</button>
-                        </div>
-                    `;
-                }
-
-                let optionsHtml = q.opciones.map(function (opt, optIdx) {
-                    return `
-                    <div class="unam-option" id="globalunam-opt-${globalIdx}-${optIdx}" onclick="selectGlobalOption(${globalIdx}, ${optIdx})">
-                        <span style="font-weight: 800; color: #64748b; margin-right: 8px;">${String.fromCharCode(65 + optIdx)})</span> 
-                        <span>${opt}</span>
-                    </div>
-                `}).join('');
-
-                html += `
-                    <div class="unam-question-card" style="margin-top: 25px; border-left-color: #f59e0b;">
-                        <div class="unam-question-card-inner-header">
-                          <div class="unam-question-card-badges">
-                            <span class="badge-dark"><i class="fa-solid fa-hashtag"></i> ${q.numero}</span>
-                            <span class="badge-orange"><i class="fa-solid fa-tag"></i> Materia: ${q.materia}</span>
-                            <span class="badge-blue"><i class="fa-solid fa-book-open"></i> ${q.tema}</span>
-                          </div>
-                          <div style="display:flex; gap: 15px; align-items: center;">
-                            <a href="javascript:void(0)" onclick="const btn = document.getElementById('link-${q.originalKey.replace('content-', '')}'); if(btn) btn.click();" class="btn-repasar-clase"><i class="fa-solid fa-arrow-up-right-from-square"></i> Repasar Clase</a>
-                          </div>
-                        </div>
-                        <p class="unam-question-text" style="font-size: 1.15rem;">${q.pregunta}</p>
-                        <div class="unam-options" style="margin-top: 20px;">
-                            ${optionsHtml}
-                        </div>
-                        <button id="globalunam-eval-btn-${globalIdx}" class="unam-eval-btn" onclick="evalGlobalQuestion(${globalIdx}, ${q.respuesta}, '${q.retroalimentacion.replace(/'/g, "\\'")}')" disabled>Evaluar</button>
-                        <div id="globalunam-feedback-${globalIdx}" class="unam-feedback" style="margin-top: 15px;"></div>
-                    </div>
-                `;
-            });
-
-            if (allQuestions.length === 0) {
-                html += `<div style="text-align: center; color: #64748b; padding: 60px; background: #fff; border-radius: 12px; margin-top:20px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
-                    <i class="fa-solid fa-inbox fa-3x" style="opacity:0.3; margin-bottom: 15px;"></i><br>
-                    <span style="font-size: 1.2rem; font-weight:600;">No hay preguntas UNAM disponibles por ahora.</span>
-                </div>`;
-            }
-
-            html += `
-                </div>
-            </div>
-            `;
-            return html;
-        }
-
-        function selectGlobalOption(globalIdx, optIdx) {
-            const options = document.querySelectorAll(`[id^="globalunam-opt-${globalIdx}-"]`);
-            options.forEach(opt => opt.classList.remove('selected'));
-
-            const evalBtn = document.getElementById(`globalunam-eval-btn-${globalIdx}`);
-            if (evalBtn.style.display === 'none') return; // Ya se evaluó
-
-            const selectedOpt = document.getElementById(`globalunam-opt-${globalIdx}-${optIdx}`);
-            if (selectedOpt) {
-                selectedOpt.classList.add('selected');
-                userAnswers[`globalunam-${globalIdx}`] = optIdx;
-                evalBtn.disabled = false;
-            }
-        }
-
-        function evalGlobalQuestion(globalIdx, correctIdx, retro) {
-            const selectedOptIdx = userAnswers[`globalunam-${globalIdx}`];
-            if (selectedOptIdx === undefined) return;
-
-            const options = document.querySelectorAll(`[id^="globalunam-opt-${globalIdx}-"]`);
-            const isCorrect = (selectedOptIdx === correctIdx);
-
-            options.forEach(function (opt, idx) {
-                opt.style.pointerEvents = 'none';
-                if (idx === correctIdx) {
-                    opt.classList.add('correct');
-                } else if (idx === selectedOptIdx && !isCorrect) {
-                    opt.classList.add('incorrect');
-                }
-            });
-
-            const evalBtn = document.getElementById(`globalunam-eval-btn-${globalIdx}`);
-            evalBtn.style.display = 'none';
-
-            const feedbackEl = document.getElementById(`globalunam-feedback-${globalIdx}`);
-            feedbackEl.style.display = 'flex';
-            if (isCorrect) {
-                feedbackEl.classList.add('correct-feedback');
-                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-check"></i> ¡Correcto!</div><div>${retro}</div>`;
-            } else {
-                feedbackEl.classList.add('incorrect-feedback');
-                feedbackEl.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-circle-xmark"></i> Incorrecto</div><div>${retro}</div>`;
-            }
-        }
-
-        function switchClass(contentId, classLinkElement, parentBtnId) {
-            document.querySelectorAll('.subject-content').forEach(el => {
-                el.classList.remove('visible');
-            });
-
-            if (contentId === 'content-home') {
-                document.getElementById('content-home').classList.add('visible');
-                document.getElementById('dynamic-content-area').innerHTML = ''; // Limpiar la mem
-            } else if (contentId === 'content-todas-unam') {
-                document.getElementById('content-home').classList.remove('visible');
-                const dynamicArea = document.getElementById('dynamic-content-area');
-                dynamicArea.innerHTML = renderAllUnamQuestionsPage();
-
-                // Disparar compilación matemática de MathJax en la vista general
-                setTimeout(() => {
-                    if (window.MathJax) {
-                        window.MathJax.typesetPromise([document.getElementById('dynamic-content-area')])
-                            .catch((err) => console.log('MathJax Error:', err));
-                    }
-                }, 50);
-            } else {
-                document.getElementById('content-home').classList.remove('visible');
-                const dynamicArea = document.getElementById('dynamic-content-area');
-                dynamicArea.innerHTML = renderClassContainer(contentId);
-
-                // Renderizar las preguntas de la clase inyectada y renderizar Math
-                setTimeout(() => {
-                    renderQuestionsForClass(contentId);
-
-                    // Disparar compilación matemática de MathJax en los nuevos elementos
-                    if (window.MathJax) {
-                        window.MathJax.typesetPromise([document.getElementById('dynamic-content-area')])
-                            .catch((err) => console.log('MathJax Error:', err));
-                    }
-                }, 50);
-
-                // Readjuntar event listener de animación original al tema principal recién inyectado
-                const mainTopics = document.querySelectorAll('.main-topic');
-                mainTopics.forEach(topic => {
-                    topic.addEventListener('click', function () {
-                        this.style.transform = 'scale(0.9)';
-                        setTimeout(() => this.style.transform = 'scale(1.05)', 150);
-                    });
-                });
-            }
-
-            document.querySelectorAll('.class-item').forEach(el => el.classList.remove('active-class'));
-            document.querySelectorAll('.subject-item').forEach(el => {
-                el.classList.remove('active');
-                el.classList.remove('active-espanol');
-            });
-
-            classLinkElement.classList.add('active-class');
-
-            const parentBtn = document.getElementById(parentBtnId);
-            if (parentBtnId === 'btn-historia') {
-                parentBtn.classList.add('active');
-            } else if (parentBtnId === 'btn-espanol') {
-                parentBtn.classList.add('active-espanol');
-            }
-
-            setTimeout(() => {
-                const sideMenu = document.getElementById('sideMenu');
-                if (sideMenu && sideMenu.classList.contains('open')) {
-                    toggleMenu();
-                }
-            }, 300);
-            window.scrollTo(0, 0);
-        }
-
-        function toggleNodes(containerId, elementClicked) {
-            const container = document.getElementById(containerId);
-            let hintSpan = null;
-
-            if (elementClicked) {
-                hintSpan = elementClicked.querySelector('.click-hint');
-            }
-
-            if (container.classList.contains('hidden')) {
-                container.classList.remove('hidden');
-
-                if (hintSpan) {
-                    hintSpan.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Clic para contraer';
-                }
-
-                const subNodes = container.querySelectorAll('.sub-node');
-                subNodes.forEach((node, index) => {
-                    node.style.animation = 'none';
-                    node.offsetHeight;
-                    const delay = (index + 1) * 0.1;
-                    node.style.animation = `fadeInRight 0.5s ease forwards ${delay}s`;
-                });
-            } else {
-                container.classList.add('hidden');
-
-                if (hintSpan) {
-                    hintSpan.innerHTML = '<i class="fa-solid fa-hand-pointer"></i> Clic para explorar';
-                }
-            }
-        }
-
-        // Llamar a la renderización al cargar para la sección visible (si no es home)
-        setTimeout(() => {
-            const visibleSect = document.querySelector('.subject-content.visible:not(#content-home)');
-            if (visibleSect) {
-                renderQuestionsForClass(visibleSect.id);
-            }
-        }, 300);
-
     </script>
+
+    <!-- Lógica principal (app.js) -->
+    <script src="./app.js"></script>
 </body>
 
 </html>
