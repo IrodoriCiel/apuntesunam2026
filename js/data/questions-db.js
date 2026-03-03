@@ -22,6 +22,20 @@ const unamQuestions = {
             "retroalimentacion": "Mesoamérica se caracterizó por su agricultura, principalmente del maíz, las sociedades jerarquizadas, el politeísmo y la construcción estructurada con fines religiosos (pirámides)."
         }
     ],
+    "content-historia-2": [
+        {
+            "numero": 112,
+            "pregunta": "El movimiento independentista de la Nueva España tuvo como causas externas la",
+            "opciones": [
+                "Independencia de los Estados Unidos y la Revolución Francesa.",
+                "Unificación italiana y las Reformas Borbónicas.",
+                "Unificación alemana y la venta de la Florida.",
+                "Independencia de Haití y la anexión de Texas."
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Las causas externas de la Independencia de México incluyen la Ilustración, la Independencia de las 13 Colonias (EE.UU.), la Revolución Francesa y la invasión napoleónica a España."
+        }
+    ],
     "content-espanol-1": [
         {
             "numero": 70,
@@ -128,6 +142,13 @@ const practiceQuestions = {
             "opciones": ["$a^2 + 6a$", "$5a^2 + 4a$", "$a^2 + 4a$", "$5a^2 + 6a$"],
             "respuesta": 0,
             "retroalimentacion": "Solo se operan términos semejantes. Las $a^2$: $3 - 2 = 1a^2$. Las $a$: recuerden que la $a$ sola vale $1a$, por lo tanto $5 + 1 = 6a$. Resultado ordenado: $a^2 + 6a$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál es el resultado de simplificar la expresión $5x - 3x + 2x$?",
+            "opciones": ["$x$", "$2x$", "$4x$", "$5x$"],
+            "respuesta": 2,
+            "retroalimentacion": "Agrupamos operando los coeficientes y conservando la literal: $5 - 3 + 2 = 4$. El resultado es $4x$."
         }
     ],
     "content-matematicas-2": [
@@ -158,6 +179,13 @@ const practiceQuestions = {
             "opciones": ["En la suma ($x^2 + x^2$)", "En la división ($\\frac{x^3}{x}$)", "En la multiplicación ($x^2 \\cdot x^3$)", "En la resta ($x^3 - x^2$)"],
             "respuesta": 2,
             "retroalimentacion": "En la multiplicación los exponentes se suman (ej. $x \\cdot x = x^2$). En la suma y resta, los exponentes nunca cambian ('son tu ex')."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Identifica el resultado de $(x+4)(x-4)$",
+            "opciones": ["$x^2 + 16$", "$x^2 - 16$", "$x^2 - 8$", "$x^2 + 8x - 16$"],
+            "respuesta": 1,
+            "retroalimentacion": "Es un binomio conjugado, se resuelve elevando el primero al cuadrado menos el cuadrado del segundo: $(x)^2 - (4)^2 = x^2 - 16$."
         }
     ],
     "content-matematicas-3": [
@@ -188,6 +216,13 @@ const practiceQuestions = {
             "opciones": ["$x^6 - 3x^4 + 3x^2 - 1$", "$x^5 - 3x^3 + 3x - 1$", "$x^6 + 3x^4 + 3x^2 + 1$", "$x^6 - 1$"],
             "respuesta": 0,
             "retroalimentacion": "Utilizando los coeficientes de Pascal $1, 3, 3, 1$ y sabiendo que el signo se alterna $(+, -, +, -)$. El exponente primario del primer término es $2$, por lo que se multiplicará por $3$: $(x^2)^3 = x^6$. Evaluando las opciones, su desarrollo formal coincide únicamente con la primera."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuántos términos tendrá el desarrollo de $(2a + 3b)^5$?",
+            "opciones": ["4 términos", "5 términos", "6 términos", "7 términos"],
+            "respuesta": 2,
+            "retroalimentacion": "La regla universal indica que para un binomio elevado a la potencia $n$, el desarrollo tendrá $n+1$ términos. Como $n=5$, tendrá $5+1=6$ términos."
         }
     ],
     "content-matematicas-4": [
@@ -218,6 +253,50 @@ const practiceQuestions = {
             "opciones": ["$x^2 + 15x + 8$", "$x^2 + 8x + 15$", "$x^2 + 8x + 8$", "$x^2 + 2x + 15$"],
             "respuesta": 1,
             "retroalimentacion": "Se trata de binomios con un término común. Primero se eleva el común al cuadrado ($x^2$), luego se suman los no comunes y se multiplican por el común ($3+5=8 \\rightarrow 8x$), y al final se multiplican los no comunes ($3 \\cdot 5 = 15$). Resultado: $x^2 + 8x + 15$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál es la expresión equivalente a $\\sqrt{x \\cdot x}$?",
+            "opciones": ["$x^2$", "$2x$", "$x$", "$\\sqrt{2x}$"],
+            "respuesta": 2,
+            "retroalimentacion": "Al multiplicar $x \\cdot x$ obtenemos $x^2$. La raíz cuadrada de un elemento al cuadrado se cancela arrojando la literal base, que es simplemente $x$."
+        }
+    ],
+    "content-matematicas-5": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es el término central al desarrollar el binomio $(3m^2 - 4y^3)^2$ usando el atajo?",
+            "opciones": ["$-24m^2y^3$", "$24m^2y^3$", "$-12m^2y^3$", "$12m^2y^3$"],
+            "respuesta": 0,
+            "retroalimentacion": "El atajo para el término central de un binomio al cuadrado nos dice: duplica el segundo coeficiente (-4 * 2 = -8) y multiplícalo por el primero (-8 * 3 = -24). Luego añade las letras con sus exponentes originales: $-24m^2y^3$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Si desarrollas el binomio $(a - b)^5$, ¿cómo serán los signos de sus términos?",
+            "opciones": ["Todos positivos.", "Alternados $(+, -, +, -, +, -)$.", "Todos negativos.", "Alternados $(-, +, -, +, -, +)$."],
+            "respuesta": 1,
+            "retroalimentacion": "Por la ley de los signos para binomios, cuando el binomio tiene un signo negativo interno, los signos del resultado siempre se alternan comenzando por positivo."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Al usar el triángulo de Pascal para un binomio a la potencia 4, ¿qué fila de coeficientes utilizas?",
+            "opciones": ["1, 3, 3, 1", "1, 4, 6, 4, 1", "1, 5, 10, 10, 5, 1", "1, 2, 1"],
+            "respuesta": 1,
+            "retroalimentacion": "La fila correspondiente a la potencia 4 siempre tiene los números: 1, 4, 6, 4, 1."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Al elevar el primer término $(x^3)^4$, ¿qué le sucede a los exponentes según las notas técnicas?",
+            "opciones": ["Se suman, obteniendo $x^7$.", "Se restan, obteniendo $x^{-1}$.", "Se multiplican, obteniendo $x^{12}$.", "Se dividen, obteniendo $x^{3/4}$."],
+            "respuesta": 2,
+            "retroalimentacion": "Cuando una letra con exponente se eleva a otra potencia, los exponentes se multiplican ($3 \\cdot 4 = 12$). A diferencia de cuando multiplicas letras iguales, donde sí se suman."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Qué valor o coeficiente asumes oculto si una letra está completamente sola, como la variable 'x' en un binomio?",
+            "opciones": ["Valor de cero.", "Valor de infinito.", "Valor de 1.", "Valor de potencia 2."],
+            "respuesta": 2,
+            "retroalimentacion": "Una letra sola (sin número u coeficiente escrito a la izquierda) siempre toma un valor implícito de 1. Es decir, $x = 1x$."
         }
     ],
     "content-historia-1": [
@@ -255,6 +334,43 @@ const practiceQuestions = {
             "opciones": ["1492", "1519", "1521", "1535"],
             "respuesta": 2,
             "retroalimentacion": "Tras una epidemia de viruela y un asedio constante, Tenochtitlan cayó el 13 de agosto de 1521."
+        }
+    ],
+    "content-historia-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué orden religiosa fue la primera en llegar a la Nueva España para realizar la conquista espiritual?",
+            "opciones": ["Dominicos.", "Jesuitas.", "Franciscanos.", "Agustinos."],
+            "respuesta": 2,
+            "retroalimentacion": "Los Franciscanos fueron la primera orden religiosa en llegar a tierras novohispanas para iniciar el proceso de evangelización."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Quién fue el primer virrey de la Nueva España?",
+            "opciones": ["Hernán Cortés.", "Antonio de Mendoza.", "Juan O'Donojú.", "Carlos IV."],
+            "respuesta": 1,
+            "retroalimentacion": "Antonio de Mendoza fue nombrado el primer virrey tras el establecimiento formal del Virreinato de la Nueva España."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál era la principal actividad económica durante el periodo colonial en México?",
+            "opciones": ["Agricultura.", "Comercio marítimo.", "Ganadería.", "Minería."],
+            "respuesta": 3,
+            "retroalimentacion": "La extracción de metales preciosos (minería) fue el motor económico principal de la Nueva España."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿A qué grupo social pertenecían los españoles nacidos en la Nueva España?",
+            "opciones": ["Peninsulares.", "Mestizos.", "Criollos.", "Castizos."],
+            "respuesta": 2,
+            "retroalimentacion": "Los criollos eran descendientes de españoles pero nacidos en América; su falta de acceso a altos cargos fue detonante de la independencia."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál fue la fecha exacta del inicio del movimiento de Independencia de México?",
+            "opciones": ["15 de septiembre de 1810", "16 de septiembre de 1810", "27 de septiembre de 1821", "13 de agosto de 1521"],
+            "respuesta": 1,
+            "retroalimentacion": "El Grito de Dolores ocurrió la madrugada del 16 de septiembre de 1810, marcando el inicio formal de la lucha."
         }
     ],
     "content-espanol-1": [
@@ -322,6 +438,13 @@ const practiceQuestions = {
             "opciones": ["Evaporación.", "Sublimación.", "Condensación.", "Fusión."],
             "respuesta": 1,
             "retroalimentacion": "La sublimación directa es el cambio de sólido a gaseoso omitiendo pasar por la fase líquida (como ocurre con el hielo seco o pastillas de baño)."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Identifica un ejemplo de cambio químico en la vida cotidiana:",
+            "opciones": ["Evaporación de agua.", "Quema de papel (combustión).", "Disolución de azúcar.", "Cortar metal."],
+            "respuesta": 1,
+            "retroalimentacion": "La combustión es un cambio químico porque altera la naturaleza interna de la materia, transformando el papel en cenizas y gases (CO2)."
         }
     ],
     "content-literatura-1": [
@@ -352,6 +475,13 @@ const practiceQuestions = {
             "opciones": ["Descriptivo.", "Narrativo.", "Expositivo.", "Estético."],
             "respuesta": 0,
             "retroalimentacion": "El modo descriptivo se caracteriza casi predominantemente por su uso riguroso de adjetivos. Su propósito principal es crear una imagen mental detallada e inteligible del sujeto."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Identifica la propiedad que garantiza que las ideas de un texto estén lógicamente conectadas entre sí:",
+            "opciones": ["Coherencia.", "Adecuación.", "Cabalidad.", "Extensión."],
+            "respuesta": 0,
+            "retroalimentacion": "La coherencia es la propiedad textual que permite que el texto tenga una estructura lógica y que las ideas no se contradigan."
         }
     ]
 };
@@ -504,6 +634,53 @@ const practiceLevel2Questions = {
             "retroalimentacion": "Si $\\sqrt{x}=5$, entonces $x=25$. Por lo tanto $x^2 = 25^2 = 625$."
         }
     ],
+    "content-matematicas-5": [
+        {
+            "numero": 1,
+            "pregunta": "Resuelve visualmente el primer y último término de $(5x - 2)^3$:",
+            "opciones": ["$125x^3$ y $-8$", "$25x^3$ y $-6$", "$125x^3$ y $8$", "$15x^3$ y $-8$"],
+            "respuesta": 0,
+            "retroalimentacion": "El primer término se eleva directamente a la máxima potencia: $(5x)^3 = 125x^3$. Lo mismo para el último término: $(-2)^3 = -8$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Al elevar el binomio $(y^2 + 3)^4$, ¿Cuál correspondería a su primer término?",
+            "opciones": ["$y^6$", "$y^8$", "$4y^2$", "$y^4$"],
+            "respuesta": 1,
+            "retroalimentacion": "Debemos tomar el primer elemento y elevarlo a la potencia externa: $(y^2)^4 = y^{2 \\cdot 4} = y^8$."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Usando el atajo para el binomio al cuadrado $(4x^5 + 5y^2)^2$, ¿cuál es el tercer término de su resultado?",
+            "opciones": ["$25y^4$", "$10y^4$", "$25y^2$", "$10y^2$"],
+            "respuesta": 0,
+            "retroalimentacion": "El tercer término del atajo es simplemente elevar el segundo término al cuadrado: $(5y^2)^2 = 25y^4$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál de las opciones correspondería al desarrollo correcto de $(2a - 3b)^3$ basándote únicamente en el descarte rápido por signos?",
+            "opciones": [
+                "$8a^3 + 36a^2b + 54ab^2 + 27b^3$",
+                "$8a^3 - 36a^2b + 54ab^2 - 27b^3$",
+                "$8a^3 - 36a^2b - 54ab^2 - 27b^3$",
+                "$-8a^3 + 36a^2b - 54ab^2 + 27b^3$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Al ser un binomio negativo, sabemos que la regla indica alternancia precisa: $+$, $-$, $+$, $-$. La única opción que cumple con dicho patrón es la segunda."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Si en el examen encuentras el desarrollo de un binomio negativo $(x - y)^4$, y las opciones presentan patrón de signos $+, +, -, +$; ¿qué concluyes inmediatamente?",
+            "opciones": [
+                "Que es sin duda la respuesta correcta.",
+                "Que es falso porque no alterna estrictamente $(+, -, +, -, +)$.",
+                "Que debes calcularlo completo de todos modos.",
+                "Que puede ser una excepción por la potencia."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "La alternancia en los binomios negativos nunca falla ni tiene excepciones. Si un inciso presenta un rompe-patrón como $+,+$, queda descartado directo en tu descarte visual."
+        }
+    ],
     "content-historia-1": [
         {
             "numero": 1,
@@ -539,6 +716,48 @@ const practiceLevel2Questions = {
             "opciones": ["La superioridad numérica de los tlaxcaltecas aliados.", "La epidemia de viruela.", "Las armas de fuego y caballos.", "La traición definitiva de la Malinche al Rey de España."],
             "respuesta": 3,
             "retroalimentacion": "La Malinche nunca traicionó a España; fue la intérprete de Cortés. El factor decisivo fueron las alianzas indígenas y las enfermedades."
+        }
+    ],
+    "content-historia-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué institución colonial se encargaba de impartir justicia y gobernar ante la ausencia del virrey?",
+            "opciones": ["El Real Patronato.", "La Real Audiencia.", "Las Intendencias.", "La Encomienda."],
+            "respuesta": 1,
+            "retroalimentacion": "La Real Audiencia era la institución judicial suprema en la colonia y asumía tareas de gobierno en interinatos por falta de virrey."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Documento redactado por Morelos donde expone que la soberanía dimana del pueblo y se declara la libertad en la América septentrional?",
+            "opciones": ["Constitución de Apatzingán.", "Sentimientos de la Nación.", "Plan de Iguala.", "Tratados de Córdoba."],
+            "respuesta": 1,
+            "retroalimentacion": "Morelos leyó los 'Sentimientos de la Nación' en el Congreso de Chilpancingo, estableciendo las bases ideológicas de la nación mexicana."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Personaje insurgente que inició la matanza en el Templo Mayor, provocando el episodio conocido como la 'Noche Triste':",
+            "opciones": ["Hernán Cortés.", "Pedro de Alvarado.", "Nuño de Guzmán.", "Gonzalo de Sandoval."],
+            "respuesta": 1,
+            "retroalimentacion": "Pedro de Alvarado aprovechó la ausencia de Cortés para atacar a los nobles mexicas, desencadenando la reacción violenta de los nativos."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué nombre recibió el periódico fundado por Miguel Hidalgo para difundir las ideas insurgentes?",
+            "opciones": ["Gaceta de México.", "Regeneración.", "El Despertador Americano.", "El Imparcial."],
+            "respuesta": 2,
+            "retroalimentacion": "'El Despertador Americano' fue el primer órgano informativo de la insurgencia, impreso en Guadalajara por órdenes de Hidalgo."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál fue el fin principal de las Reformas Borbónicas implementadas a finales del siglo XVIII?",
+            "opciones": [
+                "Liberar el comercio de las colonias.",
+                "Modernizar España y aumentar la recaudación tributaria.",
+                "Otorgar el poder político a los criollos.",
+                "Expulsar definitivamente a los ingleses del continente."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Las Reformas Borbónicas buscaban centralizar el poder en la corona española y sanear la economía aumentando los impuestos en las colonias."
         }
     ],
     "content-espanol-1": [

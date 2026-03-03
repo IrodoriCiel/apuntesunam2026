@@ -4,7 +4,7 @@
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
-    const SW_VERSION = window.__APP_VERSION || '20260302-2';
+    const SW_VERSION = window.__APP_VERSION || '20260303-4';
     const SW_URL = `./sw.js?v=${encodeURIComponent(SW_VERSION)}`;
     let hasRefreshedAfterUpdate = false;
 
@@ -213,6 +213,17 @@ async function stDbGetAll(storeName) {
     });
 }
 
+async function stDbClear(storeName) {
+    const db = await openSTDB();
+    return new Promise((res, rej) => {
+        const tx = db.transaction(storeName, 'readwrite');
+        const st = tx.objectStore(storeName);
+        const rq = st.clear();
+        rq.onsuccess = () => res();
+        rq.onerror = () => rej(rq.error);
+    });
+}
+
 function sampleArray(arr, n) {
     const a = arr.slice();
     for (let i = a.length - 1; i > 0; i--) {
@@ -270,6 +281,7 @@ window.StudyTools = {
                     <i class="fa-solid ${meta.icon}"></i>
                 </div>
                 <span class="sim-materia-name">${label}</span>
+                <div style="font-size:0.7rem; font-weight:800; opacity:0.6; margin-top: -2px;">${cards.length} tarjetas</div>
                 <span class="sim-materia-check"><i class="fa-solid fa-circle-check"></i></span>
             `;
             cardEl.onclick = () => {
@@ -352,6 +364,14 @@ window.StudyTools = {
     async renderStatsPage() {
         const metrics = getStudyMetrics();
         const history = await stDbGetAll('history');
+        const srs = await stDbGetAll('srs');
+
+        // Resumen Flashcards
+        const flashTotal = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase.length : (window.flashcardsDatabase?.length || 0));
+        const flashEasy = srs.filter(s => s.difficulty === 'easy').length;
+        const flashMedium = srs.filter(s => s.difficulty === 'medium').length;
+        const flashHard = srs.filter(s => s.difficulty === 'hard').length;
+
         const byClass = {};
         history.forEach(h => {
             const id = h.classId || 'unknown'; if (!byClass[id]) byClass[id] = { total: 0, correct: 0 };
@@ -359,7 +379,40 @@ window.StudyTools = {
         });
         const container = document.getElementById('statsContainer');
         if (!container) return;
-        let html = `<table class="stats-table"><thead><tr><th>Materia</th><th>Acertadas</th><th>Total</th><th>%</th><th>Visitas</th></tr></thead><tbody>`;
+
+        let html = `
+        <div class="guided-summary" style="margin-bottom:25px; grid-template-columns: repeat(4, 1fr);">
+            <div class="guided-kpi">
+                <div class="guided-kpi-icon" style="background:#e0f2fe; color:#0369a1;"><i class="fa-solid fa-clone"></i></div>
+                <b>${flashTotal}</b>
+                <span>Total Cards</span>
+            </div>
+            <div class="guided-kpi">
+                <div class="guided-kpi-icon" style="background:#d1fae5; color:#059669;"><i class="fa-solid fa-face-laugh-beam"></i></div>
+                <b>${flashEasy}</b>
+                <span>Fáciles</span>
+            </div>
+            <div class="guided-kpi">
+                <div class="guided-kpi-icon" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-face-smile"></i></div>
+                <b>${flashMedium}</b>
+                <span>Medio</span>
+            </div>
+            <div class="guided-kpi">
+                <div class="guided-kpi-icon" style="background:#fee2e2; color:#b91c1c;"><i class="fa-solid fa-face-frown"></i></div>
+                <b>${flashHard}</b>
+                <span>Dificil</span>
+            </div>
+        </div>
+        <table class="stats-table">
+            <thead>
+                <tr>
+                    <th>Materia</th>
+                    <th style="text-align:center;">Preguntas <br><small>(OK / Total)</small></th>
+                    <th style="text-align:center;">Flashcards <br><small>(F / M / D / Tot)</small></th>
+                    <th>Visitas</th>
+                </tr>
+            </thead>
+            <tbody>`;
         const subjects = [];
         document.querySelectorAll('.subject-item[id^="btn-"]').forEach(btn => {
             const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
@@ -379,9 +432,47 @@ window.StudyTools = {
             }
             subjects.push(subj);
         });
+        const metaIconMap = window.MATERIA_ICON || {};
+        const db = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase : (window.flashcardsDatabase || []));
+
         subjects.forEach(su => {
+            const meta = metaIconMap[su.label] || { icon: 'fa-bookmark', color: '#64748b' };
             const pct = su.total ? Math.round(100 * su.correct / su.total) : 0;
-            html += `<tr><td>${su.label}</td><td>${su.correct}</td><td>${su.total}</td><td>${pct}%</td><td>${su.visits}</td></tr>`;
+            const iconHtml = `<span style="display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; border-radius:8px; margin-right:8px; font-size: 0.9rem; color:${meta.color}; background:${meta.color}18;"><i class="fa-solid ${meta.icon}"></i></span>`;
+
+            // Stats Flashcards por materia
+            const cardsForSubj = db.filter(c => {
+                const asig = (c.asignatura || "").toLowerCase().trim();
+                const s = su.label.toLowerCase().trim();
+                return asig.includes(s) || s.includes(asig);
+            });
+            const fTotal = cardsForSubj.length;
+            const srsForSubj = srs.filter(s => {
+                const asig = (s.card?.asignatura || "").toLowerCase().trim();
+                const search = su.label.toLowerCase().trim();
+                return asig.includes(search) || search.includes(asig);
+            });
+            const fEasy = srsForSubj.filter(s => s.difficulty === 'easy').length;
+            const fMed = srsForSubj.filter(s => s.difficulty === 'medium').length;
+            const fHard = srsForSubj.filter(s => s.difficulty === 'hard').length;
+
+            const flashHtml = fTotal > 0 ? `
+            <div style="display:flex; gap:4px; justify-content:center; align-items:center; font-size:0.85rem;">
+                <span title="Fácil" style="color:#059669; font-weight:800;">${fEasy}</span>/
+                <span title="Medio" style="color:#d97706; font-weight:800;">${fMed}</span>/
+                <span title="Difícil" style="color:#b91c1c; font-weight:800;">${fHard}</span>
+                <small style="opacity:0.5; margin-left:4px; font-weight:800;">(${fTotal})</small>
+            </div>` : '<div style="text-align:center; opacity:0.3;">-</div>';
+
+            html += `<tr>
+            <td><div style="display:flex; align-items:center;">${iconHtml}<span style="font-weight:700;">${su.label}</span></div></td>
+            <td style="text-align:center;">
+                <div style="font-weight:700;">${su.correct}/${su.total}</div>
+                <div style="font-size:0.75rem; font-weight:900; color:${pct >= 70 ? '#10b981' : (pct >= 40 ? '#f59e0b' : '#ef4444')}">${pct}%</div>
+            </td>
+            <td>${flashHtml}</td>
+            <td style="text-align:center; font-weight:800;">${su.visits}</td>
+        </tr>`;
         });
         container.innerHTML = html + `</tbody></table>`;
         document.querySelectorAll('.subject-content').forEach(el => el.classList.remove('visible'));
@@ -1128,15 +1219,20 @@ function renderGuidedStudyPage() {
     const done = total - plan.pending.length;
     const timedSubjects = getTimedReviewSubjects();
 
-    const mkList = (ids, icon, emptyText) => {
+    const mkList = (ids, defaultIcon, emptyText) => {
         if (!ids.length) return `<p class="guided-empty">${emptyText}</p>`;
+        const metaIconMap = window.MATERIA_ICON || {};
         return `<div class="guided-list">${ids.map(id => {
             const data = appDatabase[id];
             if (!data) return '';
             const slug = id.replace('content-', '');
-            return `<button class="guided-item" onclick="switchClass('${id}', document.getElementById('link-${slug}'), '${getParentBtnIdForClass(id)}')">
-                        <i class="fa-solid ${icon}"></i>
-                        <span>${data.mainTopicSubtitle || data.title || id}</span>
+            const materiaLabel = data.mainTopicTitle || '';
+            const meta = metaIconMap[materiaLabel] || { icon: defaultIcon, color: '#64748b' };
+
+            return `<button class="guided-item" onclick="switchClass('${id}', document.getElementById('link-${slug}'), '${getParentBtnIdForClass(id)}')" style="border-left-color: ${meta.color};">
+                        <span class="guided-item-icon" style="color:${meta.color}; background:${meta.color}18;"><i class="fa-solid ${meta.icon}"></i></span>
+                        <span class="guided-item-text">${data.mainTopicSubtitle || data.title || id}</span>
+                        <i class="fa-solid fa-chevron-right guided-item-arrow" style="color:${meta.color};"></i>
                     </button>`;
         }).join('')}</div>`;
     };
@@ -1152,9 +1248,18 @@ function renderGuidedStudyPage() {
             </h1>
             <div class="guided-wrap">
                 <div class="guided-summary">
-                    <div class="guided-kpi"><b>${done}</b><span>completadas</span></div>
-                    <div class="guided-kpi"><b>${plan.pending.length}</b><span>pendientes</span></div>
-                    <div class="guided-kpi"><b>${plan.dueReview.length}</b><span>repaso hoy</span></div>
+                    <div class="guided-kpi" style="border-top: 4px solid #10b981;">
+                        <span class="guided-kpi-icon" style="color: #10b981; background: #10b98118;"><i class="fa-solid fa-check-double"></i></span>
+                        <b>${done}</b><span>Completadas</span>
+                    </div>
+                    <div class="guided-kpi" style="border-top: 4px solid #f59e0b;">
+                        <span class="guided-kpi-icon" style="color: #f59e0b; background: #f59e0b18;"><i class="fa-solid fa-hourglass-half"></i></span>
+                        <b>${plan.pending.length}</b><span>Pendientes</span>
+                    </div>
+                    <div class="guided-kpi" style="border-top: 4px solid #ec4899;">
+                        <span class="guided-kpi-icon" style="color: #ec4899; background: #ec489918;"><i class="fa-solid fa-rotate-left"></i></span>
+                        <b>${plan.dueReview.length}</b><span>Repaso Hoy</span>
+                    </div>
                 </div>
 
                 <div class="guided-next-card">
@@ -1218,7 +1323,11 @@ function getClassNavigationTargets(contentId) {
     };
 }
 
-function createBackupPayload() {
+async function createBackupPayload() {
+    const srs = await stDbGetAll('srs').catch(() => []);
+    const history = await stDbGetAll('history').catch(() => []);
+    const prefs = await stDbGetAll('prefs').catch(() => []);
+
     return {
         meta: {
             app: 'Mis Apuntes UNAM 2026',
@@ -1231,33 +1340,39 @@ function createBackupPayload() {
             simHistory: localStorage.getItem('sim-history') || '[]',
             theme: localStorage.getItem('theme') || 'light',
             studyMetrics: localStorage.getItem(STUDY_METRICS_KEY) || '{}',
-            menuState: localStorage.getItem(MENU_STATE_KEY) || '{}'
+            menuState: localStorage.getItem(MENU_STATE_KEY) || '{}',
+            stDb: { srs, history, prefs }
         }
     };
 }
 
-function exportProgressBackup() {
-    const payload = createBackupPayload();
-    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-    a.href = url;
-    a.download = `apuntes-backup-${stamp}.json`;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(url);
+async function exportProgressBackup() {
+    try {
+        const payload = await createBackupPayload();
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+        a.href = url;
+        a.download = `apuntes-backup-${stamp}.json`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
 
-    localStorage.setItem(BACKUP_LAST_AT_KEY, String(Date.now()));
-    updateBackupStatusLabel();
+        localStorage.setItem(BACKUP_LAST_AT_KEY, String(Date.now()));
+        updateBackupStatusLabel();
+    } catch (err) {
+        console.error('Error exportProgressBackup:', err);
+        showToast('Error al procesar el archivo local. Inténtalo de nuevo.', 'error');
+    }
 }
 
 function importProgressBackup(input) {
     const file = input?.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
         try {
             const parsed = JSON.parse(String(reader.result || '{}'));
             if (!parsed.data) throw new Error('Formato inválido');
@@ -1271,6 +1386,22 @@ function importProgressBackup(input) {
             localStorage.setItem(MENU_STATE_KEY, data.menuState || '{}');
             localStorage.setItem(BACKUP_LAST_AT_KEY, String(Date.now()));
 
+            if (data.stDb) {
+                await stDbClear('srs').catch(e => console.warn(e));
+                await stDbClear('history').catch(e => console.warn(e));
+                await stDbClear('prefs').catch(e => console.warn(e));
+
+                if (data.stDb.srs) {
+                    for (const item of data.stDb.srs) await stDbPut('srs', item).catch(e => console.warn(e));
+                }
+                if (data.stDb.history) {
+                    for (const item of data.stDb.history) await stDbAdd('history', item).catch(e => console.warn(e));
+                }
+                if (data.stDb.prefs) {
+                    for (const item of data.stDb.prefs) await stDbPut('prefs', item).catch(e => console.warn(e));
+                }
+            }
+
             if ((data.theme || 'light') === 'dark') document.body.classList.add('dark-mode');
             else document.body.classList.remove('dark-mode');
 
@@ -1279,6 +1410,7 @@ function importProgressBackup(input) {
             updateBackupStatusLabel();
             showToast('Respaldo importado correctamente.', 'success');
         } catch (err) {
+            console.error(err);
             showToast('No se pudo importar el archivo. Verifica el formato del respaldo.', 'error');
         } finally {
             input.value = '';
@@ -1328,7 +1460,7 @@ function renderAllUnamQuestionsPage() {
         </h1>
         <div style="max-width:900px;margin:0 auto;padding-bottom:50px;">
             <div class="unam-dashboard-container">
-                <div onclick="const g=document.getElementById('global-stats-grid');g.style.display=g.style.display==='none'?'grid':'none';" style="cursor:pointer;">
+                <div onclick="document.getElementById('global-stats-grid').classList.toggle('open');" style="cursor:pointer;">
                     <h3 class="unam-dashboard-header">
                         <div><i class="fa-solid fa-chart-pie" style="color:#f59e0b;"></i> Progreso de la Guía UNAM</div>
                         <span class="unam-dashboard-badge" style="background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe;">${totalAvailable} / ${totalExpected} (${totalPct}%)</span>
@@ -1370,9 +1502,13 @@ function renderAllUnamQuestionsPage() {
                 <button onclick="window.scrollTo({top:0,behavior:'smooth'});" class="btn-subir"><i class="fa-solid fa-arrow-up"></i> Subir</button>
             </div>`;
         }
-        const optHtml = q.opciones.map((opt, oi) =>
-            `<div class="unam-option" id="globalunam-opt-${gi}-${oi}" onclick="selectGlobalOption(${gi},${oi})">
-                <span style="font-weight:800;color:#64748b;margin-right:8px;">${String.fromCharCode(65 + oi)})</span><span>${opt}</span>
+        let indices = q.opciones.length === 4 ? [0, 1, 2, 3] : [...Array(q.opciones.length).keys()];
+        indices.sort(() => Math.random() - 0.5);
+        let correctRendIdx = indices.indexOf(q.respuesta);
+
+        const optHtml = indices.map((origIdx, rendIdx) =>
+            `<div class="unam-option" id="globalunam-opt-${gi}-${rendIdx}" onclick="selectGlobalOption(${gi},${rendIdx})">
+                <span style="font-weight:800;color:#64748b;margin-right:8px;">${String.fromCharCode(65 + rendIdx)})</span><span>${q.opciones[origIdx]}</span>
             </div>`
         ).join('');
         const retroSafe = q.retroalimentacion.replace(/'/g, "\\'");
@@ -1387,7 +1523,7 @@ function renderAllUnamQuestionsPage() {
             </div>
             <p class="unam-question-text">${q.pregunta}</p>
             <div class="unam-options">${optHtml}</div>
-            <button id="globalunam-eval-btn-${gi}" class="unam-eval-btn" onclick="evalGlobalQuestion(${gi},${q.respuesta},'${retroSafe}','${q.originalKey}')" disabled>Evaluar</button>
+            <button id="globalunam-eval-btn-${gi}" class="unam-eval-btn" onclick="evalGlobalQuestion(${gi},${correctRendIdx},'${retroSafe}','${q.originalKey}')" disabled>Evaluar</button>
             <div id="globalunam-feedback-${gi}" class="unam-feedback"></div>
         </div>`;
     });
@@ -1717,6 +1853,7 @@ function evalQuestion(prefix, contentId, qIdx) {
         fb.style.display = 'flex';
         fb.className = `unam-feedback ${isCorrect ? 'correct-feedback' : 'incorrect-feedback'}`;
         fb.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-${isCorrect ? 'circle-check' : 'circle-xmark'}"></i> ${isCorrect ? '¡Correcto!' : 'Incorrecto'}</div><div>${q.retroalimentacion}</div>`;
+        if (window.MathJax) window.MathJax.typesetPromise([fb]).catch(console.log);
     }
 
     registerQuestionResult(sourceClassId, isCorrect);
@@ -1746,6 +1883,7 @@ function evalGlobalQuestion(gi, correctIdx, retro, originalKey) {
     fb.style.display = 'flex';
     fb.className = `unam-feedback ${isCorrect ? 'correct-feedback' : 'incorrect-feedback'}`;
     fb.innerHTML = `<div style="font-weight:900;font-size:1.1rem;"><i class="fa-solid fa-${isCorrect ? 'circle-check' : 'circle-xmark'}"></i> ${isCorrect ? '¡Correcto!' : 'Incorrecto'}</div><div>${retro}</div>`;
+    if (window.MathJax) window.MathJax.typesetPromise([fb]).catch(console.log);
 
     registerQuestionResult(originalKey, isCorrect);
 }

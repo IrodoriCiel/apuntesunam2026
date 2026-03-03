@@ -34,11 +34,11 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260302-2';
+        window.__APP_VERSION = '20260303-16';
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260302-2">
+    <link rel="stylesheet" href="./css/styles.css?v=20260303-16">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -205,6 +205,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-5"
+                            onclick="switchClass('content-matematicas-5', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-5">
+                            <i class="fa-solid fa-book-open"></i> Clase 5: Binomios a Potencia "n" y Atajos
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -290,8 +298,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;">
-                            <i class="fa-solid fa-lock"></i> Clase 2: La Colonia
+                        <a href="javascript:void(0)" class="class-item" id="link-historia-2"
+                            onclick="switchClass('content-historia-2', this, 'btn-historia')"
+                            data-class-id="content-historia-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: La Colonia e Independencia
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
                 </ul>
@@ -1041,6 +1052,63 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/FlZGfHj98o4"
             },
+            "content-matematicas-5": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas5",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-superscript",
+                mainTopicIcon2: "fa-infinity",
+                mainTopicSubtitle: "Clase 5: Binomios a Potencia \"n\" y Atajos",
+                branches: [
+                    {
+                        id: "nodes-mat5-1",
+                        topicIdx: 1,
+                        title: "1. Binomios a Potencia \"n\" (Pascal)",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { icon: "fa-book-open", delay: "0.1s", title: "Identificación del Nivel", content: "<p>El exponente del binomio determina qué fila del triángulo usar para los coeficientes.<br><b>Potencia 3:</b> 1, 3, 3, 1<br><b>Potencia 4:</b> 1, 4, 6, 4, 1</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Regla de los Exponentes", content: "<p>Si la letra tiene un exponente interno (ej. $x^2$), se multiplica por la potencia de afuera para obtener el primer término ($x^{2 \\cdot 3} = x^6$).<br>En cada \"salto\" hacia la derecha, el término pierde el valor del exponente original.</p>" },
+                            { icon: "fa-scale-balanced", delay: "0.3s", title: "Ley de Signos (Tip de Oro)", content: "<p><b>Si el binomio es positivo ($+$):</b> Todos los signos del resultado son positivos.<br><b>Si el binomio es negativo ($-$):</b> Los signos se alternan empezando por el primero como positivo: $(+, -, +, -)$.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>PREGUNTA DE EXAMEN:</b><br>En la UNAM, el nivel máximo que suelen preguntar es a la potencia 4.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat5-2",
+                        topicIdx: 2,
+                        title: "2. Atajo para $(a \\pm b)^2$",
+                        icon: "fa-bolt-lightning",
+                        subnodes: [
+                            { icon: "fa-list-ol", delay: "0.1s", title: "Pasos (3 términos)", content: "<ol><li><b>Primer término:</b> Eleva el primer término al cuadrado.</li><li><b>Término central:</b> Duplica el segundo coeficiente y multiplícalo por el primero. Pega todas las letras y sus exponentes originales sin sumar nada.</li><li><b>Tercer término:</b> Eleva el segundo término al cuadrado.</li></ol>" },
+                            { icon: "fa-pen-to-square", delay: "0.2s", title: "Ejemplo Práctico", content: "<p>$(7m^3 - 2y^5)^2$</p><ul><li><b>1º al m²:</b> $(7 \\cdot 7)(m^3 \\cdot m^3) = 49m^6$</li><li><b>Doble 2º por 1º:</b> $(2 \\cdot -2) \\cdot 7 = -28$, letras: $m^3y^5 \\rightarrow -28m^3y^5$</li><li><b>2º al m²:</b> $(-2 \\cdot -2)(y^5 \\cdot y^5) = +4y^{10}$</li></ul><p><b>Resultado:</b> $49m^6 - 28m^3y^5 + 4y^{10}$</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat5-3",
+                        topicIdx: 3,
+                        title: "3. Tips Flash (Resolución en 5s)",
+                        icon: "fa-stopwatch",
+                        subnodes: [
+                            { icon: "fa-eye", delay: "0.1s", title: "Descarte por Signos", content: "<p>Si el binomio es negativo $(x - y)^n$, elimina de inmediato cualquier opción que no tenga signos alternados $(+, -, +, -)$.</p>" },
+                            { icon: "fa-1", delay: "0.2s", title: "El Valor del \"1\"", content: "<p>Recuerda que una letra sola siempre vale 1. En un binomio como $(x + 2)^3$, el coeficiente de la $x$ es 1.</p>" },
+                            { icon: "fa-brain", delay: "0.3s", title: "Potencias de Números", content: "<p>Memoriza potencias básicas para el tercer o último término (ej. $3^3 = 27$, $2^4 = 16$).</p><div class='exam-tip'><i class='fa-solid fa-clock-rotate-left'></i> <b>GESTIÓN DEL TIEMPO:</b><br>Tienes aprox. 1.5 minutos por pregunta. Si identificas el primer y el último término, usualmente ya encontraste la respuesta correcta.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat5-4",
+                        topicIdx: 4,
+                        title: "4. Notas Técnicas Importantes",
+                        icon: "fa-triangle-exclamation",
+                        subnodes: [
+                            { icon: "fa-xmark", delay: "0.1s", title: "Suma vs Multiplicación", content: "<p>Al elevar una potencia (multiplicar letras iguales), los exponentes <b>SE SUMAN</b>. No los multipliques (ej. $m^3 \\cdot m^3 = m^6$, NO $m^9$).</p>" },
+                            { icon: "fa-sort", delay: "0.2s", title: "Orden en los incisos", content: "<p>La UNAM suele poner las respuestas en el mismo orden en que aparecen los términos en el problema original. No pierdas tiempo reacomodando alfabéticamente si no es necesario.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/1znciwcwQyo"
+            },
             "content-espanol-1": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
@@ -1081,6 +1149,51 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/HfF7E7m-lEs"
+            },
+            "content-historia-2": {
+                title: "Apuntes de Historia de México",
+                titleIconLeft: "fa-earth-americas",
+                titleIconRight: "fa-landmark",
+                titleStyle: "color: #b45309;",
+                mainTopicId: "mainTopicHistoria2",
+                mainTopicClass: "history-topic",
+                mainTopicTitle: "Historia de México",
+                mainTopicIcon1: "fa-fort-awesome",
+                mainTopicIcon2: "fa-flag",
+                mainTopicSubtitle: "Clase 2: La Conquista, el Virreinato y la Independencia",
+                branches: [
+                    {
+                        id: "nodes-hist2-1",
+                        topicIdx: 1,
+                        title: "1. La Conquista de México",
+                        icon: "fa-shield-halved",
+                        subnodes: [
+                            { icon: "fa-burst", delay: "0.1s", title: "Conquista Militar", content: "<p><b>Pedro de Alvarado:</b> Personaje clave, inició la matanza del Templo Mayor (Noche Triste). Uso de tecnología bélica superior.</p><p><b>Fecha Crítica:</b> 13 de agosto de 1521 (Caída de Tenochtitlan).</p>" },
+                            { icon: "fa-cross", delay: "0.2s", title: "Conquista Espiritual", content: "<p><b>Fray Bernardino de Sahagún:</b> Nombre más importante para el examen. Proceso de evangelización.</p><div class='exam-tip'><i class='fa-solid fa-scroll'></i> <b>ÓRDENES RELIGIOSAS (Orden de llegada):</b><br>1. Franciscanos<br>2. Dominicos<br>3. Agustinos<br>4. Jesuitas</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist2-2",
+                        topicIdx: 2,
+                        title: "2. Nueva España (1521 - 1821)",
+                        icon: "fa-landmark",
+                        subnodes: [
+                            { icon: "fa-sitemap", delay: "0.1s", title: "Organización Política", content: "<ul><li><b>Primer Virrey:</b> Antonio de Mendoza.</li><li><b>Último Virrey:</b> Juan O'Donojú.</li><li><b>Real Audiencia:</b> Impartía justicia y gobernaba en ausencia del virrey (pregunta recurrente).</li><li><b>Intendencias:</b> División política establecida por las Reformas Borbónicas.</li></ul>" },
+                            { icon: "fa-coins", delay: "0.2s", title: "Economía y Sociedad", content: "<p><b>Actividad Principal:</b> Minería.</p><ul><li><b>Criollos:</b> Españoles nacidos en Nueva España (clave en la independencia).</li><li><b>Castas:</b> Mestizos (Español + Indígena).</li><li><b>Encomienda:</b> Sistema de explotación laboral/vivienda indígena.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist2-3",
+                        topicIdx: 3,
+                        title: "3. Reformas Borbónicas e Independencia",
+                        icon: "fa-file-signature",
+                        subnodes: [
+                            { icon: "fa-gears", delay: "0.1s", title: "Reformas Borbónicas", content: "<p>Implementadas por Carlos IV para modernizar y aumentar impuestos. Causa externa de la independencia.</p><p><b>Cultura:</b> Real Academia de San Carlos (Manuel Tolsá). Sor Juana Inés de la Cruz.</p>" },
+                            { icon: "fa-fire", delay: "0.2s", title: "El Movimiento Insurgente", content: "<ul><li><b>Miguel Hidalgo (Inicio):</b> 16 de septiembre de 1810. Periódico: <i>El Despertador Americano</i>.</li><li><b>José María Morelos (Organización):</b> Documento <i>Sentimientos de la Nación</i>. Abolición de la esclavitud. Primer intento constitucional: Apatzingán (1814).</li></ul>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/XcwJ1iEND1Q"
             },
             "content-quimica-1": {
                 title: "Apuntes de Química",
@@ -1355,7 +1468,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260302-2"></script>
+    <script src="./js/app.js?v=20260303-16"></script>
 </body>
 
 </html>

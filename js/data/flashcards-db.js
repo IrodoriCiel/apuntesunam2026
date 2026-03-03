@@ -174,6 +174,55 @@ const flashcardsDatabase = [
         "tema": "Resumen Memorización",
         "asignatura": "Historia de México"
     },
+    {
+        "id": "hist-015",
+        "pregunta": "¿Quién fue el primer y el último virrey de la Nueva España?",
+        "respuesta": "Primer virrey: Antonio de Mendoza. Último virrey: Juan O'Donojú (firmó los Tratados de Córdoba).",
+        "tema": "Virreinato",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-016",
+        "pregunta": "¿Qué función tenía la Real Audiencia?",
+        "respuesta": "Impartía justicia y asumía las funciones de gobierno en ausencia o muerte del virrey.",
+        "tema": "Virreinato",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-017",
+        "pregunta": "¿Qué son los 'Criollos' y por qué son importantes?",
+        "respuesta": "Hijos de españoles nacidos en América. Su exclusión de altos cargos fue la principal causa interna de la independencia.",
+        "tema": "Sociedad Colonial",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-018",
+        "pregunta": "¿Cuál fue la principal actividad económica de la Nueva España?",
+        "respuesta": "La Minería (extracción de plata y oro).",
+        "tema": "Economía Colonial",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-019",
+        "pregunta": "¿Qué fueron las Reformas Borbónicas?",
+        "respuesta": "Cambios administrativos y fiscales para modernizar España y aumentar la recaudación; fueron causa externa de la independencia.",
+        "tema": "Siglo XVIII",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-020",
+        "pregunta": "¿Qué documento redactó Morelos sobre la soberanía y la igualdad?",
+        "respuesta": "Sentimientos de la Nación (leído en el Congreso de Chilpancingo).",
+        "tema": "Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-021",
+        "pregunta": "¿Cuál fue el primer órgano informativo de la insurgencia?",
+        "respuesta": "El Despertador Americano, fundado por Miguel Hidalgo en Guadalajara.",
+        "tema": "Independencia",
+        "asignatura": "Historia de México"
+    },
 
     // ==========================================
     // MATEMÁTICAS (40 CONCEPTOS)
