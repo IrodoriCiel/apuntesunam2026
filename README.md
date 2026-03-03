@@ -14,15 +14,17 @@ Una plataforma interactiva de estudio diseñada específicamente para aspirantes
 - **Navegación Dinámica**: Contenidos organizados en nodos interactivos que permiten expandir y contraer temas para un estudio enfocado.
 - **Clases en Video**: Integración directa con YouTube para reforzar los temas con contenido multimedia.
 
-### 📝 Evaluación Interactiva
+### 📝 Evaluación Interactiva y Repaso
 - **Preguntas Guía UNAM**: Sección dedicada con todas las preguntas oficiales de la guía, organizadas por materia.
-- **Simulacro Aleatorio**: Generador de exámenes relámpago con filtros personalizados por materia, iconos distintivos y feedback inmediato.
-- **Historial de Resultados**: Registro de tus últimos intentos para medir tu evolución.
+- **Práctica Nivel 1 y Nivel 2**: Baterías de preguntas de nivel intermedio y avanzado con retroalimentación paso a paso para dominar cada tema.
+- **Simulacro Aleatorio**: Generador de exámenes relámpago con filtros personalizados por materia, iconos distintivos y medición de resultados.
+- **Flashcards (Repetición Espaciada)**: Sistema de tarjetas de memoria optimizado para celulares, que califica tu retención y adapta la frecuencia de repaso de cada concepto.
+- **Historial de Resultados**: Registro de tus últimos intentos y estadísticas globales para medir tu evolución real.
 
 ### 🌓 Experiencia de Usuario Premium
-- **Modo Oscuro Dinámico**: Interfaz adaptable para estudiar cómodamente durante la noche.
-- **PWA (Progressive Web App)**: Instalable en PC y Android con soporte offline. Incluye botón de instalación nativo.
-- **Progreso Persistente**: Marcado de clases estudiadas que se guarda automáticamente en tu navegador.
+- **Modo Oscuro Dinámico**: Interfaz adaptable con paletas de colores específicos por asignatura para estudiar cómodamente de día o de noche sin perder legibilidad.
+- **PWA (Progressive Web App)**: Instalable de forma nativa en PC, Android e iOS con soporte para funcionar sin internet.
+- **Progreso Persistente y Perfiles**: Marcado automático de clases completadas, avatares seleccionables y datos de estudio guardados de forma segura en tu navegador (IndexedDB y LocalStorage).
 
 ### 📱 Diseño y Rendimiento
 - **Responsive Design**: Optimizado para celulares, tablets y computadoras.
@@ -55,12 +57,20 @@ Si deseas clonar este proyecto y ejecutarlo en tu máquina:
 
 ## 📂 Estructura del Proyecto
 
-- `index.html`: Estructura base y carga de datos.
-- `styles.css`: Sistema de diseño, temas y animaciones.
-- `app.js`: Lógica de navegación, simulacros y estado de la app.
-- `sw.js`: Service Worker para funcionamiento offline y cacheo.
-- `manifest.json`: Configuración PWA e iconos.
-- `404.html`: Manejo de rutas para GitHub Pages.
+```text
+/
+├── index.html        # Estructura principal y plantillas de la Single Page Application.
+├── 404.html          # Manejo de rutas para GitHub Pages.
+├── manifest.json     # Configuración e íconos para la instalación de PWA.
+├── sw.js             # Service Worker para funcionar offline y cachear recursos.
+├── css/
+│   └── styles.css    # Sistema de diseño integral, overrides por materia y animaciones.
+└── js/
+    ├── app.js        # Lógica central: interfaz, menús dinámicos, SRS y simulación.
+    └── data/
+        ├── questions-db.js  # Base de conocimiento (Guía UNAM y simulacros).
+        └── flashcards-db.js # Base de datos para el sistema de tarjetas de memoria espaciada.
+```
 
 ---
 

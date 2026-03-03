@@ -1,14 +1,28 @@
-const CACHE_NAME = 'apuntes-unam-v3';
+const ASSET_VERSION = '20260302-2';
+const CACHE_NAME = `apuntes-unam-${ASSET_VERSION}`;
 const STATIC_ASSETS = [
     './',
     './index.html',
-    './styles.css',
-    './app.js',
     './manifest.json',
     './404.html',
+    `./css/styles.css?v=${ASSET_VERSION}`,
+    `./js/app.js?v=${ASSET_VERSION}`,
+    `./js/study-tools.js?v=${ASSET_VERSION}`,
+    './js/data/flashcards-db.js',
+    './js/data/questions-db.js',
+    './assets/images/icon-192.png',
+    './assets/images/icon-512.png',
+    './assets/images/dino-blue.png',
+    './assets/images/dino-pink.png',
     'https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
+
+self.addEventListener('message', event => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
+});
 
 // Instalar: precachear assets estáticos
 self.addEventListener('install', event => {
@@ -41,6 +55,14 @@ self.addEventListener('fetch', event => {
 
     // Ignorar solicitudes de extensiones del navegador
     if (url.hostname === 'localhost' && event.request.url.includes('chrome-extension')) return;
+
+    // Navigation fallback for SPA (serve index.html from cache on navigation failures)
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request).catch(() => caches.match('./') || caches.match('/index.html'))
+        );
+        return;
+    }
 
     // MathJax: network-first (cambia frecuente)
     if (url.hostname.includes('jsdelivr') || url.hostname.includes('mathjax')) {
