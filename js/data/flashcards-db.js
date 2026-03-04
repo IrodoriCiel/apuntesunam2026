@@ -735,5 +735,58 @@ const flashcardsDatabase = [
         "respuesta": "Resta el exponente mayor menos el menor y ubica el resultado donde estaba el mayor.",
         "tema": "Tipo 1 (División)",
         "asignatura": "Matemáticas"
+    },
+
+    // ==========================================
+    // ESPAÑOL CLASE 2 (7 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "esp2-001",
+        "pregunta": "¿Cuál es la trampa clásica en exámenes sobre funciones del lenguaje?",
+        "respuesta": "Las funciones Fática y Metalingüística suelen ser distractores que raramente son la respuesta correcta.",
+        "tema": "Funciones del Lenguaje",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-002",
+        "pregunta": "¿Qué tipo de palabras predominan absolutamente en el Modo Descriptivo?",
+        "respuesta": "Los adjetivos calificativos, para crear una 'imagen con palabras'.",
+        "tema": "Modos Discursivos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-003",
+        "pregunta": "Identificador clave (Tip de Oro) de un texto Argumentativo:",
+        "respuesta": "Uso de conectores o nexos causales/justificantes (pero, porque, sin embargo, ya que).",
+        "tema": "Modos Discursivos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-004",
+        "pregunta": "¿Qué es la 'Etopeya' en la descripción?",
+        "respuesta": "Descripción de rasgos psicológicos, morales o costumbres de una persona.",
+        "tema": "Tipos de Descripción",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-005",
+        "pregunta": "¿Para qué sirve un pronombre?",
+        "respuesta": "Para sustituir al sustantivo y evitar repeticiones innecesarias.",
+        "tema": "Gramática",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-006",
+        "pregunta": "¿Qué son los Verboides (Verbos Muertos)?",
+        "respuesta": "Formas no personales del verbo (Infinitivo, Gerundio, Participio) que NO pueden ser el núcleo del predicado sólamente por sí solas.",
+        "tema": "Gramática",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-007",
+        "pregunta": "En el examen de la UNAM, ¿qué debes buscar inmediatamente para localizar el Núcleo del Predicado?",
+        "respuesta": "El único verbo vivo que esté explícitamente conjugado en presente, pasado o futuro.",
+        "tema": "El Verbo",
+        "asignatura": "Español"
     }
 ];

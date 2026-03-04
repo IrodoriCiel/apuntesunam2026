@@ -86,8 +86,15 @@ const unamQuestions = {
                 "Aprende, viaja, estudia, habla, escribe, trabaja, sube y baja, Miguel. Miguel, levántate y anda.",
                 "Quien no quiere pensar es un fanático porque deja que otros piensen por él; quien no puede pensar es un idiota porque deja sus decisiones en manos de otros; quien no osa pensar es un cobarde porque deja su vida en manos de alguien más."
             ],
-            "respuesta": 3,
-            "retroalimentacion": "El texto argumentativo defiende una postura sustentándola con razones. El último fragmento usa continuamente conectores causales ('porque...') para justificar una tesis o dar una crítica."
+        }
+    ],
+    "content-espanol-2": [
+        {
+            "numero": 71,
+            "pregunta": "Identifica la forma del discurso que predomina en el siguiente párrafo:<br><i>El intruso entró sigilosamente al recinto, observó la habitación con cautela y, de repente, corrió velozmente hacia la puerta trasera mientras los guardias gritaban su nombre.</i>",
+            "opciones": ["Narrativo.", "Argumentativo.", "Descriptivo.", "Expositivo."],
+            "respuesta": 0,
+            "retroalimentacion": "El modo narrativo se reconoce porque relata una sucesión ininterrumpida de hechos (cronológica) e indudablemente predominan las acciones o verbos (entró, observó, corrió, gritaban)."
         }
     ],
     "content-quimica-1": [
@@ -452,8 +459,44 @@ const practiceQuestions = {
             "numero": 5,
             "pregunta": "'El verbo es la palabra que indica acción o movimiento'. Este enunciado es ejemplo de la función:",
             "opciones": ["Apelativa.", "Metalingüística.", "Referencial.", "Fática."],
-            "respuesta": 1,
             "retroalimentacion": "La función metalingüística se utiliza para explicar conceptos, reglas y definiciones sobre el propio idioma."
+        }
+    ],
+    "content-espanol-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué función de la lengua tiene como único objetivo embellecer el mensaje y destaca por usar figuras retóricas?",
+            "opciones": ["Emotiva.", "Poética.", "Referencial.", "Apelativa."],
+            "respuesta": 1,
+            "retroalimentacion": "La función poética busca la estética del texto. No debes confundirla con la expresividad de los sentimientos (emotiva)."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué tipo de palabras predominan de forma generalizada al momento de utilizar la forma del discurso descriptiva ('dibujar con palabras')?",
+            "opciones": ["Verbos de acción.", "Sustantivos propios.", "Adjetivos calificativos.", "Pronombres personales."],
+            "respuesta": 2,
+            "retroalimentacion": "La descripción responde a '¿Cómo es algo?', para lo cual requiere la abundancia de adjetivos calificativos."
+        },
+        {
+            "numero": 3,
+            "pregunta": "El subtipo de descripción que analiza meramente los rasgos físicos observables de una persona se conoce como:",
+            "opciones": ["Etopeya.", "Topografía.", "Cronografía.", "Prosopografía."],
+            "respuesta": 3,
+            "retroalimentacion": "La Prosopografía se limita exclusivamente a la apariencia externa y rasgos físicos del individuo."
+        },
+        {
+            "numero": 4,
+            "pregunta": "De acuerdo con sus terminaciones, los siguientes son verbos muertos (verboides) incapaces de conjugarse por sí solos:",
+            "opciones": ["Presente, Pasado y Futuro.", "Infinitivo, Gerundio y Participio.", "Sustantivos, Pronombres y Nexos.", "Referencial, Poética y Metalingüística."],
+            "respuesta": 1,
+            "retroalimentacion": "El infinitivo (-ar, -er, -ir), gerundio (-ando, -endo) y participio (-ado, -ido, etc.) son formas no personales inútiles para ser núcleo por sí solas."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál es la categoría gramatical cuyo único propósito comunicativo es sustituir al sustantivo para evitar repeticiones excesivas en un texto?",
+            "opciones": ["El Artículo.", "El Verbo vivo.", "El Pronombre.", "El Nexo causal."],
+            "respuesta": 2,
+            "retroalimentacion": "Los pronombres (personales como él/nosotros o indirectos como me/te) asumen el lugar del sustantivo en la oración."
         }
     ],
     "content-quimica-1": [
@@ -876,8 +919,44 @@ const practiceLevel2Questions = {
             "numero": 5,
             "pregunta": "Forma del discurso que se caracteriza por explicar o informar un tema de manera clara, objetiva y ordenada:",
             "opciones": ["Argumentación.", "Exposición.", "Narración.", "Descripción."],
-            "respuesta": 1,
             "retroalimentacion": "La exposición busca únicamente informar y detallar un tema sin incluir juicios de valor, opiniones ni secuencias de tiempo."
+        }
+    ],
+    "content-espanol-2": [
+        {
+            "numero": 1,
+            "pregunta": "Si un texto intenta arduamente defender una postura y notas la presencia reiterativa de conectores discursivos como <i>'pero, porque, sin embargo, ya que'</i>, indudablemente estás ante una forma del discurso:",
+            "opciones": ["Poética.", "Descriptiva.", "Argumentativa.", "Narrativa."],
+            "respuesta": 2,
+            "retroalimentacion": "El Tip de Oro especifica que estos nexos justificantes o causales son la marca e identificador inconfundible de que un texto es argumentativo."
+        },
+        {
+            "numero": 2,
+            "pregunta": "De acuerdo con las trampas recurrentes del examen explicadas en clase, ¿cuáles dos funciones de la lengua suelen aparecer constantemente como incisos distractores y casi nunca figurarán como la opción correcta?",
+            "opciones": ["Referencial y Emotiva.", "Fática y Metalingüística.", "Poética y Apelativa.", "Metalingüística y Poética."],
+            "respuesta": 1,
+            "retroalimentacion": "Las funciones Fática (abrir/cerrar canal) y Metalingüística (leyes del idioma) son los grandes comodines de la UNAM para crear ambigüedad en las preguntas."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En la oración \"<i>Te</i> salió mal el resultado por no aplicar la fórmula\", el pronombre en cursiva corresponde estrictamente a la categoría de:",
+            "opciones": ["Sustantivo propio.", "Pronombre Personal.", "Pronombre de Objeto Indirecto.", "Artículo Definido."],
+            "respuesta": 2,
+            "retroalimentacion": "Los pronombres de Objeto Indirecto (Me, te, se) no asumen la identidad total del sujeto personal expreso, sino sobre quién recae indirectamente una acción."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Según la Clave para el Examen, ¿qué elemento gramatical debes identificar certeramente para ubicar el Núcleo del Predicado dentro de una oración muy extensa en el examen?",
+            "opciones": ["El sustantivo abstracto más representativo.", "El primer verboide terminativo en '-ar'.", "El artículo definido más cercano al sujeto.", "El único verbo vivo y expresamente conjugado en tiempo (pasado, presente o futuro)."],
+            "respuesta": 3,
+            "retroalimentacion": "Cualquier verboide (muerto) queda descartado. Para dictar núcleo, se exige un verbo VIVO en conjugación directa temporal."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Imagina que un escritor novohispano desea retratar no solo cómo lucía físicamente Sor Juana, sino redactar un ensayo completo detallando su psicología reprimida, moral, intelecto brillante y costumbres diarias. ¿Qué subtipo de descripción utilizaría?",
+            "opciones": ["Prosopografía.", "Etopeya.", "Topografía.", "Cronografía."],
+            "respuesta": 1,
+            "retroalimentacion": "La Etopeya se reserva para retratar las virtudes, mentalidad, rasgos psicológicos y morales, a diferencia de la prosopografía (físico puro)."
         }
     ],
     "content-quimica-1": [

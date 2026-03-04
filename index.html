@@ -160,6 +160,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-espanol-2"
+                            onclick="switchClass('content-espanol-2', this, 'btn-espanol')"
+                            data-class-id="content-espanol-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Funciones, Discurso y Gramática
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -1233,6 +1241,69 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/HfF7E7m-lEs"
             },
+            "content-espanol-2": {
+                title: "Apuntes de Español",
+                titleIconLeft: "fa-comment-dots",
+                titleIconRight: "fa-spell-check",
+                titleStyle: "color: #0369a1;",
+                mainTopicId: "mainTopicEspanol2",
+                mainTopicClass: "espanol-topic",
+                mainTopicTitle: "Español",
+                mainTopicIcon1: "fa-font",
+                mainTopicIcon2: "fa-quote-right",
+                mainTopicSubtitle: "Clase 2: Funciones, Formas del Discurso y Gramática",
+                branches: [
+                    {
+                        id: "nodes-esp2-1",
+                        topicIdx: 1,
+                        title: "1. Funciones de la Lengua (Repaso de Oro)",
+                        icon: "fa-language",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Referencial", content: "<p><b>Objetivo:</b> Transmitir información objetiva.</p><p><b>Palabra Clave:</b> Corroborable / Verídica. Se centra en hechos y datos comprobables.</p>" },
+                            { icon: "fa-bullhorn", delay: "0.2s", title: "Apelativa", content: "<p><b>Objetivo:</b> Persuadir, convencer o dar órdenes al receptor.</p><p><b>Palabra Clave:</b> Medios masivos / Publicidad. Busca generar una reacción inmediata.</p>" },
+                            { icon: "fa-masks-theater", delay: "0.3s", title: "Poética", content: "<p><b>Objetivo:</b> Embellecer el mensaje.</p><p><b>Palabra Clave:</b> Figuras retóricas / Estética. (¡No confundir con expresar sentimientos!).</p>" },
+                            { icon: "fa-heart", delay: "0.4s", title: "Emotiva", content: "<p><b>Objetivo:</b> Expresar sentimientos y emociones (suele usar la 1ª persona).</p><p><b>Palabra Clave:</b> Subjetiva. Refleja exclusivamente el estado de ánimo o juicio del autor.</p>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.5s", title: "Trampa de Examen: Distractores", content: "<div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TIP DE EXAMEN (TRAMPA CLÁSICA):</b><br>Las funciones <b>Fática</b> (abrir/cerrar canal) y <b>Metalingüística</b> (hablar del lenguaje) suelen aparecer constantemente en los incisos de la UNAM, pero casi nunca son la respuesta correcta. Se usan para complicar y generar dudas. Domina primeramente las otras tres principales.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp2-2",
+                        topicIdx: 2,
+                        title: "2. Formas del Discurso (Modos Discursivos)",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { icon: "fa-clock-rotate-left", delay: "0.1s", title: "Modo Narrativo", content: "<p><b>Enfoque:</b> Contar una historia con personajes en un tiempo y espacio.</p><p><b>Tip:</b> Identifícalo porque predominan los verbos (acciones) y existe una sucesión cronológica e ininterrumpida de hechos.</p>" },
+                            { icon: "fa-pencil", delay: "0.2s", title: "Modo Descriptivo", content: "<p><b>Enfoque:</b> Brindar características o cualidades (es como hacer una \"imagen con palabras\"). Responde a la pregunta \"¿Cómo es algo?\".</p><p><b>Tip:</b> Predominan enormemente los <b>adjetivos calificativos</b>.</p>" },
+                            { icon: "fa-table-list", delay: "0.3s", title: "Subtipos de Descripción Frecuentes", content: "<ul><li><b>Prosopografía:</b> Rasgos meramente físicos de una persona.</li><li><b>Etopeya:</b> Rasgos psicológicos, morales, costumbres o sentimientos.</li><li><b>Topografía:</b> Descripción detallada de un lugar o espacio físico.</li><li><b>Cronografía:</b> Descripción de un tiempo o periodo determinado (muy empleada en textos de corte histórico).</li></ul>" },
+                            { icon: "fa-scale-balanced", delay: "0.4s", title: "Modo Argumentativo", content: "<p><b>Enfoque:</b> Defender una opinión o postura (tesis) mediante el uso de razones y evidencias sólidas.</p><div class='exam-tip'><i class='fa-solid fa-key'></i> <b>TIP DE ORO:</b><br>Identifica siempre a los textos argumentativos por el uso de nexos justificantes o causales como: <b><i>Pero, Porque, Sin embargo, Ya que</i></b>. Si el texto intenta convencerte y usa estos conectores, es indudablemente argumentativo.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp2-3",
+                        topicIdx: 3,
+                        title: "3. Categorías Gramaticales: Sustantivos y Artículos",
+                        icon: "fa-cubes",
+                        subnodes: [
+                            { icon: "fa-cube", delay: "0.1s", title: "Sustantivos", content: "<p>Es la palabra que designa o nombra cualquier entidad de la realidad.</p><ul><li><b>Concretos:</b> Son físicos y tangibles (ej. <i>perro, mesa, nube</i>).</li><li><b>Abstractos:</b> Conceptos que se perciben mentalmente pero no se palpan físicamente (ej. <i>amor, libertad, fe</i>).</li><li><b>Propios:</b> Nombres individuales de personas, apellidos, países e instituciones. Absolutamente siempre inician con mayúscula.</li></ul>" },
+                            { icon: "fa-a", delay: "0.2s", title: "Artículos", content: "<ul><li><b>Definidos (el, la, los, las):</b> Se emplean cuando el hablante conoce la información y es algo específico y particular.</li><li><b>Indefinidos (un, una, unos, unas):</b> Se emplean cuando la información referida no es concreta, no se conoce a fondo o es algo general alazar.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp2-4",
+                        topicIdx: 4,
+                        title: "4. Pronombres y El Verbo",
+                        icon: "fa-font",
+                        subnodes: [
+                            { icon: "fa-user", delay: "0.1s", title: "Pronombres", content: "<p>Su única función y propósito gramatical es <b>sustituir al sustantivo</b> en la oración para evitar caer en tediosas repeticiones literarias y pleonasmos.</p><ul><li><b>Personales:</b> Yo, tú, él, nosotros, ustedes, ellos.</li><li><b>Objeto Indirecto:</b> Me, te, se (ej. \"<i>Me</i> llamó furioso\", \"<i>Te</i> salió mal el resultado\").</li></ul>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "El Verbo: El Corazón de la Oración", content: "<p>Se le considera la parte gramatical suprema e insustituible. Si en un fragmento no existe un verbo vivo y conjugado entrelazado, gramaticalmente no puede existir en ningún caso una oración (será simplemente una frase).</p>" },
+                            { icon: "fa-stopwatch", delay: "0.3s", title: "Verbos Vivos (Conjugados)", content: "<p>Poseen explícitamente y al unísono: Tiempo, Persona y Número (ej. <i>corro, comí, saltaremos</i>). Su rol primordial es fungir como el <b>Núcleo del Predicado</b>.</p>" },
+                            { icon: "fa-skull", delay: "0.4s", title: "Verbos Muertos (Verboides)", content: "<p>Son formas verbales inertes incapaces de conjugarse por sí solas. Dependen invariablemente del acompañamiento de un \"verbo vivo\" conjugado de forma perifrástica para adquirir sentido práctico.</p><ul><li><b>Infinitivo:</b> Terminaciones <i>-ar, -er, -ir</i></li><li><b>Gerundio:</b> Terminaciones <i>-ando, -endo</i></li><li><b>Participio:</b> Terminaciones <i>-ado, -ido, -to, -so, -cho</i></li></ul>" },
+                            { icon: "fa-magnifying-glass", delay: "0.5s", title: "Identificación del Núcleo", content: "<div class='exam-tip'><i class='fa-solid fa-bullseye'></i> <b>CLAVE PARA EL EXAMEN:</b><br>En UNAM te preguntarán directamente por distinguir el <b>Núcleo del Predicado</b> en oraciones muy largas. Recuerda: Si observas un verboide en su forma pasiva (<i>-ar, -er, -ir</i>, etc.), ese <b>JAMÁS</b> es el núcleo funcional; tu misión debe ser ubicar inmediatamente el único verbo que ostente conjugación explícita (presente, pasado o futuro).</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/bggWkzK8R6o"
+            },
             "content-historia-2": {
                 title: "Apuntes de Historia de México",
                 titleIconLeft: "fa-earth-americas",
@@ -1780,7 +1851,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260304-1"></script>
+    <script src="./js/app.js?v=20260304-2"></script>
 
 </body>
 
