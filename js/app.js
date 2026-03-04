@@ -1046,6 +1046,8 @@ function handleHash() {
         switchClass('content-guided', document.getElementById('btn-guided'), 'btn-guided');
     } else if (hash === 'config') {
         switchClass('content-config', document.getElementById('btn-config'), 'btn-config');
+    } else if (hash === 'studytok') {
+        switchClass('content-studytok', document.getElementById('link-studytok'), 'btn-studytok');
     }
 }
 
@@ -1900,7 +1902,8 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         'content-todas-unam': 'Preguntas UNAM | Apuntes',
         'content-simulacro': 'Simulacro | Apuntes',
         'content-guided': 'Estudio Guiado | Apuntes',
-        'content-config': 'Configuración | Apuntes'
+        'content-config': 'Configuración | Apuntes',
+        'content-studytok': 'StudyTok | Apuntes'
     };
     document.title = titleMap[contentId] ||
         (appDatabase[contentId] ? `${appDatabase[contentId].mainTopicSubtitle} | Apuntes UNAM` : 'Apuntes UNAM 2026');
@@ -1947,6 +1950,12 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         da.innerHTML = '';
         window.location.hash = 'stats';
         setTimeout(() => { if (window.StudyTools && typeof window.StudyTools.renderStatsPage === 'function') window.StudyTools.renderStatsPage(); }, 50);
+    } else if (contentId === 'content-studytok') {
+        document.getElementById('content-home').classList.remove('visible');
+        const da = document.getElementById('dynamic-content-area');
+        da.innerHTML = '';
+        window.location.hash = 'studytok';
+        setTimeout(() => renderStudyTokFeed(), 50);
     } else {
         document.getElementById('content-home').classList.remove('visible');
         const da = document.getElementById('dynamic-content-area');
@@ -2402,6 +2411,112 @@ function saveSettingsProfile() {
         fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Perfil guardado!';
         fb.style.color = '#10b981';
         setTimeout(() => { fb.textContent = ''; }, 2500);
+    }
+}
+
+// =============================================
+// STUDYTOK: DOOMSCROLL FEED
+// =============================================
+function renderStudyTokFeed() {
+    const feed = document.getElementById('stok-feed');
+    if (!feed) return;
+
+    const page = document.getElementById('content-studytok');
+    if (page) {
+        document.querySelectorAll('.subject-content').forEach(el => el.classList.remove('visible'));
+        page.classList.add('visible');
+        page.style.display = '';
+    }
+
+    // Use ALL flashcards without any filtering
+    const db = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase : (window.flashcardsDatabase || []));
+    if (!db.length) {
+        feed.innerHTML = `<div class="stok-end"><i class="fa-solid fa-inbox"></i><h2>Sin tarjetas disponibles</h2><p>No se encontraron flashcards en la base de datos.</p></div>`;
+        return;
+    }
+
+    // Shuffle for variety each session
+    const shuffled = [...db].sort(() => Math.random() - 0.5);
+
+    const metaIconMap = window.MATERIA_ICON || {};
+
+    const cardsHtml = shuffled.map((card, idx) => {
+        const meta = metaIconMap[card.asignatura] || { icon: 'fa-bookmark', color: '#e11d48' };
+        return `
+        <div class="stok-card" id="stok-card-${idx}">
+            <span class="stok-subject-badge" style="background:${meta.color}18; color:${meta.color};">
+                <i class="fa-solid ${meta.icon}"></i>
+                ${card.asignatura || 'General'}
+            </span>
+            <span class="stok-counter">${idx + 1} / ${shuffled.length}</span>
+
+            <div class="stok-inner">
+                <div class="stok-topic">
+                    <i class="fa-solid fa-tag" style="color:${meta.color};"></i>
+                    ${card.tema || ''}
+                </div>
+                <div class="stok-question">${card.pregunta}</div>
+                <div class="stok-divider"></div>
+                <div class="stok-answer">${card.respuesta}</div>
+            </div>
+
+            <div class="stok-scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+
+            <div class="stok-actions">
+                <button class="stok-btn stok-btn-easy" onclick="stokRate('${card.id}', 'easy', ${idx})" title="Fácil - Lo recuerdo bien">
+                    <i class="fa-solid fa-face-laugh-beam"></i> Fácil
+                </button>
+                <button class="stok-btn stok-btn-mid" onclick="stokRate('${card.id}', 'medium', ${idx})" title="Medio - Algo confuso">
+                    <i class="fa-solid fa-face-smile"></i> Medio
+                </button>
+                <button class="stok-btn stok-btn-hard" onclick="stokRate('${card.id}', 'hard', ${idx})" title="Difícil - No lo recuerdo">
+                    <i class="fa-solid fa-face-frown"></i> Difícil
+                </button>
+            </div>
+        </div>`;
+    }).join('');
+
+    feed.innerHTML = cardsHtml + `
+    <div class="stok-end">
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        <h2>¡Lo lograste! 🎉</h2>
+        <p>Repasaste las ${shuffled.length} tarjetas del feed.</p>
+        <button class="stok-restart-btn" onclick="renderStudyTokFeed()">
+            <i class="fa-solid fa-rotate-right"></i> Volver a repasar
+        </button>
+    </div>`;
+
+    feed.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+async function stokRate(cardId, difficulty, cardIdx) {
+    const db = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase : (window.flashcardsDatabase || []));
+    const card = db.find(c => c.id === cardId);
+    if (!card) return;
+
+    const days = difficulty === 'easy' ? 30 : (difficulty === 'medium' ? 7 : 1);
+    const next = Date.now() + days * 24 * 60 * 60 * 1000;
+
+    try { await stDbPut('srs', { id: cardId, card, difficulty, nextReview: next }); } catch (e) { }
+    try { await stDbAdd('history', { classId: 'studytok', q: card, correct: difficulty !== 'hard', selected: null, at: Date.now() }); } catch (e) { }
+
+    // Visual feedback: mark rated button and scroll to next
+    const cardEl = document.getElementById(`stok-card-${cardIdx}`);
+    if (cardEl) {
+        const btns = cardEl.querySelectorAll('.stok-btn');
+        btns.forEach(b => { b.style.opacity = '0.4'; b.style.pointerEvents = 'none'; });
+        const labelMap = { easy: '¡Bien!', medium: 'Anotado', hard: 'Lo repasaré' };
+        const colorMap = { easy: '#065f46', medium: '#92400e', hard: '#991b1b' };
+        const toast = document.createElement('div');
+        toast.style.cssText = `position:absolute;bottom:98px;left:50%;transform:translateX(-50%);background:${colorMap[difficulty]};color:#fff;font-weight:900;font-size:0.82rem;padding:6px 20px;border-radius:99px;opacity:1;transition:opacity 0.6s ease;pointer-events:none;z-index:20;`;
+        toast.textContent = labelMap[difficulty];
+        cardEl.appendChild(toast);
+        setTimeout(() => { toast.style.opacity = '0'; }, 900);
+
+        // Scroll to next card
+        const feed = document.getElementById('stok-feed');
+        const nextCard = document.getElementById(`stok-card-${cardIdx + 1}`) || feed?.querySelector('.stok-end');
+        if (nextCard) setTimeout(() => nextCard.scrollIntoView({ behavior: 'smooth', block: 'start' }), 400);
     }
 }
 

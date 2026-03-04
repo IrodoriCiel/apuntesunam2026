@@ -373,12 +373,20 @@
                     Estudio Guiado
                 </a>
             </li>
-            <!-- FLASHCARDS -->
             <li class="subject-wrapper" style="margin-top: 5px;">
                 <a href="javascript:void(0)" class="subject-item" id="link-flashcards"
                     onclick="switchClass('content-flashcards', this, 'btn-flashcards')" style="color: #6d28d9;">
                     <span class="subject-icon"><i class="fa-solid fa-clone"></i></span>
                     Flashcards
+                </a>
+            </li>
+
+            <!-- STUDYTOK -->
+            <li class="subject-wrapper" style="margin-top: 5px;">
+                <a href="javascript:void(0)" class="subject-item" id="link-studytok"
+                    onclick="switchClass('content-studytok', this, 'btn-studytok')" style="color: #e11d48;">
+                    <span class="subject-icon"><i class="fa-solid fa-film"></i></span>
+                    StudyTok
                 </a>
             </li>
 
@@ -1457,7 +1465,240 @@
         </div>
     </div>
 
+    <!-- ============================================== -->
+    <!-- STUDYTOK                                       -->
+    <!-- ============================================== -->
+    <div id="content-studytok" class="subject-content" style="display:none; padding:0; max-width:100%; width:100%;">
+        <style>
+            /* ---- StudyTok: contenedor principal ---- */
+            #stok-feed {
+                height: calc(100vh - 60px);
+                overflow-y: scroll;
+                scroll-snap-type: y mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                position: relative;
+            }
+
+            #stok-feed::-webkit-scrollbar {
+                display: none;
+            }
+
+            .stok-card {
+                scroll-snap-align: start;
+                height: calc(100vh - 60px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 28px 22px 100px;
+                position: relative;
+                box-sizing: border-box;
+            }
+
+            .stok-card:nth-child(even) .stok-inner {
+                background: var(--sub-node-bg);
+            }
+
+            .stok-subject-badge {
+                position: absolute;
+                top: 22px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--menu-hover);
+                color: var(--card-text);
+                font-size: 0.68rem;
+                font-weight: 900;
+                padding: 4px 14px;
+                border-radius: 99px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+
+            .stok-inner {
+                width: 100%;
+                max-width: 560px;
+                background: var(--sub-node-bg);
+                border-radius: 28px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.13);
+                padding: 36px 32px 30px;
+                border: 1px solid var(--menu-hover);
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .stok-topic {
+                font-size: 0.72rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #e11d48;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+
+            .stok-question {
+                font-size: 1.15rem;
+                font-weight: 900;
+                color: var(--text-color);
+                line-height: 1.45;
+            }
+
+            .stok-divider {
+                height: 1px;
+                background: var(--menu-hover);
+                border-radius: 99px;
+            }
+
+            .stok-answer {
+                font-size: 0.97rem;
+                font-weight: 700;
+                color: var(--card-text);
+                line-height: 1.6;
+            }
+
+            /* Botones de dificultad */
+            .stok-actions {
+                position: absolute;
+                bottom: 24px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 12px;
+                z-index: 10;
+            }
+
+            .stok-btn {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                padding: 11px 22px;
+                border-radius: 99px;
+                border: none;
+                cursor: pointer;
+                font-family: inherit;
+                font-weight: 900;
+                font-size: 0.88rem;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            }
+
+            .stok-btn:active {
+                transform: scale(0.94);
+            }
+
+            .stok-btn-easy {
+                background: #d1fae5;
+                color: #065f46;
+            }
+
+            .stok-btn-mid {
+                background: #fef3c7;
+                color: #92400e;
+            }
+
+            .stok-btn-hard {
+                background: #fee2e2;
+                color: #991b1b;
+            }
+
+            /* Contador lateral */
+            .stok-counter {
+                position: absolute;
+                top: 22px;
+                right: 22px;
+                font-size: 0.75rem;
+                font-weight: 900;
+                color: var(--card-text);
+                opacity: 0.55;
+            }
+
+            /* Indicador de scroll */
+            .stok-scroll-hint {
+                position: absolute;
+                bottom: 90px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: var(--card-text);
+                opacity: 0.3;
+                font-size: 1.3rem;
+                animation: stokBounce 1.5s infinite;
+                pointer-events: none;
+            }
+
+            @keyframes stokBounce {
+
+                0%,
+                100% {
+                    transform: translateX(-50%) translateY(0);
+                }
+
+                50% {
+                    transform: translateX(-50%) translateY(8px);
+                }
+            }
+
+            /* Fin del feed */
+            .stok-end {
+                scroll-snap-align: start;
+                height: calc(100vh - 60px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 14px;
+                color: var(--card-text);
+                text-align: center;
+                padding: 40px;
+            }
+
+            .stok-end i {
+                font-size: 3.5rem;
+                color: #e11d48;
+                margin-bottom: 10px;
+            }
+
+            .stok-end h2 {
+                font-size: 1.4rem;
+                font-weight: 900;
+                color: var(--text-color);
+                margin: 0;
+            }
+
+            .stok-end p {
+                font-size: 0.9rem;
+                font-weight: 700;
+                margin: 0;
+                opacity: 0.7;
+            }
+
+            .stok-restart-btn {
+                margin-top: 8px;
+                padding: 13px 32px;
+                border-radius: 99px;
+                border: none;
+                background: #e11d48;
+                color: #fff;
+                font-family: inherit;
+                font-weight: 900;
+                font-size: 0.95rem;
+                cursor: pointer;
+                box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+                transition: transform 0.15s ease;
+            }
+
+            .stok-restart-btn:active {
+                transform: scale(0.96);
+            }
+        </style>
+        <div id="stok-feed"></div>
+    </div>
+
     <div id="content-stats" class="subject-content" style="display:none">
+
         <h1 class="title-main" style="color:#2563eb;">
             <i class="fa-solid fa-chart-simple"></i> Estadísticas
         </h1>
@@ -1468,6 +1709,7 @@
 
     <!-- Lógica principal (app.js) -->
     <script src="./js/app.js?v=20260303-16"></script>
+
 </body>
 
 </html>
