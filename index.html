@@ -213,6 +213,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-6"
+                            onclick="switchClass('content-matematicas-6', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-6">
+                            <i class="fa-solid fa-book-open"></i> Clase 6: Reglas de la División y Atajos
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -1117,6 +1125,73 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/1znciwcwQyo"
             },
+            "content-matematicas-6": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-divide",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas6",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-percent",
+                mainTopicIcon2: "fa-superscript",
+                mainTopicSubtitle: "Clase 6: Reglas de la División y Atajos",
+                branches: [
+                    {
+                        id: "nodes-mat6-1",
+                        topicIdx: 1,
+                        title: "1. Reglas Fundamentales de la División",
+                        icon: "fa-divide",
+                        subnodes: [
+                            { icon: "fa-hashtag", delay: "0.1s", title: "Coeficientes (Números grandes)", content: "<p>Se dividen de forma aritmética normal (ej. $8 / 2 = 4$). Siguen estricatamente la ley de signos de la multiplicación/división (+ $\\cdot$ - = -, etc.).</p>" },
+                            { icon: "fa-superscript", delay: "0.2s", title: "Exponentes (Números pequeños)", content: "<p>Cuando las bases son iguales, los exponentes se restan.</p>", examples: ["$\\frac{x^8}{x^2} = x^{8-2} = x^6$"] },
+                            { icon: "fa-ghost", delay: "0.3s", title: "Variables Invisibles", content: "<p>Si una letra no tiene exponente o un paréntesis no tiene potencia, el valor es 1.</p><div class='exam-tip'><i class='fa-solid fa-circle-exclamation'></i> <b>TIP DE EXAMEN:</b><br>La UNAM asume que dominas este concepto y no escribirá el \"1\" en las opciones de respuesta.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat6-2",
+                        topicIdx: 2,
+                        title: "2. Tipo 1: Fracciones con Bases Iguales",
+                        icon: "fa-equals",
+                        subnodes: [
+                            { icon: "fa-magnifying-glass", delay: "0.1s", title: "Identificación", content: "<p>Lo que está arriba es idéntico a lo que está abajo, variando solo la potencia (Monomios y Binomios).</p>" },
+                            { icon: "fa-arrow-down-up-across-line", delay: "0.2s", title: "Atajo para evitar exponentes negativos", content: "<p>Resta el exponente mayor menos el menor y coloca el resultado en la posición (arriba o abajo) donde estaba el exponente más grande.</p><ul><li><b>Caso arriba:</b> $\\frac{x^{10}}{x^2} = x^8$</li><li><b>Caso abajo:</b> $\\frac{x^2}{x^{10}} = \\frac{1}{x^8}$ (Si todo queda abajo, coloca un 1 arriba).</li></ul>" },
+                            { icon: "fa-eraser", delay: "0.3s", title: "Regla de anulación", content: "<p>Si el exponente arriba y abajo es exactamente el mismo (ej. $\\frac{m^3}{m^3}$), la literal se elimina del resultado.</p>" },
+                            { icon: "fa-puzzle-piece", delay: "0.4s", title: "Con Fracciones", content: "<p>Si los exponentes son fracciones, aplica el método de productos cruzados para la resta.</p>", examples: ["$\\frac{3}{2} - 1 = \\frac{1}{2}$"] }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat6-3",
+                        topicIdx: 3,
+                        title: "3. Tipo 2: Polinomio entre Monomio",
+                        icon: "fa-layer-group",
+                        subnodes: [
+                            { icon: "fa-sitemap", delay: "0.1s", title: "Procedimiento Distributivo", content: "<p>Se identifica porque hay varios términos arriba sumando o restando, pero solo uno abajo. El término de abajo divide a cada uno de los términos de arriba por separado.</p>" },
+                            { icon: "fa-list-ol", delay: "0.2s", title: "Pasos", content: "<ol><li><b>Divide</b> signos y coeficientes.</li><li><b>Resta</b> los exponentes de las letras iguales.</li><li><b>Traslada:</b> Si una letra de arriba no tiene pareja abajo, se pasa igual al resultado.</li></ol>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat6-4",
+                        topicIdx: 4,
+                        title: "4. Tipo 3: División de Polinomios (Atajo Técnico)",
+                        icon: "fa-bolt-lightning",
+                        subnodes: [
+                            { icon: "fa-star", delay: "0.1s", title: "Atajo de Eliminación", content: "<p>Ideal para ejercicios complejos (ej. trinomio entre binomio). En lugar de usar la división larga o factorización, aplica este procedimiento exclusivo para exámenes de opción múltiple.</p><ol><li><b>Selección:</b> Elige una literal que aparezca en la expresión (ej. $x$).</li><li><b>Eliminación:</b> Ignora (\"elimina\") todos los términos que contengan esa literal en toda la fracción.</li><li><b>Operación residual:</b> Divide los números que quedaron (los que no tenían la literal elegida).</li><li><b>Verificación:</b> Ve a los incisos del examen, elimina la misma literal en ellos y busca cuál coincide con tu resultado anterior.</li></ol>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.2s", title: "Nota Comparativa Universitaria", content: "<p>Este atajo es infalible para la UNAM, pero en exámenes como el del Politécnico suele pedirse el procedimiento de factorización, por lo que ahí es mejor identificar el caso correspondiente.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat6-5",
+                        topicIdx: 1,
+                        title: "5. Diferencias Críticas para el Examen",
+                        icon: "fa-triangle-exclamation",
+                        subnodes: [
+                            { icon: "fa-scale-balanced", delay: "0.1s", title: "Reglas de los Exponentes según Operación", content: "<div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>NO CONFUNDIR:</b><br><ul><li><b>Suma/Resta:</b> Los exponentes no cambian (términos semejantes).</li><li><b>Multiplicación:</b> Los exponentes de bases iguales se suman.</li><li><b>División:</b> Los exponentes de bases iguales se restan.</li></ul></div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/jlqFi2r8ixM"
+            },
             "content-espanol-1": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
@@ -1705,7 +1780,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260303-16"></script>
+    <script src="./js/app.js?v=20260304-1"></script>
 
 </body>
 

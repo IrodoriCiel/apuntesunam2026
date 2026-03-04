@@ -696,5 +696,44 @@ const flashcardsDatabase = [
         "respuesta": "Frase breve antes del título que da contexto adicional.",
         "tema": "Texto Periodístico",
         "asignatura": "Literatura"
+    },
+
+    // ==========================================
+    // MATEMÁTICAS (5 CONCEPTOS - DIVISION)
+    // ==========================================
+    {
+        "id": "mat-001",
+        "pregunta": "¿Cómo se dividen los coeficientes en una división algebraica?",
+        "respuesta": "Se dividen de forma aritmética normal y siguen la ley de signos.",
+        "tema": "Reglas de División",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-002",
+        "pregunta": "¿Qué sucede con los exponentes al dividir literales con bases iguales?",
+        "respuesta": "Los exponentes se restan.",
+        "tema": "Reglas de División",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-003",
+        "pregunta": "¿Cuál es el valor predeterminado del exponente si una literal no tiene ninguno escrito?",
+        "respuesta": "El exponente siempre es igual a 1.",
+        "tema": "Reglas de División",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-004",
+        "pregunta": "¿En qué consiste la Regla de Anulación en fracciones algebraicas?",
+        "respuesta": "Si el exponente de una literal arriba y abajo es el mismo, la literal se elimina.",
+        "tema": "Tipo 1 (División)",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-005",
+        "pregunta": "¿Qué atajo puedes aplicar en fracciones algebraicas para evitar exponentes negativos?",
+        "respuesta": "Resta el exponente mayor menos el menor y ubica el resultado donde estaba el mayor.",
+        "tema": "Tipo 1 (División)",
+        "asignatura": "Matemáticas"
     }
 ];

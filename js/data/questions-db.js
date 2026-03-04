@@ -13,6 +13,15 @@ const unamQuestions = {
             "retroalimentacion": "Siguiendo la ley de signos alternados y el nivel 3 del Triángulo de Pascal. Potencias: $(x^2)^3 = x^6$. El tercer término del nivel 3 se multiplica por 3: $3(x^2)(-3y)^2 = 27x^2y^2$, seguido por $(-3y)^3 = -27y^3$."
         }
     ],
+    "content-matematicas-6": [
+        {
+            "numero": 48,
+            "pregunta": "Al simplificar la siguiente fracción algebraica $\\frac{15x^5y^3}{-3x^2y^3}$, se obtiene:",
+            "opciones": ["$-5x^7y^6$", "$5x^3$", "$-5x^3$", "$-5x^{2.5}y$"],
+            "respuesta": 2,
+            "retroalimentacion": "El coeficiente es $15 / -3 = -5$. Los exponentes de x se restan ($5-2=3$). Los exponentes de y son iguales ($3-3=0$), por lo que por regla de anulación la literal y se elimina. Resultado: $-5x^3$."
+        }
+    ],
     "content-historia-1": [
         {
             "numero": 111,
@@ -297,6 +306,43 @@ const practiceQuestions = {
             "opciones": ["Valor de cero.", "Valor de infinito.", "Valor de 1.", "Valor de potencia 2."],
             "respuesta": 2,
             "retroalimentacion": "Una letra sola (sin número u coeficiente escrito a la izquierda) siempre toma un valor implícito de 1. Es decir, $x = 1x$."
+        }
+    ],
+    "content-matematicas-6": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cómo se operan los coeficientes en una división algebraica?",
+            "opciones": ["Se restan.", "Se suman.", "Se multiplican.", "Se dividen de forma aritmética normal con ley de signos."],
+            "respuesta": 3,
+            "retroalimentacion": "Los números grandes (coeficientes) siguen reglas de aritmética normal (ej: $8 / 2 = 4$) y obedecen la ley de signos ($+ \\cdot - = -$)."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Al dividir literales con bases iguales, ¿qué operación se realiza con los exponentes?",
+            "opciones": ["Se suman.", "Se restan.", "Se multiplican.", "Se dividen."],
+            "respuesta": 1,
+            "retroalimentacion": "En la división algebraica, siempre que haya literales idénticas agrupadas arriba y abajo, sus potencias se deben restar."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En la división de un polinomio entre un monomio (Tipo 2), ¿cuál es el procedimiento fundamental?",
+            "opciones": ["El monomio de abajo divide únicamente al primer término de arriba.", "Se suman los exponentes de todos.", "El término único de abajo divide a cada uno de los términos de arriba por separado.", "Aplicar la regla de productos cruzados."],
+            "respuesta": 2,
+            "retroalimentacion": "En el Tipo 2 se aplica la propiedad distributiva: el monomio inferior funciona como un divisor independiente para cada uno de los términos del polinomio superior."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Al resolver $\\frac{x^4}{x^4}$, aplicando la regla de anulación, el resultado algebraico que obtienes es:",
+            "opciones": ["$x$", "$0$", "$1$", "$x^8$"],
+            "respuesta": 2,
+            "retroalimentacion": "Las literales con el mismo exponente arriba y abajo se eliminan visualmente para la respuesta final. Matemáticamente equivale a $x^0 = 1$. Se coloca 1 cuando todo lo de arriba o abajo desaparece."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Para evitar tener exponentes negativos en tu respuesta, según el atajo de la clase, ¿cómo acomodas el resultado de tu resta en fracción?",
+            "opciones": ["Siempre arriba.", "Siempre abajo para mayor orden.", "Lo colocas en la posición (numerador o denominador) donde originalmente estaba el exponente más grande.", "Cambias el signo multiplicando por menos uno."],
+            "respuesta": 2,
+            "retroalimentacion": "Restar el mayor exponente menos el menor y colocar el resultado en la posición inicial del mayor te ayuda a evitar lidiar con la engorrosa notación de potencias negativas dictada por UNAM."
         }
     ],
     "content-historia-1": [
@@ -679,6 +725,43 @@ const practiceLevel2Questions = {
             ],
             "respuesta": 1,
             "retroalimentacion": "La alternancia en los binomios negativos nunca falla ni tiene excepciones. Si un inciso presenta un rompe-patrón como $+,+$, queda descartado directo en tu descarte visual."
+        }
+    ],
+    "content-matematicas-6": [
+        {
+            "numero": 1,
+            "pregunta": "Simplifica la siguiente expresión dividiendo el polinomio entre el monomio: $\\frac{12x^4 - 8x^3 + 4x^2}{4x^2}$",
+            "opciones": ["$3x^2 - 2x + 1$", "$3x^2 - 2x$", "$12x^2 - 8x + 4$", "$3x^2 - 2x + 0$"],
+            "respuesta": 0,
+            "retroalimentacion": "El término inferior (divisor) parte a cada numerador: $\\frac{12x^4}{4x^2} = 3x^2$; $\\frac{-8x^3}{4x^2} = -2x$; $\\frac{4x^2}{4x^2} = 1$. Resultado final $3x^2 - 2x + 1$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Utilizando el atajo de eliminación técnica, deduce el término guía residual al eliminar la literal 'y' en la fracción $\\frac{x^2 - y^2}{x - y}$ para tu comprobación en el examen:",
+            "opciones": ["$x$", "$-x$", "$x^2$", "$y$"],
+            "respuesta": 0,
+            "retroalimentacion": "El atajo en ejercicios complejos dice: elimina todos los términos con una literal. Eliminando los términos con 'y' te queda $\\frac{x^2}{x}$. Restas exponentes ($2-1=1$) y tu término residual es $x$. Revisa incisos con solo esa variable."
+        },
+        {
+            "numero": 3,
+            "pregunta": "La división de fracciones polinómicas frecuentemente requiere el atajo de eliminación en la UNAM. Identifica el residual si eliminas todo lo que contenga la literal 'n' en $\\frac{4m^2 - 9n^2}{2m + 3n}$:",
+            "opciones": ["$2m^2$", "$2m$", "$4m$", "$2n$"],
+            "respuesta": 1,
+            "retroalimentacion": "Siguiendo el atajo, al eliminar o ignorar 'n' la fracción se reduce a $\\frac{4m^2}{2m}$. Coeficientes ($4/2 = 2$). Literal ($m^2 / m = m^1$). Residual directo: $2m$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué resultado simplificado obtienes al dividir los siguientes monomios con exponentes fraccionarios $\\frac{x^{3/2}}{x^{1/2}}$?",
+            "opciones": ["$x^3$", "$x^2$", "$x$", "$x^{-1/2}$"],
+            "respuesta": 2,
+            "retroalimentacion": "De acuerdo a las reglas de bases iguales con fracciones, cruzas o restas directo dada la base doble 2: $\\frac{3}{2} - \\frac{1}{2} = \\frac{2}{2} = 1$. Todo exponente uno es invisible: se expresa como $x$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Aplica las reglas fundamentales y simplifica la siguiente expresión (Tipo 1): $\\frac{-15a^5b^3c}{-3a^2b^3}$",
+            "opciones": ["$5a^3c$", "$-5a^3c$", "$5a^3bc$", "$12a^3c$"],
+            "respuesta": 0,
+            "retroalimentacion": "Signos (- / - = +). Coeficientes (15 / 3 = 5). Letra $a$ ($5 - 2 = 3$). Letra $b$ se anula por la Regla de Anulación ($3 - 3 = 0$). Letra $c$ simplemente se traslada de arriba por carecer de base abajo. Resultado: $5a^3c$."
         }
     ],
     "content-historia-1": [
