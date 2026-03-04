@@ -85,7 +85,8 @@ const unamQuestions = {
                 "En Español, lo contrario de IN (como prefijo privativo, claro) suele ser la misma palabra, pero sin esa sílaba. Sí, ya sé: insensato y sensato, indócil y dócil, ¿no? Parcialmente correcto. No olvide, muchacho, que lo contrario del invierno no es el vierno sino el verano.",
                 "Aprende, viaja, estudia, habla, escribe, trabaja, sube y baja, Miguel. Miguel, levántate y anda.",
                 "Quien no quiere pensar es un fanático porque deja que otros piensen por él; quien no puede pensar es un idiota porque deja sus decisiones en manos de otros; quien no osa pensar es un cobarde porque deja su vida en manos de alguien más."
-            ],
+            ], "respuesta": 3,
+            "retroalimentacion": "El texto argumentativo defiende una postura sustentándola con razones. El último fragmento usa continuamente conectores causales ('porque...') para justificar una tesis o dar una crítica."
         }
     ],
     "content-espanol-2": [

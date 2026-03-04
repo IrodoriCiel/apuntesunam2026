@@ -1,4 +1,4 @@
-const ASSET_VERSION = '20260304-2';
+const ASSET_VERSION = '20260304-4';
 const CACHE_NAME = `apuntes-unam-${ASSET_VERSION}`;
 const STATIC_ASSETS = [
     './',
@@ -7,7 +7,6 @@ const STATIC_ASSETS = [
     './404.html',
     `./css/styles.css?v=${ASSET_VERSION}`,
     `./js/app.js?v=${ASSET_VERSION}`,
-    `./js/study-tools.js?v=${ASSET_VERSION}`,
     './js/data/flashcards-db.js',
     './js/data/questions-db.js',
     './assets/images/icon-192.png',
