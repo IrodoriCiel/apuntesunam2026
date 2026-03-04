@@ -223,6 +223,13 @@ const flashcardsDatabase = [
         "tema": "Independencia",
         "asignatura": "Historia de México"
     },
+    {
+        "id": "hist-022",
+        "pregunta": "¿Cuáles son las causas EXTERNAS de la Independencia de México?",
+        "respuesta": "La Independencia de los Estados Unidos (1776) y la Revolución Francesa (1789), que difundieron los ideales de libertad e inspiraron a los criollos.",
+        "tema": "Independencia",
+        "asignatura": "Historia de México"
+    },
 
     // ==========================================
     // MATEMÁTICAS (40 CONCEPTOS)

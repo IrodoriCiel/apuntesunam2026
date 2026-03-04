@@ -489,31 +489,31 @@ const practiceLevel2Questions = {
     "content-matematicas-1": [
         {
             "numero": 1,
-            "pregunta": "Simplifica la expresión: $5x - [3y - (x + y)] + 2x$",
-            "opciones": ["$8x - 2y$", "$6x - 4y$", "$4x + 2y$", "$7x + 3y$"],
-            "respuesta": 0,
-            "retroalimentacion": "Resolvemos de adentro hacia afuera: $-(x+y) = -x-y$. El corchete queda: $[3y - x - y] = [2y - x]$. Finalmente: $5x - (2y - x) + 2x = 5x - 2y + x + 2x = 8x - 2y$."
+            "pregunta": "¿Cuál de los siguientes pares de términos son seméjantes y pueden operarse directamente?",
+            "opciones": ["$3x^2$ y $3x^3$: misma letra, diferente exponente.", "$5xy$ y $5x$: diferente cantidad de literales.", "$-7a^2b$ y $4a^2b$: misma letra Y mismo exponente.", "$2x$ y $2y$: diferente letra."],
+            "respuesta": 2,
+            "retroalimentacion": "La regla de la clase: términos seméjantes deben tener la MISMA letra Y el MISMO exponente. Solo $-7a^2b$ y $4a^2b$ cumplen ambas, por lo que $-7a^2b + 4a^2b = -3a^2b$."
         },
         {
             "numero": 2,
-            "pregunta": "Calcula el valor de la expresión $\\frac{a^2 - 2b}{c}$ si $a = -3, b = 2, c = -1$",
-            "opciones": ["$-5$", "$5$", "$-13$", "$13$"],
+            "pregunta": "Simplifica agrupando términos seméjantes: $5x^2 - 3x + 2x^2 + x - x^2$",
+            "opciones": ["$6x^2 - 2x$", "$7x^2 + 2x$", "$6x^2 + 2x$", "$8x^2 - 2x$"],
             "respuesta": 0,
-            "retroalimentacion": "Sustitución: $\\frac{(-3)^2 - 2(2)}{-1} = \frac{9 - 4}{-1} = \frac{5}{-1} = -5$. Cuidado con el signo de $(-3)^2$."
+            "retroalimentacion": "Agrupamos los $x^2$: $5 + 2 - 1 = 6x^2$ (el $-x^2$ es $-1x^2$). Agrupamos los $x$: $-3 + 1 = -2x$. Resultado: $6x^2 - 2x$."
         },
         {
             "numero": 3,
-            "pregunta": "¿Cuál es el grado absoluto del término $-7x^3y^4z$?",
-            "opciones": ["3", "4", "7", "8"],
-            "respuesta": 3,
-            "retroalimentacion": "El grado absoluto es la suma de los exponentes de las variables: $3 + 4 + 1 (de z) = 8$."
+            "pregunta": "¿Cuál es el resultado de multiplicar $(-3x^2)(5x^3)$?",
+            "opciones": ["$-15x^5$", "$15x^5$", "$-15x^6$", "$2x^5$"],
+            "respuesta": 0,
+            "retroalimentacion": "Coeficientes con ley de signos: $-3 \\times 5 = -15$. Letras iguales, exponentes se suman: $x^2 \\cdot x^3 = x^5$. Resultado: $-15x^5$."
         },
         {
             "numero": 4,
-            "pregunta": "Simplifica los términos semejantes: $0.5a - \\frac{1}{4}b + 2a - b$",
-            "opciones": ["$2.5a - 0.75b$", "$2.5a - 1.25b$", "$1.5a - 1.25b$", "$2.5a + 1.25b$"],
-            "respuesta": 1,
-            "retroalimentacion": "Agrupamos $a$: $0.5 + 2 = 2.5a$. Agrupamos $b$: $-0.25 - 1 = -1.25b$. Resultado: $2.5a - 1.25b$."
+            "pregunta": "Simplifica agrupando términos seméjantes: $7m - 5n + 2m + 3n$",
+            "opciones": ["$9m - 2n$", "$5m - 2n$", "$9m + 8n$", "$5m + 8n$"],
+            "respuesta": 0,
+            "retroalimentacion": "Agrupamos los $m$: $7 + 2 = 9m$. Los $n$: signos diferentes, el mayor es $-5$ al que le quitamos 3: $-5 + 3 = -2n$. Resultado: $9m - 2n$."
         },
         {
             "numero": 5,
@@ -526,10 +526,10 @@ const practiceLevel2Questions = {
     "content-matematicas-2": [
         {
             "numero": 1,
-            "pregunta": "Desarrolla el binomio al cuadrado: $(2x - 5y)^2$",
-            "opciones": ["$4x^2 - 25y^2$", "$4x^2 - 10xy + 25y^2$", "$4x^2 - 20xy + 25y^2$", "$2x^2 - 20xy + 5y^2$"],
-            "respuesta": 2,
-            "retroalimentacion": "Cuadrado del primero $(4x^2)$, menos doble del primero por el segundo $(2 \\cdot 2x \\cdot 5y = 20xy)$, más cuadrado del segundo $(25y^2)$."
+            "pregunta": "Desarrolla el producto aplicando la propiedad distributiva (monomio por polinomio): $4x(2x^2 - 3y + 1)$",
+            "opciones": ["$8x^3 - 12xy + 4x$", "$8x^3 + 12xy - 4x$", "$8x^2 - 12xy + 4x$", "$6x^3 - 7xy + 5x$"],
+            "respuesta": 0,
+            "retroalimentacion": "El monomio $4x$ se multiplica con cada término interior: $4x \\cdot 2x^2 = 8x^3$, $4x \\cdot (-3y) = -12xy$, $4x \\cdot 1 = 4x$. Resultado: $8x^3 - 12xy + 4x$."
         },
         {
             "numero": 2,
@@ -540,24 +540,24 @@ const practiceLevel2Questions = {
         },
         {
             "numero": 3,
-            "pregunta": "Simplifica $(x + y - 1)(x + y + 1)$ tratándolo como producto notable:",
-            "opciones": ["$x^2 + y^2 - 1$", "$(x+y)^2 + 1$", "$x^2 + 2xy + y^2 - 1$", "$x^2 + y^2 + 1$"],
+            "pregunta": "Identifica el resultado correcto del binomio conjugado $(5a - 3b)(5a + 3b)$:",
+            "opciones": ["$25a^2 + 9b^2$", "$10a^2 - 6b^2$", "$25a^2 - 9b^2$", "$25a^2 - 15b^2$"],
             "respuesta": 2,
-            "retroalimentacion": "Agrupamos $(x+y)$ como un solo término: $(x+y)^2 - (1)^2 = x^2 + 2xy + y^2 - 1$."
+            "retroalimentacion": "Ley universal del conjugado: primero por primero ($5a \\cdot 5a = 25a^2$) y segundo por segundo ($3b \\cdot -3b = -9b^2$). El signo entre ellos SIEMPRE es negativo. Resultado: $25a^2 - 9b^2$."
         },
         {
             "numero": 4,
-            "pregunta": "Resultado de $(2x + 3)(x - 4)$:",
-            "opciones": ["$2x^2 - 12$", "$2x^2 - 5x - 12$", "$2x^2 + 5x - 12$", "$2x^2 - 11x - 12$"],
-            "respuesta": 1,
-            "retroalimentacion": "Multiplicación distributiva: $2x^2 - 8x + 3x - 12 = 2x^2 - 5x - 12$."
+            "pregunta": "Desarrolla el producto usando la propiedad distributiva: $-3m(2m^2 + 5n - 4)$",
+            "opciones": ["$-6m^3 - 15mn + 12m$", "$-6m^3 + 15mn - 12m$", "$6m^3 - 15mn + 12m$", "$-6m^3 - 15mn - 12m$"],
+            "respuesta": 0,
+            "retroalimentacion": "El monomio $-3m$ se distribuye: $-3m \\cdot 2m^2 = -6m^3$, $-3m \\cdot 5n = -15mn$, $-3m \\cdot (-4) = +12m$. Resultado: $-6m^3 - 15mn + 12m$."
         },
         {
             "numero": 5,
-            "pregunta": "Calcula el cuadrado del binomio $(-x - 3)^2$:",
-            "opciones": ["$x^2 - 6x + 9$", "$x^2 + 6x + 9$", "$-x^2 - 9$", "$x^2 + 9$"],
-            "respuesta": 1,
-            "retroalimentacion": "Al estar ambos negativos, el resultado es igual a $(x+3)^2$ pues $(-1)^2(x+3)^2 = x^2 + 6x + 9$."
+            "pregunta": "¿Cuál es el resultado del binomio conjugado $(\\sqrt{2a} - \\sqrt{5b})(\\sqrt{2a} + \\sqrt{5b})$?",
+            "opciones": ["$2a + 5b$", "$4a - 25b$", "$2a - 5b$", "$\\sqrt{10ab}$"],
+            "respuesta": 2,
+            "retroalimentacion": "Por la regla de raíces de la clase: raíz igual por raíz igual = el número sin raíz. $\\sqrt{2a} \\cdot \\sqrt{2a} = 2a$ y $\\sqrt{5b} \\cdot (-\\sqrt{5b}) = -5b$. Resultado: $2a - 5b$."
         }
     ],
     "content-matematicas-3": [
@@ -705,17 +705,17 @@ const practiceLevel2Questions = {
         },
         {
             "numero": 4,
-            "pregunta": "Fue la estrategia política de Cortés para desligarse de la autoridad de Diego Velázquez:",
-            "opciones": ["Hacer una alianza con los Tlaxcaltecas.", "Fundar el Ayuntamiento de la Villa Rica de la Vera Cruz.", "Quemar sus naves en el puerto.", "Solicar permiso directo al Papa."],
+            "pregunta": "Según la clase, ¿qué importancia tuvo La Villa Rica de la Vera Cruz fundada por Cortés en 1519?",
+            "opciones": ["Fue el primer campo de batalla contra los Mexicas.", "Fue el primer puerto comercial establecido durante la Conquista.", "Fue el lugar donde murió Moctezuma.", "Fue la capital de la Nueva España."],
             "respuesta": 1,
-            "retroalimentacion": "Al fundar un Ayuntamiento, Cortés establecía una autoridad legal que respondía directamente al Rey y no al gobernador de Cuba."
+            "retroalimentacion": "La clase indica que Cortés fundó La Villa Rica de la Vera Cruz en 1519 como el primer puerto comercial, lo que le permitió establecer presencia formal en el territorio."
         },
         {
             "numero": 5,
-            "pregunta": "Factores que facilitaron la caída de Tenochtitlan en 1521, excepto:",
-            "opciones": ["La superioridad numérica de los tlaxcaltecas aliados.", "La epidemia de viruela.", "Las armas de fuego y caballos.", "La traición definitiva de la Malinche al Rey de España."],
-            "respuesta": 3,
-            "retroalimentacion": "La Malinche nunca traicionó a España; fue la intérprete de Cortés. El factor decisivo fueron las alianzas indígenas y las enfermedades."
+            "pregunta": "¿Cuáles son los DOS factores que explican por qué los españoles vencieron a los Mexicas, según la clase?",
+            "opciones": ["El armamento superior y la ayuda de los Mayas.", "El apoyo del Papa y el hambre en Tenochtitlan.", "Las alianzas con los Tlaxcaltecas y la pandemia de viruela.", "La traición de Cuauhtémoc y la superioridad numérica española."],
+            "respuesta": 2,
+            "retroalimentacion": "La clase menciona exactamente dos factores: el factor de Alianzas (Tlaxcaltecas apoyaron por odio/abuso de los Mexicas) y el factor Biológico (pandemia de viruela). Ambos fueron decisivos para la caída el 13 de agosto de 1521."
         }
     ],
     "content-historia-2": [
@@ -803,35 +803,35 @@ const practiceLevel2Questions = {
             "pregunta": "El bronce es un ejemplo de:",
             "opciones": ["Elemento químico.", "Compuesto químico.", "Mezcla homogénea.", "Mezcla heterogénea."],
             "respuesta": 2,
-            "retroalimentacion": "El bronce es una aleación (mezcla sólida homogénea) de cobre y estaño."
+            "retroalimentacion": "El bronce es una aleación (mezcla sólida homogénea). La clase lo menciona explícitamente como ejemplo de mezcla homogénea, junto con el aire y el agua con sal."
         },
         {
             "numero": 2,
-            "pregunta": "La dispersión de un haz de luz al pasar a través de las partículas de un coloide se conoce como:",
-            "opciones": ["Efecto Invernadero.", "Efecto Termodinámico.", "Efecto Tyndall.", "Refracción espectral."],
+            "pregunta": "La clase menciona que si te preguntan cómo identificar o hacer visible un sistema coloidal, la respuesta es gracias al:",
+            "opciones": ["Efecto Invernadero.", "Efecto Doppler.", "Efecto Tyndall.", "Microscopio electrónico."],
             "respuesta": 2,
-            "retroalimentacion": "El Efecto Tyndall ocurre cuando las partículas finas coloidales dispersan la luz, permitiendo hacer visible el rayo a través de la mezcla."
+            "retroalimentacion": "El Efecto Tyndall es la dispersión de la luz a través de las partículas del coloide. La clase lo señala como la respuesta exacta ante cualquier pregunta de identificación de coloides."
         },
         {
             "numero": 3,
             "pregunta": "Es el cambio de estado de la materia que ocurre cuando una sustancia sólida pasa directamente a gas, omitiendo el estado líquido:",
             "opciones": ["Condensación.", "Fusión.", "Sublimación directa.", "Evaporación."],
             "respuesta": 2,
-            "retroalimentacion": "La sublimación directa es típica del hielo seco (dióxido de carbono) o las pastillas desodorantes para baño al absorber calor."
+            "retroalimentacion": "La sublimación directa (Sólido → Gaseoso) salta el estado líquido. La clase menciona como ejemplos: el hielo seco y las pastillas aromatizantes de baño."
         },
         {
             "numero": 4,
-            "pregunta": "Suele confundirse con una mezcla homogénea simple a simple vista, pero bajo análisis incluye fases dispersas (como la leche o la sangre):",
-            "opciones": ["Compuesto puro.", "Elemento químico.", "Coloide.", "Fusión binaria."],
-            "respuesta": 2,
-            "retroalimentacion": "Los coloides tienen partículas muy finas que las hacen lucir uniformes, pero que evidencian su naturaleza de mezcla especial (heterogénea)."
+            "pregunta": "Según la clase, ¿cuál de los siguientes cambios de estado requiere frío y va de estado gaseoso a estado líquido?",
+            "opciones": ["Fusión.", "Sublimación directa.", "Evaporación.", "Condensación."],
+            "respuesta": 3,
+            "retroalimentacion": "La condensación (Gaseoso → Líquido) requiere temperaturas bajas. La clase da como ejemplos: los lentes empañados y el vaho al hablar en el frío."
         },
         {
             "numero": 5,
-            "pregunta": "Identifica la sustancia pura en la siguiente lista:",
-            "opciones": ["Aire.", "Leche.", "Oxígeno ($O_2$).", "Agua de mar."],
+            "pregunta": "La clase explica que la trampa de la UNAM es mezclar coloides con mezclas homogéneas. Si el examen te da la opción 'leche con chocolate', ¿cómo la clasificarías?",
+            "opciones": ["Coloide, porque la leche siempre es coloide.", "Mezcla heterogénea, porque se ven dos fases.", "Mezcla homogénea, porque ya se están uniendo dos sustancias de forma uniforme.", "Elemento, porque no tiene reacción química."],
             "respuesta": 2,
-            "retroalimentacion": "El oxígeno es un elemento (sustancia pura); los demás son mezclas."
+            "retroalimentacion": "La clase dice exactamente: si dice 'leche sola', es coloide. Pero si dice 'leche con chocolate', ya se considera una mezcla homogénea porque estás uniendo dos sustancias de forma uniforme."
         }
     ],
     "content-literatura-1": [
