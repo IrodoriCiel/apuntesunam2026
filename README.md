@@ -8,7 +8,7 @@
 
 Una plataforma interactiva de estudio diseñada específicamente para aspirantes al examen de la **UNAM 2026**. Esta SPA (*Single Page Application*) permite repasar contenidos teóricos en mapas mentales, resolver preguntas estilo UNAM, practicar con flashcards y llevar un control detallado del progreso, todo sin necesidad de internet.
 
-🌐 **Demo en vivo:** [irodorici.el.github.io/apuntesunam2026](https://irodorici.el.github.io/apuntesunam2026)
+🌐 **Demo en vivo:** [irodoriciel.github.io/apuntesunam2026](https://irodoriciel.github.io/apuntesunam2026)
 
 ---
 
