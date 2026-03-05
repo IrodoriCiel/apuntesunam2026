@@ -281,17 +281,24 @@
                 </ul>
             </li>
 
-            <!-- HISTORIA UNIVERSAL (DESHABILITADO) -->
+            <!-- HISTORIA UNIVERSAL -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-hist-univ"
-                    style="opacity: 0.5; pointer-events: none; color: #dc2626;">
+                <a href="#" class="subject-item" id="btn-hist-univ" onclick="toggleSubMenu(event, 'submenu-hist-univ')"
+                    style="color: #dc2626;">
                     <span class="subject-icon"><i class="fa-solid fa-globe"></i></span>
                     Historia Universal
+                    <span class="subject-pending-badge" id="badge-hist-univ"></span>
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-hist-univ">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-hist-univ-1"
+                            onclick="switchClass('content-hist-univ-1', this, 'btn-hist-univ')"
+                            data-class-id="content-hist-univ-1">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Introducción a la Historia
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -318,6 +325,14 @@
                             onclick="switchClass('content-historia-2', this, 'btn-historia')"
                             data-class-id="content-historia-2">
                             <i class="fa-solid fa-book-open"></i> Clase 2: La Colonia e Independencia
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-historia-3"
+                            onclick="switchClass('content-historia-3', this, 'btn-historia')"
+                            data-class-id="content-historia-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: México Independiente
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -798,6 +813,67 @@
     <script>
 
         const appDatabase = {
+            "content-hist-univ-1": {
+                title: "Apuntes de Historia Universal",
+                titleIconLeft: "fa-globe",
+                titleIconRight: "fa-book",
+                titleStyle: "color: #dc2626;",
+                mainTopicId: "mainTopicHistUniv",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Historia Universal",
+                mainTopicIcon1: "fa-landmark-dome",
+                mainTopicIcon2: "fa-hourglass-half",
+                mainTopicSubtitle: "Clase 1: Introducción a la Historia",
+                branches: [
+                    {
+                        id: "nodes-hu-1",
+                        topicIdx: 1,
+                        title: "1. Concepto y Propósito",
+                        icon: "fa-book-open",
+                        subnodes: [
+                            { icon: "fa-pen", delay: "0.1s", title: "Definición", content: "<p>Es el <b>estudio de los acontecimientos del pasado</b> relativos al hombre y las sociedades humanas. La historia comienza formalmente cuando el hombre vive en comunidad (por necesidad de supervivencia).</p>" },
+                            { icon: "fa-bullseye", delay: "0.2s", title: "Propósito", content: "<p>Conocer las culturas del pasado para <b>entender nuestro presente</b>.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTA DE EXAMEN:</b><br>Si te preguntan cuál es el propósito de la historia, la respuesta exacta es: Conocer el pasado para comprender el presente.</div>" },
+                            { icon: "fa-user-tie", delay: "0.3s", title: "El Padre de la Historia", content: "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTA DE CAJÓN:</b><br>¿Quién es el Padre de la Historia o quién escribió los Nueve Libros de la Historia?<br><b>Respuesta:</b> Heródoto (historiador y geógrafo griego).</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu-2",
+                        topicIdx: 2,
+                        title: "2. Fuentes de la Historia",
+                        icon: "fa-magnifying-glass",
+                        subnodes: [
+                            { icon: "fa-scroll", delay: "0.1s", title: "Directas", content: "<p>Fueron creadas <b>específicamente para dar testimonio</b> o registro de una época (son explícitas).</p><p><b>Ejemplos:</b> Crónicas, códices, documentos oficiales, diarios (ej. Diario de Ana Frank).</p>" },
+                            { icon: "fa-bone", delay: "0.2s", title: "Indirectas", content: "<p>Objetos o restos materiales que <b>no tenían el fin de registrar la historia</b>, sino que tenían una utilidad práctica o religiosa en su momento. Son sujetas a interpretación.</p><p><b>Ejemplos:</b> Ruinas, huesos, armas, utensilios, fósiles, pinturas rupestres.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu-3",
+                        topicIdx: 3,
+                        title: "3. Periodización de la Historia",
+                        icon: "fa-clock-rotate-left",
+                        subnodes: [
+                            { icon: "fa-pen-nib", delay: "0.1s", title: "Prehistoria vs Historia", content: "<p>La diferencia principal que marca el inicio de la Historia es la <b>aparición de la escritura</b> (aprox. 3,500 a.C.).</p>" },
+                            { icon: "fa-monument", delay: "0.2s", title: "Edad Antigua", content: "<p><b>Inicia:</b> Con la Escritura.<br><b>Termina:</b> Caída del Imperio Romano de Occidente (476 d.C.).</p>" },
+                            { icon: "fa-chess-rook", delay: "0.3s", title: "Edad Media", content: "<p><b>Inicia:</b> Caída del Imperio Romano de Occidente.<br><b>Termina:</b> Toma de Constantinopla (1453) (también conocida como Caída del Imperio Romano de Oriente).</p>" },
+                            { icon: "fa-ship", delay: "0.4s", title: "Edad Moderna", content: "<p><b>Inicia:</b> Toma de Constantinopla.<br><b>Termina:</b> Revolución Francesa (1789).</p>" },
+                            { icon: "fa-industry", delay: "0.5s", title: "Edad Contemporánea", content: "<p><b>Inicia:</b> Revolución Francesa.<br><b>Sigue:</b> Hasta la actualidad.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu-4",
+                        topicIdx: 4,
+                        title: "4. Corrientes Históricas",
+                        icon: "fa-gears",
+                        subnodes: [
+                            { icon: "fa-coins", delay: "0.1s", title: "Materialismo Histórico (Karl Marx)", content: "<p><b>Karl Marx</b> fue quien propuso este modelo de estudio de la historia. Su corriente explica los eventos históricos basándose en los <b>modos de producción</b> (cómo se genera la riqueza en cada época), y no en las ideas o la voluntad de los individuos.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si en una pregunta ves la frase 'modos de producción', la respuesta es <b>Materialismo Histórico / Karl Marx</b>.</div>" },
+                            { icon: "fa-link", delay: "0.2s", title: "Modos de Producción Clave", content: "<p><b>Esclavismo (Edad Antigua):</b> Explotación del hombre por el hombre. El esclavista tiene tiempo para la filosofía y ciencia porque el esclavo produce.</p><p><b>Feudalismo (Edad Media):</b> La riqueza es la <b>Tierra (agricultura)</b>.</p><p><b>Transición:</b> El paso del Feudalismo al Capitalismo es un proceso que inicia en la Edad Moderna y se asienta en la Contemporánea.</p>" },
+                            { icon: "fa-chess-board", delay: "0.3s", title: "Jerarquía del Feudalismo", content: "<ul><li><b>Iglesia:</b> Poder social (control basado en el miedo/dogma).</li><li><b>Rey:</b> Poder político (dueño de las tierras).</li><li><b>Señor Feudal:</b> Administrador del feudo. Amasa poder económico y en el futuro se convierte en el Burgués.</li><li><b>Siervos/Pueblo:</b> Mano de obra.</li></ul>" },
+                            { icon: "fa-chart-line", delay: "0.4s", title: "Positivismo e Historicismo", content: "<p><b>Positivismo:</b> Corriente que busca la acumulación de datos precisos y la objetividad (idea de progreso).</p><p><b>Historicismo:</b> Considera que la historia es única e irrepetible.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/6rod229c2b8"
+            },
             "content-historia-1": {
                 title: "Apuntes de Historia",
                 titleIconLeft: "fa-lightbulb",
@@ -858,6 +934,65 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/hkuW2zfO9Gw"
+            },
+            "content-historia-3": {
+                title: "Apuntes de Historia de México",
+                titleIconLeft: "fa-earth-americas",
+                titleIconRight: "fa-flag",
+                titleStyle: "color: #b45309;",
+                mainTopicId: "mainTopicHistoria3",
+                mainTopicClass: "",
+                mainTopicTitle: "Historia de México",
+                mainTopicIcon1: "fa-star",
+                mainTopicIcon2: "fa-landmark",
+                mainTopicSubtitle: "Clase 3: México Independiente",
+                branches: [
+                    {
+                        id: "nodes-hist3-1",
+                        topicIdx: 1,
+                        title: "1. Etapas Finales de la Independencia",
+                        icon: "fa-flag",
+                        subnodes: [
+                            { icon: "fa-shield-halved", delay: "0.1s", title: "Etapa de Resistencia (1815-1820)", content: "<p><b>Líderes insurgentes:</b> Vicente Guerrero y Guadalupe Victoria.<br><b>Personaje realista clave:</b> Agustín de Iturbide (defensor de la herencia colonial).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Esta etapa se define por el <b>debilitamiento de los insurgentes</b> y el inicio de la <b>guerra de guerrillas</b> (conflictos aislados).</div>" },
+                            { icon: "fa-handshake", delay: "0.2s", title: "Etapa de Consumación (1820-1821)", content: "<p><b>Abrazo de Acatempan:</b> Reconciliación entre Guerrero e Iturbide (<b>10 de febrero de 1821</b>).</p><p><b>Plan de Iguala (o de las Tres Garantías):</b> Propone el igualitarismo racial y el fin del sistema de castas.</p><p><b>Tratado de Córdoba:</b> Firmado por Iturbide y Juan O'Donojú (último virrey). Reconoce oficialmente la independencia de México.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTA DE EXAMEN:</b><br>El acontecimiento con el que finaliza la independencia el <b>27 de septiembre de 1821</b> es la entrada del <b>Ejército Trigarante</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist3-2",
+                        topicIdx: 2,
+                        title: "2. Proyectos de Organización Política",
+                        icon: "fa-landmark",
+                        subnodes: [
+                            { icon: "fa-crown", delay: "0.1s", title: "El Imperio (Conservador)", content: "<p>Primera forma de gobierno tras la independencia. <b>Agustín de Iturbide</b> se corona como <b>Agustín I</b>.</p><div class='exam-tip'><i class='fa-solid fa-circle-exclamation'></i> <b>TIP DE EXAMEN:</b><br>El <b>Plan de Casa Mata</b> (impulsado por Santa Anna y Guerrero) fue el documento utilizado para derrocar el Imperio de Iturbide.</div>" },
+                            { icon: "fa-building-columns", delay: "0.2s", title: "La República (Liberal)", content: "<p>Se instaura la figura del Presidente.<br><b>Guadalupe Victoria:</b> Primer presidente de México (1824-1829).</p>" },
+                            { icon: "fa-scroll", delay: "0.3s", title: "Constitución de 1824", content: "<p>Considerada la <b>primera constitución oficial</b> del México independiente. Establece:</p><ul><li>El <b>sistema federal</b>.</li><li>La <b>religión católica</b> como única.</li><li>Los tres poderes de la unión: <b>Ejecutivo, Legislativo y Judicial</b>.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist3-3",
+                        topicIdx: 3,
+                        title: "3. Conflictos Internacionales",
+                        icon: "fa-globe",
+                        subnodes: [
+                            { icon: "fa-ship", delay: "0.1s", title: "Invasión de Barradas (1829)", content: "<p>Intento fallido de <b>reconquista</b> por parte de España en las costas de <b>Tamaulipas</b>.</p>" },
+                            { icon: "fa-bread-slice", delay: "0.2s", title: "Guerra de los Pasteles (1838-1839)", content: "<p><b>Primera intervención francesa</b> en México.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>DATO DE EXAMEN:</b><br>México fue obligado a pagar una indemnización de <b>600,000 pesos</b>.</div>" },
+                            { icon: "fa-map", delay: "0.3s", title: "Guerra contra EE.UU. (1846-1848)", content: "<p><b>Causa:</b> Independencia de Texas y su posterior unión a Estados Unidos.</p><p><b>Evento clave:</b> Ataque al <b>Castillo de Chapultepec</b> (14 de septiembre de 1847).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTA DE EXAMEN:</b><br>La guerra termina con el <b>Tratado de Guadalupe Hidalgo</b>, mediante el cual México pierde más de la mitad de su territorio (California, Arizona, Nuevo México, etc.).</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist3-4",
+                        topicIdx: 4,
+                        title: "4. Federalismo vs. Centralismo y Guía de Personajes",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-diagram-project", delay: "0.1s", title: "Liberales (Federalistas)", content: "<p>Buscan <b>dar poder a los estados</b>, separar la Iglesia del Estado e igualdad jurídica.</p>" },
+                            { icon: "fa-chess-king", delay: "0.2s", title: "Conservadores (Centralistas)", content: "<p>Exigen un <b>Imperio</b>, educación religiosa y privilegios para la Iglesia. Apoyados por la clase alta.</p><div class='exam-tip'><i class='fa-solid fa-circle-exclamation'></i> <b>NOTA DE EXAMEN:</b><br>La <b>Constitución de 1836 (Siete Leyes)</b> de Santa Anna estableció un gobierno centralizado, donde el poder recae en una sola persona.</div>" },
+                            { icon: "fa-users", delay: "0.3s", title: "Guía Rápida de Personajes y Documentos", content: "<ul><li><b>Francisco Javier de Mina:</b> Militar español que apoyó la independencia para luchar contra el absolutismo del rey.</li><li><b>Hidalgo:</b> Fundó el periódico <b>'El Despertador Americano'</b>.</li><li><b>Morelos:</b> Autor de <b>'Sentimientos de la Nación'</b> y la <b>Constitución de Apatzingán</b>.</li></ul>" },
+                            { icon: "fa-list-ol", delay: "0.4s", title: "Tip de Orden Cronológico", content: "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP PARA ORDEN CRONOLÓGICO:</b><br>Si te piden ordenar eventos, busca el <b>inicio</b> (Alhóndiga de Granaditas) y el <b>final</b> (Tratado de Córdoba / Ejército Trigarante). Con esos dos puntos usualmente descartas todas las opciones incorrectas.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/Wh7k_g4RMhg"
             },
             "content-matematicas-1": {
                 title: "Apuntes de Matemáticas",

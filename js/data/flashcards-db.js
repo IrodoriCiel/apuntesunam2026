@@ -788,5 +788,167 @@ const flashcardsDatabase = [
         "respuesta": "El único verbo vivo que esté explícitamente conjugado en presente, pasado o futuro.",
         "tema": "El Verbo",
         "asignatura": "Español"
+    },
+
+    // ==========================================
+    // HISTORIA UNIVERSAL (12 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "univ-001",
+        "pregunta": "¿Cuál es el propósito de estudiar la historia según la UNAM?",
+        "respuesta": "Conocer las culturas del pasado para entender nuestro presente.",
+        "tema": "Fundamentos de Historia",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-002",
+        "pregunta": "¿Cuándo comienza formalmente la historia de la humanidad?",
+        "respuesta": "Cuando el hombre comienza a vivir en comunidad por necesidad de supervivencia.",
+        "tema": "Fundamentos de Historia",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-003",
+        "pregunta": "¿Quién es considerado el 'Padre de la Historia'?",
+        "respuesta": "El griego Heródoto, autor de 'Los Nueve Libros de la Historia'.",
+        "tema": "Fundamentos de Historia",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-004",
+        "pregunta": "¿Qué es una Fuente Subjetiva o Directa?",
+        "respuesta": "Es aquella creada específicamente con el propósito consciente de dar testimonio o registro de una época (Crónicas, diarios, documentos).",
+        "tema": "Fuentes de la Historia",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-005",
+        "pregunta": "¿Qué es una Fuente Objetiva o Indirecta?",
+        "respuesta": "Son restos materiales (armas, vasijas, ruinas) que NO tenían el fin original de registrar la historia, pero hoy nos dan información comprobable.",
+        "tema": "Fuentes de la Historia",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-006",
+        "pregunta": "Según la periodización tradicional, el hecho que marca el paso de la Edad Antigua a la Edad Media es:",
+        "respuesta": "La caída del Imperio Romano de Occidente (Roma).",
+        "tema": "Periodización",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-007",
+        "pregunta": "El hito que divide a la Edad Media de la Edad Moderna (Pregunta frecuente de examen) es:",
+        "respuesta": "La toma de Constantinopla o Caída del Imperio Romano de Oriente (1453).",
+        "tema": "Periodización",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-008",
+        "pregunta": "¿Qué acontecimiento marca el inicio de la Edad Contemporánea?",
+        "respuesta": "La Revolución Francesa (1789).",
+        "tema": "Periodización",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-009",
+        "pregunta": "¿Qué plantea la escuela del Historicismo?",
+        "respuesta": "Enfatiza que cada suceso histórico es único e irrepetible; la historia determina el desarrollo humano.",
+        "tema": "Corrientes Historiográficas",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-010",
+        "pregunta": "¿En qué se enfoca el Positivismo histórico?",
+        "respuesta": "Busca la máxima objetividad rigurosa aplicando el método científico, comprobación de pruebas y acumulación de datos exactos.",
+        "tema": "Corrientes Historiográficas",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-011",
+        "pregunta": "¿Quién es el autor del Materialismo Histórico?",
+        "respuesta": "Karl Marx.",
+        "tema": "Corrientes Historiográficas",
+        "asignatura": "Historia Universal"
+    },
+    {
+        "id": "univ-012",
+        "pregunta": "¿Cómo explica la historia el Materialismo Histórico?",
+        "respuesta": "Explica la evolución de la humanidad no por sus ideas, sino por sus modos de producción (economía) y su constante lucha de clases socioeconómicas.",
+        "tema": "Corrientes Historiográficas",
+        "asignatura": "Historia Universal"
+    },
+
+    // ==========================================
+    // HISTORIA DE MÉXICO - CLASE 3 (10 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "hist3-001",
+        "pregunta": "¿Qué fue el Abrazo de Acatempan?",
+        "respuesta": "El encuentro entre Vicente Guerrero e Iturbide el 10 de febrero de 1821, que unió fuerzas insurgentes y realistas para consumar la independencia.",
+        "tema": "Etapas Finales de la Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-002",
+        "pregunta": "¿Qué estableció el Plan de Iguala (Tres Garantías)?",
+        "respuesta": "Propuso el igualitarismo racial y el fin del sistema de castas como base del nuevo México independiente.",
+        "tema": "Etapas Finales de la Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-003",
+        "pregunta": "¿Qué acontecimiento consumó formalmente la Independencia el 27 de septiembre de 1821?",
+        "respuesta": "La entrada triunfal del Ejército Trigarante a la Ciudad de México.",
+        "tema": "Etapas Finales de la Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-004",
+        "pregunta": "¿Qué fue el Plan de Casa Mata y para qué sirvió?",
+        "respuesta": "Fue el pronunciamiento militar (Santa Anna y Guerrero) que logró derrocar el Imperio de Agustín de Iturbide (Agustín I).",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-005",
+        "pregunta": "¿Quién fue el primer presidente de México y qué años gobernó?",
+        "respuesta": "Guadalupe Victoria (1824-1829).",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-006",
+        "pregunta": "¿Qué estableció la Constitución de 1824?",
+        "respuesta": "El sistema federal, la religión católica como única y los tres poderes: Ejecutivo, Legislativo y Judicial.",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-007",
+        "pregunta": "¿Qué fue la Guerra de los Pasteles (1838-1839) y qué implicó para México?",
+        "respuesta": "La primera intervención francesa en México. Obligó a México a pagar una indemnización de 600,000 pesos.",
+        "tema": "Conflictos Internacionales",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-008",
+        "pregunta": "¿Con qué tratado concluye la guerra México-EE.UU. (1846-1848)?",
+        "respuesta": "Tratado de Guadalupe Hidalgo (1848). México perdió más de la mitad de su territorio: California, Arizona, Nuevo México, etc.",
+        "tema": "Conflictos Internacionales",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-009",
+        "pregunta": "¿Cuál es la diferencia entre Liberales (Federalistas) y Conservadores (Centralistas)?",
+        "respuesta": "Liberales: poder a los estados, separación Iglesia-Estado. Conservadores: Imperio o gobierno central, privilegios para la Iglesia.",
+        "tema": "Federalismo vs. Centralismo",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-010",
+        "pregunta": "¿Qué fue la Constitución de 1836 (Siete Leyes) y quién la impulsó?",
+        "respuesta": "Una constitución centralista impulsada por Santa Anna, que concentraba el poder en una sola persona.",
+        "tema": "Federalismo vs. Centralismo",
+        "asignatura": "Historia de México"
     }
 ];

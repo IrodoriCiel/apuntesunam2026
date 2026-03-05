@@ -31,6 +31,53 @@ const unamQuestions = {
             "retroalimentacion": "Mesoamérica se caracterizó por su agricultura, principalmente del maíz, las sociedades jerarquizadas, el politeísmo y la construcción estructurada con fines religiosos (pirámides)."
         }
     ],
+    "content-hist-univ-1": [
+        {
+            "numero": 85,
+            "pregunta": "¿Cuál es la finalidad de la historia?",
+            "opciones": [
+                "Conocer lugares y personajes del pasado.",
+                "Adquirir un conocimiento exacto y razonado sobre el pasado.",
+                "Conocer el pasado para comprender el presente.",
+                "Educar sobre cómo fueron las culturas del pasado."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "El propósito o utilidad principal de la historia es conocer las culturas y eventos del pasado para poder entender nuestro presente y prepararnos para el futuro."
+        },
+        {
+            "numero": 86,
+            "pregunta": "La división de la historia por modos de producción es obra de",
+            "opciones": [
+                "Agustín Thierry.",
+                "Carlos Marx.",
+                "Fernand Braduel.",
+                "Heródoto."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Karl Marx (Carlos Marx) propuso el Materialismo Histórico, corriente que estudia los eventos históricos basándose en los modos de producción (cómo se genera la riqueza) a través del tiempo."
+        }
+    ],
+    "content-historia-3": [
+        {
+            "numero": 113,
+            "pregunta": "El documento que reconoció oficialmente la independencia de México, firmado por Iturbide y Juan O'Donojú, fue:",
+            "opciones": ["Plan de Iguala.", "Tratado de Córdoba.", "Sentimientos de la Nación.", "Constitución de Apatzingán."],
+            "respuesta": 1,
+            "retroalimentacion": "El Tratado de Córdoba (1821), firmado por Agustín de Iturbide y el último virrey Juan O'Donojú, reconoció formalmente la independencia del Imperio Mexicano."
+        },
+        {
+            "numero": 114,
+            "pregunta": "La guerra entre México y Estados Unidos (1846-1848) finalizó con la firma del:",
+            "opciones": [
+                "Plan de Casa Mata.",
+                "Tratado de Guadalupe Hidalgo.",
+                "Tratado de Córdoba.",
+                "Plan de Iguala."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "El Tratado de Guadalupe Hidalgo (2 de febrero de 1848) puso fin a la guerra y fue el instrumento mediante el cual México cesó más de la mitad de su territorio a Estados Unidos."
+        }
+    ],
     "content-historia-2": [
         {
             "numero": 112,
@@ -388,6 +435,80 @@ const practiceQuestions = {
             "opciones": ["1492", "1519", "1521", "1535"],
             "respuesta": 2,
             "retroalimentacion": "Tras una epidemia de viruela y un asedio constante, Tenochtitlan cayó el 13 de agosto de 1521."
+        }
+    ],
+    "content-hist-univ-1": [
+        {
+            "numero": 1,
+            "pregunta": "¿En qué momento inicia formalmente la historia de la humanidad?",
+            "opciones": ["Con la aparición del fuego.", "Con la creación de herramientas.", "Cuando el hombre vive en comunidad.", "Con la invención de la rueda."],
+            "respuesta": 2,
+            "retroalimentacion": "La historia comienza de manera formal cuando los seres humanos se asientan y comienzan a vivir en comunidad por necesidad de supervivencia."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Según la periodización tradicional, el hecho que marca el paso de la Edad Media a la Edad Moderna es:",
+            "opciones": ["La caída del Imperio Romano de Occidente.", "La Revolución Francesa.", "La invención de la escritura.", "La toma de Constantinopla."],
+            "respuesta": 3,
+            "retroalimentacion": "La Edad Media termina e inicia la Edad Moderna con la Toma de Constantinopla en el año 1453 (Caída del Imperio Romano de Oriente)."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Identifica qué tipo de fuente histórica son unos restos de vasijas de barro encontrados en una excavación arqueológica:",
+            "opciones": ["Fuente Histórica Escrita.", "Fuente Directa.", "Fuente Indirecta.", "Fuente Complementaria."],
+            "respuesta": 2,
+            "retroalimentacion": "Son fuentes indirectas porque son objetos que originalmente tenían un fin práctico de utilidad (cocinar o almacenar) y no tenían la intención original de registrar o contar la historia."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Quién es conocido universalmente como el 'Padre de la Historia'?",
+            "opciones": ["Socrátes.", "Karl Marx.", "Heródoto.", "Platón."],
+            "respuesta": 2,
+            "retroalimentacion": "Heródoto (historiador y geógrafo griego) es considerado el Padre de la Historia, famoso por ser el autor de 'Los nueve libros de la historia'."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Corriente de la historia que se interesa en buscar la objetividad mediante la rigurosa acumulación de datos:",
+            "opciones": ["Historicismo.", "Positivismo.", "Materialismo Histórico.", "Estructuralismo."],
+            "respuesta": 1,
+            "retroalimentacion": "El Positivismo es la corriente historiográfica enfocada en acumular datos precisos y que persigue la idea de objetividad y progreso."
+        }
+    ],
+    "content-historia-3": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué reconciliación entre dos caudillos puso las bases para la consumación de la independencia?",
+            "opciones": ["El Abrazo de Acatempan.", "El Tratado de Córdoba.", "El Plan de Iguala.", "El Plan de Casa Mata."],
+            "respuesta": 0,
+            "retroalimentacion": "El Abrazo de Acatempan (10 de febrero de 1821) fue el encuentro entre Vicente Guerrero e Iturbide, sellando la unión de fuerzas insurgentes y realistas para lograr la independencia."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Con qué acontecimiento se reconoce la consumación de la Independencia de México el 27 de septiembre de 1821?",
+            "opciones": ["La firma del Plan de Iguala.", "El Grito de Dolores.", "La entrada del Ejército Trigarante a la capital.", "La firma de los Tratados de Córdoba."],
+            "respuesta": 2,
+            "retroalimentacion": "La entrada triunfal del Ejército Trigarante a la Ciudad de México el 27 de septiembre de 1821 es el hecho simbólico que marca la consumación formal de la Independencia."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál fue el primer presidente de México?",
+            "opciones": ["Iturbide.", "Santa Anna.", "Guadalupe Victoria.", "Vicente Guerrero."],
+            "respuesta": 2,
+            "retroalimentacion": "Guadalupe Victoria (1824-1829) fue el primer presidente de México tras la caída del Imperio de Iturbide y la proclamación de la República."
+        },
+        {
+            "numero": 4,
+            "pregunta": "La Guerra de los Pasteles (1838-1839) fue la primera intervención de:",
+            "opciones": ["España.", "Gran Bretaña.", "Francia.", "Estados Unidos."],
+            "respuesta": 2,
+            "retroalimentacion": "La Primera Intervención Francesa fue llamada 'Guerra de los Pasteles' y obligó a México a pagar una indemnización de 600,000 pesos."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Con qué tratado concluye la guerra entre México y Estados Unidos (1846-1848)?",
+            "opciones": ["Tratado de Córdoba.", "Plan de Guadalupe.", "Tratado de Guadalupe Hidalgo.", "Convenio de Miramar."],
+            "respuesta": 2,
+            "retroalimentacion": "El Tratado de Guadalupe Hidalgo (1848) puso fin a la guerra y mediante él México cedió a EE.UU. California, Arizona, Nuevo México y otros territorios."
         }
     ],
     "content-historia-2": [
@@ -843,6 +964,85 @@ const practiceLevel2Questions = {
             "opciones": ["El armamento superior y la ayuda de los Mayas.", "El apoyo del Papa y el hambre en Tenochtitlan.", "Las alianzas con los Tlaxcaltecas y la pandemia de viruela.", "La traición de Cuauhtémoc y la superioridad numérica española."],
             "respuesta": 2,
             "retroalimentacion": "La clase menciona exactamente dos factores: el factor de Alianzas (Tlaxcaltecas apoyaron por odio/abuso de los Mexicas) y el factor Biológico (pandemia de viruela). Ambos fueron decisivos para la caída el 13 de agosto de 1521."
+        }
+    ],
+    "content-hist-univ-1": [
+        {
+            "numero": 1,
+            "pregunta": "De acuerdo con el Materialismo Histórico, la transición del modo de producción Feudal al Capitalista abarca directamente a las etapas históricas conocidas como:",
+            "opciones": ["Edad Antigua a Edad Media.", "Edad Media a Edad Moderna.", "Edad Moderna y Contemporánea.", "Prehistoria a Edad Antigua."],
+            "respuesta": 2,
+            "retroalimentacion": "Según la clase de Modos de Producción, la transición del Feudalismo al Capitalismo es un proceso amplio que arranca a lo largo de la Edad Moderna y se consolida definitivamente en la Contemporánea."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Cuál es la diferencia fundamental entre una fuente de la historia directa y una indirecta?",
+            "opciones": ["La directa siempre está escrita en papel; la indirecta está en ruinas arqueológicas y tallados.", "La directa es reciente; la indirecta es de la prehistoria exclusivamente material.", "La directa fue creada explícitamente y a propósito para registrar y dar testimonio; mientras que la indirecta tenía una utilidad humana regular, nunca un fin conmemorativo.", "La directa es falsa y mítica; la indirecta representa datos científicos corroborables."],
+            "respuesta": 2,
+            "retroalimentacion": "Una fuente directa (crónicas, códices) es consciente de su propósito registral; una indirecta (huesos, vasijas, armas) se usaba para la supervivencia o el trabajo y ahora debe ser interpretada por nosotros para reconstruir la historia."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En las características exclusivas de los modos de producción, ¿a qué se dedicaba la clase dominante durante el periodo del modo esclavista según el Materialismo?",
+            "opciones": ["A la acumulación monetaria masiva y los negocios transatlánticos bancarios.", "Al combate y la conquista militar de nuevos continentes en las cruzadas católicas.", "A labrar y cultivar la tierra de los feudos obedeciendo a sus Señores de tierras.", "Al ocio para desarrollar y enfocar su tiempo hacia la filosofía, política o ciencia."],
+            "respuesta": 3,
+            "retroalimentacion": "El esclavismo se basa en la profunda explotación directa del hombre por el hombre; es el esclavo quien produce físicamente la riqueza material. Por esta razón, su amo (esclavista) queda liberado logísticamente del trabajo, gozando del tiempo suficiente para dedicarse totalmente al ocio productivo como teorizar sobre política y ciencia (Ej: Los filósofos de Grecia)."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué base social representaba la riqueza del mundo y a su vez controlaba el orden político en el sistema Feudal?",
+            "opciones": ["El Capital monetario dominado por los burgueses.", "El sistema de esclavos centralizados por el monarca o emperador romano.", "La producción industrial masificada de la clase obrera en Inglaterra.", "La tierra como único bien primario y el Rey como propietario único absoluto de la misma."],
+            "respuesta": 3,
+            "retroalimentacion": "Durante el Medioevo y el Feudalismo, la acumulación y explotación del suelo de cultivo (La Tierra y la agricultura) constituían la medida misma de la riqueza humana. Su monopolio recaía bajo el título del líder monarca (Poder Político Supremo) y las delegaba a otros a cambio de lealtad vitalicia."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Considerando las corrientes historiográficas principales, ¿qué postulado distinguiría esencialmente a la concepción del 'Historicismo'?",
+            "opciones": ["El creer fervientemente que los comportamientos cíclicos en la historia no tienen excepciones.", "La afirmación rotunda de que todo desarrollo está estrictamente gobernado y condicionado por el medio.", "Considerar que el proceso histórico carece de leyes generales, por lo que cada acontecimiento sería original e irrepetible.", "El postular tajantemente que las revoluciones causadas por la brecha social son el único y exclusivo motor histórico universal."],
+            "respuesta": 2,
+            "retroalimentacion": "Las corrientes como el Positivismo buscan la objetividad general a través de métodos fijos, o el Materialismo que busca la generalidad en los ciclos de guerra de clases. En contraparte extrema, el Historicismo se caracteriza por su principio medular: asume que todo evento de la historia humana es absolutamente particular, singular y que nunca podrá repetirse otra vez bajo idénticas circunstancias en toda la eternidad. Es decir, que la historia es única e inigualable."
+        }
+    ],
+    "content-historia-3": [
+        {
+            "numero": 1,
+            "pregunta": "¿a qué bando correspondía Agustín de Iturbide antes del Abrazo de Acatempan y con qué postura ideológica se le asocia?",
+            "opciones": ["Era insurgente; defensor de la abolición total de la monarquía.", "Era realista; defensor de la herencia colonial y la clase privilegiada.", "Era neutral; no tenía afiliación política definida.", "Era federalista; impulsó la separación Iglesia-Estado desde el inicio."],
+            "respuesta": 1,
+            "retroalimentacion": "Previo al Abrazo de Acatempan, Iturbide sirvió como comandante militar realista, notoriamente como defensor de los intereses coloniales y de la clase alta novohispana, lo que lo hace ideológicamente conservador."
+        },
+        {
+            "numero": 2,
+            "pregunta": "La Constitución de 1824 estableció tres poderes de la Unión. Identifica cuál de las siguientes opciones los lista de forma correcta e íntegra:",
+            "opciones": ["Ejecutivo, Legislativo y Militar.", "Real, Judicial y Cístico.", "Ejecutivo, Legislativo y Judicial.", "Federal, Municipal y Estatal."],
+            "respuesta": 2,
+            "retroalimentacion": "La Constitución de 1824, primera oficial de México, estableció los tres poderes clásicos: Ejecutivo (Presidente), Legislativo (Congreso) y Judicial (Suprema Corte)."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Identifica la afirmación que describe con mayor precisión la postura ideológica de los <b>conservadores centralistas</b> en el México del siglo XIX:",
+            "opciones": [
+                "Buscaban dar autonomía a los estados y separar la Iglesia del Estado para lograr la igualdad jurídica.",
+                "Apoyaban un gobierno federal con el poder distribuido entre los estados, sin privilegios eclesiales.",
+                "Exigían un Imperio o gobierno centralizado, preservar los privilegios de la Iglesia y la educación religiosa.",
+                "Propugnaban la incorporación del territorio mexicano a un sistema de gobierno estadounidense."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Los conservadores centralistas —apoyados por la clase alta y el clero— defendían la concentración del poder en el gobierno central (o un Imperio), la influencia de la Iglesia Católica en la educación y los privilegios heredados del régimen colonial."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué documento fue utilizado por Santa Anna y Guerrero para derrocar el Imperio de Agrstín de Iturbide?",
+            "opciones": ["Plan de Iguala.", "Sentimientos de la Nación.", "Plan de Casa Mata.", "Constitución de 1836."],
+            "respuesta": 2,
+            "retroalimentacion": "El Plan de Casa Mata (1823) fue el pronunciamiento militar encabezado principalmente por Antonio López de Santa Anna, que logró el colapso del Primer Imperio Mexicano y la abdicación de Agustín I."
+        },
+        {
+            "numero": 5,
+            "pregunta": "El evento central del conflicto entre México y EE.UU. en 1847 que hoy se recuerda como símbolo de resistencia fue:",
+            "opciones": ["La Batalla de Tamaulipas.", "La invasión de Barradas.", "El Abrazo de Acatempan.", "El ataque al Castillo de Chapultepec."],
+            "respuesta": 3,
+            "retroalimentacion": "El 14 de septiembre de 1847, las fuerzas estadounidenses atacaron el Castillo de Chapultepec, sede del Colegio Militar. Este episodio es uno de los hechos bélicos más emblemáticos de dicha guerra."
         }
     ],
     "content-historia-2": [

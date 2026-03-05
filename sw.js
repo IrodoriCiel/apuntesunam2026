@@ -1,4 +1,4 @@
-const ASSET_VERSION = '20260304-5';
+const ASSET_VERSION = '20260305-1';
 const CACHE_NAME = `apuntes-unam-${ASSET_VERSION}`;
 const STATIC_ASSETS = [
     './',
