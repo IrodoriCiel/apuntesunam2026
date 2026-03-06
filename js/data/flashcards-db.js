@@ -445,6 +445,42 @@ const flashcardsDatabase = [
         "asignatura": "Matemáticas"
     },
 
+    {
+        "id": "mat-031",
+        "pregunta": "¿Cuál es la regla de oro para sumar o restar expresiones algebraicas?",
+        "respuesta": "Solo se pueden operar términos semejantes (idénticos en literales y exponentes).",
+        "tema": "Operaciones Algebraicas y Agrupación",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-032",
+        "pregunta": "¿Qué valor numérico tiene una letra sola sin coeficiente explícito (ej. x)?",
+        "respuesta": "Su valor en coeficientes numéricos es siempre '1' (es decir, 1x).",
+        "tema": "Operaciones Algebraicas y Agrupación",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-033",
+        "pregunta": "¿Existe restricción de 'términos semejantes' en la multiplicación algebraica?",
+        "respuesta": "Falso. En la multiplicación se opera 'todos contra todos' indistintamente.",
+        "tema": "Operaciones Algebraicas y Agrupación",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-034",
+        "pregunta": "¿Qué ocurre al dividir fracciones algebraicas con bases iguales?",
+        "respuesta": "Los coeficientes se dividen aritméticamente y los exponentes se restan.",
+        "tema": "Operaciones Algebraicas y Agrupación",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-035",
+        "pregunta": "¿Cuántos términos debe tener incondicionalmente el desarrollo de cualquier binomio al cubo (a ± b)³?",
+        "respuesta": "Exactamente 4 términos.",
+        "tema": "Operaciones Algebraicas y Agrupación",
+        "asignatura": "Matemáticas"
+    },
+
     // ==========================================
     // QUÍMICA (19 CONCEPTOS)
     // ==========================================
@@ -950,5 +986,58 @@ const flashcardsDatabase = [
         "respuesta": "Una constitución centralista impulsada por Santa Anna, que concentraba el poder en una sola persona.",
         "tema": "Federalismo vs. Centralismo",
         "asignatura": "Historia de México"
+    },
+
+    // ==========================================
+    // QUÍMICA CLASE 2 (7 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "qui2-001",
+        "pregunta": "¿Qué es un Cambio Físico?",
+        "respuesta": "Alteración del estado o apariencia de la materia que NO afecta su composición interna. Es reversible.",
+        "tema": "Cambios de la Materia",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-002",
+        "pregunta": "¿Qué es un Cambio Químico?",
+        "respuesta": "Alteración de la composición interna de la materia para formar nuevas sustancias. Es irreversible en su mayoría.",
+        "tema": "Cambios de la Materia",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-003",
+        "pregunta": "¿Cuál es la trampa del lenguaje sobre los cambios de estado en el examen (fusión, evaporación, etc)?",
+        "respuesta": "Recuerda que todos los cambios de estado son procesos físicos, nunca químicos.",
+        "tema": "Cambios de la Materia",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-004",
+        "pregunta": "¿Dónde se encuentran los protones y neutrones y qué característica le dan al átomo?",
+        "respuesta": "Se encuentran en el núcleo, y al ser las partículas más pesadas, determinan la masa central del átomo.",
+        "tema": "Estructura Atómica",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-005",
+        "pregunta": "¿Cuál es el postulado principal del modelo atómico de John Dalton?",
+        "respuesta": "El átomo es una esfera sólida, lisa, indivisible e indestructible.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-006",
+        "pregunta": "¿Qué descubrió J.J. Thomson y mediante qué experimento?",
+        "respuesta": "Descubrió el electrón mediante el experimento de los Rayos Catódicos.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-007",
+        "pregunta": "¿Cómo dibujaba Thomson al átomo en su 'Modelo del Budín de Pasas'?",
+        "respuesta": "Como una masa de carga positiva con electrones (carga negativa) incrustados en ella.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
     }
 ];

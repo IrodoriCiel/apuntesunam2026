@@ -34,11 +34,11 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260303-16';
+        window.__APP_VERSION = '20260306-1';
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260303-16">
+    <link rel="stylesheet" href="./css/styles.css?v=20260306-1">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -229,6 +229,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-7"
+                            onclick="switchClass('content-matematicas-7', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-7">
+                            <i class="fa-solid fa-book-open"></i> Clase 7: Agrupación y Binomios
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -261,6 +269,14 @@
                             onclick="switchClass('content-quimica-1', this, 'btn-quimica')"
                             data-class-id="content-quimica-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: Fundamentos y Materia
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-quimica-2"
+                            onclick="switchClass('content-quimica-2', this, 'btn-quimica')"
+                            data-class-id="content-quimica-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Cambios y Estructura Atómica
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -1335,6 +1351,73 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/jlqFi2r8ixM"
             },
+            "content-matematicas-7": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-square-root-variable",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas7",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-plus-minus",
+                mainTopicIcon2: "fa-superscript",
+                mainTopicSubtitle: "Clase 7: Agrupación y Binomios",
+                branches: [
+                    {
+                        id: "nodes-mat7-1",
+                        topicIdx: 1,
+                        title: "1. Agrupación de Términos (Suma y Resta)",
+                        icon: "fa-object-group",
+                        subnodes: [
+                            { icon: "fa-scale-balanced", delay: "0.1s", title: "Regla de Oro", content: "<p>Solo se pueden sumar o restar términos si son <b>idénticos en letras y exponentes</b> (Términos Semejantes).</p>" },
+                            { icon: "fa-1", delay: "0.2s", title: "El Coeficiente '1' (El error más común)", content: "<p>Si ves una letra sola (ej. $m$), su valor es 1.</p>", examples: ["$8m + m - 5m$<br>8 + 1 - 5 = 4<br><b>Resultado:</b> $4m$"] },
+                            { icon: "fa-plus-minus", delay: "0.3s", title: "Ley de los Signos en Suma/Resta", content: "<p>En suma y resta <b>no existe</b> 'menos por menos es más'.</p><ul><li><b>Signos iguales:</b> Se suman y mantienen el signo.</li><li><b>Signos diferentes:</b> Se restan y domina el signo del número mayor.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat7-2",
+                        topicIdx: 2,
+                        title: "2. Multiplicación vs. Suma (La Trampa Crítica)",
+                        icon: "fa-triangle-exclamation",
+                        subnodes: [
+                            { icon: "fa-skull-crossbones", delay: "0.1s", title: "Pregunta de Examen (Falso/Verdadero)", content: "<p><i>¿Solo se pueden multiplicar términos semejantes en álgebra?</i> <b>FALSO.</b></p><p>En la multiplicación no importa si los términos son diferentes, todos se multiplican. La restricción de 'términos semejantes' es exclusiva para la suma y la resta.</p>" },
+                            { icon: "fa-superscript", delay: "0.2s", title: "Regla de la Multiplicación", content: "<p><b>Letras iguales:</b> Los exponentes se suman ($x^2 \\cdot x^3 = x^5$).<br><b>Variables diferentes:</b> Simplemente se 'pegan' en el resultado ($x \\cdot y = xy$).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat7-3",
+                        topicIdx: 3,
+                        title: "3. División (Fracciones Algebraicas)",
+                        icon: "fa-divide",
+                        subnodes: [
+                            { icon: "fa-hashtag", delay: "0.1s", title: "Reglas Básicas", content: "<ul><li><b>Coeficientes:</b> Se dividen aritméticamente ($10/2 = 5$).</li><li><b>Exponentes:</b> Se restan cuando las letras son iguales.</li><li><b>Simplificación:</b> Si un término está arriba y abajo con el mismo exponente (ej. $y^1 / y^1$), se anulan totalmente.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat7-4",
+                        topicIdx: 4,
+                        title: "4. Binomios al Cubo $(a \\pm b)^3$",
+                        icon: "fa-cube",
+                        subnodes: [
+                            { icon: "fa-shapes", delay: "0.1s", title: "Estructura Base", content: "<p>Este tema suele quitar mucho tiempo si se desarrolla completo. La clave es el <b>descarte visual</b>:</p><p>La estructura del resultado <b>siempre tendrá 4 términos</b>.</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Tip de Signos (Descarte Rápido)", content: "<p>Si el binomio es negativo $(x - 3)^3$, el resultado debe tener signos alternados: <b>$(+, -, +, -)$</b>. Si ves una opción con todos negativos o todos positivos, descártala de inmediato.</p>" },
+                            { icon: "fa-stopwatch", delay: "0.3s", title: "Cálculo Rápido (Método UNAM)", content: "<p><b>Ejemplo:</b> $(x + 2)^3$</p><p>El primer término es $x^3$ y el último es $2^3 = 8$. Busca la opción que empiece con $x^3$ y termine con $+8$.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat7-5",
+                        topicIdx: 1,
+                        title: "5. Estrategias para el Examen",
+                        icon: "fa-crosshairs",
+                        subnodes: [
+                            { icon: "fa-clock", delay: "0.1s", title: "Gestión del Tiempo", content: "<p>Dispones de 1.5 minutos por pregunta. No desarrolles operaciones largas si los signos o el primer/último término te dan la respuesta.</p>" },
+                            { icon: "fa-pen", delay: "0.2s", title: "Uso de Papel", content: "<p>Ten siempre una hoja para operaciones rápidas; el cálculo mental en álgebra suele inducir errores de signo bajo presión.</p>" },
+                            { icon: "fa-sort", delay: "0.3s", title: "Orden de los Incisos", content: "<div class='exam-tip'><i class='fa-solid fa-list-ol'></i> <b>DATO CLAVE:</b><br>El examen de la UNAM suele presentar las respuestas en el mismo orden en que aparecen los términos en la operación original. No pierdas tiempo reacomodando alfabéticamente a menos que los incisos sean idénticos.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/ImJgfYK1Jsk"
+            },
             "content-espanol-1": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
@@ -1562,6 +1645,62 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/HiDDPOqpLGk"
+            },
+            "content-quimica-2": {
+                title: "Apuntes de Química",
+                titleIconLeft: "fa-flask",
+                titleIconRight: "fa-atom",
+                titleStyle: "color: #059669;",
+                mainTopicId: "mainTopicQuimica2",
+                mainTopicClass: "topic-2",
+                mainTopicTitle: "Química",
+                mainTopicIcon1: "fa-atom",
+                mainTopicIcon2: "fa-microscope",
+                mainTopicSubtitle: "Clase 2: Cambios Físicos, Químicos y Estructura Atómica",
+                branches: [
+                    {
+                        id: "nodes-qui2-1",
+                        topicIdx: 1,
+                        title: "1. Cambios Físicos",
+                        icon: "fa-icicles",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Definición y Características", content: "<p><b>Definición:</b> Alteran solo el estado o la apariencia, pero <b>no</b> la composición interna. No se forman sustancias nuevas.</p><p><b>Características:</b> Son procesos reversibles (la materia puede volver a su estado original).</p>" },
+                            { icon: "fa-list-check", delay: "0.2s", title: "Ejemplos de Examen", content: "<p>Cortar papel, disolver azúcar o sal en agua, y todos los cambios de estado (evaporación, fusión, sublimación).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui2-2",
+                        topicIdx: 2,
+                        title: "2. Cambios Químicos",
+                        icon: "fa-fire",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Definición y Características", content: "<p><b>Definición:</b> Alteran la composición interna de la materia. Los átomos se reorganizan para formar sustancias nuevas con propiedades distintas.</p><p><b>Características:</b> Son procesos irreversibles en su mayoría.</p>" },
+                            { icon: "fa-list-check", delay: "0.2s", title: "Ejemplos de Examen", content: "<p>Combustión (quemar algo), digestión, oxidación (un clavo oxidado), putrefacción y fotosíntesis.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TRAMPA DEL LENGUAJE:</b><br>En los incisos, fíjate si dice \"forma física\" o \"forma química\". Los estados de la materia (sólido, líquido, gas) son siempre formas <b>físicas</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui2-3",
+                        topicIdx: 3,
+                        title: "3. Estructura Atómica",
+                        icon: "fa-atom",
+                        subnodes: [
+                            { icon: "fa-microscope", delay: "0.1s", title: "El Átomo y el Núcleo", content: "<p>El átomo es la unidad más pequeña de la materia que conserva sus propiedades.</p><p><b>Núcleo:</b> Es el centro del átomo y la parte más pesada. Contiene protones y neutrones.</p><p><b>Orbitales (Órbitas):</b> Regiones alrededor del núcleo donde se mueven los electrones. Su número depende de la energía y posición del elemento en la tabla.</p>" },
+                            { icon: "fa-scale-balanced", delay: "0.2s", title: "Partículas Subatómicas", content: "<ul><li><b>Protón ($p^+$):</b> Carga positiva. Se ubica en el núcleo. <b>Define al elemento.</b></li><li><b>Neutrón ($n^0$):</b> Carga neutra. Se ubica en el núcleo. Actúa como \"pegamento\" o comodín.</li><li><b>Electrón ($e^-$):</b> Carga negativa. Se ubica en los orbitales. Es la partícula más ligera.</li></ul><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>REGLA MNEMOTÉCNICA:</b><br>El núcleo es la parte más pesada del átomo (donde están protones y neutrones). Los electrones se quedan afuera por ser los más ligeros.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui2-4",
+                        topicIdx: 4,
+                        title: "4. Modelos Atómicos",
+                        icon: "fa-timeline",
+                        subnodes: [
+                            { icon: "fa-cubes", delay: "0.1s", title: "1. John Dalton", content: "<p><b>Concepto:</b> El átomo es una esfera sólida, lisa, indivisible e indestructible.</p><p><b>Aporte principal:</b> Fue el primer científico en fundamentar la teoría atómica con bases experimentales.</p><p><b>Dato:</b> Según Dalton, todos los átomos de un mismo elemento son idénticos entre sí.</p>" },
+                            { icon: "fa-cookie-bite", delay: "0.2s", title: "2. J.J. Thomson", content: "<p><b>Aporte principal:</b> Descubrió el electrón ($e^-$) mediante el experimento de los <b>Rayos Catódicos</b>.</p><p><b>Modelo (Budín de Pasas):</b> Describe al átomo como una gran masa de carga positiva con electrones incrustados negativamente (como chispas en una galleta).</p>" },
+                            { icon: "fa-flask", delay: "0.3s", title: "Dato Adicional de Examen", content: "<div class='exam-tip'><i class='fa-solid fa-brain'></i> <b>ELEMENTO VS COMPUESTO:</b><br>Recuerda que el <b>Antimonio ($Sb$)</b> es un elemento de la tabla periódica (número atómico 51), no un compuesto químico.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/gTedF1q6gPk"
             },
             "content-literatura-1": {
                 title: "Apuntes de Literatura",
@@ -1987,7 +2126,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260304-5"></script>
+    <script src="./js/app.js?v=20260306-1"></script>
 
 </body>
 

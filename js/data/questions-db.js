@@ -1,5 +1,6 @@
 const unamQuestions = {
-    "content-matematicas-3": [
+    "content-matematicas-3": [],
+    "content-matematicas-7": [
         {
             "numero": 47,
             "pregunta": "Al desarrollar $(x^2 - 3y)^3$ se obtiene:",
@@ -10,16 +11,7 @@ const unamQuestions = {
                 "$x^6 + 9x^4y - 27x^2y^2 - 27y^3$"
             ],
             "respuesta": 2,
-            "retroalimentacion": "Siguiendo la ley de signos alternados y el nivel 3 del Triángulo de Pascal. Potencias: $(x^2)^3 = x^6$. El tercer término del nivel 3 se multiplica por 3: $3(x^2)(-3y)^2 = 27x^2y^2$, seguido por $(-3y)^3 = -27y^3$."
-        }
-    ],
-    "content-matematicas-6": [
-        {
-            "numero": 48,
-            "pregunta": "Al simplificar la siguiente fracción algebraica $\\frac{15x^5y^3}{-3x^2y^3}$, se obtiene:",
-            "opciones": ["$-5x^7y^6$", "$5x^3$", "$-5x^3$", "$-5x^{2.5}y$"],
-            "respuesta": 2,
-            "retroalimentacion": "El coeficiente es $15 / -3 = -5$. Los exponentes de x se restan ($5-2=3$). Los exponentes de y son iguales ($3-3=0$), por lo que por regla de anulación la literal y se elimina. Resultado: $-5x^3$."
+            "retroalimentacion": "Aplicando el 'descarte visual' de la clase: un binomio negativo elevado al cubo debe alternar signos (+, -, +, -) incondicionalmente. Solo una opción lo cumple. Además, $(x^2)^3 = x^6$ y $(-3y)^3 = -27y^3$ confirman la opción correcta."
         }
     ],
     "content-historia-1": [
@@ -29,53 +21,6 @@ const unamQuestions = {
             "opciones": ["Centroamérica.", "Aridoamérica.", "Oasisamérica.", "Mesoamérica."],
             "respuesta": 3,
             "retroalimentacion": "Mesoamérica se caracterizó por su agricultura, principalmente del maíz, las sociedades jerarquizadas, el politeísmo y la construcción estructurada con fines religiosos (pirámides)."
-        }
-    ],
-    "content-hist-univ-1": [
-        {
-            "numero": 85,
-            "pregunta": "¿Cuál es la finalidad de la historia?",
-            "opciones": [
-                "Conocer lugares y personajes del pasado.",
-                "Adquirir un conocimiento exacto y razonado sobre el pasado.",
-                "Conocer el pasado para comprender el presente.",
-                "Educar sobre cómo fueron las culturas del pasado."
-            ],
-            "respuesta": 2,
-            "retroalimentacion": "El propósito o utilidad principal de la historia es conocer las culturas y eventos del pasado para poder entender nuestro presente y prepararnos para el futuro."
-        },
-        {
-            "numero": 86,
-            "pregunta": "La división de la historia por modos de producción es obra de",
-            "opciones": [
-                "Agustín Thierry.",
-                "Carlos Marx.",
-                "Fernand Braduel.",
-                "Heródoto."
-            ],
-            "respuesta": 1,
-            "retroalimentacion": "Karl Marx (Carlos Marx) propuso el Materialismo Histórico, corriente que estudia los eventos históricos basándose en los modos de producción (cómo se genera la riqueza) a través del tiempo."
-        }
-    ],
-    "content-historia-3": [
-        {
-            "numero": 113,
-            "pregunta": "El documento que reconoció oficialmente la independencia de México, firmado por Iturbide y Juan O'Donojú, fue:",
-            "opciones": ["Plan de Iguala.", "Tratado de Córdoba.", "Sentimientos de la Nación.", "Constitución de Apatzingán."],
-            "respuesta": 1,
-            "retroalimentacion": "El Tratado de Córdoba (1821), firmado por Agustín de Iturbide y el último virrey Juan O'Donojú, reconoció formalmente la independencia del Imperio Mexicano."
-        },
-        {
-            "numero": 114,
-            "pregunta": "La guerra entre México y Estados Unidos (1846-1848) finalizó con la firma del:",
-            "opciones": [
-                "Plan de Casa Mata.",
-                "Tratado de Guadalupe Hidalgo.",
-                "Tratado de Córdoba.",
-                "Plan de Iguala."
-            ],
-            "respuesta": 1,
-            "retroalimentacion": "El Tratado de Guadalupe Hidalgo (2 de febrero de 1848) puso fin a la guerra y fue el instrumento mediante el cual México cesó más de la mitad de su territorio a Estados Unidos."
         }
     ],
     "content-historia-2": [
@@ -134,36 +79,6 @@ const unamQuestions = {
                 "Quien no quiere pensar es un fanático porque deja que otros piensen por él; quien no puede pensar es un idiota porque deja sus decisiones en manos de otros; quien no osa pensar es un cobarde porque deja su vida en manos de alguien más."
             ], "respuesta": 3,
             "retroalimentacion": "El texto argumentativo defiende una postura sustentándola con razones. El último fragmento usa continuamente conectores causales ('porque...') para justificar una tesis o dar una crítica."
-        }
-    ],
-    "content-espanol-2": [
-        {
-            "numero": 71,
-            "pregunta": "Identifica la forma del discurso que predomina en el siguiente párrafo:<br><i>El intruso entró sigilosamente al recinto, observó la habitación con cautela y, de repente, corrió velozmente hacia la puerta trasera mientras los guardias gritaban su nombre.</i>",
-            "opciones": ["Narrativo.", "Argumentativo.", "Descriptivo.", "Expositivo."],
-            "respuesta": 0,
-            "retroalimentacion": "El modo narrativo se reconoce porque relata una sucesión ininterrumpida de hechos (cronológica) e indudablemente predominan las acciones o verbos (entró, observó, corrió, gritaban)."
-        }
-    ],
-    "content-quimica-1": [
-        {
-            "numero": 105,
-            "pregunta": "¿Qué afirmación describe correctamente a un compuesto químico?",
-            "opciones": [
-                "Es la unión física de dos o más elementos.",
-                "No puede descomponerse en sustancias más simples por métodos químicos.",
-                "Es una sustancia pura formada por la combinación química de dos o más tipos de átomos.",
-                "Mantiene las propiedades de sus constituyentes individuales."
-            ],
-            "respuesta": 2,
-            "retroalimentacion": "Un compuesto es una sustancia pura producto de la combinación química de dos o más elementos (ej. H2O), los compuestos sí se pueden descomponer químicamente a diferencia de los elementos (que son de un solo tipo de átomo)."
-        },
-        {
-            "numero": 108,
-            "pregunta": "Identifica cuál de las siguientes opciones es un coloide:",
-            "opciones": ["Agua con sal.", "Leche.", "Latón.", "Agua con aceite."],
-            "respuesta": 1,
-            "retroalimentacion": "La leche es la trampa clásica de la UNAM; se trata de un coloide, no de una mezcla homogénea ni heterogénea visible. Presentan características coloidales e interaccionan con el Efecto Tyndall."
         }
     ],
     "content-literatura-1": [
@@ -398,6 +313,68 @@ const practiceQuestions = {
             "opciones": ["Siempre arriba.", "Siempre abajo para mayor orden.", "Lo colocas en la posición (numerador o denominador) donde originalmente estaba el exponente más grande.", "Cambias el signo multiplicando por menos uno."],
             "respuesta": 2,
             "retroalimentacion": "Restar el mayor exponente menos el menor y colocar el resultado en la posición inicial del mayor te ayuda a evitar lidiar con la engorrosa notación de potencias negativas dictada por UNAM."
+        }
+    ],
+    "content-matematicas-7": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es el resultado de la siguiente suma algebraica: $7m^2 + 2m^2 - 4m^2$?",
+            "opciones": [
+                "$5m^2$",
+                "$5m^6$",
+                "$9m^2$",
+                "$9m^6$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Al tener términos semejantes (misma base $m$ y exponente $2$), los exponentes no cambian. Simplemente se opera: $7 + 2 - 4 = 5$. El resultado es $5m^2$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Simplifica la siguiente expresión: $12x - x + 3x$",
+            "opciones": [
+                "$14x$",
+                "$15x$",
+                "$14x^3$",
+                "$15$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "El error más común es olvidar que una $x$ sola cuenta como $1x$. La operación aritméticamente es $12 - 1 + 3 = 14$. El resultado correcto es $14x$."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Encuentra el resultado de multiplicar: $(4a^3)(2a^5)$",
+            "opciones": [
+                "$8a^8$",
+                "$8a^{15}$",
+                "$6a^8$",
+                "$6a^{15}$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "En la multiplicación, los coeficientes se multiplican ($4 \\cdot 2 = 8$) y los exponentes de literales iguales se suman ($3 + 5 = 8$). El resultado es $8a^8$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Realiza la siguiente división algebraica: $\\frac{m^7}{m^3}$",
+            "opciones": [
+                "$m^{10}$",
+                "$m^4$",
+                "$m^{\\frac{7}{3}}$",
+                "$m^{-4}$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "En la división de variables iguales, el exponente de abajo se le resta al de arriba: $7 - 3 = 4$. El resultado es $m^4$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuáles son exclusivamente el primer y último término al desarrollar el binomio $(y - 4)^3$?",
+            "opciones": [
+                "$y^3$ y $-64$",
+                "$y^3$ y $+64$",
+                "$y^3$ y $-12$",
+                "$-y^3$ y $-64$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "El primer término es la base del primero al cubo: $y^3$. El último término es el segundo valor al cubo respetando su signo original: $(-4)^3 = -64$."
         }
     ],
     "content-historia-1": [
@@ -694,6 +671,43 @@ const practiceQuestions = {
             "respuesta": 0,
             "retroalimentacion": "La coherencia es la propiedad textual que permite que el texto tenga una estructura lógica y que las ideas no se contradigan."
         }
+    ],
+    "content-quimica-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué ocurre a nivel molecular durante un cambio físico?",
+            "opciones": ["Los átomos se reorganizan formando algo nuevo.", "La composición interna no se altera.", "Se vuelve un proceso siempre irreversible.", "Ocurre una combustión acelerada."],
+            "respuesta": 1,
+            "retroalimentacion": "En un cambio físico, solo se altera el estado o la apariencia de la materia, pero nunca su composición interna."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿La fusión del hielo es un ejemplo de cambio químico o físico?",
+            "opciones": ["Químico, porque altera su temperatura.", "Físico, porque solo es un cambio de estado reversible.", "Químico, porque genera una reacción.", "Físico, porque crea nuevas sustancias."],
+            "respuesta": 1,
+            "retroalimentacion": "Todos los cambios de estado (como la fusión) son cambios físicos, ya que la materia solo cambia su apariencia y puede regresar a su estado original (son reversibles)."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿A qué científico se le atribuye el primer modelo atómico con bases experimentales, describiendo al átomo como una esfera sólida?",
+            "opciones": ["J.J. Thomson.", "Niels Bohr.", "John Dalton.", "Rutherford."],
+            "respuesta": 2,
+            "retroalimentacion": "John Dalton fue pionero en fundamentar la teoría atómica, conceptualizando al átomo como una esfera lisa, indivisible e indestructible."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Identifica la carga eléctrica de un neutrón ($n^0$):",
+            "opciones": ["Carga positiva.", "Carga neutra.", "Carga negativa.", "Carga alternada."],
+            "respuesta": 1,
+            "retroalimentacion": "Como su nombre indica y gracias a la mnemotécnica de clase, el neutrón ($n^0$) posee una carga neutra y actúa como 'pegamento' en el núcleo."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Con qué nombre se popularizó el modelo atómico de J.J. Thomson?",
+            "opciones": ["Modelo Planetario.", "Esfera Indestructible.", "Nube de Electrones.", "Budín de Pasas."],
+            "respuesta": 3,
+            "retroalimentacion": "Thomson ilustró al átomo como una gran masa positiva con los electrones incrustados ordenadamente en ella, similar a un budín de pasas."
+        }
     ]
 };
 const practiceLevel2Questions = {
@@ -927,6 +941,68 @@ const practiceLevel2Questions = {
             "opciones": ["$5a^3c$", "$-5a^3c$", "$5a^3bc$", "$12a^3c$"],
             "respuesta": 0,
             "retroalimentacion": "Signos (- / - = +). Coeficientes (15 / 3 = 5). Letra $a$ ($5 - 2 = 3$). Letra $b$ se anula por la Regla de Anulación ($3 - 3 = 0$). Letra $c$ simplemente se traslada de arriba por carecer de base abajo. Resultado: $5a^3c$."
+        }
+    ],
+    "content-matematicas-7": [
+        {
+            "numero": 1,
+            "pregunta": "Identifica cuáles de los siguientes términos son semejantes y redúcelos en un solo paso algebraico: $-15x^2y - x^2y + 8x^2y$",
+            "opciones": [
+                "$-8x^2y$",
+                "$-6x^2y$",
+                "$-16x^2y$",
+                "$8x^2y$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "El segundo término (sin coeficiente visible) representa un $1$. La operación de los coeficientes es: $-15 - 1 = -16$. Luego sumamos 8 (signos diferentes se restan): $-16 + 8 = -8$. Resultado final: $-8x^2y$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué afirmación describe correctamente la regla esencial de la multiplicación algebraica según el análisis impartido en clase?",
+            "opciones": [
+                "Solo se agrupan bases idénticas sumando y unificando sus exponentes para tener un término semejante.",
+                "En la multiplicación todos los exponentes se suman incondicionalmente sin importar si las letras difieren.",
+                "Los términos se multiplican sin importar restricciones de semejanza; los exponentes con base igual se suman y las bases distintas se pegan.",
+                "Se siguen exclusivamente arreglos de signos inversos (menos por más y más por menos) para todos los casos."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "La regla universal es 'todos contra todos', ignorando la restricción de 'términos semejantes' requerida en la suma. Bases iguales suman exponentes, letras distintas únicamente se agrupan (pegan) al resultado final."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Evalúa y simplifica combinando las reglas directas de división y multiplicación enseñadas: $\\left(\\frac{15a^4b^3}{3a^2b}\\right)(-2a^3b^2)$",
+            "opciones": [
+                "$-10a^5b^4$",
+                "$-10a^3b^2$",
+                "$10a^5b^4$",
+                "$10a^3b^3$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Primero resuelves la división restando los exponentes de literales análogas y dividiendo coeficientes: queda $(5a^2b^2)$. Luego multiplicas el resultante por $(-2a^3b^2)$. Multiplicando coeficientes $(5 \\cdot -2 = -10)$ y sumando las potencias de las bases idénticas obtienes $-10a^5b^4$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Basándote exclusivamente en la estrategia maestra de descarte visual rápido para binomios al cubo, identifica el resultado de $(4x - 5y)^3$:",
+            "opciones": [
+                "$64x^3 - 240x^2y + 300xy^2 - 125y^3$",
+                "$64x^3 + 240x^2y - 300xy^2 - 125y^3$",
+                "$64x^3 - 240x^2y - 300xy^2 - 125y^3$",
+                "$64x^3 - 240x^2y - 300xy^2 + 125y^3$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "El descarte visual dicta dos pasos: 1) Alternancia de signos inquebrantable por ser negativo $(+, -, +, -)$. 2) Primer y último término: $(4x)^3 = 64x^3$, $(-5y)^3 = -125y^3$. La primera opción es la única que obedece al patrón estricto sin necesidad de utilizar la operación de Triángulo de Pascal."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál de las siguientes igualdades es INCORRECTA según la 'Trampa Crítica' explicada en los apuntes?",
+            "opciones": [
+                "$x^3 + x^3 = 2x^6$",
+                "$x^3 \\cdot x^3 = x^6$",
+                "$m^2 + m^2 = 2m^2$",
+                "$a^5 \\cdot a^2 = a^7$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Como indica la 'Trampa Crítica', en la suma y resta de términos semejantes los exponentes nunca cambian ($x^3 + x^3 = 2x^3$). Sumarlos ($x^6$) es un error gravísimo que mezcla erróneamente las leyes de la multiplicación con las de la suma."
         }
     ],
     "content-historia-1": [
@@ -1232,6 +1308,43 @@ const practiceLevel2Questions = {
             "opciones": ["Unidad de sentido (Cabalidad).", "Organización.", "Adecuación.", "Fática."],
             "respuesta": 0,
             "retroalimentacion": "La cabalidad asegura que el texto esté completo y tenga un sentido único y claro."
+        }
+    ],
+    "content-quimica-2": [
+        {
+            "numero": 1,
+            "pregunta": "De acuerdo con la nota de clase, ¿cuál de los siguientes fenómenos constituye explícitamente un cambio químico por ser mayoritariamente irreversible?",
+            "opciones": ["Evaporar alcohol etílico.", "Disolver azúcar en agua caliente.", "La putrefacción de una manzana.", "Romper una hoja de papel."],
+            "respuesta": 2,
+            "retroalimentacion": "Los cambios químicos alteran la composición interna y son mayoritariamente irreversibles. La putrefacción, la combustión, digestión y oxidación son los clásicos ejemplos de examen."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Al analizar la estructura de un átomo desconocido, el científico debe localizar los protones. ¿A qué región deberá observar y qué característica define a esa región?",
+            "opciones": ["A los orbitales, porque son la parte más pesada del átomo.", "Al núcleo, que es la parte más ligera.", "A los orbitales, porque es donde se mueve el electrón.", "Al núcleo, que es la parte central y más pesada del átomo."],
+            "respuesta": 3,
+            "retroalimentacion": "La regla mnemotécnica de la clase especifica: El núcleo es el centro del átomo y la región con mayor peso, ya que ahí se alojan protones y neutrones."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué afirmación es congruente respecto a los postulados del modelo de John Dalton?",
+            "opciones": ["Confirmó que el átomo presentaba electrones en órbitas.", "Postuló que todos los átomos de un mismo elemento son idénticos entre sí.", "Demostró la existencia del núcleo mediante rayos catódicos.", "Rechazó la existencia de la materia como algo indivisible."],
+            "respuesta": 1,
+            "retroalimentacion": "Uno de los datos experimentales más puntuales aportados por Dalton es que el átomo era indivisible y, además, los átomos del mismo elemento compartían exactamente las mismas propiedades."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué aportación puntual se logró gracias al experimento de los Rayos Catódicos documentado en clase?",
+            "opciones": ["El hallazgo de la carga neutra.", "El descubrimiento del núcleo del átomo.", "El descubrimiento del electrón ($e^-$).", "La división del átomo."],
+            "respuesta": 2,
+            "retroalimentacion": "J.J. Thomson efectuó el famoso experimento de los Rayos Catódicos para demostrar contundentemente el descubrimiento de la partícula más ligera: el electrón."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Si un inciso de examen te pregunta por un compuesto químico y entre las opciones se encuentra el Antimonio ($Sb$), de acuerdo con la trampa de la clase, ¿qué debes inferir del Antimonio?",
+            "opciones": ["Es una mezcla homogénea.", "Es un compuesto complejo.", "Es un elemento puro de la tabla periódica.", "Es un isótopo del bismuto."],
+            "respuesta": 2,
+            "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales (Kahoot) y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
         }
     ]
 };
