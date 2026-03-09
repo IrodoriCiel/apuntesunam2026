@@ -283,17 +283,24 @@
                 </ul>
             </li>
 
-            <!-- BIOLOGÍA (DESHABILITADO) -->
+            <!-- BIOLOGÍA -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-biologia"
-                    style="opacity: 0.5; pointer-events: none; color: #d97706;">
+                <a href="#" class="subject-item" id="btn-biologia" onclick="toggleSubMenu(event, 'submenu-biologia')"
+                    style="color: #d97706;">
                     <span class="subject-icon"><i class="fa-solid fa-dna"></i></span>
                     Biología
+                    <span class="subject-pending-badge" id="badge-biologia"></span>
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-biologia">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-biologia-1"
+                            onclick="switchClass('content-biologia-1', this, 'btn-biologia')"
+                            data-class-id="content-biologia-1">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: La Célula y Biomoléculas
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -370,6 +377,14 @@
                             onclick="switchClass('content-literatura-1', this, 'btn-literatura')"
                             data-class-id="content-literatura-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: El Texto y la Comunicación
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-literatura-2"
+                            onclick="switchClass('content-literatura-2', this, 'btn-literatura')"
+                            data-class-id="content-literatura-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Texto Periodístico y Dramático
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -1702,6 +1717,65 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/gTedF1q6gPk"
             },
+            "content-biologia-1": {
+                title: "Apuntes de Biología",
+                titleIconLeft: "fa-dna",
+                titleIconRight: "fa-microscope",
+                titleStyle: "color: #d97706;",
+                mainTopicId: "mainTopicBiologia1",
+                mainTopicClass: "topic-3",
+                mainTopicTitle: "Biología",
+                mainTopicIcon1: "fa-dna",
+                mainTopicIcon2: "fa-leaf",
+                mainTopicSubtitle: "Clase 1: La Célula, Bioelementos y Biomoléculas",
+                branches: [
+                    {
+                        id: "nodes-bio1-1",
+                        topicIdx: 1,
+                        title: "1. La Célula e Historia",
+                        icon: "fa-microscope",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición y Analogía", content: "<p>La célula es la <b>unidad estructural (anatómica)</b> y <b>fisiológica (funcional)</b> de los seres vivos.</p><p><b>Unidad estructural:</b> todos los organismos están formados por una o más células; es el componente físico del cuerpo.</p><p><b>Unidad fisiológica:</b> en la célula ocurren las funciones vitales (metabolismo, respiración, excreción, etc.).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>ANALOGÍA DE EXAMEN:</b><br>Célula : Seres vivos :: Átomo : Materia.</div>" },
+                            { icon: "fa-magnifying-glass", delay: "0.2s", title: "Anton van Leeuwenhoek", content: "<p>Fue el creador del microscopio y realizó las primeras observaciones de microorganismos.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTA DE CAJÓN:</b><br>Si preguntan por el pionero de las observaciones microscópicas de microorganismos, la referencia es Anton van Leeuwenhoek.</div>" },
+                            { icon: "fa-book-open-reader", delay: "0.3s", title: "Robert Hooke", content: "<p>Nombró a la célula al observar láminas de corcho y notar estructuras similares a celdas.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio1-2",
+                        topicIdx: 2,
+                        title: "2. Teoría Celular",
+                        icon: "fa-diagram-project",
+                        subnodes: [
+                            { icon: "fa-layer-group", delay: "0.1s", title: "Postulado Anatómico", content: "<p>Todos los seres vivos están formados por una o más células.</p><p><b>Autores:</b> Schleiden (plantas) y Schwann (animales).</p>" },
+                            { icon: "fa-gears", delay: "0.2s", title: "Postulado Fisiológico", content: "<p>Las células llevan a cabo todas las reacciones metabólicas y funciones del organismo.</p>" },
+                            { icon: "fa-arrows-rotate", delay: "0.3s", title: "Postulado de Origen", content: "<p>Toda célula proviene de otra preexistente.</p><p><b>Autor:</b> Rudolf Virchow.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio1-3",
+                        topicIdx: 3,
+                        title: "3. Bioelementos y Carbohidratos",
+                        icon: "fa-atom",
+                        subnodes: [
+                            { icon: "fa-seedling", delay: "0.1s", title: "Bioelementos", content: "<p>Son los elementos necesarios para la vida. El <b>carbono</b> es el elemento fundamental de todas las biomoléculas.</p><p><b>Acrónimo CHONPS:</b> Carbono (C), Hidrógeno (H), Oxígeno (O), Nitrógeno (N), Fósforo (P), Azufre (S).</p><p><b>Primarios (95% de la materia):</b> CHON.</p><p><b>Secundarios:</b> S, P, Mg, Ca, Na, K, Cl.</p>" },
+                            { icon: "fa-bread-slice", delay: "0.2s", title: "Carbohidratos (Glúcidos o Azúcares)", content: "<p><b>Composición:</b> CHO.</p><p><b>Función principal:</b> Fuente de energía inmediata.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Los carbohidratos se unen mediante el <b>enlace glucosídico</b>.</div><p><b>Clasificación por número de carbonos:</b></p><ul><li><b>Triosas:</b> 3 carbonos.</li><li><b>Pentosas:</b> 5 carbonos (ej. fructosa).</li><li><b>Hexosas:</b> 6 carbonos (ej. glucosa, galactosa).</li></ul><div class='exam-tip'><i class='fa-solid fa-brain'></i> <b>DATO DE MEMORIA:</b><br>La fórmula de la glucosa es <b>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></b>. Es la molécula más común en el metabolismo.</div>" },
+                            { icon: "fa-link", delay: "0.3s", title: "Clasificación por Estructura", content: "<p><b>Monosacáridos (simples):</b> Glucosa, fructosa (frutas), galactosa (leche).</p><p><b>Disacáridos (unión de dos):</b><br>Glucosa + Fructosa = Sacarosa (azúcar de mesa).<br>Glucosa + Galactosa = Lactosa (leche).<br>Glucosa + Glucosa = Maltosa (malta/cerveza).</p><p><b>Polisacáridos (cadenas largas):</b><br>Glucógeno (reserva de energía en animales, hígado).<br>Almidón (reserva de energía en vegetales).<br>Celulosa (estructura de la pared celular vegetal, rigidez).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio1-4",
+                        topicIdx: 4,
+                        title: "4. Lípidos, Aminoácidos y Enlaces",
+                        icon: "fa-dna",
+                        subnodes: [
+                            { icon: "fa-droplet", delay: "0.1s", title: "Lípidos (Grasas)", content: "<p><b>Composición:</b> CHONP.</p><p><b>Naturaleza:</b> Hidrofóbicos (repelen el agua) e insolubles en ella.</p><p><b>Función principal:</b> Reserva de energía a largo plazo y aislamiento térmico.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Los lípidos se unen mediante el <b>enlace éster</b>.</div><p><b>Tipos de lípidos:</b></p><ul><li><b>Grasas saturadas:</b> Sólidas a temperatura ambiente (origen animal).</li><li><b>Grasas insaturadas:</b> Líquidas, consideradas grasas buenas (aceites, aguacate).</li><li><b>Fosfolípidos:</b> Forman la membrana celular (bicapa lipídica), con cabeza hidrofílica y colas hidrofóbicas.</li><li><b>Triglicéridos:</b> Grasas presentes en la sangre.</li><li><b>Esfingolípidos:</b> Presentes en tejido nervioso y cerebro.</li><li><b>Terpenos:</b> Pigmentos fotosintéticos (betacaroteno en zanahorias, limoneno en cítricos).</li><li><b>Esteroides:</b> Base de colesterol y funciones hormonales.</li></ul>" },
+                            { icon: "fa-cubes", delay: "0.2s", title: "Aminoácidos", content: "<p>Son los precursores de las proteínas; la unión de muchos aminoácidos forma una proteína.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Los aminoácidos se unen mediante el <b>enlace peptídico</b>.</div><p><b>Estructura química:</b> Contienen un grupo amino (-NH<sub>2</sub>) y un grupo carboxilo (-COOH).</p><p><b>Tipos:</b></p><ul><li><b>Esenciales:</b> El cuerpo no los produce; se obtienen de la dieta.</li><li><b>No esenciales:</b> El cuerpo los puede producir por sí mismo.</li></ul>" },
+                            { icon: "fa-table", delay: "0.3s", title: "Tabla Resumen de Enlaces", content: "<div class='exam-tip'><i class='fa-solid fa-list-check'></i> <b>RESUMEN FUNDAMENTAL PARA EXAMEN:</b><br>Carbohidratos → Enlace glucosídico.<br>Lípidos → Enlace éster.<br>Proteínas (aminoácidos) → Enlace peptídico.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/tb18nlQP8uM"
+            },
             "content-literatura-1": {
                 title: "Apuntes de Literatura",
                 titleIconLeft: "fa-book-open",
@@ -1771,6 +1845,80 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/hMeVln9ftYE"
+            },
+            "content-literatura-2": {
+                title: "Apuntes de Literatura",
+                titleIconLeft: "fa-book-open",
+                titleIconRight: "fa-feather-pointed",
+                titleStyle: "color: #9333ea;",
+                mainTopicId: "mainTopicLiteratura2",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Literatura",
+                mainTopicIcon1: "fa-newspaper",
+                mainTopicIcon2: "fa-masks-theater",
+                mainTopicSubtitle: "Clase 2: Texto Periodístico y Texto Dramático",
+                branches: [
+                    {
+                        id: "nodes-lit2-1",
+                        topicIdx: 1,
+                        title: "1. Texto Periodístico: Estructura",
+                        icon: "fa-newspaper",
+                        subnodes: [
+                            { icon: "fa-layer-group", delay: "0.1s", title: "Jerarquía de la Información", content: "<p>La nota informativa se organiza por jerarquía de datos, usualmente con la lógica de <b>pirámide invertida</b>.</p>" },
+                            { icon: "fa-quote-left", delay: "0.2s", title: "Balazo (Antetítulo o Epígrafe)", content: "<p>Texto breve antes del título. Presenta el tema de forma general y superficial.</p>" },
+                            { icon: "fa-heading", delay: "0.3s", title: "Título o Encabezado", content: "<p>Mensaje llamativo con letra mayor. Es particular y usa adjetivos o verbos precisos para atraer al lector.</p>" },
+                            { icon: "fa-paragraph", delay: "0.4s", title: "Entrada o Lead", content: "<p>Primer párrafo de la noticia. Funciona como sinopsis y responde de forma breve a: <b>¿qué?, ¿quién?, ¿cómo?, ¿cuándo?, ¿dónde? y ¿por qué?</b></p>" },
+                            { icon: "fa-list", delay: "0.5s", title: "Cuerpo", content: "<p>Conjunto de párrafos que desglosan los detalles generales del hecho noticioso.</p>" },
+                            { icon: "fa-flag-checkered", delay: "0.6s", title: "Remate o Cierre", content: "<p>Último párrafo con información de baja relevancia para el público general, pero útil para instituciones específicas (por ejemplo: datos periciales o señas particulares).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit2-2",
+                        topicIdx: 2,
+                        title: "2. Procesos de la Nota Informativa",
+                        icon: "fa-gears",
+                        subnodes: [
+                            { icon: "fa-filter", delay: "0.1s", title: "Selección", content: "<p>Se elige el acontecimiento con mayor relevancia social para convertirlo en noticia.</p>" },
+                            { icon: "fa-sort-amount-down", delay: "0.2s", title: "Jerarquización", content: "<p>Se ordenan los datos de mayor a menor importancia utilizando la estructura periodística.</p>" },
+                            { icon: "fa-scissors", delay: "0.3s", title: "Omisión", content: "<p>Se eliminan datos irrelevantes o elementos que reducen la verosimilitud del texto.</p>" },
+                            { icon: "fa-repeat", delay: "0.4s", title: "Reiteración", content: "<p>Se repite información solo cuando es necesario para generar conciencia social sobre una problemática.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit2-3",
+                        topicIdx: 3,
+                        title: "3. Géneros Periodísticos",
+                        icon: "fa-table-columns",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Género Informativo", content: "<p><b>Subgéneros:</b> Noticia y reportaje.</p><p><b>Clave de examen:</b> Es objetivo. La noticia es el género periodístico por excelencia, debe ser veraz y congruente.</p>" },
+                            { icon: "fa-pen-nib", delay: "0.2s", title: "Género de Opinión", content: "<p><b>Subgéneros:</b> Nota editorial y artículo de opinión.</p><p><b>Clave de examen:</b> Es subjetivo. La editorial representa la postura institucional del medio (sin firma). El artículo de opinión lleva firma de un autor especialista.</p>" },
+                            { icon: "fa-rocket", delay: "0.3s", title: "Tips de Examen", content: "<div class='exam-tip'><i class='fa-solid fa-graduation-cap'></i> <b>TIP DE EXAMEN:</b><br>Si preguntan por el propósito de un texto periodístico, la respuesta esperada es <b>informar</b>.<br><br>Si el reactivo dice: 'La editorial de un periódico se clasifica como...', se ubica en el <b>género de opinión</b> (en sentido amplio, artículo de opinión).</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit2-4",
+                        topicIdx: 4,
+                        title: "4. Texto Dramático",
+                        icon: "fa-masks-theater",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Definición y Propósito", content: "<p>Es un texto escrito en forma de diálogo con la intención de <b>ser representado</b> ante un público en un escenario.</p><p>Quien escribe este tipo de textos se denomina <b>dramaturgo</b>.</p>" },
+                            { icon: "fa-comments", delay: "0.2s", title: "Organización Dialógica", content: "<p><b>Diálogo:</b> Intercambio entre dos o más personajes.</p><p><b>Soliloquio:</b> Un personaje habla consigo mismo; no debe haber intervención de otros en escena.</p><p><b>Monólogo:</b> Un personaje habla para otros (incluido el público); pueden existir otros personajes presentes sin intervenir.</p><p><b>Acotaciones:</b> Indicaciones del autor sobre gestos, movimientos o acciones escénicas, usualmente en cursivas, negritas o paréntesis.</p>" },
+                            { icon: "fa-chart-line", delay: "0.3s", title: "Acción Dramática", content: "<p>Esquema estructural que también aplica a cuento y novela:</p><ul><li><b>Desarrollo (Planteamiento):</b> Presentación de personajes y contexto (tiempo, lugar, ambiente).</li><li><b>Nudo:</b> Aparición del conflicto.</li><li><b>Clímax:</b> Punto de mayor tensión narrativa.</li><li><b>Desenlace:</b> Resolución del conflicto.</li></ul><div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>TIP DE EXAMEN:</b><br>Clímax puede aparecer con sinónimos como <b>álgido</b> o <b>culminante</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit2-5",
+                        topicIdx: 5,
+                        title: "5. Estrategias Finales para Reactivo",
+                        icon: "fa-list-check",
+                        subnodes: [
+                            { icon: "fa-scale-balanced", delay: "0.1s", title: "Subjetividad y Objetividad", content: "<p><b>Subjetividad:</b> Connotación, parcialidad.</p><p><b>Objetividad:</b> Denotación, imparcialidad.</p>" },
+                            { icon: "fa-calculator", delay: "0.2s", title: "Análisis de Fragmentos", content: "<p>Si dudas entre narrativo y descriptivo, cuenta qué predomina: <b>verbos</b> o <b>adjetivos</b>. La categoría dominante define el modo discursivo.</p>" },
+                            { icon: "fa-link", delay: "0.3s", title: "Nexos Argumentativos", content: "<p>Si encuentras conectores como <b>pero, porque, sin embargo, ya que</b>, hay alta probabilidad de que el fragmento sea argumentativo.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/AoMq53a1Xm4"
             }
         };
 

@@ -4,7 +4,7 @@
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
-    const SW_VERSION = window.__APP_VERSION || '20260306-2';
+    const SW_VERSION = window.__APP_VERSION || '20260309-2';
     const SW_URL = `./sw.js?v=${encodeURIComponent(SW_VERSION)}`;
     let hasRefreshedAfterUpdate = false;
 

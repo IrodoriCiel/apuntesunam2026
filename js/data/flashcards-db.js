@@ -1039,5 +1039,125 @@ const flashcardsDatabase = [
         "respuesta": "Como una masa de carga positiva con electrones (carga negativa) incrustados en ella.",
         "tema": "Modelos Atómicos",
         "asignatura": "Química"
+    },
+
+    // ==========================================
+    // BIOLOGÍA CLASE 1 (8 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "bio-001",
+        "pregunta": "¿Qué es la célula?",
+        "respuesta": "Es la unidad estructural y funcional de los seres vivos.",
+        "tema": "Fundamentos Celulares",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-002",
+        "pregunta": "¿Cuál es la analogía clave de examen para célula y átomo?",
+        "respuesta": "Célula : Seres vivos :: Átomo : Materia.",
+        "tema": "Fundamentos Celulares",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-003",
+        "pregunta": "¿Quién nombró a la célula y qué observó?",
+        "respuesta": "Robert Hooke; observó láminas de corcho con estructuras similares a celdas.",
+        "tema": "Historia Celular",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-004",
+        "pregunta": "¿Qué establece el postulado de origen de la teoría celular?",
+        "respuesta": "Toda célula proviene de otra célula preexistente (Rudolf Virchow).",
+        "tema": "Teoría Celular",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-005",
+        "pregunta": "¿Qué significa el acrónimo CHONPS?",
+        "respuesta": "Carbono, Hidrógeno, Oxígeno, Nitrógeno, Fósforo y Azufre.",
+        "tema": "Bioelementos",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-006",
+        "pregunta": "¿Cuál es la fórmula de la glucosa?",
+        "respuesta": "C6H12O6.",
+        "tema": "Carbohidratos",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-007",
+        "pregunta": "¿Qué tipo de enlace une a los carbohidratos?",
+        "respuesta": "El enlace glucosídico.",
+        "tema": "Biomoléculas",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-008",
+        "pregunta": "¿Qué tipo de enlace une a lípidos y proteínas, respectivamente?",
+        "respuesta": "Lípidos: enlace éster. Proteínas (aminoácidos): enlace peptídico.",
+        "tema": "Biomoléculas",
+        "asignatura": "Biología"
+    },
+
+    // ==========================================
+    // LITERATURA CLASE 2 (8 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "lit2-001",
+        "pregunta": "¿Cuál es el propósito principal de un texto periodístico?",
+        "respuesta": "Informar de forma clara y jerarquizada sobre un hecho de interés social.",
+        "tema": "Texto Periodístico",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-002",
+        "pregunta": "¿Qué es el Balazo (antetítulo o epígrafe) en una nota informativa?",
+        "respuesta": "Texto breve previo al título que introduce el tema de forma general.",
+        "tema": "Estructura de la Noticia",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-003",
+        "pregunta": "¿Qué función cumple la Entrada o Lead?",
+        "respuesta": "Es la sinopsis inicial que responde qué, quién, cómo, cuándo, dónde y por qué.",
+        "tema": "Estructura de la Noticia",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-004",
+        "pregunta": "¿Cuáles son los procesos técnicos de la nota informativa?",
+        "respuesta": "Selección, jerarquización, omisión y reiteración.",
+        "tema": "Procesos Periodísticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-005",
+        "pregunta": "¿Cómo se distinguen editorial y artículo de opinión?",
+        "respuesta": "La editorial representa al medio y no se firma; el artículo de opinión lleva firma individual.",
+        "tema": "Géneros Periodísticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-006",
+        "pregunta": "¿Qué define al texto dramático?",
+        "respuesta": "Está escrito en diálogo y se crea para ser representado en escena ante un público.",
+        "tema": "Texto Dramático",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-007",
+        "pregunta": "Diferencia clave entre soliloquio y monólogo:",
+        "respuesta": "Soliloquio: el personaje habla consigo mismo. Monólogo: habla para otros o para el público.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-008",
+        "pregunta": "¿Cuál es la secuencia de la acción dramática?",
+        "respuesta": "Desarrollo (planteamiento), nudo, clímax y desenlace.",
+        "tema": "Acción Dramática",
+        "asignatura": "Literatura"
     }
 ];

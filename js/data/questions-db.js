@@ -89,6 +89,36 @@
             "respuesta": 0,
             "retroalimentacion": "La cabalidad, como propiedad intrínseca, significa que el texto es un todo completo o autosuficiente que cuenta con una evidente unidad de sentido para no dejar que las ideas divaguen."
         }
+    ],
+    "content-literatura-2": [
+        {
+            "numero": 14,
+            "pregunta": "Dar información, emitir opinión y persuadir al lector son características del texto",
+            "opciones": ["periodístico.", "científico.", "poético.", "literario."],
+            "respuesta": 0,
+            "retroalimentacion": "La opción correcta es periodístico porque este ámbito integra subgéneros informativos y de opinión. En la clase se distingue que puede informar (noticia/reportaje) y también emitir postura (editorial/artículo)."
+        },
+        {
+            "numero": 15,
+            "pregunta": "El autor del texto ________ lo escribe con intención de ser representado.",
+            "opciones": ["periodístico", "poético", "dramático", "narrativo"],
+            "respuesta": 2,
+            "retroalimentacion": "La intención de representación escénica corresponde al texto dramático. Esa es la clave de identificación central vista en clase."
+        }
+    ],
+    "content-biologia-1": [
+        {
+            "numero": 88,
+            "pregunta": "Las células son unidades",
+            "opciones": [
+                "centrales y anatómicas.",
+                "originales y microscópicas.",
+                "funcionales y lógicas.",
+                "estructurales y fisiológicas."
+            ],
+            "respuesta": 3,
+            "retroalimentacion": "La definición base de la clase establece que la célula es la unidad estructural y funcional de los seres vivos. En la opción oficial de la guía aparece 'estructurales y fisiológicas', equivalente al enfoque estructural y funcional de la teoría celular."
+        }
     ]
 };
 
@@ -673,6 +703,43 @@ const practiceQuestions = {
             "retroalimentacion": "La coherencia es la propiedad textual que permite que el texto tenga una estructura lógica y que las ideas no se contradigan."
         }
     ],
+    "content-literatura-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es el elemento de la nota informativa que aparece antes del título y presenta el tema de forma general?",
+            "opciones": ["Entrada o Lead.", "Balazo (antetítulo o epígrafe).", "Remate.", "Cuerpo."],
+            "respuesta": 1,
+            "retroalimentacion": "El balazo va antes del título y funciona como marco general. La entrada, en cambio, es el primer párrafo de la noticia."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué parte de la noticia debe responder brevemente a qué, quién, cómo, cuándo, dónde y por qué?",
+            "opciones": ["Título.", "Cuerpo.", "Entrada o Lead.", "Remate."],
+            "respuesta": 2,
+            "retroalimentacion": "La entrada o lead sintetiza los datos esenciales del hecho noticioso mediante esas preguntas guía."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Selecciona el proceso periodístico que consiste en ordenar los datos de mayor a menor importancia.",
+            "opciones": ["Omisión.", "Jerarquización.", "Selección.", "Reiteración."],
+            "respuesta": 1,
+            "retroalimentacion": "Jerarquizar implica priorizar la información para que lo más relevante aparezca primero y lo secundario después."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál es el propósito más directo que debes buscar en un texto periodístico cuando el reactivo pide su intención?",
+            "opciones": ["Embellecer el mensaje.", "Representar una escena.", "Informar.", "Rimar con musicalidad."],
+            "respuesta": 2,
+            "retroalimentacion": "El tip de examen de la clase indica que, si preguntan propósito del texto periodístico, la palabra clave es informar."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cómo se llama el autor de textos dramáticos escritos para su representación escénica?",
+            "opciones": ["Reportero.", "Cronista.", "Dramaturgo.", "Editorialista."],
+            "respuesta": 2,
+            "retroalimentacion": "El texto dramático se construye para ser representado y su autor se denomina dramaturgo."
+        }
+    ],
     "content-quimica-2": [
         {
             "numero": 1,
@@ -708,6 +775,43 @@ const practiceQuestions = {
             "opciones": ["Modelo Planetario.", "Esfera Indestructible.", "Nube de Electrones.", "Budín de Pasas."],
             "respuesta": 3,
             "retroalimentacion": "Thomson ilustró al átomo como una gran masa positiva con los electrones incrustados ordenadamente en ella, similar a un budín de pasas."
+        }
+    ],
+    "content-biologia-1": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es la definición correcta de célula en biología básica?",
+            "opciones": ["Unidad estética de los tejidos.", "Unidad estructural y funcional de los seres vivos.", "Unidad exclusiva de los animales.", "Unidad química sin metabolismo."],
+            "respuesta": 1,
+            "retroalimentacion": "La célula se define como la unidad estructural y funcional de los seres vivos porque integra la forma (estructura) y las funciones metabólicas esenciales para la vida."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué científico nombró a la célula tras observar láminas de corcho?",
+            "opciones": ["Anton van Leeuwenhoek.", "Rudolf Virchow.", "Robert Hooke.", "Theodor Schwann."],
+            "respuesta": 2,
+            "retroalimentacion": "Robert Hooke observó cortes de corcho y describió compartimentos semejantes a celdas, por lo que introdujo el término 'célula'."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál de las siguientes opciones corresponde al acrónimo CHONPS completo?",
+            "opciones": ["Carbono, Hidrógeno, Oxígeno, Nitrógeno, Fósforo y Azufre.", "Calcio, Hierro, Oxígeno, Nitrógeno, Potasio y Sodio.", "Carbono, Helio, Oxígeno, Nitrógeno, Potasio y Silicio.", "Cobre, Hidrógeno, Oxígeno, Nitrógeno, Fósforo y Sodio."],
+            "respuesta": 0,
+            "retroalimentacion": "CHONPS reúne los bioelementos clave de biomoléculas: Carbono, Hidrógeno, Oxígeno, Nitrógeno, Fósforo y Azufre."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál es la fórmula molecular de la glucosa, dato de memoria frecuente en examen?",
+            "opciones": ["C6H6", "C12H22O11", "C6H12O6", "CH3COOH"],
+            "respuesta": 2,
+            "retroalimentacion": "La glucosa se reconoce por la fórmula C6H12O6 y se menciona como molécula central del metabolismo energético inmediato."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Qué tipo de enlace une a los aminoácidos para formar proteínas?",
+            "opciones": ["Enlace glucosídico.", "Enlace iónico.", "Enlace éster.", "Enlace peptídico."],
+            "respuesta": 3,
+            "retroalimentacion": "Los aminoácidos se enlazan por enlace peptídico; en contraste, los carbohidratos usan enlace glucosídico y los lípidos enlace éster."
         }
     ]
 };
@@ -1312,6 +1416,43 @@ const practiceLevel2Questions = {
             "retroalimentacion": "La cabalidad asegura que el texto esté completo y tenga un sentido único y claro."
         }
     ],
+    "content-literatura-2": [
+        {
+            "numero": 1,
+            "pregunta": "Si una noticia elimina datos que restan credibilidad o desvían el foco, ¿qué proceso periodístico está aplicando?",
+            "opciones": ["Selección.", "Reiteración.", "Jerarquización.", "Omisión."],
+            "respuesta": 3,
+            "retroalimentacion": "La omisión consiste en retirar información irrelevante o que afecta la verosimilitud para mantener claridad y pertinencia informativa."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En términos de clasificación de examen, la editorial de un periódico pertenece al género:",
+            "opciones": ["Informativo.", "De opinión.", "Dramático.", "Narrativo."],
+            "respuesta": 1,
+            "retroalimentacion": "La editorial expresa postura institucional del medio y se ubica en el género de opinión; se distingue porque no lleva firma individual."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál opción diferencia correctamente soliloquio y monólogo en el texto dramático?",
+            "opciones": ["Soliloquio: habla a otros; Monólogo: habla consigo mismo.", "Soliloquio: diálogo entre dos personajes; Monólogo: acotación.", "Soliloquio: habla consigo mismo; Monólogo: habla para el público u otros sin respuesta.", "No hay diferencia funcional entre ambos."],
+            "respuesta": 2,
+            "retroalimentacion": "En soliloquio hay introspección sin interlocución escénica; en monólogo se dirige un discurso a otros o al público aunque no haya intervención."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Si un reactivo menciona que el momento de mayor tensión de la historia es 'álgido' o 'culminante', ¿a qué fase alude?",
+            "opciones": ["Desarrollo.", "Nudo.", "Clímax.", "Desenlace."],
+            "respuesta": 2,
+            "retroalimentacion": "La clase señala que 'álgido' y 'culminante' funcionan como sinónimos de clímax, etapa de máxima tensión narrativa."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Al analizar un fragmento dudoso entre narrativo y descriptivo, ¿cuál estrategia técnica permite decidir con rapidez?",
+            "opciones": ["Contar signos de puntuación.", "Revisar si hay comillas en el título.", "Comparar cantidad de verbos frente a adjetivos y elegir el predominante.", "Buscar exclusivamente nombres propios."],
+            "respuesta": 2,
+            "retroalimentacion": "El criterio operativo de la clase indica que el predominio verbal sugiere narración, mientras que el predominio adjetival sugiere descripción."
+        }
+    ],
     "content-quimica-2": [
         {
             "numero": 1,
@@ -1347,6 +1488,43 @@ const practiceLevel2Questions = {
             "opciones": ["Es una mezcla homogénea.", "Es un compuesto complejo.", "Es un elemento puro de la tabla periódica.", "Es un isótopo del bismuto."],
             "respuesta": 2,
             "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales (Kahoot) y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
+        }
+    ],
+    "content-biologia-1": [
+        {
+            "numero": 1,
+            "pregunta": "Con base en la analogía de memorización de la clase, selecciona la relación correcta:",
+            "opciones": ["Célula : Materia :: Átomo : Seres vivos.", "Célula : Seres vivos :: Átomo : Materia.", "Célula : Tejidos :: Átomo : Universo.", "Célula : Biomoléculas :: Átomo : Organismos."],
+            "respuesta": 1,
+            "retroalimentacion": "La analogía oficial compara la unidad biológica con la unidad físico-química: célula para seres vivos y átomo para materia."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Elige la opción que vincula correctamente postulado y autor de la teoría celular:",
+            "opciones": ["Origen: Schleiden y Schwann; Anatómico: Virchow.", "Fisiológico: Hooke; Origen: Leeuwenhoek.", "Anatómico: Schleiden/Schwann; Origen: Virchow.", "Anatómico: Virchow; Fisiológico: Hooke."],
+            "respuesta": 2,
+            "retroalimentacion": "Schleiden y Schwann sostienen el postulado anatómico (seres vivos formados por células) y Virchow formuló que toda célula proviene de otra preexistente."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Si un reactivo pide identificar un bioelemento secundario, ¿qué opción es correcta según la clase?",
+            "opciones": ["Carbono (C).", "Hidrógeno (H).", "Nitrógeno (N).", "Magnesio (Mg)."],
+            "respuesta": 3,
+            "retroalimentacion": "Los primarios son CHON; entre los secundarios están S, P, Mg, Ca, Na, K y Cl."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En un inciso de correspondencia de biomolécula y enlace, ¿cuál combinación está correctamente emparejada?",
+            "opciones": ["Carbohidratos - Éster; Lípidos - Peptídico; Proteínas - Glucosídico.", "Carbohidratos - Glucosídico; Lípidos - Éster; Proteínas - Peptídico.", "Carbohidratos - Peptídico; Lípidos - Glucosídico; Proteínas - Éster.", "Carbohidratos - Covalente; Lípidos - Iónico; Proteínas - Metálico."],
+            "respuesta": 1,
+            "retroalimentacion": "La tabla fundamental de la clase exige memorizar ese triple mapeo exacto: glucosídico, éster y peptídico en ese orden por tipo de biomolécula."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Qué opción describe correctamente una característica estructural de los fosfolípidos de membrana?",
+            "opciones": ["Una cola hidrofílica y una cabeza hidrofóbica.", "Dos cabezas hidrofóbicas y una cola hidrofílica.", "Una cabeza hidrofílica y colas hidrofóbicas.", "Estructura rígida formada solo por colesterol."],
+            "respuesta": 2,
+            "retroalimentacion": "Los fosfolípidos forman la bicapa de membrana gracias a su naturaleza anfipática: cabeza afín al agua y colas que repelen el agua."
         }
     ]
 };
