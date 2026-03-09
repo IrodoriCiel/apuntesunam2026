@@ -1,4 +1,4 @@
-const unamQuestions = {
+﻿const unamQuestions = {
     "content-matematicas-3": [],
     "content-matematicas-7": [
         {
@@ -558,6 +558,7 @@ const practiceQuestions = {
             "numero": 5,
             "pregunta": "'El verbo es la palabra que indica acción o movimiento'. Este enunciado es ejemplo de la función:",
             "opciones": ["Apelativa.", "Metalingüística.", "Referencial.", "Fática."],
+            "respuesta": 1,
             "retroalimentacion": "La función metalingüística se utiliza para explicar conceptos, reglas y definiciones sobre el propio idioma."
         }
     ],
@@ -1196,6 +1197,7 @@ const practiceLevel2Questions = {
             "numero": 5,
             "pregunta": "Forma del discurso que se caracteriza por explicar o informar un tema de manera clara, objetiva y ordenada:",
             "opciones": ["Argumentación.", "Exposición.", "Narración.", "Descripción."],
+            "respuesta": 1,
             "retroalimentacion": "La exposición busca únicamente informar y detallar un tema sin incluir juicios de valor, opiniones ni secuencias de tiempo."
         }
     ],
@@ -1348,5 +1350,6 @@ const practiceLevel2Questions = {
         }
     ]
 };
+
 
 
