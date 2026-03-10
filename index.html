@@ -237,20 +237,35 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-8"
+                            onclick="switchClass('content-matematicas-8', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-8">
+                            <i class="fa-solid fa-book-open"></i> Clase 8: Ecuaciones y Despeje
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
-            <!-- FÍSICA (DESHABILITADO) -->
+            <!-- FÍSICA -->
             <li class="subject-wrapper">
                 <a href="#" class="subject-item" id="btn-fisica"
-                    style="opacity: 0.5; pointer-events: none; color: #0891b2;">
+                    onclick="toggleSubMenu(event, 'submenu-fisica')" style="color: #0891b2;">
                     <span class="subject-icon"><i class="fa-solid fa-atom"></i></span>
                     Física
+                    <span class="subject-pending-badge" id="badge-fisica"></span>
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-fisica">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-fisica-1"
+                            onclick="switchClass('content-fisica-1', this, 'btn-fisica')"
+                            data-class-id="content-fisica-1">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Magnitudes y MRU
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -1432,6 +1447,145 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/ImJgfYK1Jsk"
+            },
+            "content-matematicas-8": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-equals",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas8",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-equals",
+                mainTopicIcon2: "fa-x",
+                mainTopicSubtitle: "Clase 8: Definición y Grado de una Ecuación",
+                branches: [
+                    {
+                        id: "nodes-mat8-1",
+                        topicIdx: 1,
+                        title: "1. Definición, Grado y Objetivo de la Ecuación",
+                        icon: "fa-book",
+                        subnodes: [
+                            { icon: "fa-equals", delay: "0.1s", title: "La Igualdad", content: "<p>Lo que define a una ecuación es el signo de igualdad <b>=</b>. Si no existe este signo, la expresión es un polinomio, no una ecuación.</p>" },
+                            { icon: "fa-superscript", delay: "0.2s", title: "Grado de la Ecuación", content: "<p>El grado está determinado por el exponente más grande de la incógnita.</p><ul><li><b>Exponente 1:</b> Primer grado (lineal).</li><li><b>Exponente 2:</b> Segundo grado (cuadrática).</li></ul>" },
+                            { icon: "fa-bullseye", delay: "0.3s", title: "Propósito", content: "<p>El objetivo de toda ecuación es encontrar el valor de la incógnita (normalmente <b>x</b>) mediante el despeje, es decir, dejarla sola.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat8-2",
+                        topicIdx: 2,
+                        title: "2. Reglas del Despeje (Transposición de Términos)",
+                        icon: "fa-right-left",
+                        subnodes: [
+                            { icon: "fa-border-all", delay: "0.1s", title: "Idea Central", content: "<p>El signo igual funciona como una frontera. Cuando un término cruza al otro lado, cambia su operación por la contraria.</p>" },
+                            { icon: "fa-table", delay: "0.2s", title: "Cambios de Operación", content: "<ul><li><b>Suma (+)</b> al cruzar pasa como <b>resta (-)</b>.</li><li><b>Resta (-)</b> al cruzar pasa como <b>suma (+)</b>.</li><li><b>Multiplicación</b> al cruzar pasa como <b>división</b>.</li><li><b>División</b> al cruzar pasa como <b>multiplicación</b>.</li></ul>" },
+                            { icon: "fa-circle-exclamation", delay: "0.3s", title: "Nota Importante de Examen", content: "<div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TIP DE EXAMEN:</b><br>Cuando un número pasa multiplicando o dividiendo, <b>el signo del número no cambia</b>. Solo cambia la operación.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat8-3",
+                        topicIdx: 3,
+                        title: "3. Estrategias de Resolución Rápida",
+                        icon: "fa-bolt-lightning",
+                        subnodes: [
+                            { icon: "fa-arrow-up-right-dots", delay: "0.1s", title: "Sigue a la literal más grande", content: "<p>Para reducir errores con signos negativos al final, identifica en qué lado de la igualdad el coeficiente de <b>x</b> es mayor y agrupa ahí las variables.</p>", examples: ["$7x + 2 = 5x - 7$<br>Como $7x$ es mayor, se agrupan las literales a la izquierda:<br>$7x - 5x = -7 - 2$<br><b>Resultado intermedio:</b> $2x = -9$ (coeficiente positivo)."] },
+                            { icon: "fa-shuffle", delay: "0.2s", title: "Ecuaciones con Fracciones (Productos Cruzados)", content: "<p>Si una fracción está igualada con otra, el método más rápido para quitar denominadores es multiplicar en cruz.</p>", examples: ["$\\frac{a}{b} = \\frac{c}{d} \\Rightarrow a(d) = c(b)$", "El denominador izquierdo multiplica a todo el numerador derecho y viceversa.", "Después, se resuelve la multiplicación monomio por binomio resultante."] }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat8-4",
+                        topicIdx: 4,
+                        title: "4. Tips para Reactivo UNAM",
+                        icon: "fa-rocket",
+                        subnodes: [
+                            { icon: "fa-divide", delay: "0.1s", title: "Resultados en Fracción", content: "<p>La UNAM suele preferir respuestas en fracción simplificada. Si obtienes un decimal infinito (por ejemplo, $3.333\\dots$), busca la fracción equivalente (por ejemplo, $\\frac{10}{3}$). Solo divide cuando el resultado sea entero exacto.</p>" },
+                            { icon: "fa-vial-circle-check", delay: "0.2s", title: "Verificación", content: "<p>Si tienes duda, sustituye tu resultado en la ecuación original. Si se cumple la igualdad, tu respuesta es correcta.</p>", examples: ["Si al sustituir obtienes una igualdad verdadera (ej. $5=5$), el resultado es válido."] },
+                            { icon: "fa-stopwatch", delay: "0.3s", title: "Gestión del Tiempo", content: "<div class='exam-tip'><i class='fa-solid fa-clock'></i> <b>TIP DE TIEMPO:</b><br>En promedio tienes 1.5 minutos por reactivo. Practica sumas y restas de signos para no perder tiempo en el despeje final.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat8-5",
+                        topicIdx: 1,
+                        title: "5. Resumen de Leyes Aplicadas",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-plus-minus", delay: "0.1s", title: "Suma y Resta de Signos", content: "<ul><li><b>Signos iguales:</b> se suman y se conserva el signo.</li><li><b>Signos diferentes:</b> se restan y domina el signo del número mayor.</li></ul>" },
+                            { icon: "fa-xmark", delay: "0.2s", title: "Multiplicación y División", content: "<p>Se aplica la ley de signos de multiplicación/división. Ejemplo base: <b>+ por - = -</b>.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/liinNLr2qt4"
+            },
+            "content-fisica-1": {
+                title: "Apuntes de Física",
+                titleIconLeft: "fa-atom",
+                titleIconRight: "fa-arrows-to-dot",
+                titleStyle: "color: #0e7490;",
+                mainTopicId: "mainTopicFisica1",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Física",
+                mainTopicIcon1: "fa-ruler-combined",
+                mainTopicIcon2: "fa-gauge-high",
+                mainTopicSubtitle: "Clase 1: Magnitudes, MRU y Velocidad Relativa",
+                branches: [
+                    {
+                        id: "nodes-fis1-1",
+                        topicIdx: 1,
+                        title: "1. Magnitudes Escalares y Vectoriales",
+                        icon: "fa-ruler",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Diferencia Clave", content: "<p>Para el examen, la diferencia principal entre magnitudes es la <b>dirección</b>.</p>" },
+                            { icon: "fa-1", delay: "0.2s", title: "Magnitudes Escalares", content: "<p>No tienen dirección. Si agregas una dirección (norte, sur, derecha), la expresión se vuelve ilógica.</p>", examples: ["Masa (kg)", "Tiempo (s)", "Temperatura (°C)", "Energía (W)"] },
+                            { icon: "fa-location-arrow", delay: "0.3s", title: "Magnitudes Vectoriales", content: "<p>Sí tienen dirección y sentido. Se representan con flechas (vectores).</p>", examples: ["Fuerza (N)", "Desplazamiento (m)", "Velocidad (m/s)"] }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis1-2",
+                        topicIdx: 2,
+                        title: "2. Distancia vs. Desplazamiento",
+                        icon: "fa-route",
+                        subnodes: [
+                            { icon: "fa-road", delay: "0.1s", title: "Distancia (Escalar)", content: "<p>Es toda la trayectoria recorrida (el procedimiento). Aunque se mida en metros, no requiere dirección única.</p>" },
+                            { icon: "fa-arrow-right-long", delay: "0.2s", title: "Desplazamiento (Vectorial)", content: "<p>Es la línea recta entre el punto inicial y el final (el resultado). Tiene dirección única.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis1-3",
+                        topicIdx: 3,
+                        title: "3. Rapidez vs. Velocidad",
+                        icon: "fa-gauge-high",
+                        subnodes: [
+                            { icon: "fa-stopwatch", delay: "0.1s", title: "Rapidez (Escalar)", content: "<p>Solo indica qué tan rápido se mueve un objeto.</p>", examples: ["100 km/h"] },
+                            { icon: "fa-compass", delay: "0.2s", title: "Velocidad (Vectorial)", content: "<p>Indica qué tan rápido y hacia dónde se mueve el objeto.</p>", examples: ["100 km/h hacia el norte"] },
+                            { icon: "fa-brain", delay: "0.3s", title: "Tip de Memoria", content: "<div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>MEMORIA RÁPIDA:</b><br>Velocidad = Vectorial (ambas inician con V).<br>Rapidez = Escalar.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis1-4",
+                        topicIdx: 4,
+                        title: "4. Movimiento Rectilíneo Uniforme (MRU)",
+                        icon: "fa-arrows-left-right-to-line",
+                        subnodes: [
+                            { icon: "fa-diagram-project", delay: "0.1s", title: "Definición", content: "<p>Es un movimiento en línea recta con <b>velocidad constante</b>; no aumenta ni disminuye.</p>" },
+                            { icon: "fa-hashtag", delay: "0.2s", title: "Interpretación de la Unidad", content: "<p>Si un objeto tiene 5 m/s, recorre 5 metros cada segundo.</p>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.3s", title: "Triángulo de Fórmulas", content: "<p>Para reducir errores de despeje:</p><div style='display:flex; justify-content:center; margin:10px 0;'><svg width='260' height='220' viewBox='0 0 260 220' role='img' aria-label='Triángulo de fórmulas MRU'><svg height=220 viewBox='0 0 260 220'width=260><polygon fill=none points='130,10 10,210 250,210'stroke=black stroke-width=3 /><line stroke=black stroke-width=3 x1=50 x2=210 y1=130 y2=130 /><line stroke=black stroke-width=3 x1=130 x2=130 y1=130 y2=210 /><text x=130 y=80 font-style='italic'>d</text><text x=95 y=170 font-style='italic'>v</text><text x=165 y=170 font-style='italic'>t</text></div><ul><li><b>Velocidad:</b> $V = d/t$</li><li><b>Tiempo:</b> $t = d/V$</li><li><b>Distancia:</b> $d = V \\cdot t$</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis1-5",
+                        topicIdx: 1,
+                        title: "5. Velocidad Relativa y Tips UNAM",
+                        icon: "fa-flag-checkered",
+                        subnodes: [
+                            { icon: "fa-car-side", delay: "0.1s", title: "Dos Objetos en Movimiento", content: "<ul><li><b>Misma dirección:</b> las velocidades se restan.</li><li><b>Direcciones opuestas:</b> las velocidades se suman.</li></ul>" },
+                            { icon: "fa-chart-area", delay: "0.2s", title: "Gráficas Velocidad-Tiempo", content: "<p>Si preguntan quién recorrió mayor distancia en una gráfica v-t, gana el objeto con <b>área más grande</b> bajo su línea y sobre el eje del tiempo.</p>" },
+                            { icon: "fa-train", delay: "0.3s", title: "Lectura de Gráficas Posición-Tiempo", content: "<p><b>Nota de estudio:</b> en una gráfica posición-tiempo, la pendiente (inclinación) representa la velocidad.</p><ol><li>Si la línea mantiene la <b>misma inclinación</b> durante todo el tramo, la velocidad es constante.</li><li>Si la inclinación <b>cambia</b> entre tramos, la velocidad también cambia.</li></ol><p>Para deducir la respuesta en un reactivo, primero observa si la pendiente es única o si varía por secciones.</p>", examples: ["Línea recta con inclinación fija: velocidad constante.", "Pendiente diferente por tramos: velocidad variable."] },
+                            { icon: "fa-earth-americas", delay: "0.3s", title: "Sistema de Unidades", content: "<p>La UNAM trabaja con Sistema Internacional: metros, kilómetros, segundos y horas.</p>" },
+                            { icon: "fa-filter", delay: "0.4s", title: "Descarte en Incisos", content: "<div class='exam-tip'><i class='fa-solid fa-list-check'></i> <b>TIP DE EXAMEN:</b><br>Si dudas en una respuesta, identifica si la magnitud pedida debe ser escalar o vectorial y descarta opciones con o sin dirección según corresponda.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/9xxBgVgSfWc"
             },
             "content-espanol-1": {
                 title: "Apuntes de Español",

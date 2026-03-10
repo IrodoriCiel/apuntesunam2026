@@ -480,6 +480,76 @@ const flashcardsDatabase = [
         "tema": "Operaciones Algebraicas y Agrupación",
         "asignatura": "Matemáticas"
     },
+    {
+        "id": "mat-036",
+        "pregunta": "¿Qué diferencia esencial hay entre polinomio y ecuación?",
+        "respuesta": "La ecuación tiene signo de igualdad (=); el polinomio no.",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-037",
+        "pregunta": "¿Cómo se determina el grado de una ecuación?",
+        "respuesta": "Por el exponente más grande de la incógnita.",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-038",
+        "pregunta": "Al cruzar el igual, ¿qué cambia en un término?",
+        "respuesta": "Cambia la operación a la contraria (suma/resta, multiplicación/división).",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-039",
+        "pregunta": "En despeje, si un número cruza multiplicando o dividiendo, ¿cambia su signo?",
+        "respuesta": "No. El signo se conserva; solo cambia la operación.",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-040",
+        "pregunta": "¿Cuál es el atajo para ecuaciones con fracciones iguales?",
+        "respuesta": "Aplicar productos cruzados: a/b = c/d implica a(d) = c(b).",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "fis-001",
+        "pregunta": "¿Qué diferencia principal hay entre magnitud escalar y vectorial?",
+        "respuesta": "La vectorial tiene dirección y sentido; la escalar no.",
+        "tema": "Magnitudes",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-002",
+        "pregunta": "¿Distancia y desplazamiento son lo mismo?",
+        "respuesta": "No. Distancia es la trayectoria total; desplazamiento es la línea recta entre inicio y fin con dirección.",
+        "tema": "Cinemática Básica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-003",
+        "pregunta": "¿Qué diferencia hay entre rapidez y velocidad?",
+        "respuesta": "Rapidez solo indica magnitud; velocidad indica magnitud y dirección.",
+        "tema": "Cinemática Básica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-004",
+        "pregunta": "¿Cuáles son las tres fórmulas base de MRU?",
+        "respuesta": "V=d/t, t=d/V y d=V*t.",
+        "tema": "MRU",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-005",
+        "pregunta": "En velocidad relativa, ¿cuándo se suman y cuándo se restan velocidades?",
+        "respuesta": "Misma dirección: se restan. Direcciones opuestas: se suman.",
+        "tema": "Velocidad Relativa",
+        "asignatura": "Física"
+    },
 
     // ==========================================
     // QUÍMICA (19 CONCEPTOS)

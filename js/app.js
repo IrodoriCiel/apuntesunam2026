@@ -4,7 +4,7 @@
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
-    const SW_VERSION = window.__APP_VERSION || '20260309-2';
+    const SW_VERSION = window.__APP_VERSION || '20260310-3';
     const SW_URL = `./sw.js?v=${encodeURIComponent(SW_VERSION)}`;
     let hasRefreshedAfterUpdate = false;
 
@@ -494,15 +494,16 @@ function sanitizeHTML(input) {
     try {
         const parser = new DOMParser();
         const doc = parser.parseFromString(input, 'text/html');
-        const allowed = new Set(['B', 'I', 'BR', 'P', 'UL', 'OL', 'LI', 'STRONG', 'EM', 'SPAN', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SUB', 'SUP']);
+        const allowed = new Set(['B', 'I', 'BR', 'P', 'UL', 'OL', 'LI', 'STRONG', 'EM', 'SPAN', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SUB', 'SUP', 'SVG', 'POLYGON', 'LINE', 'TEXT']);
 
         const walker = document.createTreeWalker(doc.body, NodeFilter.SHOW_ELEMENT, null, false);
         const removeList = [];
         while (walker.nextNode()) {
             const node = walker.currentNode;
-            if (!allowed.has(node.tagName)) {
+            const tagName = node.tagName.toUpperCase();
+            if (!allowed.has(tagName)) {
                 // remove scripts, iframes, imgs and unsafe nodes
-                if (['SCRIPT', 'IFRAME', 'IMG', 'STYLE', 'LINK'].includes(node.tagName)) {
+                if (['SCRIPT', 'IFRAME', 'IMG', 'STYLE', 'LINK'].includes(tagName)) {
                     removeList.push(node);
                     continue;
                 }

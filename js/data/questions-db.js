@@ -14,6 +14,23 @@
             "retroalimentacion": "Aplicando el 'descarte visual' de la clase: un binomio negativo elevado al cubo debe alternar signos (+, -, +, -) incondicionalmente. Solo una opción lo cumple. Además, $(x^2)^3 = x^6$ y $(-3y)^3 = -27y^3$ confirman la opción correcta."
         }
     ],
+    "content-matematicas-8": [
+
+    ],
+    "content-fisica-1": [
+        {
+            "numero": 1,
+            "pregunta": "El desplazamiento de un ferrocarril se describe en una gráfica posición-tiempo. A partir de los datos mostrados se puede deducir que el movimiento es rectilíneo con",
+            "opciones": [
+                "aceleración constante.",
+                "aceleración variable.",
+                "velocidad constante.",
+                "velocidad variable."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Forma rápida de resolverla: en una gráfica posición-tiempo, la pendiente equivale a velocidad. Si la gráfica es una recta con la misma inclinación durante todo el intervalo, la velocidad se mantiene constante. Por eso la opción correcta es velocidad constante."
+        }
+    ],
     "content-historia-1": [
         {
             "numero": 111,
@@ -405,6 +422,130 @@ const practiceQuestions = {
             ],
             "respuesta": 0,
             "retroalimentacion": "El primer término es la base del primero al cubo: $y^3$. El último término es el segundo valor al cubo respetando su signo original: $(-4)^3 = -64$."
+        }
+    ],
+    "content-matematicas-8": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué convierte a una expresión en ecuación y no en polinomio?",
+            "opciones": [
+                "Tener letras con exponente.",
+                "Tener al menos dos términos.",
+                "Tener signo de igualdad (=).",
+                "Tener una incógnita x."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Una ecuación se define por la igualdad entre dos expresiones. Sin signo igual, solo tienes una expresión algebraica o polinomio."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En la ecuación $3x + 5 = 20$, ¿cuál es el valor correcto de $x$?",
+            "opciones": [
+                "$x = 5$",
+                "$x = 15$",
+                "$x = 25$",
+                "$x = -5$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Se despeja en dos pasos: $3x = 20 - 5 = 15$ y luego $x = 15/3 = 5$."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Al pasar el término $+9$ del lado izquierdo al derecho de la igualdad, cambia a:",
+            "opciones": [
+                "$+9$",
+                "$-9$",
+                "$\\times 9$",
+                "$\\div 9$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Cuando un término cruza el signo igual, cambia su operación por la contraria. Una suma se convierte en resta."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En $\\frac{x+2}{3} = \\frac{5}{2}$, ¿qué igualdad por productos cruzados es correcta?",
+            "opciones": [
+                "$2(x+2) = 15$",
+                "$3(x+2) = 10$",
+                "$x+2 = 15$",
+                "$x+2 = 10$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "En productos cruzados, cada denominador multiplica al numerador contrario. Por eso se obtiene $2(x+2)=3\\cdot5=15$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Según la estrategia de examen, si el resultado es $3.333\\dots$, la opción recomendada es:",
+            "opciones": [
+                "$3.3$",
+                "$3.33$",
+                "$\\frac{10}{3}$",
+                "$\\frac{33}{10}$"
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Cuando el decimal es infinito periódico, la UNAM suele presentarlo como fracción simplificada. Para $3.333\\dots$, la forma correcta es $10/3$."
+        }
+    ],
+    "content-fisica-1": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál de las siguientes magnitudes es vectorial?",
+            "opciones": [
+                "Tiempo",
+                "Masa",
+                "Temperatura",
+                "Fuerza"
+            ],
+            "respuesta": 3,
+            "retroalimentacion": "La fuerza es vectorial porque requiere magnitud, dirección y sentido. Tiempo, masa y temperatura son escalares."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Un auto recorre 200 m y regresa 80 m sobre la misma línea. ¿Cuál es su desplazamiento?",
+            "opciones": [
+                "280 m",
+                "120 m",
+                "200 m",
+                "80 m"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "El desplazamiento es la diferencia entre posición final e inicial sobre la recta: 200 m de ida menos 80 m de regreso, igual a 120 m en el sentido inicial."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué expresión representa correctamente la velocidad en MRU?",
+            "opciones": [
+                "$V = t/d$",
+                "$V = d \\cdot t$",
+                "$V = d/t$",
+                "$V = d - t$"
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "En MRU, la velocidad se calcula dividiendo distancia entre tiempo: $V=d/t$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Dos móviles avanzan en la misma dirección con 18 m/s y 11 m/s. ¿Qué operación aplica para velocidad relativa?",
+            "opciones": [
+                "Se suman",
+                "Se restan",
+                "Se multiplican",
+                "Se promedian"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Cuando ambos móviles van en la misma dirección, la velocidad relativa se obtiene restando sus velocidades."
+        },
+        {
+            "numero": 5,
+            "pregunta": "En una gráfica velocidad-tiempo, ¿qué representa el área bajo la curva?",
+            "opciones": [
+                "Aceleración",
+                "Distancia recorrida",
+                "Masa",
+                "Fuerza"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "El área bajo una gráfica v-t corresponde al desplazamiento/distancia recorrida en ese intervalo de tiempo."
         }
     ],
     "content-historia-1": [
@@ -1108,6 +1249,130 @@ const practiceLevel2Questions = {
             ],
             "respuesta": 0,
             "retroalimentacion": "Como indica la 'Trampa Crítica', en la suma y resta de términos semejantes los exponentes nunca cambian ($x^3 + x^3 = 2x^3$). Sumarlos ($x^6$) es un error gravísimo que mezcla erróneamente las leyes de la multiplicación con las de la suma."
+        }
+    ],
+    "content-matematicas-8": [
+        {
+            "numero": 1,
+            "pregunta": "Resuelve la ecuación aplicando transposición: $7x + 2 = 5x - 7$",
+            "opciones": [
+                "$x = -\\frac{9}{2}$",
+                "$x = \\frac{9}{2}$",
+                "$x = -9$",
+                "$x = 9$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Se agrupan literales del lado mayor: $7x - 5x = -7 - 2$, por lo tanto $2x = -9$ y $x = -9/2$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En la ecuación $-4x + 6 = 2$, ¿qué valor toma $x$?",
+            "opciones": [
+                "$x = 1$",
+                "$x = -1$",
+                "$x = 2$",
+                "$x = -2$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Primero $-4x = 2 - 6 = -4$. Luego se divide entre $-4$: $x = (-4)/(-4) = 1$."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Resuelve por productos cruzados: $\\frac{2x-1}{5} = \\frac{3}{2}$",
+            "opciones": [
+                "$x = \\frac{17}{4}$",
+                "$x = \\frac{13}{4}$",
+                "$x = \\frac{7}{2}$",
+                "$x = \\frac{15}{4}$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Cruzas: $2(2x-1)=5(3)$. Entonces $4x-2=15$, luego $4x=17$ y por último $x=17/4$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál enunciado es correcto sobre el cruce por multiplicación o división?",
+            "opciones": [
+                "Cambia la operación y también cambia automáticamente el signo del número.",
+                "Solo cambia la operación; el signo del número se conserva.",
+                "No cambia nada al cruzar el igual.",
+                "Siempre se vuelve positivo."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Regla clave: cuando un término pasa multiplicando o dividiendo, únicamente cambia la operación. El signo original del número no se altera por sí mismo."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Resuelve: $\\frac{x+1}{4} = \\frac{x-2}{2}$",
+            "opciones": [
+                "$x = -5$",
+                "$x = 5$",
+                "$x = -3$",
+                "$x = 3$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Productos cruzados: $2(x+1)=4(x-2)$. Se obtiene $2x+2=4x-8$. Transponiendo: $10=2x$, por lo tanto $x=5$."
+        }
+    ],
+    "content-fisica-1": [
+        {
+            "numero": 1,
+            "pregunta": "Un objeto se mueve 30 s con velocidad constante de 6 m/s en línea recta. ¿Qué distancia recorre?",
+            "opciones": [
+                "5 m",
+                "180 m",
+                "36 m",
+                "24 m"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Se aplica $d=V \\cdot t$. Entonces $d=6 \\cdot 30=180$ m."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Si un corredor avanza 400 m al este y luego 150 m al oeste, su distancia total y su desplazamiento son:",
+            "opciones": [
+                "250 m y 550 m",
+                "550 m y 250 m al este",
+                "550 m y 400 m",
+                "250 m y 150 m al oeste"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "La distancia suma todo el recorrido: $400+150=550$ m. El desplazamiento es la diferencia vectorial: $400-150=250$ m al este."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Dos autos van en direcciones opuestas con 22 m/s y 18 m/s. ¿Cuál es su rapidez relativa?",
+            "opciones": [
+                "4 m/s",
+                "40 m/s",
+                "396 m/s",
+                "20 m/s"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "En sentidos opuestos, la velocidad relativa se obtiene sumando magnitudes: $22+18=40$ m/s."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Un móvil mantiene 12 m/s durante 10 s y luego 4 m/s durante 5 s. ¿Qué distancia total recorre?",
+            "opciones": [
+                "100 m",
+                "140 m",
+                "160 m",
+                "170 m"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Se calcula por tramos: $d_1=12\\cdot10=120$ m y $d_2=4\\cdot5=20$ m. Distancia total: $120+20=140$ m."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál opción describe una velocidad y no una rapidez?",
+            "opciones": [
+                "90 km/h",
+                "12 m/s",
+                "50 km/h hacia el sur",
+                "4 m/s en promedio"
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "La velocidad exige magnitud y dirección. Solo la tercera opción incluye dirección (hacia el sur)."
         }
     ],
     "content-historia-1": [
