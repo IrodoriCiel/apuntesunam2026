@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -34,11 +34,11 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260306-1';
+        window.__APP_VERSION = '20260311-2';
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260306-1">
+    <link rel="stylesheet" href="./css/styles.css?v=20260311-2">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -168,6 +168,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-espanol-3"
+                            onclick="switchClass('content-espanol-3', this, 'btn-espanol')"
+                            data-class-id="content-espanol-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Modificadores y La Oración
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -263,6 +271,14 @@
                             onclick="switchClass('content-fisica-1', this, 'btn-fisica')"
                             data-class-id="content-fisica-1">
                             <i class="fa-solid fa-book-open"></i> Clase 1: Magnitudes y MRU
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-fisica-2"
+                            onclick="switchClass('content-fisica-2', this, 'btn-fisica')"
+                            data-class-id="content-fisica-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: MRUA, Caída Libre y Vectores
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -1587,6 +1603,74 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/9xxBgVgSfWc"
             },
+            "content-fisica-2": {
+                title: "Apuntes de Física",
+                titleIconLeft: "fa-atom",
+                titleIconRight: "fa-car-burst",
+                titleStyle: "color: #0e7490;",
+                mainTopicId: "mainTopicFisica2",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Física",
+                mainTopicIcon1: "fa-gauge-high",
+                mainTopicIcon2: "fa-arrow-trend-up",
+                mainTopicSubtitle: "Clase 2: MRUA, Caída Libre y Dinámica Vectorial",
+                branches: [
+                    {
+                        id: "nodes-fis2-1",
+                        topicIdx: 1,
+                        title: "1. Movimiento Rectilíneo Uniformemente Acelerado (MRUA)",
+                        icon: "fa-car-side",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición y Diferencia con MRU", content: "<p>A diferencia del MRU (velocidad constante), en el MRUA existen <b>cambios de velocidad</b>. La aceleración (<b>$a$</b>) es el cambio de velocidad que experimenta un cuerpo en un tiempo determinado.</p><p><b>Unidades:</b> Se mide en $m/s^2$.</p>" },
+                            { icon: "fa-hashtag", delay: "0.2s", title: "Significado Técnico de la Aceleración", content: "<div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>PREGUNTA DE EXAMEN:</b><br>Si un objeto tiene una aceleración de $10\\, m/s^2$, significa que su velocidad <b>aumenta $10\\, m/s$ cada segundo</b>. Es la interpretación directa que busca la UNAM.</div>" },
+                            { icon: "fa-square-root-variable", delay: "0.3s", title: "Fórmulas de MRUA", content: "<p>Las tres fórmulas fundamentales del MRUA son:</p><ul><li><b>Aceleración:</b> $a = \\dfrac{V_f - V_i}{t}$</li><li><b>Distancia:</b> $d = V_i \\cdot t + \\dfrac{a \\cdot t^2}{2}$</li><li><b>Velocidad Final:</b> $V_f^2 = V_i^2 + 2ad$</li></ul><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>La mayoría de los problemas de la UNAM se resuelven con la primera fórmula: $a = (V_f - V_i) / t$. No te compliques con despejes largos.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis2-2",
+                        topicIdx: 2,
+                        title: "2. Interpretación de Gráficas de Movimiento",
+                        icon: "fa-chart-line",
+                        subnodes: [
+                            { icon: "fa-table", delay: "0.1s", title: "Tabla Comparativa MRU vs MRUA", content: "<p>Para identificar el tipo de movimiento en una gráfica, usa este criterio:</p><ul><li><b>Gráfica Distancia-Tiempo ($d$-$t$):</b><br>&#8226; MRU: <b>Línea diagonal recta.</b><br>&#8226; MRUA: <b>Curva (Parábola).</b></li><li><b>Gráfica Velocidad-Tiempo ($v$-$t$):</b><br>&#8226; MRU: <b>Línea horizontal plana.</b><br>&#8226; MRUA: <b>Línea diagonal recta.</b></li></ul>" },
+                            { icon: "fa-star", delay: "0.2s", title: "Regla de Oro de Gráficas", content: "<div class='exam-tip'><i class='fa-solid fa-star'></i> <b>REGLA DE ORO:</b><br>Siempre que veas una <b>curva en cualquier gráfica de movimiento</b>, se trata de un <b>MRUA (aceleración)</b>. Si es línea recta, analiza su posición (horizontal o diagonal) según la gráfica que sea.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis2-3",
+                        topicIdx: 3,
+                        title: "3. Caída Libre",
+                        icon: "fa-apple-whole",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición", content: "<p>Es un caso particular del MRUA donde un objeto <b>desciende por efecto de la gravedad</b>. La gravedad ($g$) es una aceleración cuyo valor es $9.81\\, m/s^2$.</p>" },
+                            { icon: "fa-calculator", delay: "0.2s", title: "Atajo para el Examen", content: "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Redondea $g$ a <b>$10\\, m/s^2$</b> para agilizar los cálculos mentales. Los resultados en los incisos de la UNAM siempre serán muy cercanos a este valor redondeado.</div>" },
+                            { icon: "fa-equals", delay: "0.3s", title: "Condición Inicial y Fórmula", content: "<ul><li><b>Velocidad Inicial ($V_i$):</b> Siempre es $0$ porque el objeto parte del reposo.</li><li><b>Fórmula principal:</b> $V = \\sqrt{2g \\cdot h}$</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis2-4",
+                        topicIdx: 4,
+                        title: "4. Vectores y Dinámica",
+                        icon: "fa-arrow-up-right-dots",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Los 3 Elementos de un Vector", content: "<p>Un vector se representa con una flecha y tiene tres elementos fundamentales:</p><ul><li><b>Magnitud:</b> El valor numérico y la unidad (ej. $20\\,N$).</li><li><b>Dirección:</b> El ángulo de inclinación respecto al eje (medido con transportador).</li><li><b>Sentido:</b> Hacia dónde apunta la punta de la flecha (positivo o negativo).</li></ul>" },
+                            { icon: "fa-plus-minus", delay: "0.2s", title: "Suma de Fuerzas y Regla de Signos", content: "<p>Si se aplican varias fuerzas sobre un objeto, la <b>fuerza resultante es la suma vectorial</b> de todas.</p><ul><li><b>Hacia la Derecha:</b> Positivo ($+$).</li><li><b>Hacia la Izquierda:</b> Negativo ($-$).</li><li><b>Misma dirección:</b> Se restan las magnitudes.</li><li><b>Direcciones opuestas:</b> Se suman las magnitudes.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis2-5",
+                        topicIdx: 2,
+                        title: "5. Tips Adicionales para el Reactivo UNAM",
+                        icon: "fa-bullseye",
+                        subnodes: [
+                            { icon: "fa-ruler", delay: "0.1s", title: "Sistema de Unidades", content: "<p>La UNAM utiliza casi exclusivamente el <b>Sistema Internacional</b> ($m, s, kg, N$). Ignora pies, pulgadas u onzas si aparecen en otros materiales de estudio.</p>" },
+                            { icon: "fa-drafting-compass", delay: "0.2s", title: "Ángulos Clave para el Examen", content: "<div class='exam-tip'><i class='fa-solid fa-drafting-compass'></i> <b>ÁNGULOS CLAVE:</b><br>Los únicos ángulos que vienen para calcular (descomposición de vectores) sin calculadora son <b>$30°$, $45°$ y $60°$</b>. Si el ángulo dado es alguno de estos, úsalo con los valores trigonométricos de memoria.</div>" },
+                            { icon: "fa-equals", delay: "0.3s", title: "Despejes Rápidos", content: "<p>Recuerda que si un número está <b>multiplicando o dividiendo</b> y pasa al otro lado de la igualdad, su <b>signo NO cambia; solo cambia la operación</b> (de multiplicar a dividir o viceversa).</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/CUzpmtQc9rw"
+            },
             "content-espanol-1": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
@@ -1690,6 +1774,78 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/bggWkzK8R6o"
+            },
+            "content-espanol-3": {
+                title: "Apuntes de Español",
+                titleIconLeft: "fa-comment-dots",
+                titleIconRight: "fa-link",
+                titleStyle: "color: #0369a1;",
+                mainTopicId: "mainTopicEspanol3",
+                mainTopicClass: "espanol-topic",
+                mainTopicTitle: "Español",
+                mainTopicIcon1: "fa-puzzle-piece",
+                mainTopicIcon2: "fa-pen-nib",
+                mainTopicSubtitle: "Clase 3: Modificadores, Enlaces y La Oración",
+                branches: [
+                    {
+                        id: "nodes-esp3-1",
+                        topicIdx: 1,
+                        title: "1. Modificadores: Adverbios",
+                        icon: "fa-arrows-alt-h",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición", content: "<p>Son palabras que <b>modifican al verbo, al adjetivo o a otro adverbio</b>.</p>" },
+                            { icon: "fa-magnifying-glass", delay: "0.2s", title: "Preguntas Clave para Identificarlos", content: "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Los adverbios responden a cuatro preguntas fundamentales:<br><b>¿Cuándo?</b> (Tiempo) &#8594; Ej: <i>Ayer</i>, <i>pronto</i><br><b>¿Dónde?</b> (Lugar) &#8594; Ej: <i>Aquí</i>, <i>cerca</i><br><b>¿Cómo?</b> (Modo) &#8594; Ej: <i>Claramente</i>, <i>bien</i><br><b>¿Cuánto?</b> (Cantidad) &#8594; Ej: <i>Muy</i>, <i>poco</i></div>" },
+                            { icon: "fa-list", delay: "0.3s", title: "Ejemplos", content: "<p>Ejemplos de adverbios frecuentes en el examen:</p>", examples: ["Ayer (tiempo)", "Aquí (lugar)", "Claramente (modo)", "Muy (cantidad)", "Poco (cantidad)"] }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp3-2",
+                        topicIdx: 2,
+                        title: "2. Enlaces: Preposiciones",
+                        icon: "fa-link",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición", content: "<p>Palabras que sirven para <b>unir palabras y establecer relaciones</b> entre ellas dentro de la oración.</p>" },
+                            { icon: "fa-rectangle-list", delay: "0.2s", title: "Lista Completa (De cajón)", content: "<div class='exam-tip'><i class='fa-solid fa-table-list'></i> <b>LISTA OBLIGATORIA DE PREPOSICIONES:</b><br><b>A, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras.</b><br><br>La UNAM suele preguntar por el uso correcto de estas en oraciones o si falta alguna para que el texto tenga coherencia.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp3-3",
+                        topicIdx: 3,
+                        title: "3. Enlaces: Conjunciones e Interjecciones",
+                        icon: "fa-code-merge",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Conjunciones", content: "<p>Sirven para <b>enlazar oraciones o elementos de una lista</b>.</p><p><b>Clave:</b> Y, e, o, u, ni (negativa), pero, porque.</p>" },
+                            { icon: "fa-triangle-exclamation", delay: "0.2s", title: "Indicadores Argumentativos", content: "<div class='exam-tip'><i class='fa-solid fa-key'></i> <b>TRAMPA FRECUENTE:</b><br>Si ves un <b>'pero'</b> o un <b>'porque'</b> en un texto, es un indicador de que podrías estar ante un texto de tipo <b>argumentativo</b>. Úsalo como pista de identificación rápida.</div>" },
+                            { icon: "fa-face-surprise", delay: "0.3s", title: "Interjecciones", content: "<p>Son enunciados exclamativos que <b>expresan emociones</b> (¡Ay!, ¡Uf!, ¡Rayos!). <b>No informan, solo expresan.</b> Se identifican siempre por los signos de exclamación.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp3-4",
+                        topicIdx: 4,
+                        title: "4. La Oración y sus Elementos",
+                        icon: "fa-diagram-project",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Definición Técnica", content: "<p><b>Estructura gramatical con sentido completo</b> que se compone de Sujeto, Verbo y Predicado.</p><div class='exam-tip'><i class='fa-solid fa-circle-info'></i> <b>NOTA DE EXAMEN:</b><br>En algunas opciones puede aparecer solo como <b>Sujeto + Predicado</b>. Ambas definiciones son válidas según el reactivo.</div>" },
+                            { icon: "fa-user", delay: "0.2s", title: "El Sujeto: Tipos por Visibilidad", content: "<p><b>El sujeto es quien realiza la acción.</b></p><ul><li><b>Expreso o Explícito:</b> Está escrito en la oración. Ej: <i>'Mozart compuso...'</i>.</li><li><b>Tácito, Implícito o Morfológico:</b> No está escrito; se deduce por la terminación del verbo. Ej: <i>'Comeremos pizza'</i> &#8594; Sujeto: <b>Nosotros</b>.</li></ul>" },
+                            { icon: "fa-users", delay: "0.3s", title: "El Sujeto: Tipos por Estructura", content: "<ul><li><b>Simple:</b> Tiene un solo núcleo. <i>Atención: 'Los albañiles' es sujeto simple aunque sea plural.</i></li><li><b>Compuesto:</b> Tiene dos o más núcleos. Ej: <i>'Teresa y Antonio vendrán'</i>.</li></ul>" },
+                            { icon: "fa-tag", delay: "0.4s", title: "Modificadores del Sujeto", content: "<ul><li><b>Aposición:</b> Información extra del sujeto que va entre comas. Ej: <i>'Patricio, <b>el pintor</b>, vendrá'</i>.</li><li><b>Complemento Adnominal:</b> Se identifica porque <b>inicia con una preposición</b>. Ej: <i>'Las notas <b>de los alumnos</b>'</i>.</li></ul><div class='exam-tip'><i class='fa-solid fa-magnifying-glass'></i> <b>CLAVE PARA EL EXAMEN:</b><br>Si la oración es larga (ej. 'Los niños de piel delicada experimentan...'), no te quedes solo con la primera palabra. El sujeto es <b>todo el bloque que realiza la acción</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp3-5",
+                        topicIdx: 1,
+                        title: "5. El Predicado y su Núcleo",
+                        icon: "fa-bolt",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición", content: "<p>El predicado es <b>todo lo que se dice del sujeto</b>.</p>" },
+                            { icon: "fa-bullseye", delay: "0.2s", title: "Regla de Oro: Núcleo del Predicado", content: "<div class='exam-tip'><i class='fa-solid fa-star'></i> <b>REGLA DE ORO:</b><br>El núcleo del predicado (NP) <b>siempre es el VERBO CONJUGADO</b>.<br><br><b>Si hay dos verbos</b> (ej. 'Estuvieron ensayando'), <b>el núcleo son ambos</b>.<br><br><b>Trampa:</b> Un infinitivo (-ar, -er, -ir) por sí solo <b>NUNCA</b> es el núcleo; debe estar conjugado (correremos, cantas).</div>" },
+                            { icon: "fa-layer-group", delay: "0.3s", title: "Tipos de Predicado", content: "<ul><li><b>Predicado Nominal:</b> El verbo es copulativo: <b>Ser, Estar o Parecer</b>. Ej: <i>'Sabina es pintora'</i>.</li><li><b>Predicado Verbal:</b> Cualquier otro verbo que indique acción. Ej: <i>'Leo barrió su casa'</i>.</li></ul>" },
+                            { icon: "fa-road", delay: "0.4s", title: "Estrategia: Sujeto Tácito", content: "<div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>ESTRATEGIA CLAVE:</b><br>Si la oración empieza con el verbo (ej. 'Compramos boletos'), busca en los incisos del examen los pronombres: <b>Yo, Tú, Él, Nosotros, Ustedes, Ellos</b>. El que coincida con la conjugación verbal es el sujeto tácito correcto.</div>" },
+                            { icon: "fa-compress-alt", delay: "0.5s", title: "Oración Simple vs. Compuesta", content: "<ul><li><b>Simple:</b> Tiene <b>1 solo verbo conjugado</b>.</li><li><b>Compuesta:</b> Tiene <b>2 o más verbos conjugados</b> unidos por conjunciones (y, o, pero).</li></ul>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/mluoMGm9BCk"
             },
             "content-historia-2": {
                 title: "Apuntes de Historia de México",

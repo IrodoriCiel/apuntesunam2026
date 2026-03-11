@@ -72,6 +72,62 @@ const flashcardsDatabase = [
         "tema": "Formas del Discurso",
         "asignatura": "Español"
     },
+    {
+        "id": "esp-011",
+        "pregunta": "¿Qué tipo de palabra es un adverbio y a qué preguntas responde?",
+        "respuesta": "Modifica al verbo, adjetivo u otro adverbio. Responde a: ¿Cuándo? (tiempo), ¿Dónde? (lugar), ¿Cómo? (modo), ¿Cuánto? (cantidad).",
+        "tema": "Modificadores y Enlaces",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-012",
+        "pregunta": "¿Cuáles son todas las preposiciones de 'cajón' que debes memorizar?",
+        "respuesta": "A, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras.",
+        "tema": "Modificadores y Enlaces",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-013",
+        "pregunta": "¿Cuál es la función gramatical de las conjunciones y cuáles son las más importantes?",
+        "respuesta": "Enlazan oraciones o elementos de una lista. Las más importantes: Y, e, o, u, ni, pero, porque.",
+        "tema": "Modificadores y Enlaces",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-014",
+        "pregunta": "¿Qué es una interjección y en qué se diferencia de las conjunciones?",
+        "respuesta": "Enunciado exclamativo que expresa emociones (¡Ay!, ¡Uf!). A diferencia de las conjunciones, NO enlaza; solo expresa.",
+        "tema": "Modificadores y Enlaces",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-015",
+        "pregunta": "¿Cuáles son los dos tipos de sujeto según su visibilidad?",
+        "respuesta": "Expreso (escrito en la oración) y Tácito/Implícito (no escrito, se deduce por la conjugación del verbo).",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-016",
+        "pregunta": "¿Cuáles son los dos tipos de sujeto según su estructura?",
+        "respuesta": "Simple (un solo núcleo, aunque sea plural) y Compuesto (dos o más núcleos, ej. 'Teresa y Antonio').",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-017",
+        "pregunta": "¿Cuál es la Regla de Oro del Núcleo del Predicado?",
+        "respuesta": "El núcleo siempre es el VERBO CONJUGADO. Si hay dos verbos (perífrasis verbal), ambos son el núcleo. Un infinitivo solo NUNCA es núcleo.",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-018",
+        "pregunta": "¿Cuál es la diferencia entre Predicado Nominal y Predicado Verbal?",
+        "respuesta": "Nominal: verbo copulativo (Ser, Estar, Parecer). Ej: 'es pintora'. Verbal: verbo de acción. Ej: 'barrió su casa'.",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
 
     // ==========================================
     // HISTORIA DE MÉXICO (14 CONCEPTOS)
@@ -548,6 +604,62 @@ const flashcardsDatabase = [
         "pregunta": "En velocidad relativa, ¿cuándo se suman y cuándo se restan velocidades?",
         "respuesta": "Misma dirección: se restan. Direcciones opuestas: se suman.",
         "tema": "Velocidad Relativa",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-006",
+        "pregunta": "¿Qué es la aceleración y en qué unidades se mide?",
+        "respuesta": "Es el cambio de velocidad que experimenta un cuerpo en un tiempo determinado. Se mide en $m/s^2$.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-007",
+        "pregunta": "¿Qué significa tener una aceleración de $10\, m/s^2$?",
+        "respuesta": "Que la velocidad del cuerpo aumenta 10 m/s por cada segundo que pasa.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-008",
+        "pregunta": "¿Cuáles son las 3 fórmulas fundamentales del MRUA?",
+        "respuesta": "1) $a=(V_f-V_i)/t$  2) $d=V_i \\cdot t + at^2/2$  3) $V_f^2=V_i^2+2ad$. La más usada en UNAM es la primera.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-009",
+        "pregunta": "Regla de Oro para identificar MRUA en una gráfica de movimiento:",
+        "respuesta": "Si ves una CURVA en cualquier gráfica de movimiento → MRUA. Línea recta diagonal en v-t → también MRUA.",
+        "tema": "Gráficas de Movimiento",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-010",
+        "pregunta": "En gráfica d-t: ¿qué forma tiene MRU vs MRUA?",
+        "respuesta": "MRU → línea diagonal recta. MRUA → curva (parábola).",
+        "tema": "Gráficas de Movimiento",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-011",
+        "pregunta": "¿Qué es la caída libre y cuál es su fórmula principal?",
+        "respuesta": "Caso particular del MRUA por gravedad ($g \\approx 10\, m/s^2$). $V_i=0$. Fórmula: $V=\\sqrt{2gh}$.",
+        "tema": "Caída Libre",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-012",
+        "pregunta": "¿Cuáles son los 3 elementos de un vector?",
+        "respuesta": "1) Magnitud (valor numérico + unidad), 2) Dirección (ángulo), 3) Sentido (adónde apunta la flecha).",
+        "tema": "Vectores y Dinámica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-013",
+        "pregunta": "Convención de signos para fuerzas vectoriales según la clase:",
+        "respuesta": "Derecha → positivo (+). Izquierda → negativo (-). Misma dirección: se restan. Opuestas: se suman.",
+        "tema": "Vectores y Dinámica",
         "asignatura": "Física"
     },
 

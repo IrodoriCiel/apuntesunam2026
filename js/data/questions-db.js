@@ -1,4 +1,4 @@
-﻿const unamQuestions = {
+const unamQuestions = {
     "content-matematicas-3": [],
     "content-matematicas-7": [
         {
@@ -29,6 +29,32 @@
             ],
             "respuesta": 2,
             "retroalimentacion": "Forma rápida de resolverla: en una gráfica posición-tiempo, la pendiente equivale a velocidad. Si la gráfica es una recta con la misma inclinación durante todo el intervalo, la velocidad se mantiene constante. Por eso la opción correcta es velocidad constante."
+        }
+    ],
+    "content-fisica-2": [
+        {
+            "numero": 3,
+            "pregunta": "Sobre un objeto de 100 kg se aplican dos fuerzas (una de 20 N y otra de 30 N) con la misma dirección pero de sentido contrario; ¿cuál es la magnitud de la aceleración del objeto?",
+            "opciones": [
+                "$0.1\\, m/s^2$",
+                "$0.2\\, m/s^2$",
+                "$0.3\\, m/s^2$",
+                "$0.5\\, m/s^2$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "Cuando dos fuerzas actúan en sentido contrario, se restan: 30 N - 20 N = 10 N (fuerza neta). Luego se aplica $a = F/m = 10/100 = 0.1\\, m/s^2$. La regla de signos de la clase indica que fuerzas en direcciones opuestas se restan."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Un objeto se suelta desde el reposo a una altura $H$ sobre el suelo. Determina la relación matemática que permita obtener la rapidez que tendrá el objeto al momento que ha caído una cierta distancia $h$.",
+            "opciones": [
+                "$v = \\sqrt{2gh}$",
+                "$v = \\sqrt{2g(H-h)}$",
+                "$v = \\sqrt{2gH}$",
+                "$v = \\sqrt{2g(h-H)}$"
+            ],
+            "respuesta": 0,
+            "retroalimentacion": "La fórmula de caída libre es $V = \\sqrt{2g \\cdot h}$, donde $h$ es la distancia caída (no la altura total $H$). Como el objeto parte del reposo ($V_i = 0$), solo se necesita la distancia recorrida $h$ para obtener la rapidez en ese punto."
         }
     ],
     "content-historia-1": [
@@ -96,6 +122,22 @@
                 "Quien no quiere pensar es un fanático porque deja que otros piensen por él; quien no puede pensar es un idiota porque deja sus decisiones en manos de otros; quien no osa pensar es un cobarde porque deja su vida en manos de alguien más."
             ], "respuesta": 3,
             "retroalimentacion": "El texto argumentativo defiende una postura sustentándola con razones. El último fragmento usa continuamente conectores causales ('porque...') para justificar una tesis o dar una crítica."
+        }
+    ],
+    "content-espanol-3": [
+        {
+            "numero": 79,
+            "pregunta": "En el siguiente párrafo lo que está en letra mayúscula es una oración<br><br><i>\"Todas las tardes el arquitecto tomaba el café QUE LE PREPARABAN EN LA HOSTERÍA y luego repasaba el diario de palmo a palmo.\"</i>",
+            "opciones": ["coordinada.", "secundaria.", "principal.", "yuxtapuesta."],
+            "respuesta": 1,
+            "retroalimentacion": "La oración en mayúsculas ('Que le preparaban en la hostería') no tiene sentido por sí sola; depende de la oración principal ('el arquitecto tomaba el café'). Cuando una oración depende de otra para tener sentido completo, se denomina oración secundaria o subordinada."
+        },
+        {
+            "numero": 80,
+            "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el<br><br><i>Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.</i>",
+            "opciones": ["complemento indirecto.", "complemento circunstancial.", "complemento directo.", "predicado nominal."],
+            "respuesta": 1,
+            "retroalimentacion": "El complemento circunstancial indica el lugar, tiempo o modo de la acción. En este caso, 'A LAS AFUERAS DEL PALACIO' responde a la pregunta ¿Dónde? (lugar) y comienza con una preposición (A), característica clave de un complemento circunstancial."
         }
     ],
     "content-literatura-1": [
@@ -548,6 +590,68 @@ const practiceQuestions = {
             "retroalimentacion": "El área bajo una gráfica v-t corresponde al desplazamiento/distancia recorrida en ese intervalo de tiempo."
         }
     ],
+    "content-fisica-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es la principal diferencia entre el MRU y el MRUA?",
+            "opciones": [
+                "En el MRU hay aceleración, en el MRUA no.",
+                "En el MRUA la velocidad cambia; en el MRU la velocidad es constante.",
+                "El MRUA solo aplica en caída libre.",
+                "El MRU y el MRUA son lo mismo, solo cambia el nombre."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "La diferencia fundamental es que en el MRUA existen cambios de velocidad (aceleración), mientras que en el MRU la velocidad es constante y no cambia en ningún momento del movimiento."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Un cuerpo tiene una aceleración de $5\\, m/s^2$. ¿Qué significa esto físicamente?",
+            "opciones": [
+                "El cuerpo recorre 5 metros cada segundo.",
+                "El cuerpo tiene una velocidad de 5 m/s.",
+                "La velocidad del cuerpo aumenta 5 m/s cada segundo.",
+                "El cuerpo tarda 5 segundos en detenerse."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "La aceleración indica el cambio de velocidad por unidad de tiempo. Si $a = 5\\, m/s^2$, la velocidad del cuerpo aumenta $5\\, m/s$ por cada segundo transcurrido. Esta es la interpretación técnica directa que exige la UNAM."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En caída libre, ¿cuál es el valor de la velocidad inicial ($V_i$) de un objeto que se suelta desde el reposo?",
+            "opciones": [
+                "$9.81\\, m/s$",
+                "$10\\, m/s$",
+                "$0\\, m/s$",
+                "Depende de la altura desde la que se suelta."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "En caída libre, el objeto parte del reposo absoluto, por lo tanto su velocidad inicial es siempre $V_i = 0$. La gravedad ($g$) actúa como aceleración, no como velocidad inicial."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En una gráfica de distancia vs. tiempo ($d$-$t$), ¿qué forma tiene la línea si el movimiento es MRUA (con aceleración)?",
+            "opciones": [
+                "Línea horizontal plana.",
+                "Línea diagonal recta.",
+                "Curva o parábola.",
+                "Línea vertical."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Por la Regla de Oro: una curva en cualquier gráfica de movimiento indica MRUA. En la gráfica $d$-$t$, el MRU produce una línea recta diagonal y el MRUA produce una curva (parábola)."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Dos fuerzas actúan sobre el mismo objeto: una de $15\\,N$ hacia la derecha y otra de $10\\,N$ hacia la izquierda. ¿Cuál es la fuerza resultante?",
+            "opciones": [
+                "$25\\,N$ hacia la derecha.",
+                "$5\\,N$ hacia la derecha.",
+                "$25\\,N$ hacia la izquierda.",
+                "$5\\,N$ hacia la izquierda."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Por la regla de signos: hacia la derecha es positivo (+15 N), hacia la izquierda es negativo (-10 N). La suma vectorial es: $+15 + (-10) = +5\\,N$. El signo positivo indica que la fuerza resultante va hacia la derecha."
+        }
+    ],
     "content-historia-1": [
         {
             "numero": 1,
@@ -768,6 +872,43 @@ const practiceQuestions = {
             "opciones": ["El Artículo.", "El Verbo vivo.", "El Pronombre.", "El Nexo causal."],
             "respuesta": 2,
             "retroalimentacion": "Los pronombres (personales como él/nosotros o indirectos como me/te) asumen el lugar del sustantivo en la oración."
+        }
+    ],
+    "content-espanol-3": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál de las siguientes palabras es un adverbio de modo?",
+            "opciones": ["Ayer.", "Aquí.", "Claramente.", "Muy."],
+            "respuesta": 2,
+            "retroalimentacion": "El adverbio de modo responde a la pregunta ¿Cómo? La palabra 'claramente' indica la manera en que se realiza la acción. 'Ayer' es de tiempo, 'aquí' es de lugar y 'muy' es de cantidad."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Cuál de las siguientes es una preposición según la lista que debe memorizarse para el examen?",
+            "opciones": ["Pero.", "Desde.", "Claramente.", "Ayer."],
+            "respuesta": 1,
+            "retroalimentacion": "'Desde' es una preposición de la lista obligatoria (A, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras). Las demás opciones corresponden a otras categorías gramaticales."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En la oración 'Compramos boletos para el concierto', el sujeto es:",
+            "opciones": ["Expreso o explícito.", "Tácito o morfológico.", "Compuesto.", "Adnominal."],
+            "respuesta": 1,
+            "retroalimentacion": "La oración comienza directamente con el verbo 'compramos', sin que aparezca escrito quién realiza la acción. Deducimos por la conjugación que es 'Nosotros'. Cuando el sujeto no está escrito y se deduce del verbo, se llama sujeto tácito, implícito o morfológico."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En la oración 'Sabina es bailarina', el tipo de predicado es:",
+            "opciones": ["Verbal, porque hay un verbo de acción.", "Nominal, porque el verbo es copulativo (ser).", "Simple, porque tiene un solo núcleo.", "Compuesto, porque tiene sujeto y verbo."],
+            "respuesta": 1,
+            "retroalimentacion": "El predicado nominal se identifica porque el verbo principal es uno de los tres copulativos: Ser, Estar o Parecer. En este caso, 'es' es el verbo copulativo, por lo tanto el predicado es nominal."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuántos verbos conjugados debe tener una oración simple?",
+            "opciones": ["Ninguno.", "Exactamente 1.", "2 o más.", "Al menos 3."],
+            "respuesta": 1,
+            "retroalimentacion": "Por definición, una oración simple tiene únicamente 1 verbo conjugado. Cuando una oración tiene 2 o más verbos conjugados unidos por conjunciones, pasa a ser una oración compuesta."
         }
     ],
     "content-quimica-1": [
@@ -1375,6 +1516,68 @@ const practiceLevel2Questions = {
             "retroalimentacion": "La velocidad exige magnitud y dirección. Solo la tercera opción incluye dirección (hacia el sur)."
         }
     ],
+    "content-fisica-2": [
+        {
+            "numero": 1,
+            "pregunta": "Un auto parte del reposo y alcanza una velocidad de $30\\,m/s$ en $6\\,s$. ¿Cuál es su aceleración?",
+            "opciones": [
+                "$180\\,m/s^2$",
+                "$5\\,m/s^2$",
+                "$0.2\\,m/s^2$",
+                "$36\\,m/s^2$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Se aplica la fórmula base del MRUA: $a = (V_f - V_i)/t = (30 - 0)/6 = 5\\,m/s^2$. El auto parte del reposo, entonces $V_i = 0$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Un objeto cae libremente desde una altura de $20\\,m$. Usando $g = 10\\,m/s^2$, ¿cuál es su velocidad al llegar al suelo?",
+            "opciones": [
+                "$10\\,m/s$",
+                "$200\\,m/s$",
+                "$20\\,m/s$",
+                "$2\\,m/s$"
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Se aplica la fórmula de caída libre: $V = \\sqrt{2 \\cdot g \\cdot h} = \\sqrt{2 \\cdot 10 \\cdot 20} = \\sqrt{400} = 20\\,m/s$. Siempre se usa $g \\approx 10\\,m/s^2$ para agilizar el cálculo."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En una gráfica de velocidad vs. tiempo ($v$-$t$), se observa una línea inclinada (diagonal) de pendiente positiva. ¿Qué tipo de movimiento describe?",
+            "opciones": [
+                "MRU, porque hay una línea recta.",
+                "MRUA, porque la línea diagonal en $v$-$t$ indica velocidad que cambia (aceleración).",
+                "Reposo, porque la línea no es horizontal.",
+                "Caída libre exclusivamente."
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "En la gráfica $v$-$t$: MRU produce línea HORIZONTAL (velocidad constante), mientras MRUA produce línea DIAGONAL (velocidad que aumenta o disminuye). Una diagonal en $v$-$t$ siempre significa aceleración (MRUA)."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Sobre un objeto actúan tres fuerzas: $+40\\,N$, $-15\\,N$ y $+5\\,N$ (signos según la convención de la clase). ¿Cuál es la fuerza resultante?",
+            "opciones": [
+                "$60\\,N$ positivos.",
+                "$20\\,N$ positivos.",
+                "$30\\,N$ positivos.",
+                "$-20\\,N$ negativos."
+            ],
+            "respuesta": 2,
+            "retroalimentacion": "Se suman algebraicamente según los signos: $+40 + (-15) + (+5) = 40 - 15 + 5 = 30\\,N$. El resultado positivo indica que la fuerza neta va hacia la derecha (positivo)."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Un vehículo viaja a $20\\,m/s$ y frena uniformemente hasta detenerse en $4\\,s$. ¿Cuál es la magnitud de su desaceleración?",
+            "opciones": [
+                "$80\\,m/s^2$",
+                "$5\\,m/s^2$",
+                "$0.2\\,m/s^2$",
+                "$16\\,m/s^2$"
+            ],
+            "respuesta": 1,
+            "retroalimentacion": "Se usa $a = (V_f - V_i)/t = (0 - 20)/4 = -5\\,m/s^2$. El signo negativo indica desaceleración (frenado). La magnitud de la desaceleración es $5\\,m/s^2$."
+        }
+    ],
     "content-historia-1": [
         {
             "numero": 1,
@@ -1605,6 +1808,43 @@ const practiceLevel2Questions = {
             "opciones": ["Prosopografía.", "Etopeya.", "Topografía.", "Cronografía."],
             "respuesta": 1,
             "retroalimentacion": "La Etopeya se reserva para retratar las virtudes, mentalidad, rasgos psicológicos y morales, a diferencia de la prosopografía (físico puro)."
+        }
+    ],
+    "content-espanol-3": [
+        {
+            "numero": 1,
+            "pregunta": "En la oración 'Los alumnos de tercer año estudiaron toda la noche', el sujeto es:",
+            "opciones": ["Los alumnos.", "Los alumnos de tercer año.", "Estudiaron toda la noche.", "De tercer año."],
+            "respuesta": 1,
+            "retroalimentacion": "El sujeto no es solo 'Los alumnos' (primera palabra); es el bloque completo 'Los alumnos de tercer año', ya que 'de tercer año' es un Complemento Adnominal que forma parte del sujeto total. La estrategia clave es no quedarse con la primera palabra en oraciones largas."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Identifica el tipo de sujeto en la siguiente oración: 'Teresa y Antonio organizaron la exposición'.",
+            "opciones": ["Sujeto simple, porque la oración es corta.", "Sujeto tácito, porque es difícil de identificar.", "Sujeto compuesto, porque tiene dos núcleos: Teresa y Antonio.", "Sujeto expreso, porque está explícitamente escrito."],
+            "respuesta": 2,
+            "retroalimentacion": "El sujeto es compuesto porque tiene dos núcleos coordinados: 'Teresa' y 'Antonio'. Aunque ambas opciones C y D parecen válidas, la clasificación estructural es compuesto (por los núcleos). La clasificación por visibilidad (expreso) no es la respuesta más precisa al preguntarse por el tipo de estructura."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál de los siguientes enunciados contiene una oración con predicado VERBAL y sujeto TÁCITO?",
+            "opciones": ["Mozart es considerado un genio.", "Corrimos hasta la esquina.", "La casa parece abandonada.", "El sol y la luna brillan juntos."],
+            "respuesta": 1,
+            "retroalimentacion": "'Corrimos hasta la esquina' tiene predicado verbal (correr indica acción, no es copulativo) y el sujeto 'Nosotros' está tácito (se deduce de la conjugación '-mos'). Las otras oraciones o tienen verbos copulativos (es, parece), sujeto expreso (Mozart, el sol y la luna), o ambos."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál de las siguientes interjecciones se diferencia de las conjunciones porque NO enlaza, sino que únicamente expresa una emoción?",
+            "opciones": ["Pero.", "Porque.", "¡Ay!", "Y."],
+            "respuesta": 2,
+            "retroalimentacion": "Las interjecciones como '¡Ay!' son enunciados exclamativos que solo expresan emociones sin transmitir información ni enlazar elementos. Las otras opciones (pero, porque, y) son conjunciones cuya función es enlazar oraciones o elementos de una lista."
+        },
+        {
+            "numero": 5,
+            "pregunta": "En la oración 'Estuvieron ensayando durante horas', ¿cuál es el núcleo del predicado?",
+            "opciones": ["Ensayando, porque es el verbo con más carga de significado.", "Estuvieron, porque es el único verbo conjugado.", "Estuvieron ensayando, porque ambos forman el núcleo juntos.", "Durante horas, porque indica el tiempo de la acción."],
+            "respuesta": 2,
+            "retroalimentacion": "La Regla de Oro indica que cuando hay dos verbos (uno conjugado + un verboide), ambos forman el núcleo del predicado juntos. 'Estuvieron' está conjugado y 'ensayando' es un gerundio; juntos constituyen una perífrasis verbal que funciona como núcleo único."
         }
     ],
     "content-quimica-1": [
