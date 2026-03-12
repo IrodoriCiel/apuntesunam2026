@@ -1,4 +1,4 @@
-﻿/* =====================================================
+/* =====================================================
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
@@ -2189,8 +2189,20 @@ function updateProfileProgress() {
             classes: Object.keys(appDatabase).filter(k => k.startsWith('content-matematicas'))
         },
         {
+            key: 'fisica', label: 'Física', icon: 'fa-atom', color: '#0891b2',
+            classes: Object.keys(appDatabase).filter(k => k.startsWith('content-fisica'))
+        },
+        {
             key: 'quimica', label: 'Química', icon: 'fa-flask', color: '#16a34a',
             classes: Object.keys(appDatabase).filter(k => k.startsWith('content-quimica'))
+        },
+        {
+            key: 'biologia', label: 'Biología', icon: 'fa-dna', color: '#d97706',
+            classes: Object.keys(appDatabase).filter(k => k.startsWith('content-biologia'))
+        },
+        {
+            key: 'hist-univ', label: 'Historia Univ.', icon: 'fa-globe', color: '#dc2626',
+            classes: Object.keys(appDatabase).filter(k => k.startsWith('content-hist-univ'))
         },
         {
             key: 'historia', label: 'Historia Méx.', icon: 'fa-earth-americas', color: '#b45309',

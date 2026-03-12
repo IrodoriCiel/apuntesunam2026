@@ -1095,6 +1095,80 @@ const practiceQuestions = {
             "respuesta": 3,
             "retroalimentacion": "Los aminoácidos se enlazan por enlace peptídico; en contraste, los carbohidratos usan enlace glucosídico y los lípidos enlace éster."
         }
+    ],
+    "content-historia-4": [
+        {
+            "numero": 1,
+            "pregunta": "Según la síntesis de la clase, ¿con qué región colinda la frontera norte de Mesoamérica?",
+            "opciones": ["Oasisamérica.", "Sudamérica.", "Región Andina.", "Aridoamérica."],
+            "respuesta": 3,
+            "retroalimentacion": "El norte de Mesoamérica colindaba fundamentalmente con Aridoamérica, donde se encontraban las culturas nómadas chichimecas."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En el contexto de las culturas mesoamericanas, ¿qué civilización aportó el uso matemático del cero y la predicción exacta de eclipses?",
+            "opciones": ["Olmecas.", "Mayas.", "Teotihuacanos.", "Mixtecos."],
+            "respuesta": 1,
+            "retroalimentacion": "Los Mayas fueron destacados matemáticos y astrónomos; sus avances más emblemáticos y preguntones son el uso del cero y el calendario preciso prediciendo eclipses."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Identifica las causas externas correctas que fungieron como antecedente e impulsaron el inicio del movimiento de Independencia:",
+            "opciones": ["La exclusión criolla y el descontento popular.", "Las Leyes de Indias y los Tratados de Córdoba.", "La Revolución Industrial y la caída de Tenochtitlan.", "La Ilustración (racionalismo) y la Revolución Francesa."],
+            "respuesta": 3,
+            "retroalimentacion": "La Ilustración y la Revolución Francesa, al promover las libertades del hombre y el pensamiento racional, fueron influencias o factores externos ineludibles para las colonias hispanas."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En el movimiento insurgente, ¿a qué etapa o caudillo corresponde la publicación de los 'Sentimientos de la Nación' y la Constitución de Apatzingán?",
+            "opciones": ["Al inicio, por Hidalgo.", "A la organización, por Morelos.", "A la resistencia, por Mina.", "A la consumación, por Iturbide."],
+            "respuesta": 1,
+            "retroalimentacion": "La etapa de Organización del movimiento de independencia fue magistralmente liderada por José María Morelos y Pavón, quien dotó al movimiento de un cuerpo legislativo y orden formal."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Tras consumarse la independencia de la Nueva España, ¿quién funge como el Primer Presidente (durante la República) en México?",
+            "opciones": ["Agustín de Iturbide.", "Antonio López de Santa Anna.", "Vicente Guerrero.", "Guadalupe Victoria."],
+            "respuesta": 3,
+            "retroalimentacion": "Ojo con la 'trampa crítica': Iturbide fue el primer mandatario o gobernante (como Emperador), pero Guadalupe Victoria (bajo la Constitución de 1824) fungió legalmente como el Primer Presidente."
+        }
+    ],
+    "content-hist-univ-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué movimiento intelectual del siglo XVIII consideró a la razón humana como el único y absoluto mecanismo para disipar la ignorancia?",
+            "opciones": ["La Escolástica.", "El Humanismo y el Renacimiento.", "La Ilustración.", "El Despotismo Ilustrado."],
+            "respuesta": 2,
+            "retroalimentacion": "La Ilustración (o Siglo de las Luces) fue el movimiento que colocó a la razón como motor central y absoluto para llegar al conocimiento y alcanzar el progreso social."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Identifica a qué corriente filosófica y temporalidad pertenece la revalorización antropológica conocida como humanismo, que desplazó el teocentrismo medieval:",
+            "opciones": ["Renacimiento (Siglo XV).", "Ilustración (Siglo XVIII).", "Feudalismo Central (Siglo XII).", "Reforma Protestante (Siglo XVI)."],
+            "respuesta": 0,
+            "retroalimentacion": "El humanismo es el pilar ideológico del Renacimiento (Siglo XV), el cual sitúa al Hombre (Antropocentrismo) por encima del dogma medieval para reflexionar intelectual y artísticamente."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué afirmación describe de manera correcta la naturaleza del Despotismo Ilustrado promovido por diversos reyes en Europa?",
+            "opciones": ["Fue un acuerdo democrático redactado por Diderot para abdicar el poder del Rey.", "Fueron reformas burguesas enfocadas en destruir permanentemente la monarquía.", "Fue la adopción de medidas modernas (educativas y económicas) bajo el absolutismo, sin otorgar derechos políticos a la población.", "Fue un movimiento eclesiástico con miras a resucitar los conocimientos clásicos y romanos."],
+            "respuesta": 2,
+            "retroalimentacion": "El Despotismo Ilustrado se resume en el lema 'Todo para el pueblo, pero sin el pueblo'. El rey aparenta modernizarse implementando mejoras sociales, pero conserva íntegro el control absolutista sin ninguna democracia real."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál de las siguientes es una causa fundamental originaria para la rebelión e independencia de las 13 colonias inglesas?",
+            "opciones": ["El deseo de establecer una monarquía unificada en Norteamérica liderada por los mecenas.", "El incremento inmoderado y forzoso en los impuestos locales como el del timbre y el té por Gran Bretaña.", "El ataque de Jorge III a la fortaleza de la Bastilla apoyado por Francia.", "El resurgimiento pacífico del oscurantismo impuesto por los puritanos."],
+            "respuesta": 1,
+            "retroalimentacion": "La causa principal que rompió años de tolerancia fue el excesivo control económico británico tras la Guerra de los Siete Años, castigando a las colonias con onerosos impuestos al comercio ordinario."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Selecciona la dupla que empata de manera correcta a un pensador ilustrado emblemático con su máxima obra legislativa o enciclopédica:",
+            "opciones": ["Buffon - El Espíritu de las leyes.", "Montesquieu - El Contrato Social.", "Voltaire - La Enciclopedia.", "Rousseau - El Contrato Social."],
+            "respuesta": 3,
+            "retroalimentacion": "Es memoria pura estipulada en la clase: Rousseau postuló la soberanía popular dentro de 'El Contrato Social'; la Enciclopedia es de Diderot; y la división de poderes de Montesquieu."
+        }
     ]
 };
 const practiceLevel2Questions = {
@@ -1992,7 +2066,7 @@ const practiceLevel2Questions = {
             "pregunta": "Si un inciso de examen te pregunta por un compuesto químico y entre las opciones se encuentra el Antimonio ($Sb$), de acuerdo con la trampa de la clase, ¿qué debes inferir del Antimonio?",
             "opciones": ["Es una mezcla homogénea.", "Es un compuesto complejo.", "Es un elemento puro de la tabla periódica.", "Es un isótopo del bismuto."],
             "respuesta": 2,
-            "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales (Kahoot) y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
+            "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
         }
     ],
     "content-biologia-1": [
@@ -2031,8 +2105,79 @@ const practiceLevel2Questions = {
             "respuesta": 2,
             "retroalimentacion": "Los fosfolípidos forman la bicapa de membrana gracias a su naturaleza anfipática: cabeza afín al agua y colas que repelen el agua."
         }
+    ],
+    "content-historia-4": [
+        {
+            "numero": 1,
+            "pregunta": "Identifica el orden cronológico correcto de los siguientes sucesos históricos durante el movimiento de Independencia:",
+            "opciones": ["Tratado de Córdoba, Constitución de Apatzingán, Guerra de Guerrillas, Ataque a la Alhóndiga.", "Ataque a la Alhóndiga, Guerra de Guerrillas, Tratado de Córdoba, Constitución de Apatzingán.", "Ataque a la Alhóndiga, Constitución de Apatzingán, Guerra de Guerrillas, Tratado de Córdoba.", "Constitución de Apatzingán, Ataque a la Alhóndiga, Guerra de Guerrillas, Tratado de Córdoba."],
+            "respuesta": 2,
+            "retroalimentacion": "El 'descarte visual' clásico exige que inicies con la Alhóndiga de Granaditas (Inicio) y termines con el Tratado de Córdoba (Consumación). La secuencia cronológica media es la Constitución de Apatzingán (Organización) y finalmente la Guerra de Guerrillas (Resistencia)."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Durante la Nueva España, ¿cuál fue la principal actividad económica y quién fue designado históricamente como el primer virrey central?",
+            "opciones": ["La agricultura - Hernán Cortés.", "La minería - Antonio de Mendoza.", "El comercio triangular - Carlos III.", "La minería - Agustín de Iturbide."],
+            "respuesta": 1,
+            "retroalimentacion": "De acuerdo con el apunte, la principal actividad fue la minería y el primer virrey oficialmente designado sobre el territorio fue Antonio de Mendoza."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué conceptos asocia correctamente las atribuciones de Teotihuacán y el control ceremonial Olmeca en Mesoamérica?",
+            "opciones": ["Teotihuacán fue su sistema económico y La Venta fue una capital Azteca.", "Teotihuacán significa 'Lugar de los dioses', mientras que los centros olmecas fueron La Venta, San Lorenzo y Tres Zapotes.", "Teotihuacán implementó el cero matemático y los Olmecas un sistema de gobierno democrático.", "Ambas culturas florecieron en un modelo sin jerarquías donde paulatinamente Kirchhoff reinó."],
+            "respuesta": 1,
+            "retroalimentacion": "Teotihuacán significa literalmente 'Lugar de los dioses'; y los tres centros ceremoniales obligatorios de recordar para los Olmecas son La Venta, San Lorenzo y Tres Zapotes."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué órdenes religiosas fueron las principales encargadas del proceso de evangelización hispana y qué grupo social fungió como la causa interna central del independentismo?",
+            "opciones": ["Franciscanos, Dominicos, Agustinos y Jesuitas – Criollos.", "Carmelitas, Capuchinos y Templarios – Peninsulares.", "Jesuitas y Claretianos – Mestizos.", "Dominicos y Franciscanos – Caciques indígenas."],
+            "respuesta": 0,
+            "retroalimentacion": "Las cuatro órdenes clave fueron Franciscanos, Dominicos, Agustinos y Jesuitas. A su vez, el descontento de los criollos (hijos de españoles nacidos allá) por su exclusión del poder constituyó la causa interna definitiva de la insurrección."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Según la 'trampa crítica' del examen de Historia de México sobre el término gobernante en la naciente nación, identifica la afirmación correcta:",
+            "opciones": ["Guadalupe Victoria firmó el Tratado de Córdoba.", "No hubo líderes tras la Colonia hasta la era de las Reformas.", "Que Agustín de Iturbide fue el primer presidente.", "Que Iturbide asume como primer gobernante (Emperador) del México Independiente, pero Guadalupe Victoria asume legalmente como el primer Presidente."],
+            "respuesta": 3,
+            "retroalimentacion": "Es el error más común: El examen intentará que confundas el término Gobernante con Presidente. El término Presidente solo aplica jurídicamente a Guadalupe Victoria (1824) en forma de república."
+        }
+    ],
+    "content-hist-univ-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Qué motivación subyacente de naturaleza eminentemente política existió durante la Guerra de los Siete Años para el apoyo militar posterior francés a las 13 Colonias?",
+            "opciones": ["Que Gran Bretaña apoyó a las colonias para fortalecer su economía triangular.", "Que España financió exclusivamente a los rebeldes por miedo a una invasión naval germánica.", "Que Francia, como perdedor de la Guerra contra Gran Bretaña, patrocinó a los rebeldes americanos en represalia a su derrota previa.", "Ninguna interferencia externa, el conflicto fue sostenido únicamente por el mercado indígena americano."],
+            "respuesta": 2,
+            "retroalimentacion": "La Guerra de los Siete Años es la clave oculta en la formación de la táctica internacional americana; Francia financió la rebelión colonial como venganza directa por la humillación bélica que Gran Bretaña le había infligido previamente."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Integra la secuencia causa-efecto que precipitó la caída del orden feudal y el progreso económico del primer capitalismo europeo pre-moderno:",
+            "opciones": ["Los obreros financiaron la Revolución Francesa y el rey impuso el Capitalismo con Montesquieu.", "La burguesía forjó riqueza, financió movimientos seculares con el Mecenazgo y cuestionó la legitimidad social y divina del viejo orden jerárquico.", "El humanismo apoyó a la Iglesia de Roma y detuvo en su totalidad la circulación monetaria burguesa hasta el inicio del Siglo XVIII.", "Los campesinos asediaron Constantino al leer los ensayos evolucionistas de Buffon."],
+            "respuesta": 1,
+            "retroalimentacion": "El feudalismo murió por el surgimiento estructural de la clase burguesa. Esta adquirió el control del capital monetario y buscó, a través de herramientas como el Renacimiento y años después la Ilustración, remover los privilegios consanguíneos intocables del monarca y el clérigo."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Con base en lo expuesto en la lección, ¿cuál de los siguientes pensadores estructuró jurídicamente el arquetipo contemporáneo de las repúblicas y cómo se le denomina a su aportación medular?",
+            "opciones": ["Montesquieu, debido a la Teoría del Absolutismo Científico.", "Rousseau, a través de la Soberanía popular indivisible de carácter aristocrático.", "Diderot, por la compilación masiva del Diccionario Antropológico.", "Montesquieu, por la ideación indispensable de una tripartición formal y balanceada de los poderes de la nación."],
+            "respuesta": 3,
+            "retroalimentacion": "La aportación técnica de Montesquieu, publicada en El espíritu de las leyes, sentó las bases universales de los gobiernos republicanos modernos: dividir forzosamente las facultades del poder absoluto en facciones Ejecutivas, Legislativas y Judiciales para balancear el control social."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Sobre los elementos de terminología conceptual para exámenes de historia, ¿cuál definición encaja lógicamente en su concepción histórica correcta?",
+            "opciones": ["Dogma: afirmación empírica con basamento comprobable avalada por la Razón.", "Oscurantismo: edad moderna en Europa donde Buffon desarrolló sus estudios biológicos.", "Soberanía: voluntad absoluta otorgada exclusivamente al rey por mandato teocentrista para salvaguardar a los burgueses.", "Oscurantismo: represión ideológica prolongada en temporalidad, dominada por dogmas feudales incompatibles con la curiosidad filosófica formal."],
+            "respuesta": 3,
+            "retroalimentacion": "El término Oscurantismo (usado de forma crítica por humanistas e ilustrados) acapara de modo despectivo a gran parte del periodo histórico de la Edad Media y su teocentrismo absolutista por censurar sistemáticamente el pensamiento científico autónomo e imponer el dogma ciego."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Lee e identifica la asociación causal errónea u omisa en las revoluciones históricas universales en relación al fin del Siglo XVIII:",
+            "opciones": ["El Tratado de París de 1783 no fue un simple suceso fronterizo, pues propulsó conceptualmente a la futura Revolución Francesa.", "El Renacimiento, a pesar de surgir siglos antes, dotó al mundo burgués y universitario de un pensamiento de ruptura secular preparándolo hacia el Racionalismo Ilustrado.", "La imposición dictatorial de las 13 colonias recayó finalmente en Rousseau quien abdicó al poder como soberano natural de Gran Bretaña.", "El uso imperativo de la 'Razón', que el Iluminismo traía consagrado como su pilar intelectual central, resultó ser la bala de gracia de los reyes monárquicos como figura intocable o santa."],
+            "respuesta": 2,
+            "retroalimentacion": "Rousseau jamás fue gobernante monárquico, inglés, dictatorial, y mucho menos participó operativamente con soberanía en Gran Bretaña; él no abdicó a nada formal en Inglaterra, fue sencillamente un intelectual ilustrado suizo/francés crucial propulsor de ideas. Es la opción con asociación dispar."
+        }
     ]
 };
-
-
-

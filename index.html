@@ -34,11 +34,11 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260311-2';
+        window.__APP_VERSION = '20260312-2';
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260311-2">
+    <link rel="stylesheet" href="./css/styles.css?v=20260312-2">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -353,6 +353,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-hist-univ-2"
+                            onclick="switchClass('content-hist-univ-2', this, 'btn-hist-univ')"
+                            data-class-id="content-hist-univ-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Renacimiento e Ilustración
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -387,6 +395,14 @@
                             onclick="switchClass('content-historia-3', this, 'btn-historia')"
                             data-class-id="content-historia-3">
                             <i class="fa-solid fa-book-open"></i> Clase 3: México Independiente
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-historia-4"
+                            onclick="switchClass('content-historia-4', this, 'btn-historia')"
+                            data-class-id="content-historia-4">
+                            <i class="fa-solid fa-book-open"></i> Clase 4: Repaso General
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -936,6 +952,79 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/6rod229c2b8"
             },
+            "content-hist-univ-2": {
+                title: "Apuntes de Historia Universal",
+                titleIconLeft: "fa-globe",
+                titleIconRight: "fa-book",
+                titleStyle: "color: #dc2626;",
+                mainTopicId: "mainTopicHistUniv2",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Historia Universal",
+                mainTopicIcon1: "fa-monument",
+                mainTopicIcon2: "fa-lightbulb",
+                mainTopicSubtitle: "Clase 2: De la Edad Media a la Ilustración",
+                branches: [
+                    {
+                        id: "nodes-hu2-1",
+                        topicIdx: 1,
+                        title: "1. Transición al Capitalismo y Renacimiento",
+                        icon: "fa-coins",
+                        subnodes: [
+                            { icon: "fa-arrow-right-arrow-left", delay: "0.1s", title: "Burguesía y Capitalismo", content: "<p><b>El fin de la Edad Media</b> no fue repentino, sino una transición de un feudalismo agrario hacia el ascenso de la <b>burguesía</b>. El burgués, tras acumular riqueza, buscó obtener poder político y social financiando movimientos culturales para debilitar a la Iglesia y al Rey.</p>" },
+                            { icon: "fa-masks-theater", delay: "0.2s", title: "El Renacimiento (Siglo XV)", content: "<p>Significa <b>Rinascita</b> (volver a nacer). Fue el redescubrimiento de las culturas clásicas (griegos y romanos) como fuente de inspiración artística y filosófica.</p>" },
+                            { icon: "fa-person", delay: "0.3s", title: "Humanismo (Antropocentrismo)", content: "<p>Corriente que coloca al <b>ser humano en el centro del estudio</b> (Antropocentrismo), desplazando a Dios de ser la explicación de todo (Teocentrismo). Rompe con los dogmas y supersticiones.</p>" },
+                            { icon: "fa-sack-dollar", delay: "0.4s", title: "Mecenazgo", content: "<p>Los burgueses actuaron como <b>Mecenas</b> (patrocinadores de artistas e intelectuales) para ganar influencia social y expandir el pensamiento crítico, que a su vez legitimaba sus ambiciones de poder.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu2-2",
+                        topicIdx: 2,
+                        title: "2. La Ilustración (Siglo de las Luces)",
+                        icon: "fa-bolt",
+                        subnodes: [
+                            { icon: "fa-lightbulb", delay: "0.1s", title: "Concepto Clave y Motor", content: "<p>Movimiento intelectual del <b>Siglo XVIII</b> que utiliza la lógica y la evidencia para cuestionar el absolutismo.</p><div class='exam-tip'><i class='fa-solid fa-graduation-cap'></i> <b>DATO DE EXAMEN:</b><br>El concepto fundamental de la Ilustración es el uso de la <b>Razón</b>. Es considerado el motor exclusivo para llegar al conocimiento, eliminar la ignorancia y alcanzar el progreso social.</div>" },
+                            { icon: "fa-users", delay: "0.2s", title: "Rousseau", content: "<p>Obra: <b>El Contrato Social</b>. Postuló el principio de la <b>Soberanía popular</b>, donde se afirma que el verdadero poder reside en el pueblo mediante un acuerdo colectivo (democracia base).</p>" },
+                            { icon: "fa-scale-balanced", delay: "0.3s", title: "Montesquieu", content: "<p>Obra: <b>El espíritu de las leyes</b>. Su mayor contribución filosófica fue postular la <b>división o separación de poderes</b> (Ejecutivo, Legislativo y Judicial).</p>" },
+                            { icon: "fa-hands-holding-circle", delay: "0.4s", title: "Voltaire", content: "<p>Defendió incansablemente temas como la <b>Tolerancia</b> y la libertad de expresión personal, al tiempo que elaboraba una férrea crítica al fanatismo religioso de su época.</p>" },
+                            { icon: "fa-book-atlas", delay: "0.5s", title: "Diderot y Buffon", content: "<p><b>Diderot:</b> Principal gestor de <b>La Enciclopedia</b>, cuya finalidad esencial era compilar todo el saber humano para difundir la 'luz de la razón' a las masas y disipar la ignorancia.<br><b>Buffon:</b> Especializado en la <b>Historia Natural</b>. Fue precursor del pensamiento biológico evolutivo moderno.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu2-3",
+                        topicIdx: 3,
+                        title: "3. Despotismo Ilustrado",
+                        icon: "fa-crown",
+                        subnodes: [
+                            { icon: "fa-handshake-angle", delay: "0.1s", title: "¿Qué fue?", content: "<p>Fue la reacción y asimilación de parte de las monarquías absolutistas para <b>evitar caer en revoluciones</b> violentas. Los reyes adoptaron reformas ilustradas de orden económico y educativo, manteniéndose sin embargo como líderes absolutos de sus naciones.</p>" },
+                            { icon: "fa-comment-slash", delay: "0.2s", title: "Efecto Práctico", content: "<p>Su lema insignia fue <b>'Todo para el pueblo, pero sin el pueblo'</b>. Es decir, operaban bajo una total fachada de modernidad intelectual y administrativa de progreso, pero negaban a la población cualquier derecho o participación política genuina (dictadura culta).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu2-4",
+                        topicIdx: 4,
+                        title: "4. Independencia de las 13 Colonias",
+                        icon: "fa-flag-usa",
+                        subnodes: [
+                            { icon: "fa-star", delay: "0.1s", title: "Introducción y Significado", content: "<p>Ocurrida formalmente entre <b>1775 y 1783</b>, fue el <b>primer movimiento burgués revolucionario exitoso</b> de corte independentista del mundo moderno.</p>" },
+                            { icon: "fa-money-bill-wave", delay: "0.2s", title: "Causas Fundamentales", content: "<div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>CAUSAS PREGUNTADAS:</b><br><br><b>Control Económico:</b> Gran Bretaña, en necesidad de dinero, impuso impuestos excesivos (como al té y al timbre) y suprimió abruptamente su economía de libre mercado, rompiendo una regla de autonomía colonial permitida durante décadas.<br><br><b>La Ilustración:</b> Sirvió como marco y argumento racional e ideológico para desafiar abiertamente la validez moral y legítima del Rey Jorge III.</div>" },
+                            { icon: "fa-chess-knight", delay: "0.3s", title: "La Guerra de los Siete Años", content: "<p>Antecedente de suma importancia. En ella, Gran Bretaña venció a Francia. Por este conflicto previo, <b>Francia apoyó militarmente a las 13 colonias norteamericanas</b> durante su sublevación, haciéndolo exclusivamente motivada por buscar <b>venganza</b> bélica.</p>" },
+                            { icon: "fa-file-signature", delay: "0.4s", title: "Consumación y Trascendencia", content: "<p>El documento que hizo efectiva dicha separación oficial y reconoce a dicha nueva nación por el Imperio Británico fue el <b>Tratado de París o Paz de Versalles</b> (1783).<br><br>Este hecho sirvió de manera directa e integral como un motor contundente y precursor para inspirar a la <b>Revolución Francesa</b> y a la independencia generalizada de Latinoamérica.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hu2-5",
+                        topicIdx: 5,
+                        title: "5. Glosario para el Examen",
+                        icon: "fa-book-bookmark",
+                        subnodes: [
+                            { icon: "fa-church", delay: "0.1s", title: "Dogma", content: "<p>Se refiere a una verdad absoluta de corte teológico (religioso) e incuestionable o 'sagrada', defendida celosamente e impuesta ciegamente sin lugar a pruebas tangibles.</p>" },
+                            { icon: "fa-users-cog", delay: "0.2s", title: "Soberanía Popular", content: "<p>El principio legal, social y político por el cual se entiende que el poder de gobernar radica o pertenece originalmente e indiscutiblemente al pueblo en conjunción para establecer sus propias normas rectrices o leyes.</p>" },
+                            { icon: "fa-eye-slash", delay: "0.3s", title: "Oscurantismo", content: "<p>Categorización de connotación despectiva para delimitar temporalmente a la <b>Edad Media</b> donde resalta un férreo periodo de declive de interés analítico formal motivado plenamente por el bloqueo de conocimiento e imposición de creencias ciegas o mitos.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/h_opcjqx4Zo"
+            },
             "content-historia-1": {
                 title: "Apuntes de Historia",
                 titleIconLeft: "fa-lightbulb",
@@ -1055,6 +1144,71 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/Wh7k_g4RMhg"
+            },
+            "content-historia-4": {
+                title: "Apuntes de Historia de México",
+                titleIconLeft: "fa-earth-americas",
+                titleIconRight: "fa-gamepad",
+                titleStyle: "color: #b45309;",
+                mainTopicId: "mainTopicHistoria4",
+                mainTopicClass: "history-topic",
+                mainTopicTitle: "Historia de México",
+                mainTopicIcon1: "fa-bolt-lightning",
+                mainTopicIcon2: "fa-bullseye",
+                mainTopicSubtitle: "Clase 4: Repaso General y Tips de Examen",
+                branches: [
+                    {
+                        id: "nodes-hist4-1",
+                        topicIdx: 1,
+                        title: "1. México Prehispánico (Mesoamérica)",
+                        icon: "fa-monument",
+                        subnodes: [
+                            { icon: "fa-map-location-dot", delay: "0.1s", title: "Geografía y Conceptos", content: "<p><b>Mesoamérica:</b> Palabra clave es <b>Península de Yucatán</b> (cuando se habla de Mayas) y <b>Agricultura</b> como principal actividad económica.</p><p><b>Frontera Norte:</b> La frontera norte de Mesoamérica colinda con <b>Aridoamérica</b>.</p><p><b>Paul Kirchhoff:</b> Antropólogo alemán que acuñó el concepto.</p><p><b>Teotihuacán:</b> Significa <i>Lugar de los dioses</i>. Es la ciudad más importante del periodo Clásico.</p>" },
+                            { icon: "fa-users-line", delay: "0.2s", title: "Culturas Principales", content: "<p><b>Olmecas:</b> Centros ceremoniales clave: La Venta, San Lorenzo y Tres Zapotes.</p><p><b>Mayas:</b> Las aportaciones más preguntadas son el uso del cero y la predicción de eclipses (calendarios).</p><p><b>Gobierno:</b> El sistema de gobierno mesoamericano fue <b>Teocrático</b> (los dioses regían a través de los gobernantes).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist4-2",
+                        topicIdx: 2,
+                        title: "2. Época Colonial (Nueva España)",
+                        icon: "fa-landmark-dome",
+                        subnodes: [
+                            { icon: "fa-scale-balanced", delay: "0.1s", title: "Organización y Economía", content: "<p><b>Principal actividad económica:</b> La Minería.</p><p><b>Estructura Política:</b> El primer virrey de la Nueva España fue Antonio de Mendoza.</p><div class='exam-tip'><i class='fa-solid fa-cross'></i> <b>ÓRDENES RELIGIOSAS:</b><br>Las encargadas de la evangelización fueron los Franciscanos, Dominicos, Agustinos y Jesuitas.</div><p><b>Reformas Borbónicas:</b> Implementadas por la dinastía Borbón, específicamente Carlos III y Carlos IV.</p>" },
+                            { icon: "fa-users", delay: "0.2s", title: "Sociedad", content: "<p><b>Criollos:</b> Hijos de españoles nacidos en la Nueva España. Fueron clave en la independencia por su descontento al ser excluidos del poder.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist4-3",
+                        topicIdx: 3,
+                        title: "3. Movimiento de Independencia (1810 - 1821)",
+                        icon: "fa-fire-flame-curved",
+                        subnodes: [
+                            { icon: "fa-bolt", delay: "0.1s", title: "Causas y Triggers de Examen", content: "<p><b>Externa:</b> La Ilustración (Pensamiento Racional) y la Revolución Francesa.</p><p><b>Interna:</b> La exclusión de los criollos del poder político.</p>" },
+                            { icon: "fa-flag", delay: "0.2s", title: "Etapas y Personajes Clave", content: "<ul><li><b>Inicio:</b> 16 de septiembre de 1810. (Cuidado: no 1910 ni el 15). Hidalgo publicó <i>El Despertador Americano</i>.</li><li><b>Organización:</b> Morelos, dio a conocer los <i>Sentimientos de la Nación</i>.</li><li><b>Resistencia:</b> Se caracteriza por el debilitamiento de los insurgentes.</li><li><b>Consumación:</b> Finaliza con el Ejército Trigarante en 1821.</li></ul>" },
+                            { icon: "fa-stopwatch", delay: "0.3s", title: "Tip de Examen (Cronología)", content: "<div class='exam-tip'><i class='fa-solid fa-list-ol'></i> <b>ORDEN CRONOLÓGICO:</b><br>1. Ataque a la Alhóndiga de Granaditas (Inicio)<br>2. Constitución de Apatzingán (Organización)<br>3. Guerra de Guerrillas (Resistencia)<br>4. Tratado de Córdoba (Consumación)</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist4-4",
+                        topicIdx: 4,
+                        title: "4. México Independiente",
+                        icon: "fa-building",
+                        subnodes: [
+                            { icon: "fa-circle-exclamation", delay: "0.1s", title: "La Trampa Crítica", content: "<div class='exam-tip'><i class='fa-solid fa-skull'></i> <b>¡Ojo!:</b><br><b>Primer Gobernante:</b> Agustín de Iturbide (Imperio).<br><b>Primer Presidente:</b> Guadalupe Victoria (1824).<br>El examen suele intentar confundir estos dos términos.</div>" },
+                            { icon: "fa-file-signature", delay: "0.2s", title: "Tratado de Córdoba y Contexto", content: "<p><b>Tratado de Córdoba:</b> Firmado el 24/25 de agosto de 1821 que ratifica la independencia.</p><p><b>Contexto:</b> El periodo del México Independiente se caracterizó por una gran inestabilidad política.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist4-5",
+                        topicIdx: 1,
+                        title: "5. Consejos para el Reactivo UNAM",
+                        icon: "fa-rocket",
+                        subnodes: [
+                            { icon: "fa-glasses", delay: "0.1s", title: "Lectura y Descarte", content: "<p><b>Lectura de Fechas:</b> No te apresures; verifica el año (1810 vs 1910).</p><div class='exam-tip'><i class='fa-solid fa-check-double'></i> <b>DESCARTE VISUAL:</b><br>En preguntas de orden cronológico, si identificas con qué evento empieza (Alhóndiga) y con cuál termina (Tratado de Córdoba), usualmente descartas tres de las cuatro opciones de inmediato.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/oofFKo77LPc"
             },
             "content-matematicas-1": {
                 title: "Apuntes de Matemáticas",

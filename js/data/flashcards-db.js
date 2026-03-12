@@ -1341,5 +1341,152 @@ const flashcardsDatabase = [
         "respuesta": "Desarrollo (planteamiento), nudo, clímax y desenlace.",
         "tema": "Acción Dramática",
         "asignatura": "Literatura"
+    },
+
+    // ==========================================
+    // HISTORIA DE MÉXICO - CLASE 4 (10 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "hist4-001",
+        "pregunta": "¿Con qué zona geográfica colinda la frontera norte de Mesoamérica?",
+        "respuesta": "Con Aridoamérica.",
+        "tema": "Mesoamérica",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-002",
+        "pregunta": "¿Qué antropólogo alemán acuñó históricamente el concepto de 'Mesoamérica'?",
+        "respuesta": "Paul Kirchhoff.",
+        "tema": "Mesoamérica",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-003",
+        "pregunta": "¿Cuáles fueron los 3 centros ceremoniales más importantes de la cultura Olmeca?",
+        "respuesta": "La Venta, San Lorenzo y Tres Zapotes.",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-004",
+        "pregunta": "¿Cuáles son las dos aportaciones mayas más preguntadas en el examen UNAM?",
+        "respuesta": "El uso matemático del cero y la predicción exacta de eclipses (calendarios).",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-005",
+        "pregunta": "¿Cuál fue la estructura de gobierno predominante de las sociedades mesoamericanas?",
+        "respuesta": "El gobierno Teocrático (los dioses regían y validaban a los gobernantes).",
+        "tema": "Mesoamérica",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-006",
+        "pregunta": "¿Qué actividad impulsó la economía de la Nueva España y quiénes encabezaban las reformas del siglo XVIII?",
+        "respuesta": "La Minería fue la principal actividad; las Reformas Borbónicas fueron implementadas por la dinastía Borbón.",
+        "tema": "La Nueva España",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-007",
+        "pregunta": "Menciona las dos principales causas externas del movimiento de Independencia de México.",
+        "respuesta": "La Ilustración (que priorizaba el pensamiento racional) y la Revolución Francesa.",
+        "tema": "Movimiento de Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-008",
+        "pregunta": "¿En qué se caracterizó fundamentalmente la etapa de Resistencia de la independencia?",
+        "respuesta": "En el pronunciado debilitamiento de los insurgentes, en donde la lucha sobrevivió a base de la 'guerra de guerrillas'.",
+        "tema": "Movimiento de Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-009",
+        "pregunta": "¿Por qué los criollos fueron una pieza central como causa interna para estallar la independencia?",
+        "respuesta": "Porque a pesar de ser españoles de sangre, por el hecho de nacer en América estaban relegados del poder y los altos cargos políticos.",
+        "tema": "Causas Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-010",
+        "pregunta": "En el tema de primeros gobernantes, ¿qué cargo ocupó Iturbide y qué cargo ocupó Guadalupe Victoria?",
+        "respuesta": "Agustín de Iturbide fue el primer gobernante bajo la figura de Emperador; Guadalupe Victoria fue el primer Presidente como República Federal.",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    // ==========================================
+    // HISTORIA UNIVERSAL - CLASE 2
+    // ==========================================
+    {
+        "id": "hu2-001",
+        "pregunta": "¿Qué clase social se fortaleció en la transición del feudalismo al capitalismo?",
+        "respuesta": "La burguesía, que buscó poder político y apoyó movimientos culturales para restar fuerza a la realeza y el clero.",
+        "tema": "Transición Feudalismo",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-002",
+        "pregunta": "¿Cuál es el concepto central del Renacimiento?",
+        "respuesta": "El humanismo (antropocentrismo), que revaloró las culturas grecolatinas y puso al hombre en el centro, abandonando el teocentrismo.",
+        "tema": "El Renacimiento",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-003",
+        "pregunta": "¿Qué es la Ilustración o Siglo de las Luces?",
+        "respuesta": "Movimiento del Siglo XVIII fundado en la Razón como herramienta para alcanzar el conocimiento, rechazar el dogma y progresar.",
+        "tema": "La Ilustración",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-004",
+        "pregunta": "¿Cuál fue la aportación de Montesquieu en la Ilustración?",
+        "respuesta": "La división de los poderes (Ejecutivo, Legislativo y Judicial) detallada en su obra 'El espíritu de las leyes'.",
+        "tema": "Pensamiento Ilustrado",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-005",
+        "pregunta": "¿Cuál fue la aportación de Rousseau en 'El Contrato Social'?",
+        "respuesta": "El principio de la Soberanía popular, estableciendo que el poder político original radica y pertenece al pueblo.",
+        "tema": "Pensamiento Ilustrado",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-006",
+        "pregunta": "¿Qué fue el Despotismo Ilustrado?",
+        "respuesta": "Estrategia absolutista dictando 'Todo para el pueblo, pero sin el pueblo'. El rey promovía reformas modernas pero evitaba dar derechos democráticos.",
+        "tema": "Despotismo Ilustrado",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-007",
+        "pregunta": "¿Cuál es la causa económica prioritaria del estallido de la Independencia de las 13 colonias?",
+        "respuesta": "Los excesivos impuestos comerciales (ej. al timbre y al té) y el monopolio forzoso británico sobre territorio americano.",
+        "tema": "Las 13 Colonias",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-008",
+        "pregunta": "En términos estratégicos, ¿qué motivó la alianza y apoyo francés hacia las 13 colonias contra los ingleses?",
+        "respuesta": "La venganza de Francia ante su derrota castigadora contra Gran Bretaña durante la Guerra de los Siete Años.",
+        "tema": "Las 13 Colonias",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-009",
+        "pregunta": "¿Qué significado histórico directo e inmediato tuvo el éxito de la Independencia de Estados Unidos?",
+        "respuesta": "Funcionó como inspiración contundente para desatar la Revolución Francesa y la liberación política de América Latina.",
+        "tema": "Las 13 Colonias",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-010",
+        "pregunta": "¿De qué trata el glosario de 'Oscurantismo' y 'Dogma'?",
+        "respuesta": "Dogma es una verdad absolutista impuesta ciegamente. Oscurantismo significa bloqueo científico en gran parte atado a la Edad Media.",
+        "tema": "Conceptos Clave",
+        "asignatura": "Historia Univ."
     }
 ];
