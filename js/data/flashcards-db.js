@@ -81,7 +81,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp-012",
-        "pregunta": "¿Cuáles son todas las preposiciones de 'cajón' que debes memorizar?",
+        "pregunta": "¿Cuáles son las preposiciones del español (lista tradicional)?",
         "respuesta": "A, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras.",
         "tema": "Modificadores y Enlaces",
         "asignatura": "Español"
@@ -116,8 +116,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp-017",
-        "pregunta": "¿Cuál es la Regla de Oro del Núcleo del Predicado?",
-        "respuesta": "El núcleo siempre es el VERBO CONJUGADO. Si hay dos verbos (perífrasis verbal), ambos son el núcleo. Un infinitivo solo NUNCA es núcleo.",
+        "pregunta": "¿Qué es el núcleo del predicado?",
+        "respuesta": "Es el verbo conjugado de la oración. En una perífrasis verbal, los dos verbos forman el núcleo; un infinitivo por sí solo no es núcleo.",
         "tema": "La Oración",
         "asignatura": "Español"
     },
@@ -155,7 +155,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-004",
-        "pregunta": "¿Cuál es la 'Regla de Oro' de las culturas mesoamericanas?",
+        "pregunta": "¿Cuáles son dos rasgos generales de las culturas mesoamericanas?",
         "respuesta": "Religión Politeísta (muchos dioses) y Gobierno Teocrático (gobernados por la religión/sacerdotes).",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
@@ -225,9 +225,9 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-014",
-        "pregunta": "¿Qué personajes clave debes memorizar de la Conquista?",
+        "pregunta": "¿Cuáles son algunos personajes clave de la Conquista de México?",
         "respuesta": "Hernán Cortés, Moctezuma, Cuitláhuac y Cuauhtémoc.",
-        "tema": "Resumen Memorización",
+        "tema": "La Conquista",
         "asignatura": "Historia de México"
     },
     {
@@ -327,21 +327,21 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-006",
-        "pregunta": "¿Cuál es la regla de oro para sumar o restar términos?",
-        "respuesta": "Solo puedes sumar o restar si son términos semejantes. Si no lo son, se pasan igual al resultado.",
+        "pregunta": "¿Qué condición se requiere para sumar o restar términos?",
+        "respuesta": "Solo se pueden sumar o restar términos semejantes. Si no lo son, se mantienen sin operar en el resultado.",
         "tema": "Agrupación",
         "asignatura": "Matemáticas"
     },
     {
         "id": "mat-007",
-        "pregunta": "¿Cómo se suman números con Signos Iguales?",
+        "pregunta": "¿Cuál es la regla para sumar números con signos iguales?",
         "respuesta": "Se suman los números y se deja el signo que tienen. (Ej: -5 - 3 = -8).",
         "tema": "Aritmética Algebraica",
         "asignatura": "Matemáticas"
     },
     {
         "id": "mat-008",
-        "pregunta": "¿Cómo se suman números con Signos Diferentes?",
+        "pregunta": "¿Cuál es la regla para sumar números con signos diferentes?",
         "respuesta": "Al mayor se le resta el menor y se deja el signo del número más grande. (Ej: -10 + 2 = -8).",
         "tema": "Aritmética Algebraica",
         "asignatura": "Matemáticas"
@@ -397,15 +397,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-016",
-        "pregunta": "¿Cómo se identifican los Binomios Conjugados?",
+        "pregunta": "¿Qué son los binomios conjugados?",
         "respuesta": "Son dos binomios idénticos, pero uno suma (+) y el otro resta (-). Ej: (x+2)(x-2).",
         "tema": "Productos Notables",
         "asignatura": "Matemáticas"
     },
     {
         "id": "mat-017",
-        "pregunta": "¿Cuál es el atajo para resolver Binomios Conjugados?",
-        "respuesta": "Multiplicar Primero por Primero y Segundo por Segundo. El signo central siempre es negativo.",
+        "pregunta": "¿Cuál es el producto notable de binomios conjugados (a + b)(a - b)?",
+        "respuesta": "Diferencia de cuadrados: (a + b)(a - b) = a² - b².",
         "tema": "Productos Notables",
         "asignatura": "Matemáticas"
     },
@@ -426,13 +426,13 @@ const flashcardsDatabase = [
     {
         "id": "mat-020",
         "pregunta": "¿Para qué sirven los coeficientes del Triángulo de Pascal?",
-        "respuesta": "Para elevar un binomio (a ± b) a cualquier potencia rápida y correctamente.",
+        "respuesta": "Para expandir (a ± b)ⁿ y obtener los coeficientes del desarrollo.",
         "tema": "Productos Notables",
         "asignatura": "Matemáticas"
     },
     {
         "id": "mat-021",
-        "pregunta": "¿Cómo se construyen los niveles del Triángulo de Pascal?",
+        "pregunta": "¿Cuál es la regla de formación del Triángulo de Pascal?",
         "respuesta": "Inicia con 1. Los siguientes niveles se obtienen sumando los dos números superiores y cerrando con 1.",
         "tema": "Productos Notables",
         "asignatura": "Matemáticas"
@@ -474,9 +474,9 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-027",
-        "pregunta": "¿Cómo se resuelve rápidamente un binomio al cubo (a ± b)³ en el examen?",
-        "respuesta": "Cotejando signos (alternados si es resta) y calculando solo el primer y último término.",
-        "tema": "Estrategia de Examen",
+        "pregunta": "¿Cuál es el desarrollo del binomio al cubo (a ± b)³?",
+        "respuesta": "(a ± b)³ = a³ ± 3a²b + 3ab² ± b³.",
+        "tema": "Productos Notables",
         "asignatura": "Matemáticas"
     },
     {
@@ -488,22 +488,22 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-029",
-        "pregunta": "¿Cuál es el resultado de (x + 3)(x + 5)?",
-        "respuesta": "x² + 8x + 15 (Binomios con término común).",
+        "pregunta": "¿Cuál es el desarrollo de binomios con término común (x + a)(x + b)?",
+        "respuesta": "x² + (a + b)x + ab. Ej: (x+3)(x+5)=x²+8x+15.",
         "tema": "Productos Notables",
         "asignatura": "Matemáticas"
     },
     {
         "id": "mat-030",
         "pregunta": "¿Cuál es la raíz cuadrada de 169?",
-        "respuesta": "13. Es una raíz exacta que debes dominar para el examen.",
+        "respuesta": "13, porque 13² = 169.",
         "tema": "Aritmética",
         "asignatura": "Matemáticas"
     },
 
     {
         "id": "mat-031",
-        "pregunta": "¿Cuál es la regla de oro para sumar o restar expresiones algebraicas?",
+        "pregunta": "¿Qué condición se requiere para sumar o restar expresiones algebraicas?",
         "respuesta": "Solo se pueden operar términos semejantes (idénticos en literales y exponentes).",
         "tema": "Operaciones Algebraicas y Agrupación",
         "asignatura": "Matemáticas"
@@ -566,8 +566,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-040",
-        "pregunta": "¿Cuál es el atajo para ecuaciones con fracciones iguales?",
-        "respuesta": "Aplicar productos cruzados: a/b = c/d implica a(d) = c(b).",
+        "pregunta": "¿Cuál es la propiedad del producto cruzado en una proporción (a/b = c/d)?",
+        "respuesta": "En una proporción a/b = c/d se cumple: a·d = c·b.",
         "tema": "Ecuaciones y Despeje",
         "asignatura": "Matemáticas"
     },
@@ -623,13 +623,13 @@ const flashcardsDatabase = [
     {
         "id": "fis-008",
         "pregunta": "¿Cuáles son las 3 fórmulas fundamentales del MRUA?",
-        "respuesta": "1) $a=(V_f-V_i)/t$  2) $d=V_i \\cdot t + at^2/2$  3) $V_f^2=V_i^2+2ad$. La más usada en UNAM es la primera.",
+        "respuesta": "1) $a=(V_f-V_i)/t$  2) $d=V_i \\cdot t + at^2/2$  3) $V_f^2=V_i^2+2ad$.",
         "tema": "MRUA",
         "asignatura": "Física"
     },
     {
         "id": "fis-009",
-        "pregunta": "Regla de Oro para identificar MRUA en una gráfica de movimiento:",
+        "pregunta": "Identificación del MRUA en gráficas de movimiento:",
         "respuesta": "Si ves una CURVA en cualquier gráfica de movimiento → MRUA. Línea recta diagonal en v-t → también MRUA.",
         "tema": "Gráficas de Movimiento",
         "asignatura": "Física"
@@ -724,7 +724,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "qui-009",
-        "pregunta": "¿Cuál es la trampa de la leche sola vs leche con chocolate?",
+        "pregunta": "¿Qué tipo de sistema material es la leche sola y la leche con chocolate?",
         "respuesta": "Leche sola es Coloide. Leche con chocolate se considera Mezcla Homogénea.",
         "tema": "Coloides",
         "asignatura": "Química"
@@ -949,8 +949,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-005",
-        "pregunta": "¿Qué atajo puedes aplicar en fracciones algebraicas para evitar exponentes negativos?",
-        "respuesta": "Resta el exponente mayor menos el menor y ubica el resultado donde estaba el mayor.",
+        "pregunta": "¿Qué propiedad de exponentes se usa al simplificar una fracción con bases iguales (a^m/a^n)?",
+        "respuesta": "Se restan los exponentes: a^m/a^n = a^(m-n). Si (m-n) es negativo, equivale a 1/a^(n-m).",
         "tema": "Tipo 1 (División)",
         "asignatura": "Matemáticas"
     },
@@ -960,8 +960,8 @@ const flashcardsDatabase = [
     // ==========================================
     {
         "id": "esp2-001",
-        "pregunta": "¿Cuál es la trampa clásica en exámenes sobre funciones del lenguaje?",
-        "respuesta": "Las funciones Fática y Metalingüística suelen ser distractores que raramente son la respuesta correcta.",
+        "pregunta": "¿Cuál es la diferencia entre la función fática y la función metalingüística?",
+        "respuesta": "La fática verifica o mantiene el canal de comunicación; la metalingüística habla del código o del idioma.",
         "tema": "Funciones del Lenguaje",
         "asignatura": "Español"
     },
@@ -974,7 +974,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp2-003",
-        "pregunta": "Identificador clave (Tip de Oro) de un texto Argumentativo:",
+        "pregunta": "Rasgo característico de un texto argumentativo:",
         "respuesta": "Uso de conectores o nexos causales/justificantes (pero, porque, sin embargo, ya que).",
         "tema": "Modos Discursivos",
         "asignatura": "Español"
@@ -1002,8 +1002,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp2-007",
-        "pregunta": "En el examen de la UNAM, ¿qué debes buscar inmediatamente para localizar el Núcleo del Predicado?",
-        "respuesta": "El único verbo vivo que esté explícitamente conjugado en presente, pasado o futuro.",
+        "pregunta": "¿Qué caracteriza a un verbo conjugado?",
+        "respuesta": "Está flexionado en persona, número y tiempo (presente, pasado o futuro).",
         "tema": "El Verbo",
         "asignatura": "Español"
     },
@@ -1013,7 +1013,7 @@ const flashcardsDatabase = [
     // ==========================================
     {
         "id": "univ-001",
-        "pregunta": "¿Cuál es el propósito de estudiar la historia según la UNAM?",
+        "pregunta": "¿Cuál es un propósito de estudiar la historia?",
         "respuesta": "Conocer las culturas del pasado para entender nuestro presente.",
         "tema": "Fundamentos de Historia",
         "asignatura": "Historia Universal"
@@ -1055,7 +1055,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "univ-007",
-        "pregunta": "El hito que divide a la Edad Media de la Edad Moderna (Pregunta frecuente de examen) es:",
+        "pregunta": "El hito que divide a la Edad Media de la Edad Moderna es:",
         "respuesta": "La toma de Constantinopla o Caída del Imperio Romano de Oriente (1453).",
         "tema": "Periodización",
         "asignatura": "Historia Universal"
@@ -1189,8 +1189,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "qui2-003",
-        "pregunta": "¿Cuál es la trampa del lenguaje sobre los cambios de estado en el examen (fusión, evaporación, etc)?",
-        "respuesta": "Recuerda que todos los cambios de estado son procesos físicos, nunca químicos.",
+        "pregunta": "¿Qué naturaleza tienen los cambios de estado (fusión, evaporación, etc.)?",
+        "respuesta": "Son procesos físicos; no cambian la composición de la sustancia.",
         "tema": "Cambios de la Materia",
         "asignatura": "Química"
     },
@@ -1235,8 +1235,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "bio-002",
-        "pregunta": "¿Cuál es la analogía clave de examen para célula y átomo?",
-        "respuesta": "Célula : Seres vivos :: Átomo : Materia.",
+        "pregunta": "¿Qué representan la célula y el átomo en sus niveles de organización?",
+        "respuesta": "La célula es la unidad estructural y funcional de los seres vivos; el átomo es la unidad básica de la materia.",
         "tema": "Fundamentos Celulares",
         "asignatura": "Biología"
     },
@@ -1369,7 +1369,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist4-004",
-        "pregunta": "¿Cuáles son las dos aportaciones mayas más preguntadas en el examen UNAM?",
+        "pregunta": "¿Cuáles son dos aportaciones destacadas de los mayas?",
         "respuesta": "El uso matemático del cero y la predicción exacta de eclipses (calendarios).",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
@@ -1470,7 +1470,7 @@ const flashcardsDatabase = [
     },
     {
         "id": "hu2-008",
-        "pregunta": "En términos estratégicos, ¿qué motivó la alianza y apoyo francés hacia las 13 colonias contra los ingleses?",
+        "pregunta": "¿Qué motivó la alianza y apoyo francés hacia las 13 colonias contra los ingleses?",
         "respuesta": "La venganza de Francia ante su derrota castigadora contra Gran Bretaña durante la Guerra de los Siete Años.",
         "tema": "Las 13 Colonias",
         "asignatura": "Historia Univ."
