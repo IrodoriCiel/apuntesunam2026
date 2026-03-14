@@ -920,35 +920,35 @@ const flashcardsDatabase = [
     // MATEMÁTICAS (5 CONCEPTOS - DIVISION)
     // ==========================================
     {
-        "id": "mat-001",
+        "id": "matd-001",
         "pregunta": "¿Cómo se dividen los coeficientes en una división algebraica?",
         "respuesta": "Se dividen de forma aritmética normal y siguen la ley de signos.",
         "tema": "Reglas de División",
         "asignatura": "Matemáticas"
     },
     {
-        "id": "mat-002",
+        "id": "matd-002",
         "pregunta": "¿Qué sucede con los exponentes al dividir literales con bases iguales?",
         "respuesta": "Los exponentes se restan.",
         "tema": "Reglas de División",
         "asignatura": "Matemáticas"
     },
     {
-        "id": "mat-003",
+        "id": "matd-003",
         "pregunta": "¿Cuál es el valor predeterminado del exponente si una literal no tiene ninguno escrito?",
         "respuesta": "El exponente siempre es igual a 1.",
         "tema": "Reglas de División",
         "asignatura": "Matemáticas"
     },
     {
-        "id": "mat-004",
+        "id": "matd-004",
         "pregunta": "¿En qué consiste la Regla de Anulación en fracciones algebraicas?",
         "respuesta": "Si el exponente de una literal arriba y abajo es el mismo, la literal se elimina.",
         "tema": "Tipo 1 (División)",
         "asignatura": "Matemáticas"
     },
     {
-        "id": "mat-005",
+        "id": "matd-005",
         "pregunta": "¿Qué propiedad de exponentes se usa al simplificar una fracción con bases iguales (a^m/a^n)?",
         "respuesta": "Se restan los exponentes: a^m/a^n = a^(m-n). Si (m-n) es negativo, equivale a 1/a^(n-m).",
         "tema": "Tipo 1 (División)",

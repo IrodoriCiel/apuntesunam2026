@@ -20,7 +20,7 @@ const unamQuestions = {
     "content-fisica-1": [
         {
             "numero": 1,
-            "pregunta": "El desplazamiento de un ferrocarril se describe en una gráfica posición-tiempo. A partir de los datos mostrados se puede deducir que el movimiento es rectilíneo con",
+            "pregunta": "El desplazamiento de un ferrocarril se describe en la siguiente gráfica (posición x – tiempo t). A partir de los datos mostrados se puede deducir que el movimiento es rectilíneo con",
             "opciones": [
                 "aceleración constante.",
                 "aceleración variable.",
@@ -60,7 +60,7 @@ const unamQuestions = {
     "content-historia-1": [
         {
             "numero": 111,
-            "pregunta": "Las creencias politeístas, la existence de técnicas agrícolas, de pueblos tributarios así como los rituales de sacrificios fueron características de:",
+            "pregunta": "Las creencias politeístas, la existencia de técnicas agrícolas, de pueblos tributarios así como los rituales de sacrificios fueron características de",
             "opciones": ["Centroamérica.", "Aridoamérica.", "Oasisamérica.", "Mesoamérica."],
             "respuesta": 3,
             "retroalimentacion": "Mesoamérica se caracterizó por su agricultura, principalmente del maíz, las sociedades jerarquizadas, el politeísmo y la construcción estructurada con fines religiosos (pirámides)."
@@ -107,7 +107,7 @@ const unamQuestions = {
         },
         {
             "numero": 72,
-            "pregunta": "Señala la forma del discurso que predomina en el siguiente fragmento.<br><br><i>\"Después de la Conquista de Tenochtitlan, hacia 1529, Hernán Cortés ordenó traer frailes dominicos para que evangelizaran a los indios en las tierras con que el rey Carlos V le recompensaba por los servicios prestados a la Corona, y que incluían áreas de Coyoacán, Tacubaya y Cuajimalpa, entre otras dentro de la cuenca. Estos primeros dominicos fundaron conventos como el de San Juan Bautista (Coyoacán) y compartieron con los franciscanos el trabajo de adoctrinar a los naturales en la fe cristiana.\"</i>",
+            "pregunta": "Señala la forma del discurso que predomina en el siguiente fragmento. Después de la Conquista de Tenochtitlan, hacia 1529, Hernán Cortés ordenó traer frailes dominicos para que evangelizaran a los indios en las tierras con que el rey Carlos V le recompensaba por los servicios prestados a la Corona, y que incluían áreas de Coyoacán, Tacubaya y Cuajimalpa, entre otras dentro de la cuenca. Estos primeros dominicos fundaron conventos como el de San Juan Bautista (Coyoacán) y compartieron con los franciscanos el trabajo de adoctrinar a los naturales en la fe cristiana.",
             "opciones": ["Narrativa.", "Descriptiva.", "Expositiva.", "Argumentativa."],
             "respuesta": 0,
             "retroalimentacion": "La narrativa relata una secuencia de eventos o acciones a través del tiempo. En este caso relata una secuencia de hechos históricos acontecidos tras la Conquista."
@@ -127,14 +127,14 @@ const unamQuestions = {
     "content-espanol-3": [
         {
             "numero": 79,
-            "pregunta": "En el siguiente párrafo lo que está en letra mayúscula es una oración<br><br><i>\"Todas las tardes el arquitecto tomaba el café QUE LE PREPARABAN EN LA HOSTERÍA y luego repasaba el diario de palmo a palmo.\"</i>",
+            "pregunta": "En el siguiente párrafo lo que está en letra mayúscula es una oración Todas las tardes el arquitecto tomaba el café QUE LE PREPARABAN EN LA HOSTERÍA y luego repasaba el diario de palmo a palmo.",
             "opciones": ["coordinada.", "secundaria.", "principal.", "yuxtapuesta."],
             "respuesta": 1,
             "retroalimentacion": "La oración en mayúsculas ('Que le preparaban en la hostería') no tiene sentido por sí sola; depende de la oración principal ('el arquitecto tomaba el café'). Cuando una oración depende de otra para tener sentido completo, se denomina oración secundaria o subordinada."
         },
         {
             "numero": 80,
-            "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el<br><br><i>Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.</i>",
+            "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.",
             "opciones": ["complemento indirecto.", "complemento circunstancial.", "complemento directo.", "predicado nominal."],
             "respuesta": 1,
             "retroalimentacion": "El complemento circunstancial indica el lugar, tiempo o modo de la acción. En este caso, 'A LAS AFUERAS DEL PALACIO' responde a la pregunta ¿Dónde? (lugar) y comienza con una preposición (A), característica clave de un complemento circunstancial."
