@@ -178,7 +178,9 @@ const unamQuestions = {
             "respuesta": 3,
             "retroalimentacion": "La definición base de la clase establece que la célula es la unidad estructural y funcional de los seres vivos. En la opción oficial de la guía aparece 'estructurales y fisiológicas', equivalente al enfoque estructural y funcional de la teoría celular."
         }
-    ]
+    ],
+    "content-biologia-2": [],
+    "content-geografia-1": []
 };
 
 const practiceQuestions = {
@@ -1096,6 +1098,43 @@ const practiceQuestions = {
             "retroalimentacion": "Los aminoácidos se enlazan por enlace peptídico; en contraste, los carbohidratos usan enlace glucosídico y los lípidos enlace éster."
         }
     ],
+    "content-biologia-2": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es el bioelemento que caracteriza a las proteínas y se une al CHON?",
+            "opciones": ["Fósforo", "Magnesio", "Hierro", "Calcio"],
+            "respuesta": 2,
+            "retroalimentacion": "Las proteínas están constituidas por Carbono, Hidrógeno, Oxígeno, Nitrógeno (CHON) y frecuentemente Hierro (Fe), como en la hemoglobina."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Enzima encargada de acelerar reacciones que se clasifica como proteína catalizadora:",
+            "opciones": ["Insulina", "Actina", "Queratina", "Lactasa"],
+            "respuesta": 3,
+            "retroalimentacion": "Las enzimas, como la lactasa, tienen función catalizadora y aceleran reacciones químicas. Sus nombres suelen terminar en -asa."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué base nitrogenada está presente en el ARN pero NO en el ADN?",
+            "opciones": ["Adenina", "Guanina", "Uracilo", "Timina"],
+            "respuesta": 2,
+            "retroalimentacion": "El ARN contiene Uracilo en lugar de la Timina que está presente en el ADN."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Tipo de célula que se caracteriza por no tener un núcleo definido y poseer ADN circular:",
+            "opciones": ["Eucariota animal", "Procariota", "Eucariota vegetal", "Fúngica"],
+            "respuesta": 1,
+            "retroalimentacion": "Las células procariotas (como las bacterias) carecen de núcleo definido y su ADN es circular."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál es el organelo encargado de la respiración celular y producción de ATP?",
+            "opciones": ["Núcleo", "Mitocondria", "Aparato de Golgi", "Lisosoma"],
+            "respuesta": 1,
+            "retroalimentacion": "La mitocondria es el organelo donde ocurre la respiración celular y se produce la energía en forma de ATP."
+        }
+    ],
     "content-historia-4": [
         {
             "numero": 1,
@@ -1168,6 +1207,43 @@ const practiceQuestions = {
             "opciones": ["Buffon - El Espíritu de las leyes.", "Montesquieu - El Contrato Social.", "Voltaire - La Enciclopedia.", "Rousseau - El Contrato Social."],
             "respuesta": 3,
             "retroalimentacion": "Es memoria pura estipulada en la clase: Rousseau postuló la soberanía popular dentro de 'El Contrato Social'; la Enciclopedia es de Diderot; y la división de poderes de Montesquieu."
+        }
+    ],
+    "content-geografia-1": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es la diferencia principal entre un hecho y un fenómeno geográfico?",
+            "opciones": ["La región geográfica donde ocurren.", "El tiempo de duración, siendo el hecho permanente y el fenómeno transitorio.", "La participación humana en los procesos biológicos.", "El nivel de daño material que producen."],
+            "respuesta": 1,
+            "retroalimentacion": "El tiempo es la clave: los hechos son muy lentos (ej. formación de montañas) y los fenómenos muy rápidos e impetuosos (ej. un sismo o un huracán)."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Identifica a qué principio metodológico de la geografía corresponde la siguiente descripción: 'Analizar lo que provocó o dio origen a un terremoto'.",
+            "opciones": ["Causalidad.", "Relación.", "Localización.", "Evolución."],
+            "respuesta": 0,
+            "retroalimentacion": "La causalidad es el principio metodológico encargado de estudiar el origen o las causas de un determinado proceso geográfico."
+        },
+        {
+            "numero": 3,
+            "pregunta": "La Demografía y la Geoeconomía son subramas que pertenecen fundamentalmente al campo de estudio de la geografía:",
+            "opciones": ["Física.", "Biológica.", "Humana o Social.", "Matemática."],
+            "respuesta": 2,
+            "retroalimentacion": "La Geografía Humana aborda la relación mutua entre el medio geográfico y el hombre en aspectos como la demografía (población) y la economía."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cómo se llama científicamente a la forma achatada de nuestra Tierra en los polos y ensanchada de su ecuador?",
+            "opciones": ["Redonda perimetral.", "Cuboide achatado.", "Geoide o esferoide oblato.", "Ovoide imperfecto."],
+            "respuesta": 2,
+            "retroalimentacion": "La Tierra no es una esfera perfecta. Técnicamente se denomina Geoide o esferoide oblato debido a la deformación causada por la fuerza rotacional."
+        },
+        {
+            "numero": 5,
+            "pregunta": "La latitud se obtiene ubicando posiciones sobre líneas ________ tomando como referencia el ________.",
+            "opciones": ["verticales / Meridiano de Greenwich", "horizontales / Ecuador", "inclinadas / Trópico de Cáncer", "curvas / Eje terrestre"],
+            "respuesta": 1,
+            "retroalimentacion": "La latitud está definida por los Paralelos, que son líneas horizontales; y tienen siempre como punto o línea de referencia base al Ecuador (0°)."
         }
     ]
 };
@@ -2106,6 +2182,43 @@ const practiceLevel2Questions = {
             "retroalimentacion": "Los fosfolípidos forman la bicapa de membrana gracias a su naturaleza anfipática: cabeza afín al agua y colas que repelen el agua."
         }
     ],
+    "content-biologia-2": [
+        {
+            "numero": 1,
+            "pregunta": "Una paciente presenta problemas de empaquetamiento y distribución de proteínas en su célula. ¿Qué organelo presenta una falla?",
+            "opciones": ["Retículo Endoplasmático Liso", "Aparato de Golgi", "Mitocondria", "Lisosoma"],
+            "respuesta": 1,
+            "retroalimentacion": "El Aparato de Golgi es el encargado principal de empaquetar y distribuir las proteínas en vesículas."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Cuál es el nivel de organización proteica que se caracteriza por presentar una forma tridimensional esférica o globular?",
+            "opciones": ["Primaria", "Secundaria", "Terciaria", "Cuaternaria"],
+            "respuesta": 2,
+            "retroalimentacion": "La estructura terciaria se define por el plegamiento tridimensional que da una forma globular (esférica) a la proteína."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Si un individuo sufre de retraso en la coagulación de la sangre y hemorragias frecuentes, es probable que tenga una deficiencia en la síntesis o función de:",
+            "opciones": ["Queratina", "Actina", "Insulina", "Fibrina"],
+            "respuesta": 3,
+            "retroalimentacion": "La fibrina es una proteína con función específica de coagulación que evita o detiene las hemorragias."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Diferencia fundamental entre la estructura de los nucleótidos del ADN y del ARN:",
+            "opciones": ["El tipo de grupo fosfato.", "El tipo de azúcar pentosa; el ADN utiliza desoxirribosa y el ARN utiliza ribosa.", "El número de cadenas; el ADN siempre es cadena sencilla.", "La presencia de adenina exclusiva del ADN."],
+            "respuesta": 1,
+            "retroalimentacion": "Los nucleótidos del ADN tienen el azúcar desoxirribosa, mientras que los del ARN tienen ribosa. De manera adicional, el ADN es de cadena doble y el ARN de cadena sencilla."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Si una bacteria desarrolla resistencia a ciertos antibióticos mediante la transferencia de información genética extracromosómica, ¿qué estructura biológica está participando directamente?",
+            "opciones": ["Plásmidos", "Nucleoide", "Pared celular de peptidoglucano", "Mitocondria"],
+            "respuesta": 0,
+            "retroalimentacion": "Los plásmidos son fragmentos de ADN extracromosómico independientes presentes en bacterias (procariotas) que suelen contener e intercambiar genes de resistencia."
+        }
+    ],
     "content-historia-4": [
         {
             "numero": 1,
@@ -2178,6 +2291,43 @@ const practiceLevel2Questions = {
             "opciones": ["El Tratado de París de 1783 no fue un simple suceso fronterizo, pues propulsó conceptualmente a la futura Revolución Francesa.", "El Renacimiento, a pesar de surgir siglos antes, dotó al mundo burgués y universitario de un pensamiento de ruptura secular preparándolo hacia el Racionalismo Ilustrado.", "La imposición dictatorial de las 13 colonias recayó finalmente en Rousseau quien abdicó al poder como soberano natural de Gran Bretaña.", "El uso imperativo de la 'Razón', que el Iluminismo traía consagrado como su pilar intelectual central, resultó ser la bala de gracia de los reyes monárquicos como figura intocable o santa."],
             "respuesta": 2,
             "retroalimentacion": "Rousseau jamás fue gobernante monárquico, inglés, dictatorial, y mucho menos participó operativamente con soberanía en Gran Bretaña; él no abdicó a nada formal en Inglaterra, fue sencillamente un intelectual ilustrado suizo/francés crucial propulsor de ideas. Es la opción con asociación dispar."
+        }
+    ],
+    "content-geografia-1": [
+        {
+            "numero": 1,
+            "pregunta": "Un geógrafo se traslada a la costa del Pacífico para estudiar las placas tectónicas que originaron una reciente fosa oceánica, pero no interviene ningún factor biológico ni social. ¿En qué subdivisión se apoyará principalmente?",
+            "opciones": ["Geomorfología.", "Demografía costera.", "Fitogeografía.", "Geopolítica."],
+            "respuesta": 0,
+            "retroalimentacion": "La Geomorfología (rama de la geografía física) se limita a estudiar exclusivamente la forma del relieve y los procesos de la corteza sin intervención humana."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Si en las noticias reportan que el centro de un huracán ha tocado tierra en las costas veracruzanas modificando la zona repentinamente, estamos sin duda ante un claro ejemplo de:",
+            "opciones": ["Interrelación a largo plazo.", "Hecho geográfico.", "Principio de generalización.", "Fenómeno geográfico."],
+            "respuesta": 3,
+            "retroalimentacion": "Un huracán tiene carácter impetuoso, ocurre de manera muy destructible y de muy corta duración a escala humana, características universales del fenómeno geográfico."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Un turista que se encuentre exactamente en el punto cero de Latitud y Longitud, ¿en qué cruce de referencias se localizaría?",
+            "opciones": ["Polo Norte geográfico y Magnético.", "Trópico de Cáncer y Trópico de Capricornio.", "Ecuador Terrestre y Meridiano de Greenwich.", "El Desierto del Sahara y el Océano Índico."],
+            "respuesta": 2,
+            "retroalimentacion": "El Ecuador es la línea de 0 grados de Latitud, mientras que el Meridiano de Greenwich es la línea de 0 grados para la Longitud. Al cruzarse ambos se tiene el punto cero cartográfico universal."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En un estudio sobre el ciclo del agua, un científico demuestra cómo la sequía en el país 'X' reduce drásticamente las cosechas de maíz, provocando la migración masiva de personas hacia el país 'Y'. ¿Qué componente principal de la geografía como ciencia de estudio se ilustra de manera más amplia?",
+            "opciones": ["La separación absoluta entre geología e historia.", "El concepto técnico o geoidal del continente.", "La causalidad meteorológica local.", "La interrelación como ciencia mixta entre lo físico, biótico y humano."],
+            "respuesta": 3,
+            "retroalimentacion": "El escenario vincula el factor físico (el clima), biótico (el ciclo del maíz) y humano/social (la migración), probando así la definición oficial y holística de la disciplina como ciencia puente o mixta."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Si un investigador observa recurrentemente que todos los países ubicados sobre el anillo de fuego sufren las mismas consecuencias sísmicas sin importar sus culturas e instituciones, ¿cuál de los siguientes principios estará aplicando al proponer una teoría global al respecto?",
+            "opciones": ["Generalización.", "Evolución particular.", "Latitudes extremas.", "Aislamiento casual."],
+            "respuesta": 0,
+            "retroalimentacion": "El principio de Generalización es fundamental aquí. Consiste en identificar patrones y similitudes de un acontecimiento alrededor del mundo para establecer premisas universales, justo lo que haría este investigador."
         }
     ]
 };

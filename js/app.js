@@ -4,7 +4,7 @@
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
-    const SW_VERSION = window.__APP_VERSION || '20260313-1';
+    const SW_VERSION = window.__APP_VERSION || '20260314-1';
     const SW_URL = `./sw.js?v=${encodeURIComponent(SW_VERSION)}`;
     let hasRefreshedAfterUpdate = false;
 
@@ -2212,6 +2212,10 @@ function updateProfileProgress() {
             key: 'literatura', label: 'Literatura', icon: 'fa-book', color: '#9333ea',
             classes: Object.keys(appDatabase).filter(k => k.startsWith('content-literatura'))
         },
+        {
+            key: 'geografia', label: 'Geografía', icon: 'fa-map', color: '#0d9488',
+            classes: Object.keys(appDatabase).filter(k => k.startsWith('content-geografia'))
+        }
     ];
 
     const totalClasses = Object.keys(appDatabase).length;

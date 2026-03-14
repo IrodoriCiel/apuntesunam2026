@@ -1488,5 +1488,57 @@ const flashcardsDatabase = [
         "respuesta": "Dogma es una verdad absolutista impuesta ciegamente. Oscurantismo significa bloqueo científico en gran parte atado a la Edad Media.",
         "tema": "Conceptos Clave",
         "asignatura": "Historia Univ."
+    },
+    // ==========================================
+    // GEOGRAFÍA - CLASE 1
+    // ==========================================
+    {
+        "id": "geo1-001",
+        "pregunta": "¿Qué es la Geografía según su definición técnica para la UNAM?",
+        "respuesta": "Es la ciencia mixta que estudia las interrelaciones o interacciones entre los factores físicos, biológicos (bióticos) y sociales (humanos).",
+        "tema": "Conceptos Básicos",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-002",
+        "pregunta": "¿Cuál es la diferencia de tiempo entre un Hecho Geográfico y un Fenómeno Geográfico?",
+        "respuesta": "El hecho ocurre lentamente o es de larga duración (montañas), mientras que el fenómeno es rápido, corto e impetuoso (huracán, sismo).",
+        "tema": "Hechos y Fenómenos",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-003",
+        "pregunta": "¿A qué principio metodológico de la geografía corresponde la localización?",
+        "respuesta": "A determinar la ubicación exacta de un lugar mediante el uso de coordenadas cartográficas.",
+        "tema": "Principios Metodológicos",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-004",
+        "pregunta": "¿Qué rama de la geografía estudia exclusivamente procesos naturales como el relieve (Geomorfología) y sin intervención humana?",
+        "respuesta": "La Geografía Física.",
+        "tema": "Ramas de la Geografía",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-005",
+        "pregunta": "¿Qué es un Geoide según el tema de ubicación espacial en la Tierra?",
+        "respuesta": "Es la forma técnica de la Tierra: achatada por los polos y ensanchada en el Ecuador por la rotación.",
+        "tema": "Ubicación Espacial",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-006",
+        "pregunta": "¿A qué corresponden las líneas de Latitud y cuál es su grado base o referencia de cero?",
+        "respuesta": "A los Paralelos (líneas horizontales). Su base de 0° es el Ecuador.",
+        "tema": "Ubicación Espacial",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-007",
+        "pregunta": "¿A qué corresponden las líneas de Longitud y cuál es su grado base o referencia de cero?",
+        "respuesta": "A los Meridianos (líneas verticales). Su base de 0° es el Meridiano de Greenwich.",
+        "tema": "Ubicación Espacial",
+        "asignatura": "Geografía"
     }
 ];

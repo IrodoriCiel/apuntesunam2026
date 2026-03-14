@@ -38,7 +38,7 @@
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260313-1">
+    <link rel="stylesheet" href="./css/styles.css?v=20260314-1">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -332,6 +332,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-biologia-2"
+                            onclick="switchClass('content-biologia-2', this, 'btn-biologia')"
+                            data-class-id="content-biologia-2">
+                            <i class="fa-solid fa-book-open"></i> Clase 2: Proteínas, Ácidos Nucleicos y Célula
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -438,17 +446,24 @@
                 </ul>
             </li>
 
-            <!-- GEOGRAFÍA (DESHABILITADO) -->
+            <!-- GEOGRAFÍA -->
             <li class="subject-wrapper">
-                <a href="#" class="subject-item" id="btn-geografia"
-                    style="opacity: 0.5; pointer-events: none; color: #0d9488;">
+                <a href="#" class="subject-item" id="btn-geografia" onclick="toggleSubMenu(event, 'submenu-geografia')"
+                    style="color: #0d9488;">
                     <span class="subject-icon"><i class="fa-solid fa-map"></i></span>
                     Geografía
+                    <span class="subject-pending-badge" id="badge-geografia"></span>
                     <span class="arrow-icon"><i class="fa-solid fa-chevron-down"></i></span>
                 </a>
                 <ul class="sub-menu-list" id="submenu-geografia">
-                    <li><a href="#" class="class-item" style="opacity: 0.5; pointer-events: none;"><i
-                                class="fa-solid fa-lock"></i> Próximamente</a></li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-geografia-1"
+                            onclick="switchClass('content-geografia-1', this, 'btn-geografia')"
+                            data-class-id="content-geografia-1">
+                            <i class="fa-solid fa-book-open"></i> Clase 1: Definición y Objeto de Estudio
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -2240,6 +2255,65 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/tb18nlQP8uM"
             },
+            "content-biologia-2": {
+                title: "Apuntes de Biología",
+                titleIconLeft: "fa-dna",
+                titleIconRight: "fa-microscope",
+                titleStyle: "color: #d97706;",
+                mainTopicId: "mainTopicBiologia2",
+                mainTopicClass: "topic-3",
+                mainTopicTitle: "Biología",
+                mainTopicIcon1: "fa-dna",
+                mainTopicIcon2: "fa-leaf",
+                mainTopicSubtitle: "Clase 2: Proteínas, Ácidos Nucleicos y Célula",
+                branches: [
+                    {
+                        id: "nodes-bio2-1",
+                        topicIdx: 1,
+                        title: "1. Proteínas y Niveles de Organización",
+                        icon: "fa-cubes",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Definición", content: "<p>Son biomoléculas constituidas por CHON y <b>Fe (Hierro)</b>. Se forman por la unión de aminoácidos mediante el <b>enlace peptídico</b>.</p>" },
+                            { icon: "fa-layer-group", delay: "0.2s", title: "Niveles de Organización (2D)", content: "<p><b>Primaria:</b> Cadena lineal de aminoácidos.</p><p><b>Secundaria:</b> Plegamiento en zigzag o hélice.</p><p><b>Terciaria:</b> Forma globular (esférica).</p><p><b>Cuaternaria:</b> Unión de dos o más proteínas terciarias.</p>" },
+                            { icon: "fa-shapes", delay: "0.3s", title: "Clasificación Tridimensional (3D)", content: "<p><b>Globulares:</b> Esféricas, participan en procesos vitales (ej. enzimas, mioglobina).</p><p><b>Fibrosas:</b> En forma de hebra o trenza, dan soporte y estructura (ej. colágeno, queratina).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio2-2",
+                        topicIdx: 2,
+                        title: "2. Funciones de las Proteínas",
+                        icon: "fa-list-check",
+                        subnodes: [
+                            { icon: "fa-bolt", delay: "0.1s", title: "Catalizadora y Contráctil", content: "<p><b>Catalizadora:</b> Enzimas (terminan en -asa, ej. lactasa). Aceleran reacciones químicas.</p><p><b>Contráctil:</b> Actina y Miosina. Permiten el movimiento muscular.</p>" },
+                            { icon: "fa-shield-halved", delay: "0.2s", title: "Defensa y Coagulación", content: "<p><b>Defensa:</b> Inmunoglobulina (anticuerpos del sistema inmune para protección).</p><p><b>Coagulación:</b> Fibrina (evita hemorragias limitando el flujo sanguíneo).</p>" },
+                            { icon: "fa-truck-fast", delay: "0.3s", title: "Transporte, Hormonal, Estructural y División C.", content: "<p><b>Transporte:</b> Hemoglobina (transporta oxígeno en la sangre, contiene hierro).</p><p><b>Hormonal:</b> Insulina (regula la glucosa en sangre, sintetizada en el páncreas).</p><p><b>Estructural:</b> Queratina / Colágeno (forma pelo, uñas y da soporte a piel/huesos).</p><p><b>División Celular:</b> Histonas (ayudan en la replicación y empaquetamiento del ADN).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio2-3",
+                        topicIdx: 3,
+                        title: "3. Ácidos Nucleicos y Vitaminas",
+                        icon: "fa-dna",
+                        subnodes: [
+                            { icon: "fa-book-medical", delay: "0.1s", title: "Ácidos Nucleicos", content: "<p>Son polímeros de nucleótidos. Un nucleótido se compone de: <b>Grupo Fosfato + Azúcar (Pentosa) + Base Nitrogenada</b>.</p><p><b>ADN (Ácido Desoxirribonucleico):</b> Azúcar desoxirribosa. Bases: Adenina, Guanina, Citosina, Timina. Estructura: Cadena doble lineal (cromosomas).</p><p><b>ARN (Ácido Ribonucleico):</b> Azúcar ribosa. Bases: Adenina, Guanina, Citosina, Uracilo. Estructura: Cadena sencilla.</p>" },
+                            { icon: "fa-pills", delay: "0.2s", title: "Vitaminas Liposolubles", content: "<p>Son nutrientes esenciales que el cuerpo no produce y deben obtenerse de la dieta. Liposolubles (solubles en grasa):</p><ul><li><b>Vitamina A (Retinol):</b> Vista (retina) y colágeno.</li><li><b>Vitamina D (Calciferol):</b> Salud ósea y absorción de calcio.</li><li><b>Vitamina K (Filoquinona):</b> Coagulación.</li></ul>" },
+                            { icon: "fa-glass-water", delay: "0.3s", title: "Vitaminas Hidrosolubles", content: "<p>Hidrosolubles (solubles en agua):</p><ul><li><b>Vitamina C (Ácido Ascórbico):</b> Inmunidad y colágeno. Su falta causa escorbuto.</li><li><b>Complejo B:</b> Producción de energía y hemoglobina.</li><li><b>Ácido Fólico:</b> Desarrollo del sistema nervioso fetal.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-bio2-4",
+                        topicIdx: 4,
+                        title: "4. Célula y Organelos",
+                        icon: "fa-microscope",
+                        subnodes: [
+                            { icon: "fa-bacterium", delay: "0.1s", title: "Tipos de Células", content: "<p><b>Procariotas (Bacterias):</b> Sin núcleo definido (tienen nucleoide). ADN circular y plásmidos (fragmentos de ADN extracromosómico). Organismos unicelulares. Pared celular de peptidoglucano.</p><p><b>Eucariotas (Animal y Vegetal):</b> Con núcleo definido (contiene el ADN lineal). Más grandes y complejas (10 a 100 micras). La célula animal no tiene pared celular, mientras que la vegetal tiene pared celular de celulosa y cloroplastos.</p>" },
+                            { icon: "fa-box-open", delay: "0.2s", title: "Organelos Celulares Principales", content: "<p><b>Núcleo / Nucleolo:</b> Centro de control. Contiene el material genético (ADN).</p><p><b>Mitocondria:</b> Respiración celular y producción de ATP (energía). Tiene su propio ADN.</p><p><b>Ribosomas:</b> Síntesis de proteínas.</p><p><b>R.E. Rugoso (RER):</b> Transporte de proteínas (tiene ribosomas).</p><p><b>R.E. Liso (REL):</b> Síntesis y transporte de lípidos.</p>" },
+                            { icon: "fa-trash-can", delay: "0.3s", title: "Otros Organelos", content: "<p><b>Aparato de Golgi:</b> Centro de empaquetamiento y distribución de proteínas en vesículas.</p><p><b>Lisosomas:</b> Digestión y excreción de desechos celulares (Lisis = destrucción).</p><div class='exam-tip'><i class='fa-solid fa-link'></i> <b>RESUMEN FUNDAMENTAL DE ENLACES:</b><br>Azúcares $\\rightarrow$ Glucosídico<br>Grasas $\\rightarrow$ Éster<br>Proteínas $\\rightarrow$ Peptídico</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/YxZ9AQmLJW8"
+            },
             "content-literatura-1": {
                 title: "Apuntes de Literatura",
                 titleIconLeft: "fa-book-open",
@@ -2383,14 +2457,97 @@
                     }
                 ],
                 videoUrl: "https://www.youtube.com/embed/AoMq53a1Xm4"
+            },
+            "content-geografia-1": {
+                title: "Apuntes de Geografía",
+                titleIconLeft: "fa-map",
+                titleIconRight: "fa-book",
+                titleStyle: "color: #0d9488;",
+                mainTopicId: "topic-geo-1",
+                mainTopicClass: "topic-title",
+                mainTopicTitle: "Geografía",
+                mainTopicIcon1: "fa-earth-americas",
+                mainTopicIcon2: "fa-book-open",
+                mainTopicSubtitle: "Definición y Objeto de Estudio",
+                branches: [
+                    {
+                        id: "nodes-geo1-1",
+                        topicIdx: 1,
+                        title: "1. Definición y Objeto de Estudio",
+                        icon: "fa-earth-americas",
+                        subnodes: [
+                            { icon: "fa-book", delay: "0.1s", title: "Etimología", content: "<p>Geografía proviene del griego <b>Gea</b> (Tierra) y <b>graphos</b> (descripción).</p>" },
+                            { icon: "fa-microscope", delay: "0.2s", title: "Definición UNAM", content: "<p>Ciencia que estudia las <b>interrelaciones (o interacciones)</b> entre los factores físicos, bióticos (biológicos) y humanos (sociales).</p>" },
+                            { icon: "fa-puzzle-piece", delay: "0.3s", title: "Ciencia Mixta", content: "<p>Se le considera mixta porque integra tanto fenómenos naturales como procesos sociales para explicar su relación.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-geo1-2",
+                        topicIdx: 2,
+                        title: "2. Hechos vs. Fenómenos",
+                        icon: "fa-bolt",
+                        subnodes: [
+                            { icon: "fa-mountain", delay: "0.1s", title: "Hecho Geográfico", content: "<p>Acontecimientos de <b>larga duración</b>, permanentes y estables. El ser humano no percibe su formación a simple vista.</p><p><b>Ejemplos:</b> Volcanes, cordilleras, placas tectónicas, glaciares, continentes.</p>" },
+                            { icon: "fa-tornado", delay: "0.2s", title: "Fenómeno Geográfico", content: "<p>Acontecimientos de <b>corta duración</b>, impetuosos, transitorios y observables por el ser humano.</p><p><b>Ejemplos:</b> Erupciones, sismos, tsunamis, huracanes, tormentas.</p>" },
+                            { icon: "fa-stopwatch", delay: "0.3s", title: "Clave de examen", content: "<div class='exam-tip'><i class='fa-solid fa-clock'></i> <b>TIP:</b><br>La diferencia principal entre hecho y fenómeno es el <b>tiempo</b> que tardan en suceder.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-geo1-3",
+                        topicIdx: 3,
+                        title: "3. Metodología (Principios)",
+                        icon: "fa-magnifying-glass-chart",
+                        subnodes: [
+                            { icon: "fa-question", delay: "0.1s", title: "Causalidad", content: "<p>Investiga el origen o las causas que dan lugar a un fenómeno (ej. por qué ocurrió un sismo).</p>" },
+                            { icon: "fa-location-dot", delay: "0.2s", title: "Localización", content: "<p>Determina la ubicación exacta mediante coordenadas geográficas.</p>" },
+                            { icon: "fa-link", delay: "0.3s", title: "Relación o Interrelación", content: "<p>Busca las conexiones entre hechos y fenómenos (ej. ciclos biogeoquímicos y clima).</p>" },
+                            { icon: "fa-clock-rotate-left", delay: "0.4s", title: "Evolución", content: "<p>Analiza los cambios de los elementos geográficos a través del tiempo.</p>" },
+                            { icon: "fa-copy", delay: "0.5s", title: "Generalización", content: "<p>Identifica similitudes para establecer patrones que se repiten (ej. tsunamis recurrentes en zonas de subducción).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-geo1-4",
+                        topicIdx: 4,
+                        title: "4. Subdivisiones de la Geografía",
+                        icon: "fa-sitemap",
+                        subnodes: [
+                            { icon: "fa-water", delay: "0.1s", title: "Geografía Física", content: "<p>Estudia procesos naturales <b>sin intervención humana</b>.</p><p><b>Categorías:</b> Geomorfología (relieve), Edafología (suelo), Orografía (montañas), Hidrografía.</p>" },
+                            { icon: "fa-people-group", delay: "0.2s", title: "Geografía Humana", content: "<p>Estudia la influencia de la geografía en el hombre y viceversa.</p><p><b>Categorías:</b> Demografía (población), Geoeconomía (economía), Geopolítica.</p>" },
+                            { icon: "fa-leaf", delay: "0.3s", title: "Geografía Biológica", content: "<p>Estudia la distribución de los seres vivos.</p><p><b>Categorías:</b> Zoogeografía (animales) y Fitogeografía (vegetales).</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-geo1-5",
+                        topicIdx: 5,
+                        title: "5. Ubicación Espacial",
+                        icon: "fa-compass",
+                        subnodes: [
+                            { icon: "fa-globe", delay: "0.1s", title: "Forma de la Tierra", content: "<p>Técnicamente la Tierra es un <b>Geoide</b> o <b>Esferoide Oblato</b>: achatada en los polos y ensanchada en el Ecuador por el movimiento de rotación.</p>" },
+                            { icon: "fa-arrows-left-right", delay: "0.2s", title: "Latitud (Paralelos)", content: "<p>Líneas horizontales. La referencia es el <b>Ecuador (0°)</b>. Su rango va de 0° a 90° hacia el Norte o Sur.</p>" },
+                            { icon: "fa-arrows-up-down", delay: "0.3s", title: "Longitud (Meridianos)", content: "<p>Líneas verticales (como gajos de naranja o mandarina). La referencia es el <b>Meridiano de Greenwich (0°)</b>. Rango de 0° a 180° hacia el Este/Oriente u Oeste/Occidente.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-geo1-6",
+                        topicIdx: 6,
+                        title: "6. Tips de Examen",
+                        icon: "fa-lightbulb",
+                        subnodes: [
+                            { icon: "fa-person", delay: "0.1s", title: "El Padre de la Historia", content: "<p><b>Heródoto</b> es frecuentemente mencionado en preguntas que cruzan ciencias sociales. Recordar que escribió 'Los Nueve libros de la historia'.</p>" },
+                            { icon: "fa-layer-group", delay: "0.2s", title: "Geología vs Geomorfología", content: "<p>La <b>Geología</b> estudia la estructura interna y composición; la <b>Geomorfología</b> estudia puramente los cambios y formas del relieve exterior.</p>" },
+                            { icon: "fa-location-arrow", delay: "0.3s", title: "La Rosa de los Vientos", content: "<p>Vital repasar siempre en el examen dónde queda el <b>Norte, Sur, Este y Oeste</b> para localizar coordenadas y evitar distracciones visuales.</p>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/z-nLJ6LSCf0"
             }
         };
 
     </script>
 
     <!-- Bases de Datos Externas (JS) -->
-    <script src="./js/data/questions-db.js?v=20260313-1"></script>
-    <script src="./js/data/flashcards-db.js?v=20260313-1"></script>
+    <script src="./js/data/questions-db.js?v=20260314-1"></script>
+    <script src="./js/data/flashcards-db.js?v=20260314-1"></script>
 
     <!-- Secciones de Herramientas: Flashcards y Estadísticas (páginas) -->
     <div id="content-flashcards" class="subject-content" style="display:none;animation:fadeInPage 0.4s ease forwards;">
@@ -2738,7 +2895,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260313-1"></script>
+    <script src="./js/app.js?v=20260314-1"></script>
 
 </body>
 
