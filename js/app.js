@@ -555,6 +555,45 @@ function validateAppDatabase() {
     });
 }
 
+// Validate flashcardsDatabase for common authoring issues (non-intrusive)
+function validateFlashcardsDatabase() {
+    const db = (typeof flashcardsDatabase !== 'undefined'
+        ? flashcardsDatabase
+        : (window.flashcardsDatabase || null));
+    if (!Array.isArray(db)) return;
+
+    const seenIds = new Set();
+    db.forEach((card, idx) => {
+        if (!card || typeof card !== 'object') {
+            console.warn(`flashcardsDatabase[${idx}] no es un objeto válido`);
+            return;
+        }
+
+        const id = (card.id || '').toString().trim();
+        if (!id) console.warn(`flashcardsDatabase[${idx}] sin id`);
+        else if (seenIds.has(id)) console.warn(`flashcardsDatabase id duplicado: ${id}`);
+        else seenIds.add(id);
+
+        ['pregunta', 'respuesta', 'tema', 'asignatura'].forEach(k => {
+            if (!card[k] || !String(card[k]).trim()) console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) falta '${k}'`);
+        });
+
+        const q = String(card.pregunta || '').toLowerCase();
+        const a = String(card.respuesta || '');
+
+        // Heurísticas: tarjetas que tienden a mezclar 2 conceptos (para dividirlas)
+        if (q.includes('diferencia entre') || q.includes('respectivamente')) {
+            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) parece multi-concepto (considera dividir): ${card.pregunta}`);
+        }
+        if (/\b y \b/.test(q) && (q.includes('¿') || q.includes('?')) && (q.includes(' y ') && (q.includes(' y qué') || q.includes(' y cuáles') || q.includes(' y quién')))) {
+            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) posible multi-concepto (revisar): ${card.pregunta}`);
+        }
+        if (/[^:]{2,}:\s*[^.]{2,}\.\s*[^:]{2,}:\s*/.test(a)) {
+            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) respuesta con 2 definiciones (considera dividir)`);
+        }
+    });
+}
+
 // Ensure there is a menu link for each class defined in appDatabase; if missing, append it to the parent submenu
 function ensureSidebarLinksFromAppDatabase() {
     if (typeof appDatabase === 'undefined') return;
@@ -2542,6 +2581,7 @@ window.addEventListener('DOMContentLoaded', () => {
     updateStudiedBadges();
     loadProfile();
     validateAppDatabase();
+    validateFlashcardsDatabase();
     loadPreguntasGuiaTxt();
     ensureSidebarLinksFromAppDatabase();
     ensureClassLabelsWrapped();

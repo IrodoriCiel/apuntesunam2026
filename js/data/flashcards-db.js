@@ -1,6 +1,6 @@
 const flashcardsDatabase = [
     // ==========================================
-    // ESPAÑOL (10 CONCEPTOS)
+    // ESPAÑOL CLASE 1 (22 TARJETAS)
     // ==========================================
     {
         "id": "esp-001",
@@ -88,29 +88,50 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp-013",
-        "pregunta": "¿Cuál es la función gramatical de las conjunciones y cuáles son las más importantes?",
-        "respuesta": "Enlazan oraciones o elementos de una lista. Las más importantes: Y, e, o, u, ni, pero, porque.",
+        "pregunta": "¿Cuál es la función gramatical de las conjunciones?",
+        "respuesta": "Enlazan oraciones o elementos de una lista.",
         "tema": "Modificadores y Enlaces",
         "asignatura": "Español"
     },
     {
         "id": "esp-014",
-        "pregunta": "¿Qué es una interjección y en qué se diferencia de las conjunciones?",
-        "respuesta": "Enunciado exclamativo que expresa emociones (¡Ay!, ¡Uf!). A diferencia de las conjunciones, NO enlaza; solo expresa.",
+        "pregunta": "¿Qué es una interjección?",
+        "respuesta": "Enunciado exclamativo que expresa emociones (¡Ay!, ¡Uf!). No enlaza oraciones; solo expresa.",
+        "tema": "Modificadores y Enlaces",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-019",
+        "pregunta": "¿Cuáles son algunas conjunciones comunes?",
+        "respuesta": "Y, e, o, u, ni, pero, porque.",
         "tema": "Modificadores y Enlaces",
         "asignatura": "Español"
     },
     {
         "id": "esp-015",
-        "pregunta": "¿Cuáles son los dos tipos de sujeto según su visibilidad?",
-        "respuesta": "Expreso (escrito en la oración) y Tácito/Implícito (no escrito, se deduce por la conjugación del verbo).",
+        "pregunta": "¿Qué es el sujeto expreso?",
+        "respuesta": "Sujeto que está escrito explícitamente en la oración.",
         "tema": "La Oración",
         "asignatura": "Español"
     },
     {
         "id": "esp-016",
-        "pregunta": "¿Cuáles son los dos tipos de sujeto según su estructura?",
-        "respuesta": "Simple (un solo núcleo, aunque sea plural) y Compuesto (dos o más núcleos, ej. 'Teresa y Antonio').",
+        "pregunta": "¿Qué es el sujeto simple?",
+        "respuesta": "Sujeto con un solo núcleo, aunque el núcleo sea plural.",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-020",
+        "pregunta": "¿Qué es el sujeto tácito o implícito?",
+        "respuesta": "Sujeto que no está escrito, pero se deduce por la conjugación del verbo.",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-021",
+        "pregunta": "¿Qué es el sujeto compuesto?",
+        "respuesta": "Sujeto con dos o más núcleos.",
         "tema": "La Oración",
         "asignatura": "Español"
     },
@@ -123,8 +144,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "esp-018",
-        "pregunta": "¿Cuál es la diferencia entre Predicado Nominal y Predicado Verbal?",
-        "respuesta": "Nominal: verbo copulativo (Ser, Estar, Parecer). Ej: 'es pintora'. Verbal: verbo de acción. Ej: 'barrió su casa'.",
+        "pregunta": "¿Qué es el predicado nominal?",
+        "respuesta": "Predicado cuyo núcleo es un verbo copulativo: Ser, Estar o Parecer. Ej: 'es pintora'.",
+        "tema": "La Oración",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp-022",
+        "pregunta": "¿Qué es el predicado verbal?",
+        "respuesta": "Predicado cuyo núcleo es un verbo de acción. Ej: 'barrió su casa'.",
         "tema": "La Oración",
         "asignatura": "Español"
     },
@@ -155,8 +183,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-004",
-        "pregunta": "¿Cuáles son dos rasgos generales de las culturas mesoamericanas?",
-        "respuesta": "Religión Politeísta (muchos dioses) y Gobierno Teocrático (gobernados por la religión/sacerdotes).",
+        "pregunta": "¿Qué es la religión politeísta?",
+        "respuesta": "Creencia religiosa que acepta la existencia de muchos dioses.",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-023",
+        "pregunta": "¿Qué es un gobierno teocrático?",
+        "respuesta": "Sistema de gobierno en el que la religión y los sacerdotes influyen o determinan el poder político.",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
     },
@@ -169,8 +204,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-006",
-        "pregunta": "¿Qué aportaron los Mayas?",
-        "respuesta": "Dominio de las matemáticas (uso del cero) y la astronomía (estudio de eclipses).",
+        "pregunta": "¿Qué aportaron los mayas en matemáticas?",
+        "respuesta": "El uso del cero.",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-024",
+        "pregunta": "¿Qué aportaron los mayas en astronomía?",
+        "respuesta": "El estudio de los eclipses.",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
     },
@@ -183,8 +225,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-008",
-        "pregunta": "¿Quiénes fueron los Toltecas y Mexicas?",
-        "respuesta": "Toltecas: Tula y Atlantes. Mexicas: Fundaron Tenochtitlan en 1325; último Tlatoani fue Cuauhtémoc.",
+        "pregunta": "¿Quiénes fueron los toltecas?",
+        "respuesta": "Civilización asociada con Tula y los Atlantes.",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-025",
+        "pregunta": "¿Qué hecho se asocia con los mexicas?",
+        "respuesta": "Fundaron Tenochtitlan en 1325.",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
     },
@@ -211,8 +260,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-012",
-        "pregunta": "¿Por qué ganaron los españoles la Conquista?",
-        "respuesta": "Por alianzas con los Tlaxcaltecas (enemigos de los Mexicas) y el factor biológico (pandemia de viruela).",
+        "pregunta": "¿Qué ventaja dieron a los españoles las alianzas con los tlaxcaltecas?",
+        "respuesta": "Les permitieron contar con apoyo de pueblos enemigos de los mexicas durante la Conquista.",
+        "tema": "La Conquista",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-026",
+        "pregunta": "¿Qué factor biológico favoreció a los españoles durante la Conquista?",
+        "respuesta": "La pandemia de viruela.",
         "tema": "La Conquista",
         "asignatura": "Historia de México"
     },
@@ -225,15 +281,43 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-014",
-        "pregunta": "¿Cuáles son algunos personajes clave de la Conquista de México?",
-        "respuesta": "Hernán Cortés, Moctezuma, Cuitláhuac y Cuauhtémoc.",
+        "pregunta": "Menciona un personaje clave de la Conquista de México:",
+        "respuesta": "Hernán Cortés.",
+        "tema": "La Conquista",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-029",
+        "pregunta": "Menciona un personaje clave de la Conquista de México:",
+        "respuesta": "Moctezuma.",
+        "tema": "La Conquista",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-030",
+        "pregunta": "Menciona un personaje clave de la Conquista de México:",
+        "respuesta": "Cuitláhuac.",
+        "tema": "La Conquista",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-031",
+        "pregunta": "Menciona un personaje clave de la Conquista de México:",
+        "respuesta": "Cuauhtémoc.",
         "tema": "La Conquista",
         "asignatura": "Historia de México"
     },
     {
         "id": "hist-015",
-        "pregunta": "¿Quién fue el primer y el último virrey de la Nueva España?",
-        "respuesta": "Primer virrey: Antonio de Mendoza. Último virrey: Juan O'Donojú (firmó los Tratados de Córdoba).",
+        "pregunta": "¿Quién fue el primer virrey de la Nueva España?",
+        "respuesta": "Antonio de Mendoza.",
+        "tema": "Virreinato",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-027",
+        "pregunta": "¿Quién fue el último virrey de la Nueva España?",
+        "respuesta": "Juan O'Donojú (firmó los Tratados de Córdoba).",
         "tema": "Virreinato",
         "asignatura": "Historia de México"
     },
@@ -281,8 +365,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist-022",
-        "pregunta": "¿Cuáles son las causas EXTERNAS de la Independencia de México?",
-        "respuesta": "La Independencia de los Estados Unidos (1776) y la Revolución Francesa (1789), que difundieron los ideales de libertad e inspiraron a los criollos.",
+        "pregunta": "Menciona una causa externa de la Independencia de México:",
+        "respuesta": "La Independencia de los Estados Unidos (1776).",
+        "tema": "Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist-028",
+        "pregunta": "Menciona una causa externa de la Independencia de México:",
+        "respuesta": "La Revolución Francesa (1789).",
         "tema": "Independencia",
         "asignatura": "Historia de México"
     },
@@ -538,8 +629,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "mat-036",
-        "pregunta": "¿Qué diferencia esencial hay entre polinomio y ecuación?",
-        "respuesta": "La ecuación tiene signo de igualdad (=); el polinomio no.",
+        "pregunta": "¿Qué caracteriza a una ecuación?",
+        "respuesta": "Tiene signo de igualdad (=).",
+        "tema": "Ecuaciones y Despeje",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat-041",
+        "pregunta": "¿Qué caracteriza a un polinomio?",
+        "respuesta": "Es una expresión algebraica sin signo de igualdad (=).",
         "tema": "Ecuaciones y Despeje",
         "asignatura": "Matemáticas"
     },
@@ -573,22 +671,43 @@ const flashcardsDatabase = [
     },
     {
         "id": "fis-001",
-        "pregunta": "¿Qué diferencia principal hay entre magnitud escalar y vectorial?",
-        "respuesta": "La vectorial tiene dirección y sentido; la escalar no.",
+        "pregunta": "¿Qué es una magnitud escalar?",
+        "respuesta": "Magnitud que se describe solo con valor y unidad (sin dirección ni sentido).",
+        "tema": "Magnitudes",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-014",
+        "pregunta": "¿Qué es una magnitud vectorial?",
+        "respuesta": "Magnitud que se describe con valor, dirección y sentido.",
         "tema": "Magnitudes",
         "asignatura": "Física"
     },
     {
         "id": "fis-002",
-        "pregunta": "¿Distancia y desplazamiento son lo mismo?",
-        "respuesta": "No. Distancia es la trayectoria total; desplazamiento es la línea recta entre inicio y fin con dirección.",
+        "pregunta": "¿Qué es la distancia (en cinemática)?",
+        "respuesta": "Longitud total de la trayectoria recorrida.",
+        "tema": "Cinemática Básica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-015",
+        "pregunta": "¿Qué es el desplazamiento (en cinemática)?",
+        "respuesta": "Cambio de posición entre el punto inicial y el final, en línea recta y con dirección.",
         "tema": "Cinemática Básica",
         "asignatura": "Física"
     },
     {
         "id": "fis-003",
-        "pregunta": "¿Qué diferencia hay entre rapidez y velocidad?",
-        "respuesta": "Rapidez solo indica magnitud; velocidad indica magnitud y dirección.",
+        "pregunta": "¿Qué es la rapidez?",
+        "respuesta": "Magnitud que indica qué tan rápido ocurre un movimiento (solo magnitud).",
+        "tema": "Cinemática Básica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-016",
+        "pregunta": "¿Qué es la velocidad?",
+        "respuesta": "Magnitud que indica rapidez y dirección del movimiento.",
         "tema": "Cinemática Básica",
         "asignatura": "Física"
     },
@@ -608,8 +727,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "fis-006",
-        "pregunta": "¿Qué es la aceleración y en qué unidades se mide?",
-        "respuesta": "Es el cambio de velocidad que experimenta un cuerpo en un tiempo determinado. Se mide en $m/s^2$.",
+        "pregunta": "¿Qué es la aceleración?",
+        "respuesta": "Cambio de velocidad que experimenta un cuerpo en un tiempo determinado.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-017",
+        "pregunta": "¿En qué unidades se mide la aceleración?",
+        "respuesta": "En $m/s^2$.",
         "tema": "MRUA",
         "asignatura": "Física"
     },
@@ -854,8 +980,8 @@ const flashcardsDatabase = [
     },
     {
         "id": "lit-008",
-        "pregunta": "¿Cuál es la diferencia entre Organización Textual y Disposición Espacial?",
-        "respuesta": "Organización es la estructura lógica interna; Disposición es la apariencia visual externa.",
+        "pregunta": "¿Qué propiedad de un texto se relaciona con márgenes, sangrías y tipografía?",
+        "respuesta": "La disposición espacial.",
         "tema": "Propiedades Textuales",
         "asignatura": "Literatura"
     },
@@ -960,8 +1086,15 @@ const flashcardsDatabase = [
     // ==========================================
     {
         "id": "esp2-001",
-        "pregunta": "¿Cuál es la diferencia entre la función fática y la función metalingüística?",
-        "respuesta": "La fática verifica o mantiene el canal de comunicación; la metalingüística habla del código o del idioma.",
+        "pregunta": "¿Qué función del lenguaje verifica o mantiene el canal de comunicación?",
+        "respuesta": "La función fática.",
+        "tema": "Funciones del Lenguaje",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp2-008",
+        "pregunta": "¿Qué función del lenguaje habla del código o del idioma?",
+        "respuesta": "La función metalingüística.",
         "tema": "Funciones del Lenguaje",
         "asignatura": "Español"
     },
@@ -1157,8 +1290,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist3-009",
-        "pregunta": "¿Cuál es la diferencia entre Liberales (Federalistas) y Conservadores (Centralistas)?",
-        "respuesta": "Liberales: poder a los estados, separación Iglesia-Estado. Conservadores: Imperio o gobierno central, privilegios para la Iglesia.",
+        "pregunta": "¿Qué defendían los liberales (federalistas) en México Independiente?",
+        "respuesta": "Poder a los estados y separación Iglesia-Estado.",
+        "tema": "Federalismo vs. Centralismo",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist3-011",
+        "pregunta": "¿Qué defendían los conservadores (centralistas) en México Independiente?",
+        "respuesta": "Imperio o gobierno central y privilegios para la Iglesia.",
         "tema": "Federalismo vs. Centralismo",
         "asignatura": "Historia de México"
     },
@@ -1196,8 +1336,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "qui2-004",
-        "pregunta": "¿Dónde se encuentran los protones y neutrones y qué característica le dan al átomo?",
-        "respuesta": "Se encuentran en el núcleo, y al ser las partículas más pesadas, determinan la masa central del átomo.",
+        "pregunta": "¿Dónde se encuentran los protones y neutrones?",
+        "respuesta": "En el núcleo.",
+        "tema": "Estructura Atómica",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-008",
+        "pregunta": "¿Qué característica del átomo determinan principalmente los protones y neutrones?",
+        "respuesta": "La masa central del átomo (por ser las partículas más pesadas).",
         "tema": "Estructura Atómica",
         "asignatura": "Química"
     },
@@ -1210,8 +1357,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "qui2-006",
-        "pregunta": "¿Qué descubrió J.J. Thomson y mediante qué experimento?",
-        "respuesta": "Descubrió el electrón mediante el experimento de los Rayos Catódicos.",
+        "pregunta": "¿Qué descubrió J.J. Thomson?",
+        "respuesta": "El electrón.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui2-009",
+        "pregunta": "¿Mediante qué experimento se descubrió el electrón (J.J. Thomson)?",
+        "respuesta": "El experimento de los rayos catódicos.",
         "tema": "Modelos Atómicos",
         "asignatura": "Química"
     },
@@ -1235,8 +1389,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "bio-002",
-        "pregunta": "¿Qué representan la célula y el átomo en sus niveles de organización?",
-        "respuesta": "La célula es la unidad estructural y funcional de los seres vivos; el átomo es la unidad básica de la materia.",
+        "pregunta": "¿Qué representa la célula en los niveles de organización?",
+        "respuesta": "La unidad estructural y funcional de los seres vivos.",
+        "tema": "Fundamentos Celulares",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-009",
+        "pregunta": "¿Qué representa el átomo en los niveles de organización?",
+        "respuesta": "La unidad básica de la materia.",
         "tema": "Fundamentos Celulares",
         "asignatura": "Biología"
     },
@@ -1277,8 +1438,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "bio-008",
-        "pregunta": "¿Qué tipo de enlace une a lípidos y proteínas, respectivamente?",
-        "respuesta": "Lípidos: enlace éster. Proteínas (aminoácidos): enlace peptídico.",
+        "pregunta": "¿Qué tipo de enlace une a los lípidos?",
+        "respuesta": "El enlace éster.",
+        "tema": "Biomoléculas",
+        "asignatura": "Biología"
+    },
+    {
+        "id": "bio-010",
+        "pregunta": "¿Qué tipo de enlace une a las proteínas (aminoácidos)?",
+        "respuesta": "El enlace peptídico.",
         "tema": "Biomoléculas",
         "asignatura": "Biología"
     },
@@ -1316,8 +1484,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "lit2-005",
-        "pregunta": "¿Cómo se distinguen editorial y artículo de opinión?",
-        "respuesta": "La editorial representa al medio y no se firma; el artículo de opinión lleva firma individual.",
+        "pregunta": "¿Qué caracteriza a la editorial (género periodístico)?",
+        "respuesta": "Representa al medio y no se firma.",
+        "tema": "Géneros Periodísticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-009",
+        "pregunta": "¿Qué caracteriza al artículo de opinión (género periodístico)?",
+        "respuesta": "Lleva firma individual.",
         "tema": "Géneros Periodísticos",
         "asignatura": "Literatura"
     },
@@ -1330,8 +1505,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "lit2-007",
-        "pregunta": "Diferencia clave entre soliloquio y monólogo:",
-        "respuesta": "Soliloquio: el personaje habla consigo mismo. Monólogo: habla para otros o para el público.",
+        "pregunta": "¿Qué es un soliloquio?",
+        "respuesta": "Cuando el personaje habla consigo mismo.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit2-010",
+        "pregunta": "¿Qué es un monólogo?",
+        "respuesta": "Cuando el personaje habla para otros o para el público.",
         "tema": "Organización Dialógica",
         "asignatura": "Literatura"
     },
@@ -1369,8 +1551,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist4-004",
-        "pregunta": "¿Cuáles son dos aportaciones destacadas de los mayas?",
-        "respuesta": "El uso matemático del cero y la predicción exacta de eclipses (calendarios).",
+        "pregunta": "Menciona una aportación destacada de los mayas:",
+        "respuesta": "El uso matemático del cero.",
+        "tema": "Culturas Prehispánicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-011",
+        "pregunta": "Menciona una aportación destacada de los mayas:",
+        "respuesta": "La predicción exacta de eclipses (calendarios).",
         "tema": "Culturas Prehispánicas",
         "asignatura": "Historia de México"
     },
@@ -1383,15 +1572,29 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist4-006",
-        "pregunta": "¿Qué actividad impulsó la economía de la Nueva España y quiénes encabezaban las reformas del siglo XVIII?",
-        "respuesta": "La Minería fue la principal actividad; las Reformas Borbónicas fueron implementadas por la dinastía Borbón.",
+        "pregunta": "¿Qué actividad impulsó la economía de la Nueva España?",
+        "respuesta": "La minería.",
+        "tema": "La Nueva España",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-012",
+        "pregunta": "¿Qué dinastía implementó las Reformas Borbónicas en el siglo XVIII?",
+        "respuesta": "La dinastía Borbón.",
         "tema": "La Nueva España",
         "asignatura": "Historia de México"
     },
     {
         "id": "hist4-007",
-        "pregunta": "Menciona las dos principales causas externas del movimiento de Independencia de México.",
-        "respuesta": "La Ilustración (que priorizaba el pensamiento racional) y la Revolución Francesa.",
+        "pregunta": "Menciona una causa externa del movimiento de Independencia de México:",
+        "respuesta": "La Ilustración (priorizaba el pensamiento racional).",
+        "tema": "Movimiento de Independencia",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-013",
+        "pregunta": "Menciona una causa externa del movimiento de Independencia de México:",
+        "respuesta": "La Revolución Francesa.",
         "tema": "Movimiento de Independencia",
         "asignatura": "Historia de México"
     },
@@ -1411,8 +1614,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hist4-010",
-        "pregunta": "En el tema de primeros gobernantes, ¿qué cargo ocupó Iturbide y qué cargo ocupó Guadalupe Victoria?",
-        "respuesta": "Agustín de Iturbide fue el primer gobernante bajo la figura de Emperador; Guadalupe Victoria fue el primer Presidente como República Federal.",
+        "pregunta": "En el tema de primeros gobernantes, ¿qué cargo ocupó Agustín de Iturbide?",
+        "respuesta": "Emperador.",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist4-014",
+        "pregunta": "En el tema de primeros gobernantes, ¿qué cargo ocupó Guadalupe Victoria?",
+        "respuesta": "Primer presidente (República Federal).",
         "tema": "México Independiente",
         "asignatura": "Historia de México"
     },
@@ -1484,8 +1694,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "hu2-010",
-        "pregunta": "¿De qué trata el glosario de 'Oscurantismo' y 'Dogma'?",
-        "respuesta": "Dogma es una verdad absolutista impuesta ciegamente. Oscurantismo significa bloqueo científico en gran parte atado a la Edad Media.",
+        "pregunta": "¿Qué es un dogma?",
+        "respuesta": "Una verdad absolutista impuesta ciegamente.",
+        "tema": "Conceptos Clave",
+        "asignatura": "Historia Univ."
+    },
+    {
+        "id": "hu2-011",
+        "pregunta": "¿Qué es el oscurantismo?",
+        "respuesta": "Bloqueo científico en gran parte atado a la Edad Media.",
         "tema": "Conceptos Clave",
         "asignatura": "Historia Univ."
     },
@@ -1501,8 +1718,15 @@ const flashcardsDatabase = [
     },
     {
         "id": "geo1-002",
-        "pregunta": "¿Cuál es la diferencia de tiempo entre un Hecho Geográfico y un Fenómeno Geográfico?",
-        "respuesta": "El hecho ocurre lentamente o es de larga duración (montañas), mientras que el fenómeno es rápido, corto e impetuoso (huracán, sismo).",
+        "pregunta": "¿Qué caracteriza a un hecho geográfico en el tiempo?",
+        "respuesta": "Ocurre lentamente o es de larga duración (ej. montañas).",
+        "tema": "Hechos y Fenómenos",
+        "asignatura": "Geografía"
+    },
+    {
+        "id": "geo1-008",
+        "pregunta": "¿Qué caracteriza a un fenómeno geográfico en el tiempo?",
+        "respuesta": "Es rápido, corto e impetuoso (ej. huracán, sismo).",
         "tema": "Hechos y Fenómenos",
         "asignatura": "Geografía"
     },
