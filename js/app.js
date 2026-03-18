@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260318-25';
+const APP_VERSION = '20260318-26';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -295,7 +295,7 @@ window.StudyTools = {
         if (!grid) return;
         grid.innerHTML = '';
         const subjectButtons = Array.from(document.querySelectorAll('.subject-item[id^="btn-"]'));
-        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-glossary'];
+        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
         const metaIconMap = window.MATERIA_ICON || {};
 
         subjectButtons.forEach(btn => {
@@ -453,7 +453,7 @@ window.StudyTools = {
             <tbody>`;
         const subjects = [];
         document.querySelectorAll('.subject-item[id^="btn-"]').forEach(btn => {
-            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-glossary'];
+            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
             if (skip.includes(btn.id)) return;
             let label = "";
             btn.childNodes.forEach(node => { if (node.nodeType === 3) label += node.textContent; });
@@ -1123,8 +1123,6 @@ function handleHash() {
         switchClass('content-config', document.getElementById('btn-config'), 'btn-config');
     } else if (hash === 'studytok') {
         switchClass('content-studytok', document.getElementById('link-studytok'), 'btn-studytok');
-    } else if (hash === 'glossary') {
-        switchClass('content-glossary', document.getElementById('btn-glossary'), 'btn-glossary');
     }
 }
 
@@ -2277,8 +2275,7 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         'content-simulacro': 'Simulacro | Apuntes',
         'content-guided': 'Estudio Guiado | Apuntes',
         'content-config': 'Configuraci\u00f3n | Apuntes',
-        'content-studytok': 'StudyTok | Apuntes',
-        'content-glossary': 'Glosario | Apuntes'
+        'content-studytok': 'StudyTok | Apuntes'
     };
     document.title = titleMap[contentId] ||
         (appDatabase[contentId] ? `${appDatabase[contentId].mainTopicSubtitle} | Apuntes UNAM` : 'Apuntes UNAM 2026');
@@ -2315,11 +2312,6 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         // Feature 2: Daily Plan (async)
         const dpPh = document.getElementById('daily-plan-placeholder');
         if (dpPh) { buildDailyPlan().then(h => { dpPh.innerHTML = h; }).catch(() => { dpPh.innerHTML = ''; }); }
-    } else if (contentId === 'content-glossary') {
-        document.getElementById('content-home').classList.remove('visible');
-        const da = document.getElementById('dynamic-content-area');
-        da.innerHTML = renderGlossaryPage();
-        window.location.hash = 'glossary';
     } else if (contentId === 'content-flashcards') {
         document.getElementById('content-home').classList.remove('visible');
         const da = document.getElementById('dynamic-content-area');
@@ -2367,7 +2359,7 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
     if (parentBtnId) {
         const pb = document.getElementById(parentBtnId);
         if (pb) pb.classList.add('active');
-        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config' && parentBtnId !== 'btn-glossary') {
+        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config') {
             const submenuId = `submenu-${parentBtnId.replace('btn-', '')}`;
             setOpenSubmenu(submenuId);
         }
@@ -3410,90 +3402,6 @@ async function buildDailyPlan() {
 // =============================================
 // FEATURE 3: Glossary
 // =============================================
-function buildGlossary() {
-    const terms = [];
-    const seen  = new Set();
-
-    Object.entries(appDatabase).forEach(([classId, cls]) => {
-        const materia  = cls.mainTopicTitle || '';
-        const clase    = cls.mainTopicSubtitle || '';
-        (cls.branches || []).forEach(branch => {
-            (branch.subnodes || []).forEach(sn => {
-                const matches = (sn.content || '').matchAll(/<b>([^<]{2,60})<\/b>/gi);
-                for (const m of matches) {
-                    const term = m[1].trim();
-                    const key  = term.toLowerCase();
-                    if (!seen.has(key) && term.length > 2) {
-                        seen.add(key);
-                        terms.push({ term, materia, clase, classId, tema: sn.name || sn.title || '' });
-                    }
-                }
-            });
-        });
-    });
-
-    terms.sort((a, b) => a.term.localeCompare(b.term, 'es'));
-    return terms;
-}
-
-function renderGlossaryPage() {
-    const terms = buildGlossary();
-    _glossaryAllTerms = terms;
-
-    return `
-    <div id="content-glossary" class="subject-content visible" style="animation:fadeInPage 0.4s ease forwards;">
-        <h1 class="title-main" style="color:#7c3aed;"><i class="fa-solid fa-book-open-reader"></i> Glosario</h1>
-        <div class="glossary-search-wrap">
-            <input id="glossary-search" class="glossary-search" type="search" placeholder="Buscar termino..."
-                   oninput="filterGlossary(this.value)">
-        </div>
-        <div id="glossary-list" class="glossary-list">${generateGlossaryHTML(terms, '')}</div>
-    </div>`;
-}
-
-function generateGlossaryHTML(terms, query) {
-    const q = query.toLowerCase().trim();
-    const filtered = q ? terms.filter(t => t.term.toLowerCase().includes(q) || t.materia.toLowerCase().includes(q)) : terms;
-
-    if (filtered.length === 0) {
-        return '<div class="glossary-empty"><i class="fa-solid fa-magnifying-glass"></i> Sin resultados para "' + query + '"</div>';
-    }
-
-    const byLetter = {};
-    filtered.forEach(t => {
-        const letter = t.term[0].toUpperCase();
-        if (!byLetter[letter]) byLetter[letter] = [];
-        byLetter[letter].push(t);
-    });
-
-    let html = '';
-    Object.keys(byLetter).sort().forEach(letter => {
-        html += '<div class="glossary-letter-group"><div class="glossary-letter">' + letter + '</div>';
-        byLetter[letter].forEach(t => {
-            const meta = MATERIA_ICON[t.materia] || { icon: 'fa-bookmark', color: '#64748b' };
-            const parentBtn = getParentBtnIdForClass(t.classId);
-            html += `
-            <div class="glossary-term" onclick="switchClass('${t.classId}', document.getElementById('link-${t.classId.replace('content-','')}'), '${parentBtn}')">
-                <span class="glossary-term-name">${t.term}</span>
-                <span class="glossary-term-meta">
-                    <i class="fa-solid ${meta.icon}" style="color:${meta.color};font-size:.75rem;"></i>
-                    ${t.materia}${t.tema ? ' · ' + t.tema : ''}
-                </span>
-            </div>`;
-        });
-        html += '</div>';
-    });
-
-    return html;
-}
-
-let _glossaryAllTerms = [];
-function filterGlossary(q) {
-    if (!_glossaryAllTerms.length) _glossaryAllTerms = buildGlossary();
-    const list = document.getElementById('glossary-list');
-    if (list) list.innerHTML = generateGlossaryHTML(_glossaryAllTerms, q);
-}
-
 // =============================================
 // FEATURE 4: Subnode Quiz
 // =============================================
