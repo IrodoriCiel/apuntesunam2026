@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260318-17';
+const APP_VERSION = '20260318-25';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -1196,7 +1196,7 @@ function renderClassContainer(classId) {
         branch.subnodes.forEach(sub => {
             const exHtml = sub.examples ? `<div class="example-box"><ul>${sub.examples.map(e => `<li>${e}</li>`).join('')}</ul></div>` : '';
             const snName = (sub.name || sub.title || '').replace(/'/g, "\\'");
-            const quizIcon = `<i class="fa-solid fa-clone subnode-quiz-icon-btn" title="Quiz rapido" onclick="event.stopPropagation();showSubnodeQuiz('${classId}','${snName}')"></i>`;
+            const quizIcon = `<i class="fa-solid fa-clone subnode-quiz-icon-btn" title="Quiz rapido" onclick="event.stopPropagation();showSubnodeQuiz('${classId}','${snName}','${branch.id}')"></i>`;
             html += `
                 <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay:${sub.delay};">
                     <h3>${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title} ${quizIcon}</div>` : `${sub.title} ${quizIcon}`}</h3>
@@ -2142,10 +2142,12 @@ function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColo
             </div>`;
     }).join('');
 
+    const ac = borderColor || '#64748b';
+    section.dataset.accentColor = ac;
     section.innerHTML = `
         <div class="unam-header" onclick="toggleUnamQuestions(this)" style="margin-bottom:0;border-bottom:none;">
-            <h2>${titleHtml}</h2>
-            <button class="unam-toggle-btn">Mostrar / Ocultar</button>
+            <h2 style="color:${ac}">${titleHtml}</h2>
+            <button class="unam-toggle-btn" style="background:${ac}1a;color:${ac}">Mostrar / Ocultar</button>
         </div>
         <div class="unam-questions-container" style="display:none;">${questionsHtml}</div>`;
 
@@ -2154,11 +2156,12 @@ function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColo
 }
 
 function toggleUnamQuestions(header) {
+    const ac = header.closest('.unam-questions-section')?.dataset.accentColor || '#e2e8f0';
     const c = header.nextElementSibling;
     if (c.style.display === 'none' || !c.style.display) {
         c.style.display = 'flex';
         header.style.marginBottom = '25px';
-        header.style.borderBottom = '2px solid #f1f5f9';
+        header.style.borderBottom = `2px solid ${ac}33`;
     } else {
         c.style.display = 'none';
         header.style.marginBottom = '0';
@@ -2171,7 +2174,7 @@ function toggleClassNotes(header) {
     if (c.style.display === 'none' || !c.style.display) {
         c.style.display = 'block';
         header.style.marginBottom = '25px';
-        header.style.borderBottom = '2px solid #f1f5f9';
+        header.style.borderBottom = '2px solid #fde68a';
     } else {
         c.style.display = 'none';
         header.style.marginBottom = '0';
@@ -2389,7 +2392,7 @@ function renderQuestionsForClass(contentId) {
     const quizTypes = [
         { type: 'prac',  obj: practiceQuestions,       title: '<i class="fa-solid fa-brain" style="color: #ec4899;"></i> Preguntas de Pr\u00e1ctica', color: '#ec4899' },
         { type: 'prac2', obj: practiceLevel2Questions,  title: '<i class="fa-solid fa-star" style="color: #8b5cf6;"></i> Preguntas de Pr\u00e1ctica Nivel 2', color: '#8b5cf6' },
-        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen"></i> Preguntas de la Gu\u00eda UNAM', color: '#f59e0b' }
+        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen" style="color:#2563eb;"></i> Preguntas de la Gu\u00eda UNAM', color: '#2563eb' }
     ];
 
     quizTypes.forEach(qt => {
@@ -2420,8 +2423,8 @@ function renderQuestionsForClass(contentId) {
     notesHtml.className = 'class-notes-panel';
     notesHtml.innerHTML = `
         <div class="unam-header" onclick="toggleClassNotes(this)" style="margin-bottom:0;border-bottom:none;">
-            <h2><i class="fa-solid fa-note-sticky"></i> Mis Notas</h2>
-            <button class="unam-toggle-btn">Mostrar / Ocultar</button>
+            <h2 style="color:#b45309"><i class="fa-solid fa-note-sticky" style="color:#f59e0b"></i> Mis Notas</h2>
+            <button class="unam-toggle-btn" style="background:#fef3c7;color:#d97706">Mostrar / Ocultar</button>
         </div>
         <div class="class-notes-body">
             <span class="class-notes-hint">Guardado autom\u00e1tico</span>
@@ -3088,6 +3091,7 @@ async function renderStudyTokFeed() {
 
     feed.scrollTo({ top: 0, behavior: 'instant' });
     if (window.MathJax && window.MathJax.typesetPromise) {
+        if (window.MathJax.typesetClear) window.MathJax.typesetClear([feed]);
         window.MathJax.typesetPromise([feed]).catch(() => {});
     }
 }
@@ -3493,7 +3497,7 @@ function filterGlossary(q) {
 // =============================================
 // FEATURE 4: Subnode Quiz
 // =============================================
-function showSubnodeQuiz(classId, subnodeName) {
+function showSubnodeQuiz(classId, subnodeName, branchId = '') {
     const perClass = (typeof classFlashcards !== 'undefined' ? classFlashcards : (window.classFlashcards || {}));
     const cards = perClass[classId] || [];
 
@@ -3501,12 +3505,22 @@ function showSubnodeQuiz(classId, subnodeName) {
     const nameLow = normalize(subnodeName);
     const nameWords = nameLow.split(/\s+/).filter(w => w.length > 3);
 
-    // 1) Coincidencia exacta o por inclusión del tema completo
+    // Título del branch que contiene este subnodo
+    const branchData = (appDatabase[classId]?.branches || []).find(b => b.id === branchId);
+    const branchLow = normalize(branchData?.title || '');
+    const branchWords = branchLow.split(/\s+/).filter(w => w.length > 3);
+
+    // 1) Coincidencia exacta o por inclusión (subnodo o branch)
     let matching = cards.filter(c => {
         const tema = normalize(c.tema || '');
         if (tema === nameLow || tema.includes(nameLow) || nameLow.includes(tema)) return true;
-        // 2) Al menos una palabra significativa del subnodo aparece en el tema
-        return nameWords.some(w => tema.includes(w));
+        // 2) Palabras significativas del subnodo en el tema
+        if (nameWords.some(w => tema.includes(w))) return true;
+        // 3) Coincidencia con el título del branch (el tema suele coincidir a nivel de branch)
+        if (branchLow && (tema === branchLow || branchLow.includes(tema) || tema.includes(branchLow))) return true;
+        // 4) Palabras significativas del branch en el tema
+        if (branchWords.some(w => tema.includes(w))) return true;
+        return false;
     });
 
     // 3) Fallback: mostrar todas las cards de la clase
@@ -3552,6 +3566,9 @@ function showSubnodeQuiz(classId, subnodeName) {
 
     document.body.appendChild(modal);
     modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([modal]).catch(() => {});
+    }
 }
 
 let _sqCurrent = 0;

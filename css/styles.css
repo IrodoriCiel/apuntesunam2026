@@ -1447,7 +1447,7 @@ h1.title-main i {
     background: #ffffff;
     border-radius: var(--border-radius);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border-top: 6px solid #f59e0b;
+    border-top: 6px solid #2563eb;
     padding: 30px 40px;
     box-sizing: border-box;
     font-family: 'Nunito', sans-serif;
@@ -1463,7 +1463,7 @@ h1.title-main i {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #f1f5f9;
+    border-bottom: 2px solid #e0e7ff;
     padding-bottom: 15px;
     margin-bottom: 25px;
     cursor: pointer;
@@ -1471,7 +1471,6 @@ h1.title-main i {
 
 .unam-header h2 {
     margin: 0;
-    color: #b45309;
     font-size: 1.8rem;
     font-weight: 900;
     display: flex;
@@ -1479,17 +1478,9 @@ h1.title-main i {
     gap: 12px;
 }
 
-.unam-header h2 i {
-    color: #f59e0b;
-}
-
-.dark-mode .unam-header h2 {
-    color: var(--header-text);
-}
-
 .unam-toggle-btn {
-    background: #fef3c7;
-    color: #d97706;
+    background: #f1f5f9;
+    color: #475569;
     border: none;
     padding: 8px 16px;
     border-radius: 20px;
@@ -1500,16 +1491,16 @@ h1.title-main i {
 }
 
 .unam-toggle-btn:hover {
-    background: #fde68a;
+    background: #e2e8f0;
 }
 
 .dark-mode .unam-toggle-btn {
-    background: #44403c;
-    color: #fbbf24;
+    background: #334155;
+    color: #94a3b8;
 }
 
 .dark-mode .unam-toggle-btn:hover {
-    background: #57534e;
+    background: #475569;
 }
 
 .unam-questions-container {
@@ -5521,6 +5512,8 @@ h1.title-main i {
     box-sizing: border-box;
 }
 .dark-mode .class-notes-panel { background: #1e293b; color: var(--text-color); }
+
+
 .class-notes-body {
     display: none; padding-top: 8px;
 }

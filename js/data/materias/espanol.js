@@ -905,32 +905,7 @@ export const espanol = {
             "videoUrl": "https://www.youtube.com/embed/mluoMGm9BCk",
             "id": "content-espanol-3",
             "preguntas": {
-                "unam": [
-                    {
-                        "numero": 79,
-                        "pregunta": "En el siguiente párrafo lo que está en letra mayúscula es una oración<br><br><i>\"Todas las tardes el arquitecto tomaba el café QUE LE PREPARABAN EN LA HOSTERÍA y luego repasaba el diario de palmo a palmo.\"</i>",
-                        "opciones": [
-                            "coordinada.",
-                            "secundaria.",
-                            "principal.",
-                            "yuxtapuesta."
-                        ],
-                        "respuesta": 1,
-                        "retroalimentacion": "La oración en mayúsculas ('Que le preparaban en la hostería') no tiene sentido por sí sola; depende de la oración principal ('el arquitecto tomaba el café'). Cuando una oración depende de otra para tener sentido completo, se denomina oración secundaria o subordinada."
-                    },
-                    {
-                        "numero": 80,
-                        "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el<br><br><i>Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.</i>",
-                        "opciones": [
-                            "complemento indirecto.",
-                            "complemento circunstancial.",
-                            "complemento directo.",
-                            "predicado nominal."
-                        ],
-                        "respuesta": 1,
-                        "retroalimentacion": "El complemento circunstancial indica el lugar, tiempo o modo de la acción. En este caso, 'A LAS AFUERAS DEL PALACIO' responde a la pregunta ¿Dónde? (lugar) y comienza con una preposición (A), característica clave de un complemento circunstancial."
-                    }
-                ],
+                "unam": [],
                 "nivel1": [
                     {
                         "numero": 1,
@@ -1296,6 +1271,18 @@ export const espanol = {
             "id": "content-espanol-4",
             "preguntas": {
                 "unam": [
+                    {
+                        "numero": 79,
+                        "pregunta": "En el siguiente párrafo lo que está en letra mayúscula es una oración<br><br><i>\"Todas las tardes el arquitecto tomaba el café QUE LE PREPARABAN EN LA HOSTERÍA y luego repasaba el diario de palmo a palmo.\"</i>",
+                        "opciones": [
+                            "coordinada.",
+                            "secundaria.",
+                            "principal.",
+                            "yuxtapuesta."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La oración en mayúsculas ('Que le preparaban en la hostería') no tiene sentido por sí sola; depende de la oración principal ('el arquitecto tomaba el café'). Cuando una oración depende de otra para tener sentido completo, se denomina oración secundaria o subordinada."
+                    },
                     {
                         "numero": 80,
                         "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el<br><br><i>Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.</i>",
