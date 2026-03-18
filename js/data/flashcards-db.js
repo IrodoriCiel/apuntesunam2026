@@ -1,4 +1,4 @@
-const flashcardsDatabase = [
+﻿const flashcardsDatabase = [
     // ==========================================
     // ESPAÑOL CLASE 1 (22 TARJETAS)
     // ==========================================
@@ -790,7 +790,115 @@ const flashcardsDatabase = [
     },
 
     // ==========================================
-    // QUÍMICA (19 CONCEPTOS)
+    
+    // ==========================================
+    // FÍSICA CLASE 3 (15 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "fis-018",
+        "pregunta": "¿Qué diferencia al MRUA del MRU?",
+        "respuesta": "En el MRUA la velocidad cambia (hay aceleración); en el MRU la velocidad es constante.",
+        "tema": "Cinemática",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-019",
+        "pregunta": "Fórmula principal de la aceleración en MRUA:",
+        "respuesta": "$a = (V_f - V_i)/t$.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-020",
+        "pregunta": "Interpretación técnica de una aceleración de $10\,m/s^2$:",
+        "respuesta": "La velocidad aumenta 10 m/s cada segundo.",
+        "tema": "MRUA",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-021",
+        "pregunta": "Método de cálculo rápido para descomposición de vectores (30°, 45°, 60°):",
+        "respuesta": "1) Dividir la magnitud a la mitad. 2) Multiplicar por la raíz correspondiente según el ángulo.",
+        "tema": "Vectores",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-022",
+        "pregunta": "En $45^\circ$, ¿qué ocurre con las componentes del vector en X y Y en el método rápido?",
+        "respuesta": "Ambas componentes se multiplican por $\sqrt{2}$.",
+        "tema": "Vectores",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-023",
+        "pregunta": "En $30^\circ$, ¿qué ocurre con las componentes del vector en X y Y en el método rápido?",
+        "respuesta": "La componente en X se multiplica por $\sqrt{3}$ y la componente en Y no se multiplica por raíz.",
+        "tema": "Vectores",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-024",
+        "pregunta": "En $60^\circ$, ¿qué ocurre con las componentes del vector en X y Y en el método rápido?",
+        "respuesta": "La componente en X no se multiplica por raíz y la componente en Y se multiplica por $\sqrt{3}$.",
+        "tema": "Vectores",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-025",
+        "pregunta": "Aproximaciones usadas para raíces en el método rápido:",
+        "respuesta": "$\sqrt{2}\approx 1.4$ y $\sqrt{3}\approx 1.7$.",
+        "tema": "Vectores",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-026",
+        "pregunta": "Identificación de MRU en gráficas d-t y v-t:",
+        "respuesta": "En d-t: línea diagonal recta. En v-t: línea horizontal.",
+        "tema": "Gráficas de Movimiento",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-027",
+        "pregunta": "Criterio de identificación de MRUA en gráficas de movimiento:",
+        "respuesta": "La presencia de una curva indica movimiento con aceleración (MRUA).",
+        "tema": "Gráficas de Movimiento",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-028",
+        "pregunta": "¿Qué es la masa y en qué unidad se mide?",
+        "respuesta": "Cantidad de materia; se mide en kilogramos (kg).",
+        "tema": "Dinámica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-029",
+        "pregunta": "¿Qué es el peso (W) y en qué unidad se mide?",
+        "respuesta": "Es una fuerza asociada a la gravedad; se mide en Newtons (N).",
+        "tema": "Dinámica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-030",
+        "pregunta": "Relación entre masa y peso usando gravedad:",
+        "respuesta": "$W = m\cdot g$ (con $g\approx 10\,m/s^2$ para cálculo rápido).",
+        "tema": "Dinámica",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-031",
+        "pregunta": "Leyes de Newton (resumen):",
+        "respuesta": "1) Inercia. 2) $F=m\cdot a$. 3) Acción-reacción: fuerzas iguales y opuestas.",
+        "tema": "Leyes de Newton",
+        "asignatura": "Física"
+    },
+    {
+        "id": "fis-032",
+        "pregunta": "Condiciones de equilibrio traslacional y rotacional:",
+        "respuesta": "Traslacional: suma de fuerzas = 0. Rotacional: suma de torcas = 0.",
+        "tema": "Equilibrio",
+        "asignatura": "Física"
+    },// QUÍMICA (19 CONCEPTOS)
     // ==========================================
     {
         "id": "qui-001",
@@ -1082,6 +1190,107 @@ const flashcardsDatabase = [
     },
 
     // ==========================================
+    // ==========================================
+    // MATEMÁTICAS CLASE 9 (14 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "mat9-001",
+        "pregunta": "¿Qué es un binomio/polinomio en este contexto?",
+        "respuesta": "Una expresión algebraica (por ejemplo, 2x + 3y), sin igualdad.",
+        "tema": "Ecuación vs. Expresión",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-002",
+        "pregunta": "¿Qué define a una ecuación?",
+        "respuesta": "La presencia de una igualdad (=) entre dos expresiones.",
+        "tema": "Ecuación vs. Expresión",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-003",
+        "pregunta": "¿Cómo se determina el grado de una ecuación?",
+        "respuesta": "Por el exponente más grande presente.",
+        "tema": "Grado",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-004",
+        "pregunta": "¿Qué grado tiene 3x^2 + 5y = 10?",
+        "respuesta": "Segundo grado (el exponente mayor es 2).",
+        "tema": "Grado",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-005",
+        "pregunta": "¿Qué grado tiene x + y + z = 6?",
+        "respuesta": "Primer grado (el exponente mayor es 1).",
+        "tema": "Grado",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-006",
+        "pregunta": "¿En qué consiste la verificación por sustitución de incisos en un sistema?",
+        "respuesta": "Sustituir los valores propuestos en las ecuaciones y verificar que las igualdades se cumplan.",
+        "tema": "Sistemas",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-007",
+        "pregunta": "¿Qué condición debe cumplir el inciso correcto en un sistema de ecuaciones?",
+        "respuesta": "Satisfacer todas las ecuaciones del sistema, no solo una.",
+        "tema": "Sistemas",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-008",
+        "pregunta": "Métodos algebraicos largos mencionados como alternativa a la verificación por incisos:",
+        "respuesta": "Suma y resta, igualación y Cramer.",
+        "tema": "Sistemas",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-009",
+        "pregunta": "¿Qué cambia al sustituir un número negativo en una resta (por ejemplo, 2x - y con y negativo)?",
+        "respuesta": "La resta se convierte en suma: 2x - (-a) = 2x + a.",
+        "tema": "Sustitución y Signos",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-010",
+        "pregunta": "Simplifica: 2x - (-1)",
+        "respuesta": "2x + 1.",
+        "tema": "Sustitución y Signos",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-011",
+        "pregunta": "¿Cómo se valida una solución en un sistema 3×3?",
+        "respuesta": "Sustituyendo x, y y z en cada ecuación y verificando todas las igualdades.",
+        "tema": "Sistemas 3×3",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-012",
+        "pregunta": "En el sistema de ejemplo, ¿la terna (2,3,1) es solución?",
+        "respuesta": "Sí; al sustituirla se obtienen 6, 2 y 10 en las tres ecuaciones.",
+        "tema": "Sistemas 3×3",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-013",
+        "pregunta": "Criterio de descarte lógico descrito en clase:",
+        "respuesta": "Si una ecuación suma positivos y el resultado es pequeño, se pueden descartar opciones con valores muy altos.",
+        "tema": "Estrategias",
+        "asignatura": "Matemáticas"
+    },
+    {
+        "id": "mat9-014",
+        "pregunta": "¿Por qué no se puede 'despejar' una expresión sin igualdad?",
+        "respuesta": "Porque no hay una ecuación: sin signo igual no se determinan valores por despeje.",
+        "tema": "Ecuación vs. Expresión",
+        "asignatura": "Matemáticas"
+    },
     // ESPAÑOL CLASE 2 (7 CONCEPTOS)
     // ==========================================
     {
@@ -1142,7 +1351,129 @@ const flashcardsDatabase = [
     },
 
     // ==========================================
-    // HISTORIA UNIVERSAL (12 CONCEPTOS)
+    
+    // ==========================================
+    // ESPAÑOL CLASE 4 (17 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "esp4-001",
+        "pregunta": "¿Qué es el núcleo del sujeto (NS)?",
+        "respuesta": "El sustantivo o pronombre que funciona como centro del sujeto.",
+        "tema": "Sintaxis",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-002",
+        "pregunta": "¿Qué criterio se usa para identificar el núcleo del sujeto cuando hay artículos y adjetivos?",
+        "respuesta": "Se localiza el sustantivo o pronombre del sujeto, descartando artículos y adjetivos que solo lo acompañan.",
+        "tema": "Sintaxis",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-003",
+        "pregunta": "¿Qué es el núcleo del predicado (NP)?",
+        "respuesta": "El verbo conjugado de la oración.",
+        "tema": "Sintaxis",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-004",
+        "pregunta": "En una perífrasis verbal, ¿cómo se identifica el núcleo del predicado?",
+        "respuesta": "Se considera integrado por los dos verbos que forman la perífrasis.",
+        "tema": "Sintaxis",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-005",
+        "pregunta": "¿Qué es el predicado nominal?",
+        "respuesta": "Predicado cuyo verbo principal es copulativo (ser, estar o parecer).",
+        "tema": "Predicado",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-006",
+        "pregunta": "¿Qué es el predicado verbal?",
+        "respuesta": "Predicado cuyo núcleo es un verbo no copulativo que expresa una acción o un estado no copulativo.",
+        "tema": "Predicado",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-007",
+        "pregunta": "En una construcción pasiva con 'ser' + participio, ¿qué función cumple 'ser'?",
+        "respuesta": "Funciona como auxiliar de una acción expresada por el participio.",
+        "tema": "Voz pasiva",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-008",
+        "pregunta": "¿Qué es el objeto directo (OD)?",
+        "respuesta": "Complemento que responde a ¿Qué? + verbo.",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-009",
+        "pregunta": "¿Con qué pronombres puede sustituirse el objeto directo (OD)?",
+        "respuesta": "Con lo, la, los, las.",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-010",
+        "pregunta": "¿Qué es el objeto indirecto (OI)?",
+        "respuesta": "Complemento que responde a ¿A quién? o ¿Para quién? + verbo.",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-011",
+        "pregunta": "¿Con qué pronombres puede sustituirse el objeto indirecto (OI)?",
+        "respuesta": "Con le, les, me, te, se.",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-012",
+        "pregunta": "¿Qué es el complemento circunstancial (CC)?",
+        "respuesta": "Aporta información adicional sobre la acción (por ejemplo, lugar, tiempo, modo o instrumento) y no siempre es obligatorio.",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-013",
+        "pregunta": "Tipos de complemento circunstancial vistos en clase:",
+        "respuesta": "Lugar (¿Dónde?), tiempo (¿Cuándo?), modo (¿Cómo?) e instrumento (¿Con qué?).",
+        "tema": "Complementos",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-014",
+        "pregunta": "¿Qué es el complemento agente?",
+        "respuesta": "Complemento propio de la voz pasiva que suele introducirse con la preposición 'por'.",
+        "tema": "Voz pasiva",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-015",
+        "pregunta": "¿Qué es la aposición?",
+        "respuesta": "Información explicativa del sujeto que suele aparecer entre comas.",
+        "tema": "Modificadores del sujeto",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-016",
+        "pregunta": "¿Qué es el complemento adnominal?",
+        "respuesta": "Modificador del sustantivo que inicia con una preposición para calificarlo.",
+        "tema": "Modificadores del sujeto",
+        "asignatura": "Español"
+    },
+    {
+        "id": "esp4-017",
+        "pregunta": "¿Qué es la polisemia?",
+        "respuesta": "Propiedad por la cual una palabra o una oración puede tener múltiples significados.",
+        "tema": "Semántica",
+        "asignatura": "Español"
+    },// HISTORIA UNIVERSAL (12 CONCEPTOS)
     // ==========================================
     {
         "id": "univ-001",
@@ -1378,6 +1709,135 @@ const flashcardsDatabase = [
     },
 
     // ==========================================
+    // ==========================================
+    // QUÍMICA CLASE 3 (18 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "qui3-001",
+        "pregunta": "¿Cuál es la carga del protón ($p^+$)?",
+        "respuesta": "Positiva.",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-002",
+        "pregunta": "¿Cuál es la carga del neutrón ($n^0$)?",
+        "respuesta": "Neutra (sin carga).",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-003",
+        "pregunta": "¿Cuál es la carga del electrón ($e^-$)?",
+        "respuesta": "Negativa.",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-004",
+        "pregunta": "¿Dónde se encuentran protones y neutrones?",
+        "respuesta": "En el núcleo.",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-005",
+        "pregunta": "¿Dónde se localizan los electrones?",
+        "respuesta": "En orbitales alrededor del núcleo.",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-006",
+        "pregunta": "¿Cuál es la partícula subatómica más ligera?",
+        "respuesta": "El electrón.",
+        "tema": "Partículas Subatómicas",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-007",
+        "pregunta": "¿Quién introdujo la palabra 'átomo' como indivisible?",
+        "respuesta": "Demócrito.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-008",
+        "pregunta": "¿Qué caracteriza el modelo atómico de Dalton (nombre popular)?",
+        "respuesta": "Bola de billar: esfera sólida y hueca (sin estructura interna).",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-009",
+        "pregunta": "¿Qué descubrió Thomson?",
+        "respuesta": "El electrón.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-010",
+        "pregunta": "¿Con qué experimento se asocia Thomson en la clase?",
+        "respuesta": "Rayos catódicos.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-011",
+        "pregunta": "¿Cómo describe Thomson al átomo en el modelo del budín de pasas?",
+        "respuesta": "Como una masa positiva con electrones incrustados.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-012",
+        "pregunta": "¿Qué descubrió Rutherford y qué experimento se asocia a su modelo?",
+        "respuesta": "El protón y el núcleo; lámina de oro.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-013",
+        "pregunta": "¿Qué aportó Bohr según la clase?",
+        "respuesta": "Siete niveles de energía (órbitas).",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-014",
+        "pregunta": "¿Qué partícula descubrió Chadwick?",
+        "respuesta": "El neutrón.",
+        "tema": "Modelos Atómicos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-015",
+        "pregunta": "¿Qué explicó Schrödinger sobre los orbitales?",
+        "respuesta": "Que son zonas de probabilidad (subniveles s, p, d, f).",
+        "tema": "Orbitales",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-016",
+        "pregunta": "¿Cuál es la capacidad máxima de electrones en los subniveles S, P, D y F?",
+        "respuesta": "S=2, P=6, D=10, F=14.",
+        "tema": "Orbitales",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-017",
+        "pregunta": "¿Qué indica el número cuántico principal (n) y qué valores toma en la clase?",
+        "respuesta": "Indica el nivel de energía o cercanía al núcleo; valores enteros del 1 al 7.",
+        "tema": "Números Cuánticos",
+        "asignatura": "Química"
+    },
+    {
+        "id": "qui3-018",
+        "pregunta": "¿Qué relación letra–valor se usa para el número cuántico azimutal (l)?",
+        "respuesta": "s=0, p=1, d=2, f=3.",
+        "tema": "Números Cuánticos",
+        "asignatura": "Química"
+    },
     // BIOLOGÍA CLASE 1 (8 CONCEPTOS)
     // ==========================================
     {
@@ -1526,6 +1986,149 @@ const flashcardsDatabase = [
     },
 
     // ==========================================
+    // ==========================================
+    // LITERATURA CLASE 3 (20 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "lit3-001",
+        "pregunta": "¿Cuál es el objetivo primordial del texto dramático?",
+        "respuesta": "La representación ante un público.",
+        "tema": "Género Dramático",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-002",
+        "pregunta": "¿Qué rasgo técnico distingue al género dramático respecto al narrador?",
+        "respuesta": "No tiene narrador; la historia progresa por la interacción de los personajes.",
+        "tema": "Género Dramático",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-003",
+        "pregunta": "¿Qué es el diálogo en un texto dramático?",
+        "respuesta": "Intercambio verbal entre dos o más personajes.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-004",
+        "pregunta": "¿Qué es el monólogo en un texto dramático?",
+        "respuesta": "El personaje habla solo, pero proyecta su discurso hacia el público para informar o explicar.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-005",
+        "pregunta": "¿Qué es el soliloquio en un texto dramático?",
+        "respuesta": "El personaje habla consigo mismo (introspección) y exterioriza pensamientos íntimos.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-006",
+        "pregunta": "¿Qué son las acotaciones?",
+        "respuesta": "Instrucciones del dramaturgo sobre movimientos, tono de voz o escenografía.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-007",
+        "pregunta": "¿Cómo se identifican visualmente las acotaciones en un texto dramático?",
+        "respuesta": "Suelen ir entre paréntesis o en cursivas.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-008",
+        "pregunta": "¿Qué es la exposición/desarrollo en la acción dramática?",
+        "respuesta": "Presentación de personajes y contexto (equilibrio inicial).",
+        "tema": "Acción Dramática",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-009",
+        "pregunta": "¿Qué es el nudo en la acción dramática?",
+        "respuesta": "Aparición del conflicto que rompe la estabilidad.",
+        "tema": "Acción Dramática",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-010",
+        "pregunta": "¿Qué es el clímax en la acción dramática?",
+        "respuesta": "Punto álgido o de máxima tensión; momento decisivo antes de la resolución.",
+        "tema": "Acción Dramática",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-011",
+        "pregunta": "¿Qué es el desenlace en la acción dramática?",
+        "respuesta": "Resolución del conflicto y fin de la obra.",
+        "tema": "Acción Dramática",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-012",
+        "pregunta": "¿Qué es el protagonista?",
+        "respuesta": "Centro de la acción; busca alcanzar un objetivo.",
+        "tema": "Personajes",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-013",
+        "pregunta": "¿Qué es el antagonista?",
+        "respuesta": "Fuerza opuesta al protagonista; impide que logre sus deseos.",
+        "tema": "Personajes",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-014",
+        "pregunta": "¿Qué es un personaje secundario?",
+        "respuesta": "Apoya a los personajes principales sin ser el foco de la trama.",
+        "tema": "Personajes",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-015",
+        "pregunta": "¿Qué es un personaje incidental/ambiental?",
+        "respuesta": "Personaje de apoyo que da verosimilitud (por ejemplo, un mesero o transeúnte).",
+        "tema": "Personajes",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-016",
+        "pregunta": "¿Qué caracteriza a la tragedia como subgénero dramático?",
+        "respuesta": "Tono solemne; el protagonista sucumbe ante un destino inevitable; busca la catarsis.",
+        "tema": "Subgéneros Dramáticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-017",
+        "pregunta": "¿Qué es la catarsis (en tragedia)?",
+        "respuesta": "Purificación de emociones.",
+        "tema": "Subgéneros Dramáticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-018",
+        "pregunta": "¿Qué caracteriza a la comedia como subgénero dramático?",
+        "respuesta": "Tono ligero o satírico; critica vicios humanos; termina en final feliz o reconciliación.",
+        "tema": "Subgéneros Dramáticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-019",
+        "pregunta": "¿Qué caracteriza al drama como subgénero dramático?",
+        "respuesta": "Tono realista; mezcla elementos trágicos y cómicos; se asemeja a la vida cotidiana.",
+        "tema": "Subgéneros Dramáticos",
+        "asignatura": "Literatura"
+    },
+    {
+        "id": "lit3-020",
+        "pregunta": "¿Qué marca formal suele indicar organización dialógica en un texto dramático?",
+        "respuesta": "Nombres de personajes en mayúsculas seguidos de guion o dos puntos.",
+        "tema": "Organización Dialógica",
+        "asignatura": "Literatura"
+    },
     // HISTORIA DE MÉXICO - CLASE 4 (10 CONCEPTOS)
     // ==========================================
     {
@@ -1627,6 +2230,219 @@ const flashcardsDatabase = [
         "asignatura": "Historia de México"
     },
     // ==========================================
+    // ==========================================
+    // HISTORIA DE MÉXICO - CLASE 5 (30 CONCEPTOS)
+    // ==========================================
+    {
+        "id": "hist5-001",
+        "pregunta": "¿Cómo se describe el contexto económico de México tras 1821?",
+        "respuesta": "Crisis, baja productividad y deuda externa.",
+        "tema": "México Independiente",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-002",
+        "pregunta": "¿Qué logia masónica se asocia con conservadores y centralistas?",
+        "respuesta": "La Logia Escocesa.",
+        "tema": "Logias Masónicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-003",
+        "pregunta": "¿Qué logia se asocia con liberales federalistas apoyados por Estados Unidos?",
+        "respuesta": "La Logia Yorquina.",
+        "tema": "Logias Masónicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-004",
+        "pregunta": "¿A qué logia pertenecía Guadalupe Victoria según la clase?",
+        "respuesta": "A la Logia Yorquina.",
+        "tema": "Logias Masónicas",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-005",
+        "pregunta": "¿Qué fue la Revolución de Ayutla (1854) y qué la motivó?",
+        "respuesta": "Movimiento contra Santa Anna motivado por su dictadura y la Venta de la Mesilla (1853).",
+        "tema": "Reforma Liberal",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-006",
+        "pregunta": "¿Qué fue el Plan de Ayutla y cuál fue su objetivo?",
+        "respuesta": "Documento para destituir y desterrar a Santa Anna.",
+        "tema": "Reforma Liberal",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-007",
+        "pregunta": "¿Quiénes proclamaban el Plan de Ayutla según la clase?",
+        "respuesta": "Juan Álvarez e Ignacio Comonfort.",
+        "tema": "Reforma Liberal",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-008",
+        "pregunta": "¿Qué carácter político tiene la Constitución de 1857?",
+        "respuesta": "Liberal.",
+        "tema": "Constitución de 1857",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-009",
+        "pregunta": "¿Qué tipo de república restablece la Constitución de 1857 según la clase?",
+        "respuesta": "República federal, representativa y democrática.",
+        "tema": "Constitución de 1857",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-010",
+        "pregunta": "¿Qué derechos consagra la Constitución de 1857 según la clase?",
+        "respuesta": "Garantías o derechos individuales.",
+        "tema": "Constitución de 1857",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-011",
+        "pregunta": "¿Con qué no debe confundirse la Constitución de 1857?",
+        "respuesta": "Con la Constitución de 1917, enfocada en garantías sociales.",
+        "tema": "Constitución de 1857",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-012",
+        "pregunta": "¿Qué buscaban las Leyes de Reforma en términos generales?",
+        "respuesta": "La separación entre Iglesia y Estado.",
+        "tema": "Leyes de Reforma",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-013",
+        "pregunta": "¿Qué establece la Ley Juárez y quién la impulsa?",
+        "respuesta": "Restringe privilegios a Iglesia y militares en asuntos civiles; Benito Juárez.",
+        "tema": "Leyes de Reforma",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-014",
+        "pregunta": "¿Qué establece la Ley Lerdo y quién la impulsa?",
+        "respuesta": "Desamortización de bienes del clero; Sebastián Lerdo de Tejada.",
+        "tema": "Leyes de Reforma",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-015",
+        "pregunta": "¿Qué establece la Ley Iglesias y quién la impulsa?",
+        "respuesta": "Prohíbe el cobro obligatorio de servicios parroquiales; José María Iglesias.",
+        "tema": "Leyes de Reforma",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-016",
+        "pregunta": "¿Cuál fue la causa inmediata de la Intervención Francesa según la clase?",
+        "respuesta": "La suspensión de pagos de la deuda externa decretada por Juárez en 1861.",
+        "tema": "Intervención Francesa",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-017",
+        "pregunta": "¿Qué fue la Convención (Tratado) de Londres en este contexto?",
+        "respuesta": "Alianza de Inglaterra, España y Francia para cobrar la deuda a México.",
+        "tema": "Intervención Francesa",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-018",
+        "pregunta": "¿Qué ocurrió el 5 de mayo de 1862 y quién lideró el evento?",
+        "respuesta": "Batalla de Puebla, liderada por Ignacio Zaragoza.",
+        "tema": "Intervención Francesa",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-019",
+        "pregunta": "¿Quién gobernó el Segundo Imperio Mexicano?",
+        "respuesta": "Maximiliano de Habsburgo.",
+        "tema": "Segundo Imperio",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-020",
+        "pregunta": "¿Qué se menciona sobre la ideología de Maximiliano en el Segundo Imperio?",
+        "respuesta": "Tuvo un perfil liberal: mantuvo las Leyes de Reforma y dio derechos a campesinos.",
+        "tema": "Segundo Imperio",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-021",
+        "pregunta": "¿Qué fue el Plan de la Noria (1871)?",
+        "respuesta": "Levantamiento de Porfirio Díaz contra Juárez bajo la bandera de la no reelección; fracasó.",
+        "tema": "República Restaurada",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-022",
+        "pregunta": "¿Qué fue el Plan de Tuxtepec (1876) y qué resultado tuvo?",
+        "respuesta": "Levantamiento de Porfirio Díaz contra la reelección de Lerdo de Tejada; triunfó, expulsó a Lerdo y Díaz asumió la presidencia.",
+        "tema": "Porfiriato",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-023",
+        "pregunta": "¿Qué participación se menciona de Porfirio Díaz en la Batalla de Puebla?",
+        "respuesta": "Tuvo una participación relevante.",
+        "tema": "Intervención Francesa",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-024",
+        "pregunta": "¿Qué ocurrió con Maximiliano en 1867 según la clase?",
+        "respuesta": "Francia retiró sus tropas, Maximiliano quedó aislado y fue fusilado.",
+        "tema": "Segundo Imperio",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-025",
+        "pregunta": "¿Qué sucedió tras la caída del Segundo Imperio?",
+        "respuesta": "Juárez regresó al poder en la República Restaurada.",
+        "tema": "República Restaurada",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-026",
+        "pregunta": "¿Qué ocurrió en 1872 con Benito Juárez y quién asumió la presidencia?",
+        "respuesta": "Juárez murió por causas naturales y asumió Sebastián Lerdo de Tejada.",
+        "tema": "República Restaurada",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-027",
+        "pregunta": "¿Qué obra se atribuye a Sebastián Lerdo de Tejada según la clase?",
+        "respuesta": "Inauguró la primera línea de ferrocarril Ciudad de México-Veracruz.",
+        "tema": "República Restaurada",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-028",
+        "pregunta": "¿Qué establece el Tratado de Guadalupe Hidalgo según la clase?",
+        "respuesta": "Finaliza la guerra con Estados Unidos y cede los territorios del norte.",
+        "tema": "Tratados",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-029",
+        "pregunta": "¿Qué fue el Tratado McLane-Ocampo según la clase?",
+        "respuesta": "Intento liberal de conceder tránsito a Estados Unidos a cambio de apoyo; no fue ratificado.",
+        "tema": "Tratados",
+        "asignatura": "Historia de México"
+    },
+    {
+        "id": "hist5-030",
+        "pregunta": "¿Qué fue el Tratado Mon-Almonte según la clase?",
+        "respuesta": "Acuerdo firmado por conservadores para obtener apoyo de España.",
+        "tema": "Tratados",
+        "asignatura": "Historia de México"
+    },
     // HISTORIA UNIVERSAL - CLASE 2
     // ==========================================
     {

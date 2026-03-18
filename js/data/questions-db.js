@@ -17,6 +17,15 @@ const unamQuestions = {
     "content-matematicas-8": [
 
     ],
+    "content-matematicas-9": [
+        {
+            "numero": 51,
+            "pregunta": "Resuelve el siguiente sistema de ecuaciones.<br><br>$3x + 5y = 7$<br>$2x - y = -4$",
+            "opciones": ["x = –2, y = 1", "x = –2, y = –1", "x = –1, y = 2", "x = 1, y = –1"],
+            "respuesta": 2,
+            "retroalimentacion": "Por sustitución: de $2x - y = -4$ se obtiene $y = 2x + 4$. Sustituyendo en $3x + 5y = 7$: $3x + 5(2x+4)=7$ → $13x+20=7$ → $x=-1$ y $y=2$."
+        }
+    ],
     "content-fisica-1": [
         {
             "numero": 1,
@@ -57,6 +66,7 @@ const unamQuestions = {
             "retroalimentacion": "La fórmula de caída libre es $V = \\sqrt{2g \\cdot h}$, donde $h$ es la distancia caída (no la altura total $H$). Como el objeto parte del reposo ($V_i = 0$), solo se necesita la distancia recorrida $h$ para obtener la rapidez en ese punto."
         }
     ],
+    "content-fisica-3": [],
     "content-historia-1": [
         {
             "numero": 111,
@@ -140,7 +150,15 @@ const unamQuestions = {
             "retroalimentacion": "El complemento circunstancial indica el lugar, tiempo o modo de la acción. En este caso, 'A LAS AFUERAS DEL PALACIO' responde a la pregunta ¿Dónde? (lugar) y comienza con una preposición (A), característica clave de un complemento circunstancial."
         }
     ],
-    "content-literatura-1": [
+    "content-espanol-4": [
+        {
+            "numero": 80,
+            "pregunta": "En el siguiente enunciado las palabras en mayúsculas constituyen el<br><br><i>Chuang Tzu presencia A LAS AFUERAS DEL PALACIO la lucha entre dos serpientes.</i>",
+            "opciones": ["complemento indirecto.", "complemento circunstancial.", "complemento directo.", "predicado nominal."],
+            "respuesta": 1,
+            "retroalimentacion": "El complemento circunstancial indica el lugar, tiempo o modo de la acción. En este caso, 'A LAS AFUERAS DEL PALACIO' responde a la pregunta ¿Dónde? (lugar) y comienza con una preposición (A), característica clave de un complemento circunstancial."
+        }
+    ],    "content-literatura-1": [
         {
             "numero": 13,
             "pregunta": "La cabalidad es una propiedad del texto, consiste en que este sea completo y tenga:",
@@ -165,6 +183,31 @@ const unamQuestions = {
             "retroalimentacion": "La intención de representación escénica corresponde al texto dramático. Esa es la clave de identificación central vista en clase."
         }
     ],
+    "content-literatura-3": [
+        {
+            "numero": 15,
+            "pregunta": "El autor del texto ________ lo escribe con intención de ser representado.",
+            "opciones": ["periodístico", "poético", "dramático", "narrativo"],
+            "respuesta": 2,
+            "retroalimentacion": "El género dramático se escribe con el propósito primordial de ser representado ante un público; esa finalidad identifica al texto dramático."
+        }
+    ],
+    "content-historia-5": [
+        {
+            "numero": 113,
+            "pregunta": "La restricción de participación política, el control del poder a manos del presidente, así como la promoción de fueros religiosos y militares fueron rasgos del grupo político",
+            "opciones": ["centralista.", "federalista.", "monopolista.", "libertador."],
+            "respuesta": 0,
+            "retroalimentacion": "Los rasgos descritos corresponden al centralismo, asociado a posiciones conservadoras que promovían fueros religiosos y militares y concentraban el poder en el presidente."
+        },
+        {
+            "numero": 114,
+            "pregunta": "La Constitución de 1857 consagró los derechos",
+            "opciones": ["indígenas.", "eclesiásticos.", "sociales.", "individuales."],
+            "respuesta": 3,
+            "retroalimentacion": "La Constitución de 1857, de corte liberal, consagró garantías o derechos individuales."
+        }
+    ],
     "content-biologia-1": [
         {
             "numero": 88,
@@ -180,6 +223,7 @@ const unamQuestions = {
         }
     ],
     "content-biologia-2": [],
+    
     "content-geografia-1": []
 };
 
@@ -530,6 +574,43 @@ const practiceQuestions = {
             "retroalimentacion": "Cuando el decimal es infinito periódico, la UNAM suele presentarlo como fracción simplificada. Para $3.333\\dots$, la forma correcta es $10/3$."
         }
     ],
+    "content-matematicas-9": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál de las siguientes opciones es una ecuación?",
+            "opciones": ["$2x + 3y$", "$x^2 - 4x + 1$", "$3x^2 + 5y = 10$", "$7a - 2b$"],
+            "respuesta": 2,
+            "retroalimentacion": "Una ecuación se reconoce porque tiene signo de igualdad (=). La expresión $3x^2 + 5y = 10$ sí es una ecuación."
+        },
+        {
+            "numero": 2,
+            "pregunta": "El grado de una ecuación lo determina:",
+            "opciones": ["El número de variables.", "El coeficiente más grande.", "El exponente más grande.", "La cantidad de términos."],
+            "respuesta": 2,
+            "retroalimentacion": "El grado se determina por el exponente más grande presente en la ecuación."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Para que un inciso sea la solución de un sistema, debe:",
+            "opciones": ["Cumplir solo la primera ecuación.", "Cumplir solo la última ecuación.", "Cumplir todas las ecuaciones del sistema.", "Tener valores enteros."],
+            "respuesta": 2,
+            "retroalimentacion": "Una opción puede funcionar en una ecuación y fallar en otra; la solución correcta cumple todas las igualdades del sistema."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Simplifica la sustitución en $2x - y$ si $y=-1$:",
+            "opciones": ["$2x - 1$", "$2x + 1$", "$-2x - 1$", "$-2x + 1$"],
+            "respuesta": 1,
+            "retroalimentacion": "Al sustituir un negativo en una resta: $2x - (-1) = 2x + 1$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "En el sistema 3×3 de la clase, la terna $(2,3,1)$ es correcta porque:",
+            "opciones": ["Cumple solo $x+y+z=6$.", "Cumple dos ecuaciones y basta.", "Cumple las tres ecuaciones del sistema.", "Tiene valores pequeños."],
+            "respuesta": 2,
+            "retroalimentacion": "Al sustituir $x=2$, $y=3$, $z=1$ se verifican las tres igualdades: 6, 2 y 10."
+        }
+    ],
     "content-fisica-1": [
         {
             "numero": 1,
@@ -652,6 +733,44 @@ const practiceQuestions = {
             ],
             "respuesta": 1,
             "retroalimentacion": "Por la regla de signos: hacia la derecha es positivo (+15 N), hacia la izquierda es negativo (-10 N). La suma vectorial es: $+15 + (-10) = +5\\,N$. El signo positivo indica que la fuerza resultante va hacia la derecha."
+        }
+    ],
+
+    "content-fisica-3": [
+        {
+            "numero": 1,
+            "pregunta": "En el MRUA, la velocidad se caracteriza porque:",
+            "opciones": ["Se mantiene constante.", "Cambia con el tiempo.", "Siempre es cero.", "No tiene unidades."],
+            "respuesta": 1,
+            "retroalimentacion": "En el MRUA la velocidad no permanece constante: cambia con el tiempo. Esa variación es lo que define la presencia de aceleración."
+        },
+        {
+            "numero": 2,
+            "pregunta": "La aceleración se mide en:",
+            "opciones": ["$m/s$", "$m/s^2$", "$N$", "$kg$"],
+            "respuesta": 1,
+            "retroalimentacion": "La aceleración es cambio de velocidad por unidad de tiempo, por eso sus unidades son metros por segundo al cuadrado ($m/s^2$)."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál expresión permite calcular la aceleración a partir de velocidades y tiempo?",
+            "opciones": ["$a = (V_f - V_i)/t$", "$a = d/t$", "$a = m\cdot g$", "$a = V_f + V_i$"],
+            "respuesta": 0,
+            "retroalimentacion": "La fórmula principal del MRUA es $a=(V_f-V_i)/t$, donde se usa el cambio de velocidad dividido entre el tiempo."
+        },
+        {
+            "numero": 4,
+            "pregunta": "La masa y el peso se diferencian porque:",
+            "opciones": ["Ambas se miden en Newtons.", "La masa es fuerza y el peso es materia.", "La masa se mide en kg y el peso es una fuerza en N.", "El peso no depende de la gravedad."],
+            "respuesta": 2,
+            "retroalimentacion": "La masa es cantidad de materia (kg). El peso es una fuerza (N) asociada a la gravedad."
+        },
+        {
+            "numero": 5,
+            "pregunta": "En una gráfica velocidad-tiempo ($v$-$t$), una línea horizontal representa:",
+            "opciones": ["MRU (velocidad constante).", "MRUA (aceleración).", "Caída libre exclusivamente.", "Equilibrio rotacional."],
+            "respuesta": 0,
+            "retroalimentacion": "En una gráfica $v$-$t$, una línea horizontal significa velocidad constante; por lo tanto describe MRU."
         }
     ],
     "content-historia-1": [
@@ -913,7 +1032,43 @@ const practiceQuestions = {
             "retroalimentacion": "Por definición, una oración simple tiene únicamente 1 verbo conjugado. Cuando una oración tiene 2 o más verbos conjugados unidos por conjunciones, pasa a ser una oración compuesta."
         }
     ],
-    "content-quimica-1": [
+    "content-espanol-4": [
+        {
+            "numero": 1,
+            "pregunta": "En la expresión 'La temprana repartición', el Núcleo del Sujeto (NS) es:",
+            "opciones": ["La", "temprana", "repartición", "La temprana"],
+            "respuesta": 2,
+            "retroalimentacion": "El Núcleo del Sujeto (NS) es el sustantivo o pronombre. Para hallarlo se eliminan artículos y adjetivos; por eso en 'La temprana repartición' el núcleo es 'repartición'."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En la perífrasis 'estuvieron ensayando', el Núcleo del Predicado (NP) está formado por:",
+            "opciones": ["Solo 'estuvieron'", "Solo 'ensayando'", "Ambos verbos ('estuvieron' y 'ensayando')", "No hay núcleo del predicado"],
+            "respuesta": 2,
+            "retroalimentacion": "El NP es el verbo conjugado. Cuando hay dos verbos juntos en una perífrasis (por ejemplo, 'estuvieron ensayando'), el núcleo está integrado por ambos verbos."
+        },
+        {
+            "numero": 3,
+            "pregunta": "La oración 'Sabina es pintora' tiene predicado:",
+            "opciones": ["Verbal, porque expresa una acción", "Nominal, porque usa un verbo copulativo", "Verbal, porque 'ser' siempre es acción", "Nominal, porque no hay verbo"],
+            "respuesta": 1,
+            "retroalimentacion": "El predicado nominal se identifica por el uso de verbos copulativos: ser, estar o parecer. En 'Sabina es pintora', el verbo 'es' (ser) es copulativo; por eso el predicado es nominal."
+        },
+        {
+            "numero": 4,
+            "pregunta": "En la oración 'Ana vio una película', la expresión 'una película' funciona como:",
+            "opciones": ["Objeto directo (OD)", "Objeto indirecto (OI)", "Complemento agente", "Complemento circunstancial"],
+            "respuesta": 0,
+            "retroalimentacion": "El objeto directo responde a la pregunta ¿Qué? + verbo. En 'Ana vio una película', ¿Qué vio? 'una película'; por ello es OD y puede sustituirse por 'la' (Ana la vio)."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál de los siguientes enunciados es una oración (no una frase)?",
+            "opciones": ["Corriendo en el parque", "En el parque", "Corre", "Con las tijeras"],
+            "respuesta": 2,
+            "retroalimentacion": "Para que un enunciado sea oración debe tener un verbo conjugado. 'Corre' es un verbo conjugado; en cambio 'Corriendo' es gerundio (verboide) y no forma una oración por sí mismo."
+        }
+    ],    "content-quimica-1": [
         {
             "numero": 1,
             "pregunta": "Si un reactivo tiene la fórmula 'NaOH', estamos hablando de:",
@@ -1024,6 +1179,43 @@ const practiceQuestions = {
             "retroalimentacion": "El texto dramático se construye para ser representado y su autor se denomina dramaturgo."
         }
     ],
+    "content-literatura-3": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es el fin primordial del texto dramático?",
+            "opciones": ["Narrar con un narrador omnisciente.", "Expresar emociones del autor.", "Ser representado ante un público.", "Explicar un tema científico."],
+            "respuesta": 2,
+            "retroalimentacion": "El texto dramático se escribe con el objetivo primordial de la representación ante un público."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Rasgo técnico principal del género dramático según la clase:",
+            "opciones": ["Abundancia de descripciones del narrador.", "Ausencia de narrador.", "Uso exclusivo de rima.", "Predominio de datos estadísticos."],
+            "respuesta": 1,
+            "retroalimentacion": "En el género dramático no hay narrador: la historia progresa por la interacción de los personajes."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Cuál es la diferencia esencial entre monólogo y soliloquio?",
+            "opciones": ["Monólogo: intercambio entre varios; Soliloquio: diálogo.", "Monólogo: se dirige al público; Soliloquio: introspección consigo mismo.", "Monólogo: acotaciones; Soliloquio: narración.", "Monólogo: solo en tragedia; Soliloquio: solo en comedia."],
+            "respuesta": 1,
+            "retroalimentacion": "El monólogo proyecta el discurso hacia el público para informar o explicar; el soliloquio es una exteriorización de pensamientos íntimos (introspección)."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Las acotaciones en un texto dramático son:",
+            "opciones": ["Opiniones del narrador.", "Instrucciones del dramaturgo sobre movimientos, tono o escenografía.", "Versos con rima.", "Una lista de personajes secundarios."],
+            "respuesta": 1,
+            "retroalimentacion": "Las acotaciones son instrucciones del dramaturgo (movimientos, tonos de voz, escenografía) y suelen aparecer entre paréntesis o en cursivas."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Orden cronológico de la acción dramática:",
+            "opciones": ["Nudo → Exposición/Desarrollo → Clímax → Desenlace.", "Exposición/Desarrollo → Nudo → Clímax → Desenlace.", "Clímax → Nudo → Desenlace → Exposición.", "Desenlace → Clímax → Nudo → Exposición."],
+            "respuesta": 1,
+            "retroalimentacion": "La línea de tensión se presenta como: Exposición/Desarrollo, Nudo, Clímax y Desenlace."
+        }
+    ],
     "content-quimica-2": [
         {
             "numero": 1,
@@ -1059,6 +1251,43 @@ const practiceQuestions = {
             "opciones": ["Modelo Planetario.", "Esfera Indestructible.", "Nube de Electrones.", "Budín de Pasas."],
             "respuesta": 3,
             "retroalimentacion": "Thomson ilustró al átomo como una gran masa positiva con los electrones incrustados ordenadamente en ella, similar a un budín de pasas."
+        }
+    ],
+    "content-quimica-3": [
+        {
+            "numero": 1,
+            "pregunta": "¿Cuál es la carga del electrón ($e^-$)?",
+            "opciones": ["Positiva.", "Neutra.", "Negativa.", "Variable."],
+            "respuesta": 2,
+            "retroalimentacion": "El electrón ($e^-$) tiene carga negativa y se localiza en los orbitales alrededor del núcleo."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿En qué región del átomo se encuentran protones y neutrones?",
+            "opciones": ["En el núcleo.", "En los orbitales.", "En la nube externa.", "En el vacío."],
+            "respuesta": 0,
+            "retroalimentacion": "Protones y neutrones se ubican en el núcleo, que es la región más pesada del átomo."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué científico descubrió el electrón mediante el experimento de rayos catódicos?",
+            "opciones": ["Dalton.", "Thomson.", "Bohr.", "Chadwick."],
+            "respuesta": 1,
+            "retroalimentacion": "Thomson descubrió el electrón mediante el experimento de rayos catódicos."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Cuál es la capacidad de electrones del subnivel D?",
+            "opciones": ["2.", "6.", "10.", "14."],
+            "respuesta": 2,
+            "retroalimentacion": "La capacidad de electrones aumenta de 4 en 4: S=2, P=6, D=10, F=14."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Según la relación letra–valor del número cuántico azimutal ($l$), el subnivel p corresponde a:",
+            "opciones": ["$l=0$", "$l=1$", "$l=2$", "$l=3$"],
+            "respuesta": 1,
+            "retroalimentacion": "Según la clase: s=0, p=1, d=2, f=3."
         }
     ],
     "content-biologia-1": [
@@ -1207,6 +1436,44 @@ const practiceQuestions = {
             "opciones": ["Buffon - El Espíritu de las leyes.", "Montesquieu - El Contrato Social.", "Voltaire - La Enciclopedia.", "Rousseau - El Contrato Social."],
             "respuesta": 3,
             "retroalimentacion": "Es memoria pura estipulada en la clase: Rousseau postuló la soberanía popular dentro de 'El Contrato Social'; la Enciclopedia es de Diderot; y la división de poderes de Montesquieu."
+        }
+    ],
+    
+    "content-historia-5": [
+        {
+            "numero": 1,
+            "pregunta": "Después de 1821, el contexto económico descrito para México Independiente se caracteriza por:",
+            "opciones": ["Alta productividad y superávit.", "Crisis, baja productividad y deuda externa.", "Ausencia de deuda externa.", "Expansión industrial inmediata."],
+            "respuesta": 1,
+            "retroalimentacion": "El periodo posterior a 1821 se describe como una etapa de crisis, baja productividad y deuda externa."
+        },
+        {
+            "numero": 2,
+            "pregunta": "La Logia Escocesa se asocia principalmente con:",
+            "opciones": ["Liberales federalistas.", "Conservadores centralistas.", "Movimientos campesinos.", "Abolicionistas del porfiriato."],
+            "respuesta": 1,
+            "retroalimentacion": "La Logia Escocesa se vincula con conservadores (centralistas), militares y criollos."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué plan proclamado por Juan Álvarez e Ignacio Comonfort buscó destituir y desterrar a Santa Anna?",
+            "opciones": ["Plan de Ayutla.", "Plan de Tuxtepec.", "Plan de la Noria.", "Plan de Iguala."],
+            "respuesta": 0,
+            "retroalimentacion": "El Plan de Ayutla (1854) fue el documento proclamado por Juan Álvarez e Ignacio Comonfort para destituir y desterrar a Santa Anna."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Qué ley de Reforma se asocia con la desamortización de bienes del clero?",
+            "opciones": ["Ley Juárez.", "Ley Lerdo.", "Ley Iglesias.", "Constitución de 1857."],
+            "respuesta": 1,
+            "retroalimentacion": "La Ley Lerdo, atribuida a Sebastián Lerdo de Tejada, establece la desamortización de bienes del clero."
+        },
+        {
+            "numero": 5,
+            "pregunta": "La causa inmediata de la Invasión/Intervención Francesa mencionada en clase fue:",
+            "opciones": ["La firma del Plan de Tuxtepec.", "La suspensión de pagos decretada por Juárez en 1861.", "La Constitución de 1917.", "La Venta de la Mesilla."],
+            "respuesta": 1,
+            "retroalimentacion": "La causa inmediata fue la suspensión de pagos de la deuda externa decretada por Juárez en 1861."
         }
     ],
     "content-geografia-1": [
@@ -1604,6 +1871,43 @@ const practiceLevel2Questions = {
             "retroalimentacion": "Productos cruzados: $2(x+1)=4(x-2)$. Se obtiene $2x+2=4x-8$. Transponiendo: $10=2x$, por lo tanto $x=5$."
         }
     ],
+    "content-matematicas-9": [
+        {
+            "numero": 1,
+            "pregunta": "Resuelve el sistema: $3x + 5y = 7$ y $2x - y = -4$.",
+            "opciones": ["$x=-2, y=1$", "$x=-2, y=-1$", "$x=-1, y=2$", "$x=1, y=-1$"],
+            "respuesta": 2,
+            "retroalimentacion": "De $2x-y=-4$ se obtiene $y=2x+4$. Sustituyendo en $3x+5y=7$: $3x+10x+20=7$ → $x=-1$ y $y=2$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Un inciso satisface la primera ecuación del sistema pero falla en la segunda. En ese caso:",
+            "opciones": ["Sigue siendo correcto.", "Se acepta si el error es pequeño.", "Se descarta, porque debe cumplir todas las ecuaciones.", "Solo se revisa la primera ecuación."],
+            "respuesta": 2,
+            "retroalimentacion": "La verificación debe hacerse en todas las ecuaciones; si falla una, el inciso no es solución del sistema."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Identifica el grado de $x + y + z = 6$:",
+            "opciones": ["Grado 1.", "Grado 2.", "Grado 3.", "No tiene grado."],
+            "respuesta": 0,
+            "retroalimentacion": "El exponente mayor es 1, por lo que es una ecuación de primer grado."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Aplica la ley de signos al sustituir en $2x - y$ con $y=-3$:",
+            "opciones": ["$2x - 3$", "$2x + 3$", "$-2x - 3$", "$-2x + 3$"],
+            "respuesta": 1,
+            "retroalimentacion": "Restar un número negativo equivale a sumar: $2x - (-3) = 2x + 3$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Criterio de descarte lógico mencionado en clase:",
+            "opciones": ["Si el resultado es pequeño y se suman positivos, descartar valores muy altos.", "Elegir siempre el inciso A.", "Descartar siempre fracciones.", "Solo resolver con Cramer."],
+            "respuesta": 0,
+            "retroalimentacion": "Si una ecuación suma valores positivos y el resultado es pequeño, incisos con valores demasiado altos pueden descartarse por lógica."
+        }
+    ],
     "content-fisica-1": [
         {
             "numero": 1,
@@ -1726,6 +2030,44 @@ const practiceLevel2Questions = {
             ],
             "respuesta": 1,
             "retroalimentacion": "Se usa $a = (V_f - V_i)/t = (0 - 20)/4 = -5\\,m/s^2$. El signo negativo indica desaceleración (frenado). La magnitud de la desaceleración es $5\\,m/s^2$."
+        }
+    ],
+
+    "content-fisica-3": [
+        {
+            "numero": 1,
+            "pregunta": "Un objeto cambia su velocidad de $5\,m/s$ a $25\,m/s$ en $4\,s$. ¿Cuál es su aceleración?",
+            "opciones": ["$5\,m/s^2$", "$20\,m/s^2$", "$30\,m/s^2$", "$80\,m/s^2$"],
+            "respuesta": 0,
+            "retroalimentacion": "Se aplica $a=(V_f-V_i)/t=(25-5)/4=20/4=5\,m/s^2$."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Usando $g=10\,m/s^2$, ¿cuál es el peso aproximado de una masa de $70\,kg$?",
+            "opciones": ["$70\,N$", "$700\,N$", "$7\,N$", "$7000\,N$"],
+            "respuesta": 1,
+            "retroalimentacion": "El peso es una fuerza: $W=m\cdot g=70\cdot 10=700\,N$."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En una palanca en equilibrio, $F_1=40\,N$ actúa a $d_1=0.5\,m$. Si el otro brazo tiene $d_2=0.2\,m$, ¿cuánto vale $F_2$?",
+            "opciones": ["$16\,N$", "$80\,N$", "$100\,N$", "$200\,N$"],
+            "respuesta": 2,
+            "retroalimentacion": "Equilibrio de torcas: $F_1 d_1=F_2 d_2$. Entonces $F_2=(40\cdot0.5)/0.2=100\,N$."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Un vector de magnitud 10 N forma $45^\circ$ con el eje X. Usando el método de la mitad y $\sqrt{2}\approx 1.4$, ¿cuáles son sus componentes aproximadas (X, Y)?",
+            "opciones": ["(7 N, 7 N)", "(5 N, 5 N)", "(10 N, 0 N)", "(8.5 N, 1.5 N)"],
+            "respuesta": 0,
+            "retroalimentacion": "Se divide a la mitad: 10/2=5. En $45^\circ$, ambas componentes se multiplican por $\sqrt{2}$: $5\cdot1.4\approx7$."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Según la regla de identificación rápida, si una gráfica de movimiento presenta una curva, entonces el movimiento es:",
+            "opciones": ["MRUA (hay aceleración).", "MRU (velocidad constante).", "Equilibrio traslacional.", "Acción-reacción."],
+            "respuesta": 0,
+            "retroalimentacion": "El criterio indica que una curva en una gráfica de movimiento implica aceleración; por eso corresponde a MRUA."
         }
     ],
     "content-historia-1": [
@@ -1997,7 +2339,43 @@ const practiceLevel2Questions = {
             "retroalimentacion": "La Regla de Oro indica que cuando hay dos verbos (uno conjugado + un verboide), ambos forman el núcleo del predicado juntos. 'Estuvieron' está conjugado y 'ensayando' es un gerundio; juntos constituyen una perífrasis verbal que funciona como núcleo único."
         }
     ],
-    "content-quimica-1": [
+    "content-espanol-4": [
+        {
+            "numero": 1,
+            "pregunta": "Selecciona la sustitución correcta del Objeto Directo (OD) en la oración: 'Ana vio una película'.",
+            "opciones": ["Ana le vio.", "Ana la vio.", "Ana se vio.", "Ana lo vio."],
+            "respuesta": 1,
+            "retroalimentacion": "El OD puede sustituirse por lo, la, los, las. En 'Ana vio una película', 'una película' es OD; por ello la sustitución correcta es 'Ana la vio'."
+        },
+        {
+            "numero": 2,
+            "pregunta": "En la oración 'Compró flores para su mamá', la sustitución correcta del Objeto Indirecto (OI) es:",
+            "opciones": ["La compró flores.", "Le compró flores.", "Lo compró flores.", "Les compró flores."],
+            "respuesta": 1,
+            "retroalimentacion": "El OI responde a ¿A quién? o ¿Para quién? y puede sustituirse por le/les (también me/te/se). En 'Compró flores para su mamá', el OI es 'para su mamá', por lo que la sustitución correcta es 'Le compró flores'."
+        },
+        {
+            "numero": 3,
+            "pregunta": "En la oración en voz pasiva 'La clase fue impartida por la profesora', la expresión 'por la profesora' es:",
+            "opciones": ["Objeto directo", "Objeto indirecto", "Complemento agente", "Complemento circunstancial"],
+            "respuesta": 2,
+            "retroalimentacion": "El complemento agente solo aparece en voz pasiva y se reconoce porque inicia con la preposición 'por'. En la oración, 'por la profesora' cumple esa función."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Identifica el tipo de Complemento Circunstancial (CC) en la expresión 'con las tijeras'.",
+            "opciones": ["Lugar", "Tiempo", "Modo", "Instrumento"],
+            "respuesta": 3,
+            "retroalimentacion": "El CC de instrumento responde a la pregunta ¿Con qué? En 'con las tijeras' se indica el instrumento con el que se realiza la acción."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Si aparece la estructura 'fue + participio' (por ejemplo, 'fueron encontradas'), el predicado se clasifica como:",
+            "opciones": ["Predicado nominal, por el verbo ser", "Predicado verbal, porque ser funciona como auxiliar de una acción", "Predicado nominal, porque no hay acción", "No es un predicado"],
+            "respuesta": 1,
+            "retroalimentacion": "En voz pasiva, la estructura 'fue + participio' indica una acción y el verbo 'ser' funciona como auxiliar. Por ello, aunque aparezca 'ser', se clasifica como predicado verbal."
+        }
+    ],    "content-quimica-1": [
         {
             "numero": 1,
             "pregunta": "El bronce es un ejemplo de:",
@@ -2108,6 +2486,43 @@ const practiceLevel2Questions = {
             "retroalimentacion": "El criterio operativo de la clase indica que el predominio verbal sugiere narración, mientras que el predominio adjetival sugiere descripción."
         }
     ],
+    "content-literatura-3": [
+        {
+            "numero": 1,
+            "pregunta": "Si un texto presenta nombres de personajes en mayúsculas seguidos de dos puntos o guion, ¿qué rasgo formal se identifica según la clase?",
+            "opciones": ["Narrador en tercera persona.", "Organización dialógica.", "Versificación lírica.", "Descripción científica objetiva."],
+            "respuesta": 1,
+            "retroalimentacion": "Ese formato es un indicador de organización dialógica, base para reconocer el género dramático."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué etapa de la acción dramática corresponde al punto álgido o de máxima tensión?",
+            "opciones": ["Exposición/Desarrollo.", "Nudo.", "Clímax.", "Desenlace."],
+            "respuesta": 2,
+            "retroalimentacion": "El clímax es el punto de máxima tensión y el momento decisivo previo a la resolución."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Personaje que representa la fuerza opuesta al protagonista e impide que logre sus deseos:",
+            "opciones": ["Secundario.", "Incidental/ambiental.", "Antagonista.", "Narrador."],
+            "respuesta": 2,
+            "retroalimentacion": "El antagonista es la fuerza opuesta al protagonista y su función es impedir que alcance su objetivo."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Subgénero solemne donde el protagonista sucumbe ante un destino inevitable y se busca la catarsis:",
+            "opciones": ["Comedia.", "Drama.", "Tragedia.", "Texto periodístico."],
+            "respuesta": 2,
+            "retroalimentacion": "La tragedia tiene tono solemne, destino inevitable y busca la catarsis (purificación de emociones)."
+        },
+        {
+            "numero": 5,
+            "pregunta": "Subgénero realista que mezcla elementos trágicos y cómicos, semejante a la vida cotidiana:",
+            "opciones": ["Drama.", "Tragedia.", "Comedia.", "Épico."],
+            "respuesta": 0,
+            "retroalimentacion": "El drama se describe como realista y combina elementos trágicos y cómicos, asemejándose a la vida cotidiana."
+        }
+    ],
     "content-quimica-2": [
         {
             "numero": 1,
@@ -2143,6 +2558,43 @@ const practiceLevel2Questions = {
             "opciones": ["Es una mezcla homogénea.", "Es un compuesto complejo.", "Es un elemento puro de la tabla periódica.", "Es un isótopo del bismuto."],
             "respuesta": 2,
             "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
+        }
+    ],
+    "content-quimica-3": [
+        {
+            "numero": 1,
+            "pregunta": "Si un subnivel tiene $l=2$, ¿qué letra le corresponde y cuál es su capacidad de electrones?",
+            "opciones": ["p y 6.", "d y 10.", "f y 14.", "s y 2."],
+            "respuesta": 1,
+            "retroalimentacion": "El mapeo de la clase indica: d=2 y su capacidad es 10 electrones."
+        },
+        {
+            "numero": 2,
+            "pregunta": "Para un subnivel f ($l=3$), ¿qué valores puede tomar el número cuántico magnético ($m$)?",
+            "opciones": ["$m=0,\pm1$", "$m=-3,-2,-1,0,+1,+2,+3$", "$m=1,2,3$", "$m=-1,0,+1,+2$"],
+            "respuesta": 1,
+            "retroalimentacion": "El valor máximo lo determina $l$. Para $l=3$, los valores van desde -3 hasta +3, incluyendo el 0."
+        },
+        {
+            "numero": 3,
+            "pregunta": "¿Qué científico se asocia al experimento de la lámina de oro y al descubrimiento del núcleo?",
+            "opciones": ["Thomson.", "Rutherford.", "Bohr.", "Demócrito."],
+            "respuesta": 1,
+            "retroalimentacion": "Rutherford realizó el experimento de la lámina de oro y estableció la existencia del núcleo."
+        },
+        {
+            "numero": 4,
+            "pregunta": "Si un modelo menciona 7 niveles de energía (órbitas), ¿a quién corresponde según la cronología de la clase?",
+            "opciones": ["Bohr.", "Dalton.", "Schrödinger.", "Chadwick."],
+            "respuesta": 0,
+            "retroalimentacion": "El modelo de Bohr introduce 7 niveles de energía u órbitas."
+        },
+        {
+            "numero": 5,
+            "pregunta": "El Antimonio (Sb), con número atómico 51, se clasifica como:",
+            "opciones": ["Compuesto.", "Elemento.", "Mezcla.", "Coloide."],
+            "respuesta": 1,
+            "retroalimentacion": "La nota de repaso indica que el Antimonio (Sb) es un elemento de la tabla periódica (Z=51), no un compuesto."
         }
     ],
     "content-biologia-1": [
@@ -2291,6 +2743,43 @@ const practiceLevel2Questions = {
             "opciones": ["El Tratado de París de 1783 no fue un simple suceso fronterizo, pues propulsó conceptualmente a la futura Revolución Francesa.", "El Renacimiento, a pesar de surgir siglos antes, dotó al mundo burgués y universitario de un pensamiento de ruptura secular preparándolo hacia el Racionalismo Ilustrado.", "La imposición dictatorial de las 13 colonias recayó finalmente en Rousseau quien abdicó al poder como soberano natural de Gran Bretaña.", "El uso imperativo de la 'Razón', que el Iluminismo traía consagrado como su pilar intelectual central, resultó ser la bala de gracia de los reyes monárquicos como figura intocable o santa."],
             "respuesta": 2,
             "retroalimentacion": "Rousseau jamás fue gobernante monárquico, inglés, dictatorial, y mucho menos participó operativamente con soberanía en Gran Bretaña; él no abdicó a nada formal en Inglaterra, fue sencillamente un intelectual ilustrado suizo/francés crucial propulsor de ideas. Es la opción con asociación dispar."
+        }
+    ],
+    "content-historia-5": [
+        {
+            "numero": 1,
+            "pregunta": "Relaciona correctamente Ley de Reforma y objetivo:",
+            "opciones": ["Juárez: prohíbe cobros parroquiales; Iglesias: restringe fueros; Lerdo: desamortiza bienes.", "Juárez: restringe fueros; Lerdo: desamortiza bienes; Iglesias: prohíbe cobro obligatorio de servicios parroquiales.", "Juárez: desamortiza bienes; Lerdo: restringe fueros; Iglesias: restablece república federal.", "Juárez: consagra derechos sociales; Lerdo: prohíbe diezmo; Iglesias: desamortiza bienes."],
+            "respuesta": 1,
+            "retroalimentacion": "Ley Juárez restringe fueros; Ley Lerdo desamortiza bienes del clero; Ley Iglesias prohíbe cobros obligatorios de servicios parroquiales."
+        },
+        {
+            "numero": 2,
+            "pregunta": "¿Qué ocurrió el 5 de mayo de 1862 y quién encabezó el hecho?",
+            "opciones": ["Plan de la Noria; Porfirio Díaz.", "Batalla de Puebla; Ignacio Zaragoza.", "Plan de Tuxtepec; Sebastián Lerdo de Tejada.", "Fusilamiento de Maximiliano; Benito Juárez."],
+            "respuesta": 1,
+            "retroalimentacion": "El 5 de mayo de 1862 ocurrió la Batalla de Puebla, liderada por Ignacio Zaragoza."
+        },
+        {
+            "numero": 3,
+            "pregunta": "Orden cronológico según la clase:",
+            "opciones": ["Plan de la Noria (1871) → Plan de Tuxtepec (1876) → Muerte de Juárez (1872).", "Muerte de Juárez (1872) → Plan de la Noria (1871) → Plan de Tuxtepec (1876).", "Plan de la Noria (1871) → Muerte de Juárez (1872) → Plan de Tuxtepec (1876).", "Plan de Tuxtepec (1876) → Plan de la Noria (1871) → Muerte de Juárez (1872)."],
+            "respuesta": 2,
+            "retroalimentacion": "Primero ocurre el Plan de la Noria (1871), después la muerte de Juárez (1872) y más tarde el Plan de Tuxtepec (1876)."
+        },
+        {
+            "numero": 4,
+            "pregunta": "¿Quién asumió la presidencia tras la muerte de Juárez en 1872 y qué hecho técnico se le atribuye?",
+            "opciones": ["Ignacio Zaragoza; Batalla de Puebla.", "Sebastián Lerdo de Tejada; inauguración de la primera línea de ferrocarril Ciudad de México-Veracruz.", "Maximiliano; mantenimiento de Leyes de Reforma.", "Juan Álvarez; proclamación del Plan de Ayutla."],
+            "respuesta": 1,
+            "retroalimentacion": "Tras la muerte de Juárez en 1872, asumió Sebastián Lerdo de Tejada, a quien se atribuye la inauguración de la primera línea de ferrocarril Ciudad de México-Veracruz."
+        },
+        {
+            "numero": 5,
+            "pregunta": "¿Cuál tratado se describe como un intento de conceder tránsito a Estados Unidos a cambio de apoyo y que no fue ratificado?",
+            "opciones": ["Guadalupe Hidalgo.", "McLane-Ocampo.", "Mon-Almonte.", "Convención de Londres."],
+            "respuesta": 1,
+            "retroalimentacion": "El tratado McLane-Ocampo se describe como un intento liberal de conceder tránsito a Estados Unidos a cambio de apoyo; no fue ratificado."
         }
     ],
     "content-geografia-1": [

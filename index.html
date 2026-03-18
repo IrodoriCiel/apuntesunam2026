@@ -34,11 +34,11 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260313-1';
+        window.__APP_VERSION = '20260318-7';
     </script>
 
     <!-- Estilos externos -->
-    <link rel="stylesheet" href="./css/styles.css?v=20260314-1">
+    <link rel="stylesheet" href="./css/styles.css?v=20260318-7">
 
     <style>
         /* Variables CSS heredadas por styles.css en runtime */
@@ -176,7 +176,15 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
-                </ul>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-espanol-4"
+                            onclick="switchClass('content-espanol-4', this, 'btn-espanol')"
+                            data-class-id="content-espanol-4">
+                            <i class="fa-solid fa-book-open"></i> Clase 4: Núcleos, Predicado y Complementos
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                                    </ul>
             </li>
 
             <!-- MATEMÁTICAS -->
@@ -252,6 +260,13 @@
                             <i class="fa-solid fa-book-open"></i> Clase 8: Ecuaciones y Despeje
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
+                    </li>                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-matematicas-9"
+                            onclick="switchClass('content-matematicas-9', this, 'btn-matematicas')"
+                            data-class-id="content-matematicas-9">
+                            <i class="fa-solid fa-book-open"></i> Clase 9: Sistemas y Sustitución
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -282,6 +297,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-fisica-3"
+                            onclick="switchClass('content-fisica-3', this, 'btn-fisica')"
+                            data-class-id="content-fisica-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: CinemÃ¡tica y DinÃ¡mica
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -308,6 +331,13 @@
                             onclick="switchClass('content-quimica-2', this, 'btn-quimica')"
                             data-class-id="content-quimica-2">
                             <i class="fa-solid fa-book-open"></i> Clase 2: Cambios y Estructura Atómica
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-quimica-3"
+                            onclick="switchClass('content-quimica-3', this, 'btn-quimica')"
+                            data-class-id="content-quimica-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Partículas y Modelos Atómicos
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -413,6 +443,13 @@
                             <i class="fa-solid fa-book-open"></i> Clase 4: Repaso General
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
+                    </li>                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-historia-5"
+                            onclick="switchClass('content-historia-5', this, 'btn-historia')"
+                            data-class-id="content-historia-5">
+                            <i class="fa-solid fa-book-open"></i> Clase 5: Reforma Liberal y Porfiriato
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
                     </li>
                 </ul>
             </li>
@@ -440,6 +477,13 @@
                             onclick="switchClass('content-literatura-2', this, 'btn-literatura')"
                             data-class-id="content-literatura-2">
                             <i class="fa-solid fa-book-open"></i> Clase 2: Texto Periodístico y Dramático
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-literatura-3"
+                            onclick="switchClass('content-literatura-3', this, 'btn-literatura')"
+                            data-class-id="content-literatura-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Género Dramático
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -1339,7 +1383,66 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/ycK839SkxIo"
             },
-            "content-matematicas-3": {
+            "content-historia-5": {
+                title: "Apuntes de Historia de México",
+                titleIconLeft: "fa-earth-americas",
+                titleIconRight: "fa-scale-balanced",
+                titleStyle: "color: #b45309;",
+                mainTopicId: "mainTopicHistoria5",
+                mainTopicClass: "history-topic",
+                mainTopicTitle: "Historia de México",
+                mainTopicIcon1: "fa-landmark",
+                mainTopicIcon2: "fa-flag",
+                mainTopicSubtitle: "Clase 5: Reforma Liberal, Intervención Francesa y Porfiriato",
+                branches: [
+                    {
+                        id: "nodes-hist5-1",
+                        topicIdx: 1,
+                        title: "1. México Independiente y Logias Masónicas",
+                        icon: "fa-users",
+                        subnodes: [
+                            { icon: "fa-coins", delay: "0.1s", title: "Contexto económico (pos-1821)", content: "<p>Tras 1821, el país atraviesa una etapa de <b>crisis</b>, baja productividad y <b>deuda externa</b>.</p><div class='exam-tip'><i class='fa-solid fa-list-check'></i> <b>ENFOQUE DE REPASO:</b><br>Se enfatizan planes, leyes y tratados que suelen aparecer en reactivos tipo guía.</div>" },
+                            { icon: "fa-chess-knight", delay: "0.2s", title: "Logia Escocesa", content: "<p>Se asocia con <b>conservadores</b>: gobierno <b>centralista</b>, militares y criollos.</p><p>Favorece los <b>fueros</b> religiosos y militares en asuntos civiles.</p>" },
+                            { icon: "fa-chess-king", delay: "0.3s", title: "Logia Yorquina", content: "<p>Se asocia con <b>liberales</b>: <b>federalistas</b>, con apoyo de los Estados Unidos.</p><p><b>Guadalupe Victoria</b> pertenecía a esta logia.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist5-2",
+                        topicIdx: 2,
+                        title: "2. Reforma Liberal (1854 - 1876)",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-bolt", delay: "0.1s", title: "Revolución de Ayutla (1854)", content: "<p><b>Causa:</b> Descontento por la dictadura de Santa Anna y la <b>Venta de la Mesilla</b> (1853).</p><div class='exam-tip'><i class='fa-solid fa-file-signature'></i> <b>PLAN DE AYUTLA:</b><br>Proclamado por <b>Juan Álvarez</b> e <b>Ignacio Comonfort</b> para destituir y desterrar a Santa Anna.</div>" },
+                            { icon: "fa-scroll", delay: "0.2s", title: "Constitución de 1857", content: "<p>Es una carta magna de corte <b>liberal</b>.</p><ul><li>Restablece una República <b>federal</b>, representativa y democrática.</li><li>Incluye la <b>división de poderes</b>.</li><li>Establece <b>garantías individuales</b> (libertades básicas).</li></ul><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>ACLARACIÓN:</b><br>No debe confundirse con la Constitución de 1917, orientada a garantías sociales.</div>" },
+                            { icon: "fa-gavel", delay: "0.3s", title: "Leyes de Reforma (Iglesia-Estado)", content: "<p>Buscan la separación entre Iglesia y Estado.</p><ul><li><b>Ley Juárez</b> (Benito Juárez): restringe privilegios a Iglesia y militares en asuntos civiles.</li><li><b>Ley Lerdo</b> (Sebastián Lerdo de Tejada): desamortización de bienes del clero (confiscación de propiedades).</li><li><b>Ley Iglesias</b> (José María Iglesias): prohíbe el cobro obligatorio de servicios parroquiales (diezmo u obvenciones).</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist5-3",
+                        topicIdx: 3,
+                        title: "3. Intervención Francesa y Segundo Imperio (1862 - 1867)",
+                        icon: "fa-helmet-un",
+                        subnodes: [
+                            { icon: "fa-hand-holding-dollar", delay: "0.1s", title: "Causa inmediata de la invasión", content: "<p>En 1861, Juárez decreta la <b>suspensión de pagos</b> de la deuda externa.</p><p>La <b>Convención (Tratado) de Londres</b> une a Inglaterra, España y Francia para exigir el pago.</p>" },
+                            { icon: "fa-shield", delay: "0.2s", title: "Batalla de Puebla (5 de mayo de 1862)", content: "<p>Fue liderada por <b>Ignacio Zaragoza</b>.</p><p><b>Porfirio Díaz</b> tuvo una participación relevante.</p>" },
+                            { icon: "fa-crown", delay: "0.3s", title: "Segundo Imperio Mexicano", content: "<p><b>Gobernante:</b> Maximiliano de Habsburgo, impulsado por conservadores y Napoleón III.</p><p><b>Ideología:</b> Mantiene un perfil liberal: conservó las Leyes de Reforma y otorgó derechos a campesinos.</p><p><b>Fin:</b> Francia retira sus tropas; Maximiliano queda aislado y es fusilado en 1867.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-hist5-4",
+                        topicIdx: 4,
+                        title: "4. República Restaurada y transición al Porfiriato",
+                        icon: "fa-flag",
+                        subnodes: [
+                            { icon: "fa-rotate", delay: "0.1s", title: "Oposición a Juárez", content: "<p>Tras la caída del Imperio, Juárez regresa al poder y enfrenta la oposición de <b>Porfirio Díaz</b>.</p>" },
+                            { icon: "fa-file-signature", delay: "0.2s", title: "Planes políticos de Porfirio Díaz", content: "<ul><li><b>Plan de la Noria (1871):</b> Levantamiento contra Juárez bajo la bandera de la <b>no reelección</b>. Fracasa.</li><li><b>Muerte de Juárez (1872):</b> Fallece por causas naturales. Asume <b>Sebastián Lerdo de Tejada</b> (presidente de la Suprema Corte).</li><li><b>Ferrocarril:</b> Lerdo inauguró la primera línea (Ciudad de México - Veracruz).</li><li><b>Plan de Tuxtepec (1876):</b> Levantamiento contra la reelección de Lerdo. Triunfa; Lerdo es expulsado y Díaz asume la presidencia.</li></ul>" },
+                            { icon: "fa-scroll", delay: "0.3s", title: "Tratados y referencias finales", content: "<div class='exam-tip'><i class='fa-solid fa-file-contract'></i> <b>TRATADOS:</b><br><b>Guadalupe Hidalgo:</b> finaliza la guerra con Estados Unidos y cede territorios del norte.<br><b>McLane-Ocampo:</b> intento liberal de conceder tránsito a Estados Unidos a cambio de apoyo; no se ratificó.<br><b>Mon-Almonte:</b> acuerdo conservador para obtener apoyo de España.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/BgeAGsuYVfI"
+            },            "content-matematicas-3": {
+
                 title: "Apuntes de Matemáticas",
                 titleIconLeft: "fa-calculator",
                 titleIconRight: "fa-square-root-variable",
@@ -1701,7 +1804,63 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/liinNLr2qt4"
             },
-            "content-fisica-1": {
+            "content-matematicas-9": {
+                title: "Apuntes de Matemáticas",
+                titleIconLeft: "fa-calculator",
+                titleIconRight: "fa-scale-balanced",
+                titleStyle: "color: #b91c1c;",
+                mainTopicId: "mainTopicMatematicas9",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Matemáticas",
+                mainTopicIcon1: "fa-equals",
+                mainTopicIcon2: "fa-arrows-rotate",
+                mainTopicSubtitle: "Clase 9: Sistemas de Ecuaciones (Sustitución por Verificación)",
+                branches: [
+                    {
+                        id: "nodes-mat9-1",
+                        topicIdx: 1,
+                        title: "1. Ecuación vs. Polinomio",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-square-root-variable", delay: "0.1s", title: "Expresión (Binomio/Polinomio)", content: "<p>Un binomio o polinomio es una <b>expresión</b>. Ejemplo: $2x + 3y$.</p>" },
+                            { icon: "fa-equals", delay: "0.2s", title: "Ecuación", content: "<p>Una ecuación contiene una <b>igualdad</b> ($=$). Si no hay igualdad, no se puede despejar ni encontrar valores.</p>" },
+                            { icon: "fa-superscript", delay: "0.3s", title: "Grado de la ecuación", content: "<p>El grado lo determina el <b>exponente más grande</b>.</p><ul><li>$3x^2 + 5y = 10$ (segundo grado).</li><li>$x + y + z = 6$ (primer grado).</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat9-2",
+                        topicIdx: 2,
+                        title: "2. Sustitución por Verificación de Incisos",
+                        icon: "fa-list-check",
+                        subnodes: [
+                            { icon: "fa-flag", delay: "0.1s", title: "Idea general", content: "<p>En lugar de usar métodos largos como <b>Suma y Resta</b>, <b>Igualación</b> o <b>Cramer</b>, una estrategia en opción múltiple es probar incisos: se sustituyen los valores propuestos y se verifica qué opción cumple todas las ecuaciones.</p>" },
+                            { icon: "fa-shuffle", delay: "0.2s", title: "Pasos", content: "<ol><li><b>Elegir un inciso:</b> iniciar con el que resulte más sencillo (usualmente el <b>A</b> o el que tenga números enteros).</li><li><b>Sustituir en la primera ecuación.</b></li><li><b>Verificar la igualdad:</b> si no se cumple, descartar.</li><li><b>Probar en todas las ecuaciones:</b> la respuesta correcta debe satisfacer el sistema completo.</li></ol>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat9-3",
+                        topicIdx: 3,
+                        title: "3. Sistemas 3×3 (x, y, z) (Área 1 y 2)",
+                        icon: "fa-cubes",
+                        subnodes: [
+                            { icon: "fa-diagram-project", delay: "0.1s", title: "Criterio", content: "<p>El procedimiento es el mismo, pero se debe validar con cuidado el manejo de signos al sustituir $x$, $y$ y $z$ en cada ecuación.</p>" },
+                            { icon: "fa-code-branch", delay: "0.2s", title: "Ejemplo de validación", content: "<p><b>Sistema:</b></p><p>$$\begin{cases} x + y + z = 6 \\ 2x - y + z = 2 \\ 3x + 2y - 2z = 10 \end{cases}$$</p><p><b>Inciso:</b> $x=2$, $y=3$, $z=1$.</p><ul><li>$2 + 3 + 1 = 6$ (correcto).</li><li>$2(2) - 3 + 1 = 2$ (correcto).</li><li>$3(2) + 2(3) - 2(1) = 10$ (correcto).</li></ul><p>La opción es correcta porque cumple todo el sistema.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-mat9-4",
+                        topicIdx: 4,
+                        title: "4. Trampa de Signos y Estrategias",
+                        icon: "fa-triangle-exclamation",
+                        subnodes: [
+                            { icon: "fa-plus-minus", delay: "0.1s", title: "Ley de signos en sustitución", content: "<p><b>Error común:</b> ignorar el choque de signos al sustituir.</p><p>Si existe una resta en la ecuación y el valor sustituido es negativo, la operación se convierte en suma.</p><p><b>Ecuación:</b> $2x - y$</p><p><b>Si</b> $y=-1$:</p><p>$2x - (-1) = 2x + 1$.</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Recomendaciones", content: "<div class='exam-tip'><i class='fa-solid fa-stopwatch'></i> <b>EFICIENCIA:</b><br>En opción múltiple, el objetivo es identificar el inciso correcto: importa el acierto. Si la sustitución toma 30 segundos y un método largo (por ejemplo, suma y resta) toma 3 minutos, se prioriza la sustitución.</div><div class='exam-tip'><i class='fa-solid fa-filter'></i> <b>DESCARTE LÓGICO:</b><br>Si una ecuación suma valores positivos y el resultado es pequeño, se pueden descartar incisos con valores demasiado altos.</div><div class='exam-tip'><i class='fa-solid fa-layer-group'></i> <b>BANCOS DE PREGUNTAS:</b><br>Se repiten tipos de sistemas en años recientes (por ejemplo, 2024 y 2025).</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/eZzHVJofQ40"
+            },            "content-fisica-1": {
+
                 title: "Apuntes de Física",
                 titleIconLeft: "fa-atom",
                 titleIconRight: "fa-arrows-to-dot",
@@ -1881,7 +2040,77 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/HfF7E7m-lEs"
             },
-            "content-espanol-2": {
+            "content-fisica-3": {
+                title: "Apuntes de FÃ­sica",
+                titleIconLeft: "fa-atom",
+                titleIconRight: "fa-person-running",
+                titleStyle: "color: #0e7490;",
+                mainTopicId: "mainTopicFisica3",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "FÃ­sica",
+                mainTopicIcon1: "fa-car-side",
+                mainTopicIcon2: "fa-scale-balanced",
+                mainTopicSubtitle: "Clase 3: CinemÃ¡tica y DinÃ¡mica (procedimientos rÃ¡pidos)",
+                branches: [
+                    {
+                        id: "nodes-fis3-1",
+                        topicIdx: 1,
+                        title: "1. MRUA: AceleraciÃ³n",
+                        icon: "fa-arrow-trend-up",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "MRU vs. MRUA", content: "<p>En el <b>MRU</b> la velocidad se mantiene constante. En el <b>MRUA</b> la velocidad <b>sÃ­ cambia</b>; a ese cambio se le llama <b>aceleraciÃ³n</b>.</p>" },
+                            { icon: "fa-gauge-high", delay: "0.2s", title: "AceleraciÃ³n ($)", content: "<p><b>Unidad:</b> /s^2$.</p><p><b>Significado:</b> si un objeto tiene =10\,m/s^2$, su velocidad aumenta \,m/s$ <b>cada segundo</b>.</p>" },
+                            { icon: "fa-square-root-variable", delay: "0.3s", title: "FÃ³rmula principal", content: "<p>La expresiÃ³n principal para calcular aceleraciÃ³n es:</p><p>a = \frac{V_f - V_i}{t}</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis3-2",
+                        topicIdx: 2,
+                        title: "2. DescomposiciÃ³n de Vectores",
+                        icon: "fa-location-arrow",
+                        subnodes: [
+                            { icon: "fa-diagram-project", delay: "0.1s", title: "MÃ©todo de la mitad", content: "<p>Para los Ã¡ngulos de ^\circ$, ^\circ$ y ^\circ$ se utiliza un procedimiento de cÃ¡lculo rÃ¡pido:</p><ol><li><b>Dividir</b> la magnitud del vector a la mitad.</li><li><b>Multiplicar</b por la raÃ­z correspondiente segÃºn el Ã¡ngulo.</li></ol>" },
+                            { icon: "fa-table", delay: "0.2s", title: "Tabla de componentes", content: "<table class='table'><thead><tr><th>Ãngulo</th><th>Componente en X</th><th>Componente en Y</th><th>Valor aproximado</th></tr></thead><tbody><tr><td>^\circ$</td><td>Se multiplica por $\sqrt{2}$</td><td>Se multiplica por $\sqrt{2}$</td><td>$\sqrt{2}\approx 1.4$</td></tr><tr><td>^\circ$</td><td>Se multiplica por $\sqrt{3}$</td><td>No se multiplica por raÃ­z</td><td>$\sqrt{3}\approx 1.7$</td></tr><tr><td>^\circ$</td><td>No se multiplica por raÃ­z</td><td>Se multiplica por $\sqrt{3}$</td><td>$\sqrt{3}\approx 1.7$</td></tr></tbody></table>" },
+                            { icon: "fa-weight-hanging", delay: "0.3s", title: "Peso en un sistema de vectores", content: "<div class='exam-tip'><i class='fa-solid fa-bullseye'></i> <b>TIP DE EXAMEN:</b><br>Si se solicita el <b>peso (P)</b> en un sistema de vectores, se consideran Ãºnicamente las <b>componentes en Y</b> y se suman. El peso se representa como una flecha <b>hacia abajo</b>, es decir, con signo <b>negativo</b> en el eje $.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis3-3",
+                        topicIdx: 3,
+                        title: "3. GrÃ¡ficas de Movimiento",
+                        icon: "fa-chart-line",
+                        subnodes: [
+                            { icon: "fa-road", delay: "0.1s", title: "MRU (velocidad constante)", content: "<p><b>Distancia-Tiempo:</b> lÃ­nea diagonal recta.</p><p><b>Velocidad-Tiempo:</b> lÃ­nea horizontal.</p>" },
+                            { icon: "fa-bezier-curve", delay: "0.2s", title: "MRUA (aceleraciÃ³n)", content: "<p>Si una grÃ¡fica de movimiento presenta una <b>curva</b>, corresponde a un movimiento con aceleraciÃ³n (MRUA).</p>" },
+                            { icon: "fa-star", delay: "0.3s", title: "Criterio de identificaciÃ³n rÃ¡pida", content: "<div class='exam-tip'><i class='fa-solid fa-magnifying-glass'></i> <b>REGLA:</b><br>En ejercicios de identificaciÃ³n, el rasgo decisivo es la forma: <b>curva</b> implica aceleraciÃ³n; <b>recta</b> implica movimiento uniforme.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis3-4",
+                        topicIdx: 4,
+                        title: "4. DinÃ¡mica, Masa/Peso y Newton",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-weight-scale", delay: "0.1s", title: "Masa vs. peso", content: "<p><b>Masa:</b> cantidad de materia; se mide en <b>kilogramos (kg)</b>.</p><p><b>Peso (W):</b> es una <b>fuerza</b>; se mide en <b>Newtons (N)</b>.</p><div class='exam-tip'><i class='fa-solid fa-calculator'></i> <b>APROXIMACIÃ“N:</b><br>Para cÃ¡lculos rÃ¡pidos se considera =10\,m/s^2$.</div>" },
+                            { icon: "fa-arrow-up-right-dots", delay: "0.2s", title: "ConversiÃ³n rÃ¡pida con =10$", content: "<div class='exam-tip'><i class='fa-solid fa-bolt'></i> <b>PROCEDIMIENTO RÃPIDO:</b><br>Si se tiene masa y se requiere peso: =m\cdot g$ (con =10$). Ejemplo: \,kg \rightarrow 600\,N$.<br>Si se tiene peso y se requiere masa: =W/g$. Ejemplo: \,N \rightarrow 50\,kg$.</div>" },
+                            { icon: "fa-hand-fist", delay: "0.3s", title: "Leyes de Newton (ideas base)", content: "<ul><li><b>Inercia:</b> un cuerpo permanece en reposo o con velocidad constante si no actÃºa una fuerza neta.</li><li><b>Fuerza:</b> =m\cdot a$.</li><li><b>AcciÃ³n-reacciÃ³n:</b> a toda fuerza se opone otra de igual magnitud y sentido opuesto.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-fis3-5",
+                        topicIdx: 1,
+                        title: "5. Equilibrio y Torcas",
+                        icon: "fa-arrows-rotate",
+                        subnodes: [
+                            { icon: "fa-balance-scale", delay: "0.1s", title: "Condiciones de equilibrio", content: "<p><b>Equilibrio traslacional:</b> suma de fuerzas igual a cero.</p><p><b>Equilibrio rotacional:</b> suma de torcas igual a cero.</p>" },
+                            { icon: "fa-lever", delay: "0.2s", title: "Regla de la palanca", content: "<p>Para que una palanca estÃ© en equilibrio:</p><p>F_1\cdot d_1 = F_2\cdot d_2</p>" },
+                            { icon: "fa-arrows-to-dot", delay: "0.3s", title: "Procedimiento de cÃ¡lculo rÃ¡pido", content: "<div class='exam-tip'><i class='fa-solid fa-draw-polygon'></i> <b>PROCEDIMIENTO:</b><br>Se acomodan tres datos, se trazan correspondencias y se multiplica el par que se encuentra en el mismo lado para dividir entre el dato restante. Es un uso directo de proporcionalidad en el equilibrio de la palanca.</div>" },
+                            { icon: "fa-fire", delay: "0.4s", title: "Reglas finales", content: "<div class='exam-tip'><i class='fa-solid fa-plus-minus'></i> <b>SIGNOS EN VECTORES:</b><br>Derecha/arriba se consideran positivos; izquierda/abajo se consideran negativos.</div><div class='exam-tip'><i class='fa-solid fa-arrow-down'></i> <b>CAÃDA LIBRE:</b><br>La velocidad inicial es =0$ cuando el objeto se suelta desde el reposo. Para rapidez se puede usar =\sqrt{2gh}$ con =10$ para facilitar la raÃ­z (por ejemplo, $\sqrt{400}=20$).</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/joFPI-Tr-Bw"
+            },            "content-espanol-2": {
                 title: "Apuntes de Español",
                 titleIconLeft: "fa-comment-dots",
                 titleIconRight: "fa-spell-check",
@@ -2016,7 +2245,68 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/mluoMGm9BCk"
             },
-            "content-historia-2": {
+            "content-espanol-4": {
+                title: "Apuntes de Español",
+                titleIconLeft: "fa-comment-dots",
+                titleIconRight: "fa-link",
+                titleStyle: "color: #0369a1;",
+                mainTopicId: "mainTopicEspanol4",
+                mainTopicClass: "espanol-topic",
+                mainTopicTitle: "Español",
+                mainTopicIcon1: "fa-sitemap",
+                mainTopicIcon2: "fa-pen-nib",
+                mainTopicSubtitle: "Clase 4: La Oración, Núcleos y Complementos",
+                branches: [
+                    {
+                        id: "nodes-esp4-1",
+                        topicIdx: 1,
+                        title: "1. La Oración y sus Núcleos",
+                        icon: "fa-diagram-project",
+                        subnodes: [
+                            { icon: "fa-layer-group", delay: "0.1s", title: "Bloque completo y núcleo", content: "<p>Para el análisis sintáctico, es importante distinguir entre la <b>oración completa</b> (el bloque) y sus <b>núcleos</b> (las palabras de mayor jerarquía).</p>" },
+                            { icon: "fa-user", delay: "0.2s", title: "Núcleo del Sujeto (NS)", content: "<p>El <b>Núcleo del Sujeto (NS)</b> es el <b>sustantivo</b> o <b>pronombre</b>.</p><div class='exam-tip'><i class='fa-solid fa-scissors'></i> <b>TIP DE EXAMEN:</b><br>Al identificar el NS, se eliminan <b>artículos</b> y <b>adjetivos</b>. En <i>\"La temprana repartición\"</i>, el núcleo es <b>repartición</b>.</div>" },
+                            { icon: "fa-bullseye", delay: "0.3s", title: "Núcleo del Predicado (NP)", content: "<p>El <b>Núcleo del Predicado (NP)</b> es el <b>verbo conjugado</b>.</p><div class='exam-tip'><i class='fa-solid fa-link'></i> <b>CASO CLAVE:</b><br>Si hay dos verbos juntos en una <b>perífrasis</b> (por ejemplo, <i>\"permitirá resolver\"</i> o <i>\"estuvieron ensayando\"</i>), el núcleo está integrado por <b>ambos verbos</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp4-2",
+                        topicIdx: 2,
+                        title: "2. Tipos de Predicado",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-circle-info", delay: "0.1s", title: "Predicado nominal", content: "<p>El <b>predicado nominal</b> se forma con verbos copulativos: <b>ser</b>, <b>estar</b> o <b>parecer</b>.</p><p><b>Ejemplo:</b> <i>\"Sabina es pintora\"</i>.</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Predicado verbal", content: "<p>El <b>predicado verbal</b> se forma con cualquier otro verbo que exprese acción o estado no copulativo.</p><p><b>Ejemplo:</b> <i>\"El perro corre mucho\"</i>.</p>" },
+                            { icon: "fa-shield-halved", delay: "0.3s", title: "Regla práctica: voz pasiva", content: "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>REGLA PRÁCTICA:</b><br>Si aparece la estructura <b>\"fue + participio\"</b> (por ejemplo, <i>\"fueron encontradas\"</i>), aunque se use el verbo <i>ser</i>, se clasifica como <b>predicado verbal</b> porque <i>ser</i> funciona como auxiliar de una acción.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp4-3",
+                        topicIdx: 3,
+                        title: "3. Complementos del Predicado",
+                        icon: "fa-toolbox",
+                        subnodes: [
+                            { icon: "fa-bullseye", delay: "0.1s", title: "Objeto Directo (OD)", content: "<p>El <b>Objeto Directo (OD)</b> responde a: <b>¿Qué?</b> + verbo.</p><p><b>Sustitución:</b> puede reemplazarse por <b>lo, la, los, las</b>.</p><p><b>Ejemplo:</b> \"Ana vio una película\" &#8594; ¿Qué vio? <b>Una película</b> (Ana <b>la</b> vio).</p>" },
+                            { icon: "fa-hand", delay: "0.2s", title: "Objeto Indirecto (OI)", content: "<p>El <b>Objeto Indirecto (OI)</b> responde a: <b>¿A quién?</b> o <b>¿Para quién?</b> + verbo.</p><p><b>Sustitución:</b> puede reemplazarse por <b>le, les, me, te, se</b>.</p><p><b>Ejemplo:</b> \"Compró flores para su mamá\" &#8594; ¿Para quién? <b>Para su mamá</b> ( <b>Le</b> compró flores).</p>" },
+                            { icon: "fa-route", delay: "0.3s", title: "Complemento Circunstancial (CC)", content: "<p>El <b>Complemento Circunstancial (CC)</b> aporta información adicional; no siempre es obligatorio. Se identifica por la pregunta que responde:</p><ul><li><b>Lugar:</b> ¿Dónde? (ej. <i>en el parque</i>).</li><li><b>Tiempo:</b> ¿Cuándo? (ej. <i>ayer</i>, <i>hace un mes</i>).</li><li><b>Modo:</b> ¿Cómo? (ej. <i>lentamente</i>, <i>con pasión</i>).</li><li><b>Instrumento:</b> ¿Con qué? (ej. <i>con las tijeras</i>).</li></ul>" },
+                            { icon: "fa-user-shield", delay: "0.4s", title: "Complemento Agente (C. Ag.)", content: "<p>El <b>Complemento Agente</b> aparece únicamente en <b>voz pasiva</b>.</p><div class='exam-tip'><i class='fa-solid fa-key'></i> <b>IDENTIFICADOR:</b><br>Inicia con la preposición <b>\"por\"</b>. Ejemplo: <i>\"La clase fue impartida <b>por</b> la profesora\"</i>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-esp4-4",
+                        topicIdx: 4,
+                        title: "4. Modificadores del Sujeto y Datos Clave",
+                        icon: "fa-list-check",
+                        subnodes: [
+                            { icon: "fa-quote-left", delay: "0.1s", title: "Aposición", content: "<p>La <b>aposición</b> agrega información que explica al sujeto y suele ir entre comas.</p><p><b>Ejemplo:</b> \"César, el cavernícola, ríe\".</p>" },
+                            { icon: "fa-link", delay: "0.2s", title: "Complemento adnominal (complemento abnominal)", content: "<p>El <b>complemento adnominal</b> (también referido como <b>complemento abnominal</b> en algunos apuntes) inicia con una <b>preposición</b> para calificar a un sustantivo.</p><p><b>Ejemplo:</b> \"La bolsa de piel\".</p>" },
+                            { icon: "fa-user-secret", delay: "0.3s", title: "Sujeto tácito o morfológico", content: "<div class='exam-tip'><i class='fa-solid fa-magnifying-glass'></i> <b>DATO CLAVE:</b><br>El <b>sujeto tácito/morfológico</b> no está escrito, pero se deduce por el verbo. \"Comeremos\" &#8594; Sujeto: <b>Nosotros</b>.</div>" },
+                            { icon: "fa-feather", delay: "0.4s", title: "Polisemia", content: "<div class='exam-tip'><i class='fa-solid fa-lightbulb'></i> <b>DATO CLAVE:</b><br>La <b>polisemia</b> es una característica de la función poética: una palabra u oración puede tener <b>múltiples significados</b>.</div>" },
+                            { icon: "fa-check", delay: "0.5s", title: "Oración vs. frase", content: "<div class='exam-tip'><i class='fa-solid fa-circle-info'></i> <b>DATO CLAVE:</b><br>Para que un enunciado sea <b>oración</b> debe tener un <b>verbo conjugado</b>. \"Corriendo en el parque\" no es oración (es un gerundio/verboide); \"Corre\" sí es una oración.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/KaKJbPsqz2E"
+            },            "content-historia-2": {
                 title: "Apuntes de Historia de México",
                 titleIconLeft: "fa-earth-americas",
                 titleIconRight: "fa-landmark",
@@ -2196,7 +2486,70 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/gTedF1q6gPk"
             },
-            "content-biologia-1": {
+            "content-quimica-3": {
+                title: "Apuntes de Química",
+                titleIconLeft: "fa-flask",
+                titleIconRight: "fa-atom",
+                titleStyle: "color: #059669;",
+                mainTopicId: "mainTopicQuimica3",
+                mainTopicClass: "topic-2",
+                mainTopicTitle: "Química",
+                mainTopicIcon1: "fa-atom",
+                mainTopicIcon2: "fa-book-open",
+                mainTopicSubtitle: "Clase 3: Partículas Subatómicas, Modelos Atómicos y Números Cuánticos",
+                branches: [
+                    {
+                        id: "nodes-qui3-1",
+                        topicIdx: 1,
+                        title: "1. Partículas Subatómicas y Cargas",
+                        icon: "fa-scale-balanced",
+                        subnodes: [
+                            { icon: "fa-plus", delay: "0.1s", title: "Protón ($p^+$)", content: "<p><b>Carga:</b> Positiva.</p><p><b>Ubicación:</b> Núcleo (la región más pesada).</p>" },
+                            { icon: "fa-circle-minus", delay: "0.2s", title: "Neutrón ($n^0$)", content: "<p><b>Carga:</b> Neutra (sin carga).</p><p><b>Ubicación:</b> Núcleo, junto con los protones.</p>" },
+                            { icon: "fa-minus", delay: "0.3s", title: "Electrón ($e^-$)", content: "<p><b>Carga:</b> Negativa.</p><p><b>Ubicación:</b> En orbitales alrededor del núcleo.</p><div class='exam-tip'><i class='fa-solid fa-feather'></i> <b>NOTA DE MEMORIA:</b><br>El electrón es la partícula más ligera; por ello se localiza fuera del núcleo.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui3-2",
+                        topicIdx: 2,
+                        title: "2. Cronología de Modelos Atómicos",
+                        icon: "fa-timeline",
+                        subnodes: [
+                            { icon: "fa-scroll", delay: "0.1s", title: "Demócrito (Grecia)", content: "<p><b>Aporte:</b> Introdujo el término <b>átomo</b> (indivisible). Fue una propuesta filosófica, no científica.</p>" },
+                            { icon: "fa-circle", delay: "0.2s", title: "Dalton", content: "<p><b>Primer modelo con bases científicas.</b></p><p><b>Modelo (Bola de billar):</b> Esfera sólida y hueca (sin estructura interna).</p>" },
+                            { icon: "fa-cookie-bite", delay: "0.3s", title: "Thomson", content: "<p><b>Aporte:</b> Descubrió el electrón.</p><p><b>Experimento:</b> Rayos catódicos.</p><p><b>Modelo (Budín de pasas):</b> Masa positiva con electrones incrustados (analogía: galleta con chispas).</p>" },
+                            { icon: "fa-bullseye", delay: "0.4s", title: "Rutherford", content: "<p><b>Aporte:</b> Descubrió el protón y el núcleo.</p><p><b>Experimento:</b> Lámina de oro.</p><p><b>Modelo:</b> Sistema planetario.</p>" },
+                            { icon: "fa-sun", delay: "0.5s", title: "Bohr", content: "<p><b>Aporte:</b> Introdujo 7 niveles de energía (órbitas).</p><p><b>Modelo:</b> Sistema solar.</p>" },
+                            { icon: "fa-circle-dot", delay: "0.6s", title: "Chadwick", content: "<p><b>Aporte:</b> Descubrió el neutrón, completando el núcleo del modelo de Bohr.</p>" },
+                            { icon: "fa-cloud", delay: "0.7s", title: "Schrödinger", content: "<p><b>Aporte:</b> Explicó los orbitales ($s, p, d, f$) como zonas de probabilidad.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui3-3",
+                        topicIdx: 3,
+                        title: "3. Orbitales Atómicos (Subniveles)",
+                        icon: "fa-house-chimney",
+                        subnodes: [
+                            { icon: "fa-house", delay: "0.1s", title: "Definición", content: "<p>Los <b>orbitales</b> son regiones donde se localizan los electrones. Se identifican con las letras <b>S, P, D, F</b>.</p>" },
+                            { icon: "fa-users", delay: "0.2s", title: "Capacidad de electrones", content: "<p><b>Patrón:</b> Van de 4 en 4.</p><ul><li><b>S:</b> 2 electrones.</li><li><b>P:</b> 6 electrones.</li><li><b>D:</b> 10 electrones.</li><li><b>F:</b> 14 electrones.</li></ul>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-qui3-4",
+                        topicIdx: 4,
+                        title: "4. Números Cuánticos (Identidad del Electrón)",
+                        icon: "fa-hashtag",
+                        subnodes: [
+                            { icon: "fa-1", delay: "0.1s", title: "Principal ($n$)", content: "<p><b>Qué indica:</b> Nivel de energía o cercanía al núcleo.</p><p><b>Valores:</b> Enteros del 1 al 7.</p>" },
+                            { icon: "fa-shapes", delay: "0.2s", title: "Secundario / Azimutal ($l$)", content: "<p><b>Qué indica:</b> La forma geométrica del orbital.</p><p><b>Valores según la letra:</b> $s = 0$, $p = 1$, $d = 2$, $f = 3$.</p>" },
+                            { icon: "fa-arrows-left-right", delay: "0.3s", title: "Magnético ($m$)", content: "<p><b>Qué indica:</b> La orientación en el espacio (izquierda, derecha, céntrico).</p><div class='exam-tip'><i class='fa-solid fa-diagram-project'></i> <b>MÉTODO OPERATIVO:</b><br>Escribe el <b>0</b> al centro. Hacia la derecha coloca los positivos ($+1, +2, +3$) y hacia la izquierda los negativos ($-1, -2, -3$), según el máximo permitido por $l$.</div>" },
+                            { icon: "fa-list-check", delay: "0.4s", title: "Notas de repaso", content: "<div class='exam-tip'><i class='fa-solid fa-brain'></i> <b>IDENTIFICACIÓN VISUAL:</b><br>Si se habla de niveles de energía (órbitas), referencia a <b>Bohr</b>.<br>Si se habla de electrones incrustados en una masa positiva, referencia a <b>Thomson</b>.</div><div class='exam-tip'><i class='fa-solid fa-circle-info'></i> <b>DATO:</b><br>El Antimonio (Sb) es un elemento (número atómico 51), no un compuesto.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/m2NDUERKVxA"
+            },            "content-biologia-1": {
+
                 title: "Apuntes de Biología",
                 titleIconLeft: "fa-dna",
                 titleIconRight: "fa-microscope",
@@ -2458,7 +2811,68 @@
                 ],
                 videoUrl: "https://www.youtube.com/embed/AoMq53a1Xm4"
             },
-            "content-geografia-1": {
+            "content-literatura-3": {
+                title: "Apuntes de Literatura",
+                titleIconLeft: "fa-book-open",
+                titleIconRight: "fa-masks-theater",
+                titleStyle: "color: #4f46e5;",
+                mainTopicId: "mainTopicLiteratura3",
+                mainTopicClass: "topic-1",
+                mainTopicTitle: "Literatura",
+                mainTopicIcon1: "fa-masks-theater",
+                mainTopicIcon2: "fa-scroll",
+                mainTopicSubtitle: "Clase 3: Género Dramático (Estructura, Personajes y Subgéneros)",
+                branches: [
+                    {
+                        id: "nodes-lit3-1",
+                        topicIdx: 1,
+                        title: "1. Género Dramático: Definición Técnica",
+                        icon: "fa-masks-theater",
+                        subnodes: [
+                            { icon: "fa-bullseye", delay: "0.1s", title: "Propósito", content: "<p>El <b>texto dramático</b> es aquel escrito con el objetivo primordial de la <b>representación</b> ante un público.</p>" },
+                            { icon: "fa-user-slash", delay: "0.2s", title: "Rasgo técnico", content: "<p>Su característica técnica principal es la <b>ausencia de narrador</b>; la historia progresa únicamente mediante la interacción de los personajes.</p>" },
+                            { icon: "fa-graduation-cap", delay: "0.3s", title: "Clave de identificación", content: "<div class='exam-tip'><i class='fa-solid fa-flag'></i> <b>CLAVE:</b><br>Cuando se pregunta por el fin último de una obra dramática, la respuesta es la <b>representación</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit3-2",
+                        topicIdx: 2,
+                        title: "2. Organización Dialógica (Comunicación)",
+                        icon: "fa-comments",
+                        subnodes: [
+                            { icon: "fa-people-arrows", delay: "0.1s", title: "Diálogo", content: "<p>Intercambio verbal entre <b>dos o más</b> personajes.</p>" },
+                            { icon: "fa-bullhorn", delay: "0.2s", title: "Monólogo", content: "<p>El personaje habla solo, pero proyecta su discurso hacia el <b>público</b> para informar o explicar algo.</p>" },
+                            { icon: "fa-brain", delay: "0.3s", title: "Soliloquio", content: "<p>El personaje habla consigo mismo (introspección). Es la exteriorización de pensamientos íntimos donde se ignora la presencia del espectador.</p>" },
+                            { icon: "fa-pen", delay: "0.4s", title: "Acotaciones", content: "<p>Son instrucciones del dramaturgo sobre movimientos, tonos de voz o escenografía.</p><div class='exam-tip'><i class='fa-solid fa-eye'></i> <b>IDENTIFICACIÓN VISUAL:</b><br>Se reconocen porque suelen ir entre <b>paréntesis</b> o en <b>cursivas</b>.</div>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit3-3",
+                        topicIdx: 3,
+                        title: "3. Estructura de la Acción Dramática",
+                        icon: "fa-chart-line",
+                        subnodes: [
+                            { icon: "fa-play", delay: "0.1s", title: "Exposición / Desarrollo", content: "<p>Presentación de los personajes y el contexto (equilibrio inicial).</p>" },
+                            { icon: "fa-bolt", delay: "0.2s", title: "Nudo", content: "<p>Aparición del conflicto que rompe la estabilidad.</p>" },
+                            { icon: "fa-fire", delay: "0.3s", title: "Clímax", content: "<p>Punto álgido o de máxima tensión. Momento decisivo antes de la resolución.</p>" },
+                            { icon: "fa-flag-checkered", delay: "0.4s", title: "Desenlace", content: "<p>Resolución del conflicto y fin de la obra.</p>" }
+                        ]
+                    },
+                    {
+                        id: "nodes-lit3-4",
+                        topicIdx: 4,
+                        title: "4. Personajes y Subgéneros Dramáticos",
+                        icon: "fa-users",
+                        subnodes: [
+                            { icon: "fa-star", delay: "0.1s", title: "Clasificación de personajes", content: "<ul><li><b>Protagonista:</b> Centro de la acción; busca alcanzar un objetivo.</li><li><b>Antagonista:</b> Fuerza opuesta al protagonista; impide que este logre sus deseos.</li><li><b>Secundario:</b> Apoya a las figuras principales sin ser el foco de la trama.</li><li><b>Incidental / Ambiental:</b> Personajes de apoyo que dan verosimilitud (p. ej., mesero o transeúntes).</li></ul><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>NOTA:</b><br>El antagonista representa la fuerza opuesta al protagonista.</div>" },
+                            { icon: "fa-book", delay: "0.2s", title: "Subgéneros", content: "<p><b>Tragedia:</b> Tono solemne. El protagonista sucumbe ante un destino inevitable. Busca la <b>catarsis</b> (purificación de emociones).</p><p><b>Comedia:</b> Tono ligero o satírico. Critica los vicios humanos. Termina en final feliz o reconciliación.</p><p><b>Drama:</b> Tono realista. Mezcla elementos trágicos y cómicos. Se asemeja a la vida cotidiana.</p>" },
+                            { icon: "fa-lightbulb", delay: "0.3s", title: "Puntos clave", content: "<div class='exam-tip'><i class='fa-solid fa-list-check'></i> <b>PUNTOS CLAVE:</b><br>Si un texto presenta nombres de personajes en <b>mayúsculas</b> seguidos de guion o dos puntos, es un indicador de <b>organización dialógica</b>.<br>En la <b>tragedia</b>, el héroe tiene una <b>falla trágica</b> que lo conduce a la derrota.</div>" }
+                        ]
+                    }
+                ],
+                videoUrl: "https://www.youtube.com/embed/fi65nk2Pcu8"
+            },            "content-geografia-1": {
+
                 title: "Apuntes de Geografía",
                 titleIconLeft: "fa-map",
                 titleIconRight: "fa-book",
@@ -2546,8 +2960,8 @@
     </script>
 
     <!-- Bases de Datos Externas (JS) -->
-    <script src="./js/data/questions-db.js?v=20260314-1"></script>
-    <script src="./js/data/flashcards-db.js?v=20260314-1"></script>
+    <script src="./js/data/questions-db.js?v=20260318-7"></script>
+    <script src="./js/data/flashcards-db.js?v=20260318-7"></script>
 
     <!-- Secciones de Herramientas: Flashcards y Estadísticas (páginas) -->
     <div id="content-flashcards" class="subject-content" style="display:none;animation:fadeInPage 0.4s ease forwards;">
@@ -2895,7 +3309,7 @@
     </div>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260314-1"></script>
+    <script src="./js/app.js?v=20260318-7"></script>
 
 </body>
 
