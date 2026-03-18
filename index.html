@@ -301,7 +301,7 @@
                         <a href="javascript:void(0)" class="class-item" id="link-fisica-3"
                             onclick="switchClass('content-fisica-3', this, 'btn-fisica')"
                             data-class-id="content-fisica-3">
-                            <i class="fa-solid fa-book-open"></i> Clase 3: CinemÃ¡tica y DinÃ¡mica
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Cinemática y Dinámica
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -1844,7 +1844,7 @@
                         icon: "fa-cubes",
                         subnodes: [
                             { icon: "fa-diagram-project", delay: "0.1s", title: "Criterio", content: "<p>El procedimiento es el mismo, pero se debe validar con cuidado el manejo de signos al sustituir $x$, $y$ y $z$ en cada ecuación.</p>" },
-                            { icon: "fa-code-branch", delay: "0.2s", title: "Ejemplo de validación", content: "<p><b>Sistema:</b></p><p>$$\begin{cases} x + y + z = 6 \\ 2x - y + z = 2 \\ 3x + 2y - 2z = 10 \end{cases}$$</p><p><b>Inciso:</b> $x=2$, $y=3$, $z=1$.</p><ul><li>$2 + 3 + 1 = 6$ (correcto).</li><li>$2(2) - 3 + 1 = 2$ (correcto).</li><li>$3(2) + 2(3) - 2(1) = 10$ (correcto).</li></ul><p>La opción es correcta porque cumple todo el sistema.</p>" }
+                            { icon: "fa-code-branch", delay: "0.2s", title: "Ejemplo de validación", content: "<p><b>Sistema:</b></p><p>$$\\begin{cases} x + y + z = 6 \\\\ 2x - y + z = 2 \\\\ 3x + 2y - 2z = 10 \\end{cases}$$</p><p><b>Inciso:</b> $x=2$, $y=3$, $z=1$.</p><ul><li>$2 + 3 + 1 = 6$ (correcto).</li><li>$2(2) - 3 + 1 = 2$ (correcto).</li><li>$3(2) + 2(3) - 2(1) = 10$ (correcto).</li></ul><p>La opción es correcta porque cumple todo el sistema.</p>" }
                         ]
                     },
                     {
@@ -2041,59 +2041,59 @@
                 videoUrl: "https://www.youtube.com/embed/HfF7E7m-lEs"
             },
             "content-fisica-3": {
-                title: "Apuntes de FÃ­sica",
+                title: "Apuntes de Física",
                 titleIconLeft: "fa-atom",
                 titleIconRight: "fa-person-running",
                 titleStyle: "color: #0e7490;",
                 mainTopicId: "mainTopicFisica3",
                 mainTopicClass: "topic-1",
-                mainTopicTitle: "FÃ­sica",
+                mainTopicTitle: "Física",
                 mainTopicIcon1: "fa-car-side",
                 mainTopicIcon2: "fa-scale-balanced",
-                mainTopicSubtitle: "Clase 3: CinemÃ¡tica y DinÃ¡mica (procedimientos rÃ¡pidos)",
+                mainTopicSubtitle: "Clase 3: Cinemática y Dinámica (procedimientos rápidos)",
                 branches: [
                     {
                         id: "nodes-fis3-1",
                         topicIdx: 1,
-                        title: "1. MRUA: AceleraciÃ³n",
+                        title: "1. MRUA: Aceleración",
                         icon: "fa-arrow-trend-up",
                         subnodes: [
-                            { icon: "fa-circle-info", delay: "0.1s", title: "MRU vs. MRUA", content: "<p>En el <b>MRU</b> la velocidad se mantiene constante. En el <b>MRUA</b> la velocidad <b>sÃ­ cambia</b>; a ese cambio se le llama <b>aceleraciÃ³n</b>.</p>" },
-                            { icon: "fa-gauge-high", delay: "0.2s", title: "AceleraciÃ³n ($)", content: "<p><b>Unidad:</b> /s^2$.</p><p><b>Significado:</b> si un objeto tiene =10\,m/s^2$, su velocidad aumenta \,m/s$ <b>cada segundo</b>.</p>" },
-                            { icon: "fa-square-root-variable", delay: "0.3s", title: "FÃ³rmula principal", content: "<p>La expresiÃ³n principal para calcular aceleraciÃ³n es:</p><p>a = \frac{V_f - V_i}{t}</p>" }
+                            { icon: "fa-circle-info", delay: "0.1s", title: "MRU vs. MRUA", content: "<p>En el <b>MRU</b> la velocidad se mantiene constante. En el <b>MRUA</b> la velocidad <b>sí cambia</b>; a ese cambio se le llama <b>aceleración</b>.</p>" },
+                            { icon: "fa-gauge-high", delay: "0.2s", title: "Aceleración ($a$)", content: "<p><b>Unidad:</b> $m/s^2$.</p><p><b>Significado:</b> si un objeto tiene $a=10\\,m/s^2$, su velocidad aumenta $10\\,m/s$ <b>cada segundo</b>.</p>" },
+                            { icon: "fa-square-root-variable", delay: "0.3s", title: "Fórmula principal", content: "<p>La expresión principal para calcular aceleración es:</p><p>$a = \\frac{V_f - V_i}{t}$</p>" }
                         ]
                     },
                     {
                         id: "nodes-fis3-2",
                         topicIdx: 2,
-                        title: "2. DescomposiciÃ³n de Vectores",
+                        title: "2. Descomposición de Vectores",
                         icon: "fa-location-arrow",
                         subnodes: [
-                            { icon: "fa-diagram-project", delay: "0.1s", title: "MÃ©todo de la mitad", content: "<p>Para los Ã¡ngulos de ^\circ$, ^\circ$ y ^\circ$ se utiliza un procedimiento de cÃ¡lculo rÃ¡pido:</p><ol><li><b>Dividir</b> la magnitud del vector a la mitad.</li><li><b>Multiplicar</b por la raÃ­z correspondiente segÃºn el Ã¡ngulo.</li></ol>" },
-                            { icon: "fa-table", delay: "0.2s", title: "Tabla de componentes", content: "<table class='table'><thead><tr><th>Ãngulo</th><th>Componente en X</th><th>Componente en Y</th><th>Valor aproximado</th></tr></thead><tbody><tr><td>^\circ$</td><td>Se multiplica por $\sqrt{2}$</td><td>Se multiplica por $\sqrt{2}$</td><td>$\sqrt{2}\approx 1.4$</td></tr><tr><td>^\circ$</td><td>Se multiplica por $\sqrt{3}$</td><td>No se multiplica por raÃ­z</td><td>$\sqrt{3}\approx 1.7$</td></tr><tr><td>^\circ$</td><td>No se multiplica por raÃ­z</td><td>Se multiplica por $\sqrt{3}$</td><td>$\sqrt{3}\approx 1.7$</td></tr></tbody></table>" },
-                            { icon: "fa-weight-hanging", delay: "0.3s", title: "Peso en un sistema de vectores", content: "<div class='exam-tip'><i class='fa-solid fa-bullseye'></i> <b>TIP DE EXAMEN:</b><br>Si se solicita el <b>peso (P)</b> en un sistema de vectores, se consideran Ãºnicamente las <b>componentes en Y</b> y se suman. El peso se representa como una flecha <b>hacia abajo</b>, es decir, con signo <b>negativo</b> en el eje $.</div>" }
+                            { icon: "fa-diagram-project", delay: "0.1s", title: "Método de la mitad", content: "<p>Para los ángulos de $45^\\circ$, $30^\\circ$ y $60^\\circ$ se utiliza un procedimiento de cálculo rápido:</p><ol><li><b>Dividir</b> la magnitud del vector a la mitad.</li><li><b>Multiplicar</b> por la raíz correspondiente según el ángulo.</li></ol>" },
+                            { icon: "fa-table", delay: "0.2s", title: "Tabla de componentes", content: "<table class='table'><thead><tr><th>Ángulo</th><th>Componente en X</th><th>Componente en Y</th><th>Valor aproximado</th></tr></thead><tbody><tr><td>$45^\\circ$</td><td>Se multiplica por $\\sqrt{2}$</td><td>Se multiplica por $\\sqrt{2}$</td><td>$\\sqrt{2}\\approx 1.4$</td></tr><tr><td>$30^\\circ$</td><td>Se multiplica por $\\sqrt{3}$</td><td>No se multiplica por raíz</td><td>$\\sqrt{3}\\approx 1.7$</td></tr><tr><td>$60^\\circ$</td><td>No se multiplica por raíz</td><td>Se multiplica por $\\sqrt{3}$</td><td>$\\sqrt{3}\\approx 1.7$</td></tr></tbody></table>" },
+                            { icon: "fa-weight-hanging", delay: "0.3s", title: "Peso en un sistema de vectores", content: "<div class='exam-tip'><i class='fa-solid fa-bullseye'></i> <b>TIP DE EXAMEN:</b><br>Si se solicita el <b>peso (P)</b> en un sistema de vectores, se consideran únicamente las <b>componentes en Y</b> y se suman. El peso se representa como una flecha <b>hacia abajo</b>, es decir, con signo <b>negativo</b> en el eje $y$.</div>" }
                         ]
                     },
                     {
                         id: "nodes-fis3-3",
                         topicIdx: 3,
-                        title: "3. GrÃ¡ficas de Movimiento",
+                        title: "3. Gráficas de Movimiento",
                         icon: "fa-chart-line",
                         subnodes: [
-                            { icon: "fa-road", delay: "0.1s", title: "MRU (velocidad constante)", content: "<p><b>Distancia-Tiempo:</b> lÃ­nea diagonal recta.</p><p><b>Velocidad-Tiempo:</b> lÃ­nea horizontal.</p>" },
-                            { icon: "fa-bezier-curve", delay: "0.2s", title: "MRUA (aceleraciÃ³n)", content: "<p>Si una grÃ¡fica de movimiento presenta una <b>curva</b>, corresponde a un movimiento con aceleraciÃ³n (MRUA).</p>" },
-                            { icon: "fa-star", delay: "0.3s", title: "Criterio de identificaciÃ³n rÃ¡pida", content: "<div class='exam-tip'><i class='fa-solid fa-magnifying-glass'></i> <b>REGLA:</b><br>En ejercicios de identificaciÃ³n, el rasgo decisivo es la forma: <b>curva</b> implica aceleraciÃ³n; <b>recta</b> implica movimiento uniforme.</div>" }
+                            { icon: "fa-road", delay: "0.1s", title: "MRU (velocidad constante)", content: "<p><b>Distancia-Tiempo:</b> línea diagonal recta.</p><p><b>Velocidad-Tiempo:</b> línea horizontal.</p>" },
+                            { icon: "fa-bezier-curve", delay: "0.2s", title: "MRUA (aceleración)", content: "<p>Si una gráfica de movimiento presenta una <b>curva</b>, corresponde a un movimiento con aceleración (MRUA).</p>" },
+                            { icon: "fa-star", delay: "0.3s", title: "Criterio de identificación rápida", content: "<div class='exam-tip'><i class='fa-solid fa-magnifying-glass'></i> <b>REGLA:</b><br>En ejercicios de identificación, el rasgo decisivo es la forma: <b>curva</b> implica aceleración; <b>recta</b> implica movimiento uniforme.</div>" }
                         ]
                     },
                     {
                         id: "nodes-fis3-4",
                         topicIdx: 4,
-                        title: "4. DinÃ¡mica, Masa/Peso y Newton",
+                        title: "4. Dinámica, Masa/Peso y Newton",
                         icon: "fa-scale-balanced",
                         subnodes: [
-                            { icon: "fa-weight-scale", delay: "0.1s", title: "Masa vs. peso", content: "<p><b>Masa:</b> cantidad de materia; se mide en <b>kilogramos (kg)</b>.</p><p><b>Peso (W):</b> es una <b>fuerza</b>; se mide en <b>Newtons (N)</b>.</p><div class='exam-tip'><i class='fa-solid fa-calculator'></i> <b>APROXIMACIÃ“N:</b><br>Para cÃ¡lculos rÃ¡pidos se considera =10\,m/s^2$.</div>" },
-                            { icon: "fa-arrow-up-right-dots", delay: "0.2s", title: "ConversiÃ³n rÃ¡pida con =10$", content: "<div class='exam-tip'><i class='fa-solid fa-bolt'></i> <b>PROCEDIMIENTO RÃPIDO:</b><br>Si se tiene masa y se requiere peso: =m\cdot g$ (con =10$). Ejemplo: \,kg \rightarrow 600\,N$.<br>Si se tiene peso y se requiere masa: =W/g$. Ejemplo: \,N \rightarrow 50\,kg$.</div>" },
-                            { icon: "fa-hand-fist", delay: "0.3s", title: "Leyes de Newton (ideas base)", content: "<ul><li><b>Inercia:</b> un cuerpo permanece en reposo o con velocidad constante si no actÃºa una fuerza neta.</li><li><b>Fuerza:</b> =m\cdot a$.</li><li><b>AcciÃ³n-reacciÃ³n:</b> a toda fuerza se opone otra de igual magnitud y sentido opuesto.</li></ul>" }
+                            { icon: "fa-weight-scale", delay: "0.1s", title: "Masa vs. peso", content: "<p><b>Masa:</b> cantidad de materia; se mide en <b>kilogramos (kg)</b>.</p><p><b>Peso (W):</b> es una <b>fuerza</b>; se mide en <b>Newtons (N)</b>.</p><div class='exam-tip'><i class='fa-solid fa-calculator'></i> <b>APROXIMACIÓN:</b><br>Para cálculos rápidos se considera $g=10\\,m/s^2$.</div>" },
+                            { icon: "fa-arrow-up-right-dots", delay: "0.2s", title: "Conversión rápida con $g=10$", content: "<div class='exam-tip'><i class='fa-solid fa-bolt'></i> <b>PROCEDIMIENTO RÁPIDO:</b><br>Si se tiene masa y se requiere peso: $W=m\\cdot g$ (con $g=10$). Ejemplo: $60\\,kg \\rightarrow 600\\,N$.<br>Si se tiene peso y se requiere masa: $m=W/g$. Ejemplo: $500\\,N \\rightarrow 50\\,kg$.</div>" },
+                            { icon: "fa-hand-fist", delay: "0.3s", title: "Leyes de Newton (ideas base)", content: "<ul><li><b>Inercia:</b> un cuerpo permanece en reposo o con velocidad constante si no actúa una fuerza neta.</li><li><b>Fuerza:</b> $F=m\\cdot a$.</li><li><b>Acción-reacción:</b> a toda fuerza se opone otra de igual magnitud y sentido opuesto.</li></ul>" }
                         ]
                     },
                     {
@@ -2103,9 +2103,9 @@
                         icon: "fa-arrows-rotate",
                         subnodes: [
                             { icon: "fa-balance-scale", delay: "0.1s", title: "Condiciones de equilibrio", content: "<p><b>Equilibrio traslacional:</b> suma de fuerzas igual a cero.</p><p><b>Equilibrio rotacional:</b> suma de torcas igual a cero.</p>" },
-                            { icon: "fa-lever", delay: "0.2s", title: "Regla de la palanca", content: "<p>Para que una palanca estÃ© en equilibrio:</p><p>F_1\cdot d_1 = F_2\cdot d_2</p>" },
-                            { icon: "fa-arrows-to-dot", delay: "0.3s", title: "Procedimiento de cÃ¡lculo rÃ¡pido", content: "<div class='exam-tip'><i class='fa-solid fa-draw-polygon'></i> <b>PROCEDIMIENTO:</b><br>Se acomodan tres datos, se trazan correspondencias y se multiplica el par que se encuentra en el mismo lado para dividir entre el dato restante. Es un uso directo de proporcionalidad en el equilibrio de la palanca.</div>" },
-                            { icon: "fa-fire", delay: "0.4s", title: "Reglas finales", content: "<div class='exam-tip'><i class='fa-solid fa-plus-minus'></i> <b>SIGNOS EN VECTORES:</b><br>Derecha/arriba se consideran positivos; izquierda/abajo se consideran negativos.</div><div class='exam-tip'><i class='fa-solid fa-arrow-down'></i> <b>CAÃDA LIBRE:</b><br>La velocidad inicial es =0$ cuando el objeto se suelta desde el reposo. Para rapidez se puede usar =\sqrt{2gh}$ con =10$ para facilitar la raÃ­z (por ejemplo, $\sqrt{400}=20$).</div>" }
+                            { icon: "fa-lever", delay: "0.2s", title: "Regla de la palanca", content: "<p>Para que una palanca esté en equilibrio:</p><p>$F_1\\cdot d_1 = F_2\\cdot d_2$</p>" },
+                            { icon: "fa-arrows-to-dot", delay: "0.3s", title: "Procedimiento de cálculo rápido", content: "<div class='exam-tip'><i class='fa-solid fa-draw-polygon'></i> <b>PROCEDIMIENTO:</b><br>Se acomodan tres datos, se trazan correspondencias y se multiplica el par que se encuentra en el mismo lado para dividir entre el dato restante. Es un uso directo de proporcionalidad en el equilibrio de la palanca.</div>" },
+                            { icon: "fa-fire", delay: "0.4s", title: "Reglas finales", content: "<div class='exam-tip'><i class='fa-solid fa-plus-minus'></i> <b>SIGNOS EN VECTORES:</b><br>Derecha/arriba se consideran positivos; izquierda/abajo se consideran negativos.</div><div class='exam-tip'><i class='fa-solid fa-arrow-down'></i> <b>CAÍDA LIBRE:</b><br>La velocidad inicial es $v_0=0$ cuando el objeto se suelta desde el reposo. Para rapidez se puede usar $v=\\sqrt{2gh}$ con $g=10$ para facilitar la raíz (por ejemplo, $\\sqrt{400}=20$).</div>" }
                         ]
                     }
                 ],
