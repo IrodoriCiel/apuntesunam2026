@@ -2,9 +2,11 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
+const APP_VERSION = '20260318-17';
+
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
-    const SW_VERSION = window.__APP_VERSION || '20260318-7';
+    const SW_VERSION = window.__APP_VERSION || APP_VERSION;
     const SW_URL = `./sw.js?v=${encodeURIComponent(SW_VERSION)}`;
     let hasRefreshedAfterUpdate = false;
 
@@ -246,6 +248,42 @@ function getFlashcardsForMateria(materiaLabel) {
     }));
 }
 
+// Mapeo de classId -> prefijos de ID de flashcards para esa clase
+const CLASS_FLASHCARD_PREFIXES = {
+    'content-espanol-1':       ['esp-'],
+    'content-espanol-2':       ['esp2-'],
+    'content-espanol-4':       ['esp4-'],
+    'content-matematicas-1':   ['mat-'],
+    'content-matematicas-6':   ['matd-'],
+    'content-matematicas-9':   ['mat9-'],
+    'content-fisica-1':        ['fis-'],
+    'content-quimica-1':       ['qui-'],
+    'content-quimica-2':       ['qui2-'],
+    'content-quimica-3':       ['qui3-'],
+    'content-biologia-1':      ['bio-'],
+    'content-literatura-1':    ['lit-'],
+    'content-literatura-2':    ['lit2-'],
+    'content-literatura-3':    ['lit3-'],
+    'content-historia-1':      ['hist-'],
+    'content-historia-3':      ['hist3-'],
+    'content-historia-4':      ['hist4-'],
+    'content-historia-5':      ['hist5-'],
+    'content-hist-univ-1':     ['univ-'],
+    'content-hist-univ-2':     ['hu2-'],
+    'content-geografia-1':     ['geo1-'],
+};
+
+function getFlashcardsForClass(classId) {
+    const perClass = (typeof classFlashcards !== 'undefined' ? classFlashcards : (window.classFlashcards || {}));
+    const cards = perClass[classId] || [];
+    return cards.map(card => ({
+        id: card.id,
+        front: card.pregunta,
+        back: card.respuesta,
+        tema: card.tema
+    }));
+}
+
 window.StudyTools = {
     state: {
         flash: { cards: [], idx: 0, classId: null }
@@ -257,7 +295,7 @@ window.StudyTools = {
         if (!grid) return;
         grid.innerHTML = '';
         const subjectButtons = Array.from(document.querySelectorAll('.subject-item[id^="btn-"]'));
-        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
+        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-glossary'];
         const metaIconMap = window.MATERIA_ICON || {};
 
         subjectButtons.forEach(btn => {
@@ -415,7 +453,7 @@ window.StudyTools = {
             <tbody>`;
         const subjects = [];
         document.querySelectorAll('.subject-item[id^="btn-"]').forEach(btn => {
-            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
+            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-glossary'];
             if (skip.includes(btn.id)) return;
             let label = "";
             btn.childNodes.forEach(node => { if (node.nodeType === 3) label += node.textContent; });
@@ -477,6 +515,12 @@ window.StudyTools = {
         container.innerHTML = html + `</tbody></table>`;
         document.querySelectorAll('.subject-content').forEach(el => el.classList.remove('visible'));
         const page = document.getElementById('content-stats'); if (page) { page.classList.add('visible'); page.style.display = ''; }
+
+        // Feature 1: Weakness Panel
+        const wp = document.getElementById('weakness-panel');
+        if (wp) {
+            buildWeaknessPanel().then(wpHtml => { wp.innerHTML = wpHtml; }).catch(() => { wp.innerHTML = ''; });
+        }
     }
 };
 
@@ -581,16 +625,7 @@ function validateFlashcardsDatabase() {
         const q = String(card.pregunta || '').toLowerCase();
         const a = String(card.respuesta || '');
 
-        // Heurísticas: tarjetas que tienden a mezclar 2 conceptos (para dividirlas)
-        if (q.includes('diferencia entre') || q.includes('respectivamente')) {
-            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) parece multi-concepto (considera dividir): ${card.pregunta}`);
-        }
-        if (/\b y \b/.test(q) && (q.includes('¿') || q.includes('?')) && (q.includes(' y ') && (q.includes(' y qué') || q.includes(' y cuáles') || q.includes(' y quién')))) {
-            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) posible multi-concepto (revisar): ${card.pregunta}`);
-        }
-        if (/[^:]{2,}:\s*[^.]{2,}\.\s*[^:]{2,}:\s*/.test(a)) {
-            console.warn(`flashcardsDatabase[${idx}] (${id || 'sin-id'}) respuesta con 2 definiciones (considera dividir)`);
-        }
+        
     });
 }
 
@@ -1088,6 +1123,8 @@ function handleHash() {
         switchClass('content-config', document.getElementById('btn-config'), 'btn-config');
     } else if (hash === 'studytok') {
         switchClass('content-studytok', document.getElementById('link-studytok'), 'btn-studytok');
+    } else if (hash === 'glossary') {
+        switchClass('content-glossary', document.getElementById('btn-glossary'), 'btn-glossary');
     }
 }
 
@@ -1158,9 +1195,11 @@ function renderClassContainer(classId) {
         `;
         branch.subnodes.forEach(sub => {
             const exHtml = sub.examples ? `<div class="example-box"><ul>${sub.examples.map(e => `<li>${e}</li>`).join('')}</ul></div>` : '';
+            const snName = (sub.name || sub.title || '').replace(/'/g, "\\'");
+            const quizIcon = `<i class="fa-solid fa-clone subnode-quiz-icon-btn" title="Quiz rapido" onclick="event.stopPropagation();showSubnodeQuiz('${classId}','${snName}')"></i>`;
             html += `
                 <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay:${sub.delay};">
-                    <h3>${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title}</div>` : sub.title}</h3>
+                    <h3>${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title} ${quizIcon}</div>` : `${sub.title} ${quizIcon}`}</h3>
                     ${sanitizeHTML(sub.content)}${exHtml}
                 </div>
             `;
@@ -1168,9 +1207,54 @@ function renderClassContainer(classId) {
         html += `</div></div>`;
     });
 
+    // Renderizar sección de flashcards de la clase
+    const classCards = getFlashcardsForClass(classId);
+    let flashSectionHtml = '';
+    if (classCards.length > 0) {
+        const shuffled = classCards.slice(); // orden de apuntes — sin barajar
+        const cardsJson = encodeURIComponent(JSON.stringify(shuffled));
+        flashSectionHtml = `
+        <div class="class-flashcards-section" id="cfs-${classId}">
+            <div class="cfs-header" onclick="toggleClassFlashcards('${classId}')" style="margin-bottom:0;border-bottom:none;">
+                <h2><i class="fa-solid fa-clone"></i> Flashcards de esta Clase</h2>
+                <button class="cfs-toggle-btn" id="cfs-btn-${classId}" onclick="event.stopPropagation(); toggleClassFlashcards('${classId}')">Mostrar / Ocultar</button>
+            </div>
+            <div class="cfs-body" id="cfs-body-${classId}" data-cards="${cardsJson}" data-idx="0" style="display:none;">
+                <div class="cfs-progress-bar-track"><div class="cfs-progress-bar-fill" id="cfs-bar-${classId}" style="width:${Math.round(100/classCards.length)}%"></div></div>
+                <div class="cfs-progress-text" id="cfs-prog-${classId}">1 / ${classCards.length}</div>
+                <div class="cfs-scene" onclick="flipClassFlashcard('${classId}')" title="Toca para ver la respuesta">
+                    <div class="cfs-card" id="cfs-card-${classId}">
+                        <div class="cfs-card-face cfs-card-front">
+                            <span class="cfs-tema-badge" id="cfs-tema-${classId}">${shuffled[0].tema || ''}</span>
+                            <div class="cfs-face-label">Pregunta</div>
+                            <div class="cfs-face-content" id="cfs-front-${classId}">${shuffled[0].front}</div>
+                            <span class="cfs-flip-hint"><i class="fa-solid fa-rotate"></i> Toca para voltear</span>
+                        </div>
+                        <div class="cfs-card-face cfs-card-back">
+                            <div class="cfs-face-label">Respuesta</div>
+                            <div class="cfs-face-content" id="cfs-back-${classId}">${shuffled[0].back}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cfs-controls">
+                    <button class="cfs-btn cfs-btn-nav" id="cfs-prev-${classId}" onclick="navigateClassFlashcard('${classId}', -1)" disabled>
+                        <i class="fa-solid fa-chevron-left"></i> Anterior
+                    </button>
+                    <button class="cfs-btn cfs-btn-flip" onclick="flipClassFlashcard('${classId}')">
+                        <i class="fa-solid fa-rotate"></i> Voltear
+                    </button>
+                    <button class="cfs-btn cfs-btn-nav" id="cfs-next-${classId}" onclick="navigateClassFlashcard('${classId}', 1)" ${classCards.length <= 1 ? 'disabled' : ''}>
+                        Siguiente <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>`;
+    }
+
     html += `
             </div>
         </div>
+        ${flashSectionHtml}
         ${data.videoUrl ? `
         <div class="video-section">
             <div class="video-header" onclick="toggleVideo(this)" style="margin-bottom:0;border-bottom:none;">
@@ -1289,6 +1373,7 @@ function renderGuidedStudyPage() {
                 <i class="fa-solid fa-route"></i> Estudio Guiado <i class="fa-solid fa-compass"></i>
             </h1>
             <div class="guided-wrap">
+                <div id="daily-plan-placeholder">Cargando plan diario...</div>
                 <div class="guided-summary">
                     <div class="guided-kpi" style="border-top: 4px solid #10b981;">
                         <span class="guided-kpi-icon" style="color: #10b981; background: #10b98118;"><i class="fa-solid fa-check-double"></i></span>
@@ -1596,26 +1681,83 @@ function renderSimulacroPage() {
     return `
         <div id="content-simulacro" class="subject-content visible" style="animation:fadeInPage 0.4s ease forwards;">
             <h1 class="title-main" style="color:#2563eb;">
-                <i class="fa-solid fa-graduation-cap"></i> Simulacro Aleatorio <i class="fa-solid fa-clock"></i>
+                <i class="fa-solid fa-graduation-cap"></i> Simulacro de Examen <i class="fa-solid fa-clock"></i>
             </h1>
-            <div id="simulacro-setup" class="unam-dashboard-container" style="text-align:center;padding:40px;max-width:600px;margin:0 auto;">
-                <h3>¿Listo para un examen relámpago?</h3>
-                <p>Generaremos hasta 20 preguntas aleatorias de todas las materias.</p>
-                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;">
-                    <button onclick="startSimulacro('all')" style="background:#2563eb;color:#fff;border:none;border-radius:12px;padding:14px 28px;font-size:1.1rem;font-weight:900;cursor:pointer;font-family:inherit;">
-                        <i class="fa-solid fa-play"></i> Todas las materias
-                    </button>
-                    <button onclick="showSubjectFilter()" style="background:#f1f5f9;color:#334155;border:2px solid #cbd5e1;border-radius:12px;padding:14px 22px;font-size:1rem;font-weight:700;cursor:pointer;font-family:inherit;">
-                        <i class="fa-solid fa-filter"></i> Filtrar por materia
-                    </button>
+            <div id="simulacro-setup" class="unam-dashboard-container" style="max-width:680px;margin:0 auto;padding:32px;">
+
+                <div class="sim-mode-card">
+                    <div class="sim-mode-header">
+                        <i class="fa-solid fa-bolt" style="color:#f59e0b;"></i>
+                        <div>
+                            <h3 style="margin:0;">Examen Relámpago</h3>
+                            <p style="margin:4px 0 0;color:#64748b;font-size:.9rem;">20 preguntas aleatorias — elige tus materias</p>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+                        <button onclick="startSimulacro('all')" style="background:#2563eb;color:#fff;border:none;border-radius:10px;padding:12px 22px;font-size:1rem;font-weight:900;cursor:pointer;font-family:inherit;">
+                            <i class="fa-solid fa-play"></i> Todas las materias
+                        </button>
+                        <button onclick="showSubjectFilter()" style="background:#f1f5f9;color:#334155;border:2px solid #cbd5e1;border-radius:10px;padding:12px 18px;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;">
+                            <i class="fa-solid fa-filter"></i> Filtrar por materia
+                        </button>
+                    </div>
+                    <div id="subject-filter" style="display:none;margin-top:16px;text-align:left;">
+                        <p style="font-weight:700;margin-bottom:10px;">Selecciona materias:</p>
+                        <div id="subject-checkboxes" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
+                        <button onclick="startSimulacroFiltered()" style="margin-top:15px;background:#2563eb;color:#fff;border:none;border-radius:10px;padding:12px 24px;font-weight:900;cursor:pointer;font-family:inherit;font-size:1rem;">
+                            <i class="fa-solid fa-play"></i> Iniciar con selección
+                        </button>
+                    </div>
                 </div>
-                <div id="subject-filter" style="display:none;margin-top:20px;text-align:left;">
-                    <p style="font-weight:700;margin-bottom:10px;">Selecciona materias:</p>
-                    <div id="subject-checkboxes" style="display:flex;flex-wrap:wrap;gap:10px;"></div>
-                    <button onclick="startSimulacroFiltered()" style="margin-top:15px;background:#2563eb;color:#fff;border:none;border-radius:10px;padding:12px 24px;font-weight:900;cursor:pointer;font-family:inherit;font-size:1rem;">
-                        <i class="fa-solid fa-play"></i> Iniciar con selección
-                    </button>
+
+                <div class="sim-mode-card sim-mode-card--full" onclick="startSimulacroCompleto(120)" style="cursor:pointer;">
+                    <div class="sim-mode-header">
+                        <i class="fa-solid fa-file-signature" style="color:#2563eb;"></i>
+                        <div>
+                            <h3 style="margin:0;">Simulacro Completo</h3>
+                            <p style="margin:4px 0 0;color:#64748b;font-size:.9rem;">120 preguntas — distribución oficial UNAM</p>
+                        </div>
+                        <button class="sim-start-btn" onclick="event.stopPropagation();startSimulacroCompleto(120)">
+                            <i class="fa-solid fa-play"></i> Iniciar
+                        </button>
+                    </div>
+                    <div class="sim-dist-grid">
+                        <span><i class="fa-solid fa-calculator" style="color:#7c3aed;"></i> Matemáticas <b>24</b></span>
+                        <span><i class="fa-solid fa-language" style="color:#2563eb;"></i> Español <b>18</b></span>
+                        <span><i class="fa-solid fa-dna" style="color:#d97706;"></i> Biología <b>13</b></span>
+                        <span><i class="fa-solid fa-flask" style="color:#16a34a;"></i> Química <b>13</b></span>
+                        <span><i class="fa-solid fa-atom" style="color:#0891b2;"></i> Física <b>12</b></span>
+                        <span><i class="fa-solid fa-book" style="color:#9333ea;"></i> Literatura <b>10</b></span>
+                        <span><i class="fa-solid fa-map" style="color:#0d9488;"></i> Geografía <b>10</b></span>
+                        <span><i class="fa-solid fa-globe" style="color:#dc2626;"></i> Hist. Universal <b>10</b></span>
+                        <span><i class="fa-solid fa-earth-americas" style="color:#b45309;"></i> Hist. México <b>10</b></span>
+                    </div>
                 </div>
+
+                <div class="sim-mode-card sim-mode-card--reduced" onclick="startSimulacroCompleto(60)" style="cursor:pointer;">
+                    <div class="sim-mode-header">
+                        <i class="fa-solid fa-list-check" style="color:#7c3aed;"></i>
+                        <div>
+                            <h3 style="margin:0;">Simulacro Reducido</h3>
+                            <p style="margin:4px 0 0;color:#64748b;font-size:.9rem;">60 preguntas — misma proporción por materia</p>
+                        </div>
+                        <button class="sim-start-btn sim-start-btn--purple" onclick="event.stopPropagation();startSimulacroCompleto(60)">
+                            <i class="fa-solid fa-play"></i> Iniciar
+                        </button>
+                    </div>
+                    <div class="sim-dist-grid">
+                        <span><i class="fa-solid fa-calculator" style="color:#7c3aed;"></i> Matemáticas <b>12</b></span>
+                        <span><i class="fa-solid fa-language" style="color:#2563eb;"></i> Español <b>9</b></span>
+                        <span><i class="fa-solid fa-dna" style="color:#d97706;"></i> Biología <b>6</b></span>
+                        <span><i class="fa-solid fa-flask" style="color:#16a34a;"></i> Química <b>7</b></span>
+                        <span><i class="fa-solid fa-atom" style="color:#0891b2;"></i> Física <b>6</b></span>
+                        <span><i class="fa-solid fa-book" style="color:#9333ea;"></i> Literatura <b>5</b></span>
+                        <span><i class="fa-solid fa-map" style="color:#0d9488;"></i> Geografía <b>5</b></span>
+                        <span><i class="fa-solid fa-globe" style="color:#dc2626;"></i> Hist. Universal <b>5</b></span>
+                        <span><i class="fa-solid fa-earth-americas" style="color:#b45309;"></i> Hist. México <b>5</b></span>
+                    </div>
+                </div>
+
                 ${histHtml}
             </div>
             <div id="simulacro-questions" style="max-width:900px;margin:0 auto;width:100%;"></div>
@@ -1698,6 +1840,180 @@ function startSimulacroFiltered() {
     startSimulacro(checked);
 }
 
+// ─── Distribuciones fijas por materia ───────────────────────────────────────
+const SIM_DISTRIBUTION = {
+    120: [
+        { materia: 'Física',             count: 12 },
+        { materia: 'Literatura',         count: 10 },
+        { materia: 'Química',            count: 13 },
+        { materia: 'Geografía',          count: 10 },
+        { materia: 'Matemáticas',        count: 24 },
+        { materia: 'Español',            count: 18 },
+        { materia: 'Biología',           count: 13 },
+        { materia: 'Historia Universal', count: 10 },
+        { materia: 'Historia de México', count: 10 },
+    ],
+    60: [
+        { materia: 'Física',             count:  6 },
+        { materia: 'Literatura',         count:  5 },
+        { materia: 'Química',            count:  7 },
+        { materia: 'Geografía',          count:  5 },
+        { materia: 'Matemáticas',        count: 12 },
+        { materia: 'Español',            count:  9 },
+        { materia: 'Biología',           count:  6 },
+        { materia: 'Historia Universal', count:  5 },
+        { materia: 'Historia de México', count:  5 },
+    ],
+};
+
+// --- Simulacro Timer ---
+function startSimTimer(totalMinutes) {
+    let seconds = totalMinutes * 60;
+    const total = seconds;
+
+    if (window._simTimerInterval) clearInterval(window._simTimerInterval);
+
+    window._simTimerInterval = setInterval(() => {
+        seconds--;
+        const bar = document.getElementById('sim-timer-bar');
+        const display = document.getElementById('sim-timer-display');
+        const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const s = String(seconds % 60).padStart(2, '0');
+        if (display) display.textContent = `${m}:${s}`;
+        if (bar) bar.style.width = `${(seconds / total) * 100}%`;
+
+        const pct = seconds / total;
+        if (bar) bar.style.background = pct > 0.3 ? '#2563eb' : pct > 0.1 ? '#f59e0b' : '#dc2626';
+
+        if (seconds <= 0) {
+            clearInterval(window._simTimerInterval);
+            window._simTimerInterval = null;
+            showToast('\u00a1Tiempo agotado! Revisa tus resultados.', 'error');
+            showSimResults();
+        }
+    }, 1000);
+}
+
+function stopSimTimer() {
+    if (window._simTimerInterval) {
+        clearInterval(window._simTimerInterval);
+        window._simTimerInterval = null;
+    }
+}
+
+function startSimulacroCompleto(total) {
+    const distribution = SIM_DISTRIBUTION[total];
+    if (!distribution) return;
+
+    const qContainer = document.getElementById('simulacro-questions');
+    const setupDiv   = document.getElementById('simulacro-setup');
+    if (setupDiv) setupDiv.style.display = 'none';
+    qContainer.innerHTML = '';
+    simCorrect = 0;
+
+    // Construir pool por materia (uniendo los tres bancos)
+    const poolByMateria = {};
+    [unamQuestions, practiceQuestions, practiceLevel2Questions].forEach(obj => {
+        Object.keys(obj).forEach(key => {
+            const mat = appDatabase[key]?.mainTopicTitle || key;
+            if (!poolByMateria[mat]) poolByMateria[mat] = [];
+            obj[key].forEach(q => poolByMateria[mat].push({ ...q, originalKey: key }));
+        });
+    });
+
+    // Seleccionar preguntas según distribución y armar el examen
+    currentSimExam = [];
+    const sections = [];
+
+    for (const { materia, count } of distribution) {
+        const pool  = (poolByMateria[materia] || []).slice().sort(() => Math.random() - 0.5);
+        const picked = pool.slice(0, count);
+        const startIdx = currentSimExam.length;
+        currentSimExam.push(...picked);
+        if (picked.length > 0) sections.push({ materia, startIdx, count: picked.length });
+    }
+
+    if (currentSimExam.length === 0) {
+        qContainer.innerHTML = '<p style="text-align:center;color:#64748b;padding:40px;">No hay preguntas disponibles.</p>';
+        if (setupDiv) setupDiv.style.display = 'block';
+        return;
+    }
+
+    // Renderizar con separadores de materia y numeración secuencial
+    const SIM_KEY = 'simulacro-questions';
+    let innerHtml = '';
+    const SIM_ID = 'sim';
+
+    for (const sec of sections) {
+        const meta = MATERIA_ICON[sec.materia] || { icon: 'fa-bookmark', color: '#64748b' };
+        const rangeEnd = sec.startIdx + sec.count;
+        innerHtml += `
+            <div class="sim-section-header" style="border-left:4px solid ${meta.color};background:${meta.color}14;">
+                <i class="fa-solid ${meta.icon}" style="color:${meta.color};font-size:1.1rem;"></i>
+                <span class="sim-section-title">${sec.materia}</span>
+                <span class="sim-section-range">Preguntas ${sec.startIdx + 1}–${rangeEnd}</span>
+            </div>`;
+
+        for (let i = sec.startIdx; i < rangeEnd; i++) {
+            const q = currentSimExam[i];
+            const displayNum = i + 1;
+            const indices = [...Array(q.opciones.length).keys()].sort(() => Math.random() - 0.5);
+            if (!q._shuffledIndices) q._shuffledIndices = {};
+            q._shuffledIndices[SIM_ID] = indices;
+
+            const optHtml = indices.map((origIdx, rendIdx) => `
+                <div class="unam-option" id="${SIM_ID}-opt-${SIM_KEY}-${i}-${rendIdx}" onclick="selectOption('${SIM_ID}','${SIM_KEY}',${i},${rendIdx})">
+                    <span style="font-weight:800;color:#64748b;margin-right:8px;">${String.fromCharCode(65 + rendIdx)})</span>
+                    <span>${q.opciones[origIdx]}</span>
+                </div>`).join('');
+
+            innerHtml += `
+                <div class="unam-question-card" id="${SIM_ID}-qcard-${SIM_KEY}-${i}">
+                    <p class="unam-question-text">${displayNum}. ${q.pregunta}</p>
+                    <div class="unam-options">${optHtml}</div>
+                    <button id="${SIM_ID}-eval-btn-${SIM_KEY}-${i}" class="unam-eval-btn" onclick="evalQuestion('${SIM_ID}','${SIM_KEY}',${i})" disabled>Evaluar</button>
+                    <div id="${SIM_ID}-feedback-${SIM_KEY}-${i}" class="unam-feedback"></div>
+                </div>`;
+        }
+    }
+
+    const label = total === 120 ? 'Completo' : 'Reducido';
+    const section = document.createElement('div');
+    section.className = 'unam-questions-section';
+    section.style.borderTopColor = '#2563eb';
+    section.innerHTML = `
+        <div class="unam-header" style="margin-bottom:25px;border-bottom:2px solid #f1f5f9;">
+            <h2><i class="fa-solid fa-file-signature"></i> Simulacro ${label} (${currentSimExam.length} preguntas)</h2>
+        </div>
+        <div class="unam-questions-container" style="display:flex;">${innerHtml}</div>`;
+
+    // Timer HTML — insert BEFORE questions section
+    const timerMinutes = total === 120 ? 90 : 45;
+    const timerHtml = `
+    <div class="sim-timer-wrapper" id="sim-timer-wrapper">
+        <div class="sim-timer-info">
+            <i class="fa-solid fa-clock"></i>
+            <span id="sim-timer-display">${String(timerMinutes).padStart(2,'0')}:00</span>
+            <span class="sim-timer-label">${total === 120 ? '90 min \u2014 Simulacro Completo' : '45 min \u2014 Simulacro Reducido'}</span>
+        </div>
+        <div class="sim-timer-track"><div class="sim-timer-bar" id="sim-timer-bar"></div></div>
+    </div>`;
+    qContainer.insertAdjacentHTML('afterbegin', timerHtml);
+
+    qContainer.appendChild(section);
+
+    const finBtn = document.createElement('button');
+    finBtn.className = 'btn-new-sim';
+    finBtn.style.cssText = 'background:#2563eb;color:#fff;margin:10px auto;';
+    finBtn.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Ver Resultados';
+    finBtn.onclick = showSimResults;
+    section.querySelector('.unam-questions-container').appendChild(finBtn);
+
+    startSimTimer(timerMinutes);
+
+    if (window.MathJax) window.MathJax.typesetPromise([qContainer]).catch(console.log);
+}
+
 let currentSimExam = [];
 let simCorrect = 0;
 
@@ -1748,6 +2064,7 @@ function startSimulacro(filterMaterias = 'all') {
 }
 
 function showSimResults() {
+    stopSimTimer();
     const total = currentSimExam.length;
     let correct = 0;
     currentSimExam.forEach((q, idx) => {
@@ -1794,7 +2111,7 @@ function saveSimHistory(entry) {
 // =============================================
 let userAnswers = {};
 
-function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor) {
+function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor, insertBeforeEl = null) {
     const container = document.getElementById(contentId);
     if (!container) return;
     const questions = questionsObj[contentId];
@@ -1818,7 +2135,7 @@ function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColo
 
         return `
             <div class="unam-question-card" id="${prefix}-qcard-${contentId}-${idx}">
-                <p class="unam-question-text">${q.numero ? q.numero + '. ' : ''}${q.pregunta}</p>
+                <p class="unam-question-text">${idx + 1}. ${q.pregunta}</p>
                 <div class="unam-options">${optHtml}</div>
                 <button id="${prefix}-eval-btn-${contentId}-${idx}" class="unam-eval-btn" onclick="evalQuestion('${prefix}','${contentId}',${idx})" disabled>Evaluar</button>
                 <div id="${prefix}-feedback-${contentId}-${idx}" class="unam-feedback"></div>
@@ -1832,13 +2149,27 @@ function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColo
         </div>
         <div class="unam-questions-container" style="display:none;">${questionsHtml}</div>`;
 
-    container.appendChild(section);
+    if (insertBeforeEl) container.insertBefore(section, insertBeforeEl);
+    else container.appendChild(section);
 }
 
 function toggleUnamQuestions(header) {
     const c = header.nextElementSibling;
     if (c.style.display === 'none' || !c.style.display) {
         c.style.display = 'flex';
+        header.style.marginBottom = '25px';
+        header.style.borderBottom = '2px solid #f1f5f9';
+    } else {
+        c.style.display = 'none';
+        header.style.marginBottom = '0';
+        header.style.borderBottom = 'none';
+    }
+}
+
+function toggleClassNotes(header) {
+    const c = header.nextElementSibling;
+    if (c.style.display === 'none' || !c.style.display) {
+        c.style.display = 'block';
         header.style.marginBottom = '25px';
         header.style.borderBottom = '2px solid #f1f5f9';
     } else {
@@ -1942,8 +2273,9 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         'content-todas-unam': 'Preguntas UNAM | Apuntes',
         'content-simulacro': 'Simulacro | Apuntes',
         'content-guided': 'Estudio Guiado | Apuntes',
-        'content-config': 'Configuración | Apuntes',
-        'content-studytok': 'StudyTok | Apuntes'
+        'content-config': 'Configuraci\u00f3n | Apuntes',
+        'content-studytok': 'StudyTok | Apuntes',
+        'content-glossary': 'Glosario | Apuntes'
     };
     document.title = titleMap[contentId] ||
         (appDatabase[contentId] ? `${appDatabase[contentId].mainTopicSubtitle} | Apuntes UNAM` : 'Apuntes UNAM 2026');
@@ -1977,6 +2309,14 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         const da = document.getElementById('dynamic-content-area');
         da.innerHTML = renderGuidedStudyPage();
         window.location.hash = 'guided';
+        // Feature 2: Daily Plan (async)
+        const dpPh = document.getElementById('daily-plan-placeholder');
+        if (dpPh) { buildDailyPlan().then(h => { dpPh.innerHTML = h; }).catch(() => { dpPh.innerHTML = ''; }); }
+    } else if (contentId === 'content-glossary') {
+        document.getElementById('content-home').classList.remove('visible');
+        const da = document.getElementById('dynamic-content-area');
+        da.innerHTML = renderGlossaryPage();
+        window.location.hash = 'glossary';
     } else if (contentId === 'content-flashcards') {
         document.getElementById('content-home').classList.remove('visible');
         const da = document.getElementById('dynamic-content-area');
@@ -2024,7 +2364,7 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
     if (parentBtnId) {
         const pb = document.getElementById(parentBtnId);
         if (pb) pb.classList.add('active');
-        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config') {
+        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config' && parentBtnId !== 'btn-glossary') {
             const submenuId = `submenu-${parentBtnId.replace('btn-', '')}`;
             setOpenSubmenu(submenuId);
         }
@@ -2042,13 +2382,56 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
 }
 
 function renderQuestionsForClass(contentId) {
-    if (practiceQuestions?.[contentId]?.length > 0) buildQuizSection(contentId, practiceQuestions, 'prac', '<i class="fa-solid fa-brain" style="color: #ec4899;"></i> Preguntas de Práctica', '#ec4899');
-    if (practiceLevel2Questions?.[contentId]?.length > 0) buildQuizSection(contentId, practiceLevel2Questions, 'prac2', '<i class="fa-solid fa-star" style="color: #8b5cf6;"></i> Preguntas de Práctica Nivel 2', '#8b5cf6');
-    if (unamQuestions?.[contentId]?.length > 0) buildQuizSection(contentId, unamQuestions, 'unam', '<i class="fa-solid fa-file-pen"></i> Preguntas de la Guía UNAM', '#f59e0b');
-
-    // Botón de progreso al final
     const container = document.getElementById(contentId);
     if (!container) return;
+
+    // --- Lazy quiz placeholders (Feature: IntersectionObserver) ---
+    const quizTypes = [
+        { type: 'prac',  obj: practiceQuestions,       title: '<i class="fa-solid fa-brain" style="color: #ec4899;"></i> Preguntas de Pr\u00e1ctica', color: '#ec4899' },
+        { type: 'prac2', obj: practiceLevel2Questions,  title: '<i class="fa-solid fa-star" style="color: #8b5cf6;"></i> Preguntas de Pr\u00e1ctica Nivel 2', color: '#8b5cf6' },
+        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen"></i> Preguntas de la Gu\u00eda UNAM', color: '#f59e0b' }
+    ];
+
+    quizTypes.forEach(qt => {
+        if (qt.obj?.[contentId]?.length > 0) {
+            const ph = document.createElement('div');
+            ph.className = 'quiz-lazy-placeholder';
+            ph.dataset.quizType = qt.type;
+            ph.dataset.classId = contentId;
+            ph.dataset.quizTitle = qt.title;
+            ph.dataset.quizColor = qt.color;
+            ph.style.minHeight = '60px';
+            container.appendChild(ph);
+        }
+    });
+
+    // --- Feature 5: Timeline for Historia classes ---
+    const classMateria = appDatabase[contentId]?.mainTopicTitle || '';
+    if (classMateria === 'Historia de M\u00e9xico' || classMateria === 'Historia Universal') {
+        const tlDiv = document.createElement('div');
+        tlDiv.id = 'timeline-' + contentId;
+        tlDiv.className = 'timeline-container';
+        container.appendChild(tlDiv);
+        setTimeout(() => renderTimeline(contentId), 50);
+    }
+
+    // --- Notes panel (Feature: personal notes per class) ---
+    const notesHtml = document.createElement('div');
+    notesHtml.className = 'class-notes-panel';
+    notesHtml.innerHTML = `
+        <div class="unam-header" onclick="toggleClassNotes(this)" style="margin-bottom:0;border-bottom:none;">
+            <h2><i class="fa-solid fa-note-sticky"></i> Mis Notas</h2>
+            <button class="unam-toggle-btn">Mostrar / Ocultar</button>
+        </div>
+        <div class="class-notes-body">
+            <span class="class-notes-hint">Guardado autom\u00e1tico</span>
+            <textarea id="class-note-${contentId}" class="class-notes-textarea"
+                      placeholder="Escribe tus notas personales para esta clase aqu\u00ed..."></textarea>
+        </div>`;
+    container.appendChild(notesHtml);
+    initClassNotes(contentId);
+
+    // --- Nav buttons & studied badge ---
     const studied = getStudiedClasses();
     const isStudied = !!studied[contentId];
     const nav = getClassNavigationTargets(contentId);
@@ -2064,7 +2447,7 @@ function renderQuestionsForClass(contentId) {
 
         <button onclick="toggleStudied('${contentId}')" class="btn-mark-studied${isStudied ? ' done' : ''}" id="btn-studied-${contentId}">
             <i class="fa-solid fa-${isStudied ? 'check-circle' : 'circle'}"></i>
-            ${isStudied ? 'Clase completada – desmarcar' : 'Marcar como estudiada'}
+            ${isStudied ? 'Clase completada \u2013 desmarcar' : 'Marcar como estudiada'}
         </button>
 
         ${nav.nextId ? `<button class="btn-class-nav btn-class-next" onclick="switchClass('${nav.nextId}', document.getElementById('link-${nextSlug}'), '${nav.parentBtnId}')">
@@ -2072,6 +2455,132 @@ function renderQuestionsForClass(contentId) {
         </button>` : '<span class="btn-class-nav-spacer"></span>'}
     `;
     container.appendChild(wrapper);
+
+    // --- Start lazy observer ---
+    setupLazyQuizSections(contentId);
+}
+
+// --- Lazy quiz IntersectionObserver ---
+function setupLazyQuizSections(classId) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const ph = entry.target;
+            const type = ph.dataset.quizType;
+            const title = ph.dataset.quizTitle;
+            const color = ph.dataset.quizColor;
+
+            let questionsObj, prefix;
+            if (type === 'prac')  { questionsObj = practiceQuestions;       prefix = 'prac'; }
+            else if (type === 'prac2') { questionsObj = practiceLevel2Questions; prefix = 'prac2'; }
+            else if (type === 'unam')  { questionsObj = unamQuestions;           prefix = 'unam'; }
+
+            if (questionsObj && questionsObj[classId]?.length) {
+                buildQuizSection(classId, questionsObj, prefix, title, color, ph);
+            }
+            ph.remove();
+            observer.unobserve(ph);
+        });
+    }, { rootMargin: '200px' });
+
+    document.querySelectorAll(`[data-class-id="${classId}"].quiz-lazy-placeholder`).forEach(ph => observer.observe(ph));
+}
+
+// --- Personal notes per class (IndexedDB prefs store) ---
+function debounce(fn, ms) {
+    let t;
+    return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+async function loadClassNote(classId) {
+    try {
+        const db = await openSTDB();
+        return new Promise((res) => {
+            const tx = db.transaction('prefs', 'readonly');
+            const rq = tx.objectStore('prefs').get(`note-${classId}`);
+            rq.onsuccess = () => res(rq.result?.value || '');
+            rq.onerror   = () => res('');
+        });
+    } catch { return ''; }
+}
+
+async function saveClassNote(classId, text) {
+    try {
+        await stDbPut('prefs', { key: `note-${classId}`, value: text });
+    } catch(e) { console.warn('Error saving note:', e); }
+}
+
+async function initClassNotes(classId) {
+    const note = await loadClassNote(classId);
+    const ta   = document.getElementById(`class-note-${classId}`);
+    if (ta) {
+        ta.value = note;
+        ta.addEventListener('input', debounce(() => saveClassNote(classId, ta.value), 800));
+    }
+}
+
+// =============================================
+// FLASHCARDS DENTRO DE CLASE (CFS)
+// =============================================
+function toggleClassFlashcards(classId) {
+    const body = document.getElementById('cfs-body-' + classId);
+    const header = body ? body.previousElementSibling : null;
+    if (!body) return;
+    const isVisible = body.style.display !== 'none' && body.style.display !== '';
+    if (isVisible) {
+        body.style.display = 'none';
+        if (header) { header.style.marginBottom = '0'; header.style.borderBottom = 'none'; }
+    } else {
+        body.style.display = 'flex';
+        if (header) { header.style.marginBottom = '25px'; header.style.borderBottom = '2px solid #f1f5f9'; }
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            window.MathJax.typesetPromise([body]).catch(() => {});
+        }
+    }
+}
+
+function flipClassFlashcard(classId) {
+    const card = document.getElementById('cfs-card-' + classId);
+    if (card) card.classList.toggle('flipped');
+}
+
+function navigateClassFlashcard(classId, dir) {
+    const body = document.getElementById('cfs-body-' + classId);
+    if (!body) return;
+    let cards;
+    try {
+        cards = JSON.parse(decodeURIComponent(body.dataset.cards));
+    } catch(e) { return; }
+    const total = cards.length;
+    let idx = parseInt(body.dataset.idx || '0', 10) + dir;
+    if (idx < 0) idx = 0;
+    if (idx >= total) idx = total - 1;
+    body.dataset.idx = idx;
+    const card = cards[idx];
+    // Reset flip
+    const cardEl = document.getElementById('cfs-card-' + classId);
+    if (cardEl) cardEl.classList.remove('flipped');
+    // Update content
+    const frontEl = document.getElementById('cfs-front-' + classId);
+    const backEl = document.getElementById('cfs-back-' + classId);
+    const temaEl = document.getElementById('cfs-tema-' + classId);
+    if (frontEl) frontEl.textContent = card.front;
+    if (backEl) backEl.textContent = card.back;
+    if (temaEl) temaEl.textContent = card.tema || '';
+    // Update progress
+    const progEl = document.getElementById('cfs-prog-' + classId);
+    if (progEl) progEl.textContent = (idx + 1) + ' / ' + total;
+    const barEl = document.getElementById('cfs-bar-' + classId);
+    if (barEl) barEl.style.width = Math.round(((idx + 1) / total) * 100) + '%';
+    // Update nav buttons
+    const prevBtn = document.getElementById('cfs-prev-' + classId);
+    const nextBtn = document.getElementById('cfs-next-' + classId);
+    if (prevBtn) prevBtn.disabled = idx === 0;
+    if (nextBtn) nextBtn.disabled = idx === total - 1;
+    // Re-render math
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([body]).catch(() => {});
+    }
 }
 
 // =============================================
@@ -2473,7 +2982,7 @@ function saveSettingsProfile() {
 // =============================================
 // STUDYTOK: DOOMSCROLL FEED
 // =============================================
-function renderStudyTokFeed() {
+async function renderStudyTokFeed() {
     const feed = document.getElementById('stok-feed');
     if (!feed) return;
 
@@ -2484,14 +2993,31 @@ function renderStudyTokFeed() {
         page.style.display = '';
     }
 
-    // Use ALL flashcards without any filtering
-    const db = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase : (window.flashcardsDatabase || []));
-    if (!db.length) {
+    const allCards = (typeof flashcardsDatabase !== 'undefined' ? flashcardsDatabase : (window.flashcardsDatabase || []));
+    if (!allCards.length) {
         feed.innerHTML = `<div class="stok-end"><i class="fa-solid fa-inbox"></i><h2>Sin tarjetas disponibles</h2><p>No se encontraron flashcards en la base de datos.</p></div>`;
         return;
     }
 
-    // Shuffle for variety each session
+    // SRS filtering: only show cards that are due (nextReview ≤ now) or never rated
+    let srsMap = {};
+    try {
+        const srsRecords = await stDbGetAll('srs');
+        srsRecords.forEach(r => { srsMap[r.id] = r.nextReview; });
+    } catch (e) { }
+
+    const now = Date.now();
+    const db = allCards.filter(card => {
+        const nextReview = srsMap[card.id];
+        return nextReview === undefined || nextReview <= now;
+    });
+
+    if (!db.length) {
+        feed.innerHTML = `<div class="stok-end"><i class="fa-solid fa-check-circle" style="color:#065f46;"></i><h2>¡Todo al día!</h2><p>No hay tarjetas pendientes por repasar. Vuelve más tarde o marca algunas como difícil para verlas antes.</p><button class="stok-restart-btn" onclick="renderStudyTokFeed._showAll = true; renderStudyTokFeed()"><i class="fa-solid fa-layer-group"></i> Ver todas las tarjetas</button></div>`;
+        return;
+    }
+
+    // Shuffle due cards for variety each session
     const shuffled = [...db].sort(() => Math.random() - 0.5);
 
     const metaIconMap = window.MATERIA_ICON || {};
@@ -2499,7 +3025,7 @@ function renderStudyTokFeed() {
     const cardsHtml = shuffled.map((card, idx) => {
         const meta = metaIconMap[card.asignatura] || { icon: 'fa-bookmark', color: '#e11d48' };
         return `
-        <div class="stok-card" id="stok-card-${idx}">
+        <div class="stok-card" id="stok-card-${idx}" data-tema="${(card.tema || '').replace(/"/g, '&quot;')}">
             <span class="stok-subject-badge" style="background:${meta.color}18; color:${meta.color};">
                 <i class="fa-solid ${meta.icon}"></i>
                 ${card.asignatura || 'General'}
@@ -2532,17 +3058,38 @@ function renderStudyTokFeed() {
         </div>`;
     }).join('');
 
-    feed.innerHTML = cardsHtml + `
+    const filterBar = `
+    <div class="stok-filter-bar">
+        <button class="stok-chip stok-chip--active" data-filter="all" onclick="stokSetFilter('all', this)">
+            <i class="fa-solid fa-border-all"></i> Todas
+        </button>
+        <button class="stok-chip" data-filter="definicion" onclick="stokSetFilter('definicion', this)">
+            <i class="fa-solid fa-book"></i> Definiciones
+        </button>
+        <button class="stok-chip" data-filter="formula" onclick="stokSetFilter('formula', this)">
+            <i class="fa-solid fa-square-root-variable"></i> Formulas
+        </button>
+        <button class="stok-chip" data-filter="fecha" onclick="stokSetFilter('fecha', this)">
+            <i class="fa-solid fa-calendar"></i> Fechas
+        </button>
+    </div>`;
+
+    const totalCards = allCards.length;
+    const dueNote = db.length < totalCards ? ` (${totalCards - db.length} al día, ${db.length} pendientes)` : '';
+    feed.innerHTML = filterBar + cardsHtml + `
     <div class="stok-end">
         <i class="fa-solid fa-fire-flame-curved"></i>
-        <h2>¡Lo lograste! 🎉</h2>
-        <p>Repasaste las ${shuffled.length} tarjetas del feed.</p>
+        <h2>¡Lo lograste!</h2>
+        <p>Repasaste las ${shuffled.length} tarjetas pendientes${dueNote}.</p>
         <button class="stok-restart-btn" onclick="renderStudyTokFeed()">
             <i class="fa-solid fa-rotate-right"></i> Volver a repasar
         </button>
     </div>`;
 
     feed.scrollTo({ top: 0, behavior: 'instant' });
+    if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([feed]).catch(() => {});
+    }
 }
 
 async function stokRate(cardId, difficulty, cardIdx) {
@@ -2577,9 +3124,109 @@ async function stokRate(cardId, difficulty, cardIdx) {
 }
 
 // =============================================
+// POMODORO TIMER
+// =============================================
+let pomodoroInterval = null;
+let pomodoroSeconds  = 25 * 60;
+let pomodoroRunning  = false;
+let pomodoroCycles   = parseInt(localStorage.getItem('pomodoro-cycles-today') || '0');
+let pomodoroIsBreak  = false;
+
+const POMODORO_WORK  = 25 * 60;
+const POMODORO_BREAK =  5 * 60;
+
+function togglePomodoroWidget() {
+    const w = document.getElementById('pomodoro-widget');
+    w.style.display = w.style.display === 'none' ? 'block' : 'none';
+    updatePomodoroDisplay();
+}
+function closePomodoroWidget() {
+    document.getElementById('pomodoro-widget').style.display = 'none';
+}
+
+function updatePomodoroDisplay() {
+    const m = String(Math.floor(pomodoroSeconds / 60)).padStart(2, '0');
+    const s = String(pomodoroSeconds % 60).padStart(2, '0');
+    const el = document.getElementById('pomodoro-display');
+    if (el) el.textContent = `${m}:${s}`;
+    const label = document.getElementById('pomodoro-mode-label');
+    if (label) label.textContent = pomodoroIsBreak ? 'Descanso' : 'Estudio';
+    const btn = document.getElementById('pomodoro-start-btn');
+    if (btn) btn.innerHTML = pomodoroRunning
+        ? '<i class="fa-solid fa-pause"></i>'
+        : '<i class="fa-solid fa-play"></i>';
+    const fab = document.getElementById('pomodoro-fab');
+    if (fab) fab.classList.toggle('pomodoro-fab--running', pomodoroRunning);
+}
+
+function togglePomodoro() {
+    if (pomodoroRunning) {
+        clearInterval(pomodoroInterval);
+        pomodoroRunning = false;
+    } else {
+        pomodoroRunning = true;
+        pomodoroInterval = setInterval(() => {
+            pomodoroSeconds--;
+            if (pomodoroSeconds <= 0) {
+                clearInterval(pomodoroInterval);
+                pomodoroRunning = false;
+                if (!pomodoroIsBreak) {
+                    pomodoroCycles++;
+                    localStorage.setItem('pomodoro-cycles-today', pomodoroCycles);
+                    document.getElementById('pomodoro-cycles').textContent = pomodoroCycles;
+                    showToast('Ciclo completado. Toma un descanso de 5 min.', 'success');
+                } else {
+                    showToast('Descanso terminado. Vuelve a estudiar.', 'info');
+                }
+                pomodoroIsBreak = !pomodoroIsBreak;
+                pomodoroSeconds = pomodoroIsBreak ? POMODORO_BREAK : POMODORO_WORK;
+                // Auto-play next
+                togglePomodoro();
+            }
+            updatePomodoroDisplay();
+        }, 1000);
+    }
+    updatePomodoroDisplay();
+}
+
+function resetPomodoro() {
+    clearInterval(pomodoroInterval);
+    pomodoroRunning = false;
+    pomodoroIsBreak = false;
+    pomodoroSeconds = POMODORO_WORK;
+    updatePomodoroDisplay();
+}
+
+// =============================================
+// STUDYTOK: FILTER BY CARD TYPE
+// =============================================
+let stokActiveFilter = 'all';
+
+function stokSetFilter(filter, btn) {
+    stokActiveFilter = filter;
+    document.querySelectorAll('.stok-chip').forEach(c => c.classList.remove('stok-chip--active'));
+    btn.classList.add('stok-chip--active');
+
+    document.querySelectorAll('.stok-card').forEach(card => {
+        const tema = (card.dataset.tema || '').toLowerCase();
+        let type = 'definicion';
+        if (/fórmula|formula|ecuación|ecuacion|ley |teorema|propiedad/.test(tema)) type = 'formula';
+        else if (/fecha|año|siglo|período|periodo|era|guerra|revolución|revolucion|tratado|independencia|descubrimiento/.test(tema)) type = 'fecha';
+
+        card.style.display = (filter === 'all' || filter === type) ? '' : 'none';
+    });
+}
+
+// =============================================
 window.addEventListener('DOMContentLoaded', () => {
+    const vEl = document.getElementById('home-app-version');
+    if (vEl) vEl.textContent = APP_VERSION;
+
     updateStudiedBadges();
     loadProfile();
+    // Initialize pomodoro cycles counter from localStorage
+    const pomCyclesEl = document.getElementById('pomodoro-cycles');
+    if (pomCyclesEl) pomCyclesEl.textContent = pomodoroCycles;
     validateAppDatabase();
     validateFlashcardsDatabase();
     loadPreguntasGuiaTxt();
@@ -2603,7 +3250,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }, { timeout: 1200 });
     }
 
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeProfileModal(); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeProfileModal();
+            const sqm = document.getElementById('subnode-quiz-modal');
+            if (sqm) sqm.remove();
+        }
+    });
 
     // StudyTools Inits
     openSTDB().catch(() => { });
@@ -2618,4 +3271,356 @@ window.addEventListener('DOMContentLoaded', () => {
         if (e.target?.id === 'flashHardBtn') StudyTools.markCurrentCard('hard');
     });
 });
+
+// =============================================
+// FEATURE 1: Weakness Panel (Stats)
+// =============================================
+async function buildWeaknessPanel() {
+    const history = await stDbGetAll('history');
+    const byMateria = {};
+    history.forEach(h => {
+        if (!h.classId || h.classId === 'studytok') return;
+        const mat = appDatabase[h.classId]?.mainTopicTitle;
+        if (!mat) return; // ignorar IDs sin clase válida (btn-*, legacy, etc.)
+        if (!byMateria[mat]) byMateria[mat] = { correct: 0, total: 0 };
+        byMateria[mat].total++;
+        if (h.correct) byMateria[mat].correct++;
+    });
+
+    const materiaStats = Object.entries(byMateria)
+        .filter(([, s]) => s.total >= 3)
+        .map(([mat, s]) => ({ mat, pct: Math.round((s.correct / s.total) * 100), total: s.total }))
+        .sort((a, b) => a.pct - b.pct)
+        .slice(0, 5);
+
+    const srs = await stDbGetAll('srs');
+    const hardCards = srs
+        .filter(r => r.difficulty === 'hard')
+        .slice(0, 5)
+        .map(r => ({ id: r.id, pregunta: r.card?.pregunta || r.id, asignatura: r.card?.asignatura || '' }));
+
+    if (materiaStats.length === 0 && hardCards.length === 0) {
+        return '<div class="weakness-empty"><i class="fa-solid fa-check-circle"></i> Aun no hay suficientes datos. Practica mas para ver tus areas de mejora.</div>';
+    }
+
+    let html = '<div class="weakness-panel">';
+
+    if (materiaStats.length > 0) {
+        html += '<h4 class="weakness-title"><i class="fa-solid fa-chart-bar"></i> Materias con menor acierto</h4>';
+        materiaStats.forEach(({ mat, pct, total }) => {
+            const meta = MATERIA_ICON[mat] || { color: '#64748b', icon: 'fa-bookmark' };
+            const barColor = pct >= 70 ? '#10b981' : pct >= 50 ? '#f59e0b' : '#ef4444';
+            html += `
+            <div class="weakness-item">
+                <div class="weakness-item-header">
+                    <i class="fa-solid ${meta.icon}" style="color:${meta.color}"></i>
+                    <span>${mat}</span>
+                    <span class="weakness-pct" style="color:${barColor}">${pct}%</span>
+                    <span class="weakness-total">${total} intentos</span>
+                </div>
+                <div class="weakness-bar-track">
+                    <div class="weakness-bar" style="width:${pct}%;background:${barColor}"></div>
+                </div>
+            </div>`;
+        });
+    }
+
+    if (hardCards.length > 0) {
+        html += '<h4 class="weakness-title" style="margin-top:20px;"><i class="fa-solid fa-brain"></i> Flashcards mas dificiles</h4>';
+        hardCards.forEach(c => {
+            html += `<div class="weakness-flashcard"><i class="fa-solid fa-circle-xmark" style="color:#ef4444;flex-shrink:0"></i> <span>${c.pregunta}</span> <small style="opacity:.6">${c.asignatura}</small></div>`;
+        });
+    }
+
+    html += '</div>';
+    return html;
+}
+
+// =============================================
+// FEATURE 2: Daily Plan (Guided Study)
+// =============================================
+async function buildDailyPlan() {
+    const now = Date.now();
+    const srs = await stDbGetAll('srs');
+
+    const dueCards = srs.filter(r => r.nextReview <= now);
+
+    const history = await stDbGetAll('history');
+    const recent  = history.slice(-50);
+    const byMat   = {};
+    recent.forEach(h => {
+        if (!h.classId || h.classId === 'studytok') return;
+        const mat = appDatabase[h.classId]?.mainTopicTitle;
+        if (!mat) return;
+        if (!byMat[mat]) byMat[mat] = { c: 0, t: 0 };
+        byMat[mat].t++;
+        if (h.correct) byMat[mat].c++;
+    });
+    const weakMat = Object.entries(byMat)
+        .sort((a, b) => (a[1].c / Math.max(a[1].t, 1)) - (b[1].c / Math.max(b[1].t, 1)))[0];
+
+    let html = `<div class="daily-plan-card">
+        <div class="daily-plan-header">
+            <i class="fa-solid fa-sun" style="color:#f59e0b;"></i>
+            <h3>Plan de Hoy</h3>
+            <span class="daily-plan-date">${new Date().toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'})}</span>
+        </div>
+        <div class="daily-plan-items">`;
+
+    html += `<div class="daily-plan-item ${dueCards.length > 0 ? '' : 'daily-plan-item--done'}">
+        <div class="daily-plan-icon"><i class="fa-solid fa-clone"></i></div>
+        <div class="daily-plan-content">
+            <div class="daily-plan-item-title">Repaso de Flashcards</div>
+            <div class="daily-plan-item-sub">${dueCards.length > 0 ? dueCards.length + ' tarjetas pendientes' : 'Al dia — sin tarjetas pendientes'}</div>
+        </div>
+        ${dueCards.length > 0 ? '<button class="daily-plan-btn" onclick="switchClass(\'content-studytok\', document.getElementById(\'btn-studytok\'), \'btn-studytok\')">Ir</button>' : '<i class="fa-solid fa-check" style="color:#10b981;"></i>'}
+    </div>`;
+
+    if (weakMat) {
+        const [mat] = weakMat;
+        const meta  = MATERIA_ICON[mat] || { icon: 'fa-bookmark', color: '#64748b' };
+        const pct   = Math.round((weakMat[1].c / weakMat[1].t) * 100);
+        html += `<div class="daily-plan-item">
+            <div class="daily-plan-icon" style="color:${meta.color}"><i class="fa-solid ${meta.icon}"></i></div>
+            <div class="daily-plan-content">
+                <div class="daily-plan-item-title">Reforzar: ${mat}</div>
+                <div class="daily-plan-item-sub">${pct}% acierto — tu materia mas debil reciente</div>
+            </div>
+            <button class="daily-plan-btn" onclick="startSimulacro(['${mat}'])">Practicar</button>
+        </div>`;
+    }
+
+    html += `<div class="daily-plan-item">
+        <div class="daily-plan-icon"><i class="fa-solid fa-file-signature"></i></div>
+        <div class="daily-plan-content">
+            <div class="daily-plan-item-title">Simulacro Reducido</div>
+            <div class="daily-plan-item-sub">60 preguntas · ~45 minutos</div>
+        </div>
+        <button class="daily-plan-btn" onclick="switchClass('content-simulacro',document.getElementById('btn-simulacro'),'btn-simulacro');setTimeout(()=>startSimulacroCompleto(60),120)">Iniciar</button>
+    </div>`;
+
+    html += '</div></div>';
+    return html;
+}
+
+// =============================================
+// FEATURE 3: Glossary
+// =============================================
+function buildGlossary() {
+    const terms = [];
+    const seen  = new Set();
+
+    Object.entries(appDatabase).forEach(([classId, cls]) => {
+        const materia  = cls.mainTopicTitle || '';
+        const clase    = cls.mainTopicSubtitle || '';
+        (cls.branches || []).forEach(branch => {
+            (branch.subnodes || []).forEach(sn => {
+                const matches = (sn.content || '').matchAll(/<b>([^<]{2,60})<\/b>/gi);
+                for (const m of matches) {
+                    const term = m[1].trim();
+                    const key  = term.toLowerCase();
+                    if (!seen.has(key) && term.length > 2) {
+                        seen.add(key);
+                        terms.push({ term, materia, clase, classId, tema: sn.name || sn.title || '' });
+                    }
+                }
+            });
+        });
+    });
+
+    terms.sort((a, b) => a.term.localeCompare(b.term, 'es'));
+    return terms;
+}
+
+function renderGlossaryPage() {
+    const terms = buildGlossary();
+    _glossaryAllTerms = terms;
+
+    return `
+    <div id="content-glossary" class="subject-content visible" style="animation:fadeInPage 0.4s ease forwards;">
+        <h1 class="title-main" style="color:#7c3aed;"><i class="fa-solid fa-book-open-reader"></i> Glosario</h1>
+        <div class="glossary-search-wrap">
+            <input id="glossary-search" class="glossary-search" type="search" placeholder="Buscar termino..."
+                   oninput="filterGlossary(this.value)">
+        </div>
+        <div id="glossary-list" class="glossary-list">${generateGlossaryHTML(terms, '')}</div>
+    </div>`;
+}
+
+function generateGlossaryHTML(terms, query) {
+    const q = query.toLowerCase().trim();
+    const filtered = q ? terms.filter(t => t.term.toLowerCase().includes(q) || t.materia.toLowerCase().includes(q)) : terms;
+
+    if (filtered.length === 0) {
+        return '<div class="glossary-empty"><i class="fa-solid fa-magnifying-glass"></i> Sin resultados para "' + query + '"</div>';
+    }
+
+    const byLetter = {};
+    filtered.forEach(t => {
+        const letter = t.term[0].toUpperCase();
+        if (!byLetter[letter]) byLetter[letter] = [];
+        byLetter[letter].push(t);
+    });
+
+    let html = '';
+    Object.keys(byLetter).sort().forEach(letter => {
+        html += '<div class="glossary-letter-group"><div class="glossary-letter">' + letter + '</div>';
+        byLetter[letter].forEach(t => {
+            const meta = MATERIA_ICON[t.materia] || { icon: 'fa-bookmark', color: '#64748b' };
+            const parentBtn = getParentBtnIdForClass(t.classId);
+            html += `
+            <div class="glossary-term" onclick="switchClass('${t.classId}', document.getElementById('link-${t.classId.replace('content-','')}'), '${parentBtn}')">
+                <span class="glossary-term-name">${t.term}</span>
+                <span class="glossary-term-meta">
+                    <i class="fa-solid ${meta.icon}" style="color:${meta.color};font-size:.75rem;"></i>
+                    ${t.materia}${t.tema ? ' · ' + t.tema : ''}
+                </span>
+            </div>`;
+        });
+        html += '</div>';
+    });
+
+    return html;
+}
+
+let _glossaryAllTerms = [];
+function filterGlossary(q) {
+    if (!_glossaryAllTerms.length) _glossaryAllTerms = buildGlossary();
+    const list = document.getElementById('glossary-list');
+    if (list) list.innerHTML = generateGlossaryHTML(_glossaryAllTerms, q);
+}
+
+// =============================================
+// FEATURE 4: Subnode Quiz
+// =============================================
+function showSubnodeQuiz(classId, subnodeName) {
+    const perClass = (typeof classFlashcards !== 'undefined' ? classFlashcards : (window.classFlashcards || {}));
+    const cards = perClass[classId] || [];
+
+    const normalize = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const nameLow = normalize(subnodeName);
+    const nameWords = nameLow.split(/\s+/).filter(w => w.length > 3);
+
+    // 1) Coincidencia exacta o por inclusión del tema completo
+    let matching = cards.filter(c => {
+        const tema = normalize(c.tema || '');
+        if (tema === nameLow || tema.includes(nameLow) || nameLow.includes(tema)) return true;
+        // 2) Al menos una palabra significativa del subnodo aparece en el tema
+        return nameWords.some(w => tema.includes(w));
+    });
+
+    // 3) Fallback: mostrar todas las cards de la clase
+    const toShow = matching.length > 0 ? matching : cards;
+
+    if (toShow.length === 0) {
+        showToast('Esta clase no tiene flashcards aún.', 'info');
+        return;
+    }
+
+    const existing = document.getElementById('subnode-quiz-modal');
+    if (existing) existing.remove();
+
+    _sqCurrent = 0;
+    const isFallback = matching.length === 0;
+
+    const modal = document.createElement('div');
+    modal.id = 'subnode-quiz-modal';
+    modal.className = 'subnode-quiz-overlay';
+    modal.innerHTML = `
+        <div class="subnode-quiz-modal">
+            <div class="subnode-quiz-header">
+                <span><i class="fa-solid fa-clone"></i> ${isFallback ? 'Flashcards de la clase' : subnodeName}</span>
+                <button onclick="document.getElementById('subnode-quiz-modal').remove()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="subnode-quiz-counter">${toShow.length} tarjeta${toShow.length !== 1 ? 's' : ''}${isFallback ? ' (todas las de la clase)' : ''}</div>
+            <div class="subnode-quiz-cards">
+                ${toShow.map((c, i) => `
+                <div class="subnode-quiz-card ${i === 0 ? 'subnode-quiz-card--active' : ''}">
+                    <div class="subnode-quiz-q">${c.pregunta}</div>
+                    <div class="subnode-quiz-divider"></div>
+                    <div class="subnode-quiz-a">${c.respuesta}</div>
+                </div>`).join('')}
+            </div>
+            <div class="subnode-quiz-nav">
+                <button onclick="subnodeQuizNav(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                <span id="sq-indicator">1 / ${toShow.length}</span>
+                <button onclick="subnodeQuizNav(1)"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>`;
+
+    document.body.appendChild(modal);
+    modal.addEventListener('click', e => { if (e.target === modal) modal.remove(); });
+}
+
+let _sqCurrent = 0;
+function subnodeQuizNav(dir) {
+    const cards = document.querySelectorAll('.subnode-quiz-card');
+    if (!cards.length) return;
+    cards[_sqCurrent].classList.remove('subnode-quiz-card--active');
+    _sqCurrent = (_sqCurrent + dir + cards.length) % cards.length;
+    cards[_sqCurrent].classList.add('subnode-quiz-card--active');
+    document.getElementById('sq-indicator').textContent = (_sqCurrent + 1) + ' / ' + cards.length;
+}
+
+// =============================================
+// FEATURE 5: Timeline (Historia)
+// =============================================
+function extractTimelineEvents(classId) {
+    const cls = appDatabase[classId];
+    if (!cls) return [];
+
+    const events = [];
+    const seen   = new Set();
+
+    (cls.branches || []).forEach(branch => {
+        (branch.subnodes || []).forEach(sn => {
+            const content = sn.content || '';
+            const patterns = [
+                /(\d{4})\s*[-\u2013:]\s*([^<.]{10,80})/g,
+                /en\s+(\d{4})[,\s]+([^<.]{10,80})/gi,
+                /(\d{4})\s*[,:]\s*<b>([^<]{5,60})<\/b>/g,
+            ];
+
+            for (const pat of patterns) {
+                let m;
+                while ((m = pat.exec(content)) !== null) {
+                    const year = parseInt(m[1]);
+                    if (year < 1000 || year > 2100) continue;
+                    const desc = m[2].replace(/<[^>]+>/g, '').trim().slice(0, 80);
+                    const key  = year + '-' + desc.slice(0, 20);
+                    if (!seen.has(key) && desc.length > 5) {
+                        seen.add(key);
+                        events.push({ year, desc, tema: sn.name || sn.title || '' });
+                    }
+                }
+            }
+        });
+    });
+
+    return events.sort((a, b) => a.year - b.year);
+}
+
+function renderTimeline(classId) {
+    const container = document.getElementById('timeline-' + classId);
+    if (!container) return;
+
+    const events = extractTimelineEvents(classId);
+    if (events.length < 2) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = `
+        <div class="timeline-header"><i class="fa-solid fa-timeline"></i> Linea del Tiempo</div>
+        <div class="timeline-track">
+            ${events.map(e => `
+            <div class="timeline-event">
+                <div class="timeline-dot"></div>
+                <div class="timeline-year">${e.year}</div>
+                <div class="timeline-desc">${e.desc}</div>
+            </div>`).join('')}
+        </div>`;
+}
 

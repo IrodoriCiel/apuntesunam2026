@@ -1,0 +1,1115 @@
+export const quimica = {
+    "id": "quimica",
+    "nombre": "Química",
+    "clases": [
+        {
+            "title": "Apuntes de Química",
+            "titleIconLeft": "fa-flask",
+            "titleIconRight": "fa-atom",
+            "titleStyle": "color: #059669;",
+            "mainTopicId": "mainTopicQuimica",
+            "mainTopicClass": "topic-2",
+            "mainTopicTitle": "Química",
+            "mainTopicIcon1": "fa-vial",
+            "mainTopicIcon2": "fa-vials",
+            "mainTopicSubtitle": "Clase 1: Fundamentos y Materia",
+            "branches": [
+                {
+                    "id": "nodes-qui-1",
+                    "topicIdx": 1,
+                    "title": "1. Info del Examen",
+                    "icon": "fa-clipboard-list",
+                    "subnodes": [
+                        {
+                            "icon": "fa-triangle-exclamation",
+                            "delay": "0.1s",
+                            "title": "Nota de Examen",
+                            "content": "<p><b>No necesitas memorizarla toda.</b> El examen te proporcionará todos los datos necesarios (número atómico, masa, protones, etc.) dentro del mismo reactivo para realizar los ejercicios.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui-2",
+                    "topicIdx": 2,
+                    "title": "2. Conceptos Fundamentales",
+                    "icon": "fa-microscope",
+                    "subnodes": [
+                        {
+                            "icon": "fa-flask",
+                            "delay": "0.1s",
+                            "title": "¿Qué es la Química?",
+                            "content": "<p><b>Definición:</b> Es la ciencia que describe la materia y sus propiedades, los cambios que experimenta y los cambios energéticos asociados.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Las palabras clave para identificar el concepto son <b>'ciencia'</b> y <b>'describe la materia/propiedades'</b>.</div>"
+                        },
+                        {
+                            "icon": "fa-cube",
+                            "delay": "0.2s",
+                            "title": "¿Qué es la Materia?",
+                            "content": "<p><b>Definición:</b> Todo aquello que tiene masa y volumen (ocupa un lugar en el espacio). Está compuesta por átomos y partículas subatómicas.</p><p><b>Propiedades:</b> Color, sabor, dureza, elasticidad, temperatura y densidad.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui-3",
+                    "topicIdx": 3,
+                    "title": "3. Sistemas Materiales",
+                    "icon": "fa-gem",
+                    "subnodes": [
+                        {
+                            "icon": "fa-a",
+                            "delay": "0.1s",
+                            "title": "Sustancias Puras",
+                            "content": "<p><b>Elementos:</b> Un solo tipo de átomo (sustancia pura). Hay 118 y están en la tabla periódica.</p><p><b>Compuestos:</b> Combinación de dos o más tipos de átomos (elementos) que crean sustancias nuevas (ej. H<sub>2</sub>O).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br><b>Elemento:</b> Símbolo con 1 mayúscula (ej. K, N) o 1 mayúscula + 1 minúscula (ej. Li, Na, Mg).<br><b>Compuesto:</b> Símbolo con 2 o más letras mayúsculas juntas (ej. NaOH, HCl). ¡Esta es la trampa!</div>"
+                        },
+                        {
+                            "icon": "fa-blender",
+                            "delay": "0.2s",
+                            "title": "Mezclas (Uniones Físicas)",
+                            "content": "<p><b>Homogéneas:</b> Sus componentes no se distinguen a simple vista (forman una sola fase).<br><b>Ejemplos:</b> Aire, bronce (aleación), perfumes, agua con sal, vino.</p><p><b>Heterogéneas:</b> Composición no uniforme; sus componentes se distinguen a simple vista (forman fases físicas distintas).<br><b>Ejemplos:</b> Agua con aceite, ensalada, pizza, pozole.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui-4",
+                    "topicIdx": 4,
+                    "title": "4. Coloides (El Limbo)",
+                    "icon": "fa-droplet",
+                    "subnodes": [
+                        {
+                            "icon": "fa-eye-slash",
+                            "delay": "0.1s",
+                            "title": "Definición",
+                            "content": "<p>Son mezclas <b>heterogéneas</b> donde las partículas son tan finas que se distribuyen uniformemente, pareciendo homogéneas a simple vista.</p><p><b>Dato de examen:</b> Sus componentes solo se ven bajo un <b>microscopio óptico</b>.</p><p><b>Ejemplos de cajón:</b> Sangre, leche, mayonesa, niebla, humo, gelatina, vidrios de colores.</p>"
+                        },
+                        {
+                            "icon": "fa-skull-crossbones",
+                            "delay": "0.2s",
+                            "title": "<i class='fa-solid fa-triangle-exclamation'></i> La Trampa de la UNAM",
+                            "content": "<p>Suelen mezclar coloides con mezclas homogéneas en los incisos para confundirte.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si en el examen dice <b>'leche sola'</b>, es un coloide. Si dice <b>'leche con chocolate'</b>, ya se considera una mezcla homogénea (porque ya estás uniendo dos sustancias de forma uniforme).</div>"
+                        },
+                        {
+                            "icon": "fa-lightbulb",
+                            "delay": "0.3s",
+                            "title": "Efecto Tyndall",
+                            "content": "<p>Es la <b>dispersión de la luz</b> a través de las partículas.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si te preguntan cómo <b>identificar o hacer visible</b> un sistema coloidal, la respuesta es gracias al Efecto Tyndall.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui-5",
+                    "topicIdx": 1,
+                    "title": "5. Estados Físicos",
+                    "icon": "fa-temperature-half",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-exclamation",
+                            "delay": "0.1s",
+                            "title": "Nota Importante",
+                            "content": "<p>Los estados de la materia son formas <b>FÍSICAS</b>, no químicas. ¡Ojo con esa palabra en los incisos!</p>"
+                        },
+                        {
+                            "icon": "fa-icicles",
+                            "delay": "0.2s",
+                            "title": "Sólido",
+                            "content": "<p><b>Fuerza de Cohesión (Atracción):</b> Alta (Partículas muy juntas).<br><b>Características:</b> Forma y volumen definido. No se comprimen.<br><b>Analogía:</b> Metro en la mañana (unidos todos).</p>"
+                        },
+                        {
+                            "icon": "fa-water",
+                            "delay": "0.3s",
+                            "title": "Líquido",
+                            "content": "<p><b>Fuerza de Cohesión:</b> Baja (Partículas algo separadas).<br><b>Características:</b> Volumen definido; forma del recipiente. Fluidos.<br><b>Analogía:</b> Metro a las 3 PM (hay espacio pero te topas).</p>"
+                        },
+                        {
+                            "icon": "fa-cloud",
+                            "delay": "0.4s",
+                            "title": "Gaseoso",
+                            "content": "<p><b>Fuerza de Cohesión:</b> Nula (Partículas dispersas).<br><b>Características:</b> Volumen indefinido. Alta entropía (desorden).<br><b>Analogía:</b> Niños de secundaria / Metro de noche.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui-6",
+                    "topicIdx": 2,
+                    "title": "6. Cambios de Estado",
+                    "icon": "fa-fire",
+                    "subnodes": [
+                        {
+                            "icon": "fa-thermometer-half",
+                            "delay": "0.1s",
+                            "title": "Tip General",
+                            "content": "<p>Todos dependen de cambios en la <b>temperatura</b> y la <b>presión</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-sun",
+                            "delay": "0.2s",
+                            "title": "Cambios por Calor",
+                            "content": "<p><b>Fusión:</b> Sólido → Líquido (Hielo derritiéndose).</p><p><b>Evaporación:</b> Líquido → Gaseoso (Agua hirviendo).</p><p><b>Sublimación Directa:</b> Sólido → Gaseoso (Sin pasar por líquido). <i>Ejemplos: Hielo seco, pastillas aromatizantes de baño.</i></p>"
+                        },
+                        {
+                            "icon": "fa-snowflake",
+                            "delay": "0.3s",
+                            "title": "Cambios por Frío",
+                            "content": "<p><b>Solidificación:</b> Líquido → Sólido (Hacer hielos / Cera de vela enfriándose).</p><p><b>Condensación:</b> Gaseoso → Líquido (Lentes empañados / Vaho al hablar en el frío). <i>Ojo: Requiere temperaturas bajas.</i></p><p><b>Sublimación Inversa:</b> Gaseoso → Sólido. <i>Ejemplos: Granizo, nieve.</i></p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/HiDDPOqpLGk",
+            "id": "content-quimica-1",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Si un reactivo tiene la fórmula 'NaOH', estamos hablando de:",
+                        "opciones": [
+                            "Una mezcla homogénea.",
+                            "Un elemento.",
+                            "Un coloide.",
+                            "Un compuesto."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "Si tiene dos o más letras mayúsculas se trata de un compuesto que está uniendo químicamente distintos elementos."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál es el nombre del fenómeno físico que hace visible un sistema coloidal mediante la dispersión de la luz?",
+                        "opciones": [
+                            "Efecto Invernadero.",
+                            "Efecto Doppler.",
+                            "Efecto Tyndall.",
+                            "Entropía."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Efecto Tyndall es exactamente la dispersión de la luz que permite identificar o hacer visible las partículas de un coloide (como la niebla iluminada por faros)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "El estado de la materia que típicamente presenta volumen indefinido y alta fuerza de repulsión (entropía/desorden) es:",
+                        "opciones": [
+                            "Plasma.",
+                            "Líquido.",
+                            "Sólido.",
+                            "Gaseoso."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "En el estado gaseoso, la fuerza de cohesión es prácticamente nula y las partículas están muy dispersas, causando que el gas ocupe todo el volumen que pueda."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "El proceso en el que el hielo seco pasa de estado sólido directamente a estado gaseoso se llama:",
+                        "opciones": [
+                            "Evaporación.",
+                            "Sublimación.",
+                            "Condensación.",
+                            "Fusión."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La sublimación directa es el cambio de sólido a gaseoso omitiendo pasar por la fase líquida (como ocurre con el hielo seco o pastillas de baño)."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Identifica un ejemplo de cambio químico en la vida cotidiana:",
+                        "opciones": [
+                            "Evaporación de agua.",
+                            "Quema de papel (combustión).",
+                            "Disolución de azúcar.",
+                            "Cortar metal."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La combustión es un cambio químico porque altera la naturaleza interna de la materia, transformando el papel en cenizas y gases (CO2)."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "El bronce es un ejemplo de:",
+                        "opciones": [
+                            "Elemento químico.",
+                            "Compuesto químico.",
+                            "Mezcla homogénea.",
+                            "Mezcla heterogénea."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El bronce es una aleación (mezcla sólida homogénea). La clase lo menciona explícitamente como ejemplo de mezcla homogénea, junto con el aire y el agua con sal."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "La clase menciona que si te preguntan cómo identificar o hacer visible un sistema coloidal, la respuesta es gracias al:",
+                        "opciones": [
+                            "Efecto Invernadero.",
+                            "Efecto Doppler.",
+                            "Efecto Tyndall.",
+                            "Microscopio electrónico."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Efecto Tyndall es la dispersión de la luz a través de las partículas del coloide. La clase lo señala como la respuesta exacta ante cualquier pregunta de identificación de coloides."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Es el cambio de estado de la materia que ocurre cuando una sustancia sólida pasa directamente a gas, omitiendo el estado líquido:",
+                        "opciones": [
+                            "Condensación.",
+                            "Fusión.",
+                            "Sublimación directa.",
+                            "Evaporación."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La sublimación directa (Sólido → Gaseoso) salta el estado líquido. La clase menciona como ejemplos: el hielo seco y las pastillas aromatizantes de baño."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Según la clase, ¿cuál de los siguientes cambios de estado requiere frío y va de estado gaseoso a estado líquido?",
+                        "opciones": [
+                            "Fusión.",
+                            "Sublimación directa.",
+                            "Evaporación.",
+                            "Condensación."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "La condensación (Gaseoso → Líquido) requiere temperaturas bajas. La clase da como ejemplos: los lentes empañados y el vaho al hablar en el frío."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "La clase explica que la trampa de la UNAM es mezclar coloides con mezclas homogéneas. Si el examen te da la opción 'leche con chocolate', ¿cómo la clasificarías?",
+                        "opciones": [
+                            "Coloide, porque la leche siempre es coloide.",
+                            "Mezcla heterogénea, porque se ven dos fases.",
+                            "Mezcla homogénea, porque ya se están uniendo dos sustancias de forma uniforme.",
+                            "Elemento, porque no tiene reacción química."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La clase dice exactamente: si dice 'leche sola', es coloide. Pero si dice 'leche con chocolate', ya se considera una mezcla homogénea porque estás uniendo dos sustancias de forma uniforme."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "qui-001",
+                    "pregunta": "¿Qué describe la ciencia de la Química?",
+                    "respuesta": "Describe la materia, sus propiedades, sus cambios y las variaciones energéticas asociadas.",
+                    "tema": "Fundamentos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-002",
+                    "pregunta": "¿Qué es la Materia?",
+                    "respuesta": "Todo aquello que tiene masa y volumen (ocupa un lugar en el espacio).",
+                    "tema": "Fundamentos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-003",
+                    "pregunta": "¿Qué es un Elemento?",
+                    "respuesta": "Sustancia pura formada por un solo tipo de átomo. Se identifica por tener 1 mayúscula o 1 mayúscula + 1 minúscula.",
+                    "tema": "Sistemas Materiales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-004",
+                    "pregunta": "¿Qué es un Compuesto?",
+                    "respuesta": "Sustancia pura formada por la unión de dos o más tipos de átomos diferentes. Se identifica por tener 2 o más mayúsculas.",
+                    "tema": "Sistemas Materiales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-005",
+                    "pregunta": "¿Qué son las Mezclas Homogéneas?",
+                    "respuesta": "Uniones físicas donde los componentes no se distinguen y forman una sola fase. Ej: Aire, Vino, Perfume.",
+                    "tema": "Sistemas Materiales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-006",
+                    "pregunta": "¿Qué son las Mezclas Heterogéneas?",
+                    "respuesta": "Uniones físicas donde los componentes sí se distinguen a simple vista. Ej: Agua con aceite, ensalada.",
+                    "tema": "Sistemas Materiales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-007",
+                    "pregunta": "¿Qué es un Coloide?",
+                    "respuesta": "Mezcla heterogénea con partículas tan finas que parecen homogéneas pero se ven al microscopio óptico. Ej: Leche, sangre.",
+                    "tema": "Coloides",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-008",
+                    "pregunta": "¿Qué es el Efecto Tyndall?",
+                    "respuesta": "Es la dispersión de la luz a través de las partículas de un coloide, lo que permite identificarlo.",
+                    "tema": "Coloides",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-009",
+                    "pregunta": "¿Qué tipo de sistema material es la leche sola y la leche con chocolate?",
+                    "respuesta": "Leche sola es Coloide. Leche con chocolate se considera Mezcla Homogénea.",
+                    "tema": "Coloides",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-010",
+                    "pregunta": "¿Qué tipo de naturaleza tienen los estados de la materia?",
+                    "respuesta": "Naturaleza FÍSICA, no química.",
+                    "tema": "Estados de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-011",
+                    "pregunta": "¿Qué caracteriza al estado Sólido?",
+                    "respuesta": "Fuerza de cohesión alta, forma y volumen definidos. Partículas muy juntas.",
+                    "tema": "Estados de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-012",
+                    "pregunta": "¿Qué caracteriza al estado Líquido?",
+                    "respuesta": "Fuerza de cohesión baja, volumen definido, pero toma la forma del recipiente.",
+                    "tema": "Estados de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-013",
+                    "pregunta": "¿Qué caracteriza al estado Gaseoso?",
+                    "respuesta": "Fuerza de cohesión nula, partículas dispersas, volumen indefinido y alta entropía.",
+                    "tema": "Estados de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-014",
+                    "pregunta": "¿Qué es la Fusión?",
+                    "respuesta": "Cambio por calor de Sólido a Líquido.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-015",
+                    "pregunta": "¿Qué es la Evaporación?",
+                    "respuesta": "Cambio por calor de Líquido a Gaseoso.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-016",
+                    "pregunta": "¿Qué es la Sublimación Directa?",
+                    "respuesta": "Cambio por calor de Sólido a Gaseoso sin pasar por líquido. Ej: Hielo seco.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-017",
+                    "pregunta": "¿Qué es la Solidificación?",
+                    "respuesta": "Cambio por frío de Líquido a Sólido.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-018",
+                    "pregunta": "¿Qué es la Condensación?",
+                    "respuesta": "Cambio por frío de Gaseoso a Líquido. Ej: Rocío.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui-019",
+                    "pregunta": "¿Qué es la Sublimación Inversa?",
+                    "respuesta": "Cambio por frío de Gaseoso a Sólido. Ej: Nieve, granizo.",
+                    "tema": "Cambios de Estado",
+                    "asignatura": "Química"
+                }
+            ]
+        },
+        {
+            "title": "Apuntes de Química",
+            "titleIconLeft": "fa-flask",
+            "titleIconRight": "fa-atom",
+            "titleStyle": "color: #059669;",
+            "mainTopicId": "mainTopicQuimica2",
+            "mainTopicClass": "topic-2",
+            "mainTopicTitle": "Química",
+            "mainTopicIcon1": "fa-atom",
+            "mainTopicIcon2": "fa-microscope",
+            "mainTopicSubtitle": "Clase 2: Cambios Físicos, Químicos y Estructura Atómica",
+            "branches": [
+                {
+                    "id": "nodes-qui2-1",
+                    "topicIdx": 1,
+                    "title": "1. Cambios Físicos",
+                    "icon": "fa-icicles",
+                    "subnodes": [
+                        {
+                            "icon": "fa-book",
+                            "delay": "0.1s",
+                            "title": "Definición y Características",
+                            "content": "<p><b>Definición:</b> Alteran solo el estado o la apariencia, pero <b>no</b> la composición interna. No se forman sustancias nuevas.</p><p><b>Características:</b> Son procesos reversibles (la materia puede volver a su estado original).</p>"
+                        },
+                        {
+                            "icon": "fa-list-check",
+                            "delay": "0.2s",
+                            "title": "Ejemplos de Examen",
+                            "content": "<p>Cortar papel, disolver azúcar o sal en agua, y todos los cambios de estado (evaporación, fusión, sublimación).</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui2-2",
+                    "topicIdx": 2,
+                    "title": "2. Cambios Químicos",
+                    "icon": "fa-fire",
+                    "subnodes": [
+                        {
+                            "icon": "fa-book",
+                            "delay": "0.1s",
+                            "title": "Definición y Características",
+                            "content": "<p><b>Definición:</b> Alteran la composición interna de la materia. Los átomos se reorganizan para formar sustancias nuevas con propiedades distintas.</p><p><b>Características:</b> Son procesos irreversibles en su mayoría.</p>"
+                        },
+                        {
+                            "icon": "fa-list-check",
+                            "delay": "0.2s",
+                            "title": "Ejemplos de Examen",
+                            "content": "<p>Combustión (quemar algo), digestión, oxidación (un clavo oxidado), putrefacción y fotosíntesis.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TRAMPA DEL LENGUAJE:</b><br>En los incisos, fíjate si dice \"forma física\" o \"forma química\". Los estados de la materia (sólido, líquido, gas) son siempre formas <b>físicas</b>.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui2-3",
+                    "topicIdx": 3,
+                    "title": "3. Estructura Atómica",
+                    "icon": "fa-atom",
+                    "subnodes": [
+                        {
+                            "icon": "fa-microscope",
+                            "delay": "0.1s",
+                            "title": "El Átomo y el Núcleo",
+                            "content": "<p>El átomo es la unidad más pequeña de la materia que conserva sus propiedades.</p><p><b>Núcleo:</b> Es el centro del átomo y la parte más pesada. Contiene protones y neutrones.</p><p><b>Orbitales (Órbitas):</b> Regiones alrededor del núcleo donde se mueven los electrones. Su número depende de la energía y posición del elemento en la tabla.</p>"
+                        },
+                        {
+                            "icon": "fa-scale-balanced",
+                            "delay": "0.2s",
+                            "title": "Partículas Subatómicas",
+                            "content": "<ul><li><b>Protón ($p^+$):</b> Carga positiva. Se ubica en el núcleo. <b>Define al elemento.</b></li><li><b>Neutrón ($n^0$):</b> Carga neutra. Se ubica en el núcleo. Actúa como \"pegamento\" o comodín.</li><li><b>Electrón ($e^-$):</b> Carga negativa. Se ubica en los orbitales. Es la partícula más ligera.</li></ul><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>REGLA MNEMOTÉCNICA:</b><br>El núcleo es la parte más pesada del átomo (donde están protones y neutrones). Los electrones se quedan afuera por ser los más ligeros.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui2-4",
+                    "topicIdx": 4,
+                    "title": "4. Modelos Atómicos",
+                    "icon": "fa-timeline",
+                    "subnodes": [
+                        {
+                            "icon": "fa-cubes",
+                            "delay": "0.1s",
+                            "title": "1. John Dalton",
+                            "content": "<p><b>Concepto:</b> El átomo es una esfera sólida, lisa, indivisible e indestructible.</p><p><b>Aporte principal:</b> Fue el primer científico en fundamentar la teoría atómica con bases experimentales.</p><p><b>Dato:</b> Según Dalton, todos los átomos de un mismo elemento son idénticos entre sí.</p>"
+                        },
+                        {
+                            "icon": "fa-cookie-bite",
+                            "delay": "0.2s",
+                            "title": "2. J.J. Thomson",
+                            "content": "<p><b>Aporte principal:</b> Descubrió el electrón ($e^-$) mediante el experimento de los <b>Rayos Catódicos</b>.</p><p><b>Modelo (Budín de Pasas):</b> Describe al átomo como una gran masa de carga positiva con electrones incrustados negativamente (como chispas en una galleta).</p>"
+                        },
+                        {
+                            "icon": "fa-flask",
+                            "delay": "0.3s",
+                            "title": "Dato Adicional de Examen",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-brain'></i> <b>ELEMENTO VS COMPUESTO:</b><br>Recuerda que el <b>Antimonio ($Sb$)</b> es un elemento de la tabla periódica (número atómico 51), no un compuesto químico.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/gTedF1q6gPk",
+            "id": "content-quimica-2",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Qué ocurre a nivel molecular durante un cambio físico?",
+                        "opciones": [
+                            "Los átomos se reorganizan formando algo nuevo.",
+                            "La composición interna no se altera.",
+                            "Se vuelve un proceso siempre irreversible.",
+                            "Ocurre una combustión acelerada."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "En un cambio físico, solo se altera el estado o la apariencia de la materia, pero nunca su composición interna."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿La fusión del hielo es un ejemplo de cambio químico o físico?",
+                        "opciones": [
+                            "Químico, porque altera su temperatura.",
+                            "Físico, porque solo es un cambio de estado reversible.",
+                            "Químico, porque genera una reacción.",
+                            "Físico, porque crea nuevas sustancias."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Todos los cambios de estado (como la fusión) son cambios físicos, ya que la materia solo cambia su apariencia y puede regresar a su estado original (son reversibles)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿A qué científico se le atribuye el primer modelo atómico con bases experimentales, describiendo al átomo como una esfera sólida?",
+                        "opciones": [
+                            "J.J. Thomson.",
+                            "Niels Bohr.",
+                            "John Dalton.",
+                            "Rutherford."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "John Dalton fue pionero en fundamentar la teoría atómica, conceptualizando al átomo como una esfera lisa, indivisible e indestructible."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Identifica la carga eléctrica de un neutrón ($n^0$):",
+                        "opciones": [
+                            "Carga positiva.",
+                            "Carga neutra.",
+                            "Carga negativa.",
+                            "Carga alternada."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Como su nombre indica y gracias a la mnemotécnica de clase, el neutrón ($n^0$) posee una carga neutra y actúa como 'pegamento' en el núcleo."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Con qué nombre se popularizó el modelo atómico de J.J. Thomson?",
+                        "opciones": [
+                            "Modelo Planetario.",
+                            "Esfera Indestructible.",
+                            "Nube de Electrones.",
+                            "Budín de Pasas."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "Thomson ilustró al átomo como una gran masa positiva con los electrones incrustados ordenadamente en ella, similar a un budín de pasas."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "De acuerdo con la nota de clase, ¿cuál de los siguientes fenómenos constituye explícitamente un cambio químico por ser mayoritariamente irreversible?",
+                        "opciones": [
+                            "Evaporar alcohol etílico.",
+                            "Disolver azúcar en agua caliente.",
+                            "La putrefacción de una manzana.",
+                            "Romper una hoja de papel."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Los cambios químicos alteran la composición interna y son mayoritariamente irreversibles. La putrefacción, la combustión, digestión y oxidación son los clásicos ejemplos de examen."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Al analizar la estructura de un átomo desconocido, el científico debe localizar los protones. ¿A qué región deberá observar y qué característica define a esa región?",
+                        "opciones": [
+                            "A los orbitales, porque son la parte más pesada del átomo.",
+                            "Al núcleo, que es la parte más ligera.",
+                            "A los orbitales, porque es donde se mueve el electrón.",
+                            "Al núcleo, que es la parte central y más pesada del átomo."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "La regla mnemotécnica de la clase especifica: El núcleo es el centro del átomo y la región con mayor peso, ya que ahí se alojan protones y neutrones."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué afirmación es congruente respecto a los postulados del modelo de John Dalton?",
+                        "opciones": [
+                            "Confirmó que el átomo presentaba electrones en órbitas.",
+                            "Postuló que todos los átomos de un mismo elemento son idénticos entre sí.",
+                            "Demostró la existencia del núcleo mediante rayos catódicos.",
+                            "Rechazó la existencia de la materia como algo indivisible."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Uno de los datos experimentales más puntuales aportados por Dalton es que el átomo era indivisible y, además, los átomos del mismo elemento compartían exactamente las mismas propiedades."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Qué aportación puntual se logró gracias al experimento de los Rayos Catódicos documentado en clase?",
+                        "opciones": [
+                            "El hallazgo de la carga neutra.",
+                            "El descubrimiento del núcleo del átomo.",
+                            "El descubrimiento del electrón ($e^-$).",
+                            "La división del átomo."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "J.J. Thomson efectuó el famoso experimento de los Rayos Catódicos para demostrar contundentemente el descubrimiento de la partícula más ligera: el electrón."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Si un inciso de examen te pregunta por un compuesto químico y entre las opciones se encuentra el Antimonio ($Sb$), de acuerdo con la trampa de la clase, ¿qué debes inferir del Antimonio?",
+                        "opciones": [
+                            "Es una mezcla homogénea.",
+                            "Es un compuesto complejo.",
+                            "Es un elemento puro de la tabla periódica.",
+                            "Es un isótopo del bismuto."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Como se señaló en la sección de datos adicionales: el Antimonio (Sb) apareció en simulacros reales y es vital recordar que NO es un compuesto, sino un elemento puro (número atómico 51)."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "qui2-001",
+                    "pregunta": "¿Qué es un Cambio Físico?",
+                    "respuesta": "Alteración del estado o apariencia de la materia que NO afecta su composición interna. Es reversible.",
+                    "tema": "Cambios de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-002",
+                    "pregunta": "¿Qué es un Cambio Químico?",
+                    "respuesta": "Alteración de la composición interna de la materia para formar nuevas sustancias. Es irreversible en su mayoría.",
+                    "tema": "Cambios de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-003",
+                    "pregunta": "¿Qué naturaleza tienen los cambios de estado (fusión, evaporación, etc.)?",
+                    "respuesta": "Son procesos físicos; no cambian la composición de la sustancia.",
+                    "tema": "Cambios de la Materia",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-004",
+                    "pregunta": "¿Dónde se encuentran los protones y neutrones?",
+                    "respuesta": "En el núcleo.",
+                    "tema": "Estructura Atómica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-008",
+                    "pregunta": "¿Qué característica del átomo determinan principalmente los protones y neutrones?",
+                    "respuesta": "La masa central del átomo (por ser las partículas más pesadas).",
+                    "tema": "Estructura Atómica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-005",
+                    "pregunta": "¿Cuál es el postulado principal del modelo atómico de John Dalton?",
+                    "respuesta": "El átomo es una esfera sólida, lisa, indivisible e indestructible.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-006",
+                    "pregunta": "¿Qué descubrió J.J. Thomson?",
+                    "respuesta": "El electrón.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-009",
+                    "pregunta": "¿Mediante qué experimento se descubrió el electrón (J.J. Thomson)?",
+                    "respuesta": "El experimento de los rayos catódicos.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui2-007",
+                    "pregunta": "¿Cómo dibujaba Thomson al átomo en su 'Modelo del Budín de Pasas'?",
+                    "respuesta": "Como una masa de carga positiva con electrones (carga negativa) incrustados en ella.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                }
+            ]
+        },
+        {
+            "title": "Apuntes de Química",
+            "titleIconLeft": "fa-flask",
+            "titleIconRight": "fa-atom",
+            "titleStyle": "color: #059669;",
+            "mainTopicId": "mainTopicQuimica3",
+            "mainTopicClass": "topic-2",
+            "mainTopicTitle": "Química",
+            "mainTopicIcon1": "fa-atom",
+            "mainTopicIcon2": "fa-book-open",
+            "mainTopicSubtitle": "Clase 3: Partículas Subatómicas, Modelos Atómicos y Números Cuánticos",
+            "branches": [
+                {
+                    "id": "nodes-qui3-1",
+                    "topicIdx": 1,
+                    "title": "1. Partículas Subatómicas y Cargas",
+                    "icon": "fa-scale-balanced",
+                    "subnodes": [
+                        {
+                            "icon": "fa-plus",
+                            "delay": "0.1s",
+                            "title": "Protón ($p^+$)",
+                            "content": "<p><b>Carga:</b> Positiva.</p><p><b>Ubicación:</b> Núcleo (la región más pesada).</p>"
+                        },
+                        {
+                            "icon": "fa-circle-minus",
+                            "delay": "0.2s",
+                            "title": "Neutrón ($n^0$)",
+                            "content": "<p><b>Carga:</b> Neutra (sin carga).</p><p><b>Ubicación:</b> Núcleo, junto con los protones.</p>"
+                        },
+                        {
+                            "icon": "fa-minus",
+                            "delay": "0.3s",
+                            "title": "Electrón ($e^-$)",
+                            "content": "<p><b>Carga:</b> Negativa.</p><p><b>Ubicación:</b> En orbitales alrededor del núcleo.</p><div class='exam-tip'><i class='fa-solid fa-feather'></i> <b>NOTA DE MEMORIA:</b><br>El electrón es la partícula más ligera; por ello se localiza fuera del núcleo.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui3-2",
+                    "topicIdx": 2,
+                    "title": "2. Cronología de Modelos Atómicos",
+                    "icon": "fa-timeline",
+                    "subnodes": [
+                        {
+                            "icon": "fa-scroll",
+                            "delay": "0.1s",
+                            "title": "Demócrito (Grecia)",
+                            "content": "<p><b>Aporte:</b> Introdujo el término <b>átomo</b> (indivisible). Fue una propuesta filosófica, no científica.</p>"
+                        },
+                        {
+                            "icon": "fa-circle",
+                            "delay": "0.2s",
+                            "title": "Dalton",
+                            "content": "<p><b>Primer modelo con bases científicas.</b></p><p><b>Modelo (Bola de billar):</b> Esfera sólida y hueca (sin estructura interna).</p>"
+                        },
+                        {
+                            "icon": "fa-cookie-bite",
+                            "delay": "0.3s",
+                            "title": "Thomson",
+                            "content": "<p><b>Aporte:</b> Descubrió el electrón.</p><p><b>Experimento:</b> Rayos catódicos.</p><p><b>Modelo (Budín de pasas):</b> Masa positiva con electrones incrustados (analogía: galleta con chispas).</p>"
+                        },
+                        {
+                            "icon": "fa-bullseye",
+                            "delay": "0.4s",
+                            "title": "Rutherford",
+                            "content": "<p><b>Aporte:</b> Descubrió el protón y el núcleo.</p><p><b>Experimento:</b> Lámina de oro.</p><p><b>Modelo:</b> Sistema planetario.</p>"
+                        },
+                        {
+                            "icon": "fa-sun",
+                            "delay": "0.5s",
+                            "title": "Bohr",
+                            "content": "<p><b>Aporte:</b> Introdujo 7 niveles de energía (órbitas).</p><p><b>Modelo:</b> Sistema solar.</p>"
+                        },
+                        {
+                            "icon": "fa-circle-dot",
+                            "delay": "0.6s",
+                            "title": "Chadwick",
+                            "content": "<p><b>Aporte:</b> Descubrió el neutrón, completando el núcleo del modelo de Bohr.</p>"
+                        },
+                        {
+                            "icon": "fa-cloud",
+                            "delay": "0.7s",
+                            "title": "Schrödinger",
+                            "content": "<p><b>Aporte:</b> Explicó los orbitales ($s, p, d, f$) como zonas de probabilidad.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui3-3",
+                    "topicIdx": 3,
+                    "title": "3. Orbitales Atómicos (Subniveles)",
+                    "icon": "fa-house-chimney",
+                    "subnodes": [
+                        {
+                            "icon": "fa-house",
+                            "delay": "0.1s",
+                            "title": "Definición",
+                            "content": "<p>Los <b>orbitales</b> son regiones donde se localizan los electrones. Se identifican con las letras <b>S, P, D, F</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-users",
+                            "delay": "0.2s",
+                            "title": "Capacidad de electrones",
+                            "content": "<p><b>Patrón:</b> Van de 4 en 4.</p><ul><li><b>S:</b> 2 electrones.</li><li><b>P:</b> 6 electrones.</li><li><b>D:</b> 10 electrones.</li><li><b>F:</b> 14 electrones.</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui3-4",
+                    "topicIdx": 4,
+                    "title": "4. Números Cuánticos (Identidad del Electrón)",
+                    "icon": "fa-hashtag",
+                    "subnodes": [
+                        {
+                            "icon": "fa-1",
+                            "delay": "0.1s",
+                            "title": "Principal ($n$)",
+                            "content": "<p><b>Qué indica:</b> Nivel de energía o cercanía al núcleo.</p><p><b>Valores:</b> Enteros del 1 al 7.</p>"
+                        },
+                        {
+                            "icon": "fa-shapes",
+                            "delay": "0.2s",
+                            "title": "Secundario / Azimutal ($l$)",
+                            "content": "<p><b>Qué indica:</b> La forma geométrica del orbital.</p><p><b>Valores según la letra:</b> $s = 0$, $p = 1$, $d = 2$, $f = 3$.</p>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.3s",
+                            "title": "Magnético ($m$)",
+                            "content": "<p><b>Qué indica:</b> La orientación en el espacio (izquierda, derecha, céntrico).</p><div class='exam-tip'><i class='fa-solid fa-diagram-project'></i> <b>MÉTODO OPERATIVO:</b><br>Escribe el <b>0</b> al centro. Hacia la derecha coloca los positivos ($+1, +2, +3$) y hacia la izquierda los negativos ($-1, -2, -3$), según el máximo permitido por $l$.</div>"
+                        },
+                        {
+                            "icon": "fa-list-check",
+                            "delay": "0.4s",
+                            "title": "Notas de repaso",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-brain'></i> <b>IDENTIFICACIÓN VISUAL:</b><br>Si se habla de niveles de energía (órbitas), referencia a <b>Bohr</b>.<br>Si se habla de electrones incrustados en una masa positiva, referencia a <b>Thomson</b>.</div><div class='exam-tip'><i class='fa-solid fa-circle-info'></i> <b>DATO:</b><br>El Antimonio (Sb) es un elemento (número atómico 51), no un compuesto.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/m2NDUERKVxA",
+            "id": "content-quimica-3",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál es la carga del electrón ($e^-$)?",
+                        "opciones": [
+                            "Positiva.",
+                            "Neutra.",
+                            "Negativa.",
+                            "Variable."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El electrón ($e^-$) tiene carga negativa y se localiza en los orbitales alrededor del núcleo."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿En qué región del átomo se encuentran protones y neutrones?",
+                        "opciones": [
+                            "En el núcleo.",
+                            "En los orbitales.",
+                            "En la nube externa.",
+                            "En el vacío."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "Protones y neutrones se ubican en el núcleo, que es la región más pesada del átomo."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué científico descubrió el electrón mediante el experimento de rayos catódicos?",
+                        "opciones": [
+                            "Dalton.",
+                            "Thomson.",
+                            "Bohr.",
+                            "Chadwick."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Thomson descubrió el electrón mediante el experimento de rayos catódicos."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál es la capacidad de electrones del subnivel D?",
+                        "opciones": [
+                            "2.",
+                            "6.",
+                            "10.",
+                            "14."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La capacidad de electrones aumenta de 4 en 4: S=2, P=6, D=10, F=14."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Según la relación letra–valor del número cuántico azimutal ($l$), el subnivel p corresponde a:",
+                        "opciones": [
+                            "$l=0$",
+                            "$l=1$",
+                            "$l=2$",
+                            "$l=3$"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Según la clase: s=0, p=1, d=2, f=3."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Si un subnivel tiene $l=2$, ¿qué letra le corresponde y cuál es su capacidad de electrones?",
+                        "opciones": [
+                            "p y 6.",
+                            "d y 10.",
+                            "f y 14.",
+                            "s y 2."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El mapeo de la clase indica: d=2 y su capacidad es 10 electrones."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Para un subnivel f ($l=3$), ¿qué valores puede tomar el número cuántico magnético ($m$)?",
+                        "opciones": [
+                            "$m=0,pm1$",
+                            "$m=-3,-2,-1,0,+1,+2,+3$",
+                            "$m=1,2,3$",
+                            "$m=-1,0,+1,+2$"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El valor máximo lo determina $l$. Para $l=3$, los valores van desde -3 hasta +3, incluyendo el 0."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué científico se asocia al experimento de la lámina de oro y al descubrimiento del núcleo?",
+                        "opciones": [
+                            "Thomson.",
+                            "Rutherford.",
+                            "Bohr.",
+                            "Demócrito."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Rutherford realizó el experimento de la lámina de oro y estableció la existencia del núcleo."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Si un modelo menciona 7 niveles de energía (órbitas), ¿a quién corresponde según la cronología de la clase?",
+                        "opciones": [
+                            "Bohr.",
+                            "Dalton.",
+                            "Schrödinger.",
+                            "Chadwick."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "El modelo de Bohr introduce 7 niveles de energía u órbitas."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "El Antimonio (Sb), con número atómico 51, se clasifica como:",
+                        "opciones": [
+                            "Compuesto.",
+                            "Elemento.",
+                            "Mezcla.",
+                            "Coloide."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La nota de repaso indica que el Antimonio (Sb) es un elemento de la tabla periódica (Z=51), no un compuesto."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "qui3-001",
+                    "pregunta": "¿Cuál es la carga del protón ($p^+$)?",
+                    "respuesta": "Positiva.",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-002",
+                    "pregunta": "¿Cuál es la carga del neutrón ($n^0$)?",
+                    "respuesta": "Neutra (sin carga).",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-003",
+                    "pregunta": "¿Cuál es la carga del electrón ($e^-$)?",
+                    "respuesta": "Negativa.",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-004",
+                    "pregunta": "¿Dónde se encuentran protones y neutrones?",
+                    "respuesta": "En el núcleo.",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-005",
+                    "pregunta": "¿Dónde se localizan los electrones?",
+                    "respuesta": "En orbitales alrededor del núcleo.",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-006",
+                    "pregunta": "¿Cuál es la partícula subatómica más ligera?",
+                    "respuesta": "El electrón.",
+                    "tema": "Partículas Subatómicas",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-007",
+                    "pregunta": "¿Quién introdujo la palabra 'átomo' como indivisible?",
+                    "respuesta": "Demócrito.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-008",
+                    "pregunta": "¿Qué caracteriza el modelo atómico de Dalton (nombre popular)?",
+                    "respuesta": "Bola de billar: esfera sólida y hueca (sin estructura interna).",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-009",
+                    "pregunta": "¿Qué descubrió Thomson?",
+                    "respuesta": "El electrón.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-010",
+                    "pregunta": "¿Con qué experimento se asocia Thomson en la clase?",
+                    "respuesta": "Rayos catódicos.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-011",
+                    "pregunta": "¿Cómo describe Thomson al átomo en el modelo del budín de pasas?",
+                    "respuesta": "Como una masa positiva con electrones incrustados.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-012",
+                    "pregunta": "¿Qué descubrió Rutherford y qué experimento se asocia a su modelo?",
+                    "respuesta": "El protón y el núcleo; lámina de oro.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-013",
+                    "pregunta": "¿Qué aportó Bohr según la clase?",
+                    "respuesta": "Siete niveles de energía (órbitas).",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-014",
+                    "pregunta": "¿Qué partícula descubrió Chadwick?",
+                    "respuesta": "El neutrón.",
+                    "tema": "Modelos Atómicos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-015",
+                    "pregunta": "¿Qué explicó Schrödinger sobre los orbitales?",
+                    "respuesta": "Que son zonas de probabilidad (subniveles s, p, d, f).",
+                    "tema": "Orbitales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-016",
+                    "pregunta": "¿Cuál es la capacidad máxima de electrones en los subniveles S, P, D y F?",
+                    "respuesta": "S=2, P=6, D=10, F=14.",
+                    "tema": "Orbitales",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-017",
+                    "pregunta": "¿Qué indica el número cuántico principal (n) y qué valores toma en la clase?",
+                    "respuesta": "Indica el nivel de energía o cercanía al núcleo; valores enteros del 1 al 7.",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui3-018",
+                    "pregunta": "¿Qué relación letra–valor se usa para el número cuántico azimutal (l)?",
+                    "respuesta": "s=0, p=1, d=2, f=3.",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                }
+            ]
+        }
+    ]
+};
