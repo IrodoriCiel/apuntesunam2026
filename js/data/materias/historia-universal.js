@@ -772,6 +772,423 @@ export const historia-universal = {
                     "asignatura": "Historia Univ."
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Historia Universal",
+            "titleIconLeft": "fa-globe",
+            "titleIconRight": "fa-book",
+            "titleStyle": "color: #dc2626;",
+            "mainTopicId": "mainTopicHistUniv3",
+            "mainTopicClass": "topic-1",
+            "mainTopicTitle": "Historia Universal",
+            "mainTopicIcon1": "fa-flag-usa",
+            "mainTopicIcon2": "fa-flag",
+            "mainTopicSubtitle": "Clase 3: Independencia de EE.UU. y Revolución Francesa",
+            "branches": [
+                {
+                    "id": "nodes-hu3-1",
+                    "topicIdx": 1,
+                    "title": "1. Independencia de las 13 Colonias (1775-1783)",
+                    "icon": "fa-flag-usa",
+                    "subnodes": [
+                        {
+                            "icon": "fa-globe",
+                            "delay": "0.1s",
+                            "title": "Contexto y Significado",
+                            "content": "<p>Fue el <b>primer movimiento exitoso</b> que llevó las ideas de la Ilustración a la práctica política concreta. Las 13 colonias británicas en América del Norte se sublevaron contra el Imperio Británico entre 1775 y 1783.</p>"
+                        },
+                        {
+                            "icon": "fa-triangle-exclamation",
+                            "delay": "0.2s",
+                            "title": "Causas Principales",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>DETONANTES DE EXAMEN:</b><br><b>1. Guerra de los 7 Años (1756-1763):</b> Gran Bretaña venció a Francia pero quedó en bancarrota.<br><b>2. Control Económico:</b> Impuestos excesivos: <b>Ley del Timbre</b> (documentos) y <b>Ley del Té</b>.<br><b>3. Falta de Representación:</b> Los colonos exigían voz en el Parlamento de Londres: <i>\"No hay impuesto sin representación\"</i>.<br><b>4. Motín del Té (1773):</b> Punto de estallido — colonos arrojaron el cargamento de té al mar en Boston.</div>"
+                        },
+                        {
+                            "icon": "fa-handshake",
+                            "delay": "0.3s",
+                            "title": "Desarrollo y Apoyo Internacional",
+                            "content": "<p><b>4 de julio de 1776:</b> Firma de la <b>Declaración de Independencia</b> — proclama los derechos a la vida, la libertad y la búsqueda de la felicidad.</p><p><b>Francia y España</b> entraron al conflicto para debilitar a Gran Bretaña. Francia lo hizo por <b>venganza</b> tras perder la Guerra de los 7 Años.</p><p><b>Batalla de Yorktown:</b> Victoria decisiva de los colonos con apoyo naval francés.</p>"
+                        },
+                        {
+                            "icon": "fa-scroll",
+                            "delay": "0.4s",
+                            "title": "Consecuencias",
+                            "content": "<p><b>Tratado de París (1783):</b> Gran Bretaña reconoce oficialmente la independencia.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>OJO:</b> Este tratado se llama <b>Tratado de París</b>, no confundir con el Tratado de Versalles.</div><p><b>Constitución de 1787:</b> Establece la primera <b>República Federal</b> y la división de poderes.</p><p><b>Inspiración:</b> Sirvió como modelo directo para la Revolución Francesa y las independencias de Hispanoamérica.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu3-2",
+                    "topicIdx": 2,
+                    "title": "2. Revolución Francesa (1789-1799)",
+                    "icon": "fa-flag",
+                    "subnodes": [
+                        {
+                            "icon": "fa-lightbulb",
+                            "delay": "0.1s",
+                            "title": "Causas Externas",
+                            "content": "<p>La <b>Ilustración</b> como marco ideológico y el éxito de la <b>Independencia de las 13 Colonias</b> como modelo práctico a seguir.</p>"
+                        },
+                        {
+                            "icon": "fa-wheat-awn",
+                            "delay": "0.2s",
+                            "title": "Causas Internas",
+                            "content": "<ul><li><b>Crisis financiera:</b> Excesos de <b>Luis XVI</b> y <b>María Antonieta</b>.</li><li><b>Hambruna:</b> Aumento del precio del pan (canasta básica).</li><li><b>Desigualdad en los Estados Generales:</b> El Tercer Estado (pueblo) pagaba todos los impuestos, pero su voto valía lo mismo que el de la Nobleza o el Clero.</li></ul>"
+                        },
+                        {
+                            "icon": "fa-bolt",
+                            "delay": "0.3s",
+                            "title": "Momentos Clave del Desarrollo",
+                            "content": "<p><b>Toma de la Bastilla (14 de julio de 1789):</b> Símbolo de la caída del absolutismo.</p><p><b>Declaración de los Derechos del Hombre y del Ciudadano:</b> El documento más importante del periodo.</p><p><b>Reinado del Terror:</b> Liderado por <b>Robespierre</b>, caracterizado por el uso masivo de la guillotina.</p><p><b>Golpe de Estado del 18 de Brumario:</b> <b>Napoleón Bonaparte</b> toma el poder, prometiendo estabilidad económica y política.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu3-3",
+                    "topicIdx": 3,
+                    "title": "3. Personajes Clave",
+                    "icon": "fa-users",
+                    "subnodes": [
+                        {
+                            "icon": "fa-star",
+                            "delay": "0.1s",
+                            "title": "George Washington",
+                            "content": "<p>Líder militar de la independencia de las 13 Colonias y <b>primer presidente de los Estados Unidos</b> (1789).</p>"
+                        },
+                        {
+                            "icon": "fa-gavel",
+                            "delay": "0.2s",
+                            "title": "Robespierre",
+                            "content": "<p>Figura central del <b>Reinado del Terror</b> durante la Revolución Francesa; su etapa se caracterizó por el uso masivo de la guillotina.</p>"
+                        },
+                        {
+                            "icon": "fa-chess-king",
+                            "delay": "0.3s",
+                            "title": "Napoleón Bonaparte",
+                            "content": "<p>Puso fin a la Revolución Francesa con el <b>Golpe de Estado del 18 de Brumario (1799)</b>. Su posterior expansión militar difundió las ideas liberales por Europa.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu3-4",
+                    "topicIdx": 4,
+                    "title": "4. Comparación y Contexto para el Examen",
+                    "icon": "fa-table-list",
+                    "subnodes": [
+                        {
+                            "icon": "fa-table",
+                            "delay": "0.1s",
+                            "title": "Tabla Comparativa de Causas",
+                            "content": "<table style='width:100%;border-collapse:collapse;font-size:0.9em;'><thead><tr style='background:#dc2626;color:white;'><th style='padding:6px;text-align:left;'>Movimiento</th><th style='padding:6px;text-align:left;'>Detonante Económico</th><th style='padding:6px;text-align:left;'>Ideología</th><th style='padding:6px;text-align:left;'>Enemigo Común</th></tr></thead><tbody><tr><td style='padding:6px;border-bottom:1px solid #eee;'><b>13 Colonias</b></td><td style='padding:6px;border-bottom:1px solid #eee;'>Impuesto al Té / Timbre</td><td style='padding:6px;border-bottom:1px solid #eee;'>Ilustración</td><td style='padding:6px;border-bottom:1px solid #eee;'>Jorge III (Gran Bretaña)</td></tr><tr><td style='padding:6px;'><b>Rev. Francesa</b></td><td style='padding:6px;'>Precio del Pan / Bancarrota</td><td style='padding:6px;'>Ilustración</td><td style='padding:6px;'>Luis XVI (Monarquía)</td></tr></tbody></table>"
+                        },
+                        {
+                            "icon": "fa-calendar",
+                            "delay": "0.2s",
+                            "title": "Fechas Fundamentales",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>FECHAS PARA EL EXAMEN:</b><br>En Historia Universal las fechas importan menos que los procesos. Sin embargo, dos son <b>imprescindibles</b>:<br><b>1776</b> — Declaración de Independencia de EE.UU.<br><b>1789</b> — Inicio de la Revolución Francesa.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/8y5obwQa59g",
+            "id": "content-hist-univ-3",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál fue la causa que originó la necesidad económica de Gran Bretaña de imponer impuestos a las 13 Colonias?",
+                        "opciones": [
+                            "La pérdida de la Batalla de Yorktown.",
+                            "La deuda generada por la Guerra de los 7 Años (1756-1763).",
+                            "La firma del Tratado de Versalles de 1783.",
+                            "La llegada de Napoleón Bonaparte al poder en Francia."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La Guerra de los 7 Años dejó a Gran Bretaña en bancarrota. Para recuperarse económicamente, impuso impuestos excesivos a las colonias (Ley del Timbre, Ley del Té), lo que desencadenó la rebelión."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Qué consigna política resumió la demanda de los colonos americanos ante los impuestos de Gran Bretaña?",
+                        "opciones": [
+                            "\"La libertad o la muerte.\"",
+                            "\"El pueblo, unido, jamás será vencido.\"",
+                            "\"No hay impuesto sin representación.\"",
+                            "\"Todo para el pueblo, pero sin el pueblo.\""
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Los colonos exigían tener voz en el Parlamento de Londres. Al carecer de representación, consideraban ilegítimos los impuestos que Gran Bretaña les imponía."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Cuál fue la razón principal por la que Francia apoyó militarmente a las 13 Colonias en su guerra de independencia?",
+                        "opciones": [
+                            "Su compromiso ideológico con la Ilustración y los derechos del hombre.",
+                            "Un tratado de alianza firmado junto a la Declaración de Independencia.",
+                            "La venganza por su derrota ante Gran Bretaña en la Guerra de los 7 Años.",
+                            "La solicitud directa de George Washington al rey Luis XVI."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Francia no actuó por amor a la libertad, sino por interés estratégico: debilitar a su rival Gran Bretaña, a quien había perdido en la Guerra de los 7 Años."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál fue la causa política interna que generó mayor resentimiento del Tercer Estado antes de la Revolución Francesa?",
+                        "opciones": [
+                            "La Iglesia prohibió al pueblo votar en cualquier asamblea legislativa.",
+                            "El Tercer Estado pagaba todos los impuestos pero su voto en los Estados Generales valía igual que el de la Nobleza y el Clero.",
+                            "Luis XVI expulsó a los burgueses del gobierno y confiscó todas sus propiedades.",
+                            "El Tercer Estado era el único obligado a participar en las guerras extranjeras de Francia."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La profunda desigualdad en los Estados Generales era una causa estructural del estallido: el pueblo cargaba con la mayoría de los impuestos, mientras que la Nobleza y el Clero tenían el mismo peso de voto gozando de privilegios fiscales."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué acontecimiento marcó el inicio simbólico de la Revolución Francesa el 14 de julio de 1789?",
+                        "opciones": [
+                            "El Golpe de Estado del 18 de Brumario de Napoleón Bonaparte.",
+                            "La firma de la Declaración de los Derechos del Hombre y del Ciudadano.",
+                            "La ejecución de Luis XVI en la guillotina.",
+                            "La Toma de la Bastilla por el pueblo de París."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "La Toma de la Bastilla el 14 de julio de 1789 se considera el inicio simbólico de la Revolución Francesa y la caída del absolutismo monárquico."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Analiza la secuencia: Gran Bretaña financia la Guerra de los 7 Años → queda en bancarrota → impone la Ley del Timbre y la Ley del Té → colonos reaccionan con el Motín del Té. ¿Qué concepto ilustra mejor esta cadena causal?",
+                        "opciones": [
+                            "Que la independencia de las 13 Colonias fue un movimiento espontáneo sin causas económicas.",
+                            "Que el control fiscal abusivo sobre territorios coloniales puede convertirse en detonante de un movimiento independentista.",
+                            "Que la Ilustración fue la única causa real de la independencia y el resto son consecuencias secundarias.",
+                            "Que Gran Bretaña impuso los impuestos para financiar la Revolución Francesa."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La secuencia muestra cómo una decisión militar (la Guerra de los 7 Años) generó consecuencias fiscales que, combinadas con la ideología ilustrada ('no hay impuesto sin representación'), derivaron en una revolución independentista."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Considerando tanto la Independencia de las 13 Colonias como la Revolución Francesa, ¿cuál es el elemento ideológico que comparten como causa común?",
+                        "opciones": [
+                            "El Feudalismo y los modos de producción planteados por Karl Marx.",
+                            "El absolutismo monárquico como modelo de gobierno eficiente.",
+                            "La Ilustración, que proveyó el marco racional para cuestionar el poder absoluto.",
+                            "El Despotismo Ilustrado, que los reyes aplicaron para evitar las revoluciones."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Ambos movimientos usaron la Ilustración como fundamento ideológico: las ideas de Locke, Rousseau y Montesquieu justificaron racionalmente el derecho del pueblo a resistir la tiranía."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Por qué el Tratado de París (1783) es históricamente más relevante que un simple acuerdo de fronteras?",
+                        "opciones": [
+                            "Porque fue el primer tratado que abolió la esclavitud en el continente americano.",
+                            "Porque generalizó los impuestos de la Ley del Timbre a todas las colonias del mundo.",
+                            "Porque reconoció jurídicamente que un pueblo podía independizarse de una potencia imperial, sentando precedente para futuras revoluciones.",
+                            "Porque estableció la República Federal de Francia tras la caída de Luis XVI."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Tratado de París de 1783 no sólo puso fin a la guerra: estableció el precedente jurídico de que una colonia podía romper con su metrópoli y constituirse como nación soberana, lo que inspiró directamente a la Revolución Francesa y a los movimientos de independencia latinoamericanos."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Robespierre y Napoleón Bonaparte representan etapas opuestas de la Revolución Francesa. ¿Cuál de las siguientes afirmaciones describe correctamente sus roles?",
+                        "opciones": [
+                            "Robespierre consolidó la República Federal de Francia; Napoleón firmó la Declaración de los Derechos del Hombre.",
+                            "Robespierre lideró el Reinado del Terror con el uso masivo de la guillotina; Napoleón lo sustituyó con el Golpe de Brumario prometiendo estabilidad.",
+                            "Ambos fueron aliados durante el Reinado del Terror y juntos guillotinaron a Luis XVI.",
+                            "Napoleón encabezó el Reinado del Terror; Robespierre dio el Golpe de Brumario para restaurar la monarquía."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Robespierre representó el punto más violento de la Revolución (el Terror) y fue finalmente arrestado y guillotinado. Napoleón apareció después como el hombre fuerte que puso fin al caos revolucionario con el Golpe del 18 de Brumario (1799)."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Comparando los detonantes económicos de la Independencia de las 13 Colonias y la Revolución Francesa, ¿cuál es la diferencia estructural entre ambos?",
+                        "opciones": [
+                            "En las 13 Colonias el detonante fue la escasez de alimentos; en Francia fueron los impuestos al comercio exterior.",
+                            "En las 13 Colonias el detonante fue la imposición de impuestos externos (timbre, té) por una metrópoli; en Francia fue una crisis interna (hambruna, bancarrota del propio Estado).",
+                            "Ambos movimientos tuvieron exactamente los mismos detonantes económicos: la bancarrota estatal y el alza del pan.",
+                            "En las 13 Colonias la causa fue filosófica (Ilustración) y en Francia fue exclusivamente económica (precio del pan)."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La tabla comparativa de la clase lo detalla: la Independencia de las 13 Colonias fue detonada por impuestos coloniales externos impuestos por Gran Bretaña. La Revolución Francesa, en cambio, fue producto de una crisis interna: la bancarrota de la propia corona francesa y el consecuente aumento del precio del pan."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "hu3-001",
+                    "pregunta": "¿Cuál fue el significado histórico de la Independencia de las 13 Colonias?",
+                    "respuesta": "Fue el primer movimiento exitoso que llevó las ideas de la Ilustración a la práctica política concreta.",
+                    "tema": "13 Colonias",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-002",
+                    "pregunta": "¿Cuál fue el antecedente bélico que dejó a Gran Bretaña en bancarrota antes de imponer impuestos a las colonias?",
+                    "respuesta": "La Guerra de los 7 Años (1756-1763), en la que Gran Bretaña venció a Francia.",
+                    "tema": "13 Colonias - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-003",
+                    "pregunta": "¿Qué fue la Ley del Timbre?",
+                    "respuesta": "Impuesto británico que gravaba los documentos oficiales en las colonias americanas.",
+                    "tema": "13 Colonias - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-004",
+                    "pregunta": "¿Cuál fue la consigna política de los colonos contra los impuestos de Gran Bretaña?",
+                    "respuesta": "\"No hay impuesto sin representación\": exigían voz en el Parlamento de Londres.",
+                    "tema": "13 Colonias - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-005",
+                    "pregunta": "¿Qué fue el Motín del Té (1773)?",
+                    "respuesta": "Acción de protesta en Boston donde colonos arrojaron al mar el cargamento de té de Gran Bretaña; fue el punto de estallido de la independencia.",
+                    "tema": "13 Colonias - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-006",
+                    "pregunta": "¿Qué ocurrió el 4 de julio de 1776?",
+                    "respuesta": "La firma de la Declaración de Independencia de los Estados Unidos, proclamando los derechos a la vida, la libertad y la búsqueda de la felicidad.",
+                    "tema": "13 Colonias - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-007",
+                    "pregunta": "¿Por qué Francia apoyó militarmente a las 13 Colonias en su independencia?",
+                    "respuesta": "Por venganza contra Gran Bretaña, a quien había perdido en la Guerra de los 7 Años.",
+                    "tema": "13 Colonias - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-008",
+                    "pregunta": "¿Cuál fue la victoria decisiva de la guerra de independencia de las 13 Colonias?",
+                    "respuesta": "La Batalla de Yorktown, con apoyo naval francés, que obligó a la rendición de Gran Bretaña.",
+                    "tema": "13 Colonias - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-009",
+                    "pregunta": "¿Qué estableció el Tratado de París (1783)?",
+                    "respuesta": "El reconocimiento oficial por parte de Gran Bretaña de la independencia de los Estados Unidos.",
+                    "tema": "13 Colonias - Consecuencias",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-010",
+                    "pregunta": "¿Qué estableció la Constitución de los Estados Unidos (1787)?",
+                    "respuesta": "La primera República Federal y la división de poderes.",
+                    "tema": "13 Colonias - Consecuencias",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-011",
+                    "pregunta": "¿De qué manera la Independencia de las 13 Colonias influyó en el resto del mundo?",
+                    "respuesta": "Sirvió de inspiración directa para la Revolución Francesa y las independencias de Hispanoamérica.",
+                    "tema": "13 Colonias - Consecuencias",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-012",
+                    "pregunta": "¿Cuáles fueron las causas externas de la Revolución Francesa?",
+                    "respuesta": "La Ilustración como ideología y el éxito de la Independencia de las 13 Colonias como modelo.",
+                    "tema": "Revolución Francesa - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-013",
+                    "pregunta": "¿Cuál fue la causa económica interna de la Revolución Francesa?",
+                    "respuesta": "La crisis financiera de Francia por los excesos de Luis XVI y María Antonieta.",
+                    "tema": "Revolución Francesa - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-014",
+                    "pregunta": "¿Cuál fue la causa social que precipitó la Revolución Francesa?",
+                    "respuesta": "El aumento del precio del pan (canasta básica), que generó hambruna generalizada.",
+                    "tema": "Revolución Francesa - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-015",
+                    "pregunta": "¿Cuál fue la desigualdad de los Estados Generales que indignó al Tercer Estado?",
+                    "respuesta": "El Tercer Estado pagaba todos los impuestos, pero su voto valía lo mismo que el de la Nobleza o el Clero.",
+                    "tema": "Revolución Francesa - Causas",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-016",
+                    "pregunta": "¿Qué ocurrió el 14 de julio de 1789?",
+                    "respuesta": "La Toma de la Bastilla, símbolo del inicio de la Revolución Francesa y la caída del absolutismo.",
+                    "tema": "Revolución Francesa - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-017",
+                    "pregunta": "¿Cuál fue el documento más importante de la Revolución Francesa?",
+                    "respuesta": "La Declaración de los Derechos del Hombre y del Ciudadano.",
+                    "tema": "Revolución Francesa - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-018",
+                    "pregunta": "¿Qué fue el Reinado del Terror?",
+                    "respuesta": "Etapa de la Revolución Francesa liderada por Robespierre, caracterizada por el uso masivo de la guillotina.",
+                    "tema": "Revolución Francesa - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-019",
+                    "pregunta": "¿Cómo finalizó la Revolución Francesa?",
+                    "respuesta": "Con el Golpe de Estado del 18 de Brumario (1799), cuando Napoleón Bonaparte tomó el poder.",
+                    "tema": "Revolución Francesa - Desarrollo",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-020",
+                    "pregunta": "¿Quién fue George Washington?",
+                    "respuesta": "Primer presidente de los Estados Unidos (1789) y líder militar de la independencia de las 13 Colonias.",
+                    "tema": "Personajes Clave",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-021",
+                    "pregunta": "¿Qué papel tuvo Robespierre en la Revolución Francesa?",
+                    "respuesta": "Fue el líder del Reinado del Terror, la etapa más violenta de la Revolución Francesa.",
+                    "tema": "Personajes Clave",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-022",
+                    "pregunta": "¿Qué papel tuvo Napoleón Bonaparte en la Revolución Francesa?",
+                    "respuesta": "Puso fin a la Revolución con el Golpe de Brumario (1799) y expandió las ideas liberales por Europa.",
+                    "tema": "Personajes Clave",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-023",
+                    "pregunta": "¿En qué año se firmó la Declaración de Independencia de los Estados Unidos?",
+                    "respuesta": "1776.",
+                    "tema": "Fechas Clave",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu3-024",
+                    "pregunta": "¿En qué año inició la Revolución Francesa?",
+                    "respuesta": "1789.",
+                    "tema": "Fechas Clave",
+                    "asignatura": "Historia Universal"
+                }
+            ]
         }
     ]
 };

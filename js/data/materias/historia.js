@@ -1876,6 +1876,473 @@ export const historia = {
                     "asignatura": "Historia de México"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Historia de México",
+            "titleIconLeft": "fa-earth-americas",
+            "titleIconRight": "fa-scale-balanced",
+            "titleStyle": "color: #b45309;",
+            "mainTopicId": "mainTopicHistoria6",
+            "mainTopicClass": "history-topic",
+            "mainTopicTitle": "Historia de México",
+            "mainTopicIcon1": "fa-industry",
+            "mainTopicIcon2": "fa-flag",
+            "mainTopicSubtitle": "Clase 6: Porfiriato y Causas de la Revolución",
+            "branches": [
+                {
+                    "id": "nodes-hist6-1",
+                    "topicIdx": 1,
+                    "title": "1. Reforma Liberal y Guerra de Reforma",
+                    "icon": "fa-scale-balanced",
+                    "subnodes": [
+                        {
+                            "icon": "fa-bolt",
+                            "delay": "0.1s",
+                            "title": "Revolución de Ayutla (1854)",
+                            "content": "<p><b>Documento clave:</b> Plan de Ayutla.<br><b>Propósito:</b> Desterrar a <b>Antonio López de Santa Anna</b> por su gobierno dictatorial y la <b>Venta de la Mesilla</b> (1853).<br><b>Resultado:</b> Caída de los conservadores y llegada de un gobierno liberal.</p>"
+                        },
+                        {
+                            "icon": "fa-scroll",
+                            "delay": "0.2s",
+                            "title": "Constitución de 1857",
+                            "content": "<p>Constitución de corte <b>liberal</b> que defiende las <b>Garantías Individuales</b>.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>OJO DE EXAMEN:</b><br>No confundir con la Constitución de <b>1917</b>, que es de Garantías <b>Sociales</b>. Esta distinción es una trampa frecuente.</div>"
+                        },
+                        {
+                            "icon": "fa-gavel",
+                            "delay": "0.3s",
+                            "title": "Leyes de Reforma",
+                            "content": "<ul><li><b>Ley Juárez:</b> Restringe el poder de la Iglesia y militares en asuntos civiles.</li><li><b>Ley Lerdo:</b> Desamortización de bienes del clero (confiscación de tierras para hacerlas productivas).</li><li><b>Ley Iglesias:</b> Prohíbe el cobro obligatorio por servicios parroquiales (diezmo).</li></ul>"
+                        },
+                        {
+                            "icon": "fa-gun",
+                            "delay": "0.4s",
+                            "title": "Guerra de Reforma (Guerra de los 3 Años: 1857-1861)",
+                            "content": "<p><b>Causa:</b> El <b>Plan de Tacubaya</b>, lanzado por <b>Félix Zuloaga</b>, buscaba anular la Constitución de 1857.<br><b>Resultado:</b> Victoria de los <b>Liberales</b>.</p><div class='exam-tip'><i class='fa-solid fa-file-contract'></i> <b>TRATADOS EXTERNOS:</b><br><b>McLane-Ocampo:</b> Liberales con EUA (no ratificado).<br><b>Mon-Almonte:</b> Conservadores con España.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist6-2",
+                    "topicIdx": 2,
+                    "title": "2. Intervención Francesa y Segundo Imperio (1862-1867)",
+                    "icon": "fa-helmet-un",
+                    "subnodes": [
+                        {
+                            "icon": "fa-hand-holding-dollar",
+                            "delay": "0.1s",
+                            "title": "Detonante",
+                            "content": "<p>En <b>1861</b>, Juárez decreta la <b>suspensión de pagos de la deuda externa</b>, provocando que Francia, España e Inglaterra (Convención de Londres) intervengan militarmente.</p>"
+                        },
+                        {
+                            "icon": "fa-shield",
+                            "delay": "0.2s",
+                            "title": "Batalla de Puebla (5 de mayo de 1862)",
+                            "content": "<p>Victoria mexicana liderada por <b>Ignacio Zaragoza</b>, con la participación destacada de <b>Porfirio Díaz</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-crown",
+                            "delay": "0.3s",
+                            "title": "Segundo Imperio (1864-1867)",
+                            "content": "<p><b>Gobernante:</b> <b>Maximiliano de Habsburgo</b>, impuesto por conservadores.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>DATO PARADÓJICO:</b><br>Aunque fue traído por los <b>conservadores</b>, su gobierno fue <b>liberal</b>: mantuvo las Leyes de Reforma y dio derechos a los campesinos.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist6-3",
+                    "topicIdx": 3,
+                    "title": "3. El Porfiriato (1876-1911)",
+                    "icon": "fa-industry",
+                    "subnodes": [
+                        {
+                            "icon": "fa-person-walking-arrow-right",
+                            "delay": "0.1s",
+                            "title": "Ascenso al Poder",
+                            "content": "<p><b>Plan de Tuxtepec (1876):</b> Díaz se levanta contra la reelección de Lerdo de Tejada con el lema <b>\"No reelección\"</b>.</p><div class='exam-tip'><i class='fa-solid fa-triangle-exclamation'></i> <b>TRAMPA DE EXAMEN:</b><br><b>Díaz:</b> Lema = <i>\"No reelección.\"</i><br><b>Madero:</b> Lema = <i>\"Sufragio efectivo, no reelección.\"</i> Son distintos.</div>"
+                        },
+                        {
+                            "icon": "fa-gears",
+                            "delay": "0.2s",
+                            "title": "Características del Régimen",
+                            "content": "<p><b>Filosofía política:</b> <b>Positivismo</b> (Lema: <i>\"Orden y Progreso\"</i>).</p><p><b>Los Científicos:</b> Grupo de intelectuales y diputados que apoyaban la administración de Díaz.</p><p><b>Economía:</b> Amortización de la deuda externa (<b>Limantour</b>), inversión extranjera, expansión del ferrocarril y el telégrafo.</p><p><b>Cultura:</b> Construcción del Palacio de <b>Bellas Artes</b> e inauguración de la <b>Universidad Nacional de México (1910)</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-store",
+                            "delay": "0.3s",
+                            "title": "Crisis Social",
+                            "content": "<p><b>Tiendas de Raya:</b> Sistema donde los trabajadores compraban en tiendas del patrón, generando deudas que los ataban como esclavos (esclavitud disfrazada).</p><p><b>Ley Fuga:</b> Práctica por la cual se ejecutaba a presos con el pretexto de que intentaban escapar.</p>"
+                        },
+                        {
+                            "icon": "fa-hard-hat",
+                            "delay": "0.4s",
+                            "title": "Crisis Laboral",
+                            "content": "<p>El régimen reprimió violentamente dos grandes huelgas obreras:</p><ul><li><b>Cananea:</b> Huelga de la industria <b>minera</b>.</li><li><b>Río Blanco:</b> Huelga de la industria <b>textil</b>.</li></ul>"
+                        },
+                        {
+                            "icon": "fa-users-gear",
+                            "delay": "0.5s",
+                            "title": "Crisis Política: Magonismo y Maderismo",
+                            "content": "<p><b>Magonismo:</b> Encabezado por los <b>Hermanos Flores Magón</b>. Partido: <b>PLM</b> (Partido Liberal Mexicano). Diario: <b>Regeneración</b>. Ideología: <b>Anarquista</b>.</p><p><b>Maderismo:</b> Encabezado por <b>Francisco I. Madero</b>. Documento: <b>Plan de San Luis</b> (desconoce la reelección de Díaz). Lema: <i>\"Sufragio efectivo, no reelección.\"</i></p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist6-4",
+                    "topicIdx": 4,
+                    "title": "4. Datos Clave para el Examen",
+                    "icon": "fa-list-check",
+                    "subnodes": [
+                        {
+                            "icon": "fa-star",
+                            "delay": "0.1s",
+                            "title": "Los Primeros",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>PREGUNTAS DE CAJÓN:</b><br><b>Primer Presidente de México:</b> <b>Guadalupe Victoria</b> (1824).<br><b>Primer Virrey de Nueva España:</b> <b>Antonio de Mendoza</b>.</div>"
+                        },
+                        {
+                            "icon": "fa-file-contract",
+                            "delay": "0.2s",
+                            "title": "Tratados Fundamentales",
+                            "content": "<ul><li><b>Tratado de Guadalupe Hidalgo:</b> Finaliza la guerra con EUA y cede el norte del país.</li><li><b>Tratado de Córdoba:</b> Ratifica la Independencia de México (1821).</li></ul>"
+                        },
+                        {
+                            "icon": "fa-newspaper",
+                            "delay": "0.3s",
+                            "title": "Entrevista Díaz-Creelman",
+                            "content": "<p>Díaz declaró ante el periodista estadounidense Creelman que <b>México estaba listo para la democracia</b>, alentando con esto a los partidos de oposición a organizarse y lanzar candidaturas.</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/2-i-WSMOk0M",
+            "id": "content-historia-6",
+            "preguntas": {
+                "unam": [
+                    {
+                        "numero": 115,
+                        "pregunta": "Movimiento que se opuso al régimen porfirista manifestando su descontento a través del periódico llamado Regeneración.",
+                        "opciones": [
+                            "Magonismo.",
+                            "Carrancismo.",
+                            "Zapatismo.",
+                            "Reyismo."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "El Magonismo, encabezado por los Hermanos Flores Magón a través del Partido Liberal Mexicano (PLM), usó el periódico Regeneración para difundir su ideología anarquista contra el Porfiriato."
+                    },
+                    {
+                        "numero": 116,
+                        "pregunta": "Plan político con el que se inició la lucha en contra del gobierno de Porfirio Díaz.",
+                        "opciones": [
+                            "San Luis Potosí.",
+                            "Agua Prieta.",
+                            "Empacadora.",
+                            "Ayala."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "El Plan de San Luis, proclamado por Francisco I. Madero, fue el documento que formalizó la lucha armada contra el gobierno de Porfirio Díaz bajo el lema 'Sufragio efectivo, no reelección'."
+                    }
+                ],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Qué plan buscaba anular la Constitución de 1857 y desencadenó la Guerra de Reforma?",
+                        "opciones": [
+                            "Plan de Ayutla.",
+                            "Plan de Tuxtepec.",
+                            "Plan de Tacubaya.",
+                            "Plan de San Luis."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Plan de Tacubaya, proclamado por Félix Zuloaga, buscaba anular la Constitución de 1857 y desencadenó la Guerra de los 3 Años (1857-1861), que terminó con la victoria liberal."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál fue la filosofía política del Porfiriato y su lema característico?",
+                        "opciones": [
+                            "Liberalismo; 'Sufragio efectivo, no reelección'.",
+                            "Positivismo; 'Orden y Progreso'.",
+                            "Socialismo; 'Tierra y Libertad'.",
+                            "Conservadurismo; 'Religión y Fueros'."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El Porfiriato adoptó el Positivismo como filosofía política, con el lema 'Orden y Progreso'. Los Científicos, grupo de intelectuales cercanos a Díaz, aplicaban esta ideología a la administración del país."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué eran las Tiendas de Raya durante el Porfiriato?",
+                        "opciones": [
+                            "Mercados donde se vendían productos agrícolas a precios subsidiados para los trabajadores.",
+                            "Sistema de endeudamiento donde los trabajadores compraban en tiendas del patrón, creando deudas que los ataban al trabajo.",
+                            "Cooperativas sindicales creadas por los obreros de Cananea para abaratar el costo de vida.",
+                            "Tiendas de ropa donde los peones compraban uniformes de trabajo."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Las Tiendas de Raya eran un mecanismo de control social: los trabajadores compraban en las tiendas de sus patrones a crédito, acumulando deudas que los impedía abandonar la hacienda o empresa. Era una forma encubierta de esclavitud."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál fue la ideología del Magonismo y a qué partido pertenecía?",
+                        "opciones": [
+                            "Liberal; Partido Científico.",
+                            "Anarquista; Partido Liberal Mexicano (PLM).",
+                            "Socialista; Partido Nacional Revolucionario.",
+                            "Conservadora; Partido Centralista."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El Magonismo, encabezado por los Hermanos Flores Magón, era de ideología anarquista y se organizó bajo el Partido Liberal Mexicano (PLM), difundiendo sus ideas a través del periódico Regeneración."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuál fue la consecuencia política de la Entrevista Díaz-Creelman?",
+                        "opciones": [
+                            "Díaz firmó su renuncia inmediata a la presidencia.",
+                            "Se convocó a una convención constituyente para reformar la Constitución de 1857.",
+                            "La declaración de Díaz de que México estaba listo para la democracia alentó a partidos de oposición a organizarse.",
+                            "Estados Unidos reconoció formalmente el gobierno porfirista."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Díaz declaró ante el periodista James Creelman que México estaba listo para la democracia y que recibiría con gusto a la oposición. Esto fue aprovechado por grupos opositores como el maderismo para organizarse políticamente, acelerando la crisis que llevó a la Revolución."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Qué distingue el lema de Porfirio Díaz del de Francisco I. Madero, y por qué es relevante esta distinción para el examen?",
+                        "opciones": [
+                            "Son idénticos: ambos usaron 'Sufragio efectivo, no reelección' en sus respectivos movimientos.",
+                            "Díaz usó 'No reelección' al subir al poder; Madero usó 'Sufragio efectivo, no reelección' para oponerse a la reelección de Díaz.",
+                            "Madero usó 'No reelección' y Díaz usó 'Orden y Progreso' en toda su vida política.",
+                            "Ambos usaron 'No reelección', pero solo Madero lo cumplió."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Es una trampa frecuente. Díaz llegó al poder con el Plan de Tuxtepec bajo el lema 'No reelección', que luego ignoró al perpetuarse en el poder. Madero, al oponerse precisamente a esa reelección, usó el lema más completo: 'Sufragio efectivo, no reelección'."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Por qué el gobierno de Maximiliano de Habsburgo resultó paradójico para los conservadores que lo impusieron?",
+                        "opciones": [
+                            "Porque declaró la guerra a Francia apenas llegó al poder.",
+                            "Porque su gobierno fue liberal: mantuvo las Leyes de Reforma y otorgó derechos a los campesinos.",
+                            "Porque expulsó a los conservadores y formó un gobierno exclusivamente liberal.",
+                            "Porque disolvió el ejército mexicano y lo sustituyó por tropas austriacas."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Los conservadores trajeron a Maximiliano esperando que restaurara los privilegios del clero y la Iglesia. Sin embargo, Maximiliano mantuvo las Leyes de Reforma liberales y dio ciertos derechos a los campesinos, traicionando las expectativas conservadoras."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Compara el Magonismo con el Maderismo: ¿cuál es la diferencia fundamental entre ambos movimientos de oposición al Porfiriato?",
+                        "opciones": [
+                            "El Magonismo era conservador y el Maderismo era anarquista.",
+                            "El Magonismo buscaba la democracia electoral; el Maderismo buscaba la revolución social radical.",
+                            "El Magonismo tenía ideología anarquista y usaba el PLM/Regeneración; el Maderismo era una oposición política que buscaba la democracia electoral con el Plan de San Luis.",
+                            "Ambos movimientos eran idénticos, solo diferían en el nombre de sus líderes."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Magonismo (Flores Magón, PLM, Regeneración) era de base anarquista, con una crítica radical al sistema. El Maderismo (Francisco I. Madero, Plan de San Luis) era una oposición política moderada que buscaba la democracia electoral y el fin de la reelección, no la abolición del sistema."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál es la diferencia esencial entre la Constitución de 1857 y la Constitución de 1917 en cuanto a su orientación de derechos?",
+                        "opciones": [
+                            "La Constitución de 1857 consagra derechos sociales; la de 1917 consagra derechos individuales.",
+                            "Ambas consagran exactamente los mismos derechos, ya que la de 1917 simplemente actualizó la de 1857.",
+                            "La Constitución de 1857 consagra garantías individuales (libertades liberales); la de 1917 consagra garantías sociales (derechos colectivos como tierra y trabajo).",
+                            "La Constitución de 1857 es conservadora; la de 1917 es liberal."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Constitución de 1857, producto del movimiento liberal, protege las garantías individuales. La Constitución de 1917, producto de la Revolución Mexicana, va más allá e incluye garantías sociales: el derecho a la tierra (Art. 27), derechos laborales (Art. 123) y la rectoría del Estado sobre los recursos naturales."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Por qué las huelgas de Cananea y Río Blanco son históricamente relevantes como antecedentes de la Revolución Mexicana?",
+                        "opciones": [
+                            "Porque fueron victorias laborales que mejoraron las condiciones de los trabajadores bajo el Porfiriato.",
+                            "Porque demostraron la tolerancia del Porfiriato hacia los movimientos sociales.",
+                            "Porque evidenciaron la represión del régimen porfirista contra los trabajadores, catalizando el descontento que derivaría en la Revolución.",
+                            "Porque fueron los primeros movimientos que lograron derrocar a Porfirio Díaz."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Cananea (mineros) y Río Blanco (textiles) fueron huelgas reprimidas brutalmente por el gobierno de Díaz. Lejos de resolver las demandas laborales, la represión exhibió la intolerancia del régimen y amplió la base social que eventualmente se unió a la Revolución de 1910."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "hist6-001",
+                    "pregunta": "¿Cuál fue el propósito del Plan de Ayutla (1854) y cuál fue su resultado?",
+                    "respuesta": "Desterrar a Santa Anna por su dictadura y la Venta de la Mesilla; resultó en la caída de los conservadores y el triunfo liberal.",
+                    "tema": "Revolución de Ayutla",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-002",
+                    "pregunta": "¿Qué diferencia distingue a la Constitución de 1857 de la de 1917?",
+                    "respuesta": "La de 1857 consagra Garantías Individuales (liberales); la de 1917 consagra Garantías Sociales (colectivas).",
+                    "tema": "Constitución de 1857",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-003",
+                    "pregunta": "¿Qué prohíbe la Ley Iglesias?",
+                    "respuesta": "El cobro obligatorio por servicios parroquiales (diezmo u obvenciones).",
+                    "tema": "Leyes de Reforma",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-004",
+                    "pregunta": "¿Quién proclamó el Plan de Tacubaya y qué buscaba?",
+                    "respuesta": "Félix Zuloaga; anular la Constitución de 1857, desencadenando la Guerra de los 3 Años (1857-1861).",
+                    "tema": "Guerra de Reforma",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-005",
+                    "pregunta": "¿Cuál fue el resultado de la Guerra de Reforma (1857-1861)?",
+                    "respuesta": "Victoria de los Liberales.",
+                    "tema": "Guerra de Reforma",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-006",
+                    "pregunta": "¿Qué decreto de Juárez en 1861 detonó la Intervención Francesa?",
+                    "respuesta": "La suspensión de pagos de la deuda externa.",
+                    "tema": "Intervención Francesa",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-007",
+                    "pregunta": "¿Quiénes destacaron en la Batalla de Puebla del 5 de mayo de 1862?",
+                    "respuesta": "Ignacio Zaragoza como comandante en jefe, y Porfirio Díaz como uno de los líderes militares.",
+                    "tema": "Intervención Francesa",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-008",
+                    "pregunta": "¿Por qué el gobierno de Maximiliano resultó paradójico para los conservadores?",
+                    "respuesta": "Fue impuesto por conservadores, pero gobernó de forma liberal: mantuvo las Leyes de Reforma y dio derechos a los campesinos.",
+                    "tema": "Segundo Imperio",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-009",
+                    "pregunta": "¿Cuál fue el lema original de Porfirio Díaz al tomar el poder?",
+                    "respuesta": "\"No reelección.\"",
+                    "tema": "Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-010",
+                    "pregunta": "¿Cuál fue el lema de Francisco I. Madero?",
+                    "respuesta": "\"Sufragio efectivo, no reelección.\"",
+                    "tema": "Porfiriato - Oposición",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-011",
+                    "pregunta": "¿Cuál fue la filosofía política del Porfiriato y su lema?",
+                    "respuesta": "El Positivismo, con el lema 'Orden y Progreso'.",
+                    "tema": "Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-012",
+                    "pregunta": "¿Quiénes eran 'Los Científicos' en el Porfiriato?",
+                    "respuesta": "Grupo de intelectuales y diputados que apoyaban la administración de Díaz bajo la ideología positivista.",
+                    "tema": "Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-013",
+                    "pregunta": "¿Cuál fue el logro económico atribuido a Limantour durante el Porfiriato?",
+                    "respuesta": "La amortización (pago) de la deuda externa.",
+                    "tema": "Porfiriato - Economía",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-014",
+                    "pregunta": "¿Qué obras culturales se inauguraron durante el Porfiriato?",
+                    "respuesta": "La construcción del Palacio de Bellas Artes y la inauguración de la Universidad Nacional de México (1910).",
+                    "tema": "Porfiriato - Cultura",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-015",
+                    "pregunta": "¿Qué eran las Tiendas de Raya?",
+                    "respuesta": "Sistema donde los trabajadores compraban en tiendas del patrón a crédito, acumulando deudas que los ataban al trabajo (esclavitud encubierta).",
+                    "tema": "Porfiriato - Crisis Social",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-016",
+                    "pregunta": "¿Qué fue la Ley Fuga durante el Porfiriato?",
+                    "respuesta": "Práctica por la cual se ejecutaba a presos con el pretexto de que intentaban escapar.",
+                    "tema": "Porfiriato - Crisis Social",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-017",
+                    "pregunta": "¿Qué tipo de industria representaba la Huelga de Cananea?",
+                    "respuesta": "La industria minera.",
+                    "tema": "Porfiriato - Crisis Laboral",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-018",
+                    "pregunta": "¿Qué tipo de industria representaba la Huelga de Río Blanco?",
+                    "respuesta": "La industria textil.",
+                    "tema": "Porfiriato - Crisis Laboral",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-019",
+                    "pregunta": "¿Quiénes encabezaron el Magonismo y qué medios usaron?",
+                    "respuesta": "Los Hermanos Flores Magón, a través del Partido Liberal Mexicano (PLM) y el periódico Regeneración.",
+                    "tema": "Porfiriato - Magonismo",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-020",
+                    "pregunta": "¿Cuál fue la ideología del Magonismo?",
+                    "respuesta": "Anarquista.",
+                    "tema": "Porfiriato - Magonismo",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-021",
+                    "pregunta": "¿Cuál fue el documento central del Maderismo y qué buscaba?",
+                    "respuesta": "El Plan de San Luis, proclamado por Francisco I. Madero para desconocer la reelección de Porfirio Díaz.",
+                    "tema": "Porfiriato - Maderismo",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-022",
+                    "pregunta": "¿Quién fue el primer presidente de México?",
+                    "respuesta": "Guadalupe Victoria (1824).",
+                    "tema": "Datos Clave",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-023",
+                    "pregunta": "¿Quién fue el primer virrey de Nueva España?",
+                    "respuesta": "Antonio de Mendoza.",
+                    "tema": "Datos Clave",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-024",
+                    "pregunta": "¿Qué estableció el Tratado de Córdoba (1821)?",
+                    "respuesta": "Ratificó la Independencia de México.",
+                    "tema": "Tratados",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist6-025",
+                    "pregunta": "¿Cuál fue el efecto político de la Entrevista Díaz-Creelman?",
+                    "respuesta": "La declaración de Díaz de que México estaba listo para la democracia alentó a los partidos de oposición a organizarse.",
+                    "tema": "Porfiriato - Crisis Política",
+                    "asignatura": "Historia de México"
+                }
+            ]
         }
     ]
 };

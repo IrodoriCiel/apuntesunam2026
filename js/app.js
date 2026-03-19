@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260318-26';
+const APP_VERSION = '20260319-3';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -2133,7 +2133,7 @@ function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColo
 
         return `
             <div class="unam-question-card" id="${prefix}-qcard-${contentId}-${idx}">
-                <p class="unam-question-text">${idx + 1}. ${q.pregunta}</p>
+                <p class="unam-question-text">${prefix === 'unam' && q.numero ? q.numero : idx + 1}. ${q.pregunta}</p>
                 <div class="unam-options">${optHtml}</div>
                 <button id="${prefix}-eval-btn-${contentId}-${idx}" class="unam-eval-btn" onclick="evalQuestion('${prefix}','${contentId}',${idx})" disabled>Evaluar</button>
                 <div id="${prefix}-feedback-${contentId}-${idx}" class="unam-feedback"></div>
