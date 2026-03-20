@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260319-3';
+const APP_VERSION = '20260320-1';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -1909,9 +1909,9 @@ function startSimulacroCompleto(total) {
     qContainer.innerHTML = '';
     simCorrect = 0;
 
-    // Construir pool por materia (uniendo los tres bancos)
+    // Construir pool por materia (uniendo los cuatro bancos de preguntas)
     const poolByMateria = {};
-    [unamQuestions, practiceQuestions, practiceLevel2Questions].forEach(obj => {
+    [unamQuestions, practiceQuestions, practiceLevel2Questions, (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {}].forEach(obj => {
         Object.keys(obj).forEach(key => {
             const mat = appDatabase[key]?.mainTopicTitle || key;
             if (!poolByMateria[mat]) poolByMateria[mat] = [];
@@ -2033,6 +2033,7 @@ function startSimulacro(filterMaterias = 'all') {
     };
     addFromObj(unamQuestions);
     addFromObj(practiceQuestions);
+    if (typeof bancoQuestions !== 'undefined') addFromObj(bancoQuestions);
 
     pool.sort(() => Math.random() - 0.5);
     currentSimExam = pool.slice(0, Math.min(20, pool.length));
@@ -2208,7 +2209,10 @@ function evalQuestion(prefix, contentId, qIdx) {
     if (selIdx === undefined) return;
     const q = prefix === 'sim' ? currentSimExam[qIdx] :
         (prefix === 'unam' ? unamQuestions[contentId] :
-            (prefix === 'prac2' ? practiceLevel2Questions[contentId] : practiceQuestions[contentId]))[qIdx];
+            prefix === 'prac2' ? practiceLevel2Questions[contentId] :
+            prefix === 'banco' ? ((typeof bancoQuestions !== 'undefined') ? bancoQuestions : {})[contentId] :
+            practiceQuestions[contentId])?.[qIdx];
+    if (!q || !q._shuffledIndices) return;
     const renderedIndices = q._shuffledIndices[prefix];
     const origSelected = renderedIndices[selIdx];
     const isCorrect = origSelected === q.respuesta;
@@ -2381,10 +2385,12 @@ function renderQuestionsForClass(contentId) {
     if (!container) return;
 
     // --- Lazy quiz placeholders (Feature: IntersectionObserver) ---
+    const bancoClaseObj = (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {};
     const quizTypes = [
         { type: 'prac',  obj: practiceQuestions,       title: '<i class="fa-solid fa-brain" style="color: #ec4899;"></i> Preguntas de Pr\u00e1ctica', color: '#ec4899' },
         { type: 'prac2', obj: practiceLevel2Questions,  title: '<i class="fa-solid fa-star" style="color: #8b5cf6;"></i> Preguntas de Pr\u00e1ctica Nivel 2', color: '#8b5cf6' },
-        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen" style="color:#2563eb;"></i> Preguntas de la Gu\u00eda UNAM', color: '#2563eb' }
+        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen" style="color:#2563eb;"></i> Preguntas de la Gu\u00eda UNAM', color: '#2563eb' },
+        { type: 'banco', obj: bancoClaseObj,            title: '<i class="fa-solid fa-database" style="color:#d97706;"></i> Banco de Pr\u00e1ctica', color: '#d97706' }
     ];
 
     quizTypes.forEach(qt => {
@@ -2469,6 +2475,7 @@ function setupLazyQuizSections(classId) {
             if (type === 'prac')  { questionsObj = practiceQuestions;       prefix = 'prac'; }
             else if (type === 'prac2') { questionsObj = practiceLevel2Questions; prefix = 'prac2'; }
             else if (type === 'unam')  { questionsObj = unamQuestions;           prefix = 'unam'; }
+            else if (type === 'banco') { questionsObj = (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {}; prefix = 'banco'; }
 
             if (questionsObj && questionsObj[classId]?.length) {
                 buildQuizSection(classId, questionsObj, prefix, title, color, ph);

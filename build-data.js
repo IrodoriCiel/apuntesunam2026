@@ -30,12 +30,39 @@ const materiaFiles = fs.readdirSync(MATERIA_DIR)
 
 const allMaterias = materiaFiles.map(f => loadMateriaFile(path.join(MATERIA_DIR, f)));
 
+// ─── 1b. Cargar banco de preguntas y mapeo por clase ─────────────────────────
+function loadBancoPreguntas() {
+    const bancoPath = 'recursos/banco-preguntas.js';
+    if (!fs.existsSync(bancoPath)) return { questions: {}, byClase: {} };
+    let src = fs.readFileSync(bancoPath, 'utf8');
+    src = src.replace('export const bancoPreguntas', 'const bancoPreguntas');
+    const mod = {};
+    (new Function('module', src + '\nmodule.exports = bancoPreguntas;'))(mod);
+    const bp = mod.exports;
+    const byClase = bp['_byClase'] || {};
+    delete bp['_byClase'];
+    return { questions: bp, byClase };
+}
+
+const banco = loadBancoPreguntas();
+// Indexar preguntas por numero para cada materia
+// Limpiar prefijo numérico hardcodeado del texto (ej. "22. ¿Qué tipo..." → "¿Qué tipo...")
+const bancoIndex = {};
+for (const [subject, qs] of Object.entries(banco.questions)) {
+    bancoIndex[subject] = {};
+    for (const q of qs) {
+        if (q.pregunta) q.pregunta = q.pregunta.replace(/^\d+\.\s*/, '');
+        bancoIndex[subject][q.numero] = q;
+    }
+}
+
 // ─── 2. Ensamblar los objetos globales ─────────────────────────────────────
 
 const appDatabase             = {};
 const unamQuestions           = {};
 const practiceQuestions       = {};
 const practiceLevel2Questions = {};
+const bancoQuestions          = {};
 const flashcardsDatabase      = [];
 const classFlashcards         = {}; // classId → flashcard[] en orden de apuntes
 
@@ -60,7 +87,7 @@ for (const materia of allMaterias) {
         if (n2 !== 5) warnings.push(`[${id}] nivel2 tiene ${n2} preguntas (se esperan 5)`);
 
         // respuesta válida (0-indexed dentro de opciones)
-        for (const [bank, qs] of [['unam', preguntas.unam || []], ['nivel1', preguntas.nivel1 || []], ['nivel2', preguntas.nivel2 || []]]) {
+        for (const [bank, qs] of [['unam', preguntas.unam || []], ['nivel1', preguntas.nivel1 || []], ['nivel2', preguntas.nivel2 || []], ['banco', preguntas.banco || []]]) {
             qs.forEach((q, i) => {
                 if (q.respuesta < 0 || q.respuesta >= (q.opciones || []).length) {
                     warnings.push(`[${id}/${bank}#${i}] respuesta=${q.respuesta} fuera de rango (${(q.opciones||[]).length} opciones)`);
@@ -84,6 +111,17 @@ for (const materia of allMaterias) {
         unamQuestions[id]              = preguntas.unam   || [];
         practiceQuestions[id]          = preguntas.nivel1 || [];
         practiceLevel2Questions[id]    = preguntas.nivel2 || [];
+
+        // Banco: combinar preguntas inline (si las hay) con las del banco-preguntas.js vía _byClase
+        const inlineBanco = preguntas.banco || [];
+        const mapping = banco.byClase[id];
+        let externalBanco = [];
+        if (mapping && bancoIndex[mapping.subject]) {
+            const idx = bancoIndex[mapping.subject];
+            externalBanco = mapping.nums.map(n => idx[n]).filter(Boolean);
+        }
+        bancoQuestions[id] = [...inlineBanco, ...externalBanco];
+
         classFlashcards[id]            = flashcards        || [];
         if (flashcards) flashcardsDatabase.push(...flashcards);
     }
@@ -105,17 +143,20 @@ if (errors.length) {
 const materiaNames = materiaFiles.map(f => f.replace('.js', ''));
 const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
+const bancoTotal = Object.values(bancoQuestions).flat().length;
+
 const bundle = `// js/data/data-bundle.js — AUTO-GENERADO por build-data.js
 // NO editar manualmente. Edita los archivos en js/data/materias/ y re-ejecuta build-data.js
 // Generado: ${now}
 // Materias: ${materiaNames.join(', ')}
 // Clases: ${Object.keys(appDatabase).length} | Flashcards: ${flashcardsDatabase.length} | Preguntas: ${
     Object.values(practiceQuestions).flat().length + Object.values(practiceLevel2Questions).flat().length
-}
+} | Banco: ${bancoTotal}
 const appDatabase=${JSON.stringify(appDatabase)};
 const unamQuestions=${JSON.stringify(unamQuestions)};
 const practiceQuestions=${JSON.stringify(practiceQuestions)};
 const practiceLevel2Questions=${JSON.stringify(practiceLevel2Questions)};
+const bancoQuestions=${JSON.stringify(bancoQuestions)};
 const flashcardsDatabase=${JSON.stringify(flashcardsDatabase)};
 const classFlashcards=${JSON.stringify(classFlashcards)};
 `;
@@ -130,7 +171,7 @@ const status = errors.length ? '❌' : warnings.length ? '⚠️ ' : '✓';
 console.log(`\n${status} ${outPath} generado (${sizeKB} KB)`);
 console.log(`  Clases     : ${Object.keys(appDatabase).length}`);
 console.log(`  Flashcards : ${flashcardsDatabase.length}`);
-console.log(`  Preguntas  : unam=${Object.values(unamQuestions).flat().length} nivel1=${Object.values(practiceQuestions).flat().length} nivel2=${Object.values(practiceLevel2Questions).flat().length}`);
+console.log(`  Preguntas  : unam=${Object.values(unamQuestions).flat().length} nivel1=${Object.values(practiceQuestions).flat().length} nivel2=${Object.values(practiceLevel2Questions).flat().length} banco=${bancoTotal}`);
 if (errors.length || warnings.length) {
     console.log(`  Errores    : ${errors.length} | Advertencias: ${warnings.length}`);
 }
