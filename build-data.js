@@ -118,7 +118,7 @@ for (const materia of allMaterias) {
         let externalBanco = [];
         if (mapping && bancoIndex[mapping.subject]) {
             const idx = bancoIndex[mapping.subject];
-            externalBanco = mapping.nums.map(n => idx[n]).filter(Boolean);
+            externalBanco = mapping.nums.map(n => idx[n]).filter(q => q && q.pregunta && q.pregunta.trim());
         }
         bancoQuestions[id] = [...inlineBanco, ...externalBanco];
 

@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260320-3';
+const APP_VERSION = '20260320-6';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -2113,7 +2113,7 @@ let userAnswers = {};
 function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor, insertBeforeEl = null) {
     const container = document.getElementById(contentId);
     if (!container) return;
-    const questions = questionsObj[contentId];
+    const questions = (questionsObj[contentId] || []).filter(q => q && q.pregunta && q.pregunta.trim());
     if (!questions || questions.length === 0) return;
 
     const section = document.createElement('div');
@@ -2161,6 +2161,7 @@ function toggleUnamQuestions(header) {
         c.style.display = 'flex';
         header.style.marginBottom = '25px';
         header.style.borderBottom = `2px solid ${ac}33`;
+        if (window.MathJax) window.MathJax.typesetPromise([c]).catch(() => {});
     } else {
         c.style.display = 'none';
         header.style.marginBottom = '0';
@@ -2479,6 +2480,7 @@ function setupLazyQuizSections(classId) {
 
             if (questionsObj && questionsObj[classId]?.length) {
                 buildQuizSection(classId, questionsObj, prefix, title, color, ph);
+                if (window.MathJax) window.MathJax.typesetPromise([document.getElementById(classId)]).catch(() => {});
             }
             ph.remove();
             observer.unobserve(ph);
