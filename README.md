@@ -16,15 +16,15 @@ Una plataforma interactiva de estudio diseñada específicamente para aspirantes
 
 | Materia | Clases |
 |---|---|
-| **Matemáticas** | Clase 1: El Término Algebraico · Clase 2: Multiplicación y Binomios · Clase 3: Triángulo de Pascal · Clase 4: Raíces y Agrupación · Clase 5: Binomio al Cuadrado · Clase 6: División Algebraica |
-| **Español** | Clase 1: Funciones del Lenguaje y Formas del Discurso · Clase 2: Gramática y Descripción |
-| **Literatura** | Clase 1: El Texto y la Comunicación · Clase 2: El Periodismo y el Reportaje |
-| **Química** | Clase 1: Materia, Mezclas y Cambios de Estado · Clase 2: Átomo, Tabla Periódica y Nomenclatura |
-| **Física** | Clase 1: Cinemática · Clase 2: Caída Libre y Movimiento Parabólico |
-| **Biología** | Clase 1: La Célula · Clase 2: Genética y Herencia |
-| **Geografía** | Clase 1: Geografía Física y Cartografía |
-| **Historia de México** | Clase 1: Prehispánico y Conquista · Clase 2: La Colonia e Independencia · Clase 3: México Independiente |
-| **Historia Universal** | Clase 1: Prehistoria y Mundo Antiguo · Clase 2: Ilustración y Revolución |
+| **Matemáticas** | Clase 1: El Término y Reglas Algebraicas · Clase 2: Multiplicación y Binomios · Clase 3: Triángulo de Pascal · Clase 4: Radicación y Productos Notables · Clase 5: Binomios a Potencia "n" · Clase 6: División Algebraica · Clase 7: Agrupación y Binomios · Clase 8: Ecuaciones · Clase 9: Sistemas de Ecuaciones |
+| **Español** | Clase 1: Funciones del Lenguaje y Modos del Discurso · Clase 2: Funciones, Formas del Discurso y Gramática · Clase 3: Modificadores, Enlaces y La Oración · Clase 4: La Oración, Núcleos y Complementos |
+| **Literatura** | Clase 1: El Texto y la Comunicación · Clase 2: Texto Periodístico y Texto Dramático · Clase 3: Género Dramático |
+| **Química** | Clase 1: Fundamentos y Materia · Clase 2: Cambios Físicos, Químicos y Estructura Atómica · Clase 3: Partículas Subatómicas y Números Cuánticos |
+| **Física** | Clase 1: Magnitudes, MRU y Velocidad Relativa · Clase 2: MRUA, Caída Libre y Dinámica Vectorial · Clase 3: Cinemática y Dinámica |
+| **Biología** | Clase 1: La Célula, Bioelementos y Biomoléculas · Clase 2: Proteínas, Ácidos Nucleicos y Célula |
+| **Geografía** | Clase 1: Definición y Objeto de Estudio |
+| **Historia de México** | Clase 1: Periodo Prehispánico y Conquista · Clase 2: Conquista, Virreinato e Independencia · Clase 3: México Independiente · Clase 4: Repaso General · Clase 5: Reforma Liberal e Intervención Francesa · Clase 6: Porfiriato y Revolución |
+| **Historia Universal** | Clase 1: Introducción a la Historia · Clase 2: De la Edad Media a la Ilustración · Clase 3: Independencia de EE.UU. y Revolución Francesa |
 
 ---
 
@@ -40,6 +40,7 @@ Una plataforma interactiva de estudio diseñada específicamente para aspirantes
 - **Preguntas Guía UNAM** (`unamQuestions`): Preguntas oficiales del banco de la UNAM organizadas por materia, con retroalimentación detallada.
 - **Práctica Nivel 1** (`practiceQuestions`): 5 preguntas por clase de complejidad básica/media con explicación de cada respuesta.
 - **Práctica Nivel 2** (`practiceLevel2Questions`): 5 preguntas por clase de tipo UNAM avanzado. Más difícil que el Nivel 1.
+- **Banco de Práctica** (`bancoQuestions`): ~1,600 preguntas adicionales provenientes de exámenes tipo Google Forms, distribuidas automáticamente por clase mediante el mapeo `_byClase` en `recursos/banco-preguntas.js`.
 - Retroalimentación inmediata con resaltado de la opción correcta e incorrecta al responder.
 - **Marcado de clases estudiadas**: botón para marcar/desmarcar clases como completadas, con persistencia en LocalStorage.
 
@@ -52,7 +53,7 @@ Una plataforma interactiva de estudio diseñada específicamente para aspirantes
 - El feed general mezcla aleatoriamente las tarjetas pendientes de todas las materias.
 - Filtro por **materia**: selector antes de iniciar la sesión por clase.
 - Los resultados se almacenan en **IndexedDB** (SRS – Spaced Repetition System).
-- Base de datos con **427+ flashcards** que cubren todas las materias.
+- Base de datos con **476+ flashcards** que cubren todas las materias.
 
 ### Simulacro de Examen
 Tres modos disponibles:
@@ -109,7 +110,7 @@ Tres modos disponibles:
 /
 ├── index.html              # SPA shell: HTML, navegación y plantillas de UI
 ├── sw.js                   # Service Worker: cache offline y actualizaciones
-├── build-data.js           # Script Node.js: genera data-bundle.js a partir de los archivos de materia
+├── build-data.js           # Script Node.js: genera data-bundle.js a partir de materias + banco-preguntas
 ├── manifest.json           # Configuración PWA
 ├── css/
 │   └── styles.css          # Sistema de diseño: tokens, temas, componentes, animaciones
@@ -130,8 +131,9 @@ Tres modos disponibles:
 ├── assets/
 │   └── images/             # Iconos PWA e imágenes (avatares)
 └── recursos/
-    ├── AGENTS.md           # Reglas para agentes de IA que contribuyan al proyecto
-    └── PreguntasGuiaUnam.txt # Banco oficial de preguntas UNAM
+    ├── AGENTS.md              # Reglas para agentes de IA que contribuyan al proyecto
+    ├── PreguntasGuiaUnam.txt  # Banco oficial de preguntas UNAM
+    └── banco-preguntas.js     # ~1,600 preguntas externas con mapeo _byClase a clases
 ```
 
 ---
@@ -146,7 +148,7 @@ cd apuntesunam2026
 # 2. Abrir en el navegador (o usar Live Server en VS Code para probar PWA)
 open index.html
 
-# 3. Después de editar cualquier archivo en js/data/materias/, regenerar el bundle:
+# 3. Después de editar cualquier archivo en js/data/materias/ o recursos/banco-preguntas.js:
 node build-data.js
 ```
 
@@ -159,7 +161,8 @@ node build-data.js
 Las reglas completas están en [`recursos/AGENTS.md`](./recursos/AGENTS.md) y en [`CLAUDE.md`](./CLAUDE.md). Incluyen:
 
 - Estructura del objeto de clase (ramas, subnodos, exam-tips, íconos FA6).
-- Formato de preguntas (`unamQuestions`, `practiceQuestions`, `practiceLevel2Questions`).
+- Formato de preguntas (`unamQuestions`, `practiceQuestions`, `practiceLevel2Questions`, `bancoQuestions`).
+- Flujo del banco de preguntas externo (`recursos/banco-preguntas.js` → `_byClase` → `build-data.js`).
 - Reglas de flashcards (1 concepto por tarjeta, sin tips, sin referencias al examen).
 - Procedimiento de actualización de versión PWA.
 

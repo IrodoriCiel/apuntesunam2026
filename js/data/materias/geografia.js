@@ -427,5 +427,425 @@ export const geografia = {
                 }
             ]
         }
+        ,
+        {
+            "title": "Apuntes de Geografía",
+            "titleIconLeft": "fa-map",
+            "titleIconRight": "fa-book",
+            "titleStyle": "color: #0d9488;",
+            "mainTopicId": "topic-geo-2",
+            "mainTopicClass": "topic-title",
+            "mainTopicTitle": "Geografía",
+            "mainTopicIcon1": "fa-earth-americas",
+            "mainTopicIcon2": "fa-map-location-dot",
+            "mainTopicSubtitle": "Clase 2: Coordenadas y Geografía Regional",
+            "branches": [
+                {
+                    "id": "nodes-geo2-1",
+                    "topicIdx": 1,
+                    "title": "1. Coordenadas Geográficas",
+                    "icon": "fa-location-crosshairs",
+                    "subnodes": [
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.1s",
+                            "title": "Latitud (Paralelos)",
+                            "content": "<p>Mide la distancia respecto al <b>Ecuador (0°)</b>. Rango: <b>0° a 90°</b> Norte o Sur. Las líneas de latitud son <b>horizontales</b> (paralelas al ecuador).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si los grados crecen hacia arriba en el mapa → Hemisferio Norte; si crecen hacia abajo → Hemisferio Sur.</div>"
+                        },
+                        {
+                            "icon": "fa-arrows-up-down",
+                            "delay": "0.2s",
+                            "title": "Longitud (Meridianos)",
+                            "content": "<p>Mide la distancia respecto al <b>Meridiano de Greenwich (0°)</b>. Rango: <b>0° a 180°</b> Este (E/Oriental) u Oeste (W/Occidental).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>El Oeste se abrevia con la letra <b>W</b> (del inglés <i>West</i>).</div>"
+                        },
+                        {
+                            "icon": "fa-map",
+                            "delay": "0.3s",
+                            "title": "Lectura de Mapas",
+                            "content": "<p>Para identificar el hemisferio en un fragmento de mapa, observa si los <b>números de latitud crecen hacia el Norte o hacia el Sur</b>, y si los de longitud crecen hacia el Este o hacia el Oeste.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo2-2",
+                    "topicIdx": 2,
+                    "title": "2. Geografía Regional: América y Asia",
+                    "icon": "fa-earth-americas",
+                    "subnodes": [
+                        {
+                            "icon": "fa-layer-group",
+                            "delay": "0.1s",
+                            "title": "División de América",
+                            "content": "<p>América se divide en: <b>Norteamérica</b>, <b>Centroamérica</b> (que incluye las Antillas) y <b>Sudamérica</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-flag",
+                            "delay": "0.2s",
+                            "title": "Quebec, Canadá",
+                            "content": "<p>En la provincia de <b>Quebec</b>, la mayoría de la población habla francés; sin embargo, la <b>minoría étnica principal son los ingleses</b>.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>La pregunta de examen pregunta por la <i>minoría</i>, no por la mayoría. Respuesta: los <b>ingleses</b>.</div>"
+                        },
+                        {
+                            "icon": "fa-globe",
+                            "delay": "0.3s",
+                            "title": "Países Transcontinentales",
+                            "content": "<p>Son países que pertenecen geográficamente a <b>dos continentes</b> por su gran extensión territorial. Ejemplo: <b>Rusia</b> (Europa y Asia).</p>"
+                        },
+                        {
+                            "icon": "fa-triangle-exclamation",
+                            "delay": "0.4s",
+                            "title": "Tensión Política en Asia",
+                            "content": "<p>La zona de <b>mayor tensión política en el mundo</b> actualmente es el conflicto entre <b>Israel y Palestina</b>.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo2-3",
+                    "topicIdx": 3,
+                    "title": "3. Geografía Regional: Europa y Rusia",
+                    "icon": "fa-earth-europe",
+                    "subnodes": [
+                        {
+                            "icon": "fa-water",
+                            "delay": "0.1s",
+                            "title": "Río Rin",
+                            "content": "<p>El <b>Río Rin</b> es la vía fluvial más importante de Europa. Permitió la industrialización al facilitar el transporte de <b>carbón y hierro</b> entre las ciudades de las llanuras.</p>"
+                        },
+                        {
+                            "icon": "fa-people-group",
+                            "delay": "0.2s",
+                            "title": "Minoría Etnolingüística en España",
+                            "content": "<p>La minoría etnolingüística ubicada al norte de España son los <b>Vascos</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-map-location-dot",
+                            "delay": "0.3s",
+                            "title": "Desintegración de Yugoslavia",
+                            "content": "<p>Yugoslavia se desintegró en la <b>década de los 90</b> tras la muerte de <b>Josip Broz &quot;Tito&quot;</b>.</p><p>Países resultantes: <b>Bosnia y Herzegovina, Croacia, Eslovenia, Macedonia del Norte, Montenegro, Serbia</b> y <b>Kosovo</b> (el último en 2008).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Región de los Balcanes = Yugoslavia desintegrada. Kosovo fue el último en independizarse (2008).</div>"
+                        },
+                        {
+                            "icon": "fa-flag",
+                            "delay": "0.4s",
+                            "title": "Desintegración de la URSS",
+                            "content": "<p>La <b>URSS se desintegró en 1991</b>, dando origen a <b>15 países independientes</b>.</p><p>Las <b>primeras repúblicas en separarse</b> fueron <b>Estonia y Lituania</b>.</p><p><b>Chechenia</b>: república federal que busca independencia de Rusia mediante conflictos violentos.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo2-4",
+                    "topicIdx": 4,
+                    "title": "4. África, Oceanía, Antártida y Conceptos",
+                    "icon": "fa-earth-africa",
+                    "subnodes": [
+                        {
+                            "icon": "fa-sun",
+                            "delay": "0.1s",
+                            "title": "África: Frontera Norte",
+                            "content": "<p>Los países situados más al norte de África (frontera mediterránea) son: <b>Marruecos, Argelia, Túnez, Libia, Egipto y Sudán</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-water",
+                            "delay": "0.2s",
+                            "title": "División de Oceanía",
+                            "content": "<p>Oceanía se divide en: <b>Australasia, Melanesia, Micronesia y Polinesia</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-snowflake",
+                            "delay": "0.3s",
+                            "title": "Antártida",
+                            "content": "<p>Es el <b>cuarto continente más grande</b>. Se denomina el <b>continente Austral</b> (el más al sur del planeta). Está cubierto en un <b>98% por hielo</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-microscope",
+                            "delay": "0.4s",
+                            "title": "Geomorfología vs. Edafología",
+                            "content": "<p><b>Geomorfología</b>: rama de la geografía física que estudia los <b>cambios dinámicos en el relieve</b> (montañas, valles).</p><p><b>Edafología</b>: estudia los <b>suelos en relación con las plantas</b>. No confundir las dos.</p>"
+                        },
+                        {
+                            "icon": "fa-people-group",
+                            "delay": "0.5s",
+                            "title": "Geografía Humana",
+                            "content": "<p>Estudia cómo las condiciones geográficas <b>influyen en la distribución de la población</b> y sus actividades económicas y sociales.</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/FdUgP44j0Sg",
+            "id": "content-geografia-2",
+            "preguntas": {
+                "unam": [
+                    {
+                        "numero": 44,
+                        "pregunta": "La región de los Balcanes tuvo grandes cambios territoriales debido a",
+                        "opciones": [
+                            "la separación de Chechenia.",
+                            "la unificación alemana.",
+                            "el expansionismo de Rumania.",
+                            "la desintegración de Yugoslavia."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "Yugoslavia se desintegró en la década de los 90 tras la muerte de Josip Broz 'Tito', dando origen a varios países en la región de los Balcanes."
+                    }
+                ],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál es el rango de la latitud y cuál es su línea de referencia para su medición?",
+                        "opciones": [
+                            "De 0° a 180°; referencia: Meridiano de Greenwich.",
+                            "De 0° a 90°; referencia: Ecuador.",
+                            "De 0° a 360°; referencia: Trópico de Cáncer.",
+                            "De 0° a 90°; referencia: Polo Norte."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La latitud, medida por los paralelos, va de 0° a 90° hacia el Norte o Sur, tomando como línea base el Ecuador (0°)."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "En la provincia canadiense de Quebec, la mayoría habla francés. ¿Cuál es la minoría étnica principal?",
+                        "opciones": [
+                            "Los inuit.",
+                            "Los hispanos.",
+                            "Los ingleses.",
+                            "Los francocanadienses."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Aunque la mayoría de Quebec es francófona, la minoría étnica principal son los ingleses, dato que se pregunta específicamente en el examen UNAM."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Cuál es la vía fluvial más importante de Europa y qué recursos permitió transportar para impulsar la industrialización?",
+                        "opciones": [
+                            "El Danubio; petróleo y gas natural.",
+                            "El Sena; madera y minerales preciosos.",
+                            "El Rin; carbón y hierro.",
+                            "El Volga; trigo y maíz."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Río Rin es la vía fluvial más importante de Europa. Al facilitar el transporte de carbón y hierro, impulsó la industrialización de las ciudades en las llanuras europeas."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuántos países independientes surgieron tras la desintegración de la URSS en 1991?",
+                        "opciones": [
+                            "7 países.",
+                            "10 países.",
+                            "15 países.",
+                            "20 países."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La desintegración de la Unión Soviética (URSS) en 1991 dio origen a 15 países independientes. Las primeras repúblicas en separarse fueron Estonia y Lituania."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cómo se denomina a la Antártida y cuál es su característica principal de cobertura?",
+                        "opciones": [
+                            "Continente Boreal; 98% cubierto de agua.",
+                            "Continente Austral; 98% cubierto de hielo.",
+                            "Continente Ártico; 100% deshabitado.",
+                            "Continente Polar; 50% cubierto de nieve."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La Antártida es el cuarto continente más grande y se denomina 'Austral' por ser el más al sur del planeta. Está cubierto en un 98% por hielo."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Un estudiante observa un fragmento de mapa y nota que los números de latitud aumentan de abajo hacia arriba. Al mismo tiempo, los números de longitud crecen hacia la izquierda. ¿En qué hemisferios se ubica el punto señalado?",
+                        "opciones": [
+                            "Hemisferio Sur y Hemisferio Este.",
+                            "Hemisferio Norte y Hemisferio Este.",
+                            "Hemisferio Norte y Hemisferio Oeste.",
+                            "Hemisferio Sur y Hemisferio Oeste."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Si la latitud aumenta hacia arriba indica Hemisferio Norte. Si la longitud crece hacia la izquierda (occidente) indica Hemisferio Oeste, abreviado con W (West en inglés)."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Yugoslavia se desintegró en los años 90. ¿Cuál fue el último país en independizarse, en 2008?",
+                        "opciones": [
+                            "Bosnia y Herzegovina.",
+                            "Montenegro.",
+                            "Eslovenia.",
+                            "Kosovo."
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "Tras la muerte de Josip Broz 'Tito', Yugoslavia se fragmentó en varios países. Kosovo fue el último en declarar su independencia, en 2008."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Un analista afirma: 'Este país pertenece a dos continentes por su enorme extensión y fue la potencia cuya disolución generó 15 nuevas naciones en 1991'. ¿A qué país y proceso se refiere?",
+                        "opciones": [
+                            "Yugoslavia y su desintegración en los Balcanes.",
+                            "Rusia y la desintegración de la URSS.",
+                            "China y la separación de Taiwán.",
+                            "Turquía y la división de Chipre."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Rusia es un país transcontinental (Europa y Asia). La disolución de la URSS en 1991, de la que Rusia era el estado principal, dio origen a 15 países independientes."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Un geógrafo estudia procesos erosivos que modelan montañas y valles. Su colega analiza la composición del suelo para determinar qué cultivos son viables. ¿Qué ramas practican respectivamente?",
+                        "opciones": [
+                            "Geomorfología y Geopolítica.",
+                            "Hidrografía y Zoogeografía.",
+                            "Geomorfología y Edafología.",
+                            "Orografía y Demografía."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Geomorfología estudia los cambios dinámicos en el relieve (montañas, valles). La Edafología estudia los suelos y su relación con las plantas y cultivos."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuáles son los seis países que conforman la frontera norte de África (costa mediterránea)?",
+                        "opciones": [
+                            "Nigeria, Ghana, Costa de Marfil, Senegal, Guinea, Camerún.",
+                            "Marruecos, Argelia, Túnez, Libia, Egipto y Sudán.",
+                            "Etiopía, Somalia, Kenia, Tanzania, Mozambique y Sudáfrica.",
+                            "Angola, Namibia, Botsuana, Zimbabwe, Zambia y Malaui."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Los países del norte de África que limitan con el Mar Mediterráneo (de oeste a este) son: Marruecos, Argelia, Túnez, Libia, Egipto y Sudán."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "geo2-001",
+                    "pregunta": "¿Cuál es el rango de la Latitud y cuál es su línea de referencia (0°)?",
+                    "respuesta": "De 0° a 90° Norte o Sur. Referencia: el Ecuador.",
+                    "tema": "Coordenadas Geográficas",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-002",
+                    "pregunta": "¿Cuál es el rango de la Longitud y cuál es su línea de referencia (0°)?",
+                    "respuesta": "De 0° a 180° Este u Oeste. Referencia: el Meridiano de Greenwich.",
+                    "tema": "Coordenadas Geográficas",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-003",
+                    "pregunta": "En un mapa, ¿cómo identificas si un punto está en el Hemisferio Norte o Sur?",
+                    "respuesta": "Si los números de latitud crecen hacia arriba → Hemisferio Norte. Si crecen hacia abajo → Hemisferio Sur.",
+                    "tema": "Coordenadas Geográficas",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-004",
+                    "pregunta": "¿Cómo se divide el continente americano en geografía regional?",
+                    "respuesta": "En Norteamérica, Centroamérica (incluye las Antillas) y Sudamérica.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-005",
+                    "pregunta": "¿Cuál es la minoría étnica principal en la provincia de Quebec, Canadá?",
+                    "respuesta": "Los ingleses (la mayoría habla francés, pero la minoría son los ingleses).",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-006",
+                    "pregunta": "¿Qué son los países transcontinentales y cuál es el ejemplo principal?",
+                    "respuesta": "Países que pertenecen a dos continentes por su gran extensión. Ejemplo: Rusia (Europa y Asia).",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-007",
+                    "pregunta": "¿Cuál es la zona de mayor tensión política en el mundo actualmente?",
+                    "respuesta": "Israel y Palestina.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-008",
+                    "pregunta": "¿Cuál es la vía fluvial más importante de Europa y qué recursos transportó para la industrialización?",
+                    "respuesta": "El Río Rin. Facilitó el transporte de carbón y hierro.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-009",
+                    "pregunta": "¿Cuál es la minoría etnolingüística ubicada al norte de España?",
+                    "respuesta": "Los Vascos.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-010",
+                    "pregunta": "¿Cuándo y por qué se desintegró Yugoslavia?",
+                    "respuesta": "En la década de los 90, tras la muerte de Josip Broz 'Tito'.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-011",
+                    "pregunta": "¿Cuál fue el último país en independizarse de la ex-Yugoslavia y en qué año?",
+                    "respuesta": "Kosovo, en 2008.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-012",
+                    "pregunta": "¿En qué año se desintegró la URSS y cuántos países independientes originó?",
+                    "respuesta": "En 1991; originó 15 países independientes.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-013",
+                    "pregunta": "¿Cuáles fueron las primeras repúblicas en separarse de la URSS?",
+                    "respuesta": "Estonia y Lituania.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-014",
+                    "pregunta": "¿Qué es Chechenia y cuál es su situación política respecto a Rusia?",
+                    "respuesta": "Una república federal rusa que busca su independencia de Rusia mediante conflictos violentos.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-015",
+                    "pregunta": "¿Cuáles son los seis países que forman la frontera norte de África?",
+                    "respuesta": "Marruecos, Argelia, Túnez, Libia, Egipto y Sudán.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-016",
+                    "pregunta": "¿En cuántas subregiones se divide Oceanía y cuáles son?",
+                    "respuesta": "Cuatro: Australasia, Melanesia, Micronesia y Polinesia.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-017",
+                    "pregunta": "¿Por qué se llama 'continente Austral' a la Antártida y qué porcentaje está cubierto de hielo?",
+                    "respuesta": "Porque es el continente más al sur del planeta. Está cubierto en un 98% por hielo.",
+                    "tema": "Geografía Regional",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-018",
+                    "pregunta": "¿Qué estudia la Geomorfología y en qué se diferencia de la Edafología?",
+                    "respuesta": "Geomorfología: cambios en el relieve (montañas, valles). Edafología: el suelo y su relación con las plantas.",
+                    "tema": "Conceptos Técnicos",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo2-019",
+                    "pregunta": "¿Qué estudia la Geografía Humana?",
+                    "respuesta": "Cómo las condiciones geográficas influyen en la distribución de la población y sus actividades.",
+                    "tema": "Conceptos Técnicos",
+                    "asignatura": "Geografía"
+                }
+            ]
+        }
     ]
 };

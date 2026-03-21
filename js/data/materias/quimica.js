@@ -1111,5 +1111,354 @@ export const quimica = {
                 }
             ]
         }
+        ,
+        {
+            "title": "Apuntes de Química",
+            "titleIconLeft": "fa-flask",
+            "titleIconRight": "fa-book",
+            "titleStyle": "color: #7c3aed;",
+            "mainTopicId": "topic-qui-4",
+            "mainTopicClass": "topic-title",
+            "mainTopicTitle": "Química",
+            "mainTopicIcon1": "fa-atom",
+            "mainTopicIcon2": "fa-table-cells",
+            "mainTopicSubtitle": "Clase 4: Spin, Diagrama de Müller, Kernel e Iones",
+            "branches": [
+                {
+                    "id": "nodes-qui4-1",
+                    "topicIdx": 1,
+                    "title": "1. Spin y Número Atómico",
+                    "icon": "fa-rotate",
+                    "subnodes": [
+                        {
+                            "icon": "fa-arrows-up-down",
+                            "delay": "0.1s",
+                            "title": "Número Cuántico de Spin ($s$)",
+                            "content": "<p>Describe el giro del electrón sobre su propio eje. Se representa con flechas:</p><ul><li>Flecha hacia arriba ↑: valor <b>$+1/2$</b></li><li>Flecha hacia abajo ↓: valor <b>$-1/2$</b></li></ul><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Un orbital solo puede contener <b>máximo 2 electrones</b> y siempre deben tener <b>espines opuestos</b> (uno ↑ y uno ↓).</div>"
+                        },
+                        {
+                            "icon": "fa-hashtag",
+                            "delay": "0.2s",
+                            "title": "Número Atómico ($Z$) vs. Masa Atómica ($A$)",
+                            "content": "<p><b>Número Atómico ($Z$)</b>: valor entero (ej. Carbono = 6). Indica la cantidad de <b>protones</b> y, en un átomo neutro, también la de <b>electrones</b>. Es el dato clave para la configuración electrónica.</p><p><b>Masa Atómica ($A$)</b>: valor con punto decimal (ej. Carbono = 12.01). Indica el peso del núcleo.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui4-2",
+                    "topicIdx": 2,
+                    "title": "2. Diagrama de Müller (Regla de las Diagonales)",
+                    "icon": "fa-diagram-project",
+                    "subnodes": [
+                        {
+                            "icon": "fa-house",
+                            "delay": "0.1s",
+                            "title": "Capacidad de los Subniveles",
+                            "content": "<p>Cada subnivel tiene una capacidad máxima de electrones:</p><table style='width:100%;border-collapse:collapse;font-size:0.9em'><tr style='background:var(--card-bg)'><th style='padding:4px 8px;border:1px solid var(--border-color)'>Subnivel</th><th style='padding:4px 8px;border:1px solid var(--border-color)'>Capacidad</th><th style='padding:4px 8px;border:1px solid var(--border-color)'>Niveles</th></tr><tr><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'><b>S</b></td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>$2e^-$</td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>1 al 7</td></tr><tr><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'><b>P</b></td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>$6e^-$</td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>2 al 7</td></tr><tr><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'><b>D</b></td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>$10e^-$</td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>3 al 6</td></tr><tr><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'><b>F</b></td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>$14e^-$</td><td style='padding:4px 8px;border:1px solid var(--border-color);text-align:center'>4 al 5</td></tr></table>"
+                        },
+                        {
+                            "icon": "fa-arrow-right-arrow-left",
+                            "delay": "0.2s",
+                            "title": "Orden de Llenado (No es Lineal)",
+                            "content": "<p>Las diagonales del diagrama de Müller indican el orden correcto:</p><p style='line-height:2'>1s &rarr; 2s &rarr; 2p &rarr; 3s &rarr; 3p &rarr; <b>4s</b> &rarr; <b>3d</b> &rarr; 4p &rarr; 5s &rarr; 4d &rarr; 5p &rarr; 6s &rarr; 4f &rarr; 5d...</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>El <b>4s va ANTES que el 3d</b>. Este salto es el error más frecuente en el examen.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui4-3",
+                    "topicIdx": 3,
+                    "title": "3. Método de Kernel (Configuración Simplificada)",
+                    "icon": "fa-boxes-stacked",
+                    "subnodes": [
+                        {
+                            "icon": "fa-list-check",
+                            "delay": "0.1s",
+                            "title": "Cómo Aplicar el Método de Kernel",
+                            "content": "<p>Permite abreviar configuraciones largas usando un <b>Gas Noble como base</b>:</p><ol><li>Busca el Gas Noble con $Z$ más cercano al elemento pero que <b>no se pase</b>.</li><li>Colócalo entre corchetes <b>$[X]$</b>.</li><li>Completa los electrones restantes siguiendo el orden de Müller.</li></ol>"
+                        },
+                        {
+                            "icon": "fa-gas-pump",
+                            "delay": "0.2s",
+                            "title": "Gases Nobles de Referencia",
+                            "content": "<p>Los cinco gases nobles usados como base de Kernel con su número de electrones:</p><ul><li><b>$[He] = 2$</b></li><li><b>$[Ne] = 10$</b></li><li><b>$[Ar] = 18$</b></li><li><b>$[Kr] = 36$</b></li><li><b>$[Xe] = 54$</b></li></ul><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Memoriza estos cinco valores. Son la base de todas las configuraciones simplificadas.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui4-4",
+                    "topicIdx": 4,
+                    "title": "4. Iones y Tips para el Examen",
+                    "icon": "fa-scale-balanced",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-minus",
+                            "delay": "0.1s",
+                            "title": "Anión (Carga $-$): Gana Electrones",
+                            "content": "<p>Un <b>anión</b> es un átomo que <b>ganó electrones</b>, por eso tiene carga negativa.</p><p><b>Procedimiento:</b> $Z +$ carga (valor absoluto) = total de electrones a configurar.</p><p><b>Ejemplo:</b> $O^{-2}$ ($Z=8$): $8 + 2 = 10$ electrones. Configurar para 10 $e^-$.</p>"
+                        },
+                        {
+                            "icon": "fa-circle-plus",
+                            "delay": "0.2s",
+                            "title": "Catión (Carga $+$): Pierde Electrones",
+                            "content": "<p>Un <b>catión</b> es un átomo que <b>perdió electrones</b>, por eso tiene carga positiva.</p><p><b>Procedimiento:</b> $Z -$ carga = total de electrones a configurar.</p><p><b>Ejemplo:</b> $Al^{+3}$ ($Z=13$): $13 - 3 = 10$ electrones. Configurar para 10 $e^-$.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Siempre haz la suma/resta de electrones <b>primero</b> y luego aplica el diagrama de Müller sobre el total resultante.</div>"
+                        },
+                        {
+                            "icon": "fa-ban",
+                            "delay": "0.3s",
+                            "title": "Subniveles que No Existen",
+                            "content": "<p>Para identificar opciones incorrectas en el examen, recuerda que ciertos subniveles <b>no existen</b>:</p><ul><li><b>$1p$</b> — no existe (p inicia en nivel 2)</li><li><b>$2d$</b> — no existe (d inicia en nivel 3)</li><li><b>$3f$</b> — no existe (f inicia en nivel 4)</li></ul><p>Si ves alguno de estos en las opciones, descártalo de inmediato.</p>"
+                        },
+                        {
+                            "icon": "fa-sigma",
+                            "delay": "0.4s",
+                            "title": "Verificación por Sumatoria",
+                            "content": "<p>Para confirmar que una configuración es correcta, suma todos los exponentes de los subniveles. El resultado debe coincidir con el número total de electrones del átomo o ion a configurar.</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/RwDLUd72KCo",
+            "id": "content-quimica-4",
+            "preguntas": {
+                "unam": [
+                    {
+                        "numero": 23,
+                        "pregunta": "El elemento con un número atómico 17 y configuración electrónica 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>5</sup> se ubica en la familia",
+                        "opciones": [
+                            "III A",
+                            "III B",
+                            "II A",
+                            "VII A"
+                        ],
+                        "respuesta": 3,
+                        "retroalimentacion": "El último subnivel es $3p^5$: tiene 5 electrones en el subnivel p de valencia, lo que corresponde a la familia VII A (halógenos). Suma de exponentes: 2+2+6+2+5 = 17, confirma Z=17 (Cloro)."
+                    }
+                ],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Qué valores puede tomar el número cuántico de spin ($s$)?",
+                        "opciones": [
+                            "$0$ y $1$.",
+                            "$+1/2$ y $-1/2$.",
+                            "$-1$, $0$ y $+1$.",
+                            "$1$ y $2$."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El spin describe el giro del electrón: flecha arriba (↑) corresponde a $+1/2$ y flecha abajo (↓) corresponde a $-1/2$."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuántos electrones caben como máximo en un orbital y qué condición deben cumplir?",
+                        "opciones": [
+                            "1 electrón; sin condición.",
+                            "2 electrones; deben tener espines iguales.",
+                            "2 electrones; deben tener espines opuestos.",
+                            "4 electrones; deben tener espines opuestos."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Un orbital contiene máximo 2 electrones y siempre deben tener espines opuestos: uno con $+1/2$ y otro con $-1/2$."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "En el diagrama de Müller, ¿qué subnivel se llena primero: $4s$ o $3d$?",
+                        "opciones": [
+                            "$3d$, porque su nivel principal es menor.",
+                            "$4s$, porque las diagonales del diagrama lo indican así.",
+                            "Se llenan al mismo tiempo.",
+                            "$4s$, solo si el átomo tiene más de 20 electrones."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El diagrama de Müller establece que el $4s$ se llena antes que el $3d$. El orden no es lineal; siempre se siguen las diagonales."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Para obtener la configuración electrónica del anión $S^{-2}$ ($Z=16$), ¿con cuántos electrones se trabaja?",
+                        "opciones": [
+                            "14.",
+                            "16.",
+                            "18.",
+                            "32."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Un anión gana electrones: $16 + 2 = 18$ electrones totales. Se configura el subnivel para 18 $e^-$."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Usando el método de Kernel, el Gas Noble $[Ar]$ representa una base de _____ electrones.",
+                        "opciones": [
+                            "2.",
+                            "10.",
+                            "18.",
+                            "36."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Los Gases Nobles de Kernel son: [He]=2, [Ne]=10, [Ar]=18, [Kr]=36, [Xe]=54."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "El catión $Fe^{+3}$ tiene $Z=26$. ¿Cuántos electrones se usan para su configuración y cuál es el subnivel de mayor energía al que llegarías siguiendo el diagrama de Müller?",
+                        "opciones": [
+                            "29 electrones; $4p$.",
+                            "26 electrones; $4s$.",
+                            "23 electrones; $3d$.",
+                            "23 electrones; $4s$."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Catión pierde electrones: $26 - 3 = 23$. Configurando para 23 $e^-$ con Müller: $[Ar]3d^5$. El último subnivel ocupado es $3d$."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Un estudiante escribe la siguiente configuración electrónica: 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 2d<sup>3</sup>. ¿Cuál es el error?",
+                        "opciones": [
+                            "El 2p<sup>6</sup> debería ser 2p<sup>4</sup>.",
+                            "El subnivel 2d no existe; el subnivel d inicia en el nivel 3.",
+                            "Se excede la capacidad del subnivel 2s.",
+                            "El orden debería empezar con 2s antes que 1s."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El subnivel d inicia en el nivel de energía 3, no en el 2. $2d$ no existe. Si aparece en una opción del examen, descártala de inmediato."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "El potasio ($K$, $Z=19$) usa el Kernel $[Ar]$. ¿Cuántos electrones quedan por distribuir después del Kernel y en qué subnivel se ubican siguiendo el orden de Müller?",
+                        "opciones": [
+                            "1 electrón en $3d$.",
+                            "1 electrón en $4s$.",
+                            "2 electrones en $4s$.",
+                            "1 electrón en $4p$."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "$[Ar] = 18$ electrones. Quedan $19 - 18 = 1$ electrón. Siguiendo Müller, el siguiente subnivel disponible después de $3p$ es $4s$. Por tanto: $[Ar]4s^1$."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Dos átomos distintos, uno neutro y otro como ion, terminan teniendo exactamente 10 electrones. El neutro tiene $Z=10$ y el ion tiene $Z=8$ con carga $-2$. ¿Qué tienen en común según su configuración electrónica?",
+                        "opciones": [
+                            "Son isótopos del mismo elemento.",
+                            "Tienen la misma configuración electrónica.",
+                            "Tienen el mismo número de protones.",
+                            "Tienen el mismo número de neutrones."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El Neón ($Z=10$) neutro tiene 10 $e^-$. El Oxígeno $O^{-2}$ ($Z=8$, gana 2) también tiene $8+2=10$ $e^-$. Ambos comparten la configuración $1s^2\\ 2s^2\\ 2p^6$. Son isoelectrónicos."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "En el examen te muestran cuatro configuraciones. ¿Cuál es la CORRECTA para el elemento con $Z=11$ (Sodio)?",
+                        "opciones": [
+                            "1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 2d<sup>1</sup>",
+                            "1s<sup>2</sup> 2s<sup>2</sup> 1p<sup>6</sup> 3s<sup>1</sup>",
+                            "1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup>",
+                            "1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>5</sup> 3s<sup>2</sup>"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La opción A usa 2d (no existe). La B usa 1p (no existe). La D suma 11 pero el orden es incorrecto (viola las reglas de llenado). La C es correcta: sigue el orden de Müller y la suma de exponentes da 2+2+6+1=11."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "qui4-001",
+                    "pregunta": "¿Qué valores puede tomar el número cuántico de spin ($s$)?",
+                    "respuesta": "$+1/2$ (flecha ↑) o $-1/2$ (flecha ↓).",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-002",
+                    "pregunta": "¿Cuántos electrones caben en un orbital y qué condición deben cumplir?",
+                    "respuesta": "Máximo 2 electrones, con espines opuestos (uno ↑ y uno ↓).",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-003",
+                    "pregunta": "¿Qué diferencia al Número Atómico ($Z$) de la Masa Atómica ($A$)?",
+                    "respuesta": "$Z$: valor entero, indica cantidad de protones (y electrones en átomo neutro). $A$: valor decimal, indica el peso del núcleo.",
+                    "tema": "Tabla Periódica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-004",
+                    "pregunta": "¿Para qué sirve el diagrama de Müller?",
+                    "respuesta": "Para conocer el orden en que se llenan los orbitales (subniveles) con electrones.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-005",
+                    "pregunta": "¿Cuál es la capacidad máxima de electrones de los subniveles S, P, D y F?",
+                    "respuesta": "S=2, P=6, D=10, F=14.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-006",
+                    "pregunta": "En el diagrama de Müller, ¿qué subnivel se llena antes: $4s$ o $3d$?",
+                    "respuesta": "$4s$ se llena antes que $3d$. El orden de llenado no es lineal.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-007",
+                    "pregunta": "¿Qué es el método de Kernel y cómo se aplica?",
+                    "respuesta": "Simplifica la configuración usando el Gas Noble más cercano (sin pasarse) entre corchetes, y se completa lo que falta con el orden de Müller.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-008",
+                    "pregunta": "¿Cuántos electrones representan los Gases Nobles $[He]$, $[Ne]$ y $[Ar]$?",
+                    "respuesta": "$[He]=2$, $[Ne]=10$, $[Ar]=18$.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-009",
+                    "pregunta": "¿Cuántos electrones representan los Gases Nobles $[Kr]$ y $[Xe]$?",
+                    "respuesta": "$[Kr]=36$, $[Xe]=54$.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-010",
+                    "pregunta": "¿Qué es un anión y cómo afecta la cantidad de electrones?",
+                    "respuesta": "Átomo con carga negativa que ganó electrones. Se suma la carga al $Z$ para obtener el total de electrones.",
+                    "tema": "Iones",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-011",
+                    "pregunta": "¿Qué es un catión y cómo afecta la cantidad de electrones?",
+                    "respuesta": "Átomo con carga positiva que perdió electrones. Se resta la carga al $Z$ para obtener el total de electrones.",
+                    "tema": "Iones",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-012",
+                    "pregunta": "¿Cuántos electrones tiene el ion $O^{-2}$ ($Z=8$) para su configuración?",
+                    "respuesta": "$8 + 2 = 10$ electrones.",
+                    "tema": "Iones",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-013",
+                    "pregunta": "¿Cuáles son los tres subniveles que NO existen en la tabla periódica?",
+                    "respuesta": "$1p$, $2d$ y $3f$ no existen. P inicia en nivel 2, D en nivel 3, F en nivel 4.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui4-014",
+                    "pregunta": "¿Cómo verificas que una configuración electrónica es correcta?",
+                    "respuesta": "Sumando todos los exponentes de los subniveles; el total debe coincidir con el número de electrones del átomo o ion.",
+                    "tema": "Configuración Electrónica",
+                    "asignatura": "Química"
+                }
+            ]
+        }
     ]
 };
