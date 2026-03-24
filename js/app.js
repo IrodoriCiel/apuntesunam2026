@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260320-6';
+const APP_VERSION = '20260323-3';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -96,6 +96,9 @@ window.showToast = function (msg, type = 'success') {
     if (!container) {
         container = document.createElement('div');
         container.id = 'toast-container';
+        container.setAttribute('aria-live', 'polite');
+        container.setAttribute('aria-atomic', 'true');
+        container.setAttribute('role', 'status');
         document.body.appendChild(container);
     }
 
@@ -950,7 +953,7 @@ function buildSearchTextForClass(classId) {
 }
 
 function fuzzyWordExists(token, sourceText) {
-    if (token.length < 4) return false;
+    if (token.length < 3) return false;
     const words = sourceText.split(/\s+/).filter(w => Math.abs(w.length - token.length) <= 1);
     return words.some(word => {
         let mismatch = 0;
@@ -1195,8 +1198,9 @@ function renderClassContainer(classId) {
             const exHtml = sub.examples ? `<div class="example-box"><ul>${sub.examples.map(e => `<li>${e}</li>`).join('')}</ul></div>` : '';
             const snName = (sub.name || sub.title || '').replace(/'/g, "\\'");
             const quizIcon = `<i class="fa-solid fa-clone subnode-quiz-icon-btn" title="Quiz rapido" onclick="event.stopPropagation();showSubnodeQuiz('${classId}','${snName}','${branch.id}')"></i>`;
+            const cappedDelay = Math.min(parseFloat(sub.delay) || 0.1, 0.3) + 's';
             html += `
-                <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay:${sub.delay};">
+                <div class="sub-node topic-${branch.topicIdx}-sub" style="animation-delay:${cappedDelay};">
                     <h3>${sub.icon ? `<div><i class="fa-solid ${sub.icon}"></i> ${sub.title} ${quizIcon}</div>` : `${sub.title} ${quizIcon}`}</h3>
                     ${sanitizeHTML(sub.content)}${exHtml}
                 </div>
@@ -1421,8 +1425,12 @@ function getParentBtnIdForClass(contentId) {
     if (contentId.startsWith('content-espanol')) return 'btn-espanol';
     if (contentId.startsWith('content-matematicas')) return 'btn-matematicas';
     if (contentId.startsWith('content-quimica')) return 'btn-quimica';
+    if (contentId.startsWith('content-hist-univ')) return 'btn-hist-univ';
     if (contentId.startsWith('content-historia')) return 'btn-historia';
     if (contentId.startsWith('content-literatura')) return 'btn-literatura';
+    if (contentId.startsWith('content-biologia')) return 'btn-biologia';
+    if (contentId.startsWith('content-fisica')) return 'btn-fisica';
+    if (contentId.startsWith('content-geografia')) return 'btn-geografia';
     return 'btn-inicio';
 }
 
@@ -1882,6 +1890,10 @@ function startSimTimer(totalMinutes) {
 
         const pct = seconds / total;
         if (bar) bar.style.background = pct > 0.3 ? '#2563eb' : pct > 0.1 ? '#f59e0b' : '#dc2626';
+        if (display) {
+            display.classList.toggle('timer-warning', pct <= 0.3 && pct > 0.1);
+            display.classList.toggle('timer-danger', pct <= 0.1);
+        }
 
         if (seconds <= 0) {
             clearInterval(window._simTimerInterval);
@@ -2066,15 +2078,42 @@ function showSimResults() {
     stopSimTimer();
     const total = currentSimExam.length;
     let correct = 0;
+
+    // Desglose por materia
+    const breakdown = {};
     currentSimExam.forEach((q, idx) => {
+        const materia = appDatabase[q.originalKey]?.mainTopicTitle || 'Otra';
+        if (!breakdown[materia]) breakdown[materia] = { correct: 0, total: 0 };
+        breakdown[materia].total++;
         const feedback = document.getElementById(`sim-feedback-simulacro-questions-${idx}`);
-        if (feedback && feedback.classList.contains('correct-feedback')) correct++;
+        if (feedback && feedback.classList.contains('correct-feedback')) {
+            correct++;
+            breakdown[materia].correct++;
+        }
     });
     const pct = Math.round((correct / total) * 100);
     const emoji = pct >= 80 ? '🎉' : pct >= 60 ? '👍' : '💪';
 
     // Guardar en historial
     saveSimHistory({ correct, total, date: Date.now() });
+
+    // Generar desglose HTML
+    const metaIcon = window.MATERIA_ICON || {};
+    const breakdownRows = Object.entries(breakdown)
+        .sort((a, b) => (a[1].correct / a[1].total) - (b[1].correct / b[1].total))
+        .map(([mat, data]) => {
+            const meta = metaIcon[mat] || { icon: 'fa-bookmark', color: '#64748b' };
+            const matPct = Math.round((data.correct / data.total) * 100);
+            const barColor = matPct >= 80 ? '#10b981' : matPct >= 60 ? '#f59e0b' : '#ef4444';
+            return `<div class="sim-breakdown-row">
+                <i class="fa-solid ${meta.icon}" style="color:${meta.color}"></i>
+                <span class="sim-breakdown-label">${mat}</span>
+                <div class="sim-breakdown-bar-track">
+                    <div class="sim-breakdown-bar-fill" style="width:${matPct}%;background:${barColor};"></div>
+                </div>
+                <span class="sim-breakdown-score" style="color:${barColor}">${data.correct}/${data.total}</span>
+            </div>`;
+        }).join('');
 
     const qContainer = document.getElementById('simulacro-questions');
     const panel = document.createElement('div');
@@ -2085,9 +2124,13 @@ function showSimResults() {
             ${correct}<span>de ${total}</span>
         </div>
         <div class="sim-results-grid">
-            <div class="sim-stat-box"><div class="stat-num">${correct}</div><div class="stat-label">Correctas ✅</div></div>
-            <div class="sim-stat-box"><div class="stat-num">${total - correct}</div><div class="stat-label">Incorrectas ❌</div></div>
-            <div class="sim-stat-box"><div class="stat-num">${pct}%</div><div class="stat-label">Calificación</div></div>
+            <div class="sim-stat-box"><div class="stat-num">${correct}</div><div class="stat-label">Correctas</div></div>
+            <div class="sim-stat-box"><div class="stat-num">${total - correct}</div><div class="stat-label">Incorrectas</div></div>
+            <div class="sim-stat-box"><div class="stat-num">${pct}%</div><div class="stat-label">Calificaci\u00f3n</div></div>
+        </div>
+        <div class="sim-breakdown">
+            <div class="sim-breakdown-title"><i class="fa-solid fa-chart-bar"></i> Desglose por Materia</div>
+            ${breakdownRows}
         </div>
         <p style="opacity:.85;margin-bottom:15px;">${pct >= 80 ? '¡Excelente! Estás bien preparado.' : pct >= 60 ? 'Buen progreso. ¡Sigue repasando!' : '¡No te rindas! Repasa y vuelve a intentarlo.'}</p>
         <button class="btn-new-sim" onclick="switchClass('content-simulacro', document.getElementById('btn-simulacro'), 'btn-simulacro')">
@@ -2379,6 +2422,9 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
 
     // Actualizar badge "estudiado" en menú
     updateStudiedBadges();
+
+    // Floating next class button
+    updateFloatingNextBtn(contentId);
 }
 
 function renderQuestionsForClass(contentId) {
@@ -3556,5 +3602,41 @@ function renderTimeline(classId) {
                 <div class="timeline-desc">${e.desc}</div>
             </div>`).join('')}
         </div>`;
+}
+
+// =============================================
+// FLOATING NEXT CLASS BUTTON
+// =============================================
+let _floatingNextBtn = null;
+
+function updateFloatingNextBtn(contentId) {
+    // Remove existing
+    if (_floatingNextBtn) { _floatingNextBtn.remove(); _floatingNextBtn = null; }
+
+    const data = appDatabase?.[contentId];
+    if (!data) return;
+
+    const nav = getClassNavigationTargets(contentId);
+    if (!nav.nextId) return;
+
+    const nextData = appDatabase[nav.nextId];
+    const nextSlug = nav.nextId.replace('content-', '');
+    const nextLabel = nextData?.mainTopicSubtitle || nextData?.title || 'Siguiente clase';
+
+    const btn = document.createElement('button');
+    btn.className = 'floating-next-class';
+    btn.innerHTML = `<span>Siguiente clase</span> <i class="fa-solid fa-arrow-right"></i>`;
+    btn.title = nextLabel;
+    btn.onclick = () => switchClass(nav.nextId, document.getElementById('link-' + nextSlug), nav.parentBtnId);
+    document.body.appendChild(btn);
+    _floatingNextBtn = btn;
+
+    // Show only after scrolling past 40% of the page
+    const onScroll = () => {
+        if (!_floatingNextBtn) { window.removeEventListener('scroll', onScroll); return; }
+        const scrollPct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        _floatingNextBtn.classList.toggle('visible', scrollPct > 0.4);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
 }
 

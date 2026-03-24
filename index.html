@@ -34,7 +34,7 @@
         content="Apuntes interactivos para el examen UNAM 2026: Matemáticas, Español, Química, Historia, Literatura con preguntas de práctica y simulacro.">
 
     <script>
-        window.__APP_VERSION = '20260320-1';
+        window.__APP_VERSION = '20260323-3';
     </script>
 
     <!-- Estilos externos -->
@@ -85,6 +85,9 @@
 
 <body>
 
+    <!-- Skip Link (Accesibilidad) -->
+    <a href="#dynamic-content-area" class="skip-link">Ir al contenido principal</a>
+
     <!-- MENÚ HAMBURGUESA Y OVERLAY -->
     <button class="menu-btn" id="menuBtn" aria-label="Abrir Menú de Asignaturas">
         <div class="bar"></div>
@@ -125,9 +128,10 @@
 
         <!-- Buscador -->
         <div class="menu-search-wrapper">
+            <label for="menuSearchInput" class="sr-only">Buscar clase</label>
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
             <input type="search" class="menu-search-input" id="menuSearchInput" placeholder="Buscar clase..."
-                oninput="filterMenu(this.value)">
+                oninput="filterMenu(this.value)" aria-label="Buscar clase">
         </div>
         <ul class="subject-list">
 
@@ -378,6 +382,14 @@
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-biologia-3"
+                            onclick="switchClass('content-biologia-3', this, 'btn-biologia')"
+                            data-class-id="content-biologia-3">
+                            <i class="fa-solid fa-book-open"></i> Clase 3: Membrana, Metabolismo y Fotosíntesis
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </li>
 
@@ -508,6 +520,14 @@
                             onclick="switchClass('content-literatura-3', this, 'btn-literatura')"
                             data-class-id="content-literatura-3">
                             <i class="fa-solid fa-book-open"></i> Clase 3: Género Dramático
+                            <span class="done-badge"><i class="fa-solid fa-check"></i></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="class-item" id="link-literatura-4"
+                            onclick="switchClass('content-literatura-4', this, 'btn-literatura')"
+                            data-class-id="content-literatura-4">
+                            <i class="fa-solid fa-book-open"></i> Clase 4: Texto Poético, Métrica y Rima
                             <span class="done-badge"><i class="fa-solid fa-check"></i></span>
                         </a>
                     </li>
@@ -982,7 +1002,7 @@
     </div>
 
     <!-- Datos de la aplicación (auto-generado por build-data.js — no editar directamente) -->
-    <script src="./js/data/data-bundle.js"></script>
+    <script src="./js/data/data-bundle.js" defer></script>
 
     <!-- Secciones de Herramientas: Flashcards y Estadísticas (páginas) -->
     <div id="content-flashcards" class="subject-content" style="display:none;animation:fadeInPage 0.4s ease forwards;">
@@ -1350,7 +1370,7 @@
     </button>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260320-6"></script>
+    <script src="./js/app.js?v=20260323-3" defer></script>
 
 </body>
 

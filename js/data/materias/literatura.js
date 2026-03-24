@@ -1239,6 +1239,355 @@ export const literatura = {
                     "asignatura": "Literatura"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Literatura",
+            "titleIconLeft": "fa-book-open",
+            "titleIconRight": "fa-music",
+            "titleStyle": "color: #9333ea;",
+            "mainTopicId": "mainTopicLiteratura4",
+            "mainTopicClass": "topic-1",
+            "mainTopicTitle": "Literatura",
+            "mainTopicIcon1": "fa-feather-pointed",
+            "mainTopicIcon2": "fa-music",
+            "mainTopicSubtitle": "Clase 4: Texto Poético, Métrica y Rima",
+            "branches": [
+                {
+                    "id": "nodes-lit4-1",
+                    "topicIdx": 1,
+                    "title": "1. Conceptos Clave del Género Lírico",
+                    "icon": "fa-feather-pointed",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.1s",
+                            "title": "Género Lírico y Poema",
+                            "content": "<p>El <b>género lírico</b> es el género literario al que pertenece el poema. Sus elementos estructurales básicos son:</p><ul><li><b>Ritmo:</b> La musicalidad o armonía del poema, lograda mediante la distribución de acentos.</li><li><b>Verso:</b> Cada renglón o línea del poema.</li><li><b>Estrofa:</b> Conjunto de versos separados por un espacio.</li><li><b>Metro (Métrica):</b> La medida de las sílabas de un verso.</li></ul>"
+                        },
+                        {
+                            "icon": "fa-heart",
+                            "delay": "0.2s",
+                            "title": "Poesía Lírica vs. Poesía Épica",
+                            "content": "<p><b>Poesía Lírica:</b> Es <b>subjetiva</b>. Expresa emociones, sentimientos e introspección del autor.</p><p><b>Poesía Épica:</b> Es <b>objetiva</b>. Narra hazañas de héroes y sucesos históricos (ej. La Divina Comedia).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Para identificar un texto poético, busca palabras como <b>sentimiento</b>, <b>musicalidad</b>, <b>armonía</b> o <b>lenguaje metafórico</b>.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-lit4-2",
+                    "topicIdx": 2,
+                    "title": "2. Reglas de Separación Silábica (Métrica)",
+                    "icon": "fa-ruler",
+                    "subnodes": [
+                        {
+                            "icon": "fa-font",
+                            "delay": "0.1s",
+                            "title": "Clasificación de Vocales",
+                            "content": "<p><b>Fuertes (Abiertas):</b> A, E, O (requieren abrir más la boca).</p><p><b>Débiles (Cerradas):</b> I, U.</p><p><b>Regla:</b> Dos vocales fuertes juntas se separan (<b>Hiato</b>). Una débil y una fuerte (o dos débiles) se mantienen juntas (<b>Diptongo</b>).</p><p><b>Excepción:</b> Si la vocal débil lleva acento gráfico, se convierte en fuerte y se separa (ej. re - í - mos).</p>"
+                        },
+                        {
+                            "icon": "fa-link",
+                            "delay": "0.2s",
+                            "title": "Sinalefa",
+                            "content": "<p>Es la unión de la vocal final de una palabra con la vocal inicial de la siguiente. Se cuenta como <b>una sola sílaba</b>.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>La <b>H</b> al inicio de una palabra es muda y <b>no impide</b> la sinalefa (ej. a-ve<u>_her</u>-mo-sa).</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-lit4-3",
+                    "topicIdx": 3,
+                    "title": "3. Ley del Acento Final y Clasificación de Versos",
+                    "icon": "fa-scale-balanced",
+                    "subnodes": [
+                        {
+                            "icon": "fa-gavel",
+                            "delay": "0.1s",
+                            "title": "Ley del Acento Final",
+                            "content": "<p>Se aplica <b>únicamente a la última palabra</b> de cada verso para ajustar el conteo final de sílabas:</p><table style='width:100%; border-collapse:collapse; margin-top:8px;'><tr style='background:#f3f4f6;'><th style='padding:6px; border:1px solid #ddd; text-align:left;'>Tipo</th><th style='padding:6px; border:1px solid #ddd; text-align:left;'>Acento en</th><th style='padding:6px; border:1px solid #ddd; text-align:left;'>Efecto</th></tr><tr><td style='padding:6px; border:1px solid #ddd;'><b>Aguda</b></td><td style='padding:6px; border:1px solid #ddd;'>Última sílaba</td><td style='padding:6px; border:1px solid #ddd;'><b>+1</b> sílaba</td></tr><tr><td style='padding:6px; border:1px solid #ddd;'><b>Grave</b></td><td style='padding:6px; border:1px solid #ddd;'>Penúltima sílaba</td><td style='padding:6px; border:1px solid #ddd;'><b>0</b> (se queda igual)</td></tr><tr><td style='padding:6px; border:1px solid #ddd;'><b>Esdrújula</b></td><td style='padding:6px; border:1px solid #ddd;'>Antepenúltima sílaba</td><td style='padding:6px; border:1px solid #ddd;'><b>-1</b> sílaba</td></tr><tr><td style='padding:6px; border:1px solid #ddd;'><b>Sobreesdrújula</b></td><td style='padding:6px; border:1px solid #ddd;'>Antes de antepenúltima</td><td style='padding:6px; border:1px solid #ddd;'><b>0</b> (se queda igual)</td></tr></table>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.2s",
+                            "title": "Arte Menor (2 a 8 sílabas)",
+                            "content": "<p>Versos cortos. Los más relevantes para el examen:</p><ul><li><b>7 sílabas:</b> Heptasílabo</li><li><b>8 sílabas:</b> Octosílabo (el más común en la poesía en español)</li></ul>"
+                        },
+                        {
+                            "icon": "fa-up-right-and-down-left-from-center",
+                            "delay": "0.3s",
+                            "title": "Arte Mayor (9 a 14+ sílabas)",
+                            "content": "<p>Versos largos. Los más relevantes para el examen:</p><ul><li><b>10 sílabas:</b> Decasílabo</li><li><b>11 sílabas:</b> Endecasílabo</li><li><b>14 sílabas:</b> Alejandrino</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-lit4-4",
+                    "topicIdx": 4,
+                    "title": "4. Tipos de Rima",
+                    "icon": "fa-music",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.1s",
+                            "title": "Definición de Rima",
+                            "content": "<p>Es la coincidencia de sonidos al final de los versos, a partir de la <b>última vocal tónica</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-equals",
+                            "delay": "0.2s",
+                            "title": "Rima Consonante",
+                            "content": "<p>Coinciden <b>vocales y consonantes</b> a partir de la última vocal acentuada.</p><p>Ejemplos: ray<b>os</b> / call<b>os</b>, radi<b>ante</b> / camp<b>ante</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-wave-square",
+                            "delay": "0.3s",
+                            "title": "Rima Asonante",
+                            "content": "<p>Solo coinciden las <b>vocales</b> a partir de la última vocal acentuada.</p><p>Ejemplos: guirn<b>a</b>ld<b>a</b>s / l<b>a</b>rg<b>a</b>s (coinciden las vocales <b>a-a</b>).</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/Lj0qNrN5sjE",
+            "id": "content-literatura-4",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuáles son los elementos estructurales básicos del género lírico?",
+                        "opciones": [
+                            "Narrador, personaje, trama y desenlace",
+                            "Ritmo, verso, estrofa y metro",
+                            "Título, balazo, entrada y cuerpo",
+                            "Diálogo, monólogo, soliloquio y acotación"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Los elementos estructurales del género lírico son: ritmo (musicalidad), verso (cada línea), estrofa (conjunto de versos) y metro (medida silábica)."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Qué es la sinalefa?",
+                        "opciones": [
+                            "La separación de dos vocales fuertes consecutivas",
+                            "La unión de la vocal final de una palabra con la vocal inicial de la siguiente",
+                            "El acento en la última sílaba de un verso",
+                            "La rima entre dos versos consecutivos"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La sinalefa une la vocal final de una palabra con la vocal inicial de la siguiente, contándose como una sola sílaba métrica."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Según la ley del acento final, si la última palabra de un verso es aguda, ¿qué se hace con el conteo?",
+                        "opciones": [
+                            "Se resta 1 sílaba",
+                            "Se suma 1 sílaba",
+                            "Se queda igual",
+                            "Se duplica la última sílaba"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Cuando la última palabra del verso es aguda (acento en la última sílaba), se suma 1 al conteo total de sílabas métricas."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Un verso de 8 sílabas métricas se clasifica como:",
+                        "opciones": [
+                            "Endecasílabo",
+                            "Alejandrino",
+                            "Octosílabo",
+                            "Decasílabo"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El octosílabo tiene 8 sílabas métricas y es el verso más común en la poesía en español. Pertenece al arte menor."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuál es la diferencia entre rima consonante y rima asonante?",
+                        "opciones": [
+                            "Consonante: solo coinciden vocales; Asonante: coinciden vocales y consonantes",
+                            "Consonante: coinciden vocales y consonantes; Asonante: solo coinciden vocales",
+                            "Consonante: no hay coincidencia; Asonante: coincidencia total",
+                            "No hay diferencia, son sinónimos"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "En la rima consonante coinciden vocales y consonantes desde la última vocal tónica. En la asonante, solo coinciden las vocales."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Si un verso termina en la palabra 'corazón' (aguda), tiene 10 sílabas gramaticales y no hay sinalefa, ¿cuántas sílabas métricas tiene?",
+                        "opciones": [
+                            "9",
+                            "10",
+                            "11",
+                            "12"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Al ser 'corazón' una palabra aguda, se suma 1 al conteo: 10 + 1 = 11 sílabas métricas. El verso sería endecasílabo."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Por qué la H al inicio de una palabra no impide la sinalefa?",
+                        "opciones": [
+                            "Porque la H es una consonante fuerte que une vocales",
+                            "Porque la H es muda en español y no produce sonido que interrumpa la unión vocálica",
+                            "Porque la H solo aparece en palabras agudas",
+                            "Porque la H funciona como vocal débil"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La H es muda en español (no produce sonido), por lo que no interrumpe la unión de vocales entre palabras, permitiendo la sinalefa."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Si en un verso la última palabra es 'pájaro' (esdrújula) y el conteo da 12 sílabas, ¿cuál es el conteo métrico final?",
+                        "opciones": [
+                            "13",
+                            "12",
+                            "11",
+                            "10"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Las palabras esdrújulas restan 1 al conteo: 12 - 1 = 11 sílabas métricas (endecasílabo)."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál es la diferencia fundamental entre poesía lírica y poesía épica?",
+                        "opciones": [
+                            "La lírica usa rima y la épica no",
+                            "La lírica es subjetiva (emociones del autor) y la épica es objetiva (narra hazañas de héroes)",
+                            "La lírica solo usa arte menor y la épica solo arte mayor",
+                            "La lírica no tiene ritmo y la épica sí"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La poesía lírica es subjetiva: expresa emociones y sentimientos del autor. La épica es objetiva: narra hechos heroicos e históricos."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Las vocales 'e' y 'o' aparecen juntas dentro de una misma palabra. Según las reglas de métrica, ¿qué fenómeno se produce?",
+                        "opciones": [
+                            "Diptongo, porque están en la misma sílaba",
+                            "Hiato, porque ambas son vocales fuertes y se separan",
+                            "Sinalefa, porque se unen entre palabras",
+                            "No se aplica ninguna regla especial"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "E y O son vocales fuertes (abiertas). Cuando dos vocales fuertes están juntas, se separan en sílabas distintas, produciendo un hiato."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "lit4-001",
+                    "pregunta": "¿Cuáles son los cuatro elementos estructurales del género lírico?",
+                    "respuesta": "Ritmo (musicalidad), verso (cada línea), estrofa (conjunto de versos) y metro (medida silábica).",
+                    "tema": "Género Lírico",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-002",
+                    "pregunta": "¿Cuáles son las vocales fuertes (abiertas)?",
+                    "respuesta": "A, E, O.",
+                    "tema": "Métrica",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-003",
+                    "pregunta": "¿Cuáles son las vocales débiles (cerradas)?",
+                    "respuesta": "I, U.",
+                    "tema": "Métrica",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-004",
+                    "pregunta": "¿Qué es un hiato en métrica?",
+                    "respuesta": "La separación de dos vocales fuertes juntas en sílabas distintas.",
+                    "tema": "Métrica",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-005",
+                    "pregunta": "¿Qué es un diptongo en métrica?",
+                    "respuesta": "La unión de una vocal débil con una fuerte (o dos débiles) en una misma sílaba.",
+                    "tema": "Métrica",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-006",
+                    "pregunta": "¿Qué es la sinalefa?",
+                    "respuesta": "La unión de la vocal final de una palabra con la vocal inicial de la siguiente, contada como una sola sílaba.",
+                    "tema": "Métrica",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-007",
+                    "pregunta": "¿Qué efecto tiene una palabra aguda al final de un verso?",
+                    "respuesta": "Se suma 1 al conteo de sílabas métricas.",
+                    "tema": "Ley del Acento Final",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-008",
+                    "pregunta": "¿Qué efecto tiene una palabra esdrújula al final de un verso?",
+                    "respuesta": "Se resta 1 al conteo de sílabas métricas.",
+                    "tema": "Ley del Acento Final",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-009",
+                    "pregunta": "¿Qué es un octosílabo?",
+                    "respuesta": "Verso de 8 sílabas métricas. Es el más común en español. Pertenece al arte menor.",
+                    "tema": "Clasificación de Versos",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-010",
+                    "pregunta": "¿Qué es un endecasílabo?",
+                    "respuesta": "Verso de 11 sílabas métricas. Pertenece al arte mayor.",
+                    "tema": "Clasificación de Versos",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-011",
+                    "pregunta": "¿Qué es un alejandrino?",
+                    "respuesta": "Verso de 14 sílabas métricas. Pertenece al arte mayor.",
+                    "tema": "Clasificación de Versos",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-012",
+                    "pregunta": "¿Qué es la rima consonante?",
+                    "respuesta": "Coincidencia de vocales y consonantes a partir de la última vocal tónica. Ej: rayos/callos.",
+                    "tema": "Rima",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-013",
+                    "pregunta": "¿Qué es la rima asonante?",
+                    "respuesta": "Solo coinciden las vocales a partir de la última vocal tónica. Ej: guirnaldas/largas (a-a).",
+                    "tema": "Rima",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-014",
+                    "pregunta": "¿Qué caracteriza a la poesía lírica?",
+                    "respuesta": "Es subjetiva. Expresa emociones, sentimientos e introspección del autor.",
+                    "tema": "Género Lírico",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-015",
+                    "pregunta": "¿Qué caracteriza a la poesía épica?",
+                    "respuesta": "Es objetiva. Narra hazañas de héroes y sucesos históricos (ej. La Divina Comedia).",
+                    "tema": "Género Lírico",
+                    "asignatura": "Literatura"
+                },
+                {
+                    "id": "lit4-016",
+                    "pregunta": "¿Cuál es el rango de sílabas del arte menor y del arte mayor?",
+                    "respuesta": "Arte menor: 2 a 8 sílabas. Arte mayor: 9 a 14+ sílabas.",
+                    "tema": "Clasificación de Versos",
+                    "asignatura": "Literatura"
+                }
+            ]
         }
     ]
 };

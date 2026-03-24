@@ -743,6 +743,339 @@ export const biologia = {
                     "asignatura": "Biología"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Biología",
+            "titleIconLeft": "fa-dna",
+            "titleIconRight": "fa-microscope",
+            "titleStyle": "color: #d97706;",
+            "mainTopicId": "mainTopicBiologia3",
+            "mainTopicClass": "topic-3",
+            "mainTopicTitle": "Biología",
+            "mainTopicIcon1": "fa-dna",
+            "mainTopicIcon2": "fa-leaf",
+            "mainTopicSubtitle": "Clase 3: Membrana Celular, Metabolismo y Fotosíntesis",
+            "branches": [
+                {
+                    "id": "nodes-bio3-1",
+                    "topicIdx": 1,
+                    "title": "1. Membrana Celular y Citoplasma",
+                    "icon": "fa-shield-halved",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.1s",
+                            "title": "Membrana Celular",
+                            "content": "<p><b>Estructura:</b> Bicapa lipídica formada por <b>fosfolípidos</b>.</p><p><b>Fosfolípido:</b> Cabeza <b>hidrofílica</b> (afín al agua) y colas <b>hidrofóbicas</b> (repelen el agua).</p><p><b>Propiedad:</b> Es <b>semipermeable y selectiva</b>: regula qué sustancias entran y salen de la célula.</p><p><b>Proteínas de membrana:</b> Funcionan como canales y transportadores para sustancias que no pueden atravesar la bicapa lipídica por sí mismas.</p>"
+                        },
+                        {
+                            "icon": "fa-droplet",
+                            "delay": "0.2s",
+                            "title": "Citoplasma",
+                            "content": "<p>Medio acuoso (gelatinoso) donde se encuentran suspendidos los organelos celulares.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>En el citoplasma ocurre la <b>respiración anaerobia</b> (sin oxígeno).</div>"
+                        },
+                        {
+                            "icon": "fa-building-columns",
+                            "delay": "0.3s",
+                            "title": "Citoesqueleto",
+                            "content": "<p>Red de fibras de proteína (colágeno) que proporciona <b>soporte y forma</b> a la célula.</p>"
+                        },
+                        {
+                            "icon": "fa-circle-nodes",
+                            "delay": "0.4s",
+                            "title": "Centriolo",
+                            "content": "<p><b>Exclusivo de la célula animal.</b> Es el organelo encargado de organizar la división celular (mitosis y meiosis).</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-bio3-2",
+                    "topicIdx": 2,
+                    "title": "2. Célula Vegetal vs. Animal",
+                    "icon": "fa-seedling",
+                    "subnodes": [
+                        {
+                            "icon": "fa-sun",
+                            "delay": "0.1s",
+                            "title": "Cloroplastos",
+                            "content": "<p><b>Exclusivos de la célula vegetal.</b> Realizan la <b>fotosíntesis</b>: captan fotones de luz para convertir energía luminosa en energía química.</p>"
+                        },
+                        {
+                            "icon": "fa-border-all",
+                            "delay": "0.2s",
+                            "title": "Pared Celular",
+                            "content": "<p><b>Exclusiva de la célula vegetal.</b> Compuesta de <b>celulosa</b>. Proporciona rigidez y protección adicional a la membrana plasmática.</p>"
+                        },
+                        {
+                            "icon": "fa-bottle-water",
+                            "delay": "0.3s",
+                            "title": "Vacuola Central",
+                            "content": "<p><b>Exclusiva de la célula vegetal (grande y central).</b> Almacena líquidos, nutrientes y desechos; regula la presión osmótica (turgencia).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Organelos exclusivos vegetales: <b>Cloroplastos</b>, <b>Pared Celular</b> y <b>Vacuola central grande</b>. Organelo exclusivo animal: <b>Centriolo</b>.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-bio3-3",
+                    "topicIdx": 3,
+                    "title": "3. Metabolismo y Energía",
+                    "icon": "fa-bolt",
+                    "subnodes": [
+                        {
+                            "icon": "fa-arrows-up-down",
+                            "delay": "0.1s",
+                            "title": "Anabolismo vs. Catabolismo",
+                            "content": "<p><b>Anabolismo (\"Ana Construye\"):</b> Síntesis de moléculas complejas a partir de sencillas. <b>Requiere ATP.</b> Ejemplos: fotosíntesis, síntesis de proteínas.</p><p><b>Catabolismo (\"Cata Destruye\"):</b> Degradación de moléculas complejas en sencillas para liberar energía. <b>Libera ATP.</b> Ejemplos: digestión, respiración celular.</p>"
+                        },
+                        {
+                            "icon": "fa-battery-full",
+                            "delay": "0.2s",
+                            "title": "ATP (Adenosín Trifosfato)",
+                            "content": "<p>Es la <b>moneda de intercambio energético</b> de la célula.</p><p><b>Estructura:</b> 1 Adenina + 1 Ribosa + 3 grupos Fosfato.</p><p><b>Hidrólisis del ATP:</b> Al perder un grupo fosfato se convierte en <b>ADP</b> (Adenosín Difosfato) y libera energía utilizable.</p>"
+                        },
+                        {
+                            "icon": "fa-key",
+                            "delay": "0.3s",
+                            "title": "Enzimas (Biocatalizadores)",
+                            "content": "<p>Son <b>proteínas</b> que aceleran las reacciones químicas sin consumirse.</p><p><b>Nomenclatura:</b> Casi todas terminan en <b>-asa</b> (Lactasa, Sacarasa, ATPasa).</p><p><b>Especificidad:</b> Cada enzima se une a un solo sustrato específico (modelo <b>llave-cerradura</b>).</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-bio3-4",
+                    "topicIdx": 4,
+                    "title": "4. Introducción a la Fotosíntesis",
+                    "icon": "fa-sun-plant-wilt",
+                    "subnodes": [
+                        {
+                            "icon": "fa-leaf",
+                            "delay": "0.1s",
+                            "title": "Definición y Clasificación",
+                            "content": "<p>Tipo de proceso: <b>Anabólico</b> y <b>Autótrofo</b>.</p><p>Transforma <b>energía luminosa</b> en <b>energía química</b> (glucosa).</p>"
+                        },
+                        {
+                            "icon": "fa-flask",
+                            "delay": "0.2s",
+                            "title": "Ecuación Química de la Fotosíntesis",
+                            "content": "<p>$$6H_2O + 6CO_2 + \\text{energía solar} \\rightarrow C_6H_{12}O_6 + 6O_2$$</p><p><b>Reactivos:</b> 6 moléculas de agua + 6 moléculas de dióxido de carbono + energía solar.</p><p><b>Productos:</b> 1 molécula de glucosa + 6 moléculas de oxígeno.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Memorizar la ecuación balanceada de la fotosíntesis es frecuente en el examen UNAM.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/jIWb0sLLrpU",
+            "id": "content-biologia-3",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál es la propiedad principal de la membrana celular?",
+                        "opciones": [
+                            "Es completamente impermeable",
+                            "Es semipermeable y selectiva",
+                            "Permite el paso libre de todas las sustancias",
+                            "Solo permite la salida de sustancias"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La membrana celular es semipermeable y selectiva: regula qué sustancias entran y salen de la célula mediante su bicapa lipídica y proteínas de transporte."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál de los siguientes organelos es exclusivo de la célula vegetal?",
+                        "opciones": [
+                            "Centriolo",
+                            "Mitocondria",
+                            "Cloroplasto",
+                            "Lisosoma"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Los cloroplastos son exclusivos de la célula vegetal y realizan la fotosíntesis, captando fotones de luz para producir energía química."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "El proceso metabólico que construye moléculas complejas a partir de sencillas y requiere ATP se denomina:",
+                        "opciones": [
+                            "Catabolismo",
+                            "Hidrólisis",
+                            "Anabolismo",
+                            "Fermentación"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El anabolismo es el proceso de síntesis que construye moléculas complejas a partir de sencillas, y requiere energía en forma de ATP. Ejemplos: fotosíntesis y síntesis de proteínas."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Cuál es la estructura del ATP?",
+                        "opciones": [
+                            "1 Guanina + 1 Desoxirribosa + 2 Fosfatos",
+                            "1 Adenina + 1 Ribosa + 3 Fosfatos",
+                            "1 Citosina + 1 Ribosa + 3 Fosfatos",
+                            "1 Adenina + 1 Desoxirribosa + 2 Fosfatos"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El ATP (Adenosín Trifosfato) está compuesto por 1 Adenina + 1 Ribosa + 3 grupos Fosfato. Al perder un fosfato se convierte en ADP y libera energía."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuál es el producto principal de la fotosíntesis?",
+                        "opciones": [
+                            "Dióxido de carbono y agua",
+                            "ATP y ADP",
+                            "Glucosa y oxígeno",
+                            "Aminoácidos y lípidos"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La fotosíntesis produce glucosa (C6H12O6) y oxígeno (O2) a partir de agua, dióxido de carbono y energía solar."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Una célula presenta rigidez estructural, realiza fotosíntesis y almacena grandes cantidades de líquido en una estructura central. ¿Qué tipo de célula es?",
+                        "opciones": [
+                            "Procariota",
+                            "Eucariota animal",
+                            "Eucariota vegetal",
+                            "Célula fúngica"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La pared celular (rigidez), los cloroplastos (fotosíntesis) y la vacuola central grande (almacén de líquidos) son exclusivos de la célula vegetal eucariota."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Si una célula no puede realizar la hidrólisis del ATP, ¿qué consecuencia directa tendría?",
+                        "opciones": [
+                            "No podría sintetizar lípidos",
+                            "No podría liberar energía para sus procesos metabólicos",
+                            "No podría realizar la mitosis",
+                            "No podría transcribir ADN a ARN"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La hidrólisis del ATP (ruptura de un enlace fosfato para convertirse en ADP) es el mecanismo principal por el que la célula libera energía utilizable para sus procesos metabólicos."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Un investigador observa que una enzima no puede unirse a su sustrato habitual porque otra molécula ocupa el sitio activo. Este fenómeno se explica por:",
+                        "opciones": [
+                            "La desnaturalización de la enzima",
+                            "La falta de ATP",
+                            "El modelo de especificidad llave-cerradura",
+                            "La ausencia de ribosomas"
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El modelo llave-cerradura establece que cada enzima tiene un sitio activo específico para su sustrato. Si otra molécula lo ocupa (inhibición competitiva), la enzima no puede actuar."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Por qué la fotosíntesis se clasifica como un proceso anabólico?",
+                        "opciones": [
+                            "Porque degrada glucosa para obtener energía",
+                            "Porque construye una molécula compleja (glucosa) a partir de sustancias sencillas (agua y CO2)",
+                            "Porque libera ATP al romper enlaces químicos",
+                            "Porque ocurre en la mitocondria"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La fotosíntesis es anabólica porque sintetiza una molécula compleja (glucosa, C6H12O6) a partir de moléculas sencillas (H2O y CO2), utilizando energía luminosa."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Dónde ocurre la respiración anaerobia en la célula y qué la distingue de la respiración aerobia?",
+                        "opciones": [
+                            "En la mitocondria; no produce ATP",
+                            "En el citoplasma; no requiere oxígeno",
+                            "En el núcleo; utiliza dióxido de carbono",
+                            "En el cloroplasto; produce glucosa"
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La respiración anaerobia ocurre en el citoplasma y se distingue porque no requiere oxígeno, a diferencia de la respiración aerobia que ocurre en la mitocondria."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "bio-034",
+                    "pregunta": "¿Qué es la membrana celular y cuál es su composición?",
+                    "respuesta": "Bicapa lipídica formada por fosfolípidos (cabeza hidrofílica y colas hidrofóbicas). Es semipermeable y selectiva.",
+                    "tema": "Membrana Celular",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-035",
+                    "pregunta": "¿Qué función tienen las proteínas de la membrana celular?",
+                    "respuesta": "Funcionan como canales y transportadores para sustancias que no pueden atravesar la bicapa lipídica.",
+                    "tema": "Membrana Celular",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-036",
+                    "pregunta": "¿Qué es el citoplasma y qué proceso ocurre en él?",
+                    "respuesta": "Medio acuoso (gelatinoso) donde flotan los organelos. Aquí ocurre la respiración anaerobia (sin oxígeno).",
+                    "tema": "Citoplasma",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-037",
+                    "pregunta": "¿Qué es el citoesqueleto?",
+                    "respuesta": "Red de fibras de proteína que da soporte y forma a la célula.",
+                    "tema": "Organelos de Soporte",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-038",
+                    "pregunta": "¿Qué es el centriolo y a qué tipo de célula pertenece?",
+                    "respuesta": "Organelo exclusivo de la célula animal, encargado de organizar la división celular (mitosis/meiosis).",
+                    "tema": "Organelos de Soporte",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-039",
+                    "pregunta": "¿Qué organelos son exclusivos de la célula vegetal?",
+                    "respuesta": "Cloroplastos (fotosíntesis), pared celular (celulosa, rigidez) y vacuola central grande (almacén de líquidos).",
+                    "tema": "Célula Vegetal vs. Animal",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-040",
+                    "pregunta": "¿Qué es el anabolismo?",
+                    "respuesta": "Proceso metabólico que construye moléculas complejas a partir de sencillas. Requiere ATP. Ej: fotosíntesis.",
+                    "tema": "Metabolismo",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-041",
+                    "pregunta": "¿Qué es el catabolismo?",
+                    "respuesta": "Proceso metabólico que degrada moléculas complejas en sencillas para liberar energía (ATP). Ej: digestión, respiración celular.",
+                    "tema": "Metabolismo",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-042",
+                    "pregunta": "¿Cuál es la estructura del ATP?",
+                    "respuesta": "1 Adenina + 1 Ribosa + 3 grupos Fosfato. Al perder un fosfato se convierte en ADP y libera energía.",
+                    "tema": "ATP",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-043",
+                    "pregunta": "¿Qué es la especificidad enzimática?",
+                    "respuesta": "Cada enzima encaja con un solo sustrato específico, según el modelo llave-cerradura.",
+                    "tema": "Enzimas",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-044",
+                    "pregunta": "¿Cuál es la ecuación de la fotosíntesis?",
+                    "respuesta": "6H2O + 6CO2 + energía solar -> C6H12O6 + 6O2.",
+                    "tema": "Fotosíntesis",
+                    "asignatura": "Biología"
+                },
+                {
+                    "id": "bio-045",
+                    "pregunta": "¿Qué tipo de proceso es la fotosíntesis?",
+                    "respuesta": "Anabólico y autótrofo. Transforma energía luminosa en energía química (glucosa).",
+                    "tema": "Fotosíntesis",
+                    "asignatura": "Biología"
+                }
+            ]
         }
     ]
 };
