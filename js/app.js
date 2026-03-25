@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260323-3';
+const APP_VERSION = '20260324-2';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {

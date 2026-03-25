@@ -2343,6 +2343,420 @@ export const historia = {
                     "asignatura": "Historia de México"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Historia de México",
+            "titleIconLeft": "fa-earth-americas",
+            "titleIconRight": "fa-gamepad",
+            "titleStyle": "color: #b45309;",
+            "mainTopicId": "mainTopicHistoria7",
+            "mainTopicClass": "history-topic",
+            "mainTopicTitle": "Historia de México",
+            "mainTopicIcon1": "fa-landmark",
+            "mainTopicIcon2": "fa-scroll",
+            "mainTopicSubtitle": "Clase 7: Porfiriato, Revolución y Reconstrucción",
+            "branches": [
+                {
+                    "id": "nodes-hist7-1",
+                    "topicIdx": 1,
+                    "title": "1. El Porfiriato (1876-1911)",
+                    "icon": "fa-industry",
+                    "subnodes": [
+                        {
+                            "icon": "fa-flag",
+                            "delay": "0.1s",
+                            "title": "Ascenso y Filosofía Política",
+                            "content": "<p><b>Plan de Tuxtepec (1876):</b> Díaz llega al poder bajo el lema <b>\"No reelección\"</b> (dirigido contra Sebastián Lerdo de Tejada).</p><p><b>Filosofía:</b> <b>Positivismo</b> (Auguste Comte). Lemas clave: <i>\"Poca política, mucha administración\"</i> y <i>\"Orden y Progreso\"</i> (quitando el \"amor\" de la frase original de Comte).</p><p><b>Los Científicos:</b> Grupo de intelectuales y diputados que asesoraban a Díaz para modernizar el país bajo criterios técnicos.</p>"
+                        },
+                        {
+                            "icon": "fa-coins",
+                            "delay": "0.2s",
+                            "title": "Economía y Cultura (Puntos de examen)",
+                            "content": "<p><b>Amortización de la deuda:</b> Gracias a <b>José Ives Limantour</b> (Secretario de Hacienda), México pagó sus deudas externas y el peso valía lo mismo que el dólar.</p><p><b>Infraestructura:</b> Gran expansión de ferrocarriles, telégrafos e inversión extranjera.</p><p><b>Cultura:</b> Fundación de la <b>Universidad Nacional de México (1910)</b> (hoy UNAM) e inicio de la construcción de <b>Bellas Artes</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-link-slash",
+                            "delay": "0.3s",
+                            "title": "Factores Negativos y Causas de la Revolución",
+                            "content": "<p><b>Tiendas de Raya:</b> Sistema de esclavitud disfrazada donde el patrón pagaba con vales canjeables solo en su tienda a precios inflados.</p><p><b>Represión:</b> Uso de la <b>Ley Fuga</b> (ejecución de presos que \"intentaban escapar\") y represión violenta de las huelgas de <b>Cananea</b> y <b>Río Blanco</b>.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist7-2",
+                    "topicIdx": 2,
+                    "title": "2. La Revolución Mexicana (1910-1920)",
+                    "icon": "fa-gun",
+                    "subnodes": [
+                        {
+                            "icon": "fa-bullhorn",
+                            "delay": "0.1s",
+                            "title": "El Maderismo",
+                            "content": "<p><b>Entrevista Díaz-Creelman:</b> Díaz declara que México está listo para la democracia, lo que motiva a los opositores.</p><p><b>Plan de San Luis (Francisco I. Madero):</b> Lema: <i>\"Sufragio efectivo, no reelección.\"</i> Desconoce a Díaz y convoca a la lucha el <b>20 de noviembre de 1910</b>.</p><p><b>Tratados de Ciudad Juárez (1911):</b> Díaz renuncia y se exilia en Francia.</p>"
+                        },
+                        {
+                            "icon": "fa-skull-crossbones",
+                            "delay": "0.2s",
+                            "title": "Conflictos de Madero y la Decena Trágica",
+                            "content": "<p><b>Plan de Ayala:</b> Emiliano Zapata desconoce a Madero por no devolver las tierras a los campesinos. Lema: <i>\"La tierra es de quien la trabaja.\"</i></p><p><b>Decena Trágica (1913):</b> Golpe de estado militar. <b>Victoriano Huerta</b> traiciona a Madero, quien es asesinado. <b>Pedro Lascuráin</b> es presidente por solo <b>45 minutos</b> para ceder el poder a Huerta.</p>"
+                        },
+                        {
+                            "icon": "fa-scroll",
+                            "delay": "0.3s",
+                            "title": "Constitucionalismo (Venustiano Carranza)",
+                            "content": "<p><b>Plan de Guadalupe:</b> Carranza desconoce a Huerta.</p><p><b>Constitución de 1917:</b> Documento que finaliza oficialmente la Revolución. Es la <b>primera en el mundo de carácter social</b>.</p><ul><li><b>Art. 3:</b> Educación laica y gratuita.</li><li><b>Art. 27:</b> Propiedad originaria de la Nación (tierras y aguas).</li><li><b>Art. 123:</b> Derechos laborales (salario mínimo, jornada de 8 horas).</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist7-3",
+                    "topicIdx": 3,
+                    "title": "3. La Reconstrucción Nacional (1920-1940)",
+                    "icon": "fa-building-columns",
+                    "subnodes": [
+                        {
+                            "icon": "fa-user-tie",
+                            "delay": "0.1s",
+                            "title": "Álvaro Obregón (1920-1924)",
+                            "content": "<p>Es considerado el <b>último Caudillo</b>.</p><p><b>Tratados de Bucareli:</b> Firmados para que EE. UU. reconociera su gobierno.</p><p><b>CROM:</b> Confederación para el control de los obreros.</p><p>Creación de la <b>SEP</b> con <b>José Vasconcelos</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-church",
+                            "delay": "0.2s",
+                            "title": "Plutarco Elías Calles y el Maximato (1924-1934)",
+                            "content": "<p><b>Jefe Máximo:</b> Apodo de Calles por no perder batallas en la Revolución.</p><p><b>Ley Calles / Guerra Cristera:</b> Conflicto armado entre el Estado y grupos católicos por leyes anticlericales.</p><p><b>PNR (1929):</b> Fundación del primer partido oficial (hoy PRI) para pasar de la <i>\"era de caudillos\"</i> a la <i>\"era de instituciones\"</i>.</p>"
+                        },
+                        {
+                            "icon": "fa-users-gear",
+                            "delay": "0.3s",
+                            "title": "El Maximato (1928-1934)",
+                            "content": "<p>Periodo donde <b>Calles</b> manipula a tres presidentes:</p><ul><li><b>Emilio Portes Gil:</b> Da autonomía a la UNAM.</li><li><b>Pascual Ortiz Rubio.</b></li><li><b>Abelardo L. Rodríguez.</b></li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hist7-4",
+                    "topicIdx": 4,
+                    "title": "4. Datos Clave para el Examen",
+                    "icon": "fa-list-check",
+                    "subnodes": [
+                        {
+                            "icon": "fa-star",
+                            "delay": "0.1s",
+                            "title": "Constituciones: Individual vs. Social",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si la pregunta menciona <b>\"Garantías Individuales\"</b>, se refiere a la <b>Constitución de 1857</b>.<br>Si menciona <b>\"Garantías Sociales\"</b>, se refiere a la <b>Constitución de 1917</b>.</div>"
+                        },
+                        {
+                            "icon": "fa-file-contract",
+                            "delay": "0.2s",
+                            "title": "Planes y sus Autores",
+                            "content": "<ul><li><b>Plan de Tuxtepec:</b> Porfirio Díaz (contra Lerdo de Tejada).</li><li><b>Plan de San Luis:</b> Madero (contra Díaz).</li><li><b>Plan de Ayala:</b> Zapata (contra Madero, tierras).</li><li><b>Plan de Guadalupe:</b> Carranza (contra Huerta).</li></ul>"
+                        },
+                        {
+                            "icon": "fa-scale-balanced",
+                            "delay": "0.3s",
+                            "title": "Artículos Clave de 1917",
+                            "content": "<ul><li><b>Art. 3:</b> Educación laica y gratuita.</li><li><b>Art. 27:</b> La tierra y el subsuelo son propiedad de la Nación.</li><li><b>Art. 123:</b> Jornada de 8 horas, salario mínimo, derecho a huelga.</li></ul>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/_wLcdlx5JQM",
+            "id": "content-historia-7",
+            "preguntas": {
+                "unam": [
+                    {
+                        "numero": 117,
+                        "pregunta": "Se conoce como Maximato al periodo en el cual ________ mantuvo el control político del país.",
+                        "opciones": [
+                            "Álvaro Obregón.",
+                            "Lázaro Cárdenas.",
+                            "Plutarco Elías Calles.",
+                            "Pascual Ortiz Rubio."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Maximato (1928-1934) es el periodo en que Plutarco Elías Calles, llamado 'Jefe Máximo', controló la política nacional a través de tres presidentes títere: Portes Gil, Ortiz Rubio y Abelardo L. Rodríguez."
+                    },
+                    {
+                        "numero": 118,
+                        "pregunta": "Fundó el Partido de la Revolución Mexicana, el Instituto Politécnico Nacional, y la Confederación de Trabajadores de México.",
+                        "opciones": [
+                            "Lázaro Cárdenas.",
+                            "Manuel Ávila Camacho.",
+                            "Miguel Alemán Valdés.",
+                            "Plutarco Elías Calles."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "Lázaro Cárdenas (1934-1940) fundó el PRM, el IPN y la CTM. Fue quien acabó con el Maximato de Calles y consolidó las instituciones posrevolucionarias."
+                    }
+                ],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Qué documento proclamó Francisco I. Madero para iniciar la lucha contra Porfirio Díaz?",
+                        "opciones": [
+                            "Plan de Ayala.",
+                            "Plan de Guadalupe.",
+                            "Plan de San Luis.",
+                            "Plan de Tuxtepec."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Plan de San Luis, proclamado por Madero, desconoció la reelección de Díaz y convocó a la lucha armada el 20 de noviembre de 1910 bajo el lema 'Sufragio efectivo, no reelección'."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Qué estableció el artículo 27 de la Constitución de 1917?",
+                        "opciones": [
+                            "La educación laica y gratuita.",
+                            "La propiedad originaria de la Nación sobre tierras y aguas.",
+                            "Los derechos laborales y la jornada de 8 horas.",
+                            "La libertad de culto religioso."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "El artículo 27 establece que las tierras y aguas dentro del territorio nacional son propiedad originaria de la Nación, la cual puede otorgar propiedad privada. Es uno de los artículos sociales emblemáticos de la Constitución de 1917."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Quién traicionó a Madero durante la Decena Trágica (1913)?",
+                        "opciones": [
+                            "Emiliano Zapata.",
+                            "Venustiano Carranza.",
+                            "Victoriano Huerta.",
+                            "Plutarco Elías Calles."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Victoriano Huerta, jefe militar del gobierno de Madero, lo traicionó durante la Decena Trágica en febrero de 1913. Madero fue asesinado y Huerta usurpó la presidencia."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Quién creó la SEP (Secretaría de Educación Pública) durante el gobierno de Obregón?",
+                        "opciones": [
+                            "Plutarco Elías Calles.",
+                            "José Vasconcelos.",
+                            "Emilio Portes Gil.",
+                            "Venustiano Carranza."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "José Vasconcelos fue el primer secretario de Educación Pública. La SEP se creó en 1921 durante el gobierno de Álvaro Obregón para llevar la educación a todo el país."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué partido político fundó Plutarco Elías Calles en 1929?",
+                        "opciones": [
+                            "PRI (Partido Revolucionario Institucional).",
+                            "PRM (Partido de la Revolución Mexicana).",
+                            "PNR (Partido Nacional Revolucionario).",
+                            "PLM (Partido Liberal Mexicano)."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Calles fundó el PNR en 1929, primer partido oficial de México, para institucionalizar la política y pasar de la 'era de caudillos' a la 'era de instituciones'. El PNR evolucionó después a PRM y finalmente a PRI."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Por qué el lema positivista del Porfiriato es 'Orden y Progreso' en lugar de la frase completa de Auguste Comte?",
+                        "opciones": [
+                            "Comte nunca tuvo un lema; Díaz lo inventó completamente.",
+                            "El lema original de Comte era 'Amor, Orden y Progreso', pero Díaz eliminó el 'Amor' para enfatizar la administración técnica.",
+                            "El lema original era 'Progreso y Libertad', pero Díaz cambió 'Libertad' por 'Orden' para justificar la represión.",
+                            "Calles modificó el lema después de la Revolución para diferenciarse del Porfiriato."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La frase original de Auguste Comte era 'Amor, Orden y Progreso'. El régimen de Díaz adoptó solo 'Orden y Progreso', eliminando el 'Amor', lo que refleja la prioridad del gobierno en la estabilidad y la modernización sobre el bienestar social."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál es la importancia histórica de la Constitución de 1917 en el contexto mundial?",
+                        "opciones": [
+                            "Fue la primera constitución republicana del continente americano.",
+                            "Fue la primera constitución en el mundo de carácter social, incluyendo derechos laborales y agrarios.",
+                            "Fue la primera constitución que separó la Iglesia del Estado.",
+                            "Fue la primera constitución que estableció el sufragio universal."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La Constitución de 1917 fue la primera en el mundo en incluir derechos sociales (garantías sociales): educación laica (Art. 3), propiedad nacional de tierras y aguas (Art. 27) y derechos laborales como salario mínimo y jornada de 8 horas (Art. 123)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué relación existe entre los Tratados de Ciudad Juárez y los Tratados de Bucareli?",
+                        "opciones": [
+                            "Ambos fueron firmados entre México y Francia para resolver conflictos territoriales.",
+                            "Los de Ciudad Juárez forzaron la renuncia de Díaz (1911); los de Bucareli buscaron el reconocimiento de EE. UU. al gobierno de Obregón (1923).",
+                            "Los de Ciudad Juárez terminaron la Revolución; los de Bucareli iniciaron la Guerra Cristera.",
+                            "No tienen relación: los primeros son sobre comercio y los segundos sobre migración."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Los Tratados de Ciudad Juárez (1911) lograron la renuncia y exilio de Porfirio Díaz. Los Tratados de Bucareli (1923), una década después, fueron acuerdos entre Obregón y EE. UU. para que este país reconociera su gobierno posrevolucionario."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Por qué Pedro Lascuráin es relevante en la historia de México a pesar de gobernar solo 45 minutos?",
+                        "opciones": [
+                            "Porque en ese tiempo firmó la Constitución de 1917.",
+                            "Porque su brevísima presidencia fue el mecanismo legal usado para que Victoriano Huerta usurpara el poder tras la Decena Trágica.",
+                            "Porque renunció voluntariamente para convocar nuevas elecciones democráticas.",
+                            "Porque fue el primer presidente civil en la historia de México."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Pedro Lascuráin ocupó la presidencia por solo 45 minutos durante la Decena Trágica (1913). Como Secretario de Relaciones Exteriores, asumió la presidencia tras la renuncia forzada de Madero, solo para nombrar a Huerta como su secretario y renunciar inmediatamente, dándole la presidencia a Huerta de manera aparentemente legal."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Compara el papel de Obregón y Calles en la reconstrucción posrevolucionaria. ¿Cuál fue la contribución institucional de cada uno?",
+                        "opciones": [
+                            "Obregón creó el PNR y Calles creó la SEP.",
+                            "Obregón creó la SEP (con Vasconcelos) y la CROM; Calles fundó el PNR para institucionalizar la política.",
+                            "Ambos se enfocaron exclusivamente en reformas agrarias sin crear instituciones nuevas.",
+                            "Obregón fundó el PRI y Calles inició la Guerra Cristera como política de Estado."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Obregón (1920-1924) se enfocó en la educación (SEP con Vasconcelos) y el control obrero (CROM). Calles (1924-1928+) institucionalizó la política al fundar el PNR (1929), marcando el paso de la era de caudillos a la era de instituciones."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "hist7-001",
+                    "pregunta": "¿Contra quién iba dirigido el Plan de Tuxtepec (1876)?",
+                    "respuesta": "Contra la reelección de Sebastián Lerdo de Tejada. Con este plan, Porfirio Díaz llegó al poder.",
+                    "tema": "El Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-002",
+                    "pregunta": "¿Cuál es la frase original de Auguste Comte y cómo la modificó el Porfiriato?",
+                    "respuesta": "La frase original es 'Amor, Orden y Progreso'. El Porfiriato eliminó el 'Amor', quedando 'Orden y Progreso'.",
+                    "tema": "El Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-003",
+                    "pregunta": "¿Qué otro lema se asocia a la filosofía política del Porfiriato?",
+                    "respuesta": "\"Poca política, mucha administración.\"",
+                    "tema": "El Porfiriato",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-004",
+                    "pregunta": "¿Quién fue José Ives Limantour y cuál fue su logro económico?",
+                    "respuesta": "Secretario de Hacienda del Porfiriato. Logró la amortización de la deuda externa; el peso valía lo mismo que el dólar.",
+                    "tema": "El Porfiriato - Economía",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-005",
+                    "pregunta": "¿Qué fue la Entrevista Díaz-Creelman y por qué fue importante?",
+                    "respuesta": "Díaz declaró que México estaba listo para la democracia, lo que motivó a los opositores (como Madero) a organizarse.",
+                    "tema": "Revolución Mexicana",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-006",
+                    "pregunta": "¿Qué estableció el Plan de San Luis?",
+                    "respuesta": "Desconoció a Díaz y convocó a la lucha armada el 20 de noviembre de 1910. Lema: 'Sufragio efectivo, no reelección.'",
+                    "tema": "Revolución Mexicana",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-007",
+                    "pregunta": "¿Qué sucedió en los Tratados de Ciudad Juárez (1911)?",
+                    "respuesta": "Porfirio Díaz renunció a la presidencia y se exilió en Francia.",
+                    "tema": "Revolución Mexicana",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-008",
+                    "pregunta": "¿Qué estableció el Plan de Ayala y quién lo proclamó?",
+                    "respuesta": "Emiliano Zapata desconoció a Madero por no devolver las tierras a los campesinos. Lema: 'La tierra es de quien la trabaja.'",
+                    "tema": "Revolución Mexicana",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-009",
+                    "pregunta": "¿Qué fue la Decena Trágica (1913)?",
+                    "respuesta": "Golpe de estado militar donde Victoriano Huerta traicionó a Madero (asesinado). Pedro Lascuráin fue presidente por 45 minutos para ceder el poder a Huerta.",
+                    "tema": "Revolución Mexicana",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-010",
+                    "pregunta": "¿Qué estableció el Plan de Guadalupe?",
+                    "respuesta": "Venustiano Carranza desconoció a Victoriano Huerta como presidente.",
+                    "tema": "Constitucionalismo",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-011",
+                    "pregunta": "¿Qué establece el artículo 3 de la Constitución de 1917?",
+                    "respuesta": "La educación laica y gratuita.",
+                    "tema": "Constitución de 1917",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-012",
+                    "pregunta": "¿Qué establece el artículo 27 de la Constitución de 1917?",
+                    "respuesta": "La propiedad originaria de la Nación sobre tierras y aguas.",
+                    "tema": "Constitución de 1917",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-013",
+                    "pregunta": "¿Qué establece el artículo 123 de la Constitución de 1917?",
+                    "respuesta": "Derechos laborales: salario mínimo, jornada de 8 horas, derecho a huelga.",
+                    "tema": "Constitución de 1917",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-014",
+                    "pregunta": "¿Por qué Álvaro Obregón es considerado el 'último Caudillo'?",
+                    "respuesta": "Fue el último presidente que gobernó bajo la lógica del caudillismo militar posrevolucionario, antes de la institucionalización política.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-015",
+                    "pregunta": "¿Qué fueron los Tratados de Bucareli?",
+                    "respuesta": "Acuerdos firmados por Obregón para que EE. UU. reconociera su gobierno.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-016",
+                    "pregunta": "¿Quién creó la SEP y en qué gobierno?",
+                    "respuesta": "José Vasconcelos, durante el gobierno de Álvaro Obregón (1921).",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-017",
+                    "pregunta": "¿Qué fue la Guerra Cristera?",
+                    "respuesta": "Conflicto armado entre el Estado (Ley Calles) y grupos católicos por las leyes anticlericales.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-018",
+                    "pregunta": "¿Qué fue el PNR (1929) y por qué fue importante?",
+                    "respuesta": "Primer partido oficial de México (hoy PRI), fundado por Calles para pasar de la 'era de caudillos' a la 'era de instituciones'.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-019",
+                    "pregunta": "¿Qué fue el Maximato y quiénes fueron los tres presidentes manipulados?",
+                    "respuesta": "Periodo (1928-1934) donde Calles controló la política. Presidentes: Emilio Portes Gil, Pascual Ortiz Rubio y Abelardo L. Rodríguez.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                },
+                {
+                    "id": "hist7-020",
+                    "pregunta": "¿Qué logró Emilio Portes Gil durante el Maximato?",
+                    "respuesta": "Otorgó autonomía a la UNAM.",
+                    "tema": "Reconstrucción Nacional",
+                    "asignatura": "Historia de México"
+                }
+            ]
         }
     ]
 };

@@ -1109,6 +1109,359 @@ export const fisica = {
                     "asignatura": "Física"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Física",
+            "titleIconLeft": "fa-atom",
+            "titleIconRight": "fa-earth-americas",
+            "titleStyle": "color: #0e7490;",
+            "mainTopicId": "mainTopicFisica4",
+            "mainTopicClass": "topic-1",
+            "mainTopicTitle": "Física",
+            "mainTopicIcon1": "fa-globe",
+            "mainTopicIcon2": "fa-weight-hanging",
+            "mainTopicSubtitle": "Clase 4: Gravitación, Fuerzas y Leyes de Newton",
+            "branches": [
+                {
+                    "id": "nodes-fis4-1",
+                    "topicIdx": 1,
+                    "title": "1. Ley de Gravitación Universal",
+                    "icon": "fa-earth-americas",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.1s",
+                            "title": "Concepto",
+                            "content": "<p>Explica con qué fuerza se atraen dos cuerpos (como los planetas) debido a su masa y la distancia entre ellos.</p><p><b>Fórmula:</b> $$F = G \\frac{m_1 \\cdot m_2}{d^2}$$</p><p><b>Constante G:</b> $$6.67 \\times 10^{-11} \\frac{N \\cdot m^2}{kg^2}$$</p>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.2s",
+                            "title": "Relación Proporcional",
+                            "content": "<p>A <b>mayor distancia</b>, <b>menor</b> fuerza de atracción.</p><p>A <b>menor distancia</b>, <b>mayor</b> fuerza de atracción.</p>"
+                        },
+                        {
+                            "icon": "fa-superscript",
+                            "delay": "0.3s",
+                            "title": "Notación Científica (Tip de examen)",
+                            "content": "<p>Si mueves el punto decimal a la <b>izquierda</b>, el exponente se mueve a la <b>derecha</b> (se le suma).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Busca siempre que el número esté entre 1 y 9.9 (ej. $1.66 \\times 10^{-9}$). Si ves un inciso como $16.6 \\times 10^{-10}$, suele ser un distractor.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-fis4-2",
+                    "topicIdx": 2,
+                    "title": "2. Masa vs. Peso y Leyes de Newton",
+                    "icon": "fa-weight-hanging",
+                    "subnodes": [
+                        {
+                            "icon": "fa-scale-balanced",
+                            "delay": "0.1s",
+                            "title": "Masa vs. Peso",
+                            "content": "<p><b>Masa:</b> Cantidad de materia en <b>kilogramos (kg)</b>. No cambia según el planeta.</p><p><b>Peso (W):</b> Es una <b>fuerza</b> en <b>Newtons (N)</b>. Es la masa afectada por la gravedad.</p><p><b>Vector:</b> El peso siempre es una flecha hacia abajo (Eje -Y).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Considera la gravedad $g = 10$.<br><b>Masa a Peso:</b> Agrega un cero ($5\\,kg \\rightarrow 50\\,N$).<br><b>Peso a Masa:</b> Quita un cero ($800\\,N \\rightarrow 80\\,kg$).</div>"
+                        },
+                        {
+                            "icon": "fa-apple-whole",
+                            "delay": "0.2s",
+                            "title": "Primera Ley de Newton (Inercia)",
+                            "content": "<p>Un objeto no se mueve (reposo) o no cambia su <b>velocidad constante</b> a menos que una <b>fuerza externa</b> actúe sobre él.</p>"
+                        },
+                        {
+                            "icon": "fa-forward",
+                            "delay": "0.3s",
+                            "title": "Segunda Ley de Newton (Fuerza)",
+                            "content": "<p>$$F = m \\cdot a$$</p><p>Para <b>acelerar</b> una masa, se requiere aplicar una <b>fuerza</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.4s",
+                            "title": "Tercera Ley de Newton (Acción-Reacción)",
+                            "content": "<p>A toda fuerza aplicada se le opone una de <b>igual magnitud</b> pero en <b>sentido opuesto</b>.</p><p><i>Ejemplo: El culatazo de un arma o el empuje de una pared.</i></p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-fis4-3",
+                    "topicIdx": 3,
+                    "title": "3. Ley de Hooke y Fricción",
+                    "icon": "fa-compress",
+                    "subnodes": [
+                        {
+                            "icon": "fa-down-left-and-up-right-to-center",
+                            "delay": "0.1s",
+                            "title": "Ley de Hooke (Elasticidad)",
+                            "content": "<p>Estudia cuánto se deforma (estira o comprime) un material elástico.</p><p><b>Fórmula:</b> $$F = k \\cdot d$$</p><p>($k$ es la constante del material).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si el problema habla del <b>mismo resorte</b>, no uses la fórmula, usa una <b>Regla de Tres</b> directa entre la fuerza y la distancia. El tamaño original del resorte (ej. 25 cm) suele ser un <b>dato distractor</b> que no se usa en la operación.</div>"
+                        },
+                        {
+                            "icon": "fa-road",
+                            "delay": "0.2s",
+                            "title": "Fricción: Concepto",
+                            "content": "<p>Es la fuerza que se opone a que un objeto se deslice sobre una superficie.</p><p><b>Fuerza de Fricción:</b> $$F_r = \\mu \\cdot W$$</p><p>(Coeficiente $\\times$ Peso).</p>"
+                        },
+                        {
+                            "icon": "fa-hand",
+                            "delay": "0.3s",
+                            "title": "Tipos de Fricción",
+                            "content": "<p><b>Estática:</b> El objeto está en reposo (quieto). Es la fuerza necesaria para \"despegarlo\" del piso.</p><p><b>Dinámica:</b> El objeto ya está en movimiento.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-fis4-4",
+                    "topicIdx": 4,
+                    "title": "4. Tips para el Reactivo UNAM",
+                    "icon": "fa-list-check",
+                    "subnodes": [
+                        {
+                            "icon": "fa-square-root-variable",
+                            "delay": "0.1s",
+                            "title": "Despejes Rápidos",
+                            "content": "<p>Si te piden la <b>Altura (h)</b> en caída libre o gravitación, recuerda que la <b>raíz pasa como potencia al cuadrado</b> al otro lado.</p>"
+                        },
+                        {
+                            "icon": "fa-scissors",
+                            "delay": "0.2s",
+                            "title": "Simplificación en Gravitación",
+                            "content": "<p>En problemas de Gravitación, antes de multiplicar números grandes, intenta ver si puedes <b>simplificar</b> los valores de las masas con el cuadrado de la distancia (como el truco del $15 \\cdot 15$ entre $3^2$).</p>"
+                        },
+                        {
+                            "icon": "fa-drafting-compass",
+                            "delay": "0.3s",
+                            "title": "Ángulos de Vectores",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Solo estudia los valores para <b>30°, 45° y 60°</b>. La UNAM no te pedirá calcular ángulos diferentes porque no hay calculadora.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/V8ktuTMgTKo",
+            "id": "content-fisica-4",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Según la Ley de Gravitación Universal, ¿qué ocurre con la fuerza de atracción si la distancia entre dos cuerpos se duplica?",
+                        "opciones": [
+                            "Se duplica.",
+                            "Se reduce a la mitad.",
+                            "Se reduce a la cuarta parte.",
+                            "No cambia."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La fuerza gravitacional es inversamente proporcional al cuadrado de la distancia ($F \\propto 1/d^2$). Si la distancia se duplica, la fuerza se reduce a $1/2^2 = 1/4$ de su valor original."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál es la diferencia fundamental entre masa y peso?",
+                        "opciones": [
+                            "La masa se mide en Newtons y el peso en kilogramos.",
+                            "La masa es la cantidad de materia (kg) y no cambia; el peso es una fuerza (N) que depende de la gravedad.",
+                            "La masa cambia en cada planeta y el peso es constante.",
+                            "No hay diferencia; son sinónimos."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La masa es la cantidad de materia de un cuerpo medida en kilogramos (kg) y es constante sin importar la ubicación. El peso es una fuerza medida en Newtons (N) que resulta de la masa afectada por la gravedad ($W = m \\cdot g$)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué establece la Primera Ley de Newton?",
+                        "opciones": [
+                            "Toda fuerza tiene una reacción igual y opuesta.",
+                            "La fuerza es igual a masa por aceleración.",
+                            "Un objeto permanece en reposo o en movimiento rectilíneo uniforme a menos que una fuerza externa actúe sobre él.",
+                            "La fuerza de fricción siempre es mayor que la fuerza aplicada."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Primera Ley de Newton (Ley de Inercia) establece que un cuerpo permanece en reposo o en movimiento rectilíneo uniforme (velocidad constante) a menos que una fuerza externa neta actúe sobre él."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "En la Ley de Hooke ($F = k \\cdot d$), si un resorte se estira 2 cm con una fuerza de 10 N, ¿cuánta fuerza se necesita para estirarlo 6 cm?",
+                        "opciones": [
+                            "20 N.",
+                            "25 N.",
+                            "30 N.",
+                            "60 N."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Como es el mismo resorte, usamos Regla de Tres directa: si 2 cm requieren 10 N, entonces 6 cm requieren $(6 \\times 10) / 2 = 30$ N. La constante $k$ no cambia."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué tipo de fricción se opone al inicio del movimiento de un objeto en reposo?",
+                        "opciones": [
+                            "Fricción dinámica.",
+                            "Fricción cinética.",
+                            "Fricción estática.",
+                            "Fricción gravitacional."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "La fricción estática es la fuerza que se opone a que un objeto en reposo comience a moverse. Una vez que el objeto ya está en movimiento, la que actúa es la fricción dinámica (cinética)."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "En un problema de gravitación, las masas son $m_1 = 15\\,kg$ y $m_2 = 15\\,kg$ separadas por $d = 3\\,m$. ¿Cuál es la estrategia más eficiente para calcular la fuerza?",
+                        "opciones": [
+                            "Multiplicar $15 \\times 15 = 225$ y $3^2 = 9$, luego simplificar $225/9 = 25$ antes de multiplicar por $G$.",
+                            "Convertir las masas a gramos para evitar exponentes negativos.",
+                            "Ignorar $G$ porque es muy pequeña y no afecta el resultado.",
+                            "Sumar las masas y dividir entre la distancia."
+                        ],
+                        "respuesta": 0,
+                        "retroalimentacion": "La estrategia eficiente es simplificar antes de operar: $15 \\times 15 = 225$ y $3^2 = 9$. Luego $225/9 = 25$. Finalmente multiplicar $G \\times 25 = 6.67 \\times 10^{-11} \\times 25$. Esto evita números grandes innecesarios."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Un resultado de gravitación da $16.675 \\times 10^{-10}$ N. ¿Cuál es la forma correcta en notación científica?",
+                        "opciones": [
+                            "$16.675 \\times 10^{-10}$ N (ya está correcto).",
+                            "$1.6675 \\times 10^{-9}$ N.",
+                            "$0.16675 \\times 10^{-8}$ N.",
+                            "$166.75 \\times 10^{-11}$ N."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "En notación científica el número debe estar entre 1 y 9.9. Movemos el punto una posición a la izquierda ($16.675 \\rightarrow 1.6675$) y sumamos 1 al exponente ($-10 + 1 = -9$). Resultado: $1.6675 \\times 10^{-9}$ N."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Un astronauta de 70 kg pesa 686 N en la Tierra. En la Luna (gravedad $\\approx 1.6\\,m/s^2$), ¿cuál es su masa y su peso?",
+                        "opciones": [
+                            "Masa: 11.2 kg, Peso: 112 N.",
+                            "Masa: 70 kg, Peso: 112 N.",
+                            "Masa: 70 kg, Peso: 686 N.",
+                            "Masa: 42 kg, Peso: 67.2 N."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La masa no cambia (70 kg en cualquier lugar del universo). El peso sí cambia: $W = 70 \\times 1.6 = 112$ N. Esta es la diferencia clave entre masa (constante) y peso (depende de la gravedad local)."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Un resorte de 25 cm de largo se estira a 30 cm cuando se le aplica una fuerza de 20 N. ¿Cuánta fuerza se necesita para estirarlo a 40 cm?",
+                        "opciones": [
+                            "40 N.",
+                            "60 N.",
+                            "32 N.",
+                            "80 N."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "La deformación es lo que importa, no el largo total. Con 20 N se deformó $30 - 25 = 5$ cm. Para estirarlo a 40 cm la deformación es $40 - 25 = 15$ cm. Regla de tres: $(15 \\times 20)/5 = 60$ N."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Un bloque de 50 kg está sobre una superficie con coeficiente de fricción estático $\\mu = 0.3$. ¿Cuál es la fuerza mínima para moverlo? (Usa $g = 10$).",
+                        "opciones": [
+                            "15 N.",
+                            "50 N.",
+                            "150 N.",
+                            "500 N."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Primero se calcula el peso: $W = 50 \\times 10 = 500$ N. Luego la fuerza de fricción estática: $F_r = \\mu \\times W = 0.3 \\times 500 = 150$ N. Se necesitan al menos 150 N para vencer la fricción y mover el bloque."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "fis-033",
+                    "pregunta": "¿Qué describe la Ley de Gravitación Universal?",
+                    "respuesta": "La fuerza con que se atraen dos cuerpos debido a su masa y la distancia entre ellos: $F = G \\frac{m_1 \\cdot m_2}{d^2}$.",
+                    "tema": "Gravitación Universal",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-034",
+                    "pregunta": "¿Cuál es el valor de la constante de gravitación universal G?",
+                    "respuesta": "$6.67 \\times 10^{-11} \\frac{N \\cdot m^2}{kg^2}$.",
+                    "tema": "Gravitación Universal",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-035",
+                    "pregunta": "¿Qué relación existe entre distancia y fuerza gravitacional?",
+                    "respuesta": "A mayor distancia, menor fuerza de atracción. A menor distancia, mayor fuerza de atracción (proporcional a $1/d^2$).",
+                    "tema": "Gravitación Universal",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-036",
+                    "pregunta": "En notación científica, ¿cómo debe expresarse el número?",
+                    "respuesta": "El número debe estar entre 1 y 9.9. Si mueves el punto a la izquierda, sumas al exponente.",
+                    "tema": "Notación Científica",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-037",
+                    "pregunta": "¿Cuál es la diferencia entre masa y peso?",
+                    "respuesta": "Masa: cantidad de materia en kg (constante). Peso: fuerza en Newtons que depende de la gravedad ($W = m \\cdot g$).",
+                    "tema": "Masa vs. Peso",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-038",
+                    "pregunta": "¿Cómo convertir rápidamente entre masa y peso con $g = 10$?",
+                    "respuesta": "Masa a Peso: agrega un cero ($5\\,kg \\rightarrow 50\\,N$). Peso a Masa: quita un cero ($800\\,N \\rightarrow 80\\,kg$).",
+                    "tema": "Masa vs. Peso",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-039",
+                    "pregunta": "¿Qué establece la Primera Ley de Newton (Inercia)?",
+                    "respuesta": "Un objeto permanece en reposo o en movimiento rectilíneo uniforme a menos que una fuerza externa actúe sobre él.",
+                    "tema": "Leyes de Newton",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-040",
+                    "pregunta": "¿Qué establece la Segunda Ley de Newton?",
+                    "respuesta": "$F = m \\cdot a$. Para acelerar una masa se requiere aplicar una fuerza.",
+                    "tema": "Leyes de Newton",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-041",
+                    "pregunta": "¿Qué establece la Tercera Ley de Newton?",
+                    "respuesta": "A toda fuerza aplicada se le opone una de igual magnitud pero en sentido opuesto (acción-reacción).",
+                    "tema": "Leyes de Newton",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-042",
+                    "pregunta": "¿Qué estudia la Ley de Hooke?",
+                    "respuesta": "Cuánto se deforma un material elástico: $F = k \\cdot d$ ($k$ = constante del material).",
+                    "tema": "Ley de Hooke",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-043",
+                    "pregunta": "En Ley de Hooke, ¿cuándo se puede usar Regla de Tres en vez de la fórmula?",
+                    "respuesta": "Cuando el problema habla del mismo resorte. La relación entre fuerza y deformación es directa.",
+                    "tema": "Ley de Hooke",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-044",
+                    "pregunta": "¿Cuál es la fórmula de la fuerza de fricción?",
+                    "respuesta": "$F_r = \\mu \\cdot W$ (coeficiente de fricción por peso).",
+                    "tema": "Fricción",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-045",
+                    "pregunta": "¿Cuál es la diferencia entre fricción estática y dinámica?",
+                    "respuesta": "Estática: objeto en reposo (fuerza para 'despegarlo'). Dinámica: objeto ya en movimiento.",
+                    "tema": "Fricción",
+                    "asignatura": "Física"
+                },
+                {
+                    "id": "fis-046",
+                    "pregunta": "¿Qué ángulos de vectores se deben estudiar para el examen UNAM?",
+                    "respuesta": "Solo 30°, 45° y 60°. La UNAM no pide otros porque no hay calculadora.",
+                    "tema": "Tips de Examen",
+                    "asignatura": "Física"
+                }
+            ]
         }
     ]
 };
