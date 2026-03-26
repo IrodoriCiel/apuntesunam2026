@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260324-2';
+const APP_VERSION = '20260325-3';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -298,7 +298,7 @@ window.StudyTools = {
         if (!grid) return;
         grid.innerHTML = '';
         const subjectButtons = Array.from(document.querySelectorAll('.subject-item[id^="btn-"]'));
-        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
+        const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-banco'];
         const metaIconMap = window.MATERIA_ICON || {};
 
         subjectButtons.forEach(btn => {
@@ -456,7 +456,7 @@ window.StudyTools = {
             <tbody>`;
         const subjects = [];
         document.querySelectorAll('.subject-item[id^="btn-"]').forEach(btn => {
-            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config'];
+            const skip = ['btn-inicio', 'btn-todas-unam', 'btn-simulacro', 'btn-guided', 'btn-config', 'btn-banco'];
             if (skip.includes(btn.id)) return;
             let label = "";
             btn.childNodes.forEach(node => { if (node.nodeType === 3) label += node.textContent; });
@@ -1126,6 +1126,8 @@ function handleHash() {
         switchClass('content-config', document.getElementById('btn-config'), 'btn-config');
     } else if (hash === 'studytok') {
         switchClass('content-studytok', document.getElementById('link-studytok'), 'btn-studytok');
+    } else if (hash === 'banco') {
+        switchClass('content-banco', document.getElementById('btn-banco'), 'btn-banco');
     }
 }
 
@@ -1669,6 +1671,101 @@ function renderAllUnamQuestionsPage() {
 // =============================================
 // RENDER: SIMULACRO
 // =============================================
+// =============================================
+// BANCO DE PREGUNTAS — Sección dedicada
+// =============================================
+function renderBancoPage() {
+    const bs = (typeof bancoBySubject !== 'undefined') ? bancoBySubject : {};
+    const MI = window.MATERIA_ICON || {};
+    const order = ['Español', 'Matemáticas', 'Física', 'Química', 'Biología', 'Historia Universal', 'Historia de México', 'Literatura', 'Geografía'];
+
+    let cards = '';
+    for (const subject of order) {
+        const questions = bs[subject];
+        if (!questions || !questions.length) continue;
+        const meta = MI[subject] || { icon: 'fa-bookmark', color: '#64748b' };
+        const count = questions.length;
+        cards += `
+        <div class="banco-card" onclick="loadBancoSubject('${subject}')" style="border-left:4px solid ${meta.color};background:var(--card-bg,#fff);border-radius:12px;padding:16px 18px;cursor:pointer;display:flex;align-items:center;gap:14px;box-shadow:0 1px 4px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s;" onmouseenter="this.style.transform='translateY(-2px)';this.style.boxShadow='0 4px 12px rgba(0,0,0,.1)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 1px 4px rgba(0,0,0,.06)'">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;font-size:1.1rem;color:${meta.color};background:${meta.color}18;flex-shrink:0;">
+                <i class="fa-solid ${meta.icon}"></i>
+            </span>
+            <div style="flex:1;">
+                <div style="font-weight:700;font-size:1rem;color:var(--text-primary,#1e293b);">${subject}</div>
+                <div style="font-size:0.85rem;color:#64748b;">${count} preguntas disponibles</div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="color:#cbd5e1;font-size:.9rem;"></i>
+        </div>`;
+    }
+
+    const totalQ = Object.values(bs).flat().length;
+    return `
+    <div style="max-width:800px;margin:0 auto;padding:20px 16px;">
+        <div style="text-align:center;margin-bottom:28px;">
+            <h1 style="font-size:1.6rem;color:var(--text-primary,#1e293b);margin-bottom:6px;">
+                <i class="fa-solid fa-database" style="color:#d97706;"></i> Banco de Preguntas
+            </h1>
+            <p style="color:#64748b;font-size:.95rem;margin:0;">
+                ${totalQ} preguntas organizadas por materia. Selecciona una para practicar con <b>20 preguntas aleatorias</b>.
+            </p>
+        </div>
+        <div style="display:grid;gap:10px;">${cards}</div>
+        <div id="banco-quiz-area" style="margin-top:24px;"></div>
+    </div>`;
+}
+
+function loadBancoSubject(subject) {
+    const bs = (typeof bancoBySubject !== 'undefined') ? bancoBySubject : {};
+    const MI = window.MATERIA_ICON || {};
+    const meta = MI[subject] || { icon: 'fa-bookmark', color: '#64748b' };
+    const all = bs[subject] || [];
+    if (!all.length) return;
+
+    const BANCO_LIMIT = 20;
+    const shuffled = [...all].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, BANCO_LIMIT);
+    const sessionKey = 'banco-session';
+
+    _bancoSessionData[sessionKey] = selected;
+
+    const area = document.getElementById('banco-quiz-area');
+    if (!area) return;
+
+    area.innerHTML = `<div id="${sessionKey}"></div>`;
+
+    const titleHtml = `<i class="fa-solid ${meta.icon}" style="color:${meta.color}"></i> ${subject} <span style="font-weight:400;font-size:.85rem;color:#64748b;">(${selected.length} de ${all.length})</span>`;
+    buildQuizSection(sessionKey, _bancoSessionData, 'bancosub', titleHtml, meta.color);
+
+    // Auto-expand the questions
+    const qContainer = area.querySelector('.unam-questions-container');
+    if (qContainer) {
+        qContainer.style.display = 'flex';
+        const header = area.querySelector('.unam-header');
+        if (header) {
+            header.style.marginBottom = '25px';
+            header.style.borderBottom = `2px solid ${meta.color}33`;
+        }
+    }
+
+    // Add "load new questions" button
+    const btnWrap = document.createElement('div');
+    btnWrap.style.cssText = 'text-align:center;margin-top:16px;';
+    btnWrap.innerHTML = `
+        <button onclick="loadBancoSubject('${subject}')" style="background:${meta.color};color:#fff;border:none;padding:10px 24px;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;transition:opacity .2s;" onmouseenter="this.style.opacity='0.85'" onmouseleave="this.style.opacity='1'">
+            <i class="fa-solid fa-shuffle"></i> Cargar nuevas preguntas
+        </button>
+        <button onclick="document.getElementById('banco-quiz-area').innerHTML='';window.scrollTo(0,0);" style="background:#f1f5f9;color:#64748b;border:none;padding:10px 24px;border-radius:10px;font-size:.95rem;font-weight:600;cursor:pointer;margin-left:8px;">
+            <i class="fa-solid fa-arrow-left"></i> Volver
+        </button>`;
+    area.appendChild(btnWrap);
+
+    // Scroll to quiz area
+    area.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // MathJax
+    if (window.MathJax) window.MathJax.typesetPromise([area]).catch(() => {});
+}
+
 function renderSimulacroPage() {
     const history = getSimHistory();
     let histHtml = '';
@@ -1921,15 +2018,22 @@ function startSimulacroCompleto(total) {
     qContainer.innerHTML = '';
     simCorrect = 0;
 
-    // Construir pool por materia (uniendo los cuatro bancos de preguntas)
+    // Construir pool por materia (uniendo preguntas de clase + banco por materia)
     const poolByMateria = {};
-    [unamQuestions, practiceQuestions, practiceLevel2Questions, (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {}].forEach(obj => {
+    [unamQuestions, practiceQuestions, practiceLevel2Questions].forEach(obj => {
         Object.keys(obj).forEach(key => {
             const mat = appDatabase[key]?.mainTopicTitle || key;
             if (!poolByMateria[mat]) poolByMateria[mat] = [];
             obj[key].forEach(q => poolByMateria[mat].push({ ...q, originalKey: key }));
         });
     });
+    // Agregar banco por materia directamente
+    if (typeof bancoBySubject !== 'undefined') {
+        Object.entries(bancoBySubject).forEach(([mat, qs]) => {
+            if (!poolByMateria[mat]) poolByMateria[mat] = [];
+            qs.forEach(q => poolByMateria[mat].push({ ...q }));
+        });
+    }
 
     // Seleccionar preguntas según distribución y armar el examen
     currentSimExam = [];
@@ -2045,7 +2149,14 @@ function startSimulacro(filterMaterias = 'all') {
     };
     addFromObj(unamQuestions);
     addFromObj(practiceQuestions);
-    if (typeof bancoQuestions !== 'undefined') addFromObj(bancoQuestions);
+    // Agregar banco por materia
+    if (typeof bancoBySubject !== 'undefined') {
+        Object.entries(bancoBySubject).forEach(([mat, qs]) => {
+            if (filterMaterias === 'all' || filterMaterias.includes(mat)) {
+                qs.forEach(q => pool.push({ ...q }));
+            }
+        });
+    }
 
     pool.sort(() => Math.random() - 0.5);
     currentSimExam = pool.slice(0, Math.min(20, pool.length));
@@ -2152,6 +2263,7 @@ function saveSimHistory(entry) {
 // QUIZ: BUILD / SELECT / EVAL
 // =============================================
 let userAnswers = {};
+let _bancoSessionData = {};
 
 function buildQuizSection(contentId, questionsObj, prefix, titleHtml, borderColor, insertBeforeEl = null) {
     const container = document.getElementById(contentId);
@@ -2252,9 +2364,9 @@ function evalQuestion(prefix, contentId, qIdx) {
     const selIdx = userAnswers[`${prefix}-${contentId}-${qIdx}`];
     if (selIdx === undefined) return;
     const q = prefix === 'sim' ? currentSimExam[qIdx] :
+        prefix === 'bancosub' ? (_bancoSessionData[contentId] || [])[qIdx] :
         (prefix === 'unam' ? unamQuestions[contentId] :
             prefix === 'prac2' ? practiceLevel2Questions[contentId] :
-            prefix === 'banco' ? ((typeof bancoQuestions !== 'undefined') ? bancoQuestions : {})[contentId] :
             practiceQuestions[contentId])?.[qIdx];
     if (!q || !q._shuffledIndices) return;
     const renderedIndices = q._shuffledIndices[prefix];
@@ -2323,7 +2435,8 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         'content-simulacro': 'Simulacro | Apuntes',
         'content-guided': 'Estudio Guiado | Apuntes',
         'content-config': 'Configuraci\u00f3n | Apuntes',
-        'content-studytok': 'StudyTok | Apuntes'
+        'content-studytok': 'StudyTok | Apuntes',
+        'content-banco': 'Banco de Preguntas | Apuntes'
     };
     document.title = titleMap[contentId] ||
         (appDatabase[contentId] ? `${appDatabase[contentId].mainTopicSubtitle} | Apuntes UNAM` : 'Apuntes UNAM 2026');
@@ -2379,6 +2492,11 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
         da.innerHTML = '';
         window.location.hash = 'studytok';
         setTimeout(() => renderStudyTokFeed(), 50);
+    } else if (contentId === 'content-banco') {
+        document.getElementById('content-home').classList.remove('visible');
+        const da = document.getElementById('dynamic-content-area');
+        da.innerHTML = renderBancoPage();
+        window.location.hash = 'banco';
     } else {
         document.getElementById('content-home').classList.remove('visible');
         const da = document.getElementById('dynamic-content-area');
@@ -2407,7 +2525,7 @@ function switchClass(contentId, classLinkElement, parentBtnId) {
     if (parentBtnId) {
         const pb = document.getElementById(parentBtnId);
         if (pb) pb.classList.add('active');
-        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config') {
+        if (parentBtnId.startsWith('btn-') && parentBtnId !== 'btn-inicio' && parentBtnId !== 'btn-todas-unam' && parentBtnId !== 'btn-simulacro' && parentBtnId !== 'btn-guided' && parentBtnId !== 'btn-config' && parentBtnId !== 'btn-banco') {
             const submenuId = `submenu-${parentBtnId.replace('btn-', '')}`;
             setOpenSubmenu(submenuId);
         }
@@ -2432,12 +2550,10 @@ function renderQuestionsForClass(contentId) {
     if (!container) return;
 
     // --- Lazy quiz placeholders (Feature: IntersectionObserver) ---
-    const bancoClaseObj = (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {};
     const quizTypes = [
         { type: 'prac',  obj: practiceQuestions,       title: '<i class="fa-solid fa-brain" style="color: #ec4899;"></i> Preguntas de Pr\u00e1ctica', color: '#ec4899' },
         { type: 'prac2', obj: practiceLevel2Questions,  title: '<i class="fa-solid fa-star" style="color: #8b5cf6;"></i> Preguntas de Pr\u00e1ctica Nivel 2', color: '#8b5cf6' },
-        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen" style="color:#2563eb;"></i> Preguntas de la Gu\u00eda UNAM', color: '#2563eb' },
-        { type: 'banco', obj: bancoClaseObj,            title: '<i class="fa-solid fa-database" style="color:#d97706;"></i> Banco de Pr\u00e1ctica', color: '#d97706' }
+        { type: 'unam',  obj: unamQuestions,            title: '<i class="fa-solid fa-file-pen" style="color:#2563eb;"></i> Preguntas de la Gu\u00eda UNAM', color: '#2563eb' }
     ];
 
     quizTypes.forEach(qt => {
@@ -2522,7 +2638,6 @@ function setupLazyQuizSections(classId) {
             if (type === 'prac')  { questionsObj = practiceQuestions;       prefix = 'prac'; }
             else if (type === 'prac2') { questionsObj = practiceLevel2Questions; prefix = 'prac2'; }
             else if (type === 'unam')  { questionsObj = unamQuestions;           prefix = 'unam'; }
-            else if (type === 'banco') { questionsObj = (typeof bancoQuestions !== 'undefined') ? bancoQuestions : {}; prefix = 'banco'; }
 
             if (questionsObj && questionsObj[classId]?.length) {
                 buildQuizSection(classId, questionsObj, prefix, title, color, ph);

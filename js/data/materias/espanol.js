@@ -1556,6 +1556,368 @@ export const espanol = {
                     "asignatura": "Español"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Español",
+            "titleIconLeft": "fa-comment-dots",
+            "titleIconRight": "fa-pencil",
+            "titleStyle": "color: #0369a1;",
+            "mainTopicId": "mainTopicEspanol5",
+            "mainTopicClass": "espanol-topic",
+            "mainTopicTitle": "Español",
+            "mainTopicIcon1": "fa-quote-left",
+            "mainTopicIcon2": "fa-quote-right",
+            "mainTopicSubtitle": "Clase 5: Sintaxis, Acentuación y Semántica",
+            "branches": [
+                {
+                    "id": "nodes-esp5-1",
+                    "topicIdx": 1,
+                    "title": "1. Sintaxis: La Oración y sus Tipos",
+                    "icon": "fa-sitemap",
+                    "subnodes": [
+                        {
+                            "icon": "fa-divide",
+                            "delay": "0.1s",
+                            "title": "Oraciones Unimembres vs. Bimembres",
+                            "content": "<p><b>Unimembre:</b> Contiene un solo elemento. No puede dividirse en sujeto y predicado.</p><ul><li><b>Frases:</b> \"&iexcl;Auxilio!\", \"&iexcl;Qué divertido!\".</li><li><b>Fenómenos naturales:</b> \"Nevó anoche\", \"Relampagueó\".</li><li><b>Verbo Haber:</b> \"Hubo fiesta\".</li></ul><p><b>Bimembre:</b> Oración completa con <b>Sujeto + Predicado</b>. Requiere un verbo conjugado.</p>"
+                        },
+                        {
+                            "icon": "fa-link",
+                            "delay": "0.2s",
+                            "title": "Oraciones Coordinadas (Mismo Nivel)",
+                            "content": "<p>Son independientes; si las separas, ambas se entienden por sí solas.</p><ul><li><b>Copulativas:</b> Unen o suman (<i>y, e, ni</i>). Ej: \"Ni estudia ni trabaja\".</li><li><b>Disyuntivas:</b> Dan opciones (<i>o, u</i>). Ej: \"&iquest;Estudias o trabajas?\".</li><li><b>Adversativas:</b> Indican oposición (<i>pero, sin embargo, mas, no obstante</i>).</li><li><b>Explicativas:</b> Aclaran el sentido (<i>es decir, o sea</i>).</li></ul>"
+                        },
+                        {
+                            "icon": "fa-arrow-down",
+                            "delay": "0.3s",
+                            "title": "Oraciones Subordinadas (Dependencia)",
+                            "content": "<p>Una oración depende de la principal para tener sentido.</p><p><i>Ej: \"Me encanta el vestido <b>que te compraste</b>\". (\"Que te compraste\" por sí solo no tiene sentido completo).</i></p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-esp5-2",
+                    "topicIdx": 2,
+                    "title": "2. Ortografía y Acentuación",
+                    "icon": "fa-spell-check",
+                    "subnodes": [
+                        {
+                            "icon": "fa-volume-high",
+                            "delay": "0.1s",
+                            "title": "Tipos de Acento",
+                            "content": "<p><b>Prosódico:</b> El golpe de voz que se escucha pero <b>no</b> se escribe con tilde.</p><p><b>Ortográfico:</b> El golpe de voz que <b>sí</b> se escribe con tilde (según reglas del SEGA).</p><p><b>Diacrítico:</b> Sirve para diferenciar palabras que se escriben igual pero tienen funciones distintas (ej: <i>él</i> - pronombre vs. <i>el</i> - artículo).</p>"
+                        },
+                        {
+                            "icon": "fa-list-ol",
+                            "delay": "0.2s",
+                            "title": "Regla del SEGA (Derecha a Izquierda)",
+                            "content": "<p>Para clasificar las palabras según su sílaba tónica:</p><ul><li><b>A (Aguda):</b> Tónica en la <b>última</b> sílaba. Se tilda si termina en <i>n, s</i> o <i>vocal</i>.</li><li><b>G (Grave):</b> Tónica en la <b>penúltima</b> sílaba. Se tilda si <b>NO</b> termina en <i>n, s</i> o <i>vocal</i>.</li><li><b>E (Esdrújula):</b> Tónica en la <b>antepenúltima</b>. <b>Siempre</b> se tildan.</li><li><b>S (Sobreesdrújula):</b> Tónica antes de la antepenúltima. <b>Siempre</b> se tildan.</li></ul>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-esp5-3",
+                    "topicIdx": 3,
+                    "title": "3. Relaciones Semánticas y Separación Silábica",
+                    "icon": "fa-arrows-split-up-and-left",
+                    "subnodes": [
+                        {
+                            "icon": "fa-clone",
+                            "delay": "0.1s",
+                            "title": "Relaciones Semánticas",
+                            "content": "<p><b>Homófonas:</b> Suenan igual, se escriben diferente, significado distinto (ej: <i>vaya / valla</i>).</p><p><b>Homógrafas:</b> Se escriben igual, suenan igual, significado distinto (ej: <i>banco</i> de sentarse / <i>banco</i> de dinero).</p><p><b>Sinónimos:</b> Significado igual o similar dentro del mismo campo semántico.</p><p><b>Antónimos:</b> Significados opuestos (ej: <i>ágil / torpe</i>).</p>"
+                        },
+                        {
+                            "icon": "fa-text-slash",
+                            "delay": "0.2s",
+                            "title": "Vocales Fuertes y Débiles",
+                            "content": "<p><b>Fuertes (Abiertas):</b> A, E, O.</p><p><b>Débiles (Cerradas):</b> I, U.</p>"
+                        },
+                        {
+                            "icon": "fa-grip-lines",
+                            "delay": "0.3s",
+                            "title": "Diptongo, Hiato y Triptongo",
+                            "content": "<p><b>Diptongo:</b> Unión de Débil + Fuerte (o dos débiles). Se mantienen juntas en la misma sílaba.</p><p><b>Hiato:</b> Fuerte + Fuerte o Débil acentuada + Fuerte. Se <b>separan</b> en sílabas distintas.</p><p><b>Triptongo:</b> Unión de tres vocales (Débil + Fuerte + Débil). Nunca se separan (ej: <i>-quial</i> en <i>coloquial</i>).</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-esp5-4",
+                    "topicIdx": 4,
+                    "title": "4. Tips para el Reactivo UNAM",
+                    "icon": "fa-list-check",
+                    "subnodes": [
+                        {
+                            "icon": "fa-person-walking-arrow-right",
+                            "delay": "0.1s",
+                            "title": "Voz Pasiva y Sujeto Tácito",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br><b>Voz Pasiva:</b> Si el predicado tiene la estructura \"fue + participio\" (ej: <i>fueron encontradas</i>), se clasifica como <b>Predicado Verbal</b>, no nominal.<br><b>Sujeto Tácito:</b> Si la pregunta te pide identificar el sujeto y no está escrito, búscalo en la terminación del verbo (ej: <i>Compraremos</i> $\\rightarrow$ Nosotros).</div>"
+                        },
+                        {
+                            "icon": "fa-filter",
+                            "delay": "0.2s",
+                            "title": "Descarte en Acentuación",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>En ejercicios de relación de columnas, identifica primero las <b>esdrújulas</b> (todas llevan tilde) para descartar incisos rápido.</div>"
+                        },
+                        {
+                            "icon": "fa-palette",
+                            "delay": "0.3s",
+                            "title": "Función Poética",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Las características clave de la <b>función poética</b> para el examen son la <b>connotación</b> y la <b>polisemia</b> (múltiples significados).</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/embed/-PKKo2zMtzs",
+            "id": "content-espanol-5",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál de las siguientes es una oración unimembre?",
+                        "opciones": [
+                            "\"El perro ladra fuerte.\"",
+                            "\"Hubo fiesta anoche.\"",
+                            "\"María compró flores.\"",
+                            "\"Nosotros estudiamos mucho.\""
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "\"Hubo fiesta anoche\" es unimembre porque el verbo <i>haber</i> en forma impersonal no admite sujeto. No puede dividirse en sujeto y predicado."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Qué tipo de oración coordinada es \"Ni estudia ni trabaja\"?",
+                        "opciones": [
+                            "Disyuntiva.",
+                            "Adversativa.",
+                            "Copulativa.",
+                            "Explicativa."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Las oraciones copulativas unen o suman ideas mediante nexos como <i>y, e, ni</i>. \"Ni estudia ni trabaja\" suma dos negaciones con el nexo <i>ni</i>."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Según la regla del SEGA, ¿qué tipo de palabra es \"cámara\"?",
+                        "opciones": [
+                            "Aguda.",
+                            "Grave.",
+                            "Esdrújula.",
+                            "Sobreesdrújula."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "\"Cá-ma-ra\": la sílaba tónica es \"Cá\" (antepenúltima), por lo que es esdrújula. Las esdrújulas siempre llevan tilde."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Las palabras \"vaya\" y \"valla\" son un ejemplo de:",
+                        "opciones": [
+                            "Sinónimos.",
+                            "Homógrafas.",
+                            "Homófonas.",
+                            "Antónimos."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Las homófonas suenan igual pero se escriben diferente y tienen significado distinto. <i>Vaya</i> (del verbo ir) y <i>valla</i> (cerca o barrera) cumplen esta definición."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "En la combinación de vocales, ¿qué es un diptongo?",
+                        "opciones": [
+                            "La unión de dos vocales fuertes en la misma sílaba.",
+                            "La separación de una vocal débil acentuada y una fuerte.",
+                            "La unión de una vocal débil + una fuerte (o dos débiles) en la misma sílaba.",
+                            "La unión de tres vocales en la misma sílaba."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "Un diptongo es la unión de una vocal débil (I, U) con una fuerte (A, E, O), o de dos débiles, dentro de la misma sílaba. No se separan."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "En la oración \"Me encanta el vestido que te compraste\", ¿qué tipo de oración es \"que te compraste\"?",
+                        "opciones": [
+                            "Coordinada copulativa.",
+                            "Coordinada adversativa.",
+                            "Subordinada.",
+                            "Unimembre."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "\"Que te compraste\" es una oración subordinada porque depende de la oración principal (\"Me encanta el vestido\") para tener sentido completo."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál de las siguientes palabras es aguda con tilde?",
+                        "opciones": [
+                            "Árbol.",
+                            "Canción.",
+                            "Mesa.",
+                            "Cámara."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "\"Can-ción\": la sílaba tónica es la última (\"ción\"), por lo que es aguda. Se tilda porque termina en <i>n</i>. \"Árbol\" es grave, \"Mesa\" es grave sin tilde, \"Cámara\" es esdrújula."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "En la oración \"Los documentos fueron encontrados en la oficina\", el predicado se clasifica como:",
+                        "opciones": [
+                            "Predicado nominal porque usa el verbo ser.",
+                            "Predicado verbal porque \"fueron encontrados\" es voz pasiva.",
+                            "Predicado nominal porque tiene un participio.",
+                            "No tiene predicado."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "Aunque usa el verbo \"ser\", la estructura \"fue/fueron + participio\" corresponde a voz pasiva, que se clasifica como <b>predicado verbal</b>, no nominal."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "En la palabra \"poesía\", ¿hay diptongo o hiato entre la <i>i</i> y la <i>a</i>?",
+                        "opciones": [
+                            "Diptongo, porque son vocales juntas.",
+                            "Hiato, porque la vocal débil (<i>i</i>) está acentuada.",
+                            "Triptongo, porque hay tres vocales cercanas.",
+                            "Diptongo, porque <i>i</i> es débil y <i>a</i> es fuerte."
+                        ],
+                        "respuesta": 1,
+                        "retroalimentacion": "En \"po-e-sí-a\", la <i>i</i> lleva acento (sílaba tónica), lo que rompe el diptongo y genera un <b>hiato</b>. Débil acentuada + Fuerte = Hiato."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "Si en el examen aparece \"Compraremos los boletos\", ¿cuál es el sujeto?",
+                        "opciones": [
+                            "\"Los boletos\".",
+                            "\"Compraremos\".",
+                            "Sujeto tácito: Nosotros.",
+                            "No tiene sujeto."
+                        ],
+                        "respuesta": 2,
+                        "retroalimentacion": "El sujeto no está escrito explícitamente, pero la terminación del verbo <i>-emos</i> indica que el sujeto tácito es <b>Nosotros</b>."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "esp-034",
+                    "pregunta": "¿Qué es una oración unimembre?",
+                    "respuesta": "Una oración que no puede dividirse en sujeto y predicado. Incluye frases exclamativas, fenómenos naturales y el verbo haber impersonal.",
+                    "tema": "Sintaxis",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-035",
+                    "pregunta": "¿Qué es una oración bimembre?",
+                    "respuesta": "Una oración completa con sujeto + predicado que requiere un verbo conjugado.",
+                    "tema": "Sintaxis",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-036",
+                    "pregunta": "¿Cuáles son los tipos de oraciones coordinadas?",
+                    "respuesta": "Copulativas (y, e, ni), disyuntivas (o, u), adversativas (pero, sin embargo, mas) y explicativas (es decir, o sea).",
+                    "tema": "Sintaxis",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-037",
+                    "pregunta": "¿Qué caracteriza a una oración subordinada?",
+                    "respuesta": "Depende de la oración principal para tener sentido completo. No se entiende por sí sola.",
+                    "tema": "Sintaxis",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-038",
+                    "pregunta": "¿Qué es el acento prosódico?",
+                    "respuesta": "El golpe de voz que se escucha pero no se escribe con tilde.",
+                    "tema": "Acentuación",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-039",
+                    "pregunta": "¿Qué es el acento diacrítico?",
+                    "respuesta": "Una tilde que diferencia palabras que se escriben igual pero tienen funciones distintas (ej: él/el, tú/tu, sí/si).",
+                    "tema": "Acentuación",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-040",
+                    "pregunta": "¿Cuándo se tildan las palabras agudas?",
+                    "respuesta": "Cuando terminan en n, s o vocal. La sílaba tónica es la última.",
+                    "tema": "Acentuación",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-041",
+                    "pregunta": "¿Cuándo se tildan las palabras graves?",
+                    "respuesta": "Cuando NO terminan en n, s o vocal. La sílaba tónica es la penúltima.",
+                    "tema": "Acentuación",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-042",
+                    "pregunta": "¿Las esdrújulas y sobreesdrújulas siempre llevan tilde?",
+                    "respuesta": "Sí, siempre. Esdrújulas: tónica en la antepenúltima. Sobreesdrújulas: tónica antes de la antepenúltima.",
+                    "tema": "Acentuación",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-043",
+                    "pregunta": "¿Cuál es la diferencia entre palabras homófonas y homógrafas?",
+                    "respuesta": "Homófonas: suenan igual, se escriben diferente (vaya/valla). Homógrafas: se escriben y suenan igual, significado distinto (banco).",
+                    "tema": "Relaciones Semánticas",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-044",
+                    "pregunta": "¿Cuáles son las vocales fuertes y cuáles las débiles?",
+                    "respuesta": "Fuertes (abiertas): A, E, O. Débiles (cerradas): I, U.",
+                    "tema": "Separación Silábica",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-045",
+                    "pregunta": "¿Qué es un diptongo y cuándo se forma?",
+                    "respuesta": "Unión de vocal débil + fuerte (o dos débiles) en la misma sílaba. No se separan.",
+                    "tema": "Separación Silábica",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-046",
+                    "pregunta": "¿Qué es un hiato y cuándo se forma?",
+                    "respuesta": "Separación de vocales en sílabas distintas. Ocurre con fuerte + fuerte, o débil acentuada + fuerte.",
+                    "tema": "Separación Silábica",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-047",
+                    "pregunta": "¿Qué es un triptongo?",
+                    "respuesta": "Unión de tres vocales (débil + fuerte + débil) en la misma sílaba. Nunca se separan (ej: -quial en coloquial).",
+                    "tema": "Separación Silábica",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-048",
+                    "pregunta": "¿Cómo se clasifica el predicado en voz pasiva (\"fue + participio\")?",
+                    "respuesta": "Como predicado verbal, no nominal, a pesar de usar el verbo ser.",
+                    "tema": "Tips de Examen",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-049",
+                    "pregunta": "¿Cómo identificar un sujeto tácito?",
+                    "respuesta": "Si el sujeto no está escrito, se identifica por la terminación del verbo conjugado (ej: compraremos = nosotros).",
+                    "tema": "Tips de Examen",
+                    "asignatura": "Español"
+                },
+                {
+                    "id": "esp-050",
+                    "pregunta": "¿Cuáles son las características clave de la función poética?",
+                    "respuesta": "La connotación (sentido figurado) y la polisemia (múltiples significados).",
+                    "tema": "Tips de Examen",
+                    "asignatura": "Español"
+                }
+            ]
         }
     ]
 };

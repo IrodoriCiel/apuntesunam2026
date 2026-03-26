@@ -145,6 +145,24 @@ const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
 const bancoTotal = Object.values(bancoQuestions).flat().length;
 
+// ─── 4b. Banco por materia (para sección dedicada) ───────────────────────────
+const SUBJECT_DISPLAY = {
+    'matematicas': 'Matemáticas',
+    'espanol': 'Español',
+    'geografia': 'Geografía',
+    'fisica': 'Física',
+    'biologia': 'Biología',
+    'literatura': 'Literatura',
+    'quimica': 'Química',
+    'historia-mexico': 'Historia de México',
+    'historia-universal': 'Historia Universal'
+};
+const bancoBySubject = {};
+for (const [key, qs] of Object.entries(banco.questions)) {
+    const displayName = SUBJECT_DISPLAY[key] || key;
+    bancoBySubject[displayName] = qs.filter(q => q && q.pregunta && q.pregunta.trim());
+}
+
 const bundle = `// js/data/data-bundle.js — AUTO-GENERADO por build-data.js
 // NO editar manualmente. Edita los archivos en js/data/materias/ y re-ejecuta build-data.js
 // Generado: ${now}
@@ -156,7 +174,7 @@ const appDatabase=${JSON.stringify(appDatabase)};
 const unamQuestions=${JSON.stringify(unamQuestions)};
 const practiceQuestions=${JSON.stringify(practiceQuestions)};
 const practiceLevel2Questions=${JSON.stringify(practiceLevel2Questions)};
-const bancoQuestions=${JSON.stringify(bancoQuestions)};
+const bancoBySubject=${JSON.stringify(bancoBySubject)};
 const flashcardsDatabase=${JSON.stringify(flashcardsDatabase)};
 const classFlashcards=${JSON.stringify(classFlashcards)};
 `;
