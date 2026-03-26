@@ -2,7 +2,7 @@
    APUNTES UNAM 2026 — app.js
    ===================================================== */
 
-const APP_VERSION = '20260325-3';
+const APP_VERSION = '20260326-2';
 
 // --- PWA: Service Worker ---
 if ('serviceWorker' in navigator) {
@@ -67,15 +67,14 @@ let _deferredInstallPrompt = null;
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     _deferredInstallPrompt = e;
-    // Mostrar el botón de instalar
     const btn = document.getElementById('pwa-install-btn');
-    if (btn) btn.style.display = 'flex';
+    if (btn) btn.classList.add('fab-visible');
 });
 
 window.addEventListener('appinstalled', () => {
     _deferredInstallPrompt = null;
     const btn = document.getElementById('pwa-install-btn');
-    if (btn) btn.style.display = 'none';
+    if (btn) btn.classList.remove('fab-visible');
     console.log('PWA instalada exitosamente.');
 });
 
@@ -85,7 +84,7 @@ async function installApp() {
     const { outcome } = await _deferredInstallPrompt.userChoice;
     if (outcome === 'accepted') {
         const btn = document.getElementById('pwa-install-btn');
-        if (btn) btn.style.display = 'none';
+        if (btn) btn.classList.remove('fab-visible');
     }
     _deferredInstallPrompt = null;
 }
@@ -825,10 +824,13 @@ const scrollBtn = document.getElementById('scrollToTopBtn');
 // Visibilidad PWA unificada
 function updatePwaVisibility() {
     const pwaBtn = document.getElementById('pwa-install-btn');
-    if (!pwaBtn) return;
+    if (!pwaBtn || !_deferredInstallPrompt) return;
     const isScrollDown = window.scrollY > 10;
     const isMenuOpen = sideMenu?.classList.contains('open');
     pwaBtn.classList.toggle('hidden-scroll', isScrollDown || isMenuOpen);
+    // hidden-scroll hides via display:none, fab-visible shows via display:flex
+    if (isScrollDown || isMenuOpen) pwaBtn.classList.remove('fab-visible');
+    else pwaBtn.classList.add('fab-visible');
 }
 
 window.addEventListener('scroll', () => {
@@ -2391,6 +2393,105 @@ function evalQuestion(prefix, contentId, qIdx) {
     }
 
     registerQuestionResult(sourceClassId, isCorrect);
+
+    // Check if all class questions are done (only for in-class prefixes)
+    if (prefix === 'prac' || prefix === 'prac2' || prefix === 'unam') {
+        checkAndShowClassSummary(contentId);
+    }
+}
+
+// --- Class quiz summary ---
+function checkAndShowClassSummary(contentId) {
+    const container = document.getElementById(contentId);
+    if (!container || container.querySelector('.class-quiz-summary')) return;
+
+    // Gather results per section
+    const sections = [
+        { prefix: 'prac',  label: 'Practica Nivel 1', obj: practiceQuestions, color: '#ec4899', icon: 'fa-brain' },
+        { prefix: 'prac2', label: 'Practica Nivel 2', obj: practiceLevel2Questions, color: '#8b5cf6', icon: 'fa-star' },
+        { prefix: 'unam',  label: 'Guia UNAM', obj: unamQuestions, color: '#2563eb', icon: 'fa-file-pen' }
+    ];
+
+    let totalQ = 0, totalAnswered = 0, totalCorrect = 0;
+    const sectionResults = [];
+
+    for (const s of sections) {
+        const questions = (s.obj?.[contentId] || []).filter(q => q && q.pregunta && q.pregunta.trim());
+        if (!questions.length) continue;
+        let answered = 0, correct = 0;
+        questions.forEach((q, idx) => {
+            const btn = document.getElementById(`${s.prefix}-eval-btn-${contentId}-${idx}`);
+            if (btn && btn.style.display === 'none') {
+                answered++;
+                const key = `${s.prefix}-${contentId}-${idx}`;
+                const selIdx = userAnswers[key];
+                if (selIdx !== undefined && q._shuffledIndices?.[s.prefix]) {
+                    const origSelected = q._shuffledIndices[s.prefix][selIdx];
+                    if (origSelected === q.respuesta) correct++;
+                }
+            }
+        });
+        totalQ += questions.length;
+        totalAnswered += answered;
+        totalCorrect += correct;
+        sectionResults.push({ ...s, total: questions.length, answered, correct });
+    }
+
+    // Only show summary when ALL questions across ALL sections are answered
+    if (totalAnswered < totalQ || totalQ === 0) return;
+
+    const pct = Math.round((totalCorrect / totalQ) * 100);
+    const needsReview = pct < 70;
+
+    let rowsHtml = sectionResults.map(s => {
+        const sPct = Math.round((s.correct / s.total) * 100);
+        const barColor = sPct >= 70 ? '#10b981' : sPct >= 50 ? '#f59e0b' : '#ef4444';
+        return `
+            <div class="cqs-row">
+                <div class="cqs-row-label"><i class="fa-solid ${s.icon}" style="color:${s.color}"></i> ${s.label}</div>
+                <div class="cqs-row-stats">
+                    <span class="cqs-correct">${s.correct}</span> / ${s.total}
+                    <span class="cqs-pct" style="color:${barColor}">${sPct}%</span>
+                </div>
+                <div class="cqs-bar"><div class="cqs-bar-fill" style="width:${sPct}%;background:${barColor}"></div></div>
+            </div>`;
+    }).join('');
+
+    const totalBarColor = pct >= 70 ? '#10b981' : pct >= 50 ? '#f59e0b' : '#ef4444';
+    const emoji = pct >= 90 ? 'fa-trophy' : pct >= 70 ? 'fa-circle-check' : pct >= 50 ? 'fa-triangle-exclamation' : 'fa-book-open-reader';
+    const msg = pct >= 90 ? 'Excelente dominio del tema'
+        : pct >= 70 ? 'Buen desempeno. Puedes avanzar a la siguiente clase.'
+        : pct >= 50 ? 'Te recomendamos repasar esta clase antes de continuar.'
+        : 'Es importante que repases esta clase con detenimiento.';
+
+    const summaryDiv = document.createElement('div');
+    summaryDiv.className = 'class-quiz-summary';
+    summaryDiv.innerHTML = `
+        <div class="cqs-header">
+            <i class="fa-solid ${emoji}" style="color:${totalBarColor}"></i>
+            <h2>Resumen de Reactivos</h2>
+        </div>
+        <div class="cqs-total">
+            <div class="cqs-total-number" style="color:${totalBarColor}">${pct}%</div>
+            <div class="cqs-total-detail">${totalCorrect} de ${totalQ} correctas</div>
+            <div class="cqs-bar cqs-bar-total"><div class="cqs-bar-fill" style="width:${pct}%;background:${totalBarColor}"></div></div>
+        </div>
+        <div class="cqs-breakdown">${rowsHtml}</div>
+        <div class="cqs-recommendation ${needsReview ? 'cqs-rec-review' : 'cqs-rec-good'}">
+            <i class="fa-solid ${needsReview ? 'fa-rotate-left' : 'fa-thumbs-up'}"></i>
+            <span>${msg}</span>
+        </div>
+        <button class="cqs-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            <i class="fa-solid fa-arrow-up"></i> ${needsReview ? 'Volver arriba para repasar' : 'Volver al inicio de la clase'}
+        </button>`;
+
+    // Insert before the nav actions (class-nav-actions) at the bottom
+    const navActions = container.querySelector('.class-nav-actions');
+    if (navActions) container.insertBefore(summaryDiv, navActions);
+    else container.appendChild(summaryDiv);
+
+    // Smooth scroll to summary
+    setTimeout(() => summaryDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
 }
 
 // --- Preguntas globales UNAM ---
@@ -3739,11 +3840,17 @@ function updateFloatingNextBtn(contentId) {
     const nextLabel = nextData?.mainTopicSubtitle || nextData?.title || 'Siguiente clase';
 
     const btn = document.createElement('button');
-    btn.className = 'floating-next-class';
-    btn.innerHTML = `<span>Siguiente clase</span> <i class="fa-solid fa-arrow-right"></i>`;
+    btn.className = 'fab-circle floating-next-class';
+    btn.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
     btn.title = nextLabel;
     btn.onclick = () => switchClass(nav.nextId, document.getElementById('link-' + nextSlug), nav.parentBtnId);
-    document.body.appendChild(btn);
+
+    // Insert into floating actions row (between pomodoro and scrollToTop)
+    const row = document.getElementById('floatingActionsRow');
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    if (row && scrollBtn) row.insertBefore(btn, scrollBtn);
+    else if (row) row.appendChild(btn);
+    else document.body.appendChild(btn);
     _floatingNextBtn = btn;
 
     // Show only after scrolling past 40% of the page

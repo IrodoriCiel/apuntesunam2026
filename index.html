@@ -96,16 +96,17 @@
     </button>
 
 
-    <!-- Botón Volver Arriba -->
-    <button id="scrollToTopBtn" onclick="scrollToTop()" aria-label="Volver arriba">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-
-    <!-- Botón Instalar PWA -->
-    <button id="pwa-install-btn" onclick="installApp()" aria-label="Instalar app" style="display:none;">
-        <i class="fa-solid fa-download"></i>
-        <span>Instalar app</span>
-    </button>
+    <!-- Floating Action Buttons Column (top to bottom: PWA install, Pomodoro, Next class, Scroll to top) -->
+    <div class="floating-actions-row" id="floatingActionsRow">
+        <button id="pwa-install-btn" class="fab-circle" onclick="installApp()" aria-label="Instalar app" title="Instalar app">
+            <i class="fa-solid fa-download"></i>
+        </button>
+        <!-- pomodoro-fab inserted here by DOMContentLoaded -->
+        <!-- floating-next-class inserted here dynamically -->
+        <button id="scrollToTopBtn" class="fab-circle" onclick="scrollToTop()" aria-label="Volver arriba">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+    </div>
 
     <div class="overlay" id="overlay"></div>
 
@@ -1406,12 +1407,23 @@
         </div>
         <div class="pomodoro-cycles"><span id="pomodoro-cycles">0</span> ciclos hoy</div>
     </div>
-    <button id="pomodoro-fab" class="pomodoro-fab" onclick="togglePomodoroWidget()" title="Pomodoro Timer">
-        <i class="fa-solid fa-clock"></i>
-    </button>
+    <script>
+        // Move pomodoro FAB into floating actions row (after PWA btn, before scrollToTop)
+        document.addEventListener('DOMContentLoaded', () => {
+            const row = document.getElementById('floatingActionsRow');
+            const scrollTopBtn = document.getElementById('scrollToTopBtn');
+            const fab = document.createElement('button');
+            fab.id = 'pomodoro-fab';
+            fab.className = 'fab-circle pomodoro-fab';
+            fab.onclick = togglePomodoroWidget;
+            fab.title = 'Pomodoro Timer';
+            fab.innerHTML = '<i class="fa-solid fa-clock"></i>';
+            row.insertBefore(fab, scrollTopBtn);
+        });
+    </script>
 
     <!-- Lógica principal (app.js) -->
-    <script src="./js/app.js?v=20260325-3" defer></script>
+    <script src="./js/app.js?v=20260326-2" defer></script>
 
 </body>
 

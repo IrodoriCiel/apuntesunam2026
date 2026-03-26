@@ -149,74 +149,61 @@ body.dark-mode {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* --- Botón Volver Arriba --- */
-#scrollToTopBtn {
+/* --- Floating Action Buttons Column --- */
+.floating-actions-row {
     position: fixed;
-    bottom: 30px;
-    right: 25px;
+    bottom: 24px;
+    right: 20px;
     z-index: 1040;
-    background: var(--menu-accent);
-    color: #fff;
-    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+}
+.floating-actions-row > * {
+    pointer-events: auto;
+}
+
+.fab-circle {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    width: 46px;
-    height: 46px;
-    font-size: 1.2rem;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+.fab-circle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#scrollToTopBtn {
+    background: var(--menu-accent);
+    display: none;
     animation: fadeInPage 0.3s ease;
 }
-
-#scrollToTopBtn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.5);
-}
-
 #scrollToTopBtn.visible {
     display: flex;
 }
 
-/* --- Botón Instalar PWA --- */
+/* --- Botón Instalar PWA (inside floating column) --- */
 #pwa-install-btn {
-    position: fixed;
-    bottom: 30px;
-    right: 25px;
-    z-index: 1040;
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    padding: 10px 18px;
-    font-size: 0.88rem;
-    font-weight: 800;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.45);
     display: none;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    animation: fadeInPage 0.4s ease;
-    white-space: nowrap;
 }
-
-#pwa-install-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.55);
+#pwa-install-btn.fab-visible {
+    display: flex;
 }
-
 #pwa-install-btn.hidden-scroll {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(20px);
-}
-
-#pwa-install-btn i {
-    font-size: 1rem;
+    display: none;
 }
 
 /* --- Menú Lateral --- */
@@ -5386,19 +5373,7 @@ h1.title-main i {
    POMODORO TIMER WIDGET
    ============================================= */
 .pomodoro-fab {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    width: 48px; height: 48px;
-    border-radius: 50%;
     background: #1e293b;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1rem;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 14px rgba(0,0,0,.25);
-    z-index: 1000;
     transition: background 0.2s;
 }
 .pomodoro-fab--running { background: #dc2626; }
@@ -5406,8 +5381,8 @@ h1.title-main i {
 
 .pomodoro-widget {
     position: fixed;
-    bottom: 140px;
-    right: 20px;
+    bottom: 24px;
+    right: 78px;
     width: 200px;
     background: #1e293b;
     color: #f1f5f9;
@@ -5716,44 +5691,189 @@ a:focus-visible {
    FLOATING NEXT CLASS BUTTON
    ===================================================== */
 .floating-next-class {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    z-index: 80;
     background: var(--menu-accent);
-    color: #fff;
-    border: none;
-    border-radius: 14px;
-    padding: 12px 18px;
-    font-size: 0.9rem;
+    display: none;
+    transition: all 0.25s ease;
+}
+.floating-next-class.visible {
+    display: flex;
+}
+.floating-next-class:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37,99,235,.45);
+}
+
+/* =====================================================
+   CLASS QUIZ SUMMARY
+   ===================================================== */
+.class-quiz-summary {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #10b981;
+    padding: 30px 35px;
+    animation: fadeInPage 0.5s ease;
+}
+[data-theme="dark"] .class-quiz-summary {
+    background: var(--card-bg);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+.cqs-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.cqs-header i {
+    font-size: 1.8rem;
+}
+.cqs-header h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--text-primary, #1e293b);
+    margin: 0;
+}
+.cqs-total {
+    text-align: center;
+    padding: 18px 0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 18px;
+}
+[data-theme="dark"] .cqs-total {
+    border-bottom-color: #334155;
+}
+.cqs-total-number {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+}
+.cqs-total-detail {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-top: 4px;
+    font-weight: 600;
+}
+.cqs-bar {
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+[data-theme="dark"] .cqs-bar {
+    background: #334155;
+}
+.cqs-bar-total {
+    height: 10px;
+    max-width: 300px;
+    margin: 12px auto 0;
+}
+.cqs-bar-fill {
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.6s ease;
+}
+.cqs-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+.cqs-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.cqs-row-label {
     font-weight: 800;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(37,99,235,.35);
+    font-size: 0.9rem;
+    color: var(--text-primary, #1e293b);
+    min-width: 160px;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: all 0.25s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    pointer-events: none;
 }
-.floating-next-class.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+.cqs-row-stats {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 100px;
 }
-.floating-next-class:hover {
+.cqs-correct {
+    font-weight: 900;
+    color: #10b981;
+}
+.cqs-pct {
+    font-weight: 900;
+    margin-left: 4px;
+}
+.cqs-row .cqs-bar {
+    flex: 1;
+    min-width: 80px;
+}
+.cqs-recommendation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+}
+.cqs-rec-good {
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+[data-theme="dark"] .cqs-rec-good {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+.cqs-rec-review {
+    background: #fef3c7;
+    color: #92400e;
+    border-left: 4px solid #f59e0b;
+}
+[data-theme="dark"] .cqs-rec-review {
+    background: #78350f;
+    color: #fde68a;
+}
+.cqs-recommendation i {
+    font-size: 1.2rem;
+}
+.cqs-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: var(--menu-accent);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.cqs-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37,99,235,.45);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
 }
-@media (max-width: 480px) {
-    .floating-next-class {
-        bottom: 16px;
-        right: 16px;
-        padding: 10px 14px;
-        font-size: 0.82rem;
-    }
+@media (max-width: 600px) {
+    .class-quiz-summary { padding: 20px 16px; }
+    .cqs-row-label { min-width: 100%; }
+    .cqs-total-number { font-size: 2.4rem; }
 }
 
 /* =====================================================
