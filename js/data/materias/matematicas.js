@@ -2718,6 +2718,275 @@ export const matematicas = {
                     "asignatura": "Matemáticas"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Matemáticas",
+            "titleIconLeft": "fa-square-root-variable",
+            "titleIconRight": "fa-calculator",
+            "titleStyle": "color: #2563eb;",
+            "mainTopicId": "mainTopicMatematicas10",
+            "mainTopicClass": "topic-1",
+            "mainTopicTitle": "Matemáticas",
+            "mainTopicIcon1": "fa-superscript",
+            "mainTopicIcon2": "fa-calculator",
+            "mainTopicSubtitle": "Clase 10: Factorización de Trinomios y Ecuaciones de Segundo Grado",
+            "branches": [
+                {
+                    "id": "nodes-mat10-1",
+                    "topicIdx": 1,
+                    "title": "1. Trinomio vs. Ecuación de Segundo Grado",
+                    "icon": "fa-not-equal",
+                    "subnodes": [
+                        {
+                            "icon": "fa-square",
+                            "delay": "0.1s",
+                            "title": "Trinomio Cuadrado",
+                            "content": "<p>Es solo la <b>expresión</b>. Ejemplo: $x^2 + 5x + 6$.</p>"
+                        },
+                        {
+                            "icon": "fa-equals",
+                            "delay": "0.2s",
+                            "title": "Ecuación de Segundo Grado",
+                            "content": "<p>Es cuando esa expresión está <b>igualada a cero</b>. Ejemplo: $x^2 + 5x + 6 = 0$.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Identifica visualmente la diferencia: si hay un $= 0$, es una ecuación y debes encontrar raíces.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-mat10-2",
+                    "topicIdx": 2,
+                    "title": "2. Método de Factorización (Sin Fórmula General)",
+                    "icon": "fa-code-branch",
+                    "subnodes": [
+                        {
+                            "icon": "fa-magnifying-glass",
+                            "delay": "0.1s",
+                            "title": "Paso 1: Buscar los Números",
+                            "content": "<p>Para ecuaciones del tipo $x^2 + bx + c = 0$ (donde la $x^2$ no tiene coeficiente), encontrar dos números que:</p><ul><li><b>Multiplicados</b> den el término independiente ($c$).</li><li><b>Sumados o restados</b> den el término lineal ($b$).</li></ul>"
+                        },
+                        {
+                            "icon": "fa-rotate",
+                            "delay": "0.2s",
+                            "title": "Paso 2: Invertir Signos (Las Raíces)",
+                            "content": "<p>Una vez que tienes los binomios, para encontrar $x_1$ y $x_2$ (las raíces), debes <b>invertir el signo</b> de los números que encontraste.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Los incisos suelen traer los números con los signos de la factorización para confundirte. No olvides invertirlos.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-mat10-3",
+                    "topicIdx": 3,
+                    "title": "3. Reglas de Signos para los Paréntesis",
+                    "icon": "fa-plus-minus",
+                    "subnodes": [
+                        {
+                            "icon": "fa-plus",
+                            "delay": "0.1s",
+                            "title": "$c$ positivo, $b$ positivo",
+                            "content": "<p>Ambos paréntesis son <b>positivos</b>: $(x + \\text{...})(x + \\text{...})$.</p>"
+                        },
+                        {
+                            "icon": "fa-minus",
+                            "delay": "0.2s",
+                            "title": "$c$ positivo, $b$ negativo",
+                            "content": "<p>Ambos paréntesis son <b>negativos</b>: $(x - \\text{...})(x - \\text{...})$.</p>"
+                        },
+                        {
+                            "icon": "fa-right-left",
+                            "delay": "0.3s",
+                            "title": "$c$ negativo, $b$ positivo",
+                            "content": "<p>Signos <b>diferentes</b>; el número más grande lleva signo <b>positivo</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-shuffle",
+                            "delay": "0.4s",
+                            "title": "$c$ negativo, $b$ negativo",
+                            "content": "<p>Signos <b>diferentes</b>; el número más grande lleva signo <b>negativo</b>.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-mat10-4",
+                    "topicIdx": 4,
+                    "title": "4. Ejemplos Resueltos",
+                    "icon": "fa-pen-to-square",
+                    "subnodes": [
+                        {
+                            "icon": "fa-1",
+                            "delay": "0.1s",
+                            "title": "Ejemplo: Signos Iguales",
+                            "content": "<p>$x^2 - 7x + 10 = 0$</p><p>Números que multiplicados den $10$ y juntados $-7$: $-5$ y $-2$.</p><p>Factorización: $(x - 5)(x - 2) = 0$.</p><p><b>Raíces:</b> $x_1 = 5,\\; x_2 = 2$.</p>"
+                        },
+                        {
+                            "icon": "fa-2",
+                            "delay": "0.2s",
+                            "title": "Ejemplo: Signos Diferentes",
+                            "content": "<p>$x^2 + 3x - 10 = 0$</p><p>Multiplicados den $-10$ y juntados $+3$: $+5$ y $-2$.</p><p>Factorización: $(x + 5)(x - 2) = 0$.</p><p><b>Raíces:</b> $x_1 = -5,\\; x_2 = 2$.</p>"
+                        },
+                        {
+                            "icon": "fa-3",
+                            "delay": "0.3s",
+                            "title": "Ejemplo: Coeficiente Unitario Implícito",
+                            "content": "<p>$x^2 - x - 2 = 0$</p><p>Multiplicados den $-2$ y juntados $-1$ (la $x$ sola vale $1$): $-2$ y $+1$.</p><p>Factorización: $(x - 2)(x + 1) = 0$.</p><p><b>Raíces:</b> $x_1 = 2,\\; x_2 = -1$.</p>"
+                        },
+                        {
+                            "icon": "fa-rocket",
+                            "delay": "0.4s",
+                            "title": "Tips para el Reactivo",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>El orden de los binomios no importa: $(x+5)(x-2) = (x-2)(x+5)$. Lo importante es que el signo acompañe al número correcto.<br><br>Si te bloqueas buscando los números, toma un valor de los incisos y sustitúyelo en la $x$. Si el resultado da $0$, esa es la respuesta.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/watch?v=vTFoUYK-QS4",
+            "id": "content-matematicas-10",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál es la diferencia entre un trinomio cuadrado y una ecuación de segundo grado?",
+                        "opciones": ["No hay diferencia", "El trinomio está igualado a cero", "La ecuación está igualada a cero", "La ecuación no tiene término independiente"],
+                        "respuesta": 2,
+                        "retroalimentacion": "El trinomio es solo la expresión ($x^2 + bx + c$); la ecuación de segundo grado es cuando está igualada a cero ($x^2 + bx + c = 0$)."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Al factorizar $x^2 + 5x + 6 = 0$, ¿cuáles son las raíces?",
+                        "opciones": ["$x_1 = 3,\\; x_2 = 2$", "$x_1 = -3,\\; x_2 = -2$", "$x_1 = 6,\\; x_2 = 1$", "$x_1 = -6,\\; x_2 = -1$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Números que multiplicados den $6$ y sumados $5$: $3$ y $2$. Factorización: $(x+3)(x+2)=0$. Raíces (invertir signo): $x_1=-3,\\; x_2=-2$."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Si $c$ es positivo y $b$ es negativo en $x^2 + bx + c = 0$, ¿qué signos tienen los paréntesis?",
+                        "opciones": ["Ambos positivos", "Ambos negativos", "Signos diferentes, el mayor positivo", "Signos diferentes, el mayor negativo"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Cuando $c$ es positivo y $b$ es negativo, ambos paréntesis llevan signo negativo: $(x-\\text{...})(x-\\text{...})$."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Qué se debe hacer después de factorizar para encontrar las raíces?",
+                        "opciones": ["Sumar los números", "Multiplicar los números", "Invertir el signo de cada número", "Elevar al cuadrado"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Para obtener las raíces a partir de la factorización, se invierten los signos de los números encontrados."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuáles son las raíces de $x^2 - 7x + 10 = 0$?",
+                        "opciones": ["$x_1 = -5,\\; x_2 = -2$", "$x_1 = 5,\\; x_2 = 2$", "$x_1 = 7,\\; x_2 = 10$", "$x_1 = -5,\\; x_2 = 2$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Factorización: $(x-5)(x-2)=0$. Raíces (invertir signo): $x_1=5,\\; x_2=2$."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuáles son las raíces de $x^2 + 3x - 10 = 0$?",
+                        "opciones": ["$x_1 = 5,\\; x_2 = -2$", "$x_1 = -5,\\; x_2 = 2$", "$x_1 = -5,\\; x_2 = -2$", "$x_1 = 5,\\; x_2 = 2$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Multiplicados den $-10$ y juntados $+3$: $+5$ y $-2$. Factorización: $(x+5)(x-2)=0$. Raíces: $x_1=-5,\\; x_2=2$."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuáles son las raíces de $x^2 - x - 2 = 0$?",
+                        "opciones": ["$x_1 = 2,\\; x_2 = 1$", "$x_1 = -2,\\; x_2 = 1$", "$x_1 = 2,\\; x_2 = -1$", "$x_1 = -2,\\; x_2 = -1$"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Multiplicados den $-2$ y juntados $-1$: $-2$ y $+1$. Factorización: $(x-2)(x+1)=0$. Raíces: $x_1=2,\\; x_2=-1$."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Si al factorizar obtienes $(x - 4)(x + 3) = 0$, ¿cuáles son las raíces?",
+                        "opciones": ["$x_1 = -4,\\; x_2 = 3$", "$x_1 = 4,\\; x_2 = -3$", "$x_1 = 4,\\; x_2 = 3$", "$x_1 = -4,\\; x_2 = -3$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Se invierten los signos: $(x-4) \\rightarrow x_1=4$ y $(x+3) \\rightarrow x_2=-3$."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "En $x^2 - 9x + 20 = 0$, $c$ es positivo y $b$ es negativo. ¿Cuál es la factorización?",
+                        "opciones": ["$(x + 5)(x + 4)$", "$(x - 5)(x - 4)$", "$(x + 5)(x - 4)$", "$(x - 5)(x + 4)$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "$c$ positivo y $b$ negativo: ambos paréntesis negativos. $5 \\times 4 = 20$ y $5 + 4 = 9$. Factorización: $(x-5)(x-4)$."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué estrategia puedes usar si no encuentras los números para factorizar en el examen?",
+                        "opciones": ["Aplicar la fórmula general directamente", "Sustituir los valores de los incisos en la ecuación y ver cuál da cero", "Derivar la ecuación", "Multiplicar todos los coeficientes"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Si te bloqueas, puedes tomar un valor de los incisos y sustituirlo en la $x$. Si el resultado da $0$, esa es la respuesta correcta."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "mat10-001",
+                    "pregunta": "¿Cuál es la diferencia entre un trinomio cuadrado y una ecuación de segundo grado?",
+                    "respuesta": "El trinomio es la expresión ($x^2 + bx + c$); la ecuación es esa expresión igualada a cero ($= 0$).",
+                    "tema": "Ecuaciones de Segundo Grado",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-002",
+                    "pregunta": "En el método de factorización, ¿qué dos condiciones deben cumplir los números buscados?",
+                    "respuesta": "Multiplicados deben dar $c$ (término independiente) y sumados/restados deben dar $b$ (término lineal).",
+                    "tema": "Factorización",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-003",
+                    "pregunta": "Después de factorizar, ¿cómo se obtienen las raíces ($x_1$ y $x_2$)?",
+                    "respuesta": "Se invierte el signo de cada número encontrado en los binomios.",
+                    "tema": "Factorización",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-004",
+                    "pregunta": "Si $c$ es positivo y $b$ es positivo, ¿qué signos llevan los paréntesis?",
+                    "respuesta": "Ambos positivos: $(x + \\text{...})(x + \\text{...})$.",
+                    "tema": "Reglas de Signos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-005",
+                    "pregunta": "Si $c$ es positivo y $b$ es negativo, ¿qué signos llevan los paréntesis?",
+                    "respuesta": "Ambos negativos: $(x - \\text{...})(x - \\text{...})$.",
+                    "tema": "Reglas de Signos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-006",
+                    "pregunta": "Si $c$ es negativo, ¿qué signos llevan los paréntesis?",
+                    "respuesta": "Signos diferentes. Si $b$ es positivo, el mayor es positivo; si $b$ es negativo, el mayor es negativo.",
+                    "tema": "Reglas de Signos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-007",
+                    "pregunta": "Factoriza y resuelve: $x^2 - 7x + 10 = 0$.",
+                    "respuesta": "$(x-5)(x-2)=0$. Raíces: $x_1=5,\\; x_2=2$.",
+                    "tema": "Ejemplos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-008",
+                    "pregunta": "Factoriza y resuelve: $x^2 + 3x - 10 = 0$.",
+                    "respuesta": "$(x+5)(x-2)=0$. Raíces: $x_1=-5,\\; x_2=2$.",
+                    "tema": "Ejemplos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-009",
+                    "pregunta": "En $x^2 - x - 2 = 0$, ¿cuánto vale el coeficiente de $x$?",
+                    "respuesta": "Vale $1$ (la $x$ sola tiene coeficiente implícito de $1$, con signo negativo: $-1$).",
+                    "tema": "Ejemplos",
+                    "asignatura": "Matemáticas"
+                },
+                {
+                    "id": "mat10-010",
+                    "pregunta": "¿Qué estrategia de respaldo puedes usar si no encuentras los números para factorizar?",
+                    "respuesta": "Sustituir los valores de los incisos en la ecuación; si el resultado da $0$, esa es la respuesta.",
+                    "tema": "Estrategias",
+                    "asignatura": "Matemáticas"
+                }
+            ]
         }
     ]
 };

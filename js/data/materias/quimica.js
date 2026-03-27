@@ -1459,6 +1459,302 @@ export const quimica = {
                     "asignatura": "Química"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Química",
+            "titleIconLeft": "fa-flask",
+            "titleIconRight": "fa-atom",
+            "titleStyle": "color: #059669;",
+            "mainTopicId": "topic-qui-5",
+            "mainTopicClass": "topic-2",
+            "mainTopicTitle": "Química",
+            "mainTopicIcon1": "fa-vial",
+            "mainTopicIcon2": "fa-vials",
+            "mainTopicSubtitle": "Clase 5: Kernel, Periodo/Grupo e Isótopos",
+            "branches": [
+                {
+                    "id": "nodes-qui5-1",
+                    "topicIdx": 1,
+                    "title": "1. Configuración Electrónica: Método de Kernel",
+                    "icon": "fa-atom",
+                    "subnodes": [
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.1s",
+                            "title": "Regla del Kernel",
+                            "content": "<p>Se simplifica la configuración usando <b>gases nobles</b>. El gas noble debe ser el más cercano al número atómico ($Z$) <b>sin pasarse</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-flask-vial",
+                            "delay": "0.2s",
+                            "title": "Ejemplos Resueltos",
+                            "content": "<p><b>Manganeso</b> ($Z=25$): $[Ar]\\, 4s^2\\, 3d^5$ (Ar 18 + 2 + 5 = 25).</p><p><b>Estroncio</b> ($Z=38$): $[Kr]\\, 5s^2$ (Kr 36 + 2 = 38).</p><p><b>Cerio</b> ($Z=58$): $[Xe]\\, 6s^2\\, 4f^2$ (Xe 54 + 2 + 2 = 58).</p><p><b>Radio</b> ($Z=88$): $[Rn]\\, 7s^2$ (Rn 86 + 2 = 88).</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui5-2",
+                    "topicIdx": 2,
+                    "title": "2. Periodo y Grupo desde la Configuración",
+                    "icon": "fa-table-cells-large",
+                    "subnodes": [
+                        {
+                            "icon": "fa-arrows-up-down",
+                            "delay": "0.1s",
+                            "title": "Periodo",
+                            "content": "<p>Lo determina el <b>coeficiente más grande</b> (el número más alto que aparece como nivel de energía).</p>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.2s",
+                            "title": "Grupo",
+                            "content": "<p>Lo determina la <b>suma de los exponentes</b> del nivel más alto.</p>"
+                        },
+                        {
+                            "icon": "fa-layer-group",
+                            "delay": "0.3s",
+                            "title": "Familia A o B",
+                            "content": "<p>Si termina en <b>$s$</b> o <b>$p$</b> $\\rightarrow$ <b>Familia A</b> (Representativos).</p><p>Si termina en <b>$d$</b> o <b>$f$</b> $\\rightarrow$ <b>Familia B</b> (Transición).</p>"
+                        },
+                        {
+                            "icon": "fa-rocket",
+                            "delay": "0.4s",
+                            "title": "Regla del Empate",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si el coeficiente más alto se repite (ej. $2s^2\\, 2p^3$), el periodo es 2 y el grupo es la suma de todos los exponentes de ese nivel ($2+3=5$), resultando en <b>Grupo V-A</b>.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui5-3",
+                    "topicIdx": 3,
+                    "title": "3. Números Cuánticos ($n, l, m, s$)",
+                    "icon": "fa-hashtag",
+                    "subnodes": [
+                        {
+                            "icon": "fa-1",
+                            "delay": "0.1s",
+                            "title": "Principal ($n$)",
+                            "content": "<p>Indica el <b>nivel de energía</b>. Su valor es el coeficiente del último término (1 al 7).</p>"
+                        },
+                        {
+                            "icon": "fa-2",
+                            "delay": "0.2s",
+                            "title": "Secundario ($l$)",
+                            "content": "<p>Indica la <b>forma del orbital</b>. Valores: $s=0$, $p=1$, $d=2$, $f=3$.</p>"
+                        },
+                        {
+                            "icon": "fa-3",
+                            "delay": "0.3s",
+                            "title": "Magnético ($m$)",
+                            "content": "<p>Indica la <b>orientación espacial</b>. Depende de las casillas (slots) del subnivel. Se determina con la regla de Hund: primero todas las flechas hacia arriba, luego se regresa a llenar hacia abajo. $m$ es el valor de la casilla donde cayó la <b>última flecha</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-4",
+                            "delay": "0.4s",
+                            "title": "Spin ($s$)",
+                            "content": "<p>Indica el <b>giro del electrón</b>. Flecha arriba: $+1/2$. Flecha abajo: $-1/2$. Es el sentido de la <b>última flecha</b> colocada.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-qui5-4",
+                    "topicIdx": 4,
+                    "title": "4. Isótopos y Tips de Examen",
+                    "icon": "fa-dna",
+                    "subnodes": [
+                        {
+                            "icon": "fa-atom",
+                            "delay": "0.1s",
+                            "title": "Isótopos",
+                            "content": "<p>Átomos del <b>mismo elemento</b> con igual número de protones pero <b>diferente número de neutrones</b>. Tienen distinta masa atómica.</p>"
+                        },
+                        {
+                            "icon": "fa-carbon",
+                            "delay": "0.2s",
+                            "title": "Isótopos del Carbono",
+                            "content": "<p><b>Carbono 12:</b> Cuantificación de proteínas.</p><p><b>Carbono 13:</b> Evaluación de calidad del suelo.</p><p><b>Carbono 14:</b> <b>Datación de fósiles</b> (determinar su antigüedad).</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si preguntan qué isótopo se usa para determinar la antigüedad de fósiles, la respuesta es <b>Carbono 14</b>.</div>"
+                        },
+                        {
+                            "icon": "fa-circle-exclamation",
+                            "delay": "0.3s",
+                            "title": "$Z$ vs $A$ e Iones",
+                            "content": "<p><b>Número atómico ($Z$):</b> siempre es el entero.</p><p><b>Masa atómica ($A$):</b> tiene decimales y es más grande.</p><p><b>Anión (-):</b> suma electrones (gana carga negativa).</p><p><b>Catión (+):</b> resta electrones (pierde carga negativa).</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/watch?v=b0CInzlPGSg",
+            "id": "content-quimica-5",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál es la configuración Kernel del Estroncio ($Z=38$)?",
+                        "opciones": ["$[Ar]\\, 4s^2\\, 3d^2$", "$[Kr]\\, 5s^2$", "$[Xe]\\, 6s^2$", "$[Kr]\\, 4d^2$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El gas noble más cercano sin pasarse es Kr (36). Estroncio: $[Kr]\\, 5s^2$ (36 + 2 = 38)."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Qué determina el periodo de un elemento en la tabla periódica a partir de su configuración?",
+                        "opciones": ["La suma de todos los exponentes", "El coeficiente más grande", "El último subnivel", "El número de electrones totales"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El periodo lo determina el coeficiente más grande (nivel de energía más alto) de la configuración."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Si una configuración termina en $d$, ¿a qué familia pertenece el elemento?",
+                        "opciones": ["Familia A (Representativos)", "Familia B (Transición)", "Gases nobles", "Lantánidos"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Si la configuración termina en $d$ o $f$, el elemento pertenece a la Familia B (Transición)."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Qué isótopo del carbono se utiliza para la datación de fósiles?",
+                        "opciones": ["Carbono 12", "Carbono 13", "Carbono 14", "Carbono 16"],
+                        "respuesta": 2,
+                        "retroalimentacion": "El Carbono 14 se utiliza para la datación de fósiles (determinar su antigüedad)."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué indica el número cuántico secundario ($l$)?",
+                        "opciones": ["El nivel de energía", "La forma del orbital", "La orientación espacial", "El giro del electrón"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El número cuántico secundario ($l$) indica la forma del orbital: $s=0$, $p=1$, $d=2$, $f=3$."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Un elemento tiene configuración $[Ar]\\, 4s^2\\, 3d^5$. ¿A qué grupo y familia pertenece?",
+                        "opciones": ["Grupo VII-A", "Grupo VII-B", "Grupo II-A", "Grupo V-B"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El coeficiente más alto es 4 (periodo 4). Termina en $d$ por lo que es Familia B. El nivel más alto es 4: $4s^2$ tiene exponente 2, pero como $3d^5$ no está en el nivel 4, el grupo se calcula sumando los electrones de $d$ más los de $s$: $5+2=7$, Grupo VII-B."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "Para un elemento con configuración $2s^2\\, 2p^3$, ¿cuál es su periodo y grupo?",
+                        "opciones": ["Periodo 2, Grupo III-A", "Periodo 2, Grupo V-A", "Periodo 3, Grupo II-A", "Periodo 2, Grupo III-B"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El coeficiente más alto es 2 (periodo 2). El nivel más alto se repite (2s y 2p), así que se suman todos los exponentes: $2+3=5$. Termina en $p$ → Familia A. Resultado: Grupo V-A."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "Si el último término de una configuración es $3p^4$, ¿cuáles son los números cuánticos $n$ y $l$?",
+                        "opciones": ["$n=3$, $l=0$", "$n=3$, $l=1$", "$n=4$, $l=2$", "$n=3$, $l=2$"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Del último término $3p^4$: $n=3$ (coeficiente) y $l=1$ (porque $p=1$)."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Qué diferencia a los isótopos de un mismo elemento?",
+                        "opciones": ["Diferente número de protones", "Diferente número de neutrones", "Diferente número de electrones", "Diferente número atómico"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Los isótopos tienen el mismo número de protones pero diferente número de neutrones, lo que les da distinta masa atómica."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué ocurre con los electrones cuando un átomo se convierte en catión?",
+                        "opciones": ["Gana electrones", "Pierde electrones", "Los electrones no cambian", "Gana protones"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Un catión (+) pierde electrones (resta electrones), quedando con carga positiva."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "qui5-001",
+                    "pregunta": "¿Cuál es la regla para elegir el gas noble en el método de Kernel?",
+                    "respuesta": "Usar el gas noble más cercano al número atómico ($Z$) sin pasarse.",
+                    "tema": "Configuración Kernel",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-002",
+                    "pregunta": "¿Cuál es la configuración Kernel del Cerio ($Z=58$)?",
+                    "respuesta": "$[Xe]\\, 6s^2\\, 4f^2$ (Xe 54 + 2 + 2 = 58).",
+                    "tema": "Configuración Kernel",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-003",
+                    "pregunta": "¿Cómo se determina el periodo de un elemento desde su configuración?",
+                    "respuesta": "Es el coeficiente más grande (nivel de energía más alto).",
+                    "tema": "Periodo y Grupo",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-004",
+                    "pregunta": "¿Cómo se determina el grupo de un elemento desde su configuración?",
+                    "respuesta": "Suma de los exponentes del nivel más alto.",
+                    "tema": "Periodo y Grupo",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-005",
+                    "pregunta": "¿Cómo se distingue Familia A de Familia B en la configuración?",
+                    "respuesta": "Termina en $s$ o $p$ → Familia A (Representativos). Termina en $d$ o $f$ → Familia B (Transición).",
+                    "tema": "Periodo y Grupo",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-006",
+                    "pregunta": "¿Qué indica el número cuántico principal ($n$)?",
+                    "respuesta": "El nivel de energía. Su valor es el coeficiente del último término (1 al 7).",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-007",
+                    "pregunta": "¿Qué valores tiene el número cuántico secundario ($l$) para $s$, $p$, $d$ y $f$?",
+                    "respuesta": "$s=0$, $p=1$, $d=2$, $f=3$.",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-008",
+                    "pregunta": "¿Cómo se determina el número cuántico magnético ($m$)?",
+                    "respuesta": "Se llenan las casillas con la regla de Hund (primero todas las flechas arriba, luego abajo). $m$ es el valor de la casilla donde cayó la última flecha.",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-009",
+                    "pregunta": "¿Qué valores puede tomar el número cuántico de spin ($s$)?",
+                    "respuesta": "$+1/2$ (flecha arriba) o $-1/2$ (flecha abajo).",
+                    "tema": "Números Cuánticos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-010",
+                    "pregunta": "¿Qué son los isótopos?",
+                    "respuesta": "Átomos del mismo elemento con igual número de protones pero diferente número de neutrones.",
+                    "tema": "Isótopos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-011",
+                    "pregunta": "¿Para qué se usa el Carbono 14?",
+                    "respuesta": "Para la datación de fósiles (determinar su antigüedad).",
+                    "tema": "Isótopos",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-012",
+                    "pregunta": "¿Qué es un anión y qué es un catión?",
+                    "respuesta": "Anión (-): gana electrones (carga negativa). Catión (+): pierde electrones (carga positiva).",
+                    "tema": "Iones",
+                    "asignatura": "Química"
+                },
+                {
+                    "id": "qui5-013",
+                    "pregunta": "¿Cómo se distingue $Z$ (número atómico) de $A$ (masa atómica)?",
+                    "respuesta": "$Z$ es siempre entero; $A$ tiene decimales y es más grande.",
+                    "tema": "Iones",
+                    "asignatura": "Química"
+                }
+            ]
         }
     ]
 };

@@ -1189,6 +1189,301 @@ export const historia-universal = {
                     "asignatura": "Historia Universal"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Historia Universal",
+            "titleIconLeft": "fa-globe",
+            "titleIconRight": "fa-book",
+            "titleStyle": "color: #dc2626;",
+            "mainTopicId": "mainTopicHistUniv4",
+            "mainTopicClass": "topic-1",
+            "mainTopicTitle": "Historia Universal",
+            "mainTopicIcon1": "fa-landmark-dome",
+            "mainTopicIcon2": "fa-hourglass-half",
+            "mainTopicSubtitle": "Clase 4: Definición, Ilustración y Despotismo Ilustrado",
+            "branches": [
+                {
+                    "id": "nodes-hu4-1",
+                    "topicIdx": 1,
+                    "title": "1. Definición y Método de la Historia",
+                    "icon": "fa-book-open",
+                    "subnodes": [
+                        {
+                            "icon": "fa-bullseye",
+                            "delay": "0.1s",
+                            "title": "Objeto de Estudio",
+                            "content": "<p>El <b>desarrollo de la humanidad a través del tiempo</b> en un espacio determinado. No es un análisis biológico ni estadístico puro: es un análisis del <b>cambio humano</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-user-tie",
+                            "delay": "0.2s",
+                            "title": "El Padre de la Historia",
+                            "content": "<p><b>Heródoto</b> (H de Historia). Escribió los <b>Nueve libros de la historia</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-magnifying-glass",
+                            "delay": "0.3s",
+                            "title": "Metodología del Historiador",
+                            "content": "<p>Utiliza la <b>interpretación rigurosa de fuentes primarias</b> (documentos de la época).</p><p>Aplica el <b>método crítico</b> para verificar que los documentos sean auténticos.</p><div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Las fuentes primarias y secundarias se complementan; analizarlas por separado es un error metodológico.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu4-2",
+                    "topicIdx": 2,
+                    "title": "2. La Ilustración (Siglo de las Luces)",
+                    "icon": "fa-lightbulb",
+                    "subnodes": [
+                        {
+                            "icon": "fa-brain",
+                            "delay": "0.1s",
+                            "title": "Pilar Fundamental",
+                            "content": "<p>La <b>Razón</b>. Todo lo que no pase por el filtro de la lógica y la evidencia es descartado.</p>"
+                        },
+                        {
+                            "icon": "fa-gavel",
+                            "delay": "0.2s",
+                            "title": "Oposiciones Políticas",
+                            "content": "<p>Se opone frontalmente al <b>Absolutismo</b> (donde el poder del rey viene de Dios) y al <b>sistema feudal</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-graduation-cap",
+                            "delay": "0.3s",
+                            "title": "Propuestas",
+                            "content": "<p>Promueve el <b>progreso</b>, el <b>bienestar social</b>, el <b>trabajo</b> y la <b>educación</b> (usada para sacar al pueblo del oscurantismo religioso).</p>"
+                        },
+                        {
+                            "icon": "fa-earth-americas",
+                            "delay": "0.4s",
+                            "title": "Influencia",
+                            "content": "<p>Fue la <b>causa externa principal</b> de la Independencia de las 13 Colonias, la Revolución Francesa y las independencias en Iberoamérica.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu4-3",
+                    "topicIdx": 3,
+                    "title": "3. El Despotismo Ilustrado",
+                    "icon": "fa-crown",
+                    "subnodes": [
+                        {
+                            "icon": "fa-chess-king",
+                            "delay": "0.1s",
+                            "title": "Concepto",
+                            "content": "<p>Los monarcas absolutos adoptan ideas de la Ilustración (<b>educación, hospitales, caminos</b>) para calmar al pueblo, pero <b>sin ceder el poder político</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-quote-left",
+                            "delay": "0.2s",
+                            "title": "Frase Clave",
+                            "content": "<p><b>\"Todo para el pueblo, pero sin el pueblo.\"</b></p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-hu4-4",
+                    "topicIdx": 4,
+                    "title": "4. Cronología de la Historia (Las Edades)",
+                    "icon": "fa-timeline",
+                    "subnodes": [
+                        {
+                            "icon": "fa-scroll",
+                            "delay": "0.1s",
+                            "title": "Edad Antigua",
+                            "content": "<p><b>Suceso de inicio:</b> Invención de la escritura (<b>3,500 a.C.</b>).</p>"
+                        },
+                        {
+                            "icon": "fa-chess-rook",
+                            "delay": "0.2s",
+                            "title": "Edad Media",
+                            "content": "<p><b>Suceso de inicio:</b> Caída del Imperio Romano de Occidente (<b>476 d.C.</b>).</p>"
+                        },
+                        {
+                            "icon": "fa-ship",
+                            "delay": "0.3s",
+                            "title": "Edad Moderna",
+                            "content": "<p><b>Suceso de inicio:</b> Toma de Constantinopla o descubrimiento de América (<b>1453 d.C.</b>).</p>"
+                        },
+                        {
+                            "icon": "fa-flag",
+                            "delay": "0.4s",
+                            "title": "Edad Contemporánea",
+                            "content": "<p><b>Suceso de inicio:</b> Revolución Francesa (<b>1789 d.C.</b>).</p>"
+                        },
+                        {
+                            "icon": "fa-rocket",
+                            "delay": "0.5s",
+                            "title": "Tips de Descarte para el Examen",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>Si la pregunta es sobre el siglo XVII o XVIII y una opción menciona \"Socialismo\", descártala: el socialismo es del siglo XIX.<br><br>Si una opción menciona \"apoyo a dogmas religiosos\", no puede ser característica de la Ilustración.<br><br>El \"Imperialismo\" es la fase superior del capitalismo; no puede explicar el inicio de la Ilustración porque aún no existía.</div>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/watch?v=oIEpo4rzjMA",
+            "id": "content-hist-univ-4",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Quién es considerado el Padre de la Historia?",
+                        "opciones": ["Tucídides", "Sócrates", "Heródoto", "Platón"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Heródoto es el Padre de la Historia y autor de los Nueve libros de la historia."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál es el pilar fundamental de la Ilustración?",
+                        "opciones": ["La fe", "La tradición", "La razón", "La monarquía"],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Razón es el pilar fundamental de la Ilustración; todo debía pasar por el filtro de la lógica y la evidencia."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Cuál es la frase que resume el Despotismo Ilustrado?",
+                        "opciones": ["Libertad, igualdad, fraternidad", "Todo para el pueblo, pero sin el pueblo", "El Estado soy yo", "Vox populi, vox Dei"],
+                        "respuesta": 1,
+                        "retroalimentacion": "\"Todo para el pueblo, pero sin el pueblo\" resume el Despotismo Ilustrado: reformas para el pueblo sin cederle el poder."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿Qué suceso marca el inicio de la Edad Contemporánea?",
+                        "opciones": ["Descubrimiento de América", "Caída de Constantinopla", "Revolución Francesa", "Invención de la escritura"],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Revolución Francesa (1789) marca el inicio de la Edad Contemporánea."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿A qué sistemas políticos se opone la Ilustración?",
+                        "opciones": ["Democracia y república", "Absolutismo y feudalismo", "Socialismo y comunismo", "Capitalismo e imperialismo"],
+                        "respuesta": 1,
+                        "retroalimentacion": "La Ilustración se opone frontalmente al Absolutismo y al sistema feudal."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuál fue la causa externa principal de la Independencia de las 13 Colonias y la Revolución Francesa?",
+                        "opciones": ["El Renacimiento", "La Ilustración", "El Despotismo Ilustrado", "La Reforma Protestante"],
+                        "respuesta": 1,
+                        "retroalimentacion": "La Ilustración fue la causa externa principal de la Independencia de las 13 Colonias, la Revolución Francesa y las independencias en Iberoamérica."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Por qué analizar fuentes primarias y secundarias por separado se considera un error metodológico?",
+                        "opciones": ["Porque las secundarias son más confiables", "Porque las primarias son suficientes", "Porque ambas se complementan y deben analizarse en conjunto", "Porque solo las fuentes orales son válidas"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Las fuentes primarias y secundarias se complementan; analizarlas por separado es un error metodológico."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿En qué se diferencia el Despotismo Ilustrado de la Ilustración pura?",
+                        "opciones": ["El Despotismo rechaza la educación", "El Despotismo adopta ideas ilustradas pero sin ceder el poder político", "La Ilustración apoya la monarquía absoluta", "No hay diferencia"],
+                        "respuesta": 1,
+                        "retroalimentacion": "En el Despotismo Ilustrado, los monarcas adoptan ideas de la Ilustración pero sin ceder el poder político al pueblo."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Si una pregunta de examen del siglo XVIII incluye \"Socialismo\" como opción, ¿qué debes hacer?",
+                        "opciones": ["Seleccionarla porque es de esa época", "Descartarla porque el socialismo es del siglo XIX", "Analizarla como posible respuesta", "Considerar que es un sinónimo de Ilustración"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El socialismo es del siglo XIX; mencionarlo en el contexto de los siglos XVII-XVIII es un anacronismo."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Qué suceso marca el inicio de la Edad Media?",
+                        "opciones": ["Invención de la escritura", "Toma de Constantinopla", "Caída del Imperio Romano de Occidente en 476 d.C.", "Revolución Francesa"],
+                        "respuesta": 2,
+                        "retroalimentacion": "La Caída del Imperio Romano de Occidente en 476 d.C. marca el inicio de la Edad Media."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "hu4-001",
+                    "pregunta": "¿Cuál es el objeto de estudio de la historia como ciencia?",
+                    "respuesta": "El desarrollo de la humanidad a través del tiempo en un espacio determinado.",
+                    "tema": "Definición de la Historia",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-002",
+                    "pregunta": "¿Quién escribió los Nueve libros de la historia?",
+                    "respuesta": "Heródoto, el Padre de la Historia.",
+                    "tema": "Definición de la Historia",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-003",
+                    "pregunta": "¿Qué método utiliza el historiador para verificar la autenticidad de los documentos?",
+                    "respuesta": "El método crítico.",
+                    "tema": "Definición de la Historia",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-004",
+                    "pregunta": "¿Cuál es el pilar fundamental de la Ilustración?",
+                    "respuesta": "La Razón.",
+                    "tema": "La Ilustración",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-005",
+                    "pregunta": "¿A qué sistemas políticos se opone la Ilustración?",
+                    "respuesta": "Al Absolutismo y al sistema feudal.",
+                    "tema": "La Ilustración",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-006",
+                    "pregunta": "¿Qué movimientos independentistas fueron influenciados por la Ilustración?",
+                    "respuesta": "La Independencia de las 13 Colonias, la Revolución Francesa y las independencias en Iberoamérica.",
+                    "tema": "La Ilustración",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-007",
+                    "pregunta": "¿Qué es el Despotismo Ilustrado?",
+                    "respuesta": "Monarcas absolutos que adoptan ideas de la Ilustración (educación, hospitales, caminos) sin ceder el poder político.",
+                    "tema": "Despotismo Ilustrado",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-008",
+                    "pregunta": "¿Cuál es la frase clave del Despotismo Ilustrado?",
+                    "respuesta": "\"Todo para el pueblo, pero sin el pueblo.\"",
+                    "tema": "Despotismo Ilustrado",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-009",
+                    "pregunta": "¿Qué suceso marca el inicio de la Edad Antigua?",
+                    "respuesta": "La invención de la escritura (3,500 a.C.).",
+                    "tema": "Cronología",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-010",
+                    "pregunta": "¿Qué suceso marca el inicio de la Edad Media?",
+                    "respuesta": "La caída del Imperio Romano de Occidente (476 d.C.).",
+                    "tema": "Cronología",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-011",
+                    "pregunta": "¿Qué suceso marca el inicio de la Edad Moderna?",
+                    "respuesta": "La toma de Constantinopla o el descubrimiento de América (1453 d.C.).",
+                    "tema": "Cronología",
+                    "asignatura": "Historia Universal"
+                },
+                {
+                    "id": "hu4-012",
+                    "pregunta": "¿Qué suceso marca el inicio de la Edad Contemporánea?",
+                    "respuesta": "La Revolución Francesa (1789 d.C.).",
+                    "tema": "Cronología",
+                    "asignatura": "Historia Universal"
+                }
+            ]
         }
     ]
 };

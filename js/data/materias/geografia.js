@@ -846,6 +846,295 @@ export const geografia = {
                     "asignatura": "Geografía"
                 }
             ]
+        },
+        {
+            "title": "Apuntes de Geografía",
+            "titleIconLeft": "fa-map",
+            "titleIconRight": "fa-book",
+            "titleStyle": "color: #0d9488;",
+            "mainTopicId": "topic-geo-3",
+            "mainTopicClass": "topic-title",
+            "mainTopicTitle": "Geografía",
+            "mainTopicIcon1": "fa-earth-americas",
+            "mainTopicIcon2": "fa-clock",
+            "mainTopicSubtitle": "Clase 3: Geopolítica y Husos Horarios",
+            "branches": [
+                {
+                    "id": "nodes-geo3-1",
+                    "topicIdx": 1,
+                    "title": "1. Geopolítica y Datos Clave",
+                    "icon": "fa-globe",
+                    "subnodes": [
+                        {
+                            "icon": "fa-flag",
+                            "delay": "0.1s",
+                            "title": "Minoría en Quebec, Canadá",
+                            "content": "<p>Aunque el francés es la lengua mayoritaria en Quebec, la <b>minoría étnica oficial</b> por la que pregunta la UNAM es la <b>inglesa</b> (aproximadamente 7-10% de la población).</p>"
+                        },
+                        {
+                            "icon": "fa-landmark",
+                            "delay": "0.2s",
+                            "title": "Desintegración de la URSS (1991)",
+                            "content": "<p>Tras la desintegración de la Unión Soviética surgieron <b>15 países</b>. Las primeras repúblicas en separarse fueron <b>Estonia</b> y <b>Lituania</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-map-location-dot",
+                            "delay": "0.3s",
+                            "title": "Desintegración de Yugoslavia",
+                            "content": "<p>Ocurrió en la región de los <b>Balcanes</b> tras la muerte de <b>Josip Broz \"Tito\"</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-shield-halved",
+                            "delay": "0.4s",
+                            "title": "Tensión Política Actual",
+                            "content": "<p>El reactivo oficial marca como zona de mayor tensión a <b>Palestina e Israel</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-users",
+                            "delay": "0.5s",
+                            "title": "Minoría en España (Norte)",
+                            "content": "<p>Se les conoce como <b>Vascos</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-earth-africa",
+                            "delay": "0.6s",
+                            "title": "África Septentrional (Norte)",
+                            "content": "<p>Países frontera con el Mediterráneo: <b>Marruecos, Argelia, Túnez, Libia, Egipto</b> y <b>Sudán</b>.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo3-2",
+                    "topicIdx": 2,
+                    "title": "2. Husos Horarios: Fundamentos",
+                    "icon": "fa-clock",
+                    "subnodes": [
+                        {
+                            "icon": "fa-earth-americas",
+                            "delay": "0.1s",
+                            "title": "Definición",
+                            "content": "<p>La Tierra está dividida en <b>24 franjas horarias</b> (una por cada hora del día). Cada huso horario equivale a <b>15 grados</b> de longitud.</p><p><b>Cálculo:</b> 360° / 24 horas = <b>15° por huso horario</b>.</p>"
+                        },
+                        {
+                            "icon": "fa-location-crosshairs",
+                            "delay": "0.2s",
+                            "title": "Meridiano de Greenwich",
+                            "content": "<p>Es el grado <b>0°</b> de longitud y se toma como referencia universal (<b>GMT 0 / UTC 0</b>).</p>"
+                        },
+                        {
+                            "icon": "fa-arrows-left-right",
+                            "delay": "0.3s",
+                            "title": "Regla del Sentido",
+                            "content": "<p>Hacia el <b>Este (Oriente)</b>: se <b>suman</b> las horas.</p><p>Hacia el <b>Oeste (Occidente)</b>: se <b>restan</b> las horas.</p>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo3-3",
+                    "topicIdx": 3,
+                    "title": "3. Método de Cálculo de Husos Horarios",
+                    "icon": "fa-calculator",
+                    "subnodes": [
+                        {
+                            "icon": "fa-list-ol",
+                            "delay": "0.1s",
+                            "title": "Pasos para Resolver Problemas",
+                            "content": "<p><b>1.</b> Identifica los datos: grados o husos horarios (GMT).</p><p><b>2.</b> Ubica punto de partida y destino:</p><ul><li>De longitud Oeste (W) a Este (E): se suman.</li><li>De longitud Este (E) a Oeste (W): se restan.</li></ul><p><b>3.</b> Calcula la diferencia: divide la diferencia de grados entre 15 para obtener las horas.</p>"
+                        },
+                        {
+                            "icon": "fa-circle-info",
+                            "delay": "0.2s",
+                            "title": "Ejemplo Resuelto",
+                            "content": "<p>De <b>0°</b> a <b>120° Oeste</b>:</p><p>120 / 15 = <b>8 horas de diferencia</b> (restando, porque el destino está al Oeste).</p>"
+                        },
+                        {
+                            "icon": "fa-rocket",
+                            "delay": "0.3s",
+                            "title": "Tip de Examen",
+                            "content": "<div class='exam-tip'><i class='fa-solid fa-rocket'></i> <b>TIP DE EXAMEN:</b><br>No te fíes de los mapas que vienen en el cuadernillo (suelen estar borrosos o mal impresos). Confía en los datos numéricos que te da el texto de la pregunta.</div>"
+                        }
+                    ]
+                },
+                {
+                    "id": "nodes-geo3-4",
+                    "topicIdx": 4,
+                    "title": "4. Tabla de Correspondencia (Grados a Horas)",
+                    "icon": "fa-table",
+                    "subnodes": [
+                        {
+                            "icon": "fa-table-cells",
+                            "delay": "0.1s",
+                            "title": "Conversión Grados-Horas",
+                            "content": "<p><b>15°</b> = 1 hora &nbsp;|&nbsp; <b>30°</b> = 2 horas &nbsp;|&nbsp; <b>45°</b> = 3 horas</p><p><b>90°</b> = 6 horas &nbsp;|&nbsp; <b>120°</b> = 8 horas &nbsp;|&nbsp; <b>180°</b> = 12 horas</p>"
+                        }
+                    ]
+                }
+            ],
+            "videoUrl": "https://www.youtube.com/watch?v=hZXzsCROel4",
+            "id": "content-geografia-3",
+            "preguntas": {
+                "unam": [],
+                "nivel1": [
+                    {
+                        "numero": 1,
+                        "pregunta": "¿Cuántos países surgieron tras la desintegración de la URSS en 1991?",
+                        "opciones": ["12", "15", "18", "20"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Tras la desintegración de la Unión Soviética en 1991 surgieron 15 países independientes."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuántos grados de longitud equivale cada huso horario?",
+                        "opciones": ["10°", "12°", "15°", "20°"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Cada huso horario equivale a 15° de longitud (360° / 24 horas = 15°)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Qué ocurre con la hora al desplazarse hacia el Este?",
+                        "opciones": ["Se resta", "Se suma", "No cambia", "Se duplica"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Al desplazarse hacia el Este (Oriente) se suman las horas."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "¿En qué región ocurrió la desintegración de Yugoslavia?",
+                        "opciones": ["Escandinavia", "Europa Occidental", "Los Balcanes", "Europa del Norte"],
+                        "respuesta": 2,
+                        "retroalimentacion": "La desintegración de Yugoslavia ocurrió en la región de los Balcanes."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuál es la referencia universal para los husos horarios (grado 0)?",
+                        "opciones": ["Meridiano de Ecuador", "Meridiano de Greenwich", "Trópico de Cáncer", "Línea Internacional de Cambio de Fecha"],
+                        "respuesta": 1,
+                        "retroalimentacion": "El Meridiano de Greenwich (0° de longitud) es la referencia universal, también conocido como GMT 0 o UTC 0."
+                    }
+                ],
+                "nivel2": [
+                    {
+                        "numero": 1,
+                        "pregunta": "Si en el Meridiano de Greenwich son las 12:00 horas, ¿qué hora será en un lugar ubicado a 90° de longitud Oeste?",
+                        "opciones": ["6:00 horas", "18:00 horas", "9:00 horas", "3:00 horas"],
+                        "respuesta": 0,
+                        "retroalimentacion": "90° / 15° = 6 horas de diferencia. Como el destino está al Oeste, se restan: 12:00 - 6 = 6:00 horas."
+                    },
+                    {
+                        "numero": 2,
+                        "pregunta": "¿Cuál es la minoría étnica en Quebec (Canadá) por la que suele preguntar la UNAM?",
+                        "opciones": ["Francesa", "Inglesa", "Indígena", "Italiana"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Aunque el francés es la lengua mayoritaria en Quebec, la minoría étnica oficial que pregunta la UNAM es la inglesa (7-10%)."
+                    },
+                    {
+                        "numero": 3,
+                        "pregunta": "¿Cuáles fueron las primeras repúblicas en separarse de la URSS?",
+                        "opciones": ["Ucrania y Bielorrusia", "Estonia y Lituania", "Georgia y Armenia", "Kazajistán y Uzbekistán"],
+                        "respuesta": 1,
+                        "retroalimentacion": "Las primeras repúblicas en separarse de la URSS fueron Estonia y Lituania."
+                    },
+                    {
+                        "numero": 4,
+                        "pregunta": "Un avión sale de una ciudad ubicada a 45° Oeste cuando son las 15:00 horas. ¿Qué hora será en una ciudad a 30° Este?",
+                        "opciones": ["10:00 horas", "18:00 horas", "20:00 horas", "22:00 horas"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Diferencia total: 45° + 30° = 75°. 75° / 15° = 5 horas. Como se va de Oeste a Este, se suma: 15:00 + 5 = 20:00 horas."
+                    },
+                    {
+                        "numero": 5,
+                        "pregunta": "¿Cuál de los siguientes NO es un país de África Septentrional frontera con el Mediterráneo según la clase?",
+                        "opciones": ["Argelia", "Túnez", "Nigeria", "Libia"],
+                        "respuesta": 2,
+                        "retroalimentacion": "Los países de África Septentrional frontera con el Mediterráneo son: Marruecos, Argelia, Túnez, Libia, Egipto y Sudán. Nigeria no está en esa lista."
+                    }
+                ]
+            },
+            "flashcards": [
+                {
+                    "id": "geo3-001",
+                    "pregunta": "¿Cuál es la minoría étnica en Quebec, Canadá, que pregunta la UNAM?",
+                    "respuesta": "La minoría inglesa (aproximadamente 7-10% de la población).",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-002",
+                    "pregunta": "¿Cuántos países surgieron de la desintegración de la URSS en 1991?",
+                    "respuesta": "15 países.",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-003",
+                    "pregunta": "¿Cuáles fueron las primeras repúblicas en separarse de la URSS?",
+                    "respuesta": "Estonia y Lituania.",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-004",
+                    "pregunta": "¿En qué región ocurrió la desintegración de Yugoslavia y tras la muerte de quién?",
+                    "respuesta": "En los Balcanes, tras la muerte de Josip Broz \"Tito\".",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-005",
+                    "pregunta": "¿Cuál es la zona de mayor tensión política actual según el reactivo oficial de la UNAM?",
+                    "respuesta": "Palestina e Israel.",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-006",
+                    "pregunta": "¿Cómo se conoce a la minoría del norte de España?",
+                    "respuesta": "Vascos.",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-007",
+                    "pregunta": "¿Cuáles son los países de África Septentrional frontera con el Mediterráneo?",
+                    "respuesta": "Marruecos, Argelia, Túnez, Libia, Egipto y Sudán.",
+                    "tema": "Geopolítica",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-008",
+                    "pregunta": "¿Cuántos husos horarios tiene la Tierra y a cuántos grados equivale cada uno?",
+                    "respuesta": "24 husos horarios, cada uno equivale a 15° de longitud (360° / 24 = 15°).",
+                    "tema": "Husos Horarios",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-009",
+                    "pregunta": "¿Qué es el Meridiano de Greenwich en términos de husos horarios?",
+                    "respuesta": "Es el grado 0° de longitud, referencia universal (GMT 0 / UTC 0).",
+                    "tema": "Husos Horarios",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-010",
+                    "pregunta": "¿Qué ocurre con la hora al desplazarse hacia el Este? ¿Y hacia el Oeste?",
+                    "respuesta": "Hacia el Este se suman horas; hacia el Oeste se restan horas.",
+                    "tema": "Husos Horarios",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-011",
+                    "pregunta": "¿Cómo se calcula la diferencia horaria cuando se dan grados de longitud?",
+                    "respuesta": "Se divide la diferencia de grados entre 15 para obtener las horas de diferencia.",
+                    "tema": "Husos Horarios",
+                    "asignatura": "Geografía"
+                },
+                {
+                    "id": "geo3-012",
+                    "pregunta": "¿A cuántas horas de diferencia respecto al Meridiano 0 corresponden 120° de longitud?",
+                    "respuesta": "8 horas (120° / 15° = 8).",
+                    "tema": "Husos Horarios",
+                    "asignatura": "Geografía"
+                }
+            ]
         }
     ]
 };
